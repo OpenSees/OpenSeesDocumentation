@@ -9,7 +9,6 @@ This repo is where the documentation for OpenSees is kept
 ```
 pip install -U sphinx
 pip install sphinx_rtd_theme
-pip install sphinxcontrib-bibtex
 ```
 
 2. Download the repo using git from a terminal window
