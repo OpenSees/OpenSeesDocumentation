@@ -21,5 +21,11 @@ git clone https://github.com/OpenSees/OpenSeesDocumentation.git
 
 ```
 cd OpenSeesDocumentation/docs
-make
+make html
 ```
+
+4. If it works the html files are in the build/html folder
+
+```
+open ./build/html/index.html
+````
