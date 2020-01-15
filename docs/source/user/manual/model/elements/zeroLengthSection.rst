@@ -41,7 +41,7 @@ This command is used to construct a zero length element object, which is defined
 
    1. **Tcl Code**
 
-   .. code-block::
+   .. code-block:: none
 
       element zeroLengthSection 1 2 4 6
       element zeroLengthSection 2 4 5 6 -orient 1 1 0 -1 1 0

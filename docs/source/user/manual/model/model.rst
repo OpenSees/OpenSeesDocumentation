@@ -26,13 +26,13 @@ The additional commands added to the interpreter allow for the construction of N
 
    1. **Tcl Code**
 
-   .. code-block::
+   .. code-block:: none
 
       model Basic -ndm 2 -ndf 3
 
    2. **Python Code**
 
-   .. code-block:: 
+   .. code-block:: none
 
       model('basic', -ndm', 2, '-ndf', 3)
 

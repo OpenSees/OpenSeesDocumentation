@@ -23,6 +23,8 @@ copyright = '2020, The Regents of the University of California'
 author = 'Frank McKenna, Michael Scott, Pedro Arduino, Minjie Zhu'
 html_logo = 'OpenSeesLogo.png'
 
+master_doc = 'index'
+
 rst_prolog = """
 .. |floatList| replace:: *list float*
 .. |integerList| replace:: *list integer*
@@ -46,8 +48,7 @@ rst_prolog = """
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-	'sphinxcontrib.bibtex',
-	'toctree_filter'
+    'toctree_filter'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

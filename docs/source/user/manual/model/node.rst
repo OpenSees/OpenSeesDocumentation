@@ -20,14 +20,14 @@ This command is used to construct a Node object. It assigns coordinates and mass
 
    1. **Tcl Code**
 
-   .. code-block::
+   .. code-block:: none
 
       node 3 168.0 0.0
       node 4 168.0 144.0 -mass 10.0 10.0 0.0
 
    2. **Python Code**
 
-   .. code-block:: 
+   .. code-block:: none
 
       node(3, 168.0,  0.0)
       node(4, 168.0,  0.0, '-mass', 10.0 10.0 0.0)
