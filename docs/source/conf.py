@@ -28,8 +28,10 @@ master_doc = 'index'
 rst_prolog = """
 .. |floatList| replace:: *list float*
 .. |integerList| replace:: *list integer*
+.. |intList| replace:: *list integer*
 .. |listFloat| replace:: *list float*
 .. |listInteger| replace:: *list integer*
+.. |listInt| replace:: *list integer*
 .. |list| replace:: *list*
 .. |string| replace:: *string*
 .. |float| replace:: *float*

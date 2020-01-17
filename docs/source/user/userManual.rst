@@ -9,6 +9,7 @@ For the OpenSees interpreters the commands we have added for finite element anal
 .. _command-manual:
 
 .. toctree::
+   :maxdepth: 1   
 
    manual/modelCommands
    manual/analysisCommands

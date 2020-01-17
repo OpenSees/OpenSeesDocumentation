@@ -27,7 +27,7 @@ This command is used to construct a Node object. It assigns coordinates and mass
 
    2. **Python Code**
 
-   .. code-block:: none
+   .. code-block:: python
 
       node(3, 168.0,  0.0)
       node(4, 168.0,  0.0, '-mass', 10.0 10.0 0.0)

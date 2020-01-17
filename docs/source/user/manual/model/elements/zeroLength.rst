@@ -3,7 +3,12 @@ ZeroLength Element
 
 This command is used to construct a zeroLength element object, which is defined by two nodes at the same location. A zeroLength element is similar to a set of springs placed between two nodes, each spring providing the force displacement relationship for a specified degree-of-freedom. The nodes are connected by multiple UniaxialMaterial objects, which provide the force-deformation relationship for the element in that degree-of-freedom direction. 
 
-.. function:: element zeroLength $eleTag $iNode $jNode -mat $matTag -dir $dir <-doRayleigh $rFlag> <-orient $x $yp>
+.. function:: element zeroLength $eleTag $iNode $jNode -mat $matTag -dir $dir <-doRayleigh 
+   $rFlag> <-orient $x $yp>
+
+.. admonition::
+
+   element zeroLength $eleTag $iNode $jNode -mat $matTag -dir $dir <-doRayleigh $rFlag> <-orient $x $yp>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -38,7 +43,7 @@ This command is used to construct a zeroLength element object, which is defined 
 
    1. **Tcl Code**
 
-   .. code-block:: none
+   .. code-block:: tcl
 
       element zeroLength 1 2 4 -mat 5 6 -dir 1 2
       element zeroLength 2 4 5 -mat 1 -dir 1 -orient 1 1 0 -1 1 0
@@ -46,7 +51,7 @@ This command is used to construct a zeroLength element object, which is defined 
 
    2. **Python Code**
 
-   .. code-block:: none
+   .. code-block:: python
 
       element('zeroLength',1,2,4,'-mat',5,6,'-dir',1,2)
       element('zeroLength',2,4,5,'-mat',1,'-dir',1,'-orient',1,1,0,-1,1,0)
