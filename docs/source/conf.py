@@ -44,6 +44,7 @@ rst_prolog = """
 .. |mhs| replace:: `Michael H. Scott`_
 .. _Michael H. Scott: https://cce.oregonstate.edu/scott
 .. |fmk| replace:: **fmk**
+.. |andreas| replace:: **Andreas Schellenberg**
 """	
 
 # Add any Sphinx extension module names here, as strings. They can be

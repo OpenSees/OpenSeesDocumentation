@@ -11,8 +11,8 @@ Modelling Commands
    model/element
    model/spConstraints
    model/mpConstraints
+   model/timeSeries
 
-#   model/mpConstraint
 #   model/timeSeries
 #   model/pattern
 #   model/uniaxialMaterial
