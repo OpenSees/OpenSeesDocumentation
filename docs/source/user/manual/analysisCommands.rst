@@ -1,15 +1,31 @@
 Analysis Commands
 -----------------
 
- These are the commands added to the interpreter to create the finite element model. A finite element model consists of nodes, elements, constraints, and loads. In OpenSees the constraints are divided into two types: single-point constraints for specifying the boundary condition for a specific degree-of-freedom at a node and multiple-point constraints for specifying the relationship between the responses between the degrees-of-freedom at two seperate nodes. Loads and single-point constraints are considered to be part of a LoadPatten.
+In OpenSees, an analysis is an object which is composed by the aggregation of component objects. It is the component objects which define the type of analysis that is performed on the model. The component classes, as shown in the figure below, consist of the following:
+
+#. Constraint Handler -- determines how the constraint equations are enforced in the analysis -- how it handles the boundary conditions/imposed displacements
+#. DOF Numberer -- determines the mapping between equation numbers in the system of equation and the degrees-of-freedom at the nodes
+#. SystemOfEqn & Solver -- it specifies how to store and solve the system of equations :math:`Ax=b`
+#. Convergence Test -- determines when convergence has been achieved.
+#. Solution Algorithm -- determines the sequence of steps taken to solve the non-linear equation at the current time step
+#. Integrator -- determines the equations to solve, the predictive step, and how to update the reponses at the nodes given the solution to :math:`Ax=b`
+
+.. figure:: figures/OpenSeesAnalysis.png
+	:align: center
+	:figclass: align-center
+
+	OpenSees Analysis
 
 .. toctree::
-   :maxdepth: 3
 
+   analysis/constraints
    analysis/numberer
    analysis/system
+   analysis/test
+   analysis/algorithm
+   analysis/integrator
    analysis/analysis
    analysis/analyze
+   analysis/eigen
 
-#   analysis/constraints
-#   analysis/integrator
+
