@@ -25,4 +25,4 @@ The following contain information about numbererType? and the args required for 
     PlainConstraints
     PenaltyMethod
     TransformationMethod
-    LagrangeMultipliers
+    lagrangeMultipliers
