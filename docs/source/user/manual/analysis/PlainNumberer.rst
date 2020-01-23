@@ -13,7 +13,7 @@ This command is used to construct a Plain degree-of-freedom numbering object to 
 
 .. admonition:: Example 
 
-The following example shows how to construct a plain numberer
+   The following example shows how to construct a plain numberer
 
    1. **Tcl Code**
 
