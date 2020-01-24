@@ -7,7 +7,7 @@ Depending on choice of interpreter you wish to use there are 2 installation proc
 .. _installation:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    tclInstall
    pythonInstall

@@ -1,3 +1,5 @@
+.. _fixX:
+
 fixX Command
 ************
 

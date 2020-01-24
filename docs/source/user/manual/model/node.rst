@@ -1,3 +1,5 @@
+.. _node:
+
 Node Command
 ************
 
@@ -20,7 +22,7 @@ This command is used to construct a Node object. It assigns coordinates and mass
 
    1. **Tcl Code**
 
-   .. code-block:: none
+   .. code-block:: tcl
 
       node 3 168.0 0.0
       node 4 168.0 144.0 -mass 10.0 10.0 0.0
@@ -33,4 +35,4 @@ This command is used to construct a Node object. It assigns coordinates and mass
       node(4, 168.0,  0.0, '-mass', 10.0 10.0 0.0)
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|

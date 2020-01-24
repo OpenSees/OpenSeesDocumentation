@@ -15,7 +15,7 @@ As part of the code development efforts, a number of applications built using th
 
 .. toctree::
    :caption: Applications for Users
-   :maxdepth: 2
+   :maxdepth: 1
    :numbered: 4
 
    developer/license

@@ -20,3 +20,5 @@ The following contain information about numbererType? and the args required for 
     PlainNumberer
     RCM
     AMD
+
+Code developed by: |fmk|

@@ -7,3 +7,6 @@ These are commands added to the interpreter which don't fit into one of the othe
    :maxdepth: 1
 
    misc/exit
+   misc/wipe
+   misc/wipeAnalysis
+   misc/loadConst
