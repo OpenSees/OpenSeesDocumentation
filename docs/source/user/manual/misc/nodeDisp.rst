@@ -1,6 +1,6 @@
 .. _nodeDisp:
 
-NodeDisp Command
+nodeDisp Command
 ****************
 
 This command returns the current displacement at a specified node.
@@ -20,7 +20,7 @@ This command returns the current displacement at a specified node.
 
 .. admonition:: Example:
 
-   The following example is used to obtain the nodal displacement at node given by the variable **nodeTag** in the **1** degree-of-freedom direction.
+   The following example is used to set the variable **disp1** to the nodal displacement at node given by the variable **nodeTag** in the **1** degree-of-freedom direction.
 
    1. **Tcl Code** (note use of **set** and **[ ]**)
 
@@ -32,7 +32,7 @@ This command returns the current displacement at a specified node.
 
    .. code-block:: python
 
-	disp1 = ('nodeDisp',nodeTag,1)
+	disp1 = nodeDisp(nodeTag,1)
 
 
 Code developed by: |fmk|

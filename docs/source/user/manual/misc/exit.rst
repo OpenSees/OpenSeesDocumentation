@@ -1,6 +1,6 @@
 .. _exit:
 
-Exit Command
+exit Command
 ************
 
 This command is used to exit the program in a controlled way.

@@ -1,6 +1,6 @@
 .. _wipeAnalysis:
 
-WipeAnalysis Command
+wipeAnalysis Command
 ********************
 
 The wipeAnalysis command is used to remove all the analysis objects. 
@@ -12,6 +12,7 @@ This command is needed for example when the user wishes to switch from a static 
 .. warning::
    * The time in the domain is not reset as in the :ref:`wipe`.
    * The state of the model does not change, i.e. the loads remain active and will change with subsequent analyze commands unless a :ref:`loadConst` is issued.
+   * There is NO space between the wipe and Analysis. Putting a space results in domain and recorder objects also being remove, e.g. a :ref:`wipe`.
 
 .. admonition:: Example:
 
