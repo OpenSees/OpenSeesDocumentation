@@ -11,7 +11,7 @@ These are commands added to the interpreter which don't fit into one of the othe
    misc/nodeDisp
    misc/nodeVel
    misc/nodeAccel
-   misc/eleReponse
+   misc/eleResponse
 
 .. toctree::
    :caption: 2. Commands that don't return values
