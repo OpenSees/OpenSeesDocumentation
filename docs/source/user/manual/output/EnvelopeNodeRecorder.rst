@@ -1,11 +1,11 @@
-.. _nodeRecorder:
+.. _envelopeNodeRecorder:
 
-Node Recorder
-^^^^^^^^^^^^^
+Envelope Node Recorder
+^^^^^^^^^^^^^^^^^^^^^^
 
-The Node recorder type records the response of a number of nodes at every converged step. The command to create a node recorder is:
+The EnvelopeNode recorder type records the maxima and minima response of a number of nodes over the analysis. The command to create an envelope node recorder is:
 
-.. function:: recorder(Node, <-file $filename>,<-xml $filename>,<-binary $filename>,<-tcp $inetAddress $port>, <-precision  $nSD>, <-timeSeries $tsTag>,<-time>,<-dT $deltaT>, <-closeOnWrite>, <-node  $nodeTags>,< -nodeRange $startNode $endNode>,<-region $regionTag> -dof $dofs $respType)
+.. function:: recorder(EnvelopeNode, <-file $filename>,<-xml $filename>,<-binary $filename>,<-tcp $inetAddress $port>, <-precision  $nSD>, <-timeSeries $tsTag>,<-time>,<-dT $deltaT>, <-closeOnWrite>, <-node  $nodeTags>,< -nodeRange $startNode $endNode>,<-region $regionTag> -dof $dofs $respType)
    :noindex:
 
 .. csv-table:: 
@@ -49,7 +49,7 @@ The Node recorder type records the response of a number of nodes at every conver
       | FAILURE: **-1** recorder command failed (read the log)
    To remove a recorder using the :ref:`remove` you need to save this tag in a variable for use later in the script.
 
-   5. $deltaT specifies a time interval for recording. will record when next step is $deltaT greater than last recorder step. It is useful if user script subdivides time step and user is not interested in the responses at each time step due to memory or file size constraints.
+   5. $deltaT, time interval for recording. will record when next step is $deltaT greater than last recorder step. Not really useful for Envelope recorder, a legacy from NodeRecorder!
 
    6. If the **-timeSeries** option is being used, the recorded results are those obtained from the time series for the current time added to the response quantity measures. Need as many time series tags as dof specified. Useful for obtaining for example total acceleration as opposed to relative if user using UniformAcceleration to impose a ground motion.
 
@@ -66,9 +66,9 @@ The Node recorder type records the response of a number of nodes at every conver
 
    .. code:: tcl
    
-     recorder Node -file nodesD.out -time -node 1 2 3 4 -dof 1 2 disp;
+     recorder EnvelopeNode -file nodesD.out -time -node 1 2 3 4 -dof 1 2 disp;
 
-     recorder Node -file nodesA.out -timeSeries 1 2 -time -node 1 2 3 4 -dof 1 2 accel;
+     recorder EnvelopeNode -file nodesA.out -timeSeries 1 2 -time -node 1 2 3 4 -dof 1 2 accel;
 
    .. code:: python
 

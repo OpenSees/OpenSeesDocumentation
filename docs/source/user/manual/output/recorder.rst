@@ -15,7 +15,7 @@ The type of recorder created and the additional arguments required depends on th
    :maxdepth: 1
 
    NodeRecorder
-   NodeEnvelopeRecorder
+   EnvelopeNodeRecorder
    DriftRecorder
 
 .. toctree::
@@ -23,7 +23,7 @@ The type of recorder created and the additional arguments required depends on th
    :maxdepth: 1
 
    ElementRecorder
-   ElementEnvelopeRecorder
+   EnvelopeElementRecorder
 
 .. toctree::
    :caption: 3. Recorders for Graphic output
