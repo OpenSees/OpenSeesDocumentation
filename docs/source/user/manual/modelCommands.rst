@@ -24,11 +24,13 @@ In OpenSees there are commands to add each of these types of objects to a domain
 
 In addition to these commands, other commands needed for modelling include commands to create the materials used by the elements, commands for damping, and commands for creating blocks of continuum elements. These commands are described in the following sections:
 
-#   model/timeSeries
-#   model/pattern
-#   model/uniaxialMaterial
-#   model/ndMaterial
-#   model/section
+.. toctree::
+   :maxdepth: 1
+
+   model/uniaxialMaterial
+   model/ndMaterial
+   model/section
+
 #   model/mass
 #   model/region
 #   model/rayleigh

@@ -1,3 +1,5 @@
+.. _model:
+
 Model Command
 *************
 
@@ -26,13 +28,13 @@ The additional commands added to the interpreter allow for the construction of N
 
    1. **Tcl Code**
 
-   .. code-block:: none
+   .. code-block:: tcl
 
       model Basic -ndm 2 -ndf 3
 
    2. **Python Code**
 
-   .. code-block:: none
+   .. code-block:: python
 
       model('basic', -ndm', 2, '-ndf', 3)
 
