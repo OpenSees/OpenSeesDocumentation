@@ -38,13 +38,13 @@ make html
 
 4. If it works the html files are in the build/html folder
 
-on Windows type to open a browser with index page
+on Linux type the following to open a browser with index page
 
 ```
 xdg-open ./build/html/index.html
 ````
 
-on mac
+on a Mac
 
 ```
 open ./build/html/index.html
