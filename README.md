@@ -1,14 +1,19 @@
 ## OpenSeesDocumentation
 
+This repo is where the documentation for OpenSees is kept. The repo contains both source code for building the documentation, and the html pages that github pages serves to the user.
+
+If you are looking for the online documentation, visit the repo through github pages.
+
+https://OpenSees.github.io/OpenSeesDocumentation
+
+
 # Structure
 
 + Makefile   - unix Makefile to build the documentation using sphinx
 + make.bat   - windows make.bat to do same thing
 + source     - a directory containing all the restructured text files and images used to create the html file
-+ doc        - the folder that is used by github pages. this folder contains final .html files created by sphinx
++ doc        - The folder that is used by github pages. This folder contains final .html files created by sphinx. If you want to make contributions to OpenSsees Documentation, don't bother updating these pages as pull requests with updates here will be rejected. Make the changes to the files in the source directory and make a pull request for these. We will build and update the doc folder.
    
-
-This repo is where the documentation for OpenSees is kept
 
 # Building the HTML files
 
@@ -33,8 +38,15 @@ make html
 
 4. If it works the html files are in the build/html folder
 
+on Windows type to open a browser with index page
+
 ```
 xdg-open ./build/html/index.html
 ````
 
-5. to update the code for github pages, type make gitgub
+on mac
+
+```
+open ./build/html/index.html
+```
+
