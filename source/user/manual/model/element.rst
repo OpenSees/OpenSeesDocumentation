@@ -24,7 +24,7 @@ This command is used to construct an element and add it to the Domain.
 
 The following subsections contain information about **$eleType** and the number of nodes and args required for each of the available element types:
 
-#. Zero-Length Elements
+1. Zero-Length Elements
 
 .. toctree::
    :maxdepth: 4
@@ -38,7 +38,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/zeroLengthInterface2D
    elements/zeroLengthImpact3D 
 
-#. Trusss
+2. Trusss Elements
 
 .. toctree::
    :maxdepth: 1
@@ -47,12 +47,12 @@ The following subsections contain information about **$eleType** and the number 
    elements/CorotationalTruss
 
 
-#. Trusss
+3. Beam Column Elements
 
 .. toctree::
    :maxdepth: 1
 
-   elements/ElasticBeamColumn
+   elements/elasticBeamColumn
    elements/ElasticBeamColumnElementWithStiffnessModifiers
    elements/ElasticTimoshenkoBeamColumnElement
    elements/BeamWithHingesElement
@@ -61,24 +61,65 @@ The following subsections contain information about **$eleType** and the number 
    elements/FlexureShearInteractionDisplacementBasedBeamColumnElement
    elements/MVLEM
    elements/SFI_MVLEM
-   
-#. Joints
+
+
+4. Quadrilateral & Shell Elements
 
 .. toctree::
    :maxdepth: 1
 
-	elements/BeamColumnJoint
-	elements/ElasticTubularJoint
-	elements/Joint2D
+   elements/Quad
+   elements/Shell
+   elements/ShellDKGQ
+   elements/ShellNLDKGQ
+   elements/ShellNL
+   elements/Bbar Plane Strain Quadrilateral
+   elements/Enhanced Strain Quadrilateral
+   elements/SSPquad
+   
+5. Triangles
 
-#. Joints
+.. toctree::
+   :maxdepth: 1
+
+   elements/Tri31
+   elements/ShellDKGT
+   elements/ShellNLDKGT
+
+6. Bricks
+
+.. toctree::
+   :maxdepth: 1
+
+   elements/stdBrick
+   elements/bbarBrick
+   elements/SSPbrick
+
+7. Tetrahedrons
+
+.. toctree::
+   :maxdepth: 1
+
+   elements/FourNodeTetrahedron
+
+
+8. Joint Elements
+
+.. toctree::
+   :maxdepth: 1
+
+   elements/BeamColumnJoint
+   elements/ElasticTubularJoint
+   elements/Joint2D
+
+9. Link Elements
 
 .. toctree::
    :maxdepth: 1
 
    elements/TwoNodeLink
 
-#. Bearings
+10. Bearing Elements
 
 .. toctree::
    :maxdepth: 1
@@ -98,44 +139,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/RJ-Watson EQS Bearing
    elements/FPBearingPTV
 
-#. Quadrilaterals
 
-.. toctree::
-   :maxdepth: 1
-
-   elements/Quad
-   elements/Shell
-   elements/ShellDKGQ
-   elements/ShellNLDKGQ
-   elements/ShellNL
-   elements/Bbar Plane Strain Quadrilateral
-   elements/Enhanced Strain Quadrilateral
-   elements/SSPquad
-   
-#. Triangles
-
-.. toctree::
-   :maxdepth: 1
-
-   elements/Tri31
-   elements/ShellDKGT
-   elements/ShellNLDKGT
-
-#. Bricks
-
-.. toctree::
-   :maxdepth: 1
-
-   elements/StandardBrick
-   elements/BbarBrick
-   elements/SSPbrick
-
-#. Tetrahedrons
-
-.. toctree::
-   :maxdepth: 1
-
-   elements/FourNodeTetrahedron
 
 #.    U-P Elements (saturated soil)
 
