@@ -18,13 +18,13 @@ As part of the code development efforts, a number of applications built using th
    :maxdepth: 1
    :numbered: 4
 
-   developer/license
    user/interpreters
    user/install
    user/userManual
    user/userExamples
+   user/messageBoard
+   developer/license
 
-#   user/messageBoard
 
 The OpenSees framework is presented in the following chapters for developers wishing to create their own applications or extend the existing applications.
 

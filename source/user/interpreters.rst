@@ -24,7 +24,7 @@ In order to perform finite element analysis using either **Tcl** or **Python**, 
 
 .. warning::
 
-   To **know and use** the commands in a language to write an application (**coding**) is one thing, to **program** in a language is something different. **Programming** involves creativity and thinking at a higher level, thinking in terms of problem solving, what are the abstractions and algoririthms that can be employed to solve the problem. Programmers finally use code to express their thoughts of how to solve the problem. All programmers are coders, and not all coders are programmers. To utilize the OpenSees interpreters effectivily **YOU WANT TO BE A PROGRAMMER**.
+   To **know and use** the commands in a programming language in order to develop an application (**coding**) is one thing. To **program** in a language is something different. **Programming** involves creativity and thinking at a higher level, thinking in terms of problem solving, what are the abstractions and algoririthms that can be employed to solve the problem. Programmers finally use code to express their thoughts of how to solve the problem. All programmers are coders. Most coders are **NOT** programmers. To utilize the OpenSees interpreters effectivily **YOU WANT TO BECOME A PROGRAMMER**.
 
 
 

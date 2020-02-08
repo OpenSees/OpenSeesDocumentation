@@ -69,13 +69,14 @@ The following subsections contain information about **$eleType** and the number 
    :maxdepth: 1
 
    elements/Quad
+   elements/SSPquad
    elements/Shell
    elements/ShellDKGQ
    elements/ShellNLDKGQ
    elements/ShellNL
-   elements/Bbar Plane Strain Quadrilateral
-   elements/Enhanced Strain Quadrilateral
-   elements/SSPquad
+   elements/BbarPlaneStrainQuadrilateral
+   elements/EnhancedStrainQuadrilateral
+
    
 5. Triangles
 

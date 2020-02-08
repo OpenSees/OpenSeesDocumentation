@@ -19,7 +19,7 @@ This command is used to construct an eight-node ssp brick element. The SSPbrick 
    $b1 $b2 $b3, |listFloat|, optional: body forces in global x y z directions
 
 
-.. figure:: brick.gif
+.. figure:: brick.png
 	:align: center
 	:figclass: align-center
 
@@ -51,6 +51,6 @@ This command is used to construct an eight-node ssp brick element. The SSPbrick 
 
    .. code-block:: python
 
-      element('SSPbrick',1,2,3,4,5,6,7,8,1, 0.0, 0.0, -10.0)
+      element('SSPbrick',1,1,2,3,4,5,6,7,8,1, 0.0, 0.0, -10.0)
 
-Code Developed by: |chris|, |pedro|, |peter|
+Code Developed by: |chris|, |pedro|, |peter| at University of Washington.
