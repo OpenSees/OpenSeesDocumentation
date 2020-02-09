@@ -5,6 +5,8 @@
 Copyright and License
 *********************
 
+The software is Copyright @ 1999-2020 The Regents of the University of California (The Regents). It is free for anybody to use, with the exception being that if you sell software that includes OpenSees source code you must obtain a license to do so from UC Berkeley, and like all software you use at your own risk. That license in all it's legal glory:
+
 .. code-block:: none 
 
    Copyright @ 1999-2020 The Regents of the University of California (The Regents). 
