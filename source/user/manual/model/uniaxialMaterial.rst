@@ -85,19 +85,25 @@ uniaxialMaterials/BoucWen
 uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
-uniaxialMaterials/PySimple1
-uniaxialMaterials/TzSimple1
-uniaxialMaterials/QzSimple1
-uniaxialMaterials/PyLiq1
-uniaxialMaterials/TzLiq1
-uniaxialMaterials/PySimple1Gen
-uniaxialMaterials/TzSimple1Gen
-uniaxialMaterials/KikuchiAikenHDR
-uniaxialMaterials/KikuchiAikenLRB
-uniaxialMaterials/AxialSp
-uniaxialMaterials/AxialSpHD
-uniaxialMaterials/PinchingLimitState
-uniaxialMaterials/CFSWSWP
-uniaxialMaterials/CFSSSWP
+
+.. toctree::
+   :maxdepth: 1
+
+   uniaxialMaterials/PySimple1
+   uniaxialMaterials/TzSimple1
+   uniaxialMaterials/QzSimple1
+   uniaxialMaterials/PyLiq1
+   uniaxialMaterials/TzLiq1
+   uniaxialMaterials/PySimple1Gen
+   uniaxialMaterials/TzSimple1Gen
+
+
+   uniaxialMaterials/KikuchiAikenHDR
+   uniaxialMaterials/KikuchiAikenLRB
+   uniaxialMaterials/AxialSp
+   uniaxialMaterials/AxialSpHD
+   uniaxialMaterials/PinchingLimitState
+   uniaxialMaterials/CFSWSWP
+   uniaxialMaterials/CFSSSWP
 
 
