@@ -5,6 +5,7 @@ These are the commands added to the interpreter to create the finite element mod
 
 .. figure:: figures/OpenSeesDomain.png
 	:align: center
+	:width: 800px
 	:figclass: align-center
 
 	OpenSees Model
@@ -20,7 +21,7 @@ In OpenSees there are commands to add each of these types of objects to a domain
    model/spConstraints
    model/mpConstraints
    model/timeSeries
-   model/loadPattern
+   model/pattern
 
 In addition to these commands, other commands needed for modelling include commands to create the materials used by the elements, commands for damping, and commands for creating blocks of continuum elements. These commands are described in the following sections:
 

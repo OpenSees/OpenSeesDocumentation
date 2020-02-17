@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.1.7. Load Pattern Command" href="loadPattern.html" />
+    <link rel="next" title="3.1.7. Pattern Command" href="pattern.html" />
     <link rel="prev" title="3.1.6.6. Pulse TimeSeries" href="pulseTimeSeries.html" /> 
 </head>
 
@@ -106,7 +106,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.6.7. Path TimeSeries</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="loadPattern.html">3.1.7. Load Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pattern.html">3.1.7. Pattern Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="uniaxialMaterial.html">3.1.8. uniaxialMaterial Command</a></li>
 </ul>
 </li>
@@ -123,9 +123,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">3. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">4. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">5. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -197,7 +198,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="path-timeseries">
-<h1><span class="section-number">3.1.6.7. </span>Path TimeSeries<a class="headerlink" href="#path-timeseries" title="Permalink to this headline">¶</a></h1>
+<span id="pathtimeseries"></span><h1><span class="section-number">3.1.6.7. </span>Path TimeSeries<a class="headerlink" href="#path-timeseries" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a Path TimeSeries object. The relationship between load factor and time is input by the user as a series of discrete points in the 2d space (load factor, time). The input points can come from a file or from a list in the script. When the time specified does not match any of the input points, linear interpolation is used between points. There are many ways to specify the load path:</p>
 <p>For a load path where the factors are specified in a tcl list with a constant time interval between points:</p>
 <dl class="function">
@@ -277,7 +278,13 @@
     </script>
 
     
-   
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
 
 </body>
 </html>

@@ -97,7 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="model/spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="model/mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="model/timeSeries.html">3.1.6. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="model/loadPattern.html">3.1.7. Load Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model/pattern.html">3.1.7. Pattern Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="model/uniaxialMaterial.html">3.1.8. uniaxialMaterial Command</a></li>
 </ul>
 </li>
@@ -114,9 +114,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer/extend.html">3. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer/contribute.html">4. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer/issues.html">5. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -187,7 +188,7 @@
 <h1><span class="section-number">3.1. </span>Modelling Commands<a class="headerlink" href="#modelling-commands" title="Permalink to this headline">¶</a></h1>
 <p>These are the commands added to the interpreter to create the finite element model. A finite element model consists of <strong>Nodes</strong>, <strong>Elements</strong>, <strong>Constraints</strong>, and <strong>Loads</strong>. In OpenSees the Constraints are divided into two types: single-point constraints (<strong>SP_Constraints)</strong> for specifying the boundary condition for a specific degree-of-freedom at a node and multiple-point constraints (<strong>MP_Constraints</strong>) for specifying the relationship between the responses between the degrees-of-freedom at two seperate nodes. The loads in OpenSees are assigned to <strong>LoadPatterns</strong>. Also associated with load patterns are <strong>TimeSeries</strong> objects ans sometime <strong>SP_Constraints</strong> when the user wants to specify time-varying <strong>SP_Constraints</strong>.</p>
 <div class="align-center figure" id="id1">
-<img alt="../../_images/OpenSeesDomain.png" src="../../_images/OpenSeesDomain.png" />
+<a class="reference internal image-reference" href="../../_images/OpenSeesDomain.png"><img alt="../../_images/OpenSeesDomain.png" src="../../_images/OpenSeesDomain.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.1 </span><span class="caption-text">OpenSees Model</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>In OpenSees there are commands to add each of these types of objects to a domain:</p>
@@ -199,7 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="model/spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model/mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model/timeSeries.html">3.1.6. Time Series Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/loadPattern.html">3.1.7. Load Pattern Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model/pattern.html">3.1.7. Pattern Command</a></li>
 </ul>
 </div>
 <p>In addition to these commands, other commands needed for modelling include commands to create the materials used by the elements, commands for damping, and commands for creating blocks of continuum elements. These commands are described in the following sections:</p>
@@ -264,7 +265,13 @@
     </script>
 
     
-   
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
 
 </body>
 </html>

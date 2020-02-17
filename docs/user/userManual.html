@@ -104,9 +104,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer/extend.html">3. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer/contribute.html">4. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer/issues.html">5. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -181,7 +182,7 @@
 <li><p>The <strong>Recorders</strong>, code that allows the user to obtain output from a finite element analysis, e.g. to record the node displacement history.</p></li>
 </ol>
 <div class="align-center figure" id="id2">
-<img alt="../_images/OpenSeesMainAbstractions.png" src="../_images/OpenSeesMainAbstractions.png" />
+<a class="reference internal image-reference" href="../_images/OpenSeesMainAbstractions.png"><img alt="../_images/OpenSeesMainAbstractions.png" src="../_images/OpenSeesMainAbstractions.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">OpenSees Abstractions</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The OpenSees interpreters add <a class="reference external" href="http://en.wikipedia.org/wiki/Command_(computing)">commands</a> to interpreters, e.g. Python and Tcl, to allow the user to specify the model builder, the domain, the analysis and the output. Each of these added commands is associated (bound) with a C++ procedure that is provided in the OpenSees Framework. It is this procedure that is called upon by the interpreter to parse the command when it is encountered. In this document we focus primarily on those commands which have been added to these languages. All existing commands that exist in the Tcl and Python languages are available to these interpreters. We provide a brief [[Introduction To Tcl]], more detailed documentation on these existing commands can be found in books and on-line.</p>
@@ -244,7 +245,13 @@
     </script>
 
     
-   
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
 
 </body>
 </html>
