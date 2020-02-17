@@ -39,6 +39,8 @@ rst_prolog = """
 .. |OPS| replace:: OpenSees
 .. |OPS link| replace:: `OpenSees app`_
 .. _OpenSees app: http://opensees.berkeley.edu/
+.. |githubLink| replace:: `OpenSees Github link`_
+.. _OpenSees Github link: https://github.com/OpenSees/OpenSees
 .. |messageBoard| replace:: `OpenSees Message Board`_
 .. _OpenSees Message Board: https://opensees.berkeley.edu/community/index.php
 .. |glf| replace:: `Gregory L. Fenves`_

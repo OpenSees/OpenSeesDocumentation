@@ -1,3 +1,5 @@
+.. _timeSeries:
+
 Time Series Command
 *******************
 

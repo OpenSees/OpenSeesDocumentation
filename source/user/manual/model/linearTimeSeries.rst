@@ -1,3 +1,5 @@
+.. _linearTimeSeries:
+
 Linear TimeSeries
 ^^^^^^^^^^^^^^^^^
 

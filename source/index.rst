@@ -37,6 +37,7 @@ The OpenSees framework is presented in the following chapters for developers wis
 
    developer/sourceCode
    developer/build
+   developer/references
    developer/extend
    developer/contribute
    developer/issues

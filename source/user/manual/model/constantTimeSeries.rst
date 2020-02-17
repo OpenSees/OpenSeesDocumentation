@@ -1,3 +1,5 @@
+.. _constantTimeSeries:
+
 Constant TimeSeries
 ^^^^^^^^^^^^^^^^^^^
 

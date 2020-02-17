@@ -15,6 +15,7 @@ To understand how to run a finite element simulation using OpenSees, it is helpf
 
 .. figure:: manual/figures/OpenSeesMainAbstractions.png
 	:align: center
+	:width: 800px
 	:figclass: align-center
 
 	OpenSees Abstractions
