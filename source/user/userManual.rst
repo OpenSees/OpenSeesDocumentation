@@ -30,6 +30,7 @@ The OpenSees interpreters add `commands <http://en.wikipedia.org/wiki/Command_(c
    manual/modelCommands
    manual/analysisCommands
    manual/outputCommands
+   manual/materialCommands
    manual/miscCommands
 
 

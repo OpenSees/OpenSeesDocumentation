@@ -28,12 +28,8 @@ In addition to these commands, other commands needed for modelling include comma
 .. toctree::
    :maxdepth: 1
 
-   model/uniaxialMaterial
-   model/ndMaterial
-   model/section
-
-#   model/mass
-#   model/region
-#   model/rayleigh
-#   model/block
-#   model/geomTransf   
+   model/mass
+   model/region
+   model/damping
+   model/block
+   model/geomTransf   
