@@ -101,7 +101,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.4. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
@@ -185,7 +186,119 @@
            <div itemprop="articleBody">
             
   <div class="section" id="analysis-command">
-<h1><span class="section-number">3.2.5. </span>Analysis Command<a class="headerlink" href="#analysis-command" title="Permalink to this headline">¶</a></h1>
+<span id="analysis"></span><h1><span class="section-number">3.2.5. </span>Analysis Command<a class="headerlink" href="#analysis-command" title="Permalink to this headline">¶</a></h1>
+<p>This is the command issued to create an analysis.</p>
+<dl class="function">
+<dt>
+<code class="sig-name descname">analysis analysisType? &lt;-numSublevels $x -numSubSteps $y&gt;</code></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$analysisType</p></td>
+<td><p><em>string</em></p></td>
+<td><p>type of analysis object to be constructed. Currently 3 valid options:</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><strong>Static</strong> - for static analysis</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><strong>Transient</strong> - for transient analysis with constant time step</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><strong>VariableTransient</strong> - for transient analysis with variable time step</p></td>
+</tr>
+<tr class="row-even"><td><p>$x</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>number of sublevels transient analysis should try if failure</p></td>
+</tr>
+<tr class="row-odd"><td><p>$y</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>number of subdivisions to be tried at each sublevel</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The &lt;-numSublevels $x -numSubSteps $y&gt; only works for the <strong>Transient</strong> type</p>
+<p>The components of the analysis, i.e. numberer, constraint handler, system, test, integrator, algorithm, should all be issued BEFORE the analysis object is created.</p>
+<p>The <strong>VariableTransient</strong> option is still available. The optional additions for the Transient analysis have been found to provide better options for nonlinear problems with convergence issues.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When swithcing from one type of analysis to another, e.g. Sttaic to Transient, it is necessary to issue a <a class="reference internal" href="../misc/wipeAnalysis.html#wipeanalysis"><span class="std std-ref">wipeAnalysis Command</span></a>.</p>
+</div>
+<div class="admonition-static-analysis-example admonition">
+<p class="admonition-title">Static Analysis Example</p>
+<p>The following example shows how to construct a Static analysis.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">system</span> SuperLU
+<span class="nv">constraints</span> Transformation
+<span class="nv">numberer</span> RCM
+<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-12  <span class="mi">10</span> <span class="mi">3</span>
+<span class="nv">algorithm</span> Newton
+<span class="nv">integrator</span> LoadControl <span class="mf">0.1</span>
+<span class="nv">analysis</span> Static
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;SuperLU&#39;</span><span class="p">);</span>
+<span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>
+<span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="s1">&#39;NormDispIncr&#39;</span><span class="p">,</span><span class="mf">1.0e-12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;Newton&#39;</span><span class="p">)</span>
+<span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;LoadControl&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="n">Static</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-transient-analysis-example admonition">
+<p class="admonition-title">Transient Analysis Example</p>
+<p>The following example shows how to construct a Transient analysis.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">system</span> SuperLU
+<span class="nv">constraints</span> Transformation
+<span class="nv">numberer</span> RCM
+<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-12  <span class="mi">10</span> <span class="mi">3</span>
+<span class="nv">algorithm</span> Newton
+<span class="nv">integrator</span> Newmark <span class="mf">0.5</span> <span class="mf">0.25</span>
+<span class="nv">analysis</span> Transient <span class="o">-</span>numSubLevels <span class="mi">3</span>  <span class="o">-</span>numSubSteps <span class="mi">10</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;SuperLU&#39;</span><span class="p">);</span>
+<span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>
+<span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="s1">&#39;NormDispIncr&#39;</span><span class="p">,</span><span class="mf">1.0e-12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;Newton&#39;</span><span class="p">)</span>
+<span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;Newmark&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">analysis</span><span class="p">(</span><span class="s1">&#39;Transient&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Code Developed by <strong>fmk</strong></p>
 </div>
 
 

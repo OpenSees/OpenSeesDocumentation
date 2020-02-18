@@ -101,7 +101,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.4. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
@@ -186,6 +187,80 @@
             
   <div class="section" id="analyze-command">
 <h1><span class="section-number">3.2.6. </span>Analyze Command<a class="headerlink" href="#analyze-command" title="Permalink to this headline">¶</a></h1>
+<p>This command is used to perform the analysis. It returns a value indicating sucess or failure of the analysis.</p>
+<dl class="function">
+<dt>
+<code class="sig-name descname">analyze $numIncr &lt;$dt&gt; &lt;$dtMin $dtMax $Jd&gt;</code></dt>
+<dd><p>$numIncr, <em>integer</em>, number of analysis steps to perform.
+$dt, <em>float</em>, time-step increment. Required if transient or variable transient analysis
+$dtMin $dtMax, <em>float</em>, minimum and maximum time steps. Required if a variable time step transient analysis was specified.
+$Jd, <em>integer</em>, number of iterations user would like performed at each step. The variable transient analysis will change current time step if last analysis step took more or less iterations than this to converge. Required if a variable time step transient analysis was specified.</p>
+</dd></dl>
+
+<p>RETURNS:</p>
+<p>0 if successful</p>
+<p>&lt;0 if NOT successful</p>
+<div class="admonition-static-analysis-example admonition">
+<p class="admonition-title">Static Analysis Example</p>
+<p>The following example shows how to construct a Static analysis.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">system</span> SuperLU
+<span class="nv">constraints</span> Transformation
+<span class="nv">numberer</span> RCM
+<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-12  <span class="mi">10</span> <span class="mi">3</span>
+<span class="nv">algorithm</span> Newton
+<span class="nv">integrator</span> LoadControl <span class="mf">0.1</span>
+<span class="nv">analysis</span> Static
+<span class="k">set</span> ok <span class="k">[</span><span class="nv">analyze</span> <span class="mi">10</span><span class="k">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;SuperLU&#39;</span><span class="p">);</span>
+<span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>
+<span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="s1">&#39;NormDispIncr&#39;</span><span class="p">,</span><span class="mf">1.0e-12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;Newton&#39;</span><span class="p">)</span>
+<span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;LoadControl&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="n">Static</span>
+<span class="n">ok</span> <span class="o">=</span> <span class="n">analyse</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-transient-analysis-example admonition">
+<p class="admonition-title">Transient Analysis Example</p>
+<p>The following example shows how to construct a Transient analysis.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">system</span> SuperLU
+<span class="nv">constraints</span> Transformation
+<span class="nv">numberer</span> RCM
+<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-12  <span class="mi">10</span> <span class="mi">3</span>
+<span class="nv">algorithm</span> Newton
+<span class="nv">integrator</span> Newmark <span class="mf">0.5</span> <span class="mf">0.25</span>
+<span class="nv">analysis</span> Transient <span class="o">-</span>numSubLevels <span class="mi">3</span>  <span class="o">-</span>numSubSteps <span class="mi">10</span>
+<span class="k">set</span> ok <span class="k">[</span><span class="nv">analyze</span> <span class="mi">2000</span> <span class="mf">0.02</span><span class="k">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;SuperLU&#39;</span><span class="p">);</span>
+<span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>
+<span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="s1">&#39;NormDispIncr&#39;</span><span class="p">,</span><span class="mf">1.0e-12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;Newton&#39;</span><span class="p">)</span>
+<span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;Newmark&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">analysis</span><span class="p">(</span><span class="s1">&#39;Transient&#39;</span><span class="p">)</span>
+<span class="n">ok</span> <span class="o">=</span> <span class="n">analyze</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Code Developed by: <strong>fmk</strong></p>
 </div>
 
 

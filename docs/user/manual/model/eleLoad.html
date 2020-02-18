@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.1.7.3.2. Imposed Motion Command &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.7.1.2. eleLoad Command &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.2. Analysis Commands" href="../analysisCommands.html" />
-    <link rel="prev" title="3.1.7.3.1. Ground Motion" href="groundMotion.html" /> 
+    <link rel="next" title="3.1.7.1.3. sp Command" href="sp.html" />
+    <link rel="prev" title="3.1.7.1.1. load Command" href="load.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,9 +98,9 @@
 <li class="toctree-l3"><a class="reference internal" href="mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timeSeries.html">3.1.6. Time Series Command</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="pattern.html">3.1.7. Pattern Command</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="plainPattern.html">3.1.7.1. Plain Pattern</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="plainPattern.html">3.1.7.1. Plain Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="uniformExcitationPattern.html">3.1.7.2. Uniform Excitation</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="multiSupportPattern.html">3.1.7.3. Multisupport Excitation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiSupportPattern.html">3.1.7.3. Multisupport Excitation</a></li>
 </ul>
 </li>
 </ul>
@@ -174,15 +174,15 @@
         
           <li><a href="pattern.html"><span class="section-number">3.1.7. </span>Pattern Command</a> &raquo;</li>
         
-          <li><a href="multiSupportPattern.html"><span class="section-number">3.1.7.3. </span>Multisupport Excitation</a> &raquo;</li>
+          <li><a href="plainPattern.html"><span class="section-number">3.1.7.1. </span>Plain Pattern</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.7.3.2. </span>Imposed Motion Command</li>
+      <li><span class="section-number">3.1.7.1.2. </span>eleLoad Command</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../_sources/user/manual/model/imposedMotion.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/user/manual/model/eleLoad.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -195,44 +195,97 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="imposed-motion-command">
-<span id="imposedmotion"></span><h1><span class="section-number">3.1.7.3.2. </span>Imposed Motion Command<a class="headerlink" href="#imposed-motion-command" title="Permalink to this headline">¶</a></h1>
-<p>This command is used to construct an ImposedMotionSP constraint which is used to enforce the response of a dof at a node in the model. The response enforced at the node at any give time is obtained from the GroundMotion object associated with the constraint.</p>
+  <div class="section" id="eleload-command">
+<span id="eleload"></span><h1><span class="section-number">3.1.7.1.2. </span>eleLoad Command<a class="headerlink" href="#eleload-command" title="Permalink to this headline">¶</a></h1>
+<p>The eleLoad command is used to construct an ElementalLoad object and add it to the enclosing LoadPattern.</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">imposedMotion $nodeTag $dirn $gMotionTag</code></dt>
-<dd><p>$nodeTag, <em>integer</em>, tag of node on which constraint is to be placed
-$dof, <em>integer</em>, dof of enforced response. Valid range is from 1 through ndf at node.
-$gMotionTag, <em>integer</em>,   pre-defined GroundMotion object tag</p>
-</dd></dl>
+<code class="sig-name descname">eleLoad $eleLoad $arg1 $arg2 $arg3 ....</code></dt>
+<dd></dd></dl>
 
-<div class="admonition-example admonition">
-<p class="admonition-title">Example:</p>
-<p>The following example shows how to construct a <strong>Multi-Suppert Excitation</strong> pattern with a tag of <strong>1* that will constrain the nodes **1</strong>, <strong>4</strong>, and <strong>7</strong> to move in the <strong>1</strong> dof direcection with the ground Motion supplied by the <strong>groundMotion</strong> with tag <strong>101</strong>, whose displacement is given by <strong>timeSeries</strong> with a tag of 3.</p>
-<ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
-</ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">timeSeries</span> Path <span class="mi">3</span> <span class="o">-</span>filePath elCentroDisp.dat <span class="o">-</span>dt <span class="mf">0.02</span>
-<span class="nv">pattern</span> MultipleSupport  <span class="mi">1</span>  <span class="k">{</span>
-     <span class="nv">groundMotion</span> <span class="mi">101</span> Series <span class="o">-</span>disp <span class="mi">3</span>
-
-     <span class="nv">imposedSupportMotion</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">101</span>
-     <span class="nv">imposedSupportMotion</span> <span class="mi">4</span> <span class="mi">1</span> <span class="mi">101</span>
-     <span class="nv">imposedSupportMotion</span> <span class="mi">7</span> <span class="mi">1</span> <span class="mi">101</span>
+<p>The beam column elements all accept eleLoad commands of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>eleLoad -ele $eleTag1 &lt;$eleTag2 ....&gt; -type -beamUniform $Wy &lt;$Wx&gt;
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>eleLoad -range $eleTag1 $eleTag2 -type -beamPoint $Py $xL &lt;$Px&gt;
+</pre></div>
+</div>
+<p>When NDM=3, the beam column elements all accept eleLoad commands of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>eleLoad -ele $eleTag1 &lt;$eleTag2 ....&gt; -type -beamUniform $Wy $Wz &lt;$Wx&gt;
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>eleLoad -range $eleTag1 $eleTag2 -type -beamPoint $Py $Pz $xL &lt;$Px&gt;
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$eleTags</p></td>
+<td><p><em>list integer</em></p></td>
+<td><p>tags of PREVIOUSLY DEFINED element</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Wx</p></td>
+<td><p><em>float</em></p></td>
+<td><p>mag of uniformily distributed ref load acting in direction along member length</p></td>
+</tr>
+<tr class="row-even"><td><p>$Wy</p></td>
+<td><p><em>float</em></p></td>
+<td><p>mag of uniformily distributed ref load acting in local y direction of element</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Wz</p></td>
+<td><p><em>float</em></p></td>
+<td><p>mag of uniformily distributed ref load acting in local z direction of element</p></td>
+</tr>
+<tr class="row-even"><td><p>$Py</p></td>
+<td><p><em>float</em></p></td>
+<td><p>mag of ref point load acting in direction along member length</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Py</p></td>
+<td><p><em>float</em></p></td>
+<td><p>mag of ref point load acting in local y direction of element</p></td>
+</tr>
+<tr class="row-even"><td><p>$Pz</p></td>
+<td><p><em>float</em></p></td>
+<td><p>mag of ref point load acting in local z direction of element</p></td>
+</tr>
+<tr class="row-odd"><td><p>$xL   location of point load relative to node I</p></td>
+<td><p>prescribed as fraction of element length</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The load values are reference loads values, it is the time sereries that provides the load factor. The load factor times the reference values is the load that is actually applied to the node.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>At the moment, eleLoads do not work with 3D beam-column elements if Corotational geometric transformation is used.</p>
+</div>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> width <span class="mf">20.0</span>
+<span class="k">set</span> W <span class="mf">4000.0</span><span class="k">;</span>
+<span class="nv">timeSeries</span> Linear <span class="mi">1</span>
+<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
+    <span class="nv">eleLoad</span> <span class="o">-</span>ele <span class="mi">3</span> <span class="o">-</span>type <span class="o">-</span>beamUniform <span class="k">[expr</span> <span class="o">-</span><span class="nv">$W</span><span class="o">/</span><span class="nv">$width</span><span class="k">]</span>
 <span class="k">}</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p><strong>Python Code</strong></p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timeSeries</span><span class="p">(</span><span class="s1">&#39;Path&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;-dt&#39;</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="s1">&#39;-filePath&#39;</span><span class="p">,</span> <span class="s1">&#39;elCentroDisp.dat&#39;</span><span class="p">)</span>
-<span class="n">pattern</span><span class="p">(</span><span class="s1">&#39;MultiSupport&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">groundMotion</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="s1">&#39;Series&#39;</span><span class="p">,</span> <span class="s1">&#39;-disp&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">imposedSupportMotion</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
-<span class="n">imposedSupportMotion</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
-<span class="n">imposedSupportMotion</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span>width = 20.0;
+W = 4000.0;
+timeSeries(&#39;Linear&#39;, 1)
+pattern(&#39;Plain&#39;,1,1)
+eleLoad(&#39;-ele&#39;,3, &#39;-type&#39;, -beamUniform&#39;, W/width)
 </pre></div>
-</div>
 </div>
 <p>Code Developed by: <strong>fmk</strong></p>
 </div>

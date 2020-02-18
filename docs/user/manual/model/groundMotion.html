@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Ground Motion &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.7.3.1. Ground Motion &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Imposed Motion Command" href="imposedMotion.html" />
+    <link rel="next" title="3.1.7.3.2. Imposed Motion Command" href="imposedMotion.html" />
     <link rel="prev" title="3.1.7.3. Multisupport Excitation" href="multiSupportPattern.html" /> 
 </head>
 
@@ -103,12 +103,12 @@
 <li class="toctree-l4 current"><a class="reference internal" href="multiSupportPattern.html">3.1.7.3. Multisupport Excitation</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="uniaxialMaterial.html">3.1.8. uniaxialMaterial Command</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.4. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
@@ -176,7 +176,7 @@
         
           <li><a href="multiSupportPattern.html"><span class="section-number">3.1.7.3. </span>Multisupport Excitation</a> &raquo;</li>
         
-      <li>Ground Motion</li>
+      <li><span class="section-number">3.1.7.3.1. </span>Ground Motion</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,7 +196,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ground-motion">
-<span id="groundmotion"></span><h1>Ground Motion<a class="headerlink" href="#ground-motion" title="Permalink to this headline">¶</a></h1>
+<span id="groundmotion"></span><h1><span class="section-number">3.1.7.3.1. </span>Ground Motion<a class="headerlink" href="#ground-motion" title="Permalink to this headline">¶</a></h1>
 <p>The groundMotion command is used to construct a GroundMotion object used by the ImposedMotionSP constraints in a MultipleSupportExcitation object. This command is of the following form:</p>
 <dl class="function">
 <dt>
@@ -204,7 +204,7 @@
 <dd></dd></dl>
 
 <p>The type of GroundMotion created and the additional arguments required depends on the type? provided in the command. The following contain information about type? and the args required for each of the available ground motion types:</p>
-<p>There are presently two type of groundMotions that can be created: 1) <a class="reference internal" href="plainGroundMotion.html#plaingroundmotion"><span class="std std-ref">Plain Ground Motion</span></a> and 2) <span class="xref std std-ref">interpolaatedGroundMotion</span></p>
+<p>There are presently two type of groundMotions that can be created: 1) <a class="reference internal" href="#plaingroundmotion"><span class="std std-ref">Plain Ground Motion</span></a> and 2) <span class="xref std std-ref">interpolaatedGroundMotion</span></p>
 <div class="section" id="plain-ground-motion">
 <span id="plaingroundmotion"></span><h2>Plain Ground Motion<a class="headerlink" href="#plain-ground-motion" title="Permalink to this headline">¶</a></h2>
 <p>Each GroundMotion object is associated with a number of TimeSeries objects, which define the acceleration, velocity and displacement records for that ground motion. The particular form of the command is as follows:</p>

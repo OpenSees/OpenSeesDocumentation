@@ -16,6 +16,14 @@ This commnand allows the user to construct a LoadPattern object. Each plain load
    $cFactor, |float|, constant factor (optional: default=1.0)
 
 
+.. toctree::
+   :maxdepth: 1
+
+   load
+   eleLoad
+   sp
+
+
 .. note::
    
    The loads (element, nodal, constraints) in a Plain Load pattern are **reference** loads. The actual load applied to a node or element is the product of the **$cFactor**, the reference load, and a **load factor**. The **load factor**, which is obtained from the associated :ref:`timeSeries` is a function of the **time** in the domain and the time series object.
@@ -48,5 +56,4 @@ This commnand allows the user to construct a LoadPattern object. Each plain load
       load(4, 50.0, -100.0)
 
 
-
-Code Developed by: **fmk**
+Code Developed by: |fmk|

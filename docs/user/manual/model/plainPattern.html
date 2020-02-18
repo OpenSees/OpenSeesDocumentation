@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.1.7.2. Uniform Excitation" href="uniformExcitationPattern.html" />
+    <link rel="next" title="3.1.7.1.1. load Command" href="load.html" />
     <link rel="prev" title="3.1.7. Pattern Command" href="pattern.html" /> 
 </head>
 
@@ -103,12 +103,12 @@
 <li class="toctree-l4"><a class="reference internal" href="multiSupportPattern.html">3.1.7.3. Multisupport Excitation</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="uniaxialMaterial.html">3.1.8. uniaxialMaterial Command</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.4. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
@@ -228,6 +228,13 @@
 </tr>
 </tbody>
 </table>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="load.html">3.1.7.1.1. load Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eleLoad.html">3.1.7.1.2. eleLoad Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sp.html">3.1.7.1.3. sp Command</a></li>
+</ul>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The loads (element, nodal, constraints) in a Plain Load pattern are <strong>reference</strong> loads. The actual load applied to a node or element is the product of the <strong>$cFactor</strong>, the reference load, and a <strong>load factor</strong>. The <strong>load factor</strong>, which is obtained from the associated <a class="reference internal" href="timeSeries.html#timeseries"><span class="std std-ref">Time Series Command</span></a> is a function of the <strong>time</strong> in the domain and the time series object.</p>

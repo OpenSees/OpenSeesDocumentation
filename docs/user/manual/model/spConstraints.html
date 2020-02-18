@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.1.4.1. sp Command" href="sp.html" />
+    <link rel="next" title="3.1.4.1. fix Command" href="fix.html" />
     <link rel="prev" title="3.1.3.9. SSPbrick Element" href="elements/SSPbrick.html" /> 
 </head>
 
@@ -95,22 +95,21 @@
 <li class="toctree-l3"><a class="reference internal" href="node.html">3.1.2. Node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="element.html">3.1.3. Element Command</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.4. SP_Constraint Commands</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sp.html">3.1.4.1. sp Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fix.html">3.1.4.2. fix Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixX.html">3.1.4.3. fixX Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixY.html">3.1.4.4. fixY Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixZ.html">3.1.4.5. fixY Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fix.html">3.1.4.1. fix Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixX.html">3.1.4.2. fixX Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixY.html">3.1.4.3. fixY Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixZ.html">3.1.4.4. fixY Command</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timeSeries.html">3.1.6. Time Series Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pattern.html">3.1.7. Pattern Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="uniaxialMaterial.html">3.1.8. uniaxialMaterial Command</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.4. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
@@ -195,16 +194,16 @@
             
   <div class="section" id="sp-constraint-commands">
 <h1><span class="section-number">3.1.4. </span>SP_Constraint Commands<a class="headerlink" href="#sp-constraint-commands" title="Permalink to this headline">¶</a></h1>
-<p>Single point constraints (SP_Constraints) are constraints that define the response of a single degree-of-freedom at a node. These constraints can be homogeneous <strong>(=0.0)</strong> or non-homogeneos. Non homogeneous SP_Constraints, which define the non-zero response of the degree-of-freedom, can be constant or time varying. In the OpenSees interpreters there are a number of commands to add a SP_Constraint.</p>
+<p>Single point constraints (SP_Constraints) are constraints that define the response of a single degree-of-freedom at a node. These constraints can be homogeneous <strong>(=0.0)</strong> or non-homogeneos. Non homogeneous SP_Constraints, which define the non-zero response of the degree-of-freedom, can be constant or time varying. In the OpenSees interpreters there are a number of commands to add a homogeneous SP_Constraint.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="sp.html">3.1.4.1. sp Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fix.html">3.1.4.2. fix Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fixX.html">3.1.4.3. fixX Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fixY.html">3.1.4.4. fixY Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fixZ.html">3.1.4.5. fixY Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fix.html">3.1.4.1. fix Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixX.html">3.1.4.2. fixX Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixY.html">3.1.4.3. fixY Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixZ.html">3.1.4.4. fixY Command</a></li>
 </ul>
 </div>
+<p>Non-homogeneous constraints are added with wither <span class="xref std std-ref">sp</span> or <span class="xref std std-ref">imposedMotion commands inside the :ref:`plainPattern</span> or <a class="reference internal" href="multiSupportPattern.html#multisupportexcitation"><span class="std std-ref">Multisupport Excitation</span></a> commands.</p>
 </div>
 
 

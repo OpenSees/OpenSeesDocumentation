@@ -21,6 +21,14 @@ The command has the following form:
 
 The type of pattern created and the additional arguments required depends on the patternType? provided in the command. The following contain information about patternType? and the additional args required for each of the available pattern types:
 
+
+.. figure:: figures/OpenSeesLoads.png
+	:align: center
+	:width: 600px
+	:figclass: align-center
+
+	OpenSees Loads
+
 .. toctree::
    :maxdepth: 4
 
