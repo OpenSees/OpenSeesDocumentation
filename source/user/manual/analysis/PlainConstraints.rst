@@ -29,6 +29,5 @@ The following example shows how to construct a reverse Cuthill-McKee numberer.
 
       constraints('Plain')
 
-   .. admonishment:: References
 
-Code veleoped by: |fmk|
+Code Develeoped by: |fmk|

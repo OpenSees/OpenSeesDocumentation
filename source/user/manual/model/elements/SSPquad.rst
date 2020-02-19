@@ -13,11 +13,11 @@ This command is used to construct a SSPquad element object. The SSPquad element 
    :widths: 10, 10, 40
 
    $eleTag	unique integer tag identifying element object
-   $iNode $jNode $kNode $lNode, 4 |integer|, the four nodes defining the element, input in counterclockwise order (-ndm 2 -ndf 2)
+   $iNode $jNode $kNode $lNode, 4 |integer|, the four nodes defining the element input in counterclockwise order (-ndm 2 -ndf 2)
    $thick, |float|, thickness of the element in out-of-plane direction
-   $type, |float|, string to relay material behavior to the element, can be either "PlaneStrain" or "PlaneStress"
+   $type, |float|, string to relay material behavior to the element (either "PlaneStrain" or "PlaneStress")
    $matTag, |integer|,	unique integer tag associated with previously-defined nDMaterial object
-   $b1 $b2, |float|, constant body forces in global x- and y-directions, respectively (optional: default = 0.0)
+   $b1 $b2, |float|, constant body forces in global x- and y-directions respectively (optional: default = 0.0)
 
 
 .. figure:: quad.png

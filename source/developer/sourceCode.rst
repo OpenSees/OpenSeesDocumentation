@@ -8,7 +8,7 @@ The OpenSees source code is available to obtain from the |githubLink|. GitHub is
 
 .. note::
 
-   If you plan on collaborating or even using OpenSees as your base code it is highly recommended that you FORK this repo to your own account and work on it there. We will not allow anybody to push to the |githibLink|.
+   If you plan on collaborating or even using OpenSees as your base code it is highly recommended that you FORK this repo to your own account and work on it there. We will not allow anybody to push to the |githubLink|.
 
 
 .. warning::

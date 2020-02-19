@@ -16,7 +16,7 @@ The type of GroundMotion created and the additional arguments required depends o
 
    $tag, |integer|, unique tag among ground motions in load pattern
    $type, |string|, the type of ground motion
-   $args, |floatList|, the args, specific to the type of motion
+   $args, |floatList|, args specific to the type of motion
 
 There are presently two type of groundMotions that can be created: 1) :ref:`plainGroundMotion` and 2) :ref:`interpolaatedGroundMotion`
 
