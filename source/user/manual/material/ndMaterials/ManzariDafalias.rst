@@ -1,4 +1,4 @@
-.. _ManzariDafalias
+.. _ManzariDafalias:
 
 Manzari Dafalias Material
 ^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -25,17 +25,22 @@ The following contain information about matType? and the args required for each 
 .. toctree::
    :maxdepth: 1
 
+   ndMaterials/ElasticIsotropic
+   ndMaterials/ElasticOrthotropic
+   ndMaterials/J2Plasticity
+   ndMaterials/DruckerPrager
    ndMaterials/ManzariDafalias
+   ndMaterials/BoundingCamClay
+   ndMaterials/PM4Sand
+   ndMaterials/PM4Silt
+   ndMaterials/PressureIndependentMultiYield
+   ndMaterials/PressureDependentMultiYield
 
-Elastic Isotropic Material
-Elastic Orthotropic Material
-J2 Plasticity Material
-Drucker Prager Material
+
 Concrete Damage Model
 Plane Stress Material
 Plane Strain Material
 Multi Axial Cyclic Plasticity
-Bounding Surface Cam Clay Material
 Plate Fiber Material
 Plane Stress Concrete Materials
 FSAM - 2D RC Panel Constitutive Behavior
@@ -44,8 +49,6 @@ CycLiqCP Material (Cyclic ElasticPlasticity)
 CycLiqCPSP Material
 Manzari Dafalias Material
 J2CyclicBoundingSurface Material
-PM4Sand Material
-PM4Silt Material (Beta)
 Stress Density Material
 Materials for Modeling Concrete Walls
 PlaneStressUserMaterial
