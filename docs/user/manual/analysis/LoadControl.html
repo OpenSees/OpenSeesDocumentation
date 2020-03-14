@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.2.4.1. LoadControl Command &mdash; OpenSees Documentation  documentation</title>
+  <title>3.2.6.1. LoadControl Command &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.2.4.2. DisplacementControl Command" href="DisplacementControl.html" />
-    <link rel="prev" title="3.2.4. Integrator" href="integrator.html" /> 
+    <link rel="next" title="3.2.6.2. DisplacementControl Command" href="DisplacementControl.html" />
+    <link rel="prev" title="3.2.6. Integrator" href="integrator.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,13 +95,15 @@
 <li class="toctree-l3"><a class="reference internal" href="constraints.html">3.2.1. Constraints Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="numberer.html">3.2.2. Numberer Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="system.html">3.2.3. System Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="integrator.html">3.2.4. Integrator</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.4.1. LoadControl Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DisplacementControl.html">3.2.4.2. DisplacementControl Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html">3.2.4. Convergence Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algorithm.html">3.2.5. algorithm Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="integrator.html">3.2.6. Integrator</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.6.1. LoadControl Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DisplacementControl.html">3.2.6.2. DisplacementControl Command</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="analysis.html">3.2.5. Analysis Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="analyze.html">3.2.6. Analyze Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html">3.2.7. Analysis Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analyze.html">3.2.8. Analyze Command</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
@@ -170,9 +172,9 @@
         
           <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
         
-          <li><a href="integrator.html"><span class="section-number">3.2.4. </span>Integrator</a> &raquo;</li>
+          <li><a href="integrator.html"><span class="section-number">3.2.6. </span>Integrator</a> &raquo;</li>
         
-      <li><span class="section-number">3.2.4.1. </span>LoadControl Command</li>
+      <li><span class="section-number">3.2.6.1. </span>LoadControl Command</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,7 +194,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="loadcontrol-command">
-<h1><span class="section-number">3.2.4.1. </span>LoadControl Command<a class="headerlink" href="#loadcontrol-command" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2.6.1. </span>LoadControl Command<a class="headerlink" href="#loadcontrol-command" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a LoadControl integrator object.</p>
 <dl class="function">
 <dt>
@@ -236,7 +238,7 @@
 <p>The optional arguments are supplied to speed up the step size in cases where convergence is too fast and slow down the step size in cases where convergence is too slow.</p>
 </div>
 <div class="section" id="theory">
-<h2><span class="section-number">3.2.4.1.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.6.1.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 <p>In Load Control the time in the domain is set to <span class="math notranslate nohighlight">\(t + \lambda_{t+1}\)</span> where,</p>
 <blockquote>
 <div><div class="math notranslate nohighlight">

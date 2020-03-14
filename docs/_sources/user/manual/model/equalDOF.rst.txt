@@ -10,11 +10,18 @@ This command is used to construct a multi-point constraint between nodes where t
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
 
-   $rNodeTag, |integer|,	   integer tag identifying the retained, or master node (rNode)
-   $cNodeTag, |integer|,	   integer tag identifying the constrained, or slave node (cNode)
+   $rNodeTag, |integer|,	   integer tag identifying the retained - the master node (rNode)
+   $cNodeTag, |integer|,	   integer tag identifying the constrained - slave node (cNode)
    $dof1 $dof2 ..., |integerList|, "| list of nodal degrees-of-freedom that are constrained at the cNode 
-   | to be the same as those at the rNode. Valid range is from 1 through ndf, the number of nodal 
-   | degrees-of-freedom."
+
+
+.. note::
+
+   retained node also known as the **master** node.
+
+   constarined node alsoe node as the **slave** node.
+
+   valid range of $dof is 1 through **ndf** of the **slave** node
 
 .. admonition:: Example:
 

@@ -95,9 +95,11 @@
 <li class="toctree-l3"><a class="reference internal" href="analysis/constraints.html">3.2.1. Constraints Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="analysis/numberer.html">3.2.2. Numberer Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="analysis/system.html">3.2.3. System Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="analysis/integrator.html">3.2.4. Integrator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="analysis/analysis.html">3.2.5. Analysis Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="analysis/analyze.html">3.2.6. Analyze Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis/test.html">3.2.4. Convergence Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis/algorithm.html">3.2.5. algorithm Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis/integrator.html">3.2.6. Integrator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis/analysis.html">3.2.7. Analysis Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis/analyze.html">3.2.8. Analyze Command</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="outputCommands.html">3.3. Output Commands</a></li>
@@ -184,7 +186,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="analysis-commands">
-<h1><span class="section-number">3.2. </span>Analysis Commands<a class="headerlink" href="#analysis-commands" title="Permalink to this headline">¶</a></h1>
+<span id="lblanalysiscommands"></span><h1><span class="section-number">3.2. </span>Analysis Commands<a class="headerlink" href="#analysis-commands" title="Permalink to this headline">¶</a></h1>
 <p>In OpenSees, an analysis is an object which is composed by the aggregation of component objects. It is the component objects which define the type of analysis that is performed on the model. The component classes, as shown in the figure below, consist of the following:</p>
 <ol class="arabic simple">
 <li><p>Constraint Handler – determines how the constraint equations are enforced in the analysis – how it handles the boundary conditions/imposed displacements</p></li>
@@ -200,43 +202,14 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="analysis/constraints.html">3.2.1. Constraints Command</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="analysis/PlainConstraints.html">3.2.1.1. Plain Constraint Handler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/PenaltyMethod.html">3.2.1.2. Penalty Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/TransformationMethod.html">3.2.1.3. Transformation Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/lagrangeMultipliers.html">3.2.1.4. Lagrange Multipliers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/numberer.html">3.2.2. Numberer Command</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="analysis/PlainNumberer.html">3.2.2.1. Plain Numberer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/RCM.html">3.2.2.2. Reverse Cuthill McKee Numberer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/AMD.html">3.2.2.3. Alternative Min Degree Numberer</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/system.html">3.2.3. System Command</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="analysis/BandGeneral.html">3.2.3.1. BandGeneral System</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/BandSPD.html">3.2.3.2. BandSPD System</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/ProfileSPD.html">3.2.3.3. ProfileSPD System</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/SuperLU.html">3.2.3.4. SuperLU System</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/Umfpack.html">3.2.3.5. Umfpack System</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/FullGeneral.html">3.2.3.6. FullGeneral System</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/SparseSYM.html">3.2.3.7. SparseSYM Solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/Mumps.html">3.2.3.8. Mumps Solver</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/integrator.html">3.2.4. Integrator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="analysis/LoadControl.html">3.2.4.1. LoadControl Command</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="analysis/LoadControl.html#theory">3.2.4.1.1. Theory</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/DisplacementControl.html">3.2.4.2. DisplacementControl Command</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="analysis/DisplacementControl.html#theory">3.2.4.2.1. THEORY</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/analysis.html">3.2.5. Analysis Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/analyze.html">3.2.6. Analyze Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/constraints.html">3.2.1. Constraints Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/numberer.html">3.2.2. Numberer Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/system.html">3.2.3. System Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/test.html">3.2.4. Convergence Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/algorithm.html">3.2.5. algorithm Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/integrator.html">3.2.6. Integrator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/analysis.html">3.2.7. Analysis Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/analyze.html">3.2.8. Analyze Command</a></li>
 </ul>
 </div>
 </div>

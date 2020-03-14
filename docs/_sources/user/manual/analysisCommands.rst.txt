@@ -1,3 +1,5 @@
+.. _lblAnalysisCommands:
+
 Analysis Commands
 -----------------
 
@@ -17,6 +19,7 @@ In OpenSees, an analysis is an object which is composed by the aggregation of co
 	OpenSees Analysis
 
 .. toctree::
+   :maxdepth: 1
 
    analysis/constraints
    analysis/numberer

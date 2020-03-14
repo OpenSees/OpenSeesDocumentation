@@ -204,6 +204,33 @@
 <dd></dd></dl>
 
 <p>The type of GroundMotion created and the additional arguments required depends on the type? provided in the command. The following contain information about type? and the args required for each of the available ground motion types:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$tag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>unique tag among ground motions in load pattern</p></td>
+</tr>
+<tr class="row-odd"><td><p>$type</p></td>
+<td><p><em>string</em></p></td>
+<td><p>the type of ground motion</p></td>
+</tr>
+<tr class="row-even"><td><p>$args</p></td>
+<td><p><em>list float</em></p></td>
+<td><p>args specific to the type of motion</p></td>
+</tr>
+</tbody>
+</table>
 <p>There are presently two type of groundMotions that can be created: 1) <a class="reference internal" href="#plaingroundmotion"><span class="std std-ref">Plain Ground Motion</span></a> and 2) <span class="xref std std-ref">interpolaatedGroundMotion</span></p>
 <div class="section" id="plain-ground-motion">
 <span id="plaingroundmotion"></span><h2>Plain Ground Motion<a class="headerlink" href="#plain-ground-motion" title="Permalink to this headline">¶</a></h2>

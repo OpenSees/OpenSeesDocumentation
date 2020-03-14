@@ -1,7 +1,7 @@
 .. _nodeCoord:
 
 nodeCoord Command
-****************
+*****************
 
 This command returns the current coordinate at a specified node.
 

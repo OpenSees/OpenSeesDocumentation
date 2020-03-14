@@ -24,7 +24,7 @@ Building Parallel Versions
 
 	Report bugs to http://www.open-mpi.org/community/help/
    
-.. notes::
+.. note::
    gfortran was previosuly installed on our machine. 
 
 2. Install Some Other Software

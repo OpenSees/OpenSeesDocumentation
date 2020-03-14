@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.4.2.8. PM4Silt Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.4.2.9. Pressure Independent Multi Yield" href="PressureIndependentMultiYield.html" />
+    <link rel="prev" title="3.4.2.7. PM4Sand Material" href="PM4Sand.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ElasticIsotropic.html">3.4.2.1. Elastic Isotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticOrthotropic.html">3.4.2.2. Elastic Orthotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2Plasticity.html">3.4.2.3. J2 Plasticity Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DruckerPrager.html">3.4.2.4. Drucker Prager Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ManzariDafalias.html">3.4.2.5. Manzari Dafalias Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundingCamClay.html">3.4.2.6. Bounding Cam Clay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Sand.html">3.4.2.7. PM4Sand Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.2.8. PM4Silt Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureIndependentMultiYield.html">3.4.2.9. Pressure Independent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+        
+          <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4.2.8. </span>PM4Silt Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/user/manual/material/ndMaterials/PM4Silt.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pm4silt-material">
+<span id="pm4silt"></span><h1><span class="section-number">3.4.2.8. </span>PM4Silt Material<a class="headerlink" href="#pm4silt-material" title="Permalink to this headline">¶</a></h1>
+<p>Code Developed by: <strong>Long Chen</strong> and <a class="reference external" href="https://www.ce.washington.edu/facultyfinder/pedro-arduino">Pedro Arduino</a> at U.Washington.</p>
+<p>This command is used to construct a 2-dimensional PM4Silt material (<a class="reference internal" href="PM4Sand.html#boulanger-ziotopoulou2017" id="id1"><span>[Boulanger-Ziotopoulou2017]</span></a>).</p>
+<div class="admonition-function admonition">
+<p class="admonition-title">Function</p>
+<p>nDMaterial PM4Silt $matTag $S_u $Su_Rat $G_o $h_po $Den &lt;$Su_factor $Patm $nu $nG $h0 $eInit $lambda $phicv $nb_wet $nb_dry $nd $Ado $ru_max $zmax $cz $ce $Cgd $ckaf $m_m $CG_consol&gt;</p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$S_u</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Undrained shear strength</p></td>
+</tr>
+<tr class="row-even"><td><p>$Su_Rat</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Undrained shear strength ratio.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$G_o</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Shear modulus constant</p></td>
+</tr>
+<tr class="row-even"><td><p>$h_po</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Contraction rate parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Den</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Mass density of the material</p></td>
+</tr>
+<tr class="row-even"><td><p>$Su_factor</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Undrained shear strength reduction factor</p></td>
+</tr>
+<tr class="row-odd"><td><p>$P_atm</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Atmospheric pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>$nu</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Poisson’s ratio. Default value is 0.3.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$nG</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Shear modulus exponent. Default value is 0.75.</p></td>
+</tr>
+<tr class="row-even"><td><p>$h0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Variable that adjusts the ratio of plastic modulus to elastic modulus. Default value is 0.5.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$eInit</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Initial void ratios. Default value is 0.90.</p></td>
+</tr>
+<tr class="row-even"><td><p>$lambda</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: The slope of critical state line in e-ln(p) space. Default value is 0.060.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$phicv</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Critical state effective friction angle. Default value is 32 degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p>$nb_wet</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Bounding surface parameter for loose of critical state conditions 1.0 ≥ $nb_wet ≥ 0.01. Default value is 0.8.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$nb_dry</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Bounding surface parameter for dense of critical state conditions $nb_dry ≥ 0. Default value is 0.5.</p></td>
+</tr>
+<tr class="row-even"><td><p>$nd</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Dilatancy surface parameter $nd ≥ 0. Default value is 0.3.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Ado</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Dilatancy parameter. Default value is 0.8.</p></td>
+</tr>
+<tr class="row-even"><td><p>$ru_max</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Maximum pore pressure ratio based on p’.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$z_max</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Fabric-dilatancy tensor parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>$cz</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Fabric-dilatancy tensor parameter. Default value is 100.0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$ce</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Variable that adjusts the rate of strain accumulation in cyclic loading</p></td>
+</tr>
+<tr class="row-even"><td><p>$cgd</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Variable that adjusts degradation of elastic modulus with accumulation of fabric. Default value is 3.0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$ckaf</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Variable that controls the effect that sustained static shear stresses have on plastic modulus. Default value is 4.0.</p></td>
+</tr>
+<tr class="row-even"><td><p>$m_m</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Yield surface constant (radius of yield surface in stress ratio space). Default value is 0.01.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$CG_consol</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Optional: Reduction factor of elastic modulus for reconsolidation. $CG_consol ≥ 1. Default value is 2.0.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The material formulation for the PM4Silt object is “PlaneStrain”</p>
+<p>If both S_u and Su_Rat values are specified the value of S_u is used.</p>
+<p>Valid Element Recorder queries are <strong>stress</strong>, <strong>strain</strong>, <strong>alpha</strong> (or backstressratio) for <span class="math notranslate nohighlight">\(\mathbf{\alpha}\)</span>, <strong>fabric</strong> for <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, and <strong>alpha_in</strong> (or alphain) for <span class="math notranslate nohighlight">\(\mathbf{\alpha_{in}}\)</span></p>
+<p>Elastic or response could be enforced by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>updateMaterialStage -material $matTag -stage 0
+</pre></div>
+</div>
+<p>Elastoplastic by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>updateMaterialStage -material $matTag -stage 1
+</pre></div>
+</div>
+<p>The program will use the default value of a secondary parameter if a negative input is assigned to that parameter, e.g. Ado = -1. However, FirstCall is mandatory when switching from elastic to elastoplastic if negative inputs are assigned to stress-dependent secondary parameters, e.g. Ado and zmax. FirstCall can be set as,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>setParameter -value 0 -ele $elementTag FirstCall $matTag
+</pre></div>
+</div>
+<p>Post-shake reconsolidation can be activated by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>setParameter -value 1 -ele $elementTag Postshake $matTag
+
+The user should check that the results are not sensitive to time step size.
+</pre></div>
+</div>
+</div>
+<dl class="citation">
+<dt class="label" id="boulanger-ziotopoulou2018"><span class="brackets">Boulanger-Ziotopoulou2018</span></dt>
+<dd><p>R.W.Boulanger, K.Ziotopoulou. “PM4Silt(Version 1): A Silt Plasticity Model for Earthquake Engineering Applications”. Report No. UCD/CGM-18/01 2018</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, The Regents of the University of California
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>
