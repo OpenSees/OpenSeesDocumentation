@@ -7,7 +7,7 @@ This command is used to construct an AMD degree-of-freedom numbering object to p
 
 .. admonition:: Example 
 
-The following example shows how to construct an alternative min-degree numberer.
+   The following example shows how to construct an alternative min-degree numberer.
 
    1. **Tcl Code**
 

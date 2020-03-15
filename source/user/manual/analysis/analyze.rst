@@ -1,4 +1,6 @@
-Analyze Command
+.. _analyze:
+
+analyze Command
 ***************
 
 This command is used to perform the analysis. It returns a value indicating sucess or failure of the analysis. 

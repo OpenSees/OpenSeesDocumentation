@@ -1,5 +1,7 @@
-Integrator
-**********
+.. _integrator:
+
+integrator Command
+******************
 
 This command is used to construct the Integrator object. 
 

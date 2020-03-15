@@ -1,11 +1,11 @@
-.. _NormDispIncr:
+.. _EnergyIncr:
 
-Norm Displacement Incerement
-----------------------------
+Energy Increment
+----------------
 
-This command is used to construct a convergence test which uses the norm of the solution, :math:`x` vector, of the matrix equation, :math:`Ax=b` to determine if convergence has been reached. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, it is equal to the change in nodal displacments in the system due to the current unbalance. The command to create a NormUnbalance test is the following:
+This command is used to construct a convergence test which uses the energy increment, :math:`0.5 (x^T b)`, where the two vector come from the matrix equation :math:`Ax=b`, to determine if convergence has been reached. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, :math:`x` is euqal to the incremental displacement and :math:`b` the unbalanced force. The command to create a NormEnergyIncr test is the following:
 
-.. function:: test NormDispIncr $tol $iter <$pFlag> <$nType>
+.. function:: test EnergyIncr $tol $iter <$pFlag>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -19,8 +19,6 @@ This command is used to construct a convergence test which uses the norm of the 
     | 2 print information on norms and number of iterations at end of successful test
     | 4 at each step it will print the norms and also the <math>\Delta U</math> and <math>R(U)</math> vectors.
     | 5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCEESSFULL test."
-    $nType, |integer|, "type of norm (optional: default is 2 (0 = max-norm 1 = 1-norm 2 = 2-norm ...))"
-
 
 .. note::
 
@@ -28,19 +26,19 @@ This command is used to construct a convergence test which uses the norm of the 
 
 .. admonition:: Example:
 
-   The following examples demonstrate the command to create a NormDispIncr test whcih allows 10 iterations till failure with a 2-norm in the :math:`x` vector, i.e. :math:`\sqrt(x^T x)` of **1.0e-2**.
+   The following examples demonstrate the command to create a NormEnergyIncr test whcih allows 10 iterations till failure with an energy increment :math:`0.5 (x^T b)` of **1.0e-2**.
 
    1. **Tcl Code**
 
    .. code-block:: tcl
 
-      test NormDispIncr 1.0e-2  10 2
+      test EnergyIncr 1.0e-2  10 2
 
    2. **Python Code**
 
    .. code-block:: python
 
-      test('NormDispIncr', 1.0e-2, 10, 2)
+      test('EnergyIncr', 1.0e-2, 10, 2)
 
 
 Code Developed by: **fmk**

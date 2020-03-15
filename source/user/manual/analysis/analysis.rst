@@ -1,7 +1,7 @@
 
 .. _analysis:
 
-Analysis Command
+analysis Command
 ****************
 
 This is the command issued to create an analysis.

@@ -14,7 +14,7 @@ It does not follow constraints, by that we mean the constrained node in a MP_Con
 
 .. admonition:: Example 
 
-The following example shows how to construct a reverse Cuthill-McKee numberer.
+   The following example shows how to construct a reverse Cuthill-McKee numberer.
 
    1. **Tcl Code**
 

@@ -47,8 +47,8 @@ For a load path where both time and values are specified in a list included in t
 
 .. admonition:: EXAMPLE:
 
-timeSeries Path 1 -dT 0.02 -filePath A-ELC270.AT2 -factor $G
-
-timeSeries Path 2 -time {0.0 0.2 0.4 1.0} -values {0.0 1.0 2.0 0.0}
+   timeSeries Path 1 -dT 0.02 -filePath A-ELC270.AT2 -factor $G
+   
+   timeSeries Path 2 -time {0.0 0.2 0.4 1.0} -values {0.0 1.0 2.0 0.0}
 
 Code developed by: |fmk|
