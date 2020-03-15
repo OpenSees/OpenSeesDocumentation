@@ -230,9 +230,10 @@
 <p class="admonition-title">Warning</p>
 <p>The degree to which the constraints are enforced is dependent on the penalty values chosen. Problems can arise if these values are too small (constraint not enforced strongly enough) or too large (problems associated with conditioning of the system of equations).</p>
 </div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <p>The following example shows how to construct a Penalty Method constraint handler</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">numberer</span> Penalty <span class="mf">1.0</span>e10 <span class="mf">1.0</span>e10
@@ -244,7 +245,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;Penalty&#39;</span><span class="p">,</span> <span class="mf">1.0e10</span><span class="p">,</span> <span class="mf">1.0e10</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</div>
 <p>Code Developed by: <strong>fmk</strong></p>
 </div>
 

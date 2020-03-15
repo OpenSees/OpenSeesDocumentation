@@ -6,7 +6,7 @@ This command is used to construct a Plain degree-of-freedom numbering object to 
 
 .. function:: numberer Plain
 
-.. notes::
+.. note::
 
    For very small problems and for the sparse matrix solvers which provide their own numbering scheme, order is not really important so plain numberer is just fine. For large models and analysis using solver types other than the sparse solvers, the order will have a major impact on performance of the solver and the plain handler is a poor choice.
 

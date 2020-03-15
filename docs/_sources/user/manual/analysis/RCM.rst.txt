@@ -11,7 +11,7 @@ This command is used to construct an RCM degree-of-freedom numbering object to p
 
 .. admonition:: Example 
 
-The following example shows how to construct a reverse Cuthill-McKee numberer.
+   The following example shows how to construct a reverse Cuthill-McKee numberer.
 
    1. **Tcl Code**
 
@@ -26,9 +26,8 @@ The following example shows how to construct a reverse Cuthill-McKee numberer.
 
       numberer('RCM')
 
-   .. admonishment:: References
-
 .. [REFERNCES]
+
    E. Cuthill and J. McKee. Reducing the bandwidth of sparse symmetric matrices In Proc. 24th Nat. Conf. ACM, pages 157–172, 1969.
 
    J. A. George and J. W-H. Liu, Computer Solution of Large Sparse Positive Definite Systems, Prentice-Hall, 1981

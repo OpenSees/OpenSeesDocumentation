@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.2.5. algorithm Command" href="algorithm.html" />
+    <link rel="next" title="3.2.4.3. Energy Increment" href="NormEnergyIncr.html" />
     <link rel="prev" title="3.2.4.1. Norm Unbalance" href="NormUnbalance.html" /> 
 </head>
 
@@ -98,6 +98,8 @@
 <li class="toctree-l3 current"><a class="reference internal" href="test.html">3.2.4. Convergence Test</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="NormUnbalance.html">3.2.4.1. Norm Unbalance</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.4.2. Norm Displacement Incerement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NormEnergyIncr.html">3.2.4.3. Energy Increment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RelativeNormUnbalance.html">3.2.4.4. Ralative Norm Unbalance</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="algorithm.html">3.2.5. algorithm Command</a></li>
@@ -195,52 +197,46 @@
             
   <div class="section" id="norm-displacement-incerement">
 <span id="normdispincr"></span><h1><span class="section-number">3.2.4.2. </span>Norm Displacement Incerement<a class="headerlink" href="#norm-displacement-incerement" title="Permalink to this headline">¶</a></h1>
-<p>This command is used to construct a convergence test which uses the norm of the solution, <span class="math notranslate nohighlight">\(x\)</span> vector, of the matrix equation, <span class="math notranslate nohighlight">\(Ax=b\)</span> to determine if convergence has been reached. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, it is equal to the change in nodal displacments in the system. The command to create a NormUnbalance test is the following:</p>
+<p>This command is used to construct a convergence test which uses the norm of the solution, <span class="math notranslate nohighlight">\(x\)</span> vector, of the matrix equation, <span class="math notranslate nohighlight">\(Ax=b\)</span> to determine if convergence has been reached. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, it is equal to the change in nodal displacments in the system due to the current unbalance. The command to create a NormUnbalance test is the following:</p>
 <dl class="function">
 <dt>
 <code class="sig-name descname">test NormDispIncr $tol $iter &lt;$pFlag&gt; &lt;$nType&gt;</code></dt>
 <dd></dd></dl>
 
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 3.2.4.2 </span><span class="caption-text">:header: “Argument”, “Type”, “Description”
- :widths: 10, 10, 40</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
 </colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
 <tbody>
-<tr class="row-odd"><td><p>$tol</p></td>
+<tr class="row-even"><td><p>$tol</p></td>
 <td><p><em>float</em></p></td>
 <td><p>the tolerance criteria used to check for convergence</p></td>
 </tr>
-<tr class="row-even"><td><p>$iter</p></td>
+<tr class="row-odd"><td><p>$iter</p></td>
 <td><p><em>integer</em></p></td>
 <td><p>the max number of iterations to check before returning failure condition</p></td>
 </tr>
-<tr class="row-odd"><td><p>$pFlag</p></td>
+<tr class="row-even"><td><p>$pFlag</p></td>
 <td><p><em>integer</em></p></td>
-<td><p>print flag (optional: default is 0) valid options:</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td><p>0 print nothing</p></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td><p>1 print information on norms each time test() is invoked</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td><p>2 print information on norms and number of iterations at end of successful test</p></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td><p>4 at each step it will print the norms and also the &lt;math&gt;Delta U&lt;/math&gt; and &lt;math&gt;R(U)&lt;/math&gt; vectors.</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td><p>5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCEESSFULL test.</p></td>
+<td><blockquote>
+<div><div class="line-block">
+<div class="line">print flag (optional: default is 0) valid options:</div>
+<div class="line">0 print nothing</div>
+<div class="line">1 print information on norms each time test() is invoked</div>
+<div class="line">2 print information on norms and number of iterations at end of successful test</div>
+<div class="line">4 at each step it will print the norms and also the &lt;math&gt;Delta U&lt;/math&gt; and &lt;math&gt;R(U)&lt;/math&gt; vectors.</div>
+<div class="line">5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCEESSFULL test.</div>
+</div>
+</div></blockquote>
+</td>
 </tr>
 <tr class="row-odd"><td><p>$nType</p></td>
 <td><p><em>integer</em></p></td>
@@ -264,7 +260,7 @@
 <ol class="arabic simple" start="2">
 <li><p><strong>Python Code</strong></p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;NormDispIncr&#39;</span><span class="p">,</span> <span class="mf">1.0e-2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;NormDispIncr&#39;</span><span class="p">,</span> <span class="mf">1.0e-2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

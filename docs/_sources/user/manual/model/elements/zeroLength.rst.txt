@@ -5,9 +5,6 @@ ZeroLength Element
 
 This command is used to construct a zeroLength element object, which is defined by two nodes at the same location. A zeroLength element is similar to a set of springs placed between two nodes, each spring providing the force displacement relationship for a specified degree-of-freedom. The nodes are connected by multiple UniaxialMaterial objects, which provide the force-deformation relationship for the element in that degree-of-freedom direction. 
 
-.. function:: element zeroLength $eleTag $iNode $jNode -mat $matTag -dir $dir <-doRayleigh 
-   $rFlag> <-orient $x $yp>
-
 .. admonition::
 
    element zeroLength $eleTag $iNode $jNode -mat $matTag -dir $dir <-doRayleigh $rFlag> <-orient $x $yp>
@@ -31,15 +28,17 @@ This command is used to construct a zeroLength element object, which is defined 
 
 
 .. note::
+
    If the optional orientation vectors are not specified, the local element axes coincide with the global axes. Otherwise the local z-axis is defined by the cross product between the vectors x and yp vectors specified on the command line.
 
    The valid queries to a zero-length element when creating an ElementRecorder object are 'force,' 'deformation,' and 'material $i matArg1 matArg2 ...' Where $i is an integer indicating which of the materials whose data is to be output (a 1 corresponds to $matTag1, a 2 to $matTag2, and so on). 
 
 
 .. warning::
+
    If the distance between end noes is not **0.0** a warning message will appear when the script is run. This is just a warning in case you have made a mistake as most users when they use zeroLength elements are wanting to use them in the more normal way. ZeroLength elements can be used between nodes with non-zero length.
 
-.. admonition:: Example 
+.. admonition:: 
 
    The following examples demonstrate the commands in a script to add three zeroLength elements to domain. The three to be added have element tags **1**, **2**, and **3**. Element **1** has nodes **2** and **3** as its end ndes, has two materials **5** and **6** acting in directions **1** and **2**. Element **2** has as its end nodes **4** and **5**, has only one material **1** acting in direction **1**, the element has a global orientation.
 

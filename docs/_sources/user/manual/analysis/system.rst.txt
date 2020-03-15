@@ -1,6 +1,6 @@
 .. _system:
 
-System Command
+system Command
 **************
 
 This command is used to construct the **LinearSOE** and **LinearSolver** objects to store and solve the system of equations, :math:`Ax=b` during each step.

@@ -206,9 +206,10 @@
 <p class="admonition-title">Note</p>
 <p>For very small problems and for the sparse matrix solvers which provide their own numbering scheme, order is not really important so plain numberer is just fine. For large models and analysis using solver types other than the sparse solvers, the order will have a major impact on performance of the solver and the plain handler is a poor choice.</p>
 </div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <p>The following example shows how to construct a reverse Cuthill-McKee numberer.</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">numberer</span> RCM
@@ -220,7 +221,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</div>
 <dl class="citation">
 <dt class="label" id="refernces"><span class="brackets">REFERNCES</span></dt>
 <dd><ol class="upperalpha simple" start="5">

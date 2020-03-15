@@ -205,9 +205,10 @@
 
 <p>This constraint handler can only enforce homogeneous single point constraints (fix command) and multi-pont constraints where the constraint matrix is equal to the identity (equalDOF command).</p>
 <p>It does not follow constraints, by that we mean the constrained node in a MP_Constraint cannot be a retained node in another MP_Constraint.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <p>The following example shows how to construct a reverse Cuthill-McKee numberer.</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">constraints</span> Plain
@@ -219,7 +220,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Plain&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
+</div>
 <p>Code Develeoped by: <strong>fmk</strong></p>
 </div>
 

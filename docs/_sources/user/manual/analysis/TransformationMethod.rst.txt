@@ -5,7 +5,7 @@ This command is used to construct a PenaltyMethod constraint handler, which enfo
 
 .. function:: constraints Transformation
 
-.. notes::
+.. note::
 
    The single-point constraints when using the transformation method are done directly. The matrix equation is not manipulated to enforce them, rather the trial displacements are set directly at the nodes at the start of each analysis step.
 Great care must be taken when multiple constraints are being enforced as the transformation method does not follow constraints:
@@ -15,7 +15,7 @@ Great care must be taken when multiple constraints are being enforced as the tra
 
 .. admonition:: Example 
 
-The following example shows how to construct a Lagrange constraint handler
+   The following example shows how to construct a Lagrange constraint handler
 
    1. **Tcl Code**
 

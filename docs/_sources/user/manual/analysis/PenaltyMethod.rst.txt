@@ -18,7 +18,7 @@ This command is used to construct a PenaltyMethod constraint handler, which enfo
 
 .. admonition:: Example 
 
-The following example shows how to construct a Penalty Method constraint handler
+   The following example shows how to construct a Penalty Method constraint handler
 
    1. **Tcl Code**
 
