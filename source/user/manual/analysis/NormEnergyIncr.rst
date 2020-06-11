@@ -3,7 +3,7 @@
 Energy Increment
 ----------------
 
-This command is used to construct a convergence test which uses the energy increment, :math:`0.5 (x^T b)`, where the two vector come from the matrix equation :math:`Ax=b`, to determine if convergence has been reached. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, :math:`x` is euqal to the incremental displacement and :math:`b` the unbalanced force. The command to create a NormEnergyIncr test is the following:
+This command is used to construct a convergence test which uses the energy increment, :math:`0.5 (x^T b)`, where the two vector come from the matrix equation :math:`Ax=b`, to determine if convergence has been reached. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, :math:`x` is equal to the incremental displacement and :math:`b` the unbalanced force. The command to create a NormEnergyIncr test is the following:
 
 .. function:: test EnergyIncr $tol $iter <$pFlag>
 
@@ -18,7 +18,7 @@ This command is used to construct a convergence test which uses the energy incre
     | 1 print information on norms each time test() is invoked
     | 2 print information on norms and number of iterations at end of successful test
     | 4 at each step it will print the norms and also the <math>\Delta U</math> and <math>R(U)</math> vectors.
-    | 5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCEESSFULL test."
+    | 5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCCESSFUL test."
 
 .. note::
 
@@ -26,7 +26,7 @@ This command is used to construct a convergence test which uses the energy incre
 
 .. admonition:: Example:
 
-   The following examples demonstrate the command to create a NormEnergyIncr test whcih allows 10 iterations till failure with an energy increment :math:`0.5 (x^T b)` of **1.0e-2**.
+   The following examples demonstrate the command to create a NormEnergyIncr test which allows 10 iterations till failure with an energy increment :math:`0.5 (x^T b)` of **1.0e-2**.
 
    1. **Tcl Code**
 
@@ -41,4 +41,4 @@ This command is used to construct a convergence test which uses the energy incre
       test('EnergyIncr', 1.0e-2, 10, 2)
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|

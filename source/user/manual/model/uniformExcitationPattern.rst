@@ -57,4 +57,4 @@ The UniformExcitation pattern allows the user to apply a uniform excitation to a
 
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|

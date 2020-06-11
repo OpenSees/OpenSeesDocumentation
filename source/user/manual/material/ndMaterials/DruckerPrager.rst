@@ -5,7 +5,7 @@ Drucker Prager Material
 
 Code Developed by: |peter| and |pedro| at U.Washington.
 
-This command is used to construct an multi dimensional material object that has a Drucker-Prager yield criterium.
+This command is used to construct an multi dimensional material object that has a Drucker-Prager yield criterion.
 
 .. function:: nDMaterial DruckerPrager $matTag $k $G $sigmaY $rho $rhoBar $Kinf $Ko $delta1 $delta2 $H $theta $density <$atmPressure>
 

@@ -1,7 +1,7 @@
 Trig TimeSeries
 ^^^^^^^^^^^^^^^
 
-This command is used to construct a TimeSeries object in which the load factor is some trigonemtric function of the time in the domain :math:`\lambda = f(t) = \begin{cases}
+This command is used to construct a TimeSeries object in which the load factor is some trigonometric function of the time in the domain :math:`\lambda = f(t) = \begin{cases}
 \text{cFactor} * sin (\frac{2.0 \Pi (t-tStart)}{\text{period}} + \text{shift}), &\text{tStart} <= t <= \text{tFinish}\\
 \text{0.0}, &\text{otherwise}\\
 \end{cases}`
@@ -27,7 +27,7 @@ This command is used to construct a TimeSeries object in which the load factor i
 
 .. admonition:: Example:
 
-   The following code demonstrates how user would create a trigonemtric time series with a tag of **1**, has a start time of **0.0**, an end time of **10.0**, a period of **1.0**, and a max load factor of **2.0**.
+   The following code demonstrates how user would create a trigonometric time series with a tag of **1**, has a start time of **0.0**, an end time of **10.0**, a period of **1.0**, and a max load factor of **2.0**.
 
    1. **Tcl Code**
 
@@ -43,4 +43,4 @@ This command is used to construct a TimeSeries object in which the load factor i
       timSeries('Trig',  1, 0.0, 10.0, 1.0, '-factor', 2.0)
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|

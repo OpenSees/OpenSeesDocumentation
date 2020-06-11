@@ -5,7 +5,7 @@ Multisupport Excitation
 
 The Multi-Support pattern allows similar or different prescribed ground motions to be input at various supports in the structure. In OpenSees, the prescribed motion is applied using single-point constraints, the single-point constraints taking their constraint value from user created ground motions.
 
-The command to generate a multi-support excitation contains in { } the commands to generate all the ground motions and the single-point constraints in the pattern. The command is as follows:
+The command to generate a multi-support excitation contains in squirrelly brackets the commands to generate all the ground motions and the single-point constraints in the pattern. The command is as follows:
 
 
 .. function: pattern MultipleSupport $patternTag {ground motion & imposed motion commands}
@@ -28,13 +28,13 @@ As will be demonstrated in the example, the actual support conditions that are a
    
 .. warning::
 
-   The results for the responses at the nodes are the **ABSOLUTE** values, and not relative values as in the case of a UniformExciatation.
+   The results for the responses at the nodes are the **ABSOLUTE** values, and not relative values as in the case of a UniformExcitation.
 
-   When using MultiSupport pattern, the ground motions are applied by specifying for each constrained node a ground motion. This is done using the :ref:`imposedMotion` command. The ground motions at each of the supports is specified using a :ref:`groundMotion`. When enforcing the constraint at the node, the imposedMotion constraint will obtain the **displacement** from the fround motion. If the groundMotion was built by user specifying the accelaration, the **trapezoidal** rule is used for integration to obtain the **displacements**.
+   When using MultiSupport pattern, the ground motions are applied by specifying for each constrained node a ground motion. This is done using the :ref:`imposedMotion` command. The ground motions at each of the supports is specified using a :ref:`groundMotion`. When enforcing the constraint at the node, the imposedMotion constraint will obtain the **displacement** from the ground motion. If the groundMotion was built by user specifying the acceleration, the **trapezoidal** rule is used for integration to obtain the **displacements**.
 
 .. admonition:: Example:
 
-   The following example shows how to construct a **Multi-Suppert Excitation** pattern with a tag of **1* that will constrain the nodes **1**, **4**, and **7** to move in the **1** dof direcection with the ground Motion supplied by the **groundMotion** with tag **101**, whose displacement is given by **timeSeries** with a tag of 3.
+   The following example shows how to construct a **Multi-Support Excitation** pattern with a tag of **1* that will constrain the nodes **1**, **4**, and **7** to move in the **1** dof direction with the ground Motion supplied by the **groundMotion** with tag **101**, whose displacement is given by **timeSeries** with a tag of 3.
 
    1. **Tcl Code**
 
@@ -61,4 +61,4 @@ As will be demonstrated in the example, the actual support conditions that are a
       imposedSupportMotion(7,1,101)
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|

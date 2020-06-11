@@ -27,7 +27,7 @@ This command is used to construct a TimeSeries object in which the load factor i
 
 .. admonition:: Example:
 
-   The following code demonstrates how user would create a trigonemtric time series with a tag of **1**, has a start time of **0.0**, an end time of **10.0**, and a max load factor of **2.0**.
+   The following code demonstrates how user would create a trigonometric time series with a tag of **1**, has a start time of **0.0**, an end time of **10.0**, and a max load factor of **2.0**.
 
    1. **Tcl Code**
 

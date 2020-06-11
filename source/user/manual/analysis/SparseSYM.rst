@@ -7,11 +7,11 @@ This command is used to construct a sparse symmetric system of equations which u
 
 .. note:: 
 
-   Versions of OpenSees upto and including 2.2.0 used SparseSPD instead of SparseSYM as the option to create this system. The code is more general than the SPD moniker implies, working for negative definite as well as positive definite. For backward compatability this old option continues to work.
+   Versions of OpenSees up to and including 2.2.0 used SparseSPD instead of SparseSYM as the option to create this system. The code is more general than the SPD moniker implies, working for negative definite as well as positive definite. For backward compatibility this old option continues to work.
 
 .. admonition:: Example 
 
-   The following example shows how to construct a SparseSYM system
+   The following example shows how to construct a SparseSYM system:
 
    1. **Tcl Code**
 

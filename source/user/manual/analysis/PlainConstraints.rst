@@ -30,4 +30,4 @@ It does not follow constraints, by that we mean the constrained node in a MP_Con
       constraints('Plain')
 
 
-Code Develeoped by: |fmk|
+Code Developed by: |fmk|
