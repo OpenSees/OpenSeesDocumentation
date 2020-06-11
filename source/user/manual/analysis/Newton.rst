@@ -62,4 +62,4 @@ resulting in our iterative procedure where starting from a good initial guess we
       algorithm('Newton')
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|
