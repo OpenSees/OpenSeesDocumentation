@@ -6,7 +6,7 @@ This command is used to construct a Full General linear system of equation objec
 .. function:: system FullGeneral
 
 .. warning::
-   1. This type of system should almost never be used in production! This is because it requires a lot more memory than every other solver and takes more time in the actal solving operation than any other solver. 
+   1. This type of system should almost never be used in production! This is because it requires a lot more memory than every other solver and takes more time in the actual solving operation than any other solver. 
    2. It is required if the user is interested in looking at the global system matrix, using the **printA** command
 
 .. admonition:: Example 
