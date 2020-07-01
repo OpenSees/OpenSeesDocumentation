@@ -60,9 +60,9 @@ The Node recorder type records the response of a number of nodes at every conver
 
    The following examples demonstrate the use of the recorder Node command.
 
-   1. The first recorder will output to a file **nodesD.out** the displacements in **x** and **y** (**1** and **2**) directions at nodes **1**, **2**, **3**, and **4**. The output file will contain **9** columns (time, displacement in x and y at node 1, disp. in x and y at node 2, ... , disp. x and y at node 4))
+   1. The first recorder will output to a file ``nodesD.out`` the displacements in **x** and **y** (**1** and **2**) directions at nodes **1**, **2**, **3**, and **4**. The output file will contain **9** columns (time, displacement in x and y at node 1, disp. in x and y at node 2, ... , disp. x and y at node 4))
 
-   2. The second recorder will output to a file **nodesA.out** the total accelerations in **x** and **y** (**1** and **2**) directions at nodes **1**, **2**, **3**, and **4**. The output file will contain **9** columns (time, accel. in x and y at node 1, accel. in x and y at node 2, ... , accel. in x and y at node 4)). The accelerations output will be the accelerations stored at the nodes added to the values obtained from the time series. The **x** values are the accelerations in **x** direction at node plus values from timeSeries **1**, the **y** values are the accelerations in **y** direction at nodes plus the values from timeSries **2**.
+   2. The second recorder will output to a file ``nodesA.out`` the total accelerations in **x** and **y** (**1** and **2**) directions at nodes **1**, **2**, **3**, and **4**. The output file will contain **9** columns (time, accel. in x and y at node 1, accel. in x and y at node 2, ... , accel. in x and y at node 4)). The accelerations output will be the accelerations stored at the nodes added to the values obtained from the time series. The **x** values are the accelerations in **x** direction at node plus values from timeSeries **1**, the **y** values are the accelerations in **y** direction at nodes plus the values from timeSries **2**.
 
    .. code:: tcl
    
