@@ -1,0 +1,27 @@
+wy-nav-content {
+    max-width: none;
+}
+
+
+.math {
+    text-align: left;
+}
+
+.eqno {
+    float: right;
+}
+
+
+#div.wy-side-scroll{
+#	background:#cb463f;
+#}
+
+
+#span.caption-text{
+#	color: #000000;
+#}
+
+td{
+	white-space: normal !important;
+}
+

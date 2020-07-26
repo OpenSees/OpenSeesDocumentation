@@ -1,0 +1,5 @@
+   $tag, |integer|,  A positive integer uniquely identifying the material among all nDMaterials.
+   $nd, |integer|, "Number of dimensions, 2 for plane-strain, and 3 for 3D analysis."
+   $rho, |float|, "Saturated soil mass density."
+   $refShearModul (Gr), |float|,  "Reference low-strain shear modulus, specified at a reference mean effective confining pressure refPress of p’r (see below)."
+   $refBulkModul (Br), |float|, "Reference bulk modulus, specified at a reference mean effective confining pressure refPress of p’r (see below)."

@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.4.2.7. PM4Sand Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.4.2.8. PM4Silt Material" href="PM4Silt.html" />
+    <link rel="prev" title="3.4.2.6. Bounding Cam Clay" href="BoundingCamClay.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ElasticIsotropic.html">3.4.2.1. Elastic Isotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticOrthotropic.html">3.4.2.2. Elastic Orthotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2Plasticity.html">3.4.2.3. J2 Plasticity Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DruckerPrager.html">3.4.2.4. Drucker Prager Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ManzariDafalias.html">3.4.2.5. Manzari Dafalias Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundingCamClay.html">3.4.2.6. Bounding Cam Clay</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.2.7. PM4Sand Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Silt.html">3.4.2.8. PM4Silt Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureIndependentMultiYield.html">3.4.2.9. Pressure Independent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+        
+          <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4.2.7. </span>PM4Sand Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/user/manual/material/ndMaterials/PM4Sand.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pm4sand-material">
+<span id="pm4sand"></span><h1><span class="section-number">3.4.2.7. </span>PM4Sand Material<a class="headerlink" href="#pm4sand-material" title="Permalink to this headline">¶</a></h1>
+<p>Code Developed by: <strong>Long Chen</strong> and <a class="reference external" href="https://www.ce.washington.edu/facultyfinder/pedro-arduino">Pedro Arduino</a> at U.Washington.</p>
+<p>This command is used to construct a 2-dimensional PM4Sand material (<a class="reference internal" href="#boulanger-ziotopoulou2017" id="id1"><span>[Boulanger-Ziotopoulou2017]</span></a>).</p>
+<blockquote>
+<div><p>nDmaterial PM4Sand $matTag $Dr $G0 $hpo $Den &lt;$patm $h0 $emax $emin $nb $nd $Ado $zmax $cz $ce $phic $nu $cgd $cdr $ckaf $Q $R $m $Fsed_min $p_sedo&gt;</p>
+</div></blockquote>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Dr</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Relative density (fraction)</p></td>
+</tr>
+<tr class="row-even"><td><p>$G0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Shear modulus constant</p></td>
+</tr>
+<tr class="row-odd"><td><p>$hpo</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Contraction rate parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>$Den</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Mass density of the material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$P_atm</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Atmospheric pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>$h0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Variable that adjusts the ratio of plastic modulus to elastic modulus</p></td>
+</tr>
+<tr class="row-odd"><td><p>$emax and $emin</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Maximum and minimum void ratios</p></td>
+</tr>
+<tr class="row-even"><td><p>$nb</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Bounding surface parameter $nb ≥ 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>$nd</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Dilatancy surface parameter $nd ≥ 0</p></td>
+</tr>
+<tr class="row-even"><td><p>$Ado</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Dilatancy parameter will be computed at the time of initialization if input value is negative</p></td>
+</tr>
+<tr class="row-odd"><td><p>$z_max</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Fabric-dilatancy tensor parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>$cz</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Fabric-dilatancy tensor parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$ce</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Variable that adjusts the rate of strain accumulation in cyclic loading</p></td>
+</tr>
+<tr class="row-even"><td><p>$phic</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Critical state effective friction angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>$nu</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Poisson’s ratio</p></td>
+</tr>
+<tr class="row-even"><td><p>$cgd</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Variable that adjusts degradation of elastic modulus with accumulation of fabric</p></td>
+</tr>
+<tr class="row-odd"><td><p>$cdr</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Variable that controls the rotated dilatancy surface</p></td>
+</tr>
+<tr class="row-even"><td><p>$ckaf</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Variable that controls the effect that sustained static shear stresses have on plastic modulus</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Q</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Critical state line parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>$R</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Critical state line parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$m</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Yield surface constant (radius of yield surface in stress ratio space)</p></td>
+</tr>
+<tr class="row-even"><td><p>$Fsed_min</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Variable that controls the minimum value the reduction factor of the elastic moduli can get during reconsolidation</p></td>
+</tr>
+<tr class="row-odd"><td><p>$p_sedo</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional: Mean effective stress up to which reconsolidation strains are enhanced</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The only material formulation for the PM4Sand object is “PlaneStrain”, as a consequence limited to plain strain continuum elements.</p>
+<p>Valid Element Recorder queries are <strong>stress</strong>, <strong>strain</strong>, <strong>alpha</strong> (or backstressratio) for <span class="math notranslate nohighlight">\(\mathbf{\alpha}\)</span>, <strong>fabric</strong> for <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, and <strong>alpha_in</strong> (or alphain) for <span class="math notranslate nohighlight">\(\mathbf{\alpha_{in}}\)</span></p>
+<p>Elastic or response could be enforced by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>updateMaterialStage -material $matTag -stage 0
+</pre></div>
+</div>
+<p>Elastoplastic by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>updateMaterialStage -material $matTag -stage 1
+</pre></div>
+</div>
+<p>The program will use the default value of a secondary parameter if a negative input is assigned to that parameter, e.g. Ado = -1. However, FirstCall is mandatory when switching from elastic to elastoplastic if negative inputs are assigned to stress-dependent secondary parameters, e.g. Ado and zmax. FirstCall can be set as,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>setParameter -value 0 -ele $elementTag FirstCall $matTag
+</pre></div>
+</div>
+<p>Post-shake reconsolidation can be activated by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>setParameter -value 1 -ele $elementTag Postshake $matTag
+
+The user should check that the results are not sensitive to time step size.
+</pre></div>
+</div>
+</div>
+<dl class="citation">
+<dt class="label" id="boulanger-ziotopoulou2017"><span class="brackets"><a class="fn-backref" href="#id1">Boulanger-Ziotopoulou2017</a></span></dt>
+<dd><p>R.W.Boulanger, K.Ziotopoulou. “PM4Sand(Version 3.1): A Sand Plasticity Model for Earthquake Engineering Applications”. Report No. UCD/CGM-17/01 2017</p>
+</dd>
+</dl>
+<div class="admonition-example-1 admonition">
+<p class="admonition-title">Example 1</p>
+<p>2D undrained monotonic direct simple shear test using one element</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #
+# 2D Undrained Direct Simple Shear Test Using One Element #
+# University of Washington, Department of Civil and Environmental Eng   #
+# Geotechnical Eng Group, L. Chen, P. Arduino - Jan 2018               #
+# Basic Units are m, kN and s unless otherwise specified#
+# HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #
+
+wipe
+
+# ------------------------ #
+# Test Specific parameters #
+# ------------------------ #
+# Initial Vertical Stress
+set sigvo -101.3
+set K0 0.5
+# set Poisson&#39;s ratio to match user specified K0
+set nu [expr $K0 / (1+$K0)]
+# Deviatoric strain (Cyclic)
+set devDisp 0.10
+# Permeablity
+set perm 1.0e-9
+# Initial void ratio
+# relative density
+set Dr 0.35   
+# max and min void ratio  
+set emax 0.8
+set emin 0.5
+set eInit [expr $emax - ($emax - $emin)*$Dr ]
+# other primary parameters
+set G0 476.0
+set hpo 0.53
+set rho 1.42
+
+# Rayleigh damping parameter
+set damp   0.02
+set omega1 0.2
+set omega2 20.0
+set a1 [expr 2.0*$damp/($omega1+$omega2)]
+set a0 [expr $a1*$omega1*$omega2]
+
+# HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+# HHHHHHHHHHHHHHHHHHHHHHHHHHHCreate ModelHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+# HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+
+# Create a 2D model with 3 Degrees of Freedom
+model BasicBuilder -ndm 2 -ndf 3
+
+# Create nodes
+node 10.00.0
+node 21.00.0
+node 3 1.01.0
+node 40.01.0
+
+# Create Fixities
+fix 1 1 1 1
+fix 2 1 1 1
+fix 30 0 1
+fix 4 0 0 1
+ 
+equalDOF 3 4 1 2
+
+# Create material
+#          PM4Sand  tag    Dr   G0   hpo   den  Patm  h0     emax   emin  nb   nd  Ado   zmax    cz    ce     phicv  nu 
+nDMaterial PM4Sand   1    $Dr  $G0  $hpo  $rho 101.3 -1.00   $emax  $emin 0.5  0.1  -1.0  -1.0  250.0  -1.00  33.0  $nu
+ 
+# Create element
+element SSPquadUP   1     1 2 3 4    1  1.0   2.2e6 1.0 $perm $perm $eInit  1.0e-5
+
+# Create recorders
+recorder Node  -nodeRange 1 4  -time -file Cycdisp.out  -dof 1 2 disp
+recorder Node  -nodeRange 1 4  -time -file Cycpress.out -dof 3 vel
+recorder Element -ele 1 -time -file Cycstress.out stress
+recorder Element -ele 1 -time -file Cycstrain.out strain
+
+# Create analysis
+constraints Transformation
+test        NormDispIncr 1.0e-5 35 1
+algorithm   Newton
+numberer    RCM
+system      SparseGeneral
+integrator  Newmark [expr 5.0 / 6.0] [expr  4.0 / 9.0]
+rayleigh    $a0 $a1 0.0 0.0
+analysis    Transient
+
+# Apply consolidation pressure
+set pNode [expr $sigvo / 2.0]
+pattern Plain 1 {Series -time {0 100 1e10} -values {0 1 1} -factor 1} {
+    load 3  0.0  $pNode 0.0
+    load 4  0.0  $pNode 0.0
+}
+updateMaterialStage -material 1 -stage 0
+
+analyze 100 1
+set vDisp [nodeDisp 3 2]
+set ts1 &quot;{Series -time {100 80000 1.0e10} -values {1.0 1.0 1.0} -factor 1}&quot;
+eval &quot;pattern Plain 2 $ts1 {
+sp 3 2 $vDisp
+sp 4 2 $vDisp
+}&quot;
+
+# Close drainage valves
+for {set x 1} {$x&lt; 5} {incr x} {
+   remove sp $x 3
+}
+
+analyze 25 1
+puts &quot;Removed drainage fixities.&quot;
+
+updateMaterialStage -material 1 -stage 1
+setParameter -value 0 -ele 1 FirstCall 1
+analyze 25 1
+
+puts &quot;finished update fixties&quot;
+
+set ts2 &quot;{Series -time {150 5150 1.0e10} -values {0.0 1.0 1.0} -factor 1}&quot;
+
+eval &quot;pattern Plain 3 $ts2 {
+sp 3 1 $devDisp
+}&quot;
+# update Poisson&#39;s ratio for analysis
+setParameter -value 0.3 -ele 1 poissonRatio 1
+analyze 5000 1
+
+wipe
+</pre></div>
+</div>
+</div>
+<div class="admonition-example-2 admonition">
+<p class="admonition-title">Example 2</p>
+<p>2D undrained cyclic direct simple shear test using one element</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #</span>
+<span class="c"># 2D Undrained Cyclic Direct Simple Shear Test Using One Element        #</span>
+<span class="c"># University of Washington, Department of Civil and Environmental Eng   #</span>
+<span class="c"># Geotechnical Eng Group, L. Chen, P. Arduino - Feb 2018                #</span>
+<span class="c"># Basic Units are m, kN and s unless otherwise specified#</span>
+<span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #</span>
+
+<span class="nv">wipe</span>
+
+<span class="c"># ------------------------ #</span>
+<span class="c"># Test Specific parameters #</span>
+<span class="c"># ------------------------ #</span>
+<span class="c"># Initial Vertical Stress</span>
+<span class="k">set</span> sigvo <span class="o">-</span><span class="mf">101.3</span>
+<span class="c"># cyclic stress ratio</span>
+<span class="k">set</span> CSR <span class="mf">0.16</span>
+<span class="c"># max number of cycles</span>
+<span class="k">set</span> maxCycles <span class="mi">20</span>
+<span class="c"># strain increment</span>
+<span class="k">set</span> strainIncr <span class="mf">5.0</span>e-6
+<span class="c"># K0</span>
+<span class="k">set</span> K0 <span class="mf">0.5</span>
+<span class="c"># set Poisson&#39;s ratio to match user specified K0 for applying initial confinement</span>
+<span class="k">set</span> nu <span class="k">[expr</span> <span class="nv">$K0</span> <span class="o">/</span> <span class="k">(</span><span class="nv">1</span><span class="o">+</span><span class="nv">$K0</span><span class="k">)]</span>
+<span class="c"># Cutoff shear strain</span>
+<span class="k">set</span> devDisp <span class="mf">0.03</span>
+<span class="c"># Permeablity</span>
+<span class="k">set</span> perm <span class="mf">1.0</span>e-9
+<span class="c"># ---------primary parameters-------------</span>
+<span class="k">set</span> Dr <span class="mf">0.35</span>   
+set G0 <span class="mf">476.0</span>
+<span class="k">set</span> hpo <span class="mf">0.53</span>
+<span class="k">set</span> rho <span class="mf">1.42</span>
+<span class="c"># ---------secondary parameters-------------</span>
+<span class="k">set</span> Patm <span class="mf">101.3</span>
+<span class="c"># all initial stress dependant parameters have negative default values </span>
+<span class="c"># and will be calculated during initialization</span>
+<span class="k">set</span> h0 <span class="o">-</span><span class="mf">1.0</span>  
+set emax <span class="mf">0.8</span>
+<span class="k">set</span> emin <span class="mf">0.5</span>
+<span class="k">set</span> eInit <span class="k">[expr</span> <span class="nv">$emax</span> <span class="o">-</span> <span class="k">(</span><span class="nv">$emax</span> <span class="nv">-</span> <span class="nv">$emin</span><span class="k">)</span><span class="o">*</span><span class="nv">$Dr</span> <span class="k">]</span>
+<span class="k">set</span> nb <span class="mf">0.5</span>
+<span class="k">set</span> nd <span class="mf">0.1</span>
+<span class="k">set</span> Ado <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> zmax <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> cz <span class="mf">250.0</span>
+<span class="k">set</span> ce <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> phicv <span class="mf">33.0</span>
+<span class="k">set</span> Cgd <span class="mf">2.0</span>
+<span class="k">set</span> Cdr <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> ckaf <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> Q <span class="mf">10.0</span>
+<span class="k">set</span> R <span class="mf">1.5</span>
+<span class="k">set</span> m_m <span class="mf">0.01</span>
+<span class="k">set</span> Fsed_min <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> p_sedo <span class="o">-</span><span class="mf">1.0</span>
+<span class="c"># ---------------------------------------------</span>
+<span class="c"># Rayleigh damping parameter</span>
+<span class="k">set</span> damp   <span class="mf">0.02</span>
+<span class="k">set</span> omega1 <span class="mf">0.2</span>
+<span class="k">set</span> omega2 <span class="mf">20.0</span>
+<span class="k">set</span> a1 <span class="k">[expr</span> <span class="mf">2.0</span><span class="o">*</span><span class="nv">$damp</span><span class="o">/</span><span class="k">(</span><span class="nv">$omega1</span><span class="o">+</span><span class="nv">$omega2</span><span class="k">)]</span>
+<span class="k">set</span> a0 <span class="k">[expr</span> <span class="nv">$a1</span><span class="o">*</span><span class="nv">$omega1</span><span class="o">*</span><span class="nv">$omega2</span><span class="k">]</span>
+
+<span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</span>
+<span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHCreate ModelHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</span>
+<span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</span>
+
+<span class="c"># Create a 2D model with 3 Degrees of Freedom</span>
+<span class="nv">model</span> BasicBuilder <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">3</span>
+
+<span class="c"># Create nodes</span>
+<span class="nv">node</span> <span class="mf">10.00</span>.0
+<span class="nv">node</span> <span class="mf">21.00</span>.0
+<span class="nv">node</span> <span class="mi">3</span> <span class="mf">1.01</span>.0
+<span class="nv">node</span> <span class="mf">40.01</span>.0
+
+<span class="c"># Create Fixities</span>
+<span class="nv">fix</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">30</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">4</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+ 
+<span class="nv">equalDOF</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">1</span> <span class="mi">2</span>
+
+<span class="c"># Create material</span>
+<span class="c">#          PM4Sand  tag    Dr   G0   hpo   den  Patm  h0   emax   emin  nb  nd  Ado   zmax    cz    ce     phicv  nu </span>
+<span class="nv">nDMaterial</span> PM4Sand   <span class="mi">1</span>    <span class="nv">$Dr</span>  <span class="nv">$G0</span>  <span class="nv">$hpo</span>  <span class="nv">$rho</span> <span class="nv">$Patm</span> <span class="nv">$h0</span>  <span class="nv">$emax</span> <span class="nv">$emin</span>  <span class="nv">$nb</span>  <span class="nv">$nd</span> <span class="nv">$Ado</span>  <span class="nv">$zmax</span>  <span class="nv">$cz</span>   <span class="nv">$ce</span>  <span class="nv">$phicv</span>  <span class="nv">$nu</span> <span class="nv">$Cgd</span> <span class="nv">$Cdr</span> <span class="nv">$ckaf</span> <span class="nv">$Q</span> <span class="nv">$R</span> <span class="nv">$m_m</span> <span class="nv">$Fsed_min</span> <span class="nv">$p_sedo</span>
+ 
+<span class="c"># Create element</span>
+<span class="nv">element</span> SSPquadUP   <span class="mi">1</span>     <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>    <span class="mi">1</span>  <span class="mf">1.0</span>   <span class="mf">2.2</span>e6 <span class="mf">1.0</span> <span class="nv">$perm</span> <span class="nv">$perm</span> <span class="nv">$eInit</span>  <span class="mf">1.0</span>e-5
+
+<span class="c"># Create recorders</span>
+<span class="nv">recorder</span> Node  <span class="o">-</span>nodeRange <span class="mi">1</span> <span class="mi">4</span>  <span class="o">-</span>time <span class="o">-</span>file Cycdisp.out  <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> disp
+<span class="nv">recorder</span> Node  <span class="o">-</span>nodeRange <span class="mi">1</span> <span class="mi">4</span>  <span class="o">-</span>time <span class="o">-</span>file Cycpress.out <span class="o">-</span>dof <span class="mi">3</span> vel
+<span class="nv">recorder</span> Element <span class="o">-</span>ele <span class="mi">1</span> <span class="o">-</span>time <span class="o">-</span>file Cycstress.out stress
+<span class="nv">recorder</span> Element <span class="o">-</span>ele <span class="mi">1</span> <span class="o">-</span>time <span class="o">-</span>file Cycstrain.out strain
+
+<span class="c"># Create analysis</span>
+<span class="nv">constraints</span> Transformation
+<span class="nv">test</span>        NormDispIncr <span class="mf">1.0</span>e-5 <span class="mi">35</span> <span class="mi">1</span>
+<span class="nv">algorithm</span>   Newton
+<span class="nv">numberer</span>    RCM
+<span class="nv">system</span>      FullGeneral
+<span class="nv">integrator</span>  Newmark <span class="k">[expr</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="mf">6.0</span><span class="k">]</span> <span class="k">[expr</span>  <span class="mf">4.0</span> <span class="o">/</span> <span class="mf">9.0</span><span class="k">]</span>
+<span class="nv">rayleigh</span>    <span class="nv">$a0</span> <span class="nv">$a1</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="nv">analysis</span>    Transient
+
+<span class="c"># Apply consolidation pressure</span>
+<span class="k">set</span> pNode <span class="k">[expr</span> <span class="nv">$sigvo</span> <span class="o">/</span> <span class="mf">2.0</span><span class="k">]</span>
+<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="k">{</span><span class="nv">Series</span> <span class="o">-</span>time <span class="k">{</span><span class="nv">0</span> <span class="mi">100</span> <span class="mi">1</span>e10<span class="k">}</span> <span class="o">-</span>values <span class="k">{</span><span class="nv">0</span> <span class="mi">1</span> <span class="mi">1</span><span class="k">}</span> <span class="o">-</span>factor <span class="mi">1</span><span class="k">}</span> <span class="k">{</span>
+    <span class="nb">load</span> <span class="mi">3</span>  <span class="mf">0.0</span>  <span class="nv">$pNode</span> <span class="mf">0.0</span>
+    <span class="nb">load</span> <span class="mi">4</span>  <span class="mf">0.0</span>  <span class="nv">$pNode</span> <span class="mf">0.0</span>
+<span class="k">}</span>
+<span class="nv">updateMaterialStage</span> <span class="o">-</span>material <span class="mi">1</span> <span class="o">-</span>stage <span class="mi">0</span>
+
+<span class="nv">analyze</span> <span class="mi">100</span> <span class="mi">1</span>
+<span class="k">set</span> vDisp <span class="k">[</span><span class="nv">nodeDisp</span> <span class="mi">3</span> <span class="mi">2</span><span class="k">]</span>
+<span class="k">set</span> ts1 <span class="s2">&quot;{Series -time {100 80000 1.0e10} -values {1.0 1.0 1.0} -factor 1}&quot;</span>
+<span class="k">eval</span> <span class="s2">&quot;pattern Plain 2 $ts1 {</span>
+<span class="s2">sp 3 2 $vDisp</span>
+<span class="s2">sp 4 2 $vDisp</span>
+<span class="s2">}&quot;</span>
+
+<span class="c"># Close drainage valves</span>
+<span class="k">for</span> <span class="k">{set</span> x <span class="mi">1</span><span class="k">}</span> <span class="k">{</span><span class="nv">$x</span><span class="o">&lt;</span> <span class="nv">5</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> x<span class="k">}</span> <span class="k">{</span>
+   <span class="nv">remove</span> sp <span class="nv">$x</span> <span class="mi">3</span>
+<span class="k">}</span>
+
+<span class="nv">analyze</span> <span class="mi">25</span> <span class="mi">1</span>
+<span class="nb">puts</span> <span class="s2">&quot;Removed drainage fixities.&quot;</span>
+
+<span class="nv">updateMaterialStage</span> <span class="o">-</span>material <span class="mi">1</span> <span class="o">-</span>stage <span class="mi">1</span>
+<span class="nv">setParameter</span> <span class="o">-</span>value <span class="mi">0</span> <span class="o">-</span>ele <span class="mi">1</span> FirstCall <span class="mi">1</span>
+<span class="nv">analyze</span> <span class="mi">25</span> <span class="mi">1</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;finished update fixties&quot;</span>
+
+<span class="c"># update Poisson&#39;s ratio for analysis</span>
+<span class="nv">setParameter</span> <span class="o">-</span>value <span class="mf">0.3</span> <span class="o">-</span>ele <span class="mi">1</span> poissonRatio <span class="mi">1</span>
+<span class="k">set</span> controlDisp <span class="k">[expr</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="nv">$devDisp</span><span class="k">]</span>
+<span class="k">set</span> numCycle <span class="mf">0.25</span>
+<span class="k">while</span> <span class="k">{</span><span class="nv">$numCycle</span> <span class="o">&lt;=</span> <span class="nv">$maxCycles</span><span class="k">}</span> <span class="k">{</span>
+    <span class="c">#impose 1/4 cycle</span>
+    <span class="k">set</span> hDisp <span class="k">[</span><span class="nv">nodeDisp</span> <span class="mi">3</span> <span class="mi">1</span><span class="k">]</span>
+    <span class="k">set</span> currentTime <span class="k">[</span><span class="nv">getTime</span><span class="k">]</span>
+    <span class="k">set</span> steps <span class="k">[expr</span> <span class="nv">$controlDisp</span> <span class="o">/</span> <span class="nv">$strainIncr</span><span class="k">]</span>
+    <span class="k">eval</span> <span class="s2">&quot;timeSeries Path 2 -time {$currentTime [expr $currentTime + $steps] 1.0e10} -values {$hDisp $controlDisp $controlDisp} -factor 1&quot;</span>
+    <span class="nv">pattern</span> Plain <span class="mi">3</span> <span class="mi">2</span> <span class="k">{</span>
+	<span class="nv">sp</span> <span class="mi">3</span> <span class="mi">1</span> <span class="mf">1.0</span>
+    <span class="k">}</span>
+    <span class="k">set</span> b <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> stress<span class="k">]</span>
+    <span class="k">while</span> <span class="k">{[</span><span class="nb">lindex</span> <span class="nv">$b</span> <span class="mi">2</span><span class="k">]</span> <span class="o">&lt;</span> <span class="k">[expr</span> <span class="nv">$CSR</span> <span class="o">*</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="nv">$sigvo</span><span class="k">]}</span> <span class="k">{</span>
+	<span class="nv">analyze</span> <span class="mi">1</span> <span class="mf">1.0</span>
+	<span class="k">set</span> b <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> stress<span class="k">]</span>
+	<span class="k">set</span> hDisp <span class="k">[</span><span class="nv">nodeDisp</span> <span class="mi">3</span> <span class="mi">1</span><span class="k">]</span>
+	<span class="k">if</span> <span class="k">{</span><span class="nv">$hDisp</span> <span class="o">&gt;=</span> <span class="nv">$devDisp</span><span class="k">}</span> <span class="k">{</span>
+	    <span class="nb">exit</span>
+	<span class="k">}</span>
+    <span class="k">}</span>
+    <span class="k">set</span> numCycle <span class="k">[expr</span> <span class="nv">$numCycle</span> <span class="o">+</span> <span class="mf">0.25</span><span class="k">]</span>
+    <span class="k">set</span> hDisp <span class="k">[</span><span class="nv">nodeDisp</span> <span class="mi">3</span> <span class="mi">1</span><span class="k">]</span>
+    <span class="k">set</span> currentTime <span class="k">[</span><span class="nv">getTime</span><span class="k">]</span>
+    
+    <span class="nv">remove</span> loadPattern <span class="mi">3</span>
+    <span class="nv">remove</span> timeSeries <span class="mi">2</span>
+    <span class="nv">remove</span> sp <span class="mi">3</span> <span class="mi">1</span>
+    
+    <span class="c">#impose 1/2 cycle </span>
+    <span class="k">set</span> steps <span class="k">[expr</span> <span class="k">(</span><span class="nv">$controlDisp</span> <span class="o">+</span> <span class="nv">$hDisp</span><span class="k">)</span><span class="o">/</span> <span class="nv">$strainIncr</span><span class="k">]</span>
+    <span class="k">eval</span> <span class="s2">&quot;timeSeries Path 2 -time {$currentTime [expr $currentTime + $steps] 1.0e10} -values {$hDisp [expr -1.0 * $controlDisp] [expr -1.0 * $controlDisp]} -factor 1&quot;</span>
+    
+    <span class="nv">pattern</span> Plain <span class="mi">3</span> <span class="mi">2</span> <span class="k">{</span>
+	<span class="nv">sp</span> <span class="mi">3</span> <span class="mi">1</span> <span class="mf">1.0</span>
+    <span class="k">}</span>
+    
+    <span class="k">while</span> <span class="k">{[</span><span class="nb">lindex</span> <span class="nv">$b</span> <span class="mi">2</span><span class="k">]</span> <span class="o">&gt;</span> <span class="k">[expr</span> <span class="nv">$CSR</span> <span class="o">*</span> <span class="nv">$sigvo</span><span class="k">]}</span> <span class="k">{</span>
+	<span class="nv">analyze</span> <span class="mi">1</span> <span class="mf">1.0</span>
+	<span class="k">set</span> b <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> stress<span class="k">]</span>
+	<span class="k">set</span> hDisp <span class="k">[</span><span class="nv">nodeDisp</span> <span class="mi">3</span> <span class="mi">1</span><span class="k">]</span>
+	<span class="k">if</span> <span class="k">{</span><span class="nv">$hDisp</span> <span class="o">&lt;=</span> <span class="k">[expr</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="nv">$devDisp</span><span class="k">]}</span> <span class="k">{</span>
+	    <span class="nb">exit</span>
+	<span class="k">}</span>
+    <span class="k">}</span>
+    <span class="c">#impose 1/4 cycle</span>
+    <span class="k">set</span> numCycle <span class="k">[expr</span> <span class="nv">$numCycle</span> <span class="o">+</span> <span class="mf">0.5</span><span class="k">]</span>
+    <span class="k">set</span> hDisp <span class="k">[</span><span class="nv">nodeDisp</span> <span class="mi">3</span> <span class="mi">1</span><span class="k">]</span>
+    <span class="k">set</span> currentTime <span class="k">[</span><span class="nv">getTime</span><span class="k">]</span>
+    
+    <span class="nv">remove</span> loadPattern <span class="mi">3</span>
+    <span class="nv">remove</span> timeSeries <span class="mi">2</span>
+    <span class="nv">remove</span> sp <span class="mi">3</span> <span class="mi">1</span>
+    <span class="k">set</span> steps <span class="k">[expr</span> <span class="k">(</span><span class="nv">$controlDisp</span> <span class="o">+</span> <span class="nv">$hDisp</span><span class="k">)</span><span class="o">/</span> <span class="nv">$strainIncr</span><span class="k">]</span>
+    <span class="k">eval</span> <span class="s2">&quot;timeSeries Path 2 -time {$currentTime [expr $currentTime + $steps] 1.0e10} -values {$hDisp $controlDisp $controlDisp} -factor 1&quot;</span>
+    
+    <span class="nv">pattern</span> Plain <span class="mi">3</span> <span class="mi">2</span> <span class="k">{</span>
+	<span class="nv">sp</span> <span class="mi">3</span> <span class="mi">1</span> <span class="mf">1.0</span>
+    <span class="k">}</span>
+    <span class="k">while</span> <span class="k">{[</span><span class="nb">lindex</span> <span class="nv">$b</span> <span class="mi">2</span><span class="k">]</span> <span class="o">&lt;=</span> <span class="nv">0.0</span><span class="k">}</span> <span class="k">{</span>
+	<span class="nv">analyze</span> <span class="mi">1</span> <span class="mf">1.0</span>
+	<span class="k">set</span> b <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> stress<span class="k">]</span>
+	<span class="k">set</span> hDisp <span class="k">[</span><span class="nv">nodeDisp</span> <span class="mi">3</span> <span class="mi">1</span><span class="k">]</span>
+	<span class="k">if</span> <span class="k">{</span><span class="nv">$hDisp</span> <span class="o">&gt;=</span> <span class="nv">$devDisp</span><span class="k">}</span> <span class="k">{</span>
+	    <span class="nb">exit</span>
+	<span class="k">}</span>
+    <span class="k">}</span>
+    <span class="k">set</span> numCycle <span class="k">[expr</span> <span class="nv">$numCycle</span> <span class="o">+</span> <span class="mf">0.25</span><span class="k">]</span>
+    <span class="nv">remove</span> loadPattern <span class="mi">3</span>
+    <span class="nv">remove</span> timeSeries <span class="mi">2</span>
+<span class="k">}</span>
+
+<span class="nv">wipe</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, The Regents of the University of California
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.4.2.5. Manzari Dafalias Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.4.2.6. Bounding Cam Clay" href="BoundingCamClay.html" />
+    <link rel="prev" title="3.4.2.4. Drucker Prager Material" href="DruckerPrager.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ElasticIsotropic.html">3.4.2.1. Elastic Isotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticOrthotropic.html">3.4.2.2. Elastic Orthotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2Plasticity.html">3.4.2.3. J2 Plasticity Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DruckerPrager.html">3.4.2.4. Drucker Prager Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.2.5. Manzari Dafalias Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundingCamClay.html">3.4.2.6. Bounding Cam Clay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Sand.html">3.4.2.7. PM4Sand Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Silt.html">3.4.2.8. PM4Silt Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureIndependentMultiYield.html">3.4.2.9. Pressure Independent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+        
+          <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4.2.5. </span>Manzari Dafalias Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/user/manual/material/ndMaterials/ManzariDafalias.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="manzari-dafalias-material">
+<span id="manzaridafalias"></span><h1><span class="section-number">3.4.2.5. </span>Manzari Dafalias Material<a class="headerlink" href="#manzari-dafalias-material" title="Permalink to this headline">¶</a></h1>
+<p>Code Developed by: <strong>Alborz Ghofrani</strong>, <a class="reference external" href="https://www.ce.washington.edu/facultyfinder/pedro-arduino">Pedro Arduino</a>, U. Washington</p>
+<p>This command is used to construct a multi-dimensional <a class="reference internal" href="#manzari-dafalias2004" id="id1"><span>[Manzari-Dafalias2004]</span></a> material.</p>
+<div class="admonition-function admonition">
+<p class="admonition-title">function</p>
+<p>nDmaterial ManzariDafalias $matTag $G0 $nu $e_init $Mc $c $lambda_c $e0 $ksi $P_atm $m $h0 $ch $nb $A0 $nd $z_max $cz $Den</p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>unique tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$G0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>shear modulus constant</p></td>
+</tr>
+<tr class="row-even"><td><p>$nu</p></td>
+<td><p><em>float</em></p></td>
+<td><p>poisson ratio</p></td>
+</tr>
+<tr class="row-odd"><td><p>$e_init</p></td>
+<td><p><em>float</em></p></td>
+<td><p>initial void ratio</p></td>
+</tr>
+<tr class="row-even"><td><p>$Mc</p></td>
+<td><p><em>float</em></p></td>
+<td><p>critical state stress ratio</p></td>
+</tr>
+<tr class="row-odd"><td><p>$c</p></td>
+<td><p><em>float</em></p></td>
+<td><p>ratio of critical state stress ratio in extension and compression</p></td>
+</tr>
+<tr class="row-even"><td><p>$lambda_c</p></td>
+<td><p><em>float</em></p></td>
+<td><p>critical state line constant</p></td>
+</tr>
+<tr class="row-odd"><td><p>$e0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>critical void ratio at p = 0</p></td>
+</tr>
+<tr class="row-even"><td><p>$ksi</p></td>
+<td><p><em>float</em></p></td>
+<td><p>critical state line constant</p></td>
+</tr>
+<tr class="row-odd"><td><p>$P_atc</p></td>
+<td><p><em>float</em></p></td>
+<td><p>atmospheric pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>$m</p></td>
+<td><p><em>float</em></p></td>
+<td><p>yield surface constant (radius of yield surface in stress ratio space)</p></td>
+</tr>
+<tr class="row-odd"><td><p>$h0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>constant parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>$ch</p></td>
+<td><p><em>float</em></p></td>
+<td><p>constant parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$nb</p></td>
+<td><p><em>float</em></p></td>
+<td><p>bounding surface parameter  $nb ≥ 0</p></td>
+</tr>
+<tr class="row-even"><td><p>$A0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>dilatancy parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$nd</p></td>
+<td><p><em>float</em></p></td>
+<td><p>dilatancy surface parameter $nd ≥ 0</p></td>
+</tr>
+<tr class="row-even"><td><p>$z_max</p></td>
+<td><p><em>float</em></p></td>
+<td><p>fabric-dilatancy tensor parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$cz</p></td>
+<td><p><em>float</em></p></td>
+<td><p>fabric-dilatancy tensor parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>$Den</p></td>
+<td><p><em>float</em></p></td>
+<td><p>mass density of the material</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The material formulations for the Manzari-Dafalias object are “ThreeDimensional” and “PlaneStrain”</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Valid Element Recorder queries are:
+stress, strain
+alpha (or backstressratio) for <span class="math notranslate nohighlight">\(\mathbf{\alpha}\)</span>
+fabric for <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>
+alpha_in (or alphain) for <span class="math notranslate nohighlight">\(\mathbf{\alpha_{in}}\)</span></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> Element <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$numElem</span> <span class="o">-</span>time <span class="o">-</span>file stress.out  stress
+
+<span class="c">#. Elastic or Elastoplastic response could be enforced by</span>
+   <span class="nv">Elastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">0</span>
+   <span class="nv">Elastoplastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<p>Theory</p>
+<div class="math notranslate nohighlight">
+\[p = \frac{1}{3} \mathrm{tr}(\mathbf{\sigma})\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{s} = \mathrm{dev} (\mathbf{\sigma}) = \mathbf{\sigma} - \frac{1}{3} p \mathbf{1}\]</div>
+<p>Elasticity
+Elastic moduli are considered to be functions of p and current void ratio:</p>
+<div class="math notranslate nohighlight">
+\[G = G_0 p_{atm}\frac{\left(2.97-e\right)^2}{1+e}\left(\frac{p}{p_{atm}}\right)^{1/2}\]</div>
+<div class="math notranslate nohighlight">
+\[K = \frac{2(1+\nu)}{3(1-2\nu)} G\]</div>
+<p>The elastic stress-strain relationship is:</p>
+<div class="math notranslate nohighlight">
+\[d\mathbf{e}^\mathrm{e} = \frac{d\mathbf{s}}{2G}\]</div>
+<div class="math notranslate nohighlight">
+\[d\varepsilon^\mathrm{e}_v = \frac{dp}{K}\]</div>
+<p>Critical State Line
+A power relationship is assumed for the critical state line:</p>
+<div class="math notranslate nohighlight">
+\[e_c = e_0 - \lambda_c\left(\frac{p_c}{p_{atm}}\right)^\xi\]</div>
+<p>where <span class="math notranslate nohighlight">\(e_0\)</span> is the void ratio at <span class="math notranslate nohighlight">\(p_c = 0\)</span> and <span class="math notranslate nohighlight">\(\lambda_c\)</span> and <span class="math notranslate nohighlight">\(\xi\)</span> constants.</p>
+<p>Yield Surface
+Yield surface is a stress-ratio dependent surface in this model and is defined as</p>
+<div class="math notranslate nohighlight">
+\[\left\| \mathbf{s} - p \mathbf{\alpha} \right\| - \sqrt\frac{2}{3}pm = 0\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mathbf{\alpha}\)</span> being the deviatoric back stress-ratio.</p>
+<p>Plastic Strain Increment
+The increment of the plastic strain tensor is given by</p>
+<div class="math notranslate nohighlight">
+\[d\mathbf{\varepsilon}^p = \langle L \rangle \mathbf{R}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{R} = \mathbf{R'} + \frac{1}{3} D \mathbf{1}\]</div>
+<p>therefore</p>
+<p><span class="math notranslate nohighlight">\(d\mathbf{e}^p = \langle L \rangle \mathbf{R'}\)</span> and <span class="math notranslate nohighlight">\(d\varepsilon^p_v = \langle L \rangle D\)</span>
+The hardening modulus in this model is defined as</p>
+<div class="math notranslate nohighlight">
+\[K_p = \frac{2}{3} p h (\mathbf{\alpha}^b_{\theta} - \mathbf{\alpha}): \mathbf{n}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> is the deviatoric part of the gradient to yield surface.</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{\alpha}^b_{\theta} = \sqrt{\frac{2}{3}} \left[g(\theta,c) M_c exp(-n^b\Psi) - m\right] \mathbf{n}
+\)</span>Psi` being the state parameter.</p>
+<p>the hardening parameter <span class="math notranslate nohighlight">\(h\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[h = \frac{b_0}{(\mathbf{\alpha}-\mathbf{\alpha_{in}}):\mathbf{n}}\]</div>
+<p><span class="math notranslate nohighlight">\(\mathbf{\alpha_{in}}\)</span> is the value of <span class="math notranslate nohighlight">\(\mathbf{\alpha}\)</span> at initiation of loading cycle.</p>
+<div class="math notranslate nohighlight">
+\[b_0 = G_0 h_0 (1-c_h e) \left(\frac{p}{p_{atm}}\right)^{-1/2}\]</div>
+<p>Also the dilation parameters are defined as</p>
+<div class="math notranslate nohighlight">
+\[D = A_d (\mathbf{\alpha}^d_{\theta}-\mathbf{\alpha}) : \mathbf{n}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{\alpha}^d_{\theta} = \sqrt{\frac{2}{3}} \left[g(\theta,c) M_c exp(n^d\Psi) - m\right] \mathbf{n}\]</div>
+<div class="math notranslate nohighlight">
+\[A_d = A_0 (1+\langle \mathbf{z : n}\rangle)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{z}\)</span> is the fabric tensor.</p>
+<p>The evolution of fabric and the back stress-ratio tensors are defined as</p>
+<div class="math notranslate nohighlight">
+\[d\mathbf{z} = - c_z \langle -d\varepsilon^p_v \rangle (z_{max}\mathbf{n}+\mathbf{z})`\]</div>
+<div class="math notranslate nohighlight">
+\[d\mathbf{\alpha} = \langle L \rangle (2/3) h (\mathbf{\alpha}^b_{\theta} - \mathbf{\alpha})\]</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>This example, provides an undrained confined triaxial compression test using one 8-node SSPBrickUP element and ManzariDafalias material model.</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #
+# 3D Undrained Conventional Triaxial Compression Test Using One Element #
+# University of Washington, Department of Civil and Environmental Eng   #
+# Geotechnical Eng Group, A. Ghofrani, P. Arduino - Dec 2013            #
+# Basic units are m, Ton(metric), s#
+# HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #
+
+wipe
+
+# ------------------------ #
+# Test Specific parameters #
+# ------------------------ #
+# Confinement Stress
+set pConf -300.0
+# Deviatoric strain
+set devDisp -0.3
+# Permeablity
+set perm 1.0e-10
+# Initial void ratio
+set vR 0.8
+
+# Rayleigh damping parameter
+set damp   0.1
+set omega1 0.0157
+set omega2 64.123
+set a1 [expr 2.0*$damp/($omega1+$omega2)]
+set a0 [expr $a1*$omega1*$omega2]
+
+# HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+# HHHHHHHHHHHHHHHHHHHHHHHHHHHCreate ModelHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+# HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+
+# Create a 3D model with 4 Degrees of Freedom
+model BasicBuilder -ndm 3 -ndf 4
+
+# Create nodes
+node 11.00.00.0
+node 21.01.00.0
+node 3 0.01.00.0
+node 40.00.00.0
+node 51.00.01.0
+node 6 1.01.01.0
+node 7 0.01.01.0
+node 8 0.00.01.0
+
+# Create Fixities
+fix 1 0 1 1 1
+fix 2 0 0 1 1
+fix 31 0 1 1
+fix 4 1 1 1 1
+fix 50 1 0 1
+fix 6 0 0 0 1
+fix 71 0 0 1
+fix 8 1 1 0 1
+
+
+# Create material
+#          ManzariDafalias  tag    G0   nu   e_init   Mc    c    lambda_c    e0    ksi   P_atm   m    h0   ch    nb  A0      nd   z_max   cz    Den  
+nDMaterial ManzariDafalias   1    125  0.05   $vR    1.25  0.712   0.019    0.934  0.7    100   0.01 7.05 0.968 1.1 0.704    3.5    4     600  1.42  
+
+# Create element
+#       SSPbrickUP  tag    i j k l m n p q  matTag  fBulk  fDen    k1    k2   k3   void   alpha    &lt;b1 b2 b3&gt;
+element SSPbrickUP   1     1 2 3 4 5 6 7 8    1     2.2e6   1.0  $perm $perm $perm  $vR   1.5e-9 
+
+# Create recorders
+recorder Node    -file disp.out   -time -nodeRange 1 8 -dof 1 2 3 disp
+recorder Node    -file press.out  -time -nodeRange 1 8 -dof 4     vel
+recorder Element -file stress.out -time stress
+recorder Element -file strain.out -time strain
+recorder Element -file alpha.out  -time alpha
+recorder Element -file fabric.out -time fabric
+
+
+# Create analysis
+constraints Penalty 1.0e18 1.0e18
+test        NormDispIncr 1.0e-5 20 1
+algorithm   Newton
+numberer    RCM
+system      BandGeneral
+integrator  Newmark 0.5 0.25
+rayleigh    $a0 0. $a1 0.0
+analysis    Transient
+
+# Apply confinement pressure
+set pNode [expr $pConf / 4.0]
+pattern Plain 1 {Series -time {0 10000 1e10} -values {0 1 1} -factor 1} {
+    load 1  $pNode  0.0    0.0    0.0
+    load 2  $pNode  $pNode 0.0    0.0
+    load 3  0.0     $pNode 0.0    0.0
+    load 4  0.0     0.0    0.0    0.0
+    load 5  $pNode  0.0    $pNode 0.0
+    load 6  $pNode  $pNode $pNode 0.0
+    load 7  0.0     $pNode $pNode 0.0
+    load 8  0.0     0.0    $pNode 0.0
+}
+analyze 100 100
+
+# Let the model rest and waves damp out
+analyze 50  100
+
+# Close drainage valves
+for {set x 1} {$x&lt;9} {incr x} {
+   remove sp $x 4
+}
+analyze 50 100
+
+# Read vertical displacement of top plane
+set vertDisp [nodeDisp 5 3]
+# Apply deviatoric strain
+set lValues [list 1 [expr 1+$devDisp/$vertDisp] [expr 1+$devDisp/$vertDisp]]
+set ts &quot;{Series -time {20000 1020000 10020000} -values {$lValues} -factor 1}&quot;
+
+# loading object deviator stress
+eval &quot;pattern Plain 2 $ts { 
+sp 5  3$vertDisp
+sp 6  3$vertDisp
+sp 7  3 $vertDisp
+sp 8  3 $vertDisp
+}&quot;
+
+# Set number and length of (pseudo)time steps
+set dT      100
+set numStep 10000
+
+# Analyze and use substepping if needed
+set remStep $numStep
+set success 0
+proc subStepAnalyze {dT subStep} {
+    if {$subStep &gt; 10} {
+	return -10
+    }
+    for {set i 1} {$i &lt; 3} {incr i} {
+	puts &quot;Try dT = $dT&quot;
+	set success [analyze 1 $dT]
+	if {$success != 0} {
+	    set success [subStepAnalyze [expr $dT/2.0] [expr $subStep+1]]
+	    if {$success == -10} {
+		puts &quot;Did not converge.&quot;
+		return success
+	    }
+	} else {
+	    if {$i==1} {
+		puts &quot;Substep $subStep : Left side converged with dT = $dT&quot;
+	    } else {
+		puts &quot;Substep $subStep : Right side converged with dT = $dT&quot;
+	    }
+	}
+    }
+    return success
+}
+
+puts &quot;Start analysis&quot;
+set startT [clock seconds]
+
+while {$success != -10} {
+    set subStep 0
+    set success [analyze $remStep  $dT]
+    if {$success == 0} {
+	puts &quot;Analysis Finished&quot;
+	break
+    } else {
+	set curTime  [getTime]
+	puts &quot;Analysis failed at $curTime . Try substepping.&quot;
+	set success  [subStepAnalyze [expr $dT/2.0] [incr subStep]]
+        set curStep  [expr int(($curTime-20000)/$dT + 1)]
+        set remStep  [expr int($numStep-$curStep)]
+	puts &quot;Current step: $curStep , Remaining steps: $remStep&quot;
+    }
+}
+set endT [clock seconds]
+puts &quot;loading analysis execution time: [expr $endT-$startT] seconds.&quot;
+
+wipe
+</pre></div>
+</div>
+</div>
+<dl class="citation">
+<dt class="label" id="manzari-dafalias2004"><span class="brackets"><a class="fn-backref" href="#id1">Manzari-Dafalias2004</a></span></dt>
+<dd><p>Dafalias YF, Manzari MT. “Simple plasticity sand model accounting for fabric change effects”. Journal of Engineering Mechanics 2004</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, The Regents of the University of California
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.4.2.10. Pressure Dependent Multi Yield" href="PressureDependentMultiYield.html" />
+    <link rel="prev" title="3.4.2.9. Pressure Independent Multi Yield" href="PressureIndependentMultiYield.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+        
+          <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
+        
+          <li><a href="PressureIndependentMultiYield.html"><span class="section-number">3.4.2.9. </span>Pressure Independent Multi Yield</a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/user/manual/material/ndMaterials/PressureIndependentMultiYieldExample1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>** Single 2D plane-strain quadrilateral element, subjected to sinusoidal base shaking**</p>
+<ol class="arabic">
+<li><p><strong>Tcl Code</strong></p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span>#Created by Zhaohui Yang (zhyang@ucsd.edu)
+#elastic pressure independent material
+#plane strain,  single element,  dynamic analysis (input motion: sinusoidal acceleration at base)  
+#SI units (m, s, KN, ton)
+#
+#         4     3
+#         ------- 
+#         |     |
+#         |     |
+#         |     |
+#        1-------2   (nodes 1 and 2 fixed)
+#         ^     ^
+#          &lt;--&gt; input motion: sinusoidal acceleration at base
+wipe
+#
+#some user defined variables
+# 
+set accMul   9.81     ;
+set massDen  2.000      ;# solid mass density
+set fluidDen 1.0        ;# fluid mass density
+set massProportionalDamping   0.0 ;
+set stiffnessProportionalDamping 0.001 ;
+set cohesion 30 ;
+set peakShearStrain 0.1 ;
+set E1      90000.0      ;#Young&#39;s modulus
+set poisson1 0.40 ;
+set G [expr $E1/(2*(1+$poisson1))] ;
+set B [expr $E1/(3*(1-2*$poisson1))] ;
+set press    0        ;# isotropic consolidation pressure on quad element(s)
+set period   1        ;# Period of applied sinusoidal load
+set deltaT   0.01     ;# time step for analysis
+set numSteps 2000     ;# Number of analysis steps
+set gamma    0.5      ;# Newmark integration parameter
+set pi 3.1415926535     ;
+set inclination 0       ;
+set unitWeightX [expr  ($massDen-$fluidDen)*9.81*sin($inclination/180.0*$pi)] ;# buoyant unit weight in X direction
+set unitWeightY [expr -($massDen-$fluidDen)*9.81*cos($inclination/180.0*$pi)] ;# buoyant unit weight in Y direction
+#############################################################
+
+#create the ModelBuilder
+model basic -ndm 2 -ndf 2
+
+# define material and properties
+nDMaterial PressureIndependMultiYield 2 2 $massDen $G $B  $cohesion $peakShearStrain
+nDMaterial FluidSolidPorous 1 2 2 2.2e6
+
+    
+# define the nodes
+node 1   0.0 0.0 
+node 2   1.0 0.0 
+node 3   1.0 1.0 
+node 4   0.0 1.0
+
+# define the element      thick  material      maTag   press  density  gravity 
+element quad  1  1 2 3 4  1.0   &quot;PlaneStrain&quot;     2   $press  0.0    $unitWeightX  $unitWeightY  
+
+updateMaterialStage -material 2 -stage 0
+
+# fix the base in vertical direction
+fix 1 1 1 
+fix 2 1 1
+
+#############################################################
+# GRAVITY APPLICATION (elastic behavior)
+# create the SOE, ConstraintHandler, Integrator, Algorithm and Numberer
+system ProfileSPD
+test NormDispIncr 1.e-12 25 0
+constraints Transformation
+integrator LoadControl 1 1 1 1
+algorithm Newton 
+numberer RCM
+
+# create the Analysis
+analysis Static
+
+#analyze 
+analyze 2
+
+#############################################################
+# NOW APPLY LOADING SEQUENCE AND ANALYZE (plastic)
+# rezero time
+setTime 0.0
+wipeAnalysis
+
+equalDOF 3 4   1 2    ;#tie nodes 3 and 4
+
+# create a LoadPattern
+pattern UniformExcitation 1 1 -accel &quot;Sine 0 10 $period -factor $accMul&quot;
+
+# create the Analysis
+constraints Penalty 1.0e18 1.0e18  ;# Transformation;  # 
+test NormDispIncr 1.e-12 25 0
+algorithm Newton 
+numberer RCM
+system ProfileSPD
+rayleigh $massProportionalDamping 0.0 $stiffnessProportionalDamping 0.
+integrator Newmark $gamma  [expr pow($gamma+0.5, 2)/4]  
+analysis VariableTransient 
+
+#create the recorder
+recorder Node -file disp.out   -time  -node 1 2 3 4 -dof 1 2 -dT  0.01 disp
+recorder Node -file acce.out  -time  -node 1 2 3 4 -dof 1 2 -dT 0.01 accel
+recorder Element -ele 1 -time -file stress1.out -dT 0.01 material 1 stress 
+recorder Element -ele 1 -time -file strain1.out -dT 0.01 material 1 strain 
+recorder Element -ele 1 -time -file stress3.out -dT 0.01 material 3 stress 
+recorder Element -ele 1 -time -file strain3.out -dT 0.01 material 3 strain 
+
+#analyze 
+set startT [clock seconds]
+analyze $numSteps $deltaT [expr $deltaT/100] $deltaT 10
+set endT [clock seconds]
+puts &quot;Execution time: [expr $endT-$startT] seconds.&quot;
+
+wipe  #flush ouput stream
+</pre></div>
+</div>
+</li>
+<li><p><strong>Python Code</strong></p></li>
+<li><p><strong>Matlab Code</strong></p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">clear </span><span class="s">all</span><span class="p">;</span>
+
+<span class="n">a1</span><span class="p">=</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;acce.out&#39;</span><span class="p">);</span>
+<span class="n">d1</span><span class="p">=</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;disp.out&#39;</span><span class="p">);</span>
+<span class="n">s1</span><span class="p">=</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;stress1.out&#39;</span><span class="p">);</span>
+<span class="n">e1</span><span class="p">=</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;strain1.out&#39;</span><span class="p">);</span>
+<span class="n">s5</span><span class="p">=</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;stress3.out&#39;</span><span class="p">);</span>
+<span class="n">e5</span><span class="p">=</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;strain3.out&#39;</span><span class="p">);</span>
+
+<span class="n">fs</span><span class="p">=[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
+<span class="n">accMul</span> <span class="p">=</span> <span class="mf">9.81</span><span class="p">;</span>
+
+<span class="c">%integration point 1 p-q</span>
+<span class="n">po</span><span class="p">=(</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="n"></span>
+<span class="n">for </span><span class="s">i=1:size(s1,1)</span><span class="p"></span>
+	<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=(</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span><span class="p">(</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span> <span class="mf">6.0</span><span class="o">*</span> <span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>^<span class="mi">2</span><span class="p">;</span>
+<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">sign</span><span class="p">(</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span>^<span class="mf">0.5</span><span class="p">;</span><span class="n"></span>
+<span class="n">end</span>
+<span class="s">figure(1)</span><span class="p">;</span> <span class="n">clf</span><span class="p">;</span>
+<span class="c">%integration point 1 stress-strain</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">plot</span><span class="p">(</span><span class="n">e1</span><span class="p">(:,</span><span class="mi">4</span><span class="p">),</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">5</span><span class="p">),</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">title</span> <span class="p">(</span><span class="s">&#39;Integration point 1 shear stress \tau_x_y VS. shear strain \epsilon_x_y&#39;</span><span class="p">);</span>
+<span class="n">xLabel</span><span class="p">(</span><span class="s">&#39;Shear strain \epsilon_x_y&#39;</span><span class="p">);</span>
+<span class="n">yLabel</span><span class="p">(</span><span class="s">&#39;Shear stress \tau_x_y (kPa)&#39;</span><span class="p">);</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">po</span><span class="p">,</span><span class="n">qo</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">title</span> <span class="p">(</span><span class="s">&#39;Integration point 1 confinement p VS. deviatoric q relation&#39;</span><span class="p">);</span>
+<span class="n">xLabel</span><span class="p">(</span><span class="s">&#39;confinement p (kPa)&#39;</span><span class="p">);</span>
+<span class="n">yLabel</span><span class="p">(</span><span class="s">&#39;q (kPa)&#39;</span><span class="p">);</span>
+<span class="n">set</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;paperposition&#39;</span><span class="p">,</span><span class="n">fs</span><span class="p">);</span>
+<span class="n">saveas</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;SS_PQ1&#39;</span><span class="p">,</span><span class="s">&#39;jpg&#39;</span><span class="p">);</span>
+
+<span class="c">%integration point 3 p-q</span>
+<span class="n">po</span><span class="p">=(</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="n"></span>
+<span class="n">for </span><span class="s">i=1:size(s5,1)</span><span class="p"></span>
+	<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=(</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span><span class="p">(</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span> <span class="mf">6.0</span><span class="o">*</span> <span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>^<span class="mi">2</span><span class="p">;</span>
+<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">sign</span><span class="p">(</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span>^<span class="mf">0.5</span><span class="p">;</span><span class="n"></span>
+<span class="n">end</span>
+
+<span class="s">figure(4)</span><span class="p">;</span> <span class="n">clf</span><span class="p">;</span>
+<span class="c">%integration point 3 stress-strain</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">plot</span><span class="p">(</span><span class="n">e5</span><span class="p">(:,</span><span class="mi">4</span><span class="p">),</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">5</span><span class="p">),</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">title</span> <span class="p">(</span><span class="s">&#39;Integration point 3 shear stress \tau_x_y VS. shear strain \epsilon_x_y&#39;</span><span class="p">);</span>
+<span class="n">xLabel</span><span class="p">(</span><span class="s">&#39;Shear strain \epsilon_x_y&#39;</span><span class="p">);</span>
+<span class="n">yLabel</span><span class="p">(</span><span class="s">&#39;Shear stress \tau_x_y (kPa)&#39;</span><span class="p">);</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">po</span><span class="p">,</span><span class="n">qo</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">title</span> <span class="p">(</span><span class="s">&#39;Integration point 3 confinement p VS. deviatoric q relation&#39;</span><span class="p">);</span>
+<span class="n">xLabel</span><span class="p">(</span><span class="s">&#39;confinement p (kPa)&#39;</span><span class="p">);</span>
+<span class="n">yLabel</span><span class="p">(</span><span class="s">&#39;q (kPa)&#39;</span><span class="p">);</span>
+<span class="n">set</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;paperposition&#39;</span><span class="p">,</span><span class="n">fs</span><span class="p">);</span>
+<span class="n">saveas</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;SS_PQ5&#39;</span><span class="p">,</span><span class="s">&#39;jpg&#39;</span><span class="p">);</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="n">clf</span><span class="p">;</span>
+<span class="c">%node 3 displacement relative to node 1</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">plot</span><span class="p">(</span><span class="n">d1</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">d1</span><span class="p">(:,</span><span class="mi">6</span><span class="p">),</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">title</span> <span class="p">(</span><span class="s">&#39;Lateral displacement at element top&#39;</span><span class="p">);</span>
+<span class="n">xLabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span>
+<span class="n">yLabel</span><span class="p">(</span><span class="s">&#39;Displacement (m)&#39;</span><span class="p">);</span> 
+<span class="n">set</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;paperposition&#39;</span><span class="p">,</span><span class="n">fs</span><span class="p">);</span>
+<span class="n">saveas</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;D&#39;</span><span class="p">,</span><span class="s">&#39;jpg&#39;</span><span class="p">);</span>
+
+
+<span class="n">s</span><span class="p">=</span><span class="n">accMul</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">50</span><span class="p">:</span><span class="mi">20</span><span class="o">*</span><span class="nb">pi</span><span class="p">);</span>
+<span class="n">s</span><span class="p">=[</span><span class="n">s</span><span class="o">&#39;</span><span class="p">;</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1</span><span class="p">)];</span>
+<span class="n">s1</span><span class="p">=</span><span class="n">interp1</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">a1</span><span class="p">(:,</span><span class="mi">1</span><span class="p">));</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="n">clf</span><span class="p">;</span>
+<span class="c">%node 3 relative acceleration</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">plot</span><span class="p">(</span><span class="n">a1</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">s1</span><span class="o">+</span><span class="n">a1</span><span class="p">(:,</span><span class="mi">5</span><span class="p">),</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">title</span> <span class="p">(</span><span class="s">&#39;Lateral acceleration at element top&#39;</span><span class="p">);</span>
+<span class="n">xLabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span>
+<span class="n">yLabel</span><span class="p">(</span><span class="s">&#39;Acceleration (m/s^2)&#39;</span><span class="p">);</span>
+<span class="n">set</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;paperposition&#39;</span><span class="p">,</span><span class="n">fs</span><span class="p">);</span>
+<span class="n">saveas</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;jpg&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ol>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, The Regents of the University of California
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

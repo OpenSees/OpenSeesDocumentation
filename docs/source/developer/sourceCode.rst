@@ -1,5 +1,0 @@
-.. _sourceCode:
-
-***********
-Source Code
-***********
