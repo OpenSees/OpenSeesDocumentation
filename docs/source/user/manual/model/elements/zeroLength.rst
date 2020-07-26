@@ -38,7 +38,7 @@ This command is used to construct a zeroLength element object, which is defined 
 
    1. **Tcl Code**
 
-   .. code-block:: none
+   .. code-block:: tcl
 
       element zeroLength 1 2 4 -mat 5 6 -dir 1 2
       element zeroLength 2 4 5 -mat 1 -dir 1 -orient 1 1 0 -1 1 0
@@ -46,7 +46,7 @@ This command is used to construct a zeroLength element object, which is defined 
 
    2. **Python Code**
 
-   .. code-block:: none
+   .. code-block:: python
 
       element('zeroLength',1,2,4,'-mat',5,6,'-dir',1,2)
       element('zeroLength',2,4,5,'-mat',1,'-dir',1,'-orient',1,1,0,-1,1,0)
