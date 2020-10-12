@@ -29,7 +29,7 @@ This command is used to construct a SparseGEN linear system of equation object. 
 
 Code developed by: |fmk|
 
-.. [REFERNCES]
+.. [REFERENCES]
 
    James W. Demmel and Stanley C. Eisenstat and John R. Gilbert and Xiaoye S. Li and Joseph W. H. Liu, "A supernodal approach to sparse partial pivoting", SIAM J. Matrix Analysis and Applications, 20(3), 720-755, 1999.
 

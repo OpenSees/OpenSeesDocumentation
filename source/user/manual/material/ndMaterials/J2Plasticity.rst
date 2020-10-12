@@ -3,7 +3,7 @@
 J2 Plasticity Material
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This command is used to construct an multi dimensional material object that has a von Mises (J2) yield criterium and isotropic hardening.
+This command is used to construct an multi dimensional material object that has a von Mises (J2) yield criterion and isotropic hardening.
 
 .. function:: nDMaterial J2Plasticity $matTag $K $G $sig0 $sigInf $delta $H
 

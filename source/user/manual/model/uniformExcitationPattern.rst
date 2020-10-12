@@ -36,7 +36,7 @@ The UniformExcitation pattern allows the user to apply a uniform excitation to a
 
 .. admonition:: Example:
 
-   The following example shows how to construct a **UniformExcitation** pattern with a tag of **2** acting in the **1** direction. The acceleration for the pattern comes from the :ref:`pathTimeSeries` with tag **3** which has been created using the contents of the **elCentro.dat** file, a :math:`\delta t = 0.02`, and a scale factor given by the variable **g**, which has been set to **386.1**.
+   The following example shows how to construct a **UniformExcitation** pattern with a tag of **2** acting in the **1** direction. The acceleration for the pattern comes from the :ref:`pathTimeSeries` with tag **3** which has been created using the contents of the ``elCentro.dat`` file, a :math:`\delta t = 0.02`, and a scale factor given by the variable **g**, which has been set to **386.1**.
 
    1. **Tcl Code**
 
@@ -57,4 +57,4 @@ The UniformExcitation pattern allows the user to apply a uniform excitation to a
 
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|

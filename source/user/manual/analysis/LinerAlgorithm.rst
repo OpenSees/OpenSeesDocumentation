@@ -40,4 +40,4 @@ This command is used to construct a Linear algorithm object which takes one iter
       algorithm('Linear')
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|

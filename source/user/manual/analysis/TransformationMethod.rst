@@ -1,7 +1,7 @@
 Transformation Method
 ^^^^^^^^^^^^^^^^^^^^^
 
-This command is used to construct a PenaltyMethod constraint handler, which enforces the constraints by using the penalty method. The following is the command to construct such a constraint handler:
+This command is used to construct a ``PenaltyMethod`` constraint handler, which enforces the constraints by using the penalty method. The following is the command to construct such a constraint handler:
 
 .. function:: constraints Transformation
 

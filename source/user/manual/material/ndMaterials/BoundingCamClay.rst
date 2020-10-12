@@ -3,7 +3,7 @@
 Bounding Cam Clay
 ^^^^^^^^^^^^^^^^^
 
-Code Developed by: |chris| and |pedro| U.Washnington
+Code Developed by: |chris| and |pedro| U.Washington
 
 This command is used to construct a multi-dimensional bounding surface Cam Clay material object after Borja et al. ([Borja2001]_).
 
@@ -23,7 +23,7 @@ This command is used to construct a multi-dimensional bounding surface Cam Clay 
    $bulkMod, |float|, initial bulk modulus
    $OCR, |float|, overconsolidation ratio
    $mu_o, |float|, initial shear modulus
-   $alpha, |float|, pressure-dependency parameter for modulii (greater than or equal to zero)
+   $alpha, |float|, pressure-dependency parameter for moduli (greater than or equal to zero)
    $lambda, |float|, soil compressibility index for virgin loading
    $h, |float|, hardening parameter for plastic response inside of bounding surface 
    $m, |float|,	hardening parameter (exponent) for plastic response inside of bounding surface 
