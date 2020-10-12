@@ -76,6 +76,7 @@ This command is used to construct a 2-dimensional PM4Silt material ([Boulanger-Z
 
       The user should check that the results are not sensitive to time step size.
 
+   Refer to :ref:`PM4Sand` for examples.
 
 .. [Boulanger-Ziotopoulou2018] R.W.Boulanger, K.Ziotopoulou. "PM4Silt(Version 1): A Silt Plasticity Model for Earthquake Engineering Applications". Report No. UCD/CGM-18/01 2018
 
