@@ -47,7 +47,7 @@ This command is used to construct a single MP_Constraint object.
       where :math:`\Delta X` is x coordinate of constrained node minus the x coordinate of the retained node. :math:`\Delta Y` and :math:`\Delta Z` being similarily defined for y and z coordinates of the nodes.
 
 
-   3. For 2d and 3d problems with a **rod** type link, the constraint matrix (that matrix relating the responses at translational degrees-of-freedom at the constrained node, :math:`U_c`, to corresponding responses at retained node, :math:`U_r`, i.e. :math:`U_c = C_{cr} U_r`, is constructed assuming small rotations. For 3d problems this results in the following constraint matrix:
+   3. For 2d and 3d problems with a **rod** type link the constraint matrix, that which matrix relates the responses at translational degrees-of-freedom at the constrained node to corresponding responses at retained node, is the identity matrix. For 3d problems this results in the following constraint matrix:
 
    .. math::
         :label: rigidConstraintBeam3D
