@@ -41,7 +41,7 @@ This command is used to construct a single MP_Constraint object.
 	\begin{bmatrix}
 		1 & 0 & -\Delta Y \\
 		0 & 1 & \Delta X \\
-		0 & 0 & 0 & 1 \\
+		0 & 0 & 1
 	\end{bmatrix}
 
       where :math:`\Delta X` is x coordinate of constrained node minus the x coordinate of the retained node. :math:`\Delta Y` and :math:`\Delta Z` being similarily defined for y and z coordinates of the nodes.
