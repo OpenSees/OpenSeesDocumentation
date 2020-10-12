@@ -7,7 +7,7 @@ This command is used to construct a sparse system of equations which uses the `M
 
 .. warning:: 
 
-   It is presently limited to the parallel **OpenSeesSP** and **OpenSeeesMP** applications.
+   It is presently limited to the parallel **OpenSeesSP** and **OpenSeesMP** applications.
 
 .. admonition:: Example 
 

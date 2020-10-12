@@ -166,7 +166,7 @@
             
   <div class="section" id="uniform-excitation-pattern">
 <span id="uniformpattern"></span><h1>Uniform Excitation Pattern<a class="headerlink" href="#uniform-excitation-pattern" title="Permalink to this headline">¶</a></h1>
-<p>This commnand allows the user to construct a LoadPattern object. Each plain load pattern is associated with a TimeSeries object and can contain multiple NodalLoads, ElementalLoads and SP_Constraint objects.</p>
+<p>This command allows the user to construct a LoadPattern object. Each plain load pattern is associated with a TimeSeries object and can contain multiple NodalLoads, ElementalLoads and SP_Constraint objects.</p>
 <dl class="function">
 <dt>
 <code class="sig-name descname">pattern Plain $patternTag $tsTag &lt;-fact $cFactor&gt; {load commands}</code></dt>
@@ -201,11 +201,11 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Tcl and Python differ here. In the Tcl interpreter the commands to create loads and constraints come in the squirly braces after the command. In python, any load or constraints defined after a pattern are added to that pattern. This is as shown in following example.</p>
+<p>Tcl and Python differ here. In the Tcl interpreter the commands to create loads and constraints come in the squirrelly brackets after the command. In python, any load or constraints defined after a pattern are added to that pattern. This is as shown in following example.</p>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example:</p>
-<p>The following example demonstrates how to create a <strong>Linear</strong> time series, and asociate it with a <strong>Plain</strong> load pattern which contains <strong>nodal loads</strong> to be applied to nodes <strong>3</strong> and <strong>4</strong> of reference magnitude <strong>(0,-50)</strong> and <strong>(50.0, -100)</strong> respectivily.</p>
+<p>The following example demonstrates how to create a <strong>Linear</strong> time series, and associate it with a <strong>Plain</strong> load pattern which contains <strong>nodal loads</strong> to be applied to nodes <strong>3</strong> and <strong>4</strong> of reference magnitude <strong>(0,-50)</strong> and <strong>(50.0, -100)</strong> respectively.</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>

@@ -12,9 +12,9 @@ This command is used to construct an ElasticOrthotropic material object.
    :widths: 10, 10, 40
 
    $matTag, |integer|, unique tag identifying material
-   $Ex $Ey $Ez, 3 |float|, elastic modulii in three mutually perpendicular directions
+   $Ex $Ey $Ez, 3 |float|, elastic moduli in three mutually perpendicular directions
    $vxy $vyz $vzx, 3 |float|, Poisson's ratios
-   $Gxy $Gyz $Gzx, 3 |float|, shear modulii
+   $Gxy $Gyz $Gzx, 3 |float|, shear moduli
    $rho, |float|, mass density. optional default = 0.0
 
 .. note::

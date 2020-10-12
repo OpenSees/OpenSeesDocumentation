@@ -12,7 +12,7 @@ The Node recorder type records the response of a number of nodes at every conver
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
 
-   $fileName, |string|, optyional: name of file to which output is sent.
+   $fileName, |string|, optional: name of file to which output is sent.
    $inetAddr, |string|, optional: ip address ("xx.xx.xx.xx") of remote machine
    $port, |integer|, optional: port on remote machine awaiting tcp
    $nSD, |integer|, optional: number of significant digits (optional: default is 6)
@@ -30,7 +30,7 @@ The Node recorder type records the response of a number of nodes at every conver
 .. note::
    1. Only one of the options **-file**, **-xml**, **-binary**, or **-tcp** may be used. The option specifies where the data is going to be sent.
 
-   2. Similarily only one of the options: **-node**, **-nodeRange**, or **-region** may be used. This option specifies the node tags.
+   2. Similarly only one of the options: **-node**, **-nodeRange**, or **-region** may be used. This option specifies the node tags.
 
    3. The valid strings for respType are:
 
@@ -53,16 +53,16 @@ The Node recorder type records the response of a number of nodes at every conver
 
    6. If the **-timeSeries** option is being used, the recorded results are those obtained from the time series for the current time added to the response quantity measures. Need as many time series tags as dof specified. Useful for obtaining for example total acceleration as opposed to relative if user using UniformAcceleration to impose a ground motion.
 
-   7. The -closeOnWrite option will slow the program down. It is useful if you want to see just exactly where the applocation is, as files are only written to disk when the operating system feels like it under typical operation.
+   7. The -closeOnWrite option will slow the program down. It is useful if you want to see just exactly where the application is, as files are only written to disk when the operating system feels like it under typical operation.
 
 
 .. admonition:: Example:
 
    The following examples demonstrate the use of the recorder Node command.
 
-   1. The first recorder will output to a file **nodesD.out** the displacements in **x** and **y** (**1** and **2**) directions at nodes **1**, **2**, **3**, and **4**. The output file will contain **9** columns (time, displacement in x and y at node 1, disp. in x and y at node 2, ... , disp. x and y at node 4))
+   1. The first recorder will output to a file ``nodesD.out`` the displacements in **x** and **y** (**1** and **2**) directions at nodes **1**, **2**, **3**, and **4**. The output file will contain **9** columns (time, displacement in x and y at node 1, disp. in x and y at node 2, ... , disp. x and y at node 4))
 
-   2. The second recorder will output to a file **nodesA.out** the total accelerations in **x** and **y** (**1** and **2**) directions at nodes **1**, **2**, **3**, and **4**. The output file will contain **9** columns (time, accel. in x and y at node 1, accel. in x and y at node 2, ... , accel. in x and y at node 4)). The accelerations output will be the accelerations stored at the nodes added to the values obtained from the time series. The **x** values are the accelerations in **x** direction at node plus values from timeSeries **1**, the **y** values are the accelerations in **y** direction at nodes plus the values from timeSries **2**.
+   2. The second recorder will output to a file ``nodesA.out`` the total accelerations in **x** and **y** (**1** and **2**) directions at nodes **1**, **2**, **3**, and **4**. The output file will contain **9** columns (time, accel. in x and y at node 1, accel. in x and y at node 2, ... , accel. in x and y at node 4)). The accelerations output will be the accelerations stored at the nodes added to the values obtained from the time series. The **x** values are the accelerations in **x** direction at node plus values from timeSeries **1**, the **y** values are the accelerations in **y** direction at nodes plus the values from timeSries **2**.
 
    .. code:: tcl
    

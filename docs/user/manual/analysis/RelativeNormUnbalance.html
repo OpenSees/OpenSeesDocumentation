@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.2.4.4. Ralative Norm Unbalance &mdash; OpenSees Documentation  documentation</title>
+  <title>3.2.4.4. Relative Norm Unbalance &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -94,12 +94,12 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="constraints.html">3.2.1. constraints Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="numberer.html">3.2.2. numberer Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="system.html">3.2.3. System Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system.html">3.2.3. system Command</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="test.html">3.2.4. test Command</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="NormUnbalance.html">3.2.4.1. Norm Unbalance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="NormDispIncr.html">3.2.4.2. Norm Displacement Incerement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NormDispIncr.html">3.2.4.2. Norm Displacement Increment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NormEnergyIncr.html">3.2.4.3. Energy Increment</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.4.4. Ralative Norm Unbalance</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.4.4. Relative Norm Unbalance</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="algorithm.html">3.2.5. algorithm Command</a></li>
@@ -176,7 +176,7 @@
         
           <li><a href="test.html"><span class="section-number">3.2.4. </span>test Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.2.4.4. </span>Ralative Norm Unbalance</li>
+      <li><span class="section-number">3.2.4.4. </span>Relative Norm Unbalance</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,8 +195,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ralative-norm-unbalance">
-<span id="relativenormunbalance"></span><h1><span class="section-number">3.2.4.4. </span>Ralative Norm Unbalance<a class="headerlink" href="#ralative-norm-unbalance" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="relative-norm-unbalance">
+<span id="relativenormunbalance"></span><h1><span class="section-number">3.2.4.4. </span>Relative Norm Unbalance<a class="headerlink" href="#relative-norm-unbalance" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a convergence test which uses the norms of the right hand side of the matrix equation, i.e. <span class="math notranslate nohighlight">\(b\)</span> vector in <span class="math notranslate nohighlight">\(Ax=b\)</span>, to determine if convergence has been reached. It uses the ratio of the current norm to the first norm, i.e. :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>frac{sqrt({b_i}^T{b_i})}{sqrt({b_1}^T{b_1})}. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, it is equal to the unbalanced forces in the system. The command to create a RelativeNormUnbalance test is the following:</p>
 <dl class="function">
 <dt>
@@ -233,7 +233,7 @@
 <div class="line">1 print information on norms each time test() is invoked</div>
 <div class="line">2 print information on norms and number of iterations at end of successful test</div>
 <div class="line">4 at each step it will print the norms and also the &lt;math&gt;Delta U&lt;/math&gt; and &lt;math&gt;R(U)&lt;/math&gt; vectors.</div>
-<div class="line">5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCEESSFULL test.</div>
+<div class="line">5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCCESSFUL test.</div>
 </div>
 </div></blockquote>
 </td>
@@ -247,11 +247,11 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The convergence test compares the current norm of the unbalance with the norm of the first step to determine if convergence has been achieved. As a consequence it will always take at least two steps to achieve convergence.</p>
-<p>If numerically the solution has a very small unbalance at the first step, this may mean that the test may never indicate sucess even though the solution had indeed converged to a solution. Thiss is because machine precision and numerical roundoff limit how small the unbalance can become.</p>
+<p>If numerically the solution has a very small unbalance at the first step, this may mean that the test may never indicate success even though the solution had indeed converged to a solution. This is because machine precision and numerical round-off limit how small the unbalance can become.</p>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example:</p>
-<p>The following examples demonstrate the command to create a RelativeNormUnbalance test whcih allows 10 iterations till failure with a 2-norm in the <span class="math notranslate nohighlight">\(b\)</span> vector, i.e. <span class="math notranslate nohighlight">\(\sqrt(b^T b)\)</span> of <strong>1.0e-2</strong>.</p>
+<p>The following examples demonstrate the command to create a RelativeNormUnbalance test which allows 10 iterations till failure with a 2-norm in the <span class="math notranslate nohighlight">\(b\)</span> vector, i.e. <span class="math notranslate nohighlight">\(\sqrt(b^T b)\)</span> of <strong>1.0e-2</strong>.</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>

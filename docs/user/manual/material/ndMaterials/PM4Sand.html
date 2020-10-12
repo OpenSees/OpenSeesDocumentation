@@ -474,7 +474,7 @@ wipe
 </div>
 <div class="admonition-example-2 admonition">
 <p class="admonition-title">Example 2</p>
-<p>2D undrained cyclic direct simple shear test using one element</p>
+<p>2D undrained cyclic direct simple shear test using one element (Displacement Controlled)</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #</span>
 <span class="c"># 2D Undrained Cyclic Direct Simple Shear Test Using One Element        #</span>
 <span class="c"># University of Washington, Department of Civil and Environmental Eng   #</span>
@@ -684,6 +684,194 @@ set emax <span class="mf">0.8</span>
     <span class="k">set</span> numCycle <span class="k">[expr</span> <span class="nv">$numCycle</span> <span class="o">+</span> <span class="mf">0.25</span><span class="k">]</span>
     <span class="nv">remove</span> loadPattern <span class="mi">3</span>
     <span class="nv">remove</span> timeSeries <span class="mi">2</span>
+<span class="k">}</span>
+
+<span class="nv">wipe</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example-3 admonition">
+<p class="admonition-title">Example 3</p>
+<p>2D undrained cyclic direct simple shear test using one element (Force Controlled)</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #</span>
+<span class="c"># 2D Undrained Cyclic Direct Simple Shear Test Using One Element        #</span>
+<span class="c"># University of Washington, Department of Civil and Environmental Eng   #</span>
+<span class="c"># Geotechnical Eng Group, L. Chen, P. Arduino - Oct 2020                #</span>
+<span class="c"># Basic Units are m, kN and s unless otherwise specified				#</span>
+<span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #</span>
+
+<span class="nv">wipe</span>
+
+<span class="c"># ------------------------ #</span>
+<span class="c"># Test Specific parameters #</span>
+<span class="c"># ------------------------ #</span>
+<span class="c"># Initial Vertical Stress</span>
+<span class="k">set</span> sigvo <span class="o">-</span><span class="mf">101.3</span>
+<span class="c"># cyclic stress ratio</span>
+<span class="k">set</span> CSR <span class="mf">0.16</span>
+<span class="c"># max number of cycles</span>
+<span class="k">set</span> maxCycles <span class="mi">20</span>
+<span class="c"># K0</span>
+<span class="k">set</span> K0 <span class="mf">0.5</span>
+<span class="c"># set Poisson&#39;s ratio to match user specified K0 for applying initial confinement</span>
+<span class="k">set</span> nu_gravity <span class="k">[expr</span> <span class="nv">$K0</span> <span class="o">/</span> <span class="k">(</span><span class="nv">1</span><span class="o">+</span><span class="nv">$K0</span><span class="k">)]</span>
+<span class="k">set</span> nu_dynamic <span class="mf">0.3</span>
+<span class="c"># Cutoff shear strain</span>
+<span class="k">set</span> maxStrain <span class="mf">0.03</span>
+<span class="c"># Permeablity</span>
+<span class="k">set</span> perm <span class="mf">1.0</span>e-9
+<span class="c"># ---------primary parameters-------------</span>
+<span class="k">set</span> Dr <span class="mf">0.55</span>
+<span class="k">set</span> Go <span class="mf">677.0</span>
+<span class="k">set</span> hpo <span class="mf">0.40</span>
+<span class="k">set</span> rho <span class="mf">0.0</span>
+<span class="c"># ---------secondary parameters-------------</span>
+<span class="k">set</span> Patm <span class="mf">101.3</span>
+<span class="c"># all initial stress dependant parameters have negative default values</span>
+<span class="c"># and will be calculated during initialization</span>
+<span class="k">set</span> h0 <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> emax <span class="mf">0.8</span>
+<span class="k">set</span> emin <span class="mf">0.5</span>
+<span class="k">set</span> eInit <span class="k">[expr</span> <span class="nv">$emax</span> <span class="o">-</span> <span class="k">(</span><span class="nv">$emax</span> <span class="nv">-</span> <span class="nv">$emin</span><span class="k">)</span><span class="o">*</span><span class="nv">$Dr</span> <span class="k">]</span>
+<span class="k">set</span> nb <span class="mf">0.5</span>
+<span class="k">set</span> nd <span class="mf">0.1</span>
+<span class="k">set</span> Ado <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> zmax <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> cz <span class="mf">250.0</span>
+<span class="k">set</span> ce <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> phicv <span class="mf">33.0</span>
+<span class="k">set</span> Cgd <span class="mf">2.0</span>
+<span class="k">set</span> Cdr <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> ckaf <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> Q <span class="mf">10.0</span>
+<span class="k">set</span> R <span class="mf">1.5</span>
+<span class="k">set</span> m_m <span class="mf">0.01</span>
+<span class="k">set</span> Fsed_min <span class="o">-</span><span class="mf">1.0</span>
+<span class="k">set</span> p_sedo <span class="o">-</span><span class="mf">1.0</span>
+<span class="c"># ---------------------------------------------</span>
+<span class="c"># Rayleigh damping parameter</span>
+<span class="k">set</span> damp   <span class="mf">0.01</span>
+<span class="k">set</span> omega1 <span class="mf">1.0</span>
+<span class="k">set</span> omega2 <span class="mf">2.0</span>
+<span class="k">set</span> a1 <span class="k">[expr</span> <span class="mf">2.0</span><span class="o">*</span><span class="nv">$damp</span><span class="o">/</span><span class="k">(</span><span class="nv">$omega1</span><span class="o">+</span><span class="nv">$omega2</span><span class="k">)]</span>
+<span class="k">set</span> a0 <span class="k">[expr</span> <span class="nv">$a1</span><span class="o">*</span><span class="nv">$omega1</span><span class="o">*</span><span class="nv">$omega2</span><span class="k">]</span>
+
+<span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</span>
+<span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHCreate ModelHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</span>
+<span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</span>
+
+<span class="c"># Create a 2D model with 3 Degrees of Freedom</span>
+<span class="nv">model</span> BasicBuilder <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">3</span>
+
+<span class="c"># Create nodes</span>
+<span class="nv">node</span> <span class="mi">1</span>	<span class="mf">0.0</span>	<span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">2</span>	<span class="mf">1.0</span>	<span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">3</span> 	<span class="mf">1.0</span>	<span class="mf">1.0</span>
+<span class="nv">node</span> <span class="mi">4</span>	<span class="mf">0.0</span>	<span class="mf">1.0</span>
+
+<span class="c"># Create Fixities</span>
+<span class="nv">fix</span> <span class="mi">1</span> 	<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">2</span> 	<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">3</span>	<span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">4</span> 	<span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+
+<span class="nv">equalDOF</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">1</span> <span class="mi">2</span>
+
+<span class="c"># Create material</span>
+<span class="c">#          PM4Sand  tag    Dr   Go   hpo   den  Patm  h0   emax   emin  nb  nd  Ado   zmax    cz    ce     phicv  nu</span>
+<span class="nv">nDMaterial</span> PM4Sand   <span class="mi">1</span>    <span class="nv">$Dr</span>  <span class="nv">$Go</span>  <span class="nv">$hpo</span>  <span class="nv">$rho</span> <span class="nv">$Patm</span> <span class="nv">$h0</span>  <span class="nv">$emax</span> <span class="nv">$emin</span>  <span class="nv">$nb</span>  <span class="nv">$nd</span> <span class="nv">$Ado</span>  <span class="nv">$zmax</span>  <span class="nv">$cz</span>   <span class="nv">$ce</span>	  <span class="nv">$phicv</span>  <span class="nv">$nu_gravity</span> <span class="nv">$Cgd</span> <span class="nv">$Cdr</span> <span class="nv">$ckaf</span> <span class="nv">$Q</span> <span class="nv">$R</span> <span class="nv">$m_m</span> <span class="nv">$Fsed_min</span> <span class="nv">$p_sedo</span>
+
+<span class="c"># set e_init 0.6</span>
+<span class="c"># set rho1 0.0</span>
+<span class="c"># nDMaterial ManzariDafalias 1 82.35 0.33 $e_init 1.35 0.7 0.055 0.8 0.5 101.3 0.02 16.18 0.996 0.64 0.75 1.5 12.5 500.0 $rho1 1 0</span>
+
+<span class="c"># nDMaterial PressureDependMultiYield02 1 2 0.0 9.0e4 2.2e5 32 0.1 80 0.5\</span>
+<span class="c">                                          # 26. 0.067 0.23 0.06 0.27</span>
+
+<span class="c"># Using default values for secondary parameters</span>
+<span class="c"># nDMaterial PM4Sand $matTag 0.61 585.0 0.28 0.0</span>
+<span class="c"># nDMaterial PM4Silt $matTag 44.0 -1 585 100.0 0.0</span>
+<span class="c"># nDMaterial PM4Silt $matTag -1 0.5 585 100.0 0.0</span>
+
+<span class="c"># Create element</span>
+<span class="nv">element</span> SSPquadUP   <span class="mi">1</span>     <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>    <span class="mi">1</span>  <span class="mf">1.0</span>   <span class="mf">2.2</span>e6 <span class="mf">1.0</span> <span class="nv">$perm</span> <span class="nv">$perm</span> <span class="nv">$eInit</span>  <span class="mf">1.0</span>e-6
+<span class="c"># element quadUP  1     1 2 3 4  1.0  1 2.2e6 1.0 $perm $perm</span>
+<span class="c"># Create analysis</span>
+<span class="nv">constraints</span> Penalty <span class="mi">1</span>e17 <span class="mi">1</span>e17
+<span class="nv">test</span>        NormDispIncr <span class="mf">1.0</span>e-5 <span class="mi">35</span> <span class="mi">0</span>
+<span class="nv">algorithm</span>   Newton
+<span class="nv">numberer</span>    RCM
+<span class="nv">system</span>      ProfileSPD
+<span class="nv">integrator</span>  Newmark <span class="k">[expr</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="mf">6.0</span><span class="k">]</span> <span class="k">[expr</span>  <span class="mf">4.0</span> <span class="o">/</span> <span class="mf">9.0</span><span class="k">]</span>
+<span class="nv">rayleigh</span>    <span class="nv">$a0</span> <span class="nv">$a1</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="nv">analysis</span>    VariableTransient
+
+<span class="c"># Apply consolidation pressure</span>
+<span class="k">set</span> pNode <span class="k">[expr</span> <span class="nv">$sigvo</span> <span class="o">/</span> <span class="mf">2.0</span><span class="k">]</span>
+<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="k">{</span><span class="nv">Series</span> <span class="o">-</span>time <span class="k">{</span><span class="nv">0</span> <span class="mi">100</span> <span class="mi">1</span>e10<span class="k">}</span> <span class="o">-</span>values <span class="k">{</span><span class="nv">0</span> <span class="mi">1</span> <span class="mi">1</span><span class="k">}</span> <span class="o">-</span>factor <span class="mi">1</span><span class="k">}</span> <span class="k">{</span>
+	<span class="nb">load</span> <span class="mi">3</span>  <span class="mf">0.0</span>  <span class="nv">$pNode</span> <span class="mf">0.0</span>
+	<span class="nb">load</span> <span class="mi">4</span>  <span class="mf">0.0</span>  <span class="nv">$pNode</span> <span class="mf">0.0</span>
+<span class="k">}</span>
+<span class="nv">updateMaterialStage</span> <span class="o">-</span>material <span class="mi">1</span> <span class="o">-</span>stage <span class="mi">0</span>
+
+<span class="nv">analyze</span> <span class="mi">100</span> <span class="mi">1</span>
+
+<span class="nv">updateMaterialStage</span> <span class="o">-</span>material <span class="mi">1</span> <span class="o">-</span>stage <span class="mi">1</span>
+<span class="nv">setParameter</span> <span class="o">-</span>value <span class="mi">0</span> <span class="o">-</span>ele <span class="mi">1</span> FirstCall <span class="mi">1</span>
+<span class="c"># update Poisson&#39;s ratio for analysis</span>
+<span class="nv">setParameter</span> <span class="o">-</span>value <span class="nv">$nu_dynamic</span> <span class="o">-</span>ele <span class="mi">1</span> poissonRatio <span class="mi">1</span>
+
+<span class="c"># damp out any gravity wave</span>
+<span class="nv">analyze</span> <span class="mi">100</span> <span class="mi">100</span>
+<span class="nv">analyze</span> <span class="mi">100</span> <span class="mi">1000</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;Finished Gravity&quot;</span>
+
+<span class="c"># Close drainage valves</span>
+<span class="k">for</span> <span class="k">{set</span> x <span class="mi">1</span><span class="k">}</span> <span class="k">{</span><span class="nv">$x</span><span class="o">&lt;</span> <span class="nv">5</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> x<span class="k">}</span> <span class="k">{</span>
+   <span class="nv">remove</span> sp <span class="nv">$x</span> <span class="mi">3</span>
+<span class="k">}</span>
+<span class="nv">equalDOF</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">3</span>
+<span class="nb">puts</span> <span class="s2">&quot;finished update fixties&quot;</span>
+
+<span class="c"># Hold load and redefine analysis</span>
+<span class="nv">loadConst</span> <span class="o">-</span>time <span class="mf">0.0</span>
+<span class="nv">wipeAnalysis</span>
+
+<span class="k">set</span> period      		<span class="mi">1</span>.<span class="k">;</span>
+<span class="k">set</span> dT 				<span class="mi">5</span>e-5<span class="k">;</span>
+<span class="k">set</span> recDT     <span class="k">[expr</span> <span class="mi">10</span> <span class="o">*</span> <span class="nv">$dT</span><span class="k">]</span>
+<span class="c"># Create recorders</span>
+<span class="nv">recorder</span> Node  <span class="o">-</span>nodeRange <span class="mi">1</span> <span class="mi">4</span>  <span class="o">-</span>time <span class="o">-</span>dT <span class="nv">$recDT</span> <span class="o">-</span>file Cycdisp.out  <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> disp
+<span class="nv">recorder</span> Node  <span class="o">-</span>nodeRange <span class="mi">1</span> <span class="mi">4</span>  <span class="o">-</span>time <span class="o">-</span>dT <span class="nv">$recDT</span> <span class="o">-</span>file Cycpress.out <span class="o">-</span>dof <span class="mi">3</span> vel
+
+<span class="c"># recorder for quadUP element</span>
+<span class="c"># recorder Element -ele 1 -time -dT $recDT -file Cycstress.out material 1 stress</span>
+<span class="c"># recorder Element -ele 1 -time -dT $recDT -file Cycstrain.out material 1 strain</span>
+
+<span class="c"># recorder for SSPquadUP element</span>
+<span class="nv">recorder</span> Element <span class="o">-</span>ele <span class="mi">1</span> <span class="o">-</span>time <span class="o">-</span>dT <span class="nv">$recDT</span> <span class="o">-</span>file Cycstress.out stress
+<span class="nv">recorder</span> Element <span class="o">-</span>ele <span class="mi">1</span> <span class="o">-</span>time <span class="o">-</span>dT <span class="nv">$recDT</span> <span class="o">-</span>file Cycstrain.out strain
+<span class="c"># Create analysis</span>
+<span class="nv">constraints</span> Penalty <span class="mi">1</span>e17 <span class="mi">1</span>e17
+<span class="nv">test</span>        NormDispIncr <span class="mf">1.0</span>e-5 <span class="mi">35</span> <span class="mi">0</span>
+<span class="nv">algorithm</span>   KrylovNewton
+<span class="nv">numberer</span>    RCM
+<span class="nv">system</span>      ProfileSPD
+<span class="nv">integrator</span>  Newmark <span class="k">[expr</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="mf">6.0</span><span class="k">]</span> <span class="k">[expr</span>  <span class="mf">4.0</span> <span class="o">/</span> <span class="mf">9.0</span><span class="k">]</span>
+<span class="nv">rayleigh</span>    <span class="nv">$a0</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="nv">analysis</span>    Transient
+
+<span class="c"># This part is modified from PDMY03 driver by Arash Khosravifar</span>
+
+<span class="nv">pattern</span> Plain <span class="mi">2</span> <span class="s2">&quot;Sine 0 [expr $period*$maxCycles] $period&quot;</span> <span class="k">{</span>
+	<span class="nb">load</span> <span class="mi">3</span> <span class="k">[expr</span> <span class="o">-</span><span class="nv">$CSR</span><span class="o">*</span><span class="nv">$sigvo</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="mf">0.50</span><span class="k">]</span> <span class="mi">0</span> <span class="mi">0</span>
+	<span class="nb">load</span> <span class="mi">4</span> <span class="k">[expr</span> <span class="o">-</span><span class="nv">$CSR</span><span class="o">*</span><span class="nv">$sigvo</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="mf">0.50</span><span class="k">]</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="k">}</span>
+
+<span class="k">while</span> <span class="k">{[expr</span> abs<span class="k">([</span><span class="nv">nodeDisp</span> <span class="mi">4</span> <span class="mi">1</span><span class="k">]</span><span class="o">/</span><span class="nv">1.0</span><span class="k">)]</span><span class="o">&lt;</span><span class="nv">$maxStrain</span><span class="k">}</span> <span class="k">{</span>
+	<span class="nv">analyze</span> <span class="mi">1</span> <span class="nv">$dT</span>
+	<span class="nb">puts</span> <span class="s2">&quot;time = [getTime] sec&quot;</span>
 <span class="k">}</span>
 
 <span class="nv">wipe</span>

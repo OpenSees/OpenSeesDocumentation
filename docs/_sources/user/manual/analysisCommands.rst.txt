@@ -10,7 +10,7 @@ In OpenSees, an analysis is an object which is composed by the aggregation of co
 #. SystemOfEqn & Solver -- it specifies how to store and solve the system of equations :math:`Ax=b`
 #. Convergence Test -- determines when convergence has been achieved.
 #. Solution Algorithm -- determines the sequence of steps taken to solve the non-linear equation at the current time step
-#. Integrator -- determines the equations to solve, the predictive step, and how to update the reponses at the nodes given the solution to :math:`Ax=b`
+#. Integrator -- determines the equations to solve, the predictive step, and how to update the response at the nodes given the solution to :math:`Ax=b`
 
 .. figure:: figures/OpenSeesAnalysis.png
 	:align: center

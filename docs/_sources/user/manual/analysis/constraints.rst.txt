@@ -13,7 +13,7 @@ This command is used to construct the ConstraintHandler object. The ConstraintHa
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
    
-	$constraitsType, |string|,  the constraints type
+	$constraintType, |string|,  the constraints type
 	$args, |list|,   a list of arguments for that type
 
 
