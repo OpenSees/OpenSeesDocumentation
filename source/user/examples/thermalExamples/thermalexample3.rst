@@ -2,12 +2,12 @@
 Example 3
 *********
 
-A 6m long beam has a uniform applied load of 10 kN/m. With the loading sustained, the beam is heated to a target temperature of 1180oC.
+A 6m long beam has a uniform applied load of 10 kN/m. With the loading sustained, the beam is heated to a target temperature of 1180 :sup:`o` C.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: figures/Example3_fig1.png
 	:align: center
-    :width: 400px
+	:width: 500px
 	:figclass: align-center
 
 **Elevation of beam and member cross-section**
@@ -20,6 +20,13 @@ displacement of the beam: (i) including 2nd order geometric
 transformations, and (ii) restraining the horizontal displacement of the
 boundary conditions
 
+Download Example 3   files:
+
+:download:`Example3.tcl <files/example3.tcl>`.
+
+:download:`Wsectionthermal.tcl <files/Wsectionthermal.tcl>`.
+
+:download:`Example 3 Outputs <files/Example3_OUTPUT.zip>`.
 
 Objectives
 ----------
@@ -37,7 +44,7 @@ Objectives
 Material
 --------
 
-The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties according to Eurocode 3 carbon steel. More details of Steel01 can be found at: `Steel01 Material<https://opensees.berkeley.edu/wiki/index.php/Steel01_Material>`__
+The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties according to Eurocode 3 carbon steel. More details of Steel01 can be found at: `Steel01 Material <https://opensees.berkeley.edu/wiki/index.php/Steel01_Material>`__
 
 .. function:: uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;
 
@@ -72,16 +79,16 @@ This example uses a W-shape beam, therefore an external .tcl script is used to d
 
 In previous versions of OpenSees, a default value for torsional stiffness was used (GJ). In versions 3.1.0 and newer fiber sections require a value for torsional stiffness. This is a 2D example with negligible torsion, however a value is required. The Young's Modulus is used for convenience. 
 
-Wsection dimensions
+Wsection dimensions:
 
-	set d 355; 		
-	set bf 171.5; 	
-	set tf 11.5; 	
-	set tw 7.4; 	
-    set nfdw 8;		
-    set nftw 1;		
-    set nfbf 1;		
-    set nftf 4;		
+    .. function:: set d 355; 	#mm	
+    .. function:: set bf 171.5; #mm 	
+    .. function:: set tf 11.5;  #mm	
+    .. function:: set tw 7.4;  #mm		
+    .. function:: set nfdw 8; #mm		
+    .. function:: set nftw 1; #mm			
+    .. function:: set nfbf 1; #mm			
+    .. function:: set nftf 4; #mm			
 
 
 * secTag - section tag
@@ -98,10 +105,11 @@ Wsection dimensions
 
 Wsection secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj 
 
-.. function::Wsection 1 1 $d $bf $tf $tw 8 1 1 4 $Es
+.. function:: Wsection 1 1 $d $bf $tf $tw 8 1 1 4 $Es
 
 .. figure:: figures/Wsection_FiberSection.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
 **Cross section of W-shape showing fibers in the flanges and the web**
@@ -134,22 +142,21 @@ Output Recorders
 ----------------
 
 $dataDir is defined at the beginning of the model, this creates a folder
-within your working directory where output files will be saved. >set
-dataDir Examples/EXAMPLE3\_OUTPUT;
+within your working directory where output files will be saved. 
+
+.. function:: set dataDir Examples/EXAMPLE3\_OUTPUT;
 
 .. function:: file mkdir $dataDir;
 
 Displacement of the midspan node (4) in DOF 2 (Vertical Displacement)
 
-.. function:: recorder Node -file $dataDir/Midspan\_Disp.out" -time -node 4 -dof 2
-disp;
+.. function:: recorder Node -file $dataDir/Midspan\_Disp.out" -time -node 4 -dof 2 disp;
 
 Reaction forces at end nodes (nodes 1 & 7) 
 
 .. function:: recorder Node -file $dataDir/RXNs.out -time -node 1 7 -dof 2 reaction;
 
-Learn more about the Recorder Command: `Recorder
-Command <http://opensees.berkeley.edu/wiki/index.php/Recorder_Command>`__
+Learn more about the Recorder Command: `Recorder Command <http://opensees.berkeley.edu/wiki/index.php/Recorder_Command>`__
 
 
 Thermal Loading
@@ -186,9 +193,8 @@ Bottom fiber of beam
 
 .. figure:: figures/Example3_fig2.png
 	:align: center
-    :width: 400px
+	:width: 500px
 	:figclass: align-center
-
 
 **Location of defined input temperature locations on the member cross section**
 
@@ -202,12 +208,7 @@ complex temperature loading.
 Using a plain linear loading pattern, Elements 1-6 will be heated to the
 target tempurature, $T using a for loop for effecency. The syntax for this is: 
 
-::
-    pattern Plain 3 Linear {
-    for {set level 1} {$level <= 6} {incr level 1} {
-    set eleID $level
-    eleLoad -ele $eleID -type -beamThermal $T $Y2 $T $Y1;
-    }}
+.. function:: pattern Plain 3 Linear {for {set level 1} {$level <= 6} {incr level 1} {set eleID $level eleLoad -ele $eleID -type -beamThermal $T $Y2 $T $Y1;}}
 
 
 Thermal Analysis
@@ -226,17 +227,17 @@ factor, therefore, it is important to ensure that benchmarking examples
 are performed to determine the proper load factor to use in structural
 fire engineering analyses.
 
-.. figure:: set Nstep 1000;
+.. function:: set Nstep 1000;
 
 Thermal load is applied in 1000 steps. Each step is an 0.001 increment
 of the maximum temperature specified in the thermal loading step $T
 (1180)
 
-.. figure:: set Factor [expr 1.0/$Nstep];
+.. function::  set Factor [expr 1.0/$Nstep];
 
-.. figure:: integrator LoadControl $Factor;
+.. function::  integrator LoadControl $Factor;
 
-.. figure:: analyze $Nstep;
+.. function::  analyze $Nstep;
 
 
 Output Plots
@@ -253,7 +254,7 @@ boundary conditions are plotted. The same model was excuted in the finite elemen
 
    .. figure:: figures/Example3_Output.png
 	:align: center
-    :width: 400px
+	:width: 500px
 	:figclass: align-center
 
 

@@ -7,21 +7,28 @@ Thermal expansion of a beam
 
 .. figure:: figures/Example1_fig1.png
 	:align: center
-    :width: 400px
+	:width: 500px
 	:figclass: align-center
+
 
 **Elevation of beam**
 
 
 Example Overview: A steel beam is heated to 1180 :sup:`o` C. Horizontal displacement of right end is recorded. This displacement is normalized against the original length and  plotted against temperature. The calculated thermal expansion is compared against the steel temperature-dependent thermal expansion in Eurocode 3, Part 1-2 [1]. 
 
+Download Example 1 files:
+
+:download:`Example1.tcl <files/example1.tcl>`.
+
+:download:`Example 1 Outputs <files/Example1_OUTPUT.zip>`.
+
+
 Material Properties
 -------------------
 
 The uniaxialMaterial Steel01Thermal includes temperature-dependent steel
 thermal and mechanical properties per Eurocode 3 [1]. More details of
-Steel01 can be found at: 
-https://opensees.berkeley.edu/wiki/index.php/Steel01_Material>`__
+Steel01 can be found at: `Steel01 Material <https://opensees.berkeley.edu/wiki/index.php/Steel01_Material>`__
 
 .. function:: uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;
 
@@ -71,8 +78,9 @@ In previous versions of OpenSees, a default value for torsional stiffness was us
 
 .. figure:: figures/Example1_fig2.png
 	:align: center
-	:width: 400px
+	:width: 500px
 	:figclass: align-center
+
 
 **Cross section of rectangular beam showing fiber discretization**
 
@@ -87,7 +95,7 @@ The beam is made of one element with 5 iteration points and connects nodes 1 & 2
 
 dispBeamColumnThermal eleTag iNode jNode numIntgrPts secTag TransfTag;
 
-.. figure:: element dispBeamColumnThermal 1 1 2 5 $secTag $transftag;
+.. function:: element dispBeamColumnThermal 1 1 2 5 $secTag $transftag;
 
 
 
@@ -97,11 +105,11 @@ Output Recorders
 
 Displacement of the end node (2) in DOF 1 (Horizontal Displacement) is what we want to record. To do so, a folder within your working directory must be created. $dataDir is the command to create that folder and should be defined at the beginning of the model. This is where your output files will be saved.
 
-.. figure:: set dataDir Examples/EXAMPLE2_OUTPUT;		
+.. function:: set dataDir Examples/EXAMPLE2_OUTPUT;		
 
-.. figure:: file mkdir $dataDir;
+.. function:: file mkdir $dataDir;
 
-.. figure:: recorder Node -file $dataDir/Node2disp.out -time -node 2 -dof 1 disp;	
+.. function:: recorder Node -file $dataDir/Node2disp.out -time -node 2 -dof 1 disp;	
 
 Learn more about the Recorder Command: ` Recorder Command <http://opensees.berkeley.edu/wiki/index.php/Recorder_Command>` __
 
@@ -110,27 +118,28 @@ Thermal Loading
 ---------------
 
 
-This particular model is heating a beam to a set temperature over the time period of the model. We are not asking OpenSees to use a specific time-temperature curve, rather linearly ramp up the temperature from ambient to 1180 :sub:`o` C. 
+This particular model is heating a beam to a set temperature over the time period of the model. We are not asking OpenSees to use a specific time-temperature curve, rather linearly ramp up the temperature from ambient to 1180 :sup:`o` C. 
 
 Therefore, we set the maximum temperature as follows:
 
 T = Max Tempurature [deg celcius]
 
-.. figure:: set T 1180; 
+.. function:: set T 1180; 
 
 
 In OpenSees, the user can define 2 or 9 temperature data points through the cross section. In a 2D analysis framework, like this example, temperature data point locations are specified on the y-axis of the local coordinate system (as shown in the figure below), and are linearly interpolated between the defined points. Because this example is using a uniformly heated beam, the entire cross section is one temperature, and two temperature points on each extreme fiber on the y-axis will be chosen. The beam has a depth of 400 mm, therefore, Y1 = 200 mm & Y2 = -200 mm for the top and bottom fibers respectively. 
 
 Location of bottom extreme fiber of beam [mm]
 
-.. figure:: set Y1 100;
+.. function:: set Y1 100;
 
 Location of top extreme fiber of beam [mm]
 
-.. figure:: set Y2 -100;
+.. function:: set Y2 -100;
 
 .. figure:: figures/Example1_fig3.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
 **Location of defined input temperature locations on the member cross section**
@@ -141,7 +150,7 @@ The bottom extreme fiber temperature must be defined first. The target maximum t
 
 Thermal loading pattern
 
-.. figure:: pattern Plain 1 Linear { eleLoad -ele 1 -type -beamThermal $T $Y2 $T $Y1 };
+.. function:: pattern Plain 1 Linear { eleLoad -ele 1 -type -beamThermal $T $Y2 $T $Y1 };
 
 
 Thermal Analysis
@@ -176,9 +185,9 @@ After the model has completed running, the results will be a horizontal displace
 Thermal expansion is the change is length divided by the original length. This could also be called thermal strain. The thermal expansion of the beam is plotted below and compared to the Eurocode 3 [1]temperature-dependent thermal expansion. We can see that the modeled thermal expansion matches the material properties. This is important to check that the temperatures and material properties are assigned propertly in the model.
 
 
-.. figure:: figures/Example1_Output.png
+.. figure:: figures/Example1_output.png
 	:align: center
-	:width: 400px
+	:width: 500px
 	:figclass: align-center
 
 **Thermal expansion of the beam recorded at node 2**

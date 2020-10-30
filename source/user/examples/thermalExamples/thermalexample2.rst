@@ -6,13 +6,20 @@ Restrained Steel beam subjected to uniform temperature on half of the member.
 
 .. figure:: figures/Example2_fig1.png
 	:align: center
-    :width: 400px
+	:width: 500px
 	:figclass: align-center
+    
 
 Example overview: A steel beam of two equal elements is subjected to a
 uniform temperature on only one of the elements. Element 1 remains at
 ambient tempurature while Element 2 is heated using a linear
 time-temperature history.
+
+Download Example 2 files:
+
+:download:`Example2.tcl <files/example2.tcl>`.
+
+:download:`Example 2 Outputs <files/Example2_OUTPUT.zip>`.
 
 Objective
 ---------
@@ -83,10 +90,11 @@ In previous versions of OpenSees, a default value for torsional stiffness was us
 
 .. figure:: figures/Example2_fig2.png
 	:align: center
-    :width: 400px
+	:width: 400px
 	:figclass: align-center
 
 **Cross section of rectangular beam showing fiber discretization**
+
 
 
 Elements
@@ -98,13 +106,14 @@ The beam is made of one element with 5 iteration points and connects nodes 1 & 2
 
 dispBeamColumnThermal eleTag iNode jNode numIntgrPts secTag TransfTag;
 
-.. figure:: element dispBeamColumnThermal 1 1 2 5 $secTag $transftag;
-
 Element 1
 
-.. figure:: element dispBeamColumnThermal 1 2 3 5 $secTag $transftag;
+.. function:: element dispBeamColumnThermal 1 1 2 5 $secTag $transftag;
 
 Element 2
+
+.. function:: element dispBeamColumnThermal 1 2 3 5 $secTag $transftag;
+
 
 Output Recorders
 ----------------
@@ -142,6 +151,7 @@ ambient to 1180 :sup:`o` C.
 Therefore, we set the maximum temperature as follows:
 
 T = Max Tempurature [deg celcius] 
+
 .. function:: set T 1180;
 
 In OpenSees, the user can define 2 or 9 temperature data points
@@ -162,8 +172,9 @@ Location of top extreme fiber of beam [mm]
 
 .. function:: set Y2 100;
 
-.. figure:: figures/Example2_fig3.png
+.. figure:: figures/Example1_fig3.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
 **Location of defined input temperature locations on the member cross section** 
@@ -216,19 +227,23 @@ and the reactions from the boundary conditions. Since the temperature
 was linearly ramped up from ambient to 1180 :sup:`o` C, the user can develop a
 temperature history that matches every increment of the model.
 
-.. figure:: figures/Example2_Output2.png
-	:align: center
-    :width: 400px
-	:figclass: align-center
-
 **Element 1 internal axial force vs. temperature**
 
-.. figure:: figures/Example2_Output1.png
+.. figure:: figures/Example2_output2.png
 	:align: center
-    :width: 400px
+	:width: 500px
 	:figclass: align-center
 
+
+
 **Node 2 Horizontal displacement versus temperature**
+
+.. figure:: figures/Example2_output1.png
+	:align: center
+	:width: 500px
+	:figclass: align-center
+
+
 
 Sources
 -------

@@ -6,6 +6,7 @@ A 6 m x 3.5 m single bay frame with a 2 kN/m distributed load is subjected to a 
 
 .. figure:: figures/Example4_fig1.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
     
 **Elevation of frame**
@@ -20,6 +21,16 @@ of the top corners of frame are restrained to represent lateral bracing,
 and the midspan displacement of the beam is recorded throughout the
 analysis.
 
+Download Example 4   files:
+
+:download:`Example4.tcl <files/example4.tcl>`.
+
+:download:`Wsectionthermal.tcl <files/Wsectionthermal.tcl>`.
+
+:download:`Nodal Temperature Files <files/NodalTemperatureFiles.zip>`. 
+
+:download:`Example 4 Outputs <files/Example4_OUTPUT.zip>`. 
+
 
 Objectives
 ----------
@@ -32,7 +43,7 @@ for the elements calculated through heat transfer analysis.
 Material
 --------
 
-The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties according to Eurocode 3 carbon steel. More details of Steel01 can be found at: `Steel01 Material<https://opensees.berkeley.edu/wiki/index.php/Steel01_Material>`__
+The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties according to Eurocode 3 carbon steel. More details of Steel01 can be found at: `Steel01 Material <https://opensees.berkeley.edu/wiki/index.php/Steel01_Material>`__
 
 .. function:: uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;
 
@@ -64,15 +75,15 @@ In previous versions of OpenSees, a default value for torsional stiffness was us
 
 Wsection dimensions:
 
-	set secTag 1;
-	set d 160;
-	set bf 82;
-	set tf 7.4;
-	set tw 5.0;
-    set nfdw 8;
-    set nftw 1;
-    set nfbf 1;
-    set nftf 4;
+ .. function:: set secTag 1; 
+ .. function:: set d 160;
+ .. function:: set bf 82;
+ .. function:: set tf 7.4;
+ .. function:: et tw 5.0;
+ .. function:: set nfdw 8;
+ .. function:: set nftw 1;
+ .. function:: set nfbf 1;
+ .. function:: set nftf 4;
 
 * secTag - section tag
 * matTag - material tag
@@ -92,6 +103,7 @@ Wsection secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj
 
 .. figure:: figures/Wsection_FiberSection.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
 **Cross section of W-shape showing fibers in the flanges and the web**
@@ -141,6 +153,7 @@ This particular model is heated using a fire time tempurature curve shown below.
 
 .. figure:: figures/Example4_fireCurve.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
 The results from the heat transfer analysis were used as inputs for the fiber temperatures in OpenSees. The locations of the input tempurature locations can be seen in the figure below. 
@@ -163,6 +176,7 @@ The red dots above below are locations where nodal temperatures were recorded du
 
 .. figure:: figures/Example4_fig2.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
 **Location of defined input temperature locations and extracted nodal temperatures on the member cross section (both beam and columns)**
@@ -171,15 +185,15 @@ The bottom extreme fiber temperature must be defined first in the thermal load p
 
 **Temperature loading for the beam**
 
-    pattern Plain 11 Linear { for {set level 21} {$level <= 30} {incr level 1} {set eleID $level; eleLoad -ele $eleID -type -beamThermal -source BeamTemp.txt $Y9 $Y8 $Y7 $Y6 $Y5 $Y4 $Y3 $Y2 $Y1;}}	
+.. function:: pattern Plain 11 Linear { for {set level 21} {$level <= 30} {incr level 1} {set eleID $level; eleLoad -ele $eleID -type -beamThermal -source BeamTemp.txt $Y9 $Y8 $Y7 $Y6 $Y5 $Y4 $Y3 $Y2 $Y1;}}	
 
 **Temperature loading for column 1**
 
-    pattern Plain 11 Linear { for {set level 1} {$level <= 10} {incr level 1} {set eleID $level; eleLoad -ele $eleID -type -beamThermal -source Column1Temp.txt $Y9 $Y8 $Y7 $Y6 $Y5 $Y4 $Y3 $Y2 $Y1;}}	
+.. function:: pattern Plain 11 Linear { for {set level 1} {$level <= 10} {incr level 1} {set eleID $level; eleLoad -ele $eleID -type -beamThermal -source Column1Temp.txt $Y9 $Y8 $Y7 $Y6 $Y5 $Y4 $Y3 $Y2 $Y1;}}	
 
 **Temperature loading for column 2**
 
-    pattern Plain 11 Linear { for {set level 11} {$level <= 20} {incr level 1} {set eleID $level; eleLoad -ele $eleID -type -beamThermal -source Column2Temp.txt $Y9 $Y8 $Y7 $Y6 $Y5 $Y4 $Y3 $Y2 $Y1;}}	
+.. function:: pattern Plain 11 Linear { for {set level 11} {$level <= 20} {incr level 1} {set eleID $level; eleLoad -ele $eleID -type -beamThermal -source Column2Temp.txt $Y9 $Y8 $Y7 $Y6 $Y5 $Y4 $Y3 $Y2 $Y1;}}	
 
 
 Thermal Analysis
@@ -198,13 +212,13 @@ factor, therefore, it is important to ensure that benchmarking examples
 are performed to determine the proper load factor to use in structural
 fire engineering analyses.
 
-    set Nstep 1000;
+.. function:: set Nstep 1000;
 
-    set Factor [expr 1.0/$Nstep];
+.. function:: set Factor [expr 1.0/$Nstep];
 
-    integrator LoadControl $Factor;
+.. function:: integrator LoadControl $Factor;
 
-    analyze $Nstep;
+.. function:: analyze $Nstep;
 
 Output Plots
 ------------
@@ -212,12 +226,14 @@ Output Plots
 
 After the model has completed running, the results will be the vertical midspan displacement of the beam. This displacement can be plotted against the time of the fire. It is suggested that if the user would like to develop a temperature history that matches every increment of the model, the same number of tempurature inputs as time steps is used.  
 
+**Beam midspan displacement versus time for the heated one-bay frame:**
 
 .. figure:: figures/Example4_Output.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
-**Beam midspan displacement versus time for the heated one-bay frame**
+
 
 
 Sources

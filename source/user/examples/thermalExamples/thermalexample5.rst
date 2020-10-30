@@ -1,11 +1,12 @@
 Example 5
 =========
 
-A two-bay frame that measures 2.4 m x 1.18 m (H) with a 60 N/m distributed load and column point loads is subjected to a fire in one of the bays. The heated bay is heated linearly to a target temperature of 550 :sup:`o` C.
+A two-bay frame that measures 2.4 m x 1.18 m with a 60 N/m distributed load and column point loads is subjected to a fire in one of the bays. The heated bay is heated linearly to a target temperature of 550 :sup:`o` C.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: figures/Example4_fig1.png
+.. figure:: figures/Example5_fig1.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
 **Elevation of two-bay frame**
@@ -19,6 +20,14 @@ program to calculate the temperature distribution through the cross
 sections when the members are exposed to a linear gas time-temperature
 curve. Horizontal displacement of upper corners, U1 & U2 are recorded.
 
+Download Example 5   files:
+
+:download:`Example5.tcl <files/example5.tcl>`.
+
+:download:`Wsectionthermal.tcl <files/Wsectionthermal.tcl>`.
+
+:download:`Example 5 Outputs <files/Example5_OUTPUT.zip>`. 
+
 
 Objectives
 ----------
@@ -30,14 +39,16 @@ the elements calculated through heat transfer analysis, and 3. Compare
 recorded parameters from the OpenSees model to experimental testing data
 [2] to benchmark modeling methodologies.
 
-Experimental Test Overview
---------------------------
+**Experimental Test Overview**
+
 
 A two-bay frame was tested by researchers [2]. Each bay size was 1.2 m in width and 1.18 m in height. Point loads were applied at the beam-column joints in the lateral and gravity directions in addition to a uniformly distributed load applied to the beams. The columns and beam of one of the bays was heated using electrical heaters that surrounded each of the members, therefore, uniformly heating each member (there was no thermal gradient through the cross section). The temperature was increased until failure.
 
-## Material
+Material
+--------
 
-The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties per Eurocode 3 [1]. More details of Steel01 can be found at: `Steel01 Material<https://opensees.berkeley.edu/wiki/index.php/Steel01_Material>`__
+
+The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties per Eurocode 3 [1]. More details of Steel01 can be found at: `Steel01 Material <https://opensees.berkeley.edu/wiki/index.php/Steel01_Material>`__
 
 Es = 210 GPa (Young’s modulus of elasticity at ambient temperatures)
 
@@ -45,9 +56,9 @@ Fy = 355 MPa (Yield strength of material at ambient temperatures)
 
 b = 0.001 (Strain-Hardening Ratio)
 
-.. figure::set matTag 1;
+.. function:: set matTag 1;
 
-.. figure::uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;
+.. function:: uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;
 
 
 Transformation
@@ -57,7 +68,7 @@ Because the beams and columns in this example experience bending, 2nd
 order bending effects were considered using the Corotational geometric
 transformation.
 
-.. figure:: geomTransf Corotational $transftag;
+.. function:: geomTransf Corotational $transftag;
 
 Learn more about geometric transofrmations: `Geometric
 Transformation <http://opensees.berkeley.edu/wiki/index.php/Geometric_Transformation_Command>`__
@@ -91,10 +102,11 @@ Wsection dimensions are (units are meters):
 
 Wsection secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj 
 
-.. figure:: Wsection 1 1 $d $bf $tf $tw 8 1 1 4 $Es
+.. function:: Wsection 1 1 $d $bf $tf $tw 8 1 1 4 $Es
 
 .. figure:: figures/Wsection_FiberSection.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
 **Cross section of W-shape showing fibers in the flanges and the web**
@@ -106,7 +118,7 @@ dispBeamColumnThermal elements are used because temperature-dependent thermal an
 
 dispBeamColumnThermal $eleTag $iNode $jNode $numIntgrPts $secTag $TransfTag;
 
-.. figure:: element dispBeamColumnThermal 1 1 2 5 $secTag $transftag;
+.. function:: element dispBeamColumnThermal 1 1 2 5 $secTag $transftag;
 
 Each column and beam element is created using ten displacement-based elements with 5 iteration points in each element. 
 
@@ -116,21 +128,21 @@ Output Recorders
 
 $dataDir is defined at the beginning of the model, this creates a folder within your working directory where output files will be saved. 
 
-.. figure:: set dataDir Examples/EXAMPLE5_OUTPUT;				
+.. function:: set dataDir Examples/EXAMPLE5_OUTPUT;				
 
-.. figure:: file mkdir $dataDir;
+.. function:: file mkdir $dataDir;
 
 displacements of node U1 (node 11, top left), DOF 1 (Horizontal Displacement)
 
-.. figure:: recorder Node -file $dataDir/Midspan_BeamDisp.out -time -node 11 -dof 1 disp;
+.. function:: recorder Node -file $dataDir/Midspan_BeamDisp.out -time -node 11 -dof 1 disp;
 
 displacements of node U2 (node 22, top-middle), DOF 1 (Horizontal Displacement)
 
-.. figure:: recorder Node -file $dataDir/Midspan_BeamDisp.out -time -node 22 -dof 1 disp;
+.. function:: recorder Node -file $dataDir/Midspan_BeamDisp.out -time -node 22 -dof 1 disp;
 
 Reaction forces at support nodes (1, 12 & 23):
 
-.. figure:: recorder Node -file $dataDir/RXNS.out -time -node 1 12 23 -dof 2 3 reaction;
+.. function:: recorder Node -file $dataDir/RXNS.out -time -node 1 12 23 -dof 2 3 reaction;
 
 Learn more about the Recorder Command: `Recorder
 Command <http://opensees.berkeley.edu/wiki/index.php/Recorder_Command>`__
@@ -149,7 +161,7 @@ Therefore, we set the maximum temperature as follows:
 
 T = Max Temperature [ :sup:`o` C] 
 
-.. figure:: set T 550;
+.. function:: set T 550;
 
 In OpenSees, the user can define 2 or 9 temperature data points
 through the cross section. In a 2D analysis framework, like this
@@ -162,38 +174,35 @@ respectively.
 
 Top fiber of beam 
 
-.. figure:: set Y1 [expr $d/2];
+.. function:: set Y1 [expr $d/2];
 
 Bottom fiber of beam 
 
-.. figure:: set Y2 [expr -$d/2];
+.. function:: set Y2 [expr -$d/2];
+
+**Location of defined input temperature locations on the member cross section (both beam and columns)**
 
 .. figure:: figures/Example3_fig2.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
-**Location of defined input temperature locations on
-the member cross section (both beam and columns)**
+
 
 The bottom extreme fiber temperature must be defined first. The target
-maximum temperature for each extreme fiber is set to 550oC and will be
+maximum temperature for each extreme fiber is set to 550 :sup:`o` C and will be
 increased linearly and incrementally as the time step continues in the
 analysis. An external temperature data set can could also be used for
 more complex temperature loading.
 
 Using a for-loop and a plain linear loading pattern, elements 1-20 &
 31-40 will be subjected to tempurature, $T. These elements define the
-heated bay. >
+heated bay.
 
-::
 
-    pattern Plain 2 Linear {
-    for {set i 1} {$i <= 20} {incr i} {
-        eleLoad -ele $i -type -beamThermal $T $Y2 $T $Y1;   
-    }
-    for {set i 31} {$i <= 40} {incr i} {
-        eleLoad -ele $i -type -beamThermal $T $Y2 $T $Y1;   
-    }};
+.. function:: pattern Plain 2 Linear {
+.. function:: for {set i 1} {$i <= 20} {incr i} { eleLoad -ele $i -type -beamThermal $T $Y2 $T $Y1;}
+.. function:: for {set i 31} {$i <= 40} {incr i} {eleLoad -ele $i -type -beamThermal $T $Y2 $T $Y1;}};
 
 
 
@@ -210,13 +219,13 @@ factor, therefore, it is important to ensure that benchmarking examples
 are performed to determine the proper load factor to use in structural
 fire engineering analyses.
 
-.. figure:: set Nstep 1000
+.. function:: set Nstep 1000
 
-.. figure:: set Factor [expr 1.0/$Nstep];
+.. function:: set Factor [expr 1.0/$Nstep];
 
-.. figure:: integrator LoadControl $Factor;
+.. function:: integrator LoadControl $Factor;
 
-.. figure:: analyze $Nstep;
+.. function:: analyze $Nstep;
 
 
 Output Plots
@@ -224,23 +233,23 @@ Output Plots
 
 After the model has completed running, the results will be horizontal
 displacments of the recorded node. Since the temperature was linearly
-ramped up from ambient to 550oC, the user can develop a temperature
+ramped up from ambient to 550 :sup:`o` C, the user can develop a temperature
 history that matches every increment of the model. The displacements are
 benchmarked against test data [2] as shown in the figure below.
 
-.. figure:: figures/Example5_U1.png
-	:align: center
-	:figclass: align-center
-
 **Node U1 horizontal displacement versus temperature compared with the testing data**
 
-.. figure:: figures/Example5_U2.png
+.. figure:: figures/Example5_U1.png
 	:align: center
+	:width: 500px
 	:figclass: align-center
 
 **Node U2 horizontal displacement versus temperature compared with the testing data**
 
-
+.. figure:: figures/Example5_U2.png
+	:align: center
+	:width: 500px
+	:figclass: align-center
 
 Sources
 -------
