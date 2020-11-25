@@ -5,7 +5,7 @@ This command is used to construct a BandSPD linear system of equation object. As
 
 .. function:: system BandSPD
 
-An n×n matrix is a symmmetric positive definite banded matrix if:
+An n×n matrix is a symmetric positive definite banded matrix if:
 
 1. :math:`A_{i,j}=0 \quad\mbox{if}\quad j<i-k \quad\mbox{ or }\quad j>i+k; \quad k \ge 0.`
 

@@ -19,7 +19,7 @@ This command is used to construct a convergence test which uses the norm of the 
     | 1 print information on norms each time test() is invoked
     | 2 print information on norms and number of iterations at end of successful test
     | 4 at each step it will print the norms and also the <math>\Delta U</math> and <math>R(U)</math> vectors.
-    | 5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCEESSFULL test."
+    | 5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCCESSFUL test."
     $nType, |integer|, "type of norm (optional: default is 2 (0 = max-norm 1 = 1-norm 2 = 2-norm ...))"
 
 
@@ -29,7 +29,7 @@ This command is used to construct a convergence test which uses the norm of the 
 
 .. admonition:: Example:
 
-   The following examples demonstrate the command to create a NormUnbalance test whcih allows 10 iterations till failure with a 2-norm in the :math:`b` vector, i.e. :math:`\sqrt(b^T b)` of **1.0e-2**.
+   The following examples demonstrate the command to create a NormUnbalance test which allows 10 iterations till failure with a 2-norm in the :math:`b` vector, i.e. :math:`\sqrt(b^T b)` of **1.0e-2**.
 
    1. **Tcl Code**
 
@@ -44,4 +44,4 @@ This command is used to construct a convergence test which uses the norm of the 
       test('NormUnbalance', 1.0e-2, 10, 2)
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|

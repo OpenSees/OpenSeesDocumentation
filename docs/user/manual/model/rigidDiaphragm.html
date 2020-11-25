@@ -195,10 +195,10 @@
             
   <div class="section" id="rigid-diaphragm">
 <h1><span class="section-number">3.1.5.2. </span>Rigid Diaphragm<a class="headerlink" href="#rigid-diaphragm" title="Permalink to this headline">¶</a></h1>
-<p>This command is used to construct a number of Multi-Point Constraint (MP_Constraint) objects. These objects will constraint certain degrees-of-freedom at the listed slave nodes to move as if in a rigid plane with the master node.</p>
+<p>This command is used to construct a number of Multi-Point Constraint (MP_Constraint) objects. These objects will constraint certain degrees-of-freedom at the listed constrained nodes to move as if in a rigid plane with the retained node.</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">rigidDiaphragm $perpDirn $masterNodeTag $slaveNodeTag1 $slaveNodeTag2 ...</code></dt>
+<code class="sig-name descname">rigidDiaphragm $perpDirn $retainedNodeTag $constrainedNodeTag1 $constrainedNodeTag2 ...</code></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -218,11 +218,11 @@
 <td><p><em>integer</em></p></td>
 <td><p>direction perpendicular to the rigid plane (i.e. direction 3 corresponds to the 1-2 plane)</p></td>
 </tr>
-<tr class="row-odd"><td><p>$masterNodeTag</p></td>
+<tr class="row-odd"><td><p>$retainedNodeTag</p></td>
 <td><p><em>integer</em></p></td>
 <td><p>integer tag identifying the master node</p></td>
 </tr>
-<tr class="row-even"><td><p>$slaveNodeTag1 $slaveNodeTag2 …</p></td>
+<tr class="row-even"><td><p>$constrainedNodeTag1 $constrainedNodeTag2 …</p></td>
 <td><p><em>list integer</em></p></td>
 <td><p>integar tags identifying the slave nodes</p></td>
 </tr>
@@ -230,22 +230,33 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The constraint object is constructed assuming small rotations.</p>
-<p>The rigidDiaphragm command works only for problems in three dimensions with six-degrees-of-freedom at the nodes (ndf = 6).</p>
+<ol class="arabic simple">
+<li><p>The constraint object is constructed assuming small rotations.</p></li>
+<li><p>The rigidDiaphragm command works only for problems in three dimensions with six-degrees-of-freedom at the nodes (ndf = 6).</p></li>
+</ol>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example:</p>
-<p>The following command will constrain nodes <strong>4,5,6</strong> to move as if in the same 1-3 plane as node <em>22</em>.</p>
+<p>The following command will constrain nodes <strong>4,5,6</strong> to move as if in the same 1-2 plane as node <em>22</em>. The constraint matrix added for each of the constrained nodes, which defines the motion of degrees-of-freedom (<strong>x</strong>, <strong>y</strong>, <strong>rZ</strong>) or (<strong>1</strong>, <strong>2</strong>, and <strong>6</strong>) at node <strong>4,5,6</strong> relative to those same degrees-of-freedom at the retained node <strong>22</strong> is as follows:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-rigidconstraintbeam3d">
+<span class="eqno">(3.1.5.1)<a class="headerlink" href="#equation-rigidconstraintbeam3d" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+        1 &amp; 0 &amp; -\Delta Y \\
+        0 &amp; 1 &amp; \Delta X \\
+        0 &amp; 0 &amp; 1
+\end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta X\)</span> is <strong>x</strong> (or <strong>1</strong>) coordinate of constrained node minus the <strong>x</strong> coordinate of the retained node and <span class="math notranslate nohighlight">\(\Delta Y\)</span> is <strong>y</strong> (or <strong>2</strong>) coordinate of constrained node minus the y coordinate of the retained node and <span class="math notranslate nohighlight">\(\Delta Y\)</span></p>
+</div></blockquote>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rigidDiaphragm 2 22 4 5 6
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rigidDiaphragm 3 22 4 5 6
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
 </ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rigidDiaphragm(2,22,4,5,6)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rigidDiaphragm(3,22,4,5,6)
 </pre></div>
 </div>
 </div>

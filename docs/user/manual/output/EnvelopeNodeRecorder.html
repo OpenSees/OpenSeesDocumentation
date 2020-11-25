@@ -210,7 +210,7 @@
 <tbody>
 <tr class="row-even"><td><p>$fileName</p></td>
 <td><p><em>string</em></p></td>
-<td><p>optyional: name of file to which output is sent.</p></td>
+<td><p>optional: name of file to which output is sent.</p></td>
 </tr>
 <tr class="row-odd"><td><p>$inetAddr</p></td>
 <td><p><em>string</em></p></td>
@@ -270,7 +270,7 @@
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
 <li><p>Only one of the options <strong>-file</strong>, <strong>-xml</strong>, <strong>-binary</strong>, or <strong>-tcp</strong> may be used. The option specifies where the data is going to be sent.</p></li>
-<li><p>Similarily only one of the options: <strong>-node</strong>, <strong>-nodeRange</strong>, or <strong>-region</strong> may be used. This option specifies the node tags.</p></li>
+<li><p>Similarly only one of the options: <strong>-node</strong>, <strong>-nodeRange</strong>, or <strong>-region</strong> may be used. This option specifies the node tags.</p></li>
 <li><p>The valid strings for respType are:</p></li>
 </ol>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>disp
@@ -294,15 +294,15 @@ rayleighForces!
 <ol class="arabic simple" start="5">
 <li><p>$deltaT, time interval for recording. will record when next step is $deltaT greater than last recorder step. Not really useful for Envelope recorder, a legacy from NodeRecorder!</p></li>
 <li><p>If the <strong>-timeSeries</strong> option is being used, the recorded results are those obtained from the time series for the current time added to the response quantity measures. Need as many time series tags as dof specified. Useful for obtaining for example total acceleration as opposed to relative if user using UniformAcceleration to impose a ground motion.</p></li>
-<li><p>The -closeOnWrite option will slow the program down. It is useful if you want to see just exactly where the applocation is, as files are only written to disk when the operating system feels like it under typical operation.</p></li>
+<li><p>The -closeOnWrite option will slow the program down. It is useful if you want to see just exactly where the application is, as files are only written to disk when the operating system feels like it under typical operation.</p></li>
 </ol>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example:</p>
 <p>The following examples demonstrate the use of the recorder Node command.</p>
 <ol class="arabic simple">
-<li><p>The first recorder will output to a file <strong>nodesD.out</strong> the displacements in <strong>x</strong> and <strong>y</strong> (<strong>1</strong> and <strong>2</strong>) directions at nodes <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, and <strong>4</strong>. The output file will contain <strong>9</strong> columns (time, displacement in x and y at node 1, disp. in x and y at node 2, … , disp. x and y at node 4))</p></li>
-<li><p>The second recorder will output to a file <strong>nodesA.out</strong> the total accelerations in <strong>x</strong> and <strong>y</strong> (<strong>1</strong> and <strong>2</strong>) directions at nodes <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, and <strong>4</strong>. The output file will contain <strong>9</strong> columns (time, accel. in x and y at node 1, accel. in x and y at node 2, … , accel. in x and y at node 4)). The accelerations output will be the accelerations stored at the nodes added to the values obtained from the time series. The <strong>x</strong> values are the accelerations in <strong>x</strong> direction at node plus values from timeSeries <strong>1</strong>, the <strong>y</strong> values are the accelerations in <strong>y</strong> direction at nodes plus the values from timeSries <strong>2</strong>.</p></li>
+<li><p>The first recorder will output to a file <code class="docutils literal notranslate"><span class="pre">nodesD.out</span></code> the displacements in <strong>x</strong> and <strong>y</strong> (<strong>1</strong> and <strong>2</strong>) directions at nodes <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, and <strong>4</strong>. The output file will contain <strong>9</strong> columns (time, displacement in x and y at node 1, disp. in x and y at node 2, … , disp. x and y at node 4))</p></li>
+<li><p>The second recorder will output to a file <code class="docutils literal notranslate"><span class="pre">nodesA.out</span></code> the total accelerations in <strong>x</strong> and <strong>y</strong> (<strong>1</strong> and <strong>2</strong>) directions at nodes <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, and <strong>4</strong>. The output file will contain <strong>9</strong> columns (time, accel. in x and y at node 1, accel. in x and y at node 2, … , accel. in x and y at node 4)). The accelerations output will be the accelerations stored at the nodes added to the values obtained from the time series. The <strong>x</strong> values are the accelerations in <strong>x</strong> direction at node plus values from timeSeries <strong>1</strong>, the <strong>y</strong> values are the accelerations in <strong>y</strong> direction at nodes plus the values from timeSeries <strong>2</strong>.</p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> EnvelopeNode <span class="o">-</span>file nodesD.out <span class="o">-</span>time <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> disp<span class="k">;</span>
 

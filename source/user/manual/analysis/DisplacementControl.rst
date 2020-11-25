@@ -9,13 +9,13 @@ This command is used to construct a DisplacementControl integrator object. In an
    $dof, |integer|, degree of freedom at the node, valid options: 1 through ndf at node.
    $incr, |float|, first displacement increment <math>\Delta U_{\text{dof}}</math>
    $numIter, |integer|, the number of iterations the user would like to occur in the solution algorithm. Optional, default = 1.0.
-   $:math:`\Delta U \text{min}`, |float|,   the min stepsize the user will allow. optional: defualt :math`= \Delta U_{min} = \Delta U_0`
-   $<math>\Delta U \text{max}</math>, |float|, the max stepsize the user will allow. optional: default :math:`= \Delta U_{max} = \Delta U_0`
+   $:math:`\Delta U \text{min}`, |float|,   the min step size the user will allow. optional: default :math`= \Delta U_{min} = \Delta U_0`
+   $<math>\Delta U \text{max}</math>, |float|, the max step size the user will allow. optional: default :math:`= \Delta U_{max} = \Delta U_0`
    
 
 
 
-integrator DisplacementControl 1 2 0.1; # displacement control algorithm seking constant increment of 0.1 at node 1 at 2'nd dof.
+integrator DisplacementControl 1 2 0.1; # displacement control algorithm seeking constant increment of 0.1 at node 1 at 2'nd dof.
 
 
 THEORY

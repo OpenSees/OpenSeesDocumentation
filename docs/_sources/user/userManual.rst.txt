@@ -3,11 +3,11 @@ Command Manual
 **************
 
 
-To understand how to run a finite element simulation using OpenSees, it is helpful to have a small understaning of the following abstractions. In OpenSees there exists:
+To understand how to run a finite element simulation using OpenSees, it is helpful to have a small understanding of the following abstractions. In OpenSees there exists:
 
 1. The **Model Generator**, code that allows the user to build a finite element model.
 
-2. The **Domain**, code that holds the current state and the last commited state of the finite element model.
+2. The **Domain**, code that holds the current state and the last committed state of the finite element model.
 
 3. The **Analysis**, code that moves the state of the model from one converged state to another via a number of trial steps.
 

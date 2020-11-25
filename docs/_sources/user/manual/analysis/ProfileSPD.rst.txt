@@ -5,7 +5,7 @@ This command is used to construct a ProfileSPD linear system of equation object.
 
 .. function:: system ProfileSPD
 
-An n×n matrix A= is a symmmetric postive definite matrix if:
+An n×n matrix A= is a symmetric positive definite matrix if:
 
 1. :math:`a_{i,j} = a_{j,i}`
 2. :math:`y^T A y != 0` for all non-zero vectors y with real entries (:math:`y \in \mathbb{R}^n`).

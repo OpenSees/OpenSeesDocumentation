@@ -198,7 +198,7 @@
 <p>This command is used to construct a single MP_Constraint object.</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">rigidLink $type $masterNodeTag $slaveNodeTag</code></dt>
+<code class="sig-name descname">rigidLink $type $retainedNodeTag $constrainedNodeTag</code></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -223,23 +223,62 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>$masterNodeTag</p></td>
+<tr class="row-odd"><td><p>$retainedNodeTag</p></td>
 <td><p><em>integer</em></p></td>
-<td><p>integer tag identifying the master node</p></td>
+<td><p>integer tag identifying the retained node</p></td>
 </tr>
-<tr class="row-even"><td><p>$slaveNodeTag</p></td>
+<tr class="row-even"><td><p>$constrainedNodeTag</p></td>
 <td><p><em>integer</em></p></td>
-<td><p>integer tag identifying the slave node</p></td>
+<td><p>integer tag identifying the constrained node</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The constraint object is constructed assuming small rotations.</p>
+<ol class="arabic">
+<li><p>By retained node, we mean the node who’s degrees-of-freedom are retained in the system of equations. The constrained nodes degrees-of-freedom need not appear in the system (depending on the constraint handler).</p></li>
+<li><p>For 2d and 3d problems with a <strong>beam</strong> type link, the constraint matrix (that matrix relating the responses at constrained node, <span class="math notranslate nohighlight">\(U_c\)</span>, to responses at retained node, <span class="math notranslate nohighlight">\(U_r\)</span>, i.e. <span class="math notranslate nohighlight">\(U_c = C_{cr} U_r\)</span>, is constructed assuming small rotations. For 3d problems this results in the following constraint matrix:</p>
+<div class="math notranslate nohighlight" id="equation-rigidconstraintbeam3d">
+<span class="eqno">(3.1.5.5)<a class="headerlink" href="#equation-rigidconstraintbeam3d" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+        1 &amp; 0 &amp; 0 &amp; 0 &amp; \Delta Z &amp; -\Delta Y \\
+        0 &amp; 1 &amp; 0 &amp; -\Delta Z &amp; 0 &amp; \Delta X \\
+        0 &amp; 0 &amp; 1 &amp; \Delta Y &amp; -\Delta X &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}\end{split}\]</div>
+<p>For 2d problems, the constraint matrix is the following:</p>
+<div class="math notranslate nohighlight" id="equation-rigidconstraintbeam3d">
+<span class="eqno">(3.1.5.5)<a class="headerlink" href="#equation-rigidconstraintbeam3d" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+        1 &amp; 0 &amp; -\Delta Y \\
+        0 &amp; 1 &amp; \Delta X \\
+        0 &amp; 0 &amp; 1
+\end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta X\)</span> is x coordinate of constrained node minus the x coordinate of the retained node. <span class="math notranslate nohighlight">\(\Delta Y\)</span> and <span class="math notranslate nohighlight">\(\Delta Z\)</span> being similarily defined for y and z coordinates of the nodes.</p>
+</li>
+<li><p>For 2d and 3d problems with a <strong>rod</strong> type link the constraint matrix, that which matrix relates the responses at translational degrees-of-freedom at the constrained node to corresponding responses at retained node, is the identity matrix. For 3d problems this results in the following constraint matrix:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-rigidconstraintbeam3d">
+<span class="eqno">(3.1.5.5)<a class="headerlink" href="#equation-rigidconstraintbeam3d" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+        1 &amp; 0 &amp; 0  \\
+        0 &amp; 1 &amp; 0  \\
+        0 &amp; 0 &amp; 1
+\end{bmatrix}\end{split}\]</div>
+<p>For 2d problems, the constraint matrix is the following:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-rigidconstraintbeam3d">
+<span class="eqno">(3.1.5.5)<a class="headerlink" href="#equation-rigidconstraintbeam3d" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+        1 &amp; 0 \\
+        0 &amp; 1 \\
+\end{bmatrix}\end{split}\]</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>The rod constraint can also be generated using the equalDOF command.</p></li>
+</ol>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example:</p>
-<p>The following command will constrain node <strong>3</strong> to move as node <strong>2</strong></p>
+<p>The following command will constrain node <strong>3</strong> to move rigidly following rules for small rotations to displacements and rotations at node <strong>2</strong> is</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>

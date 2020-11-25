@@ -3,7 +3,7 @@
 analyze Command
 ***************
 
-This command is used to perform the analysis. It returns a value indicating sucess or failure of the analysis. 
+This command is used to perform the analysis. It returns a value indicating success or failure of the analysis. 
 
 .. function:: analyze $numIncr <$dt> <$dtMin $dtMax $Jd>
 

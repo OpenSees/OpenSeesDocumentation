@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.2.4.4. Ralative Norm Unbalance" href="RelativeNormUnbalance.html" />
-    <link rel="prev" title="3.2.4.2. Norm Displacement Incerement" href="NormDispIncr.html" /> 
+    <link rel="next" title="3.2.4.4. Relative Norm Unbalance" href="RelativeNormUnbalance.html" />
+    <link rel="prev" title="3.2.4.2. Norm Displacement Increment" href="NormDispIncr.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,20 +92,20 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="constraints.html">3.2.1. Constraints Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="numberer.html">3.2.2. Numberer Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="system.html">3.2.3. System Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="test.html">3.2.4. Convergence Test</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="constraints.html">3.2.1. constraints Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numberer.html">3.2.2. numberer Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system.html">3.2.3. system Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="test.html">3.2.4. test Command</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="NormUnbalance.html">3.2.4.1. Norm Unbalance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="NormDispIncr.html">3.2.4.2. Norm Displacement Incerement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NormDispIncr.html">3.2.4.2. Norm Displacement Increment</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.4.3. Energy Increment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RelativeNormUnbalance.html">3.2.4.4. Ralative Norm Unbalance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RelativeNormUnbalance.html">3.2.4.4. Relative Norm Unbalance</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="algorithm.html">3.2.5. algorithm Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="integrator.html">3.2.6. Integrator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="analysis.html">3.2.7. Analysis Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="analyze.html">3.2.8. Analyze Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integrator.html">3.2.6. integrator Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html">3.2.7. analysis Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analyze.html">3.2.8. analyze Command</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
@@ -174,7 +174,7 @@
         
           <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
         
-          <li><a href="test.html"><span class="section-number">3.2.4. </span>Convergence Test</a> &raquo;</li>
+          <li><a href="test.html"><span class="section-number">3.2.4. </span>test Command</a> &raquo;</li>
         
       <li><span class="section-number">3.2.4.3. </span>Energy Increment</li>
     
@@ -197,7 +197,7 @@
             
   <div class="section" id="energy-increment">
 <span id="energyincr"></span><h1><span class="section-number">3.2.4.3. </span>Energy Increment<a class="headerlink" href="#energy-increment" title="Permalink to this headline">¶</a></h1>
-<p>This command is used to construct a convergence test which uses the energy increment, <span class="math notranslate nohighlight">\(0.5 (x^T b)\)</span>, where the two vector come from the matrix equation <span class="math notranslate nohighlight">\(Ax=b\)</span>, to determine if convergence has been reached. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, <span class="math notranslate nohighlight">\(x\)</span> is euqal to the incremental displacement and <span class="math notranslate nohighlight">\(b\)</span> the unbalanced force. The command to create a NormEnergyIncr test is the following:</p>
+<p>This command is used to construct a convergence test which uses the energy increment, <span class="math notranslate nohighlight">\(0.5 (x^T b)\)</span>, where the two vector come from the matrix equation <span class="math notranslate nohighlight">\(Ax=b\)</span>, to determine if convergence has been reached. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, <span class="math notranslate nohighlight">\(x\)</span> is equal to the incremental displacement and <span class="math notranslate nohighlight">\(b\)</span> the unbalanced force. The command to create a NormEnergyIncr test is the following:</p>
 <dl class="function">
 <dt>
 <code class="sig-name descname">test EnergyIncr $tol $iter &lt;$pFlag&gt;</code></dt>
@@ -233,7 +233,7 @@
 <div class="line">1 print information on norms each time test() is invoked</div>
 <div class="line">2 print information on norms and number of iterations at end of successful test</div>
 <div class="line">4 at each step it will print the norms and also the &lt;math&gt;Delta U&lt;/math&gt; and &lt;math&gt;R(U)&lt;/math&gt; vectors.</div>
-<div class="line">5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCEESSFULL test.</div>
+<div class="line">5 if it fails to converge at end of $numIter it will print an error message BUT RETURN A SUCCESSFUL test.</div>
 </div>
 </div></blockquote>
 </td>
@@ -246,7 +246,7 @@
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example:</p>
-<p>The following examples demonstrate the command to create a NormEnergyIncr test whcih allows 10 iterations till failure with an energy increment <span class="math notranslate nohighlight">\(0.5 (x^T b)\)</span> of <strong>1.0e-2</strong>.</p>
+<p>The following examples demonstrate the command to create a NormEnergyIncr test which allows 10 iterations till failure with an energy increment <span class="math notranslate nohighlight">\(0.5 (x^T b)\)</span> of <strong>1.0e-2</strong>.</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>

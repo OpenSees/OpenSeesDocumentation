@@ -196,7 +196,7 @@
   <div class="section" id="multisupport-excitation">
 <span id="multisupportexcitation"></span><h1><span class="section-number">3.1.7.3. </span>Multisupport Excitation<a class="headerlink" href="#multisupport-excitation" title="Permalink to this headline">¶</a></h1>
 <p>The Multi-Support pattern allows similar or different prescribed ground motions to be input at various supports in the structure. In OpenSees, the prescribed motion is applied using single-point constraints, the single-point constraints taking their constraint value from user created ground motions.</p>
-<p>The command to generate a multi-support excitation contains in { } the commands to generate all the ground motions and the single-point constraints in the pattern. The command is as follows:</p>
+<p>The command to generate a multi-support excitation contains in squirrelly brackets the commands to generate all the ground motions and the single-point constraints in the pattern. The command is as follows:</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -229,12 +229,12 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The results for the responses at the nodes are the <strong>ABSOLUTE</strong> values, and not relative values as in the case of a UniformExciatation.</p>
-<p>When using MultiSupport pattern, the ground motions are applied by specifying for each constrained node a ground motion. This is done using the <a class="reference internal" href="imposedMotion.html#imposedmotion"><span class="std std-ref">Imposed Motion Command</span></a> command. The ground motions at each of the supports is specified using a <a class="reference internal" href="groundMotion.html#groundmotion"><span class="std std-ref">Ground Motion</span></a>. When enforcing the constraint at the node, the imposedMotion constraint will obtain the <strong>displacement</strong> from the fround motion. If the groundMotion was built by user specifying the accelaration, the <strong>trapezoidal</strong> rule is used for integration to obtain the <strong>displacements</strong>.</p>
+<p>The results for the responses at the nodes are the <strong>ABSOLUTE</strong> values, and not relative values as in the case of a UniformExcitation.</p>
+<p>When using MultiSupport pattern, the ground motions are applied by specifying for each constrained node a ground motion. This is done using the <a class="reference internal" href="imposedMotion.html#imposedmotion"><span class="std std-ref">Imposed Motion Command</span></a> command. The ground motions at each of the supports is specified using a <a class="reference internal" href="groundMotion.html#groundmotion"><span class="std std-ref">Ground Motion</span></a>. When enforcing the constraint at the node, the imposedMotion constraint will obtain the <strong>displacement</strong> from the ground motion. If the groundMotion was built by user specifying the acceleration, the <strong>trapezoidal</strong> rule is used for integration to obtain the <strong>displacements</strong>.</p>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example:</p>
-<p>The following example shows how to construct a <strong>Multi-Suppert Excitation</strong> pattern with a tag of <strong>1* that will constrain the nodes **1</strong>, <strong>4</strong>, and <strong>7</strong> to move in the <strong>1</strong> dof direcection with the ground Motion supplied by the <strong>groundMotion</strong> with tag <strong>101</strong>, whose displacement is given by <strong>timeSeries</strong> with a tag of 3.</p>
+<p>The following example shows how to construct a <strong>Multi-Support Excitation</strong> pattern with a tag of <strong>1* that will constrain the nodes **1</strong>, <strong>4</strong>, and <strong>7</strong> to move in the <strong>1</strong> dof direction with the ground Motion supplied by the <strong>groundMotion</strong> with tag <strong>101</strong>, whose displacement is given by <strong>timeSeries</strong> with a tag of 3.</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>

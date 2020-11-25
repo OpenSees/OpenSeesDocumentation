@@ -29,7 +29,7 @@ This is the command issued to create an analysis.
 
 .. warning::
 
-   When swithcing from one type of analysis to another, e.g. Sttaic to Transient, it is necessary to issue a :ref:`wipeAnalysis`.
+   When switching from one type of analysis to another, e.g. Static to Transient, it is necessary to issue a :ref:`wipeAnalysis`.
 
 .. admonition:: Static Analysis Example 
 

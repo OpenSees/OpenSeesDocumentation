@@ -18,7 +18,7 @@ This command is used to create the Basic |OPS| model builder. This model builder
 
    The default value depends on value of ndm: ndm=1 implies ndf=1, ndm=2 implies ndf=3 and ndm=3 implies ndf=6
 
-   The script may contain more than one model command. The script may change the values for **ndm** and **ndf** in each invocation. This allows elements with differnet numbers of degrees-of-freedom to be added in the same model.
+   The script may contain more than one model command. The script may change the values for ``ndm`` and ``ndf`` in each invocation. This allows elements with different numbers of degrees-of-freedom to be added in the same model.
 
 The additional commands added to the interpreter allow for the construction of Nodes, Masses, Materials (nDMaterial Command, uniaxialMaterial Command), Sections, Elements, LoadPatterns, TimeSeries, Transformations, Blocks and Constraints. These additional commands are described in the subsequent sections.
 
@@ -39,4 +39,4 @@ The additional commands added to the interpreter allow for the construction of N
       model('basic', -ndm', 2, '-ndf', 3)
 
 
-Code Developed by: **fmk**
+Code Developed by: |fmk|

@@ -81,8 +81,14 @@ This command is used to construct a 2-dimensional PM4Sand material ([Boulanger-Z
 
 .. admonition:: Example 2
 
-   2D undrained cyclic direct simple shear test using one element
+   2D undrained cyclic direct simple shear test using one element (Displacement Controlled)
 
    .. literalinclude:: PM4SandExample2.tcl
       :language: tcl
 
+.. admonition:: Example 3
+
+   2D undrained cyclic direct simple shear test using one element (Force Controlled)
+
+   .. literalinclude:: PM4SandExample3.tcl
+      :language: tcl
