@@ -23,7 +23,7 @@ analysis.
 
 Download Example 4   files:
 
-Example 4 :download:`tcl <files/example4.tcl>`.
+:download:`Example4.tcl <files/example4.tcl>`.
 
 :download:`Wsectionthermal.tcl <files/Wsectionthermal.tcl>`.
 
