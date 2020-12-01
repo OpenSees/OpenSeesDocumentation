@@ -18,7 +18,7 @@ Example Overview: A steel beam is heated to 1180 :sup:`o` C. Horizontal displace
 
 Download Example 1 files:
 
-:download:`Example1.tcl <files/example1.tcl>`.
+:download:`Example1.tcl <files/Example1.tcl>`.
 
 :download:`Example 1 Outputs <files/Example1_OUTPUT.zip>`.
 

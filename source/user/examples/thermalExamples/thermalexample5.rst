@@ -22,9 +22,9 @@ curve. Horizontal displacement of upper corners, U1 & U2 are recorded.
 
 Download Example 5   files:
 
-:download:`Example5.tcl <files/example5.tcl>`.
+:download:`Example5.tcl <files/Example5.tcl>`.
 
-:download:`Wsectionthermal.tcl <files/Wsectionthermal.tcl>`.
+:download:`WsectionThermal.tcl <files/WsectionThermal.tcl>`.
 
 :download:`Example 5 Outputs <files/Example5_OUTPUT.zip>`. 
 

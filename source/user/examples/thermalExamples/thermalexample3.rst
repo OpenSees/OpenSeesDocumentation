@@ -22,9 +22,9 @@ boundary conditions
 
 Download Example 3   files:
 
-:download:`Example3.tcl <files/example3.tcl>`.
+:download:`Example3.tcl <files/Example3.tcl>`.
 
-:download:`Wsectionthermal.tcl <files/Wsectionthermal.tcl>`.
+:download:`WsectionThermal.tcl <files/WsectionThermal.tcl>`.
 
 :download:`Example 3 Outputs <files/Example3_OUTPUT.zip>`.
 

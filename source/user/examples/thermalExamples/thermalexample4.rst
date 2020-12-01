@@ -23,9 +23,9 @@ analysis.
 
 Download Example 4   files:
 
-:download:`Example4.tcl <files/example4.tcl>`.
+:download:`Example4.tcl <files/Example4.tcl>`.
 
-:download:`Wsectionthermal.tcl <files/Wsectionthermal.tcl>`.
+:download:`WsectionThermal.tcl <files/WsectionThermal.tcl>`.
 
 :download:`Nodal Temperature Files <files/NodalTemperatureFiles.zip>`. 
 
