@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.2.2. Example 2 &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.2.3. Example 3" href="thermalexample3.html" />
+    <link rel="prev" title="4.2.1. Example 1" href="thermalexample1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userManual.html">3. Command Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../userExamples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basicExamples.html">4.1. Basic Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../thermalExamples.html">4.2. Thermal Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="thermalexample1.html">4.2.1. Example 1</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.2.2. Example 2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#restrained-steel-beam-subjected-to-uniform-temperature-on-half-of-the-member">4.2.2.1. Restrained Steel beam subjected to uniform temperature on half of the member.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="thermalexample3.html">4.2.3. Example 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermalexample4.html">4.2.4. Example 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermalexample5.html">4.2.5. Example 5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thermalExamples.html#target-temperature">4.2.6. Target temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thermalExamples.html#standard-fire-curve">4.2.7. Standard fire curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thermalExamples.html#parametric-time-temperature-fire-curve">4.2.8. Parametric time-temperature fire curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thermalExamples.html#simulation-process">4.2.9. Simulation process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thermalExamples.html#author-info">4.2.10. Author Info</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../userExamples.html">4. Examples</a> &raquo;</li>
+        
+          <li><a href="../thermalExamples.html">4.2. Thermal Examples</a> &raquo;</li>
+        
+      <li>4.2.2. Example 2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/user/examples/thermalExamples/thermalexample2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="example-2">
+<h1>4.2.2. Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="restrained-steel-beam-subjected-to-uniform-temperature-on-half-of-the-member">
+<h2>4.2.2.1. Restrained Steel beam subjected to uniform temperature on half of the member.<a class="headerlink" href="#restrained-steel-beam-subjected-to-uniform-temperature-on-half-of-the-member" title="Permalink to this headline">¶</a></h2>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../_images/Example2_fig1.png"><img alt="../../../_images/Example2_fig1.png" src="../../../_images/Example2_fig1.png" style="width: 500px;" /></a>
+</div>
+<p>Example overview: A steel beam of two equal elements is subjected to a
+uniform temperature on only one of the elements. Element 1 remains at
+ambient tempurature while Element 2 is heated using a linear
+time-temperature history.</p>
+<p>Download Example 2 files:</p>
+<p><a class="reference download internal" download="" href="../../../_downloads/af859bc49888dffd26d48e1cc582868a/Example2.tcl"><code class="xref download docutils literal notranslate"><span class="pre">Example2.tcl</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../../../_downloads/d25b323b88a05feb1374e9556c63d2fb/EXAMPLE2_OUTPUT.zip"><code class="xref download docutils literal notranslate"><span class="pre">Example</span> <span class="pre">2</span> <span class="pre">Outputs</span></code></a>.</p>
+<div class="section" id="objective">
+<h3>4.2.2.1.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h3>
+<p>Example 2 Objectives:</p>
+<ol class="arabic simple">
+<li>Develop a simply supported steel beam using displacement-based beam
+elements with tempurature-dependent material properites,</li>
+<li>Record internal forces of an element subjected to a linear
+time-temperature history due to the restraint against thermal
+expansion,</li>
+<li>Record displacement of a node due to a linear time-temperature
+history, and</li>
+<li>Correlate the recorded internal forces and displacement with the
+linear time-temperature history to plot the two variables as a
+function of temperature.</li>
+</ol>
+</div>
+<div class="section" id="material">
+<h3>4.2.2.1.2. Material<a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h3>
+<p>The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties per Eurocode 3 [1]. More details of Steel01 can be found at: <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel01_Material">Steel01 Material</a></p>
+<dl class="function">
+<dt>
+<code class="descname">uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;</code></dt>
+<dd></dd></dl>
+
+<p>Es = 210 GPa (Young’s modulus of elasticity at ambient temperatures)</p>
+<p>Fy = 250 MPa (Yield strength of material at ambient temperatures)</p>
+<p>b = 0.001 (Strain-Hardening Ratio)</p>
+</div>
+<div class="section" id="transformation">
+<h3>4.2.2.1.3. Transformation<a class="headerlink" href="#transformation" title="Permalink to this headline">¶</a></h3>
+<p>The beam is expanding in one direction, therefore, 2nd order bending
+effects do not need to be considered.</p>
+<dl class="function">
+<dt>
+<code class="descname">geomTransf Linear $transftag;</code></dt>
+<dd></dd></dl>
+
+<p>Learn more about geometric transofrmations: <a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Geometric_Transformation_Command">Geometric
+Transformation</a></p>
+</div>
+<div class="section" id="section">
+<h3>4.2.2.1.4. Section<a class="headerlink" href="#section" title="Permalink to this headline">¶</a></h3>
+<p>The discretization of the steel section into four fibers is shown using the code below:</p>
+<dl class="function">
+<dt>
+<code class="descname">section FiberThermal secTag -GJ $Es{</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set numSubdivIJ 2;     # horizontal division</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set numSubdivJK 2;     # vertical division</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set yI -100; #mm</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set zI -200; #mm</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set yJ 100; #mm</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set zJ -200; #mm</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set yK 100; #mm</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set zK 200; #mm</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set yL -100; #mm</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set zL 200; #mm</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">patch quad $matTag $numSubdivIJ $numSubdivJK $yI $zI $yJ $zJ $yK $zK $yL $zL</code></dt>
+<dd></dd></dl>
+
+<p>Sections that will be subjected to thermal loading must be created with fiberThermal or fibersecThermal.</p>
+<p>In previous versions of OpenSees, a default value for torsional stiffness was used (GJ). In versions 3.1.0 and newer fiber sections require a value for torsional stiffness. This is a 2D example with negligible torsion, however a value is required. The Young’s Modulus is used for convenience.</p>
+<p><strong>The discretization can be visualized as such:</strong></p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../_images/Example2_fig2.png"><img alt="../../../_images/Example2_fig2.png" src="../../../_images/Example2_fig2.png" style="width: 400px;" /></a>
+</div>
+<p><strong>Cross section of rectangular beam showing fiber discretization</strong></p>
+</div>
+<div class="section" id="elements">
+<h3>4.2.2.1.5. Elements<a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h3>
+<p>dispBeamColumnThermal elements are used because temperature-dependent thermal and mechanical steel properties can be applied to these elements. Any portion of the structure that is being heated must use elements that are compatible with uniaxialMaterial Steel01Thermal. At the time this model was developed, dispBeamColumnThermal was the only element type that could have tempurature-dependent thermal and mechanical properties applied to them.</p>
+<p>The beam is made of one element with 5 iteration points and connects nodes 1 &amp; 2. OpenSees is sensitive to the number of iteration points in each element and this could change the result of the recorded displacement. For this reason, it is important to perform these benchmarking examples to establish how many iteration points allows for convergence to the expected recorded displacement. To code the number of iteration points, we use the following syntax:</p>
+<p>dispBeamColumnThermal eleTag iNode jNode numIntgrPts secTag TransfTag;</p>
+<p>Element 1</p>
+<dl class="function">
+<dt>
+<code class="descname">element dispBeamColumnThermal 1 1 2 5 $secTag $transftag;</code></dt>
+<dd></dd></dl>
+
+<p>Element 2</p>
+<dl class="function">
+<dt>
+<code class="descname">element dispBeamColumnThermal 1 2 3 5 $secTag $transftag;</code></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="output-recorders">
+<h3>4.2.2.1.6. Output Recorders<a class="headerlink" href="#output-recorders" title="Permalink to this headline">¶</a></h3>
+<p>Displacement of the middle of node (2) in DOF 1 (horizontal direction) and the horizontal reaction force from the boundary conditions is what we want to record. To do so, a folder within your working directory must be created. $dataDir is the command to create that folder and should be defined at the beginning of the model. This is where your output files will be saved.</p>
+<dl class="function">
+<dt>
+<code class="descname">set dataDir Examples/EXAMPLE2_OUTPUT;</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">file mkdir $dataDir;</code></dt>
+<dd></dd></dl>
+
+<p>Displacement of the middle node (2) in DOF 1 (Horizontal Displacement)</p>
+<dl class="function">
+<dt>
+<code class="descname">recorder Node -file $dataDir/MidspanNodeDisp.out -time -node 2  -dof  1  disp;</code></dt>
+<dd></dd></dl>
+
+<p>Recording reactions at the boundary conditions:</p>
+<dl class="function">
+<dt>
+<code class="descname">recorder Node -file $dataDir/BoundryRXN.out -time -node 1 3  -dof 1 2 reaction;</code></dt>
+<dd></dd></dl>
+
+<p>Recording the section forces in Elements 1 &amp; 2:</p>
+<dl class="function">
+<dt>
+<code class="descname">recorder Element -file $dataDir/ele_force_1.out -time -ele 1 section 2 force</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">recorder Element -file $dataDir/ele_force_2.out -time -ele 2 section 2 force</code></dt>
+<dd></dd></dl>
+
+<p>Learn more about the Recorder Command: <cite>Recorder Command &lt;http://opensees.berkeley.edu/wiki/index.php/Recorder_Command&gt;</cite> __</p>
+</div>
+<div class="section" id="thermal-loading">
+<h3>4.2.2.1.7. Thermal Loading<a class="headerlink" href="#thermal-loading" title="Permalink to this headline">¶</a></h3>
+<p>This particular model is heating a beam to a set temperature over the
+time period of the model. We are not asking OpenSees to use a specific
+time-temperature curve, rather linearly ramp up the temperature from
+ambient to 1180 <sup>o</sup> C.</p>
+<p>Therefore, we set the maximum temperature as follows:</p>
+<p>T = Max Tempurature [deg celcius]</p>
+<dl class="function">
+<dt>
+<code class="descname">set T 1180;</code></dt>
+<dd></dd></dl>
+
+<p>In OpenSees, the user can define 2 or 9 temperature data points
+through the cross section. In a 2D analysis framework, like this
+example, temperature data point locations are specified on the y-axis of
+the local coordinate system (as shown in the figure above). And are
+linearly interpolated between the defined points. Because this example
+is using a uniformly heated beam, the entire cross section is one
+temperature, and two temperature points on each extreme fiber on the
+y-axis will be chosen. The beam has a depth of 200mm, therefore, Y1 =
+100 mm &amp; Y2 = -100 mm for the top and bottom fibers respectively.</p>
+<p>Location of bottom extreme fiber of beam [mm]</p>
+<dl class="function">
+<dt>
+<code class="descname">set Y1 -100;</code></dt>
+<dd></dd></dl>
+
+<p>Location of top extreme fiber of beam [mm]</p>
+<dl class="function">
+<dt>
+<code class="descname">set Y2 100;</code></dt>
+<dd></dd></dl>
+
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../_images/Example1_fig3.png"><img alt="../../../_images/Example1_fig3.png" src="../../../_images/Example1_fig3.png" style="width: 500px;" /></a>
+</div>
+<p><strong>Location of defined input temperature locations on the member cross section</strong></p>
+<p>The bottom extreme fiber temperature must be defined first. The target
+maximum temperature for each extreme fiber is set to 1180 <sup>o</sup> C and will be
+increased incrementally and linearly as the time step continues in the
+analysis. An external temperature data set can could also be used for
+more complex temperature loading.</p>
+<p>Element 1 will remain at ambient temperature 20 <sup>o</sup> C, while Element 2
+will be heated to the target tempurature. The syntax for this is:</p>
+<dl class="function">
+<dt>
+<code class="descname">pattern Plain 1 Linear {eleLoad -ele 1 -type –beamThermal $T $Y2 $T Y1; eleLoad -ele 2 -type –beamThermal $T $Y2 $T Y1 }</code></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="thermal-analysis">
+<h3>4.2.2.1.8. Thermal Analysis<a class="headerlink" href="#thermal-analysis" title="Permalink to this headline">¶</a></h3>
+<p>Thermal loading is applied in 1000 steps, with a load factor of 0.001.
+Each step is a 0.001 increment of the maximum temperature specified in
+the thermal loading step: $T. The analysis is a static analysis and the
+contraints of the beam are plain. 1000 increments was also used during
+thermal analysis to allow for easy correlation between the input
+temperatures and the recorded output.</p>
+<p>A variety of load factors were examined and the solution converged when
+a load factor of 0.001 was used. OpenSees is sensitive to the load
+factor, therefore, it is important to ensure that benchmarking examples
+are performed to determine the proper load factor to use in structural
+fire engineering analyses.</p>
+<blockquote>
+<div><dl class="function">
+<dt>
+<code class="descname">set Nsteps 1000</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">set Factor [expr 1.0/$Nsteps];</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">integrator LoadControl $Factor;</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">analyze $Nsteps;</code></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="output-plots">
+<h3>4.2.2.1.9. Output Plots<a class="headerlink" href="#output-plots" title="Permalink to this headline">¶</a></h3>
+<p>After the model has completed running, the results will be a horizontal
+displacement of the recorded node, the internal forces in the elements,
+and the reactions from the boundary conditions. Since the temperature
+was linearly ramped up from ambient to 1180 <sup>o</sup> C, the user can develop a
+temperature history that matches every increment of the model.</p>
+<p><strong>Element 1 internal axial force vs. temperature</strong></p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../_images/Example2_output2.png"><img alt="../../../_images/Example2_output2.png" src="../../../_images/Example2_output2.png" style="width: 500px;" /></a>
+</div>
+<p><strong>Node 2 Horizontal displacement versus temperature</strong></p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../_images/Example2_output1.png"><img alt="../../../_images/Example2_output1.png" src="../../../_images/Example2_output1.png" style="width: 500px;" /></a>
+</div>
+</div>
+<div class="section" id="sources">
+<h3>4.2.2.1.10. Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h3>
+<p>[1] European Committee for Standardization (CEN). (2005). Eurocode 3:
+Design of Steel Structures, Part 1.2: General Rules - Structural Fire
+Design.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, The Regents of the University of California
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>
