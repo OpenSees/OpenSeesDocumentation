@@ -147,7 +147,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>OpenSees Interpreters</li>
+      <li>1. OpenSees Interpreters</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -167,25 +167,25 @@
            <div itemprop="articleBody">
             
   <div class="section" id="opensees-interpreters">
-<h1><span class="section-number">1. </span>OpenSees Interpreters<a class="headerlink" href="#opensees-interpreters" title="Permalink to this headline">¶</a></h1>
+<h1>1. OpenSees Interpreters<a class="headerlink" href="#opensees-interpreters" title="Permalink to this headline">¶</a></h1>
 <p>In computer science, an interpreter is a computer program that directly executes instructions written in a programming or scripting language, without requiring them previously to have been compiled into a machine language program. Matlab is a great example of an interpreter. The scripts that the user provides, e.g. a .m file if the user is using Matlab, contains a sequence of instructions written in some high level scripting language. For performing finite element analysis using OpenSees two popular scripting languages, <strong>Tcl</strong> and <strong>Python</strong> have been extended, by extended we mean additional commands have been added to the languages.</p>
 <p>The extensions introduce <strong>IDENTICAL</strong> new commands with the same arguments into the interpreter languages read by the interpreters. How the command is expressed in the language is the only difference. The languages to add a node number 3 at location (168.0, 0.0):</p>
 <ol class="arabic simple">
-<li><p>Tcl</p></li>
+<li>Tcl</li>
 </ol>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>node 3 168.0 0.0
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Python</p></li>
+<li>Python</li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">168.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In order to perform finite element analysis using either <strong>Tcl</strong> or <strong>Python</strong>, the user must understand the existing commands available in the scripting languages (and here the <strong>Tcl</strong> and <strong>Python</strong> languages will differ) and the new commands.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>To <strong>know and use</strong> the commands in a programming language in order to develop an application (<strong>coding</strong>) is one thing. To <strong>program</strong> in a language is something different. <strong>Programming</strong> involves creativity and thinking at a higher level, thinking in terms of problem solving, what are the abstractions and algorithms that can be employed to solve the problem. Programmers finally use code to express their thoughts of how to solve the problem. All programmers are coders. Most coders are <strong>NOT</strong> programmers. To utilize the OpenSees interpreters effectively <strong>YOU WANT TO BECOME A PROGRAMMER</strong>.</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">To <strong>know and use</strong> the commands in a programming language in order to develop an application (<strong>coding</strong>) is one thing. To <strong>program</strong> in a language is something different. <strong>Programming</strong> involves creativity and thinking at a higher level, thinking in terms of problem solving, what are the abstractions and algorithms that can be employed to solve the problem. Programmers finally use code to express their thoughts of how to solve the problem. All programmers are coders. Most coders are <strong>NOT</strong> programmers. To utilize the OpenSees interpreters effectively <strong>YOU WANT TO BECOME A PROGRAMMER</strong>.</p>
 </div>
 </div>
 

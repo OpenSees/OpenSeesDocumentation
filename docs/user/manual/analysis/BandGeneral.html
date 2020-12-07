@@ -174,13 +174,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
         
-          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
+          <li><a href="../analysisCommands.html">3.2. Analysis Commands</a> &raquo;</li>
         
-          <li><a href="system.html"><span class="section-number">3.2.3. </span>system Command</a> &raquo;</li>
+          <li><a href="system.html">3.2.3. system Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.2.3.1. </span>BandGeneral System</li>
+      <li>3.2.3.1. BandGeneral System</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,11 +200,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bandgeneral-system">
-<h1><span class="section-number">3.2.3.1. </span>BandGeneral System<a class="headerlink" href="#bandgeneral-system" title="Permalink to this headline">¶</a></h1>
+<h1>3.2.3.1. BandGeneral System<a class="headerlink" href="#bandgeneral-system" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a BandGeneral linear system of equation object. As the name implies, this class is used for matrix systems which have a banded profile. The matrix is stored as shown below in a 1dimensional array of size equal to the bandwidth times the number of unknowns. When a solution is required, the Lapack routines DGBSV and SGBTRS are used. The following command is used to construct such a system:</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">system BandGeneral</code></dt>
+<code class="descname">system BandGeneral</code></dt>
 <dd></dd></dl>
 
 <p>An n×n matrix A=(ai,j) is a band matrix if all matrix elements are zero outside a diagonally bordered band whose range is determined by constants k1 and k2:</p>
@@ -231,18 +231,18 @@ B_{54} &amp; B_{55} &amp; B_{56} \\
 B_{65} &amp; B_{66} &amp; 0
 \end{bmatrix}\end{split}\]</div>
 <div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
+<p class="first admonition-title">Example</p>
 <p>The following example shows how to construct a ProfileSPD system</p>
 <ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
+<li><strong>Tcl Code</strong></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">system</span> BandGeneral
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Python Code</strong></p></li>
+<li><strong>Python Code</strong></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;BandGeneral&#39;</span><span class="p">)</span>
+<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;BandGeneral&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

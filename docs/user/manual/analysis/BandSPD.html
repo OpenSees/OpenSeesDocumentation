@@ -174,13 +174,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
         
-          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
+          <li><a href="../analysisCommands.html">3.2. Analysis Commands</a> &raquo;</li>
         
-          <li><a href="system.html"><span class="section-number">3.2.3. </span>system Command</a> &raquo;</li>
+          <li><a href="system.html">3.2.3. system Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.2.3.2. </span>BandSPD System</li>
+      <li>3.2.3.2. BandSPD System</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,18 +200,18 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bandspd-system">
-<h1><span class="section-number">3.2.3.2. </span>BandSPD System<a class="headerlink" href="#bandspd-system" title="Permalink to this headline">¶</a></h1>
+<h1>3.2.3.2. BandSPD System<a class="headerlink" href="#bandspd-system" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a BandSPD linear system of equation object. As the name implies, this class is used for symmetric positive definite matrix systems which have a banded profile. The matrix is stored as shown below in a 1 dimensional array of size equal to the (bandwidth/2) times the number of unknowns. When a solution is required, the Lapack routines DPBSV and DPBTRS are used. The following command is used to construct such a system:</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">system BandSPD</code></dt>
+<code class="descname">system BandSPD</code></dt>
 <dd></dd></dl>
 
 <p>An n×n matrix is a symmetric positive definite banded matrix if:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(A_{i,j}=0 \quad\mbox{if}\quad j&lt;i-k \quad\mbox{ or }\quad j&gt;i+k; \quad k \ge 0.\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(A_{i,j} = A_{j,i}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y^T A y != 0\)</span> for all non-zero vectors y with real entries (<span class="math notranslate nohighlight">\(y \in \mathbb{R}^n\)</span>),</p></li>
+<li><span class="math notranslate nohighlight">\(A_{i,j}=0 \quad\mbox{if}\quad j&lt;i-k \quad\mbox{ or }\quad j&gt;i+k; \quad k \ge 0.\)</span></li>
+<li><span class="math notranslate nohighlight">\(A_{i,j} = A_{j,i}\)</span></li>
+<li><span class="math notranslate nohighlight">\(y^T A y != 0\)</span> for all non-zero vectors y with real entries (<span class="math notranslate nohighlight">\(y \in \mathbb{R}^n\)</span>),</li>
 </ol>
 <p>The bandwidth of the matrix is k + k + 1.</p>
 <p>For example, a symmetric 6-by-6 matrix with a right bandwidth of 2:</p>
@@ -235,18 +235,18 @@ A_{55} &amp; A_{56} &amp; 0 \\
 A_{66} &amp; 0 &amp; 0
 \end{bmatrix}\end{split}\]</div>
 <div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
+<p class="first admonition-title">Example</p>
 <p>The following example shows how to construct a BandSPD system</p>
 <ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
+<li><strong>Tcl Code</strong></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">system</span> BandSPD
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Python Code</strong></p></li>
+<li><strong>Python Code</strong></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;BandSPD&#39;</span><span class="p">)</span>
+<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;BandSPD&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

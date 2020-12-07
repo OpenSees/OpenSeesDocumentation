@@ -171,13 +171,13 @@
     
       <li><a href="../../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+          <li><a href="../../../userManual.html">3. Command Manual</a> &raquo;</li>
         
-          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+          <li><a href="../../materialCommands.html">3.4. Material Commands</a> &raquo;</li>
         
-          <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
+          <li><a href="../ndMaterial.html">3.4.2. nDMaterial Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.4.2.7. </span>PM4Sand Material</li>
+      <li>3.4.2.7. PM4Sand Material</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -197,155 +197,155 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pm4sand-material">
-<span id="pm4sand"></span><h1><span class="section-number">3.4.2.7. </span>PM4Sand Material<a class="headerlink" href="#pm4sand-material" title="Permalink to this headline">¶</a></h1>
+<span id="pm4sand"></span><h1>3.4.2.7. PM4Sand Material<a class="headerlink" href="#pm4sand-material" title="Permalink to this headline">¶</a></h1>
 <p>Code Developed by: <strong>Long Chen</strong> and <a class="reference external" href="https://www.ce.washington.edu/facultyfinder/pedro-arduino">Pedro Arduino</a> at U.Washington.</p>
-<p>This command is used to construct a 2-dimensional PM4Sand material (<a class="reference internal" href="#boulanger-ziotopoulou2017" id="id1"><span>[Boulanger-Ziotopoulou2017]</span></a>).</p>
+<p>This command is used to construct a 2-dimensional PM4Sand material (<a class="reference internal" href="#boulanger-ziotopoulou2017" id="id1">[Boulanger-Ziotopoulou2017]</a>).</p>
 <blockquote>
-<div><p>nDmaterial PM4Sand $matTag $Dr $G0 $hpo $Den &lt;$patm $h0 $emax $emin $nb $nd $Ado $zmax $cz $ce $phic $nu $cgd $cdr $ckaf $Q $R $m $Fsed_min $p_sedo&gt;</p>
-</div></blockquote>
-<table class="colwidths-given docutils align-default">
+<div>nDmaterial PM4Sand $matTag $Dr $G0 $hpo $Den &lt;$patm $h0 $emax $emin $nb $nd $Ado $zmax $cz $ce $phic $nu $cgd $cdr $ckaf $Q $R $m $Fsed_min $p_sedo&gt;</div></blockquote>
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
+<col width="17%" />
+<col width="17%" />
+<col width="67%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Argument</p></th>
-<th class="head"><p>Type</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>$matTag</p></td>
-<td><p><em>integer</em></p></td>
-<td><p>tag identifying material</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>$matTag</td>
+<td><em>integer</em></td>
+<td>tag identifying material</td>
 </tr>
-<tr class="row-odd"><td><p>$Dr</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Relative density (fraction)</p></td>
+<tr class="row-odd"><td>$Dr</td>
+<td><em>float</em></td>
+<td>Relative density (fraction)</td>
 </tr>
-<tr class="row-even"><td><p>$G0</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Shear modulus constant</p></td>
+<tr class="row-even"><td>$G0</td>
+<td><em>float</em></td>
+<td>Shear modulus constant</td>
 </tr>
-<tr class="row-odd"><td><p>$hpo</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Contraction rate parameter</p></td>
+<tr class="row-odd"><td>$hpo</td>
+<td><em>float</em></td>
+<td>Contraction rate parameter</td>
 </tr>
-<tr class="row-even"><td><p>$Den</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Mass density of the material</p></td>
+<tr class="row-even"><td>$Den</td>
+<td><em>float</em></td>
+<td>Mass density of the material</td>
 </tr>
-<tr class="row-odd"><td><p>$P_atm</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Atmospheric pressure</p></td>
+<tr class="row-odd"><td>$P_atm</td>
+<td><em>float</em></td>
+<td>optional: Atmospheric pressure</td>
 </tr>
-<tr class="row-even"><td><p>$h0</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Variable that adjusts the ratio of plastic modulus to elastic modulus</p></td>
+<tr class="row-even"><td>$h0</td>
+<td><em>float</em></td>
+<td>optional: Variable that adjusts the ratio of plastic modulus to elastic modulus</td>
 </tr>
-<tr class="row-odd"><td><p>$emax and $emin</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Maximum and minimum void ratios</p></td>
+<tr class="row-odd"><td>$emax and $emin</td>
+<td><em>float</em></td>
+<td>optional: Maximum and minimum void ratios</td>
 </tr>
-<tr class="row-even"><td><p>$nb</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Bounding surface parameter $nb ≥ 0</p></td>
+<tr class="row-even"><td>$nb</td>
+<td><em>float</em></td>
+<td>optional: Bounding surface parameter $nb ≥ 0</td>
 </tr>
-<tr class="row-odd"><td><p>$nd</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Dilatancy surface parameter $nd ≥ 0</p></td>
+<tr class="row-odd"><td>$nd</td>
+<td><em>float</em></td>
+<td>optional: Dilatancy surface parameter $nd ≥ 0</td>
 </tr>
-<tr class="row-even"><td><p>$Ado</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Dilatancy parameter will be computed at the time of initialization if input value is negative</p></td>
+<tr class="row-even"><td>$Ado</td>
+<td><em>float</em></td>
+<td>optional: Dilatancy parameter will be computed at the time of initialization if input value is negative</td>
 </tr>
-<tr class="row-odd"><td><p>$z_max</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Fabric-dilatancy tensor parameter</p></td>
+<tr class="row-odd"><td>$z_max</td>
+<td><em>float</em></td>
+<td>optional: Fabric-dilatancy tensor parameter</td>
 </tr>
-<tr class="row-even"><td><p>$cz</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Fabric-dilatancy tensor parameter</p></td>
+<tr class="row-even"><td>$cz</td>
+<td><em>float</em></td>
+<td>optional: Fabric-dilatancy tensor parameter</td>
 </tr>
-<tr class="row-odd"><td><p>$ce</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Variable that adjusts the rate of strain accumulation in cyclic loading</p></td>
+<tr class="row-odd"><td>$ce</td>
+<td><em>float</em></td>
+<td>optional: Variable that adjusts the rate of strain accumulation in cyclic loading</td>
 </tr>
-<tr class="row-even"><td><p>$phic</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Critical state effective friction angle</p></td>
+<tr class="row-even"><td>$phic</td>
+<td><em>float</em></td>
+<td>optional: Critical state effective friction angle</td>
 </tr>
-<tr class="row-odd"><td><p>$nu</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Poisson’s ratio</p></td>
+<tr class="row-odd"><td>$nu</td>
+<td><em>float</em></td>
+<td>optional: Poisson’s ratio</td>
 </tr>
-<tr class="row-even"><td><p>$cgd</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Variable that adjusts degradation of elastic modulus with accumulation of fabric</p></td>
+<tr class="row-even"><td>$cgd</td>
+<td><em>float</em></td>
+<td>optional: Variable that adjusts degradation of elastic modulus with accumulation of fabric</td>
 </tr>
-<tr class="row-odd"><td><p>$cdr</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Variable that controls the rotated dilatancy surface</p></td>
+<tr class="row-odd"><td>$cdr</td>
+<td><em>float</em></td>
+<td>optional: Variable that controls the rotated dilatancy surface</td>
 </tr>
-<tr class="row-even"><td><p>$ckaf</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Variable that controls the effect that sustained static shear stresses have on plastic modulus</p></td>
+<tr class="row-even"><td>$ckaf</td>
+<td><em>float</em></td>
+<td>optional: Variable that controls the effect that sustained static shear stresses have on plastic modulus</td>
 </tr>
-<tr class="row-odd"><td><p>$Q</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Critical state line parameter</p></td>
+<tr class="row-odd"><td>$Q</td>
+<td><em>float</em></td>
+<td>optional: Critical state line parameter</td>
 </tr>
-<tr class="row-even"><td><p>$R</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Critical state line parameter</p></td>
+<tr class="row-even"><td>$R</td>
+<td><em>float</em></td>
+<td>optional: Critical state line parameter</td>
 </tr>
-<tr class="row-odd"><td><p>$m</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Yield surface constant (radius of yield surface in stress ratio space)</p></td>
+<tr class="row-odd"><td>$m</td>
+<td><em>float</em></td>
+<td>optional: Yield surface constant (radius of yield surface in stress ratio space)</td>
 </tr>
-<tr class="row-even"><td><p>$Fsed_min</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Variable that controls the minimum value the reduction factor of the elastic moduli can get during reconsolidation</p></td>
+<tr class="row-even"><td>$Fsed_min</td>
+<td><em>float</em></td>
+<td>optional: Variable that controls the minimum value the reduction factor of the elastic moduli can get during reconsolidation</td>
 </tr>
-<tr class="row-odd"><td><p>$p_sedo</p></td>
-<td><p><em>float</em></p></td>
-<td><p>optional: Mean effective stress up to which reconsolidation strains are enhanced</p></td>
+<tr class="row-odd"><td>$p_sedo</td>
+<td><em>float</em></td>
+<td>optional: Mean effective stress up to which reconsolidation strains are enhanced</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>The only material formulation for the PM4Sand object is “PlaneStrain”, as a consequence limited to plain strain continuum elements.</p>
 <p>Valid Element Recorder queries are <strong>stress</strong>, <strong>strain</strong>, <strong>alpha</strong> (or backstressratio) for <span class="math notranslate nohighlight">\(\mathbf{\alpha}\)</span>, <strong>fabric</strong> for <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, and <strong>alpha_in</strong> (or alphain) for <span class="math notranslate nohighlight">\(\mathbf{\alpha_{in}}\)</span></p>
 <p>Elastic or response could be enforced by</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>updateMaterialStage -material $matTag -stage 0
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>updateMaterialStage -material $matTag -stage 0
 </pre></div>
 </div>
 <p>Elastoplastic by</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>updateMaterialStage -material $matTag -stage 1
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>updateMaterialStage -material $matTag -stage 1
 </pre></div>
 </div>
 <p>The program will use the default value of a secondary parameter if a negative input is assigned to that parameter, e.g. Ado = -1. However, FirstCall is mandatory when switching from elastic to elastoplastic if negative inputs are assigned to stress-dependent secondary parameters, e.g. Ado and zmax. FirstCall can be set as,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>setParameter -value 0 -ele $elementTag FirstCall $matTag
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>setParameter -value 0 -ele $elementTag FirstCall $matTag
 </pre></div>
 </div>
 <p>Post-shake reconsolidation can be activated by</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>setParameter -value 1 -ele $elementTag Postshake $matTag
+<div class="code last highlight-default notranslate"><div class="highlight"><pre><span></span>setParameter -value 1 -ele $elementTag Postshake $matTag
 
 The user should check that the results are not sensitive to time step size.
 </pre></div>
 </div>
 </div>
-<dl class="citation">
-<dt class="label" id="boulanger-ziotopoulou2017"><span class="brackets"><a class="fn-backref" href="#id1">Boulanger-Ziotopoulou2017</a></span></dt>
-<dd><p>R.W.Boulanger, K.Ziotopoulou. “PM4Sand(Version 3.1): A Sand Plasticity Model for Earthquake Engineering Applications”. Report No. UCD/CGM-17/01 2017</p>
-</dd>
-</dl>
+<table class="docutils citation" frame="void" id="boulanger-ziotopoulou2017" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Boulanger-Ziotopoulou2017]</a></td><td>R.W.Boulanger, K.Ziotopoulou. “PM4Sand(Version 3.1): A Sand Plasticity Model for Earthquake Engineering Applications”. Report No. UCD/CGM-17/01 2017</td></tr>
+</tbody>
+</table>
 <div class="admonition-example-1 admonition">
-<p class="admonition-title">Example 1</p>
+<p class="first admonition-title">Example 1</p>
 <p>2D undrained monotonic direct simple shear test using one element</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #
+<div class="last highlight-tcl notranslate"><div class="highlight"><pre><span></span># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #
 # 2D Undrained Direct Simple Shear Test Using One Element #
 # University of Washington, Department of Civil and Environmental Eng   #
 # Geotechnical Eng Group, L. Chen, P. Arduino - Jan 2018               #
@@ -473,9 +473,9 @@ wipe
 </div>
 </div>
 <div class="admonition-example-2 admonition">
-<p class="admonition-title">Example 2</p>
+<p class="first admonition-title">Example 2</p>
 <p>2D undrained cyclic direct simple shear test using one element (Displacement Controlled)</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #</span>
+<div class="last highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #</span>
 <span class="c"># 2D Undrained Cyclic Direct Simple Shear Test Using One Element        #</span>
 <span class="c"># University of Washington, Department of Civil and Environmental Eng   #</span>
 <span class="c"># Geotechnical Eng Group, L. Chen, P. Arduino - Feb 2018                #</span>
@@ -691,9 +691,9 @@ set emax <span class="mf">0.8</span>
 </div>
 </div>
 <div class="admonition-example-3 admonition">
-<p class="admonition-title">Example 3</p>
+<p class="first admonition-title">Example 3</p>
 <p>2D undrained cyclic direct simple shear test using one element (Force Controlled)</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #</span>
+<div class="last highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH #</span>
 <span class="c"># 2D Undrained Cyclic Direct Simple Shear Test Using One Element        #</span>
 <span class="c"># University of Washington, Department of Civil and Environmental Eng   #</span>
 <span class="c"># Geotechnical Eng Group, L. Chen, P. Arduino - Oct 2020                #</span>

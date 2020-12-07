@@ -169,13 +169,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
         
-          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
+          <li><a href="../analysisCommands.html">3.2. Analysis Commands</a> &raquo;</li>
         
-          <li><a href="numberer.html"><span class="section-number">3.2.2. </span>numberer Command</a> &raquo;</li>
+          <li><a href="numberer.html">3.2.2. numberer Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.2.2.2. </span>Reverse Cuthill McKee Numberer</li>
+      <li>3.2.2.2. Reverse Cuthill McKee Numberer</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,46 +195,48 @@
            <div itemprop="articleBody">
             
   <div class="section" id="reverse-cuthill-mckee-numberer">
-<h1><span class="section-number">3.2.2.2. </span>Reverse Cuthill McKee Numberer<a class="headerlink" href="#reverse-cuthill-mckee-numberer" title="Permalink to this headline">¶</a></h1>
+<h1>3.2.2.2. Reverse Cuthill McKee Numberer<a class="headerlink" href="#reverse-cuthill-mckee-numberer" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct an RCM degree-of-freedom numbering object to provide the mapping between the degrees-of-freedom at the nodes and the equation numbers. An RCM numberer uses the reverse Cuthill-McKee scheme to order the matrix equations. The command to construct an RCM numberer is a follows:</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">numberer RCM</code></dt>
+<code class="descname">numberer RCM</code></dt>
 <dd></dd></dl>
 
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For very small problems and for the sparse matrix solvers which provide their own numbering scheme, order is not really important so plain numberer is just fine. For large models and analysis using solver types other than the sparse solvers, the order will have a major impact on performance of the solver and the plain handler is a poor choice.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">For very small problems and for the sparse matrix solvers which provide their own numbering scheme, order is not really important so plain numberer is just fine. For large models and analysis using solver types other than the sparse solvers, the order will have a major impact on performance of the solver and the plain handler is a poor choice.</p>
 </div>
 <div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
+<p class="first admonition-title">Example</p>
 <p>The following example shows how to construct a reverse Cuthill-McKee numberer.</p>
 <ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
+<li><strong>Tcl Code</strong></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">numberer</span> RCM
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Python Code</strong></p></li>
+<li><strong>Python Code</strong></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>
+<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<dl class="citation">
-<dt class="label" id="refernces"><span class="brackets">REFERNCES</span></dt>
-<dd><ol class="upperalpha simple" start="5">
-<li><p>Cuthill and J. McKee. Reducing the bandwidth of sparse symmetric matrices In Proc. 24th Nat. Conf. ACM, pages 157–172, 1969.</p></li>
+<table class="docutils citation" frame="void" id="refernces" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[REFERNCES]</td><td><ol class="first upperalpha simple" start="5">
+<li>Cuthill and J. McKee. Reducing the bandwidth of sparse symmetric matrices In Proc. 24th Nat. Conf. ACM, pages 157–172, 1969.</li>
 </ol>
-<ol class="upperalpha simple" start="10">
-<li><ol class="upperalpha simple">
-<li><p>George and J. W-H. Liu, Computer Solution of Large Sparse Positive Definite Systems, Prentice-Hall, 1981</p></li>
+<ol class="last upperalpha simple" start="10">
+<li><ol class="first upperalpha">
+<li>George and J. W-H. Liu, Computer Solution of Large Sparse Positive Definite Systems, Prentice-Hall, 1981</li>
 </ol>
 </li>
 </ol>
-</dd>
-</dl>
+</td></tr>
+</tbody>
+</table>
 <p>Code Developed by: <strong>fmk</strong></p>
 </div>
 

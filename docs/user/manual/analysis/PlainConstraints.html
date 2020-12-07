@@ -170,13 +170,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
         
-          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
+          <li><a href="../analysisCommands.html">3.2. Analysis Commands</a> &raquo;</li>
         
-          <li><a href="constraints.html"><span class="section-number">3.2.1. </span>constraints Command</a> &raquo;</li>
+          <li><a href="constraints.html">3.2.1. constraints Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.2.1.1. </span>Plain Constraint Handler</li>
+      <li>3.2.1.1. Plain Constraint Handler</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,28 +196,28 @@
            <div itemprop="articleBody">
             
   <div class="section" id="plain-constraint-handler">
-<h1><span class="section-number">3.2.1.1. </span>Plain Constraint Handler<a class="headerlink" href="#plain-constraint-handler" title="Permalink to this headline">¶</a></h1>
+<h1>3.2.1.1. Plain Constraint Handler<a class="headerlink" href="#plain-constraint-handler" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a Plain constraint handler. A plain constraint handler can only enforce homogeneous single point constraints (fix command) and multi-point constraints constructed where the constraint matrix is equal to the identity (equalDOF command). The following is the command to construct a plain constraint handler:</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">constraints Plain</code></dt>
+<code class="descname">constraints Plain</code></dt>
 <dd></dd></dl>
 
 <p>This constraint handler can only enforce homogeneous single point constraints (fix command) and multi-pont constraints where the constraint matrix is equal to the identity (equalDOF command).</p>
 <p>It does not follow constraints, by that we mean the constrained node in a MP_Constraint cannot be a retained node in another MP_Constraint.</p>
 <div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
+<p class="first admonition-title">Example</p>
 <p>The following example shows how to construct a reverse Cuthill-McKee numberer.</p>
 <ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
+<li><strong>Tcl Code</strong></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">constraints</span> Plain
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Python Code</strong></p></li>
+<li><strong>Python Code</strong></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Plain&#39;</span><span class="p">)</span>
+<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Plain&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -172,13 +172,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
         
-          <li><a href="../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../modelCommands.html">3.1. Modelling Commands</a> &raquo;</li>
         
-          <li><a href="timeSeries.html"><span class="section-number">3.1.6. </span>Time Series Command</a> &raquo;</li>
+          <li><a href="timeSeries.html">3.1.6. Time Series Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.6.7. </span>Path TimeSeries</li>
+      <li>3.1.6.7. Path TimeSeries</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -198,36 +198,36 @@
            <div itemprop="articleBody">
             
   <div class="section" id="path-timeseries">
-<span id="pathtimeseries"></span><h1><span class="section-number">3.1.6.7. </span>Path TimeSeries<a class="headerlink" href="#path-timeseries" title="Permalink to this headline">¶</a></h1>
+<span id="pathtimeseries"></span><h1>3.1.6.7. Path TimeSeries<a class="headerlink" href="#path-timeseries" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a Path TimeSeries object. The relationship between load factor and time is input by the user as a series of discrete points in the 2d space (load factor, time). The input points can come from a file or from a list in the script. When the time specified does not match any of the input points, linear interpolation is used between points. There are many ways to specify the load path:</p>
 <p>For a load path where the factors are specified in a tcl list with a constant time interval between points:</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">timeSeries Path $tag -dt $dt -values {list_of_values} &lt;-factor $cFactor&gt; &lt;-useLast&gt; &lt;-prependZero&gt; &lt;-startTime $tStart&gt;</code></dt>
+<code class="descname">timeSeries Path $tag -dt $dt -values {list_of_values} &lt;-factor $cFactor&gt; &lt;-useLast&gt; &lt;-prependZero&gt; &lt;-startTime $tStart&gt;</code></dt>
 <dd></dd></dl>
 
 <p>For a load path where the factors are specified in a file for a constant time interval between points:</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">timeSeries Path $tag -dt $dt -filePath $filePath &lt;-factor $cFactor&gt; &lt;-useLast&gt; &lt;-prependZero&gt; &lt;-startTime $tStart&gt;</code></dt>
+<code class="descname">timeSeries Path $tag -dt $dt -filePath $filePath &lt;-factor $cFactor&gt; &lt;-useLast&gt; &lt;-prependZero&gt; &lt;-startTime $tStart&gt;</code></dt>
 <dd></dd></dl>
 
 <p>For a load path where the values are specified at non-constant time intervals:</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">timeSeries Path $tag -time {list_of_times} -values {list_of_values} &lt;-factor $cFactor&gt; &lt;-useLast&gt;</code></dt>
+<code class="descname">timeSeries Path $tag -time {list_of_times} -values {list_of_values} &lt;-factor $cFactor&gt; &lt;-useLast&gt;</code></dt>
 <dd></dd></dl>
 
 <p>For a load path where both time and values are specified in a list included in the command</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">timeSeries Path $tag -fileTime $fileTime -filePath $filePath &lt;-factor $cFactor&gt; &lt;-useLast&gt;</code></dt>
+<code class="descname">timeSeries Path $tag -fileTime $fileTime -filePath $filePath &lt;-factor $cFactor&gt; &lt;-useLast&gt;</code></dt>
 <dd></dd></dl>
 
 <div class="admonition-example admonition">
-<p class="admonition-title">EXAMPLE:</p>
+<p class="first admonition-title">EXAMPLE:</p>
 <p>timeSeries Path 1 -dT 0.02 -filePath A-ELC270.AT2 -factor $G</p>
-<p>timeSeries Path 2 -time {0.0 0.2 0.4 1.0} -values {0.0 1.0 2.0 0.0}</p>
+<p class="last">timeSeries Path 2 -time {0.0 0.2 0.4 1.0} -values {0.0 1.0 2.0 0.0}</p>
 </div>
 <p>Code developed by: <strong>fmk</strong></p>
 </div>

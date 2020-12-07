@@ -174,13 +174,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
         
-          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
+          <li><a href="../analysisCommands.html">3.2. Analysis Commands</a> &raquo;</li>
         
-          <li><a href="system.html"><span class="section-number">3.2.3. </span>system Command</a> &raquo;</li>
+          <li><a href="system.html">3.2.3. system Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.2.3.4. </span>SuperLU System</li>
+      <li>3.2.3.4. SuperLU System</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,42 +200,43 @@
            <div itemprop="articleBody">
             
   <div class="section" id="superlu-system">
-<h1><span class="section-number">3.2.3.4. </span>SuperLU System<a class="headerlink" href="#superlu-system" title="Permalink to this headline">¶</a></h1>
+<h1>3.2.3.4. SuperLU System<a class="headerlink" href="#superlu-system" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a SparseGEN linear system of equation object. As the name implies, this class is used for sparse matrix systems. The solution of the sparse matrix is carried out using .. <a class="reference external" href="https://portal.nersc.gov/project/sparse/superlu/">SuperLU</a>. To following command is used to construct such a system:</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">system SuperLU</code></dt>
+<code class="descname">system SuperLU</code></dt>
 <dd></dd></dl>
 
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p>When using the SuperLU system, the software will renumber the equations to ensure a fast solve. As a consequence it is a waste of time specifying anything but a Plain numberer.</p></li>
-<li><p>The original and still working command was <code class="docutils literal notranslate"><span class="pre">system</span> <span class="pre">SparseGEN</span></code></p></li>
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>When using the SuperLU system, the software will renumber the equations to ensure a fast solve. As a consequence it is a waste of time specifying anything but a Plain numberer.</li>
+<li>The original and still working command was <code class="docutils literal notranslate"><span class="pre">system</span> <span class="pre">SparseGEN</span></code></li>
 </ol>
 </div>
 <div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
+<p class="first admonition-title">Example</p>
 <p>The following example shows how to construct a SuperLU system</p>
 <ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
+<li><strong>Tcl Code</strong></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">system</span> SuperLU
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Python Code</strong></p></li>
+<li><strong>Python Code</strong></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;SuperLU&#39;</span><span class="p">)</span>
+<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;SuperLU&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>Code developed by: <strong>fmk</strong></p>
-<dl class="citation">
-<dt class="label" id="references"><span class="brackets">REFERENCES</span></dt>
-<dd><p>James W. Demmel and Stanley C. Eisenstat and John R. Gilbert and Xiaoye S. Li and Joseph W. H. Liu, “A supernodal approach to sparse partial pivoting”, SIAM J. Matrix Analysis and Applications, 20(3), 720-755, 1999.</p>
-</dd>
-</dl>
+<table class="docutils citation" frame="void" id="references" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[REFERENCES]</td><td>James W. Demmel and Stanley C. Eisenstat and John R. Gilbert and Xiaoye S. Li and Joseph W. H. Liu, “A supernodal approach to sparse partial pivoting”, SIAM J. Matrix Analysis and Applications, 20(3), 720-755, 1999.</td></tr>
+</tbody>
+</table>
 </div>
 
 

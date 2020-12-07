@@ -174,13 +174,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
         
-          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
+          <li><a href="../analysisCommands.html">3.2. Analysis Commands</a> &raquo;</li>
         
-          <li><a href="system.html"><span class="section-number">3.2.3. </span>system Command</a> &raquo;</li>
+          <li><a href="system.html">3.2.3. system Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.2.3.3. </span>ProfileSPD System</li>
+      <li>3.2.3.3. ProfileSPD System</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,17 +200,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="profilespd-system">
-<h1><span class="section-number">3.2.3.3. </span>ProfileSPD System<a class="headerlink" href="#profilespd-system" title="Permalink to this headline">¶</a></h1>
+<h1>3.2.3.3. ProfileSPD System<a class="headerlink" href="#profilespd-system" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a ProfileSPD linear system of equation object. As the name implies, this class is used for symmetric positive definite matrix systems. The matrix is stored as shown below in a 1 dimensional array with only those values below the first non-zero row in any column being stored. This is sometimes also referred to as a skyline storage scheme. The following command is used to construct such a system:</p>
 <dl class="function">
 <dt>
-<code class="sig-name descname">system ProfileSPD</code></dt>
+<code class="descname">system ProfileSPD</code></dt>
 <dd></dd></dl>
 
 <p>An n×n matrix A= is a symmetric positive definite matrix if:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(a_{i,j} = a_{j,i}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y^T A y != 0\)</span> for all non-zero vectors y with real entries (<span class="math notranslate nohighlight">\(y \in \mathbb{R}^n\)</span>).</p></li>
+<li><span class="math notranslate nohighlight">\(a_{i,j} = a_{j,i}\)</span></li>
+<li><span class="math notranslate nohighlight">\(y^T A y != 0\)</span> for all non-zero vectors y with real entries (<span class="math notranslate nohighlight">\(y \in \mathbb{R}^n\)</span>).</li>
 </ol>
 <p>In the skyline or profile storage scheme only the entries below the first no-zero row entry in any column are stored if storing by rows: The reason for this is that as no reordering of the rows is required in gaussian eleimination because the matrix is SPD, no non-zero entries will ocur in the elimination process outside the area stored.</p>
 <p>For example, a symmetric 6-by-6 matrix with a structure as shown below:</p>
@@ -233,18 +233,18 @@ A_{11} &amp; A_{12} &amp; A_{22} &amp; A_{23} &amp; A_{33} &amp; A_{44} &amp; A_
 1 &amp; 3 &amp; 5 &amp; 6 &amp; 10
 \end{bmatrix}\]</div>
 <div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
+<p class="first admonition-title">Example</p>
 <p>The following example shows how to construct a ProfileSPD system</p>
 <ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
+<li><strong>Tcl Code</strong></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">system</span> ProfileSPD
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Python Code</strong></p></li>
+<li><strong>Python Code</strong></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ProfileSPD&#39;</span><span class="p">)</span>
+<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ProfileSPD&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
