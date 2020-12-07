@@ -35,6 +35,7 @@ The following contain information about matType? and the args required for each 
    ndMaterials/PM4Silt
    ndMaterials/PressureIndependentMultiYield
    ndMaterials/PressureDependentMultiYield
+   ndMaterials/J2CyclicBoundingSurface
 
 
 Concrete Damage Model
@@ -48,7 +49,6 @@ Tsinghua Sand Models
 CycLiqCP Material (Cyclic ElasticPlasticity)
 CycLiqCPSP Material
 Manzari Dafalias Material
-J2CyclicBoundingSurface Material
 Stress Density Material
 Materials for Modeling Concrete Walls
 PlaneStressUserMaterial
