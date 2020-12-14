@@ -165,11 +165,11 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../miscCommands.html">3.5. Misc. Commands</a> &raquo;</li>
+          <li><a href="../miscCommands.html"><span class="section-number">3.5. </span>Misc. Commands</a> &raquo;</li>
         
-      <li>3.5.8. wipeAnalysis Command</li>
+      <li><span class="section-number">3.5.8. </span>wipeAnalysis Command</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,35 +189,35 @@
            <div itemprop="articleBody">
             
   <div class="section" id="wipeanalysis-command">
-<span id="wipeanalysis"></span><h1>3.5.8. wipeAnalysis Command<a class="headerlink" href="#wipeanalysis-command" title="Permalink to this headline">¶</a></h1>
+<span id="wipeanalysis"></span><h1><span class="section-number">3.5.8. </span>wipeAnalysis Command<a class="headerlink" href="#wipeanalysis-command" title="Permalink to this headline">¶</a></h1>
 <p>The wipeAnalysis command is used to remove all the analysis objects.</p>
 <dl class="function">
 <dt id="wipeAnalsyis">
-<code class="descname">wipeAnalsyis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wipeAnalsyis" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">wipeAnalsyis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wipeAnalsyis" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>This command is needed for example when the user wishes to switch from a static analysis to a transient analysis, e.g. when switching from the initial gravity load analysis to an analysis of the subsequent response due to earthquake loading.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<ul class="last simple">
-<li>The time in the domain is not reset as in the <a class="reference internal" href="wipe.html#wipe"><span class="std std-ref">wipe Command</span></a>.</li>
-<li>The state of the model does not change, i.e. the loads remain active and will change with subsequent analyze commands unless a <a class="reference internal" href="loadConst.html#loadconst"><span class="std std-ref">loadConst Command</span></a> is issued.</li>
-<li>There is NO space between the wipe and Analysis. Putting a space results in domain and recorder objects also being remove, e.g. a <a class="reference internal" href="wipe.html#wipe"><span class="std std-ref">wipe Command</span></a>.</li>
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>The time in the domain is not reset as in the <a class="reference internal" href="wipe.html#wipe"><span class="std std-ref">wipe Command</span></a>.</p></li>
+<li><p>The state of the model does not change, i.e. the loads remain active and will change with subsequent analyze commands unless a <a class="reference internal" href="loadConst.html#loadconst"><span class="std std-ref">loadConst Command</span></a> is issued.</p></li>
+<li><p>There is NO space between the wipe and Analysis. Putting a space results in domain and recorder objects also being remove, e.g. a <a class="reference internal" href="wipe.html#wipe"><span class="std std-ref">wipe Command</span></a>.</p></li>
 </ul>
 </div>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example:</p>
+<p class="admonition-title">Example:</p>
 <p>The following demonstrates the use of the wipe command.</p>
 <ol class="arabic simple">
-<li><strong>Tcl Code</strong></li>
+<li><p><strong>Tcl Code</strong></p></li>
 </ol>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>wipeAnalysis
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><strong>Python Code</strong></li>
+<li><p><strong>Python Code</strong></p></li>
 </ol>
-<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wipeAnalysis</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wipeAnalysis</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>

@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.2.6.3. Newmark Method &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.2.7. analysis Command" href="analysis.html" />
+    <link rel="prev" title="3.2.6.2. DisplacementControl Command" href="DisplacementControl.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="constraints.html">3.2.1. constraints Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numberer.html">3.2.2. numberer Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system.html">3.2.3. system Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html">3.2.4. test Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algorithm.html">3.2.5. algorithm Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="integrator.html">3.2.6. integrator Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="LoadControl.html">3.2.6.1. LoadControl Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DisplacementControl.html">3.2.6.2. DisplacementControl Command</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.6.3. Newmark Method</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html">3.2.7. analysis Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analyze.html">3.2.8. analyze Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
+        
+          <li><a href="integrator.html"><span class="section-number">3.2.6. </span>integrator Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.2.6.3. </span>Newmark Method</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/user/manual/analysis/Newmark.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="newmark-method">
+<h1><span class="section-number">3.2.6.3. </span>Newmark Method<a class="headerlink" href="#newmark-method" title="Permalink to this headline">¶</a></h1>
+<p>This command is used to construct a Newmark integrator object.</p>
+<dl class="function">
+<dt>
+<code class="sig-name descname">integrator Newmark $gamma $beta</code></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$gamma</p></td>
+<td><p><em>float</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(\gamma\)</span> factor</p></td>
+</tr>
+<tr class="row-odd"><td><p>$beta</p></td>
+<td><p><em>float</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(\beta\)</span> factor</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic">
+<li><p>If the accelerations are chosen as the unknowns and <span class="math notranslate nohighlight">\(\beta\)</span> is chosen as 0, the formulation results in the fast but conditionally stable explicit Central Difference method. Otherwise the method is implicit and requires an iterative solution process.</p></li>
+<li><p>Two common sets of choices are:</p>
+<p>Average Acceleration Method (<span class="math notranslate nohighlight">\(\gamma=\frac{1}{2}, \beta = \frac{1}{4}\)</span>)</p>
+<p>Linear Acceleration Method (<span class="math notranslate nohighlight">\(\gamma=\frac{1}{2}, \beta = \frac{1}{6}\)</span>)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\gamma &gt; \frac{1}{2}\)</span> results in numerical damping proportional to <span class="math notranslate nohighlight">\(\gamma - \frac{1}{2}\)</span></p></li>
+<li><p>The method is second order accurate if and only if <span class="math notranslate nohighlight">\(\gamma = \frac{1}{2}\)</span></p></li>
+<li><p>The method is conditionally stable for <span class="math notranslate nohighlight">\(\beta &gt;= \frac{\gamma}{2} &gt;= \frac{1}{4}\)</span></p></li>
+</ol>
+</div>
+<div class="section" id="theory">
+<h2><span class="section-number">3.2.6.3.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>The Newmark method is a one step implicit method for solving the transient problem, represented by the residual for the momentum equation:</p>
+<div class="math notranslate nohighlight">
+\[R_{t + \Delta t} = F_{t+\Delta t}^{ext} - M \ddot U_{t + \Delta t} - C \dot U_{t + \Delta t} + F(U_{t + \Delta t})^{int}\]</div>
+<p>Using the Taylor series approximation of <span class="math notranslate nohighlight">\(U_{t+\Delta t}\)</span> and <span class="math notranslate nohighlight">\(\dot U_{t+\Delta t}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}U_{t+\Delta t} = U_t + \Delta t \dot U_t + \frac{\Delta t^2}{2} \ddot U_t + \frac{\Delta t^3}{6} \dddot U_t + \cdots\\\dot U_{t+\Delta t} = \dot U_t + \Delta t \ddot U_t + \frac{\Delta t^2}{2} \dddot U_t + \cdots\end{aligned}\end{align} \]</div>
+<p>Newton truncated these using the following:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}U_{t+\Delta t} = u_t + \Delta t \dot U_t + \frac{\Delta t^2}{2} \ddot U + \beta {\Delta t^3} \dddot U\\\dot U_{t + \Delta t} = \dot U_t + \Delta t \ddot U_t + \gamma \Delta t^2 \dddot U\end{aligned}\end{align} \]</div>
+<p>in which he assumed linear acceleration within a time step, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\dddot U = \frac{{\ddot U_{t+\Delta t}} - \ddot U_t}{\Delta t}\]</div>
+<p>which results in the following expressions:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}U_{t+\Delta t} = U_t + \Delta t \dot U_t + [(0.5 - \beta) \Delta t^2] \ddot U_t + [\beta \Delta t^2] \ddot U_{t+\Delta t}\\\dot U_{t+\Delta t} = \dot U_t + [(1-\gamma)\Delta t] \ddot U_t + [\gamma \Delta t ] \ddot U_{t+\Delta t}\end{aligned}\end{align} \]</div>
+<p>The variables <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are numerical parameters that control both the stability of the method and the amount of numerical damping introduced into the system by the method. For <span class="math notranslate nohighlight">\(\gamma=\frac{1}{2}\)</span> there is no numerical damping; for <span class="math notranslate nohighlight">\(\gamma&gt;=\frac{1}{2}\)</span> numerical damping is introduced. Two well known and commonly used cases are:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Average Acceleration Method (<span class="math notranslate nohighlight">\(\gamma=\frac{1}{2}, \beta = \frac{1}{4}\)</span>)</p></li>
+<li><p>Constant Acceleration Method (<span class="math notranslate nohighlight">\(\gamma=\frac{1}{2}, \beta = \frac{1}{6}\)</span>)</p></li>
+</ol>
+</div></blockquote>
+<p>The linearization of the Newmark equations gives:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}dU_{t+\Delta t}^{i+1} = \beta \Delta t^2 d \ddot U_{t+\Delta t}^{i+1}\\d \dot U_{t+\Delta t}^{i+1} = \gamma \Delta t \ddot U_{t+\Delta t}^{i+1}\end{aligned}\end{align} \]</div>
+<p>which gives the update formula when displacement increment is used as unknown in the linearized system as:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}U_{t+\Delta t}^{i+1} = U_{t+\Delta t}^i + dU_{t+\Delta t}^{i+1}\\\dot U_{t+\Delta t}^{i+1} = \dot U_{t+\Delta t}^i + \frac{\gamma}{\beta \Delta t}dU_{t+\Delta t}^{i+1}\\\ddot U_{t+\Delta t}^{i+1} = \ddot U_{t+\Delta t}^i + \frac{1}{\beta \Delta t^2}dU_{t+\Delta t}^{i+1}\end{aligned}\end{align} \]</div>
+<p>The linearization of the momentum equation using the displacements as the unknowns leads to the following linear equation:</p>
+<div class="math notranslate nohighlight">
+\[K_{t+\Delta t}^{*i} \Delta U_{t+\Delta t}^{i+1} = R_{t+\Delta t}^i\]</div>
+<p>where,</p>
+<div class="math notranslate nohighlight">
+\[K_{t+\Delta t}^{*i} = K_t + \frac{\gamma}{\beta \Delta t} C_t + \frac{1}{\beta \Delta t^2} M\]</div>
+<p>and,</p>
+<div class="math notranslate nohighlight">
+\[R_{t+\Delta t}^i = F_{t + \Delta t}^{ext} - F(U_{t + \Delta t}^{i-1})^{int} - C \dot U_{t+\Delta t}^{i-1} - M \ddot U_{t+ \Delta t}^{i-1}\]</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>The following example shows how to construct a Newmark Integrator.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">integrator</span> Newmark <span class="mf">0.5</span> <span class="mf">0.25</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;Newmark&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="citation">
+<dt class="label" id="newmark1959"><span class="brackets">Newmark1959</span></dt>
+<dd><p>Newmark, N.M. “A Method of Computation for Structural Dynamics” ASCE Journal of Engineering Mechanics Division, Vol 85. No EM3, 1959.</p>
+</dd>
+</dl>
+<p>Code Developed by: <strong>fmk</strong></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, The Regents of the University of California
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

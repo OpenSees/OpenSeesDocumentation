@@ -174,13 +174,13 @@
     
       <li><a href="../../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../../userManual.html">3. Command Manual</a> &raquo;</li>
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html">3.1. Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
         
-          <li><a href="../element.html">3.1.3. Element Command</a> &raquo;</li>
+          <li><a href="../element.html"><span class="section-number">3.1.3. </span>Element Command</a> &raquo;</li>
         
-      <li>3.1.3.3. ZeroLengthND Element</li>
+      <li><span class="section-number">3.1.3.3. </span>ZeroLengthND Element</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,77 +200,77 @@
            <div itemprop="articleBody">
             
   <div class="section" id="zerolengthnd-element">
-<h1>3.1.3.3. ZeroLengthND Element<a class="headerlink" href="#zerolengthnd-element" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1.3.3. </span>ZeroLengthND Element<a class="headerlink" href="#zerolengthnd-element" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a zeroLengthND element object, which is defined by two nodes at the same location. The nodes are connected by a single NDMaterial object to represent the force-deformation relationship for the element.</p>
 <dl class="function">
 <dt>
-<code class="descname">element zeroLengthND $eleTag $iNode $jNode $matTag &lt;$uniTag&gt; &lt;-orient $x1 $x2 $x3 $yp1 $yp2 $yp3&gt;</code></dt>
+<code class="sig-name descname">element zeroLengthND $eleTag $iNode $jNode $matTag &lt;$uniTag&gt; &lt;-orient $x1 $x2 $x3 $yp1 $yp2 $yp3&gt;</code></dt>
 <dd></dd></dl>
 
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="17%" />
-<col width="67%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Argument</th>
-<th class="head">Type</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>$eleTag</td>
-<td><em>integer</em></td>
-<td>unique element object tag</td>
+<tbody>
+<tr class="row-even"><td><p>$eleTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>unique element object tag</p></td>
 </tr>
-<tr class="row-odd"><td>$nodes</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>$nodes</p></td>
+<td><div class="line-block">
 <div class="line">intList|</div>
 </div>
 </td>
-<td>tags of two end nodes</td>
+<td><p>tags of two end nodes</p></td>
 </tr>
-<tr class="row-even"><td>$matTag</td>
-<td><em>integer</em></td>
-<td>tag associated with previously-defined ndMaterial object</td>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>tag associated with previously-defined ndMaterial object</p></td>
 </tr>
-<tr class="row-odd"><td>$uniTag</td>
-<td><em>integer</em></td>
-<td>tag associated with previously-defined UniaxialMaterial object which may be used to represent uncoupled behavior orthogonal to the plane of the NDmaterial response. SEE NOTES 2 and 3.</td>
+<tr class="row-odd"><td><p>$uniTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>tag associated with previously-defined UniaxialMaterial object which may be used to represent uncoupled behavior orthogonal to the plane of the NDmaterial response. SEE NOTES 2 and 3.</p></td>
 </tr>
-<tr class="row-even"><td>$x</td>
-<td><em>list float</em></td>
-<td>vector components in global coordinates defining local x-axis (optional)</td>
+<tr class="row-even"><td><p>$x</p></td>
+<td><p><em>list float</em></p></td>
+<td><p>vector components in global coordinates defining local x-axis (optional)</p></td>
 </tr>
-<tr class="row-odd"><td>$yp</td>
-<td><em>list float</em></td>
-<td>vector components in global coordinates defining vector yp which lies in the local x-y plane for the element. (optional)</td>
+<tr class="row-odd"><td><p>$yp</p></td>
+<td><p><em>list float</em></p></td>
+<td><p>vector components in global coordinates defining vector yp which lies in the local x-y plane for the element. (optional)</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>The zeroLengthND element only represents translational response between its nodes</p>
 <p>If the NDMaterial object is of order two, the response lies in the element local x-y plane and the UniaxialMaterial object may be used to represent the uncoupled behavior orthogonal to this plane, i.e. along the local z-axis.</p>
 <p>If the NDMaterial object is of order three, the response is along each of the element local exes.</p>
-<p class="last">If the optional orientation vectors are not specified, the local element axes coincide with the global axes. Otherwise the local z-axis is defined by the cross product between the vectors x and yp vectors specified on the command line.</p>
+<p>If the optional orientation vectors are not specified, the local element axes coincide with the global axes. Otherwise the local z-axis is defined by the cross product between the vectors x and yp vectors specified on the command line.</p>
 </div>
 <p>The valid queries to a zero-length element when creating an ElementRecorder object are ‘force’, ‘deformation’, and ‘material matArg1 matArg2 …’</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="admonition-title">Example</p>
 <p>The following examples demonstrate the commands in a script to add three zeroLength elements to domain. The three to be added have element tags <strong>1</strong>, <strong>2</strong>, and <strong>3</strong>. Element <strong>1</strong> has nodes <strong>2</strong> and <strong>3</strong> as its end ndes, has two materials <strong>5</strong> and <strong>6</strong> acting in directions <strong>1</strong> and <strong>2</strong>. Element <strong>2</strong> has as its end nodes <strong>4</strong> and <strong>5</strong>, has only one material <strong>1</strong> acting in direction <strong>1</strong>, the element has a global orientation.</p>
 <ol class="arabic simple">
-<li><strong>Tcl Code</strong></li>
+<li><p><strong>Tcl Code</strong></p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span> zeroLengthND <span class="mi">1</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">5</span>
 <span class="nv">element</span> zeroLengthND <span class="mi">2</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">5</span> <span class="mi">1</span> <span class="o">-</span>orient <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><strong>Python Code</strong></li>
+<li><p><strong>Python Code</strong></p></li>
 </ol>
-<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;zeroLength&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;zeroLength&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">element</span><span class="p">(</span><span class="s1">&#39;zeroLength&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;-orient&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>

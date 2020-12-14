@@ -165,11 +165,11 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../miscCommands.html">3.5. Misc. Commands</a> &raquo;</li>
+          <li><a href="../miscCommands.html"><span class="section-number">3.5. </span>Misc. Commands</a> &raquo;</li>
         
-      <li>3.5.2. nodeDisp Command</li>
+      <li><span class="section-number">3.5.2. </span>nodeDisp Command</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,53 +189,53 @@
            <div itemprop="articleBody">
             
   <div class="section" id="nodedisp-command">
-<span id="nodedisp"></span><h1>3.5.2. nodeDisp Command<a class="headerlink" href="#nodedisp-command" title="Permalink to this headline">¶</a></h1>
+<span id="nodedisp"></span><h1><span class="section-number">3.5.2. </span>nodeDisp Command<a class="headerlink" href="#nodedisp-command" title="Permalink to this headline">¶</a></h1>
 <p>This command returns the current displacement at a specified node.</p>
 <dl class="function">
 <dt>
-<code class="descname">nodeDisp $nodeTag &lt;$dof&gt;</code></dt>
+<code class="sig-name descname">nodeDisp $nodeTag &lt;$dof&gt;</code></dt>
 <dd></dd></dl>
 
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="17%" />
-<col width="67%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Argument</th>
-<th class="head">Type</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>$nodeTag</td>
-<td><em>integer</em></td>
-<td>tag identifying node whose displacements are sought</td>
+<tbody>
+<tr class="row-even"><td><p>$nodeTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>tag identifying node whose displacements are sought</p></td>
 </tr>
-<tr class="row-odd"><td>$dof</td>
-<td><em>integer</em></td>
-<td>optional: specific dof at the node (1 through ndf)</td>
+<tr class="row-odd"><td><p>$dof</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>optional: specific dof at the node (1 through ndf)</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If optional $dof is not provided, an array containing all displacement components for every dof at the node is returned.</p>
+<p class="admonition-title">Note</p>
+<p>If optional $dof is not provided, an array containing all displacement components for every dof at the node is returned.</p>
 </div>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example:</p>
+<p class="admonition-title">Example:</p>
 <p>The following example is used to set the variable <strong>disp1</strong> to the nodal displacement at node given by the variable <strong>nodeTag</strong> in the <strong>1</strong> degree-of-freedom direction.</p>
 <ol class="arabic simple">
-<li><strong>Tcl Code</strong> (note use of <strong>set</strong> and <strong>[ ]</strong>)</li>
+<li><p><strong>Tcl Code</strong> (note use of <strong>set</strong> and <strong>[ ]</strong>)</p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> disp1 <span class="k">[</span><span class="nv">nodeDisp</span> <span class="nv">$nodeTag</span> <span class="mi">1</span><span class="k">]</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><strong>Python Code</strong></li>
+<li><p><strong>Python Code</strong></p></li>
 </ol>
-<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">disp1</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">nodeTag</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">disp1</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">nodeTag</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

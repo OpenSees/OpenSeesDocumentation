@@ -174,13 +174,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../analysisCommands.html">3.2. Analysis Commands</a> &raquo;</li>
+          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
         
-          <li><a href="system.html">3.2.3. system Command</a> &raquo;</li>
+          <li><a href="system.html"><span class="section-number">3.2.3. </span>system Command</a> &raquo;</li>
         
-      <li>3.2.3.5. Umfpack System</li>
+      <li><span class="section-number">3.2.3.5. </span>Umfpack System</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,43 +200,41 @@
            <div itemprop="articleBody">
             
   <div class="section" id="umfpack-system">
-<h1>3.2.3.5. Umfpack System<a class="headerlink" href="#umfpack-system" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2.3.5. </span>Umfpack System<a class="headerlink" href="#umfpack-system" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a sparse system of equations which uses the <a class="reference external" href="https://people.sc.fsu.edu/~jburkardt/cpp_src/umfpack/umfpack.html">UmfPack</a>  solver. The following command is used to construct such a system:</p>
 <dl class="function">
 <dt>
-<code class="descname">system Umfpack &lt;-lvalueFact $LVALUE&gt;</code></dt>
+<code class="sig-name descname">system Umfpack &lt;-lvalueFact $LVALUE&gt;</code></dt>
 <dd></dd></dl>
 
 <p>(LVALUE*the number of nonzero entries) is the amount of additional memory set aside for fill in during the matrix solution, by default the LVALUE factor is 10. You only need to experiment with this if you get error messages back about LVALUE being too small.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title">Example</p>
+<p class="admonition-title">Example</p>
 <p>The following example shows how to construct a SuperLU system</p>
 <ol class="arabic simple">
-<li><strong>Tcl Code</strong></li>
+<li><p><strong>Tcl Code</strong></p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">system</span> Umfpack
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><strong>Python Code</strong></li>
+<li><p><strong>Python Code</strong></p></li>
 </ol>
-<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;Umfpack&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;Umfpack&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>Code developed by: <strong>fmk</strong></p>
-<table class="docutils citation" frame="void" id="refernces" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[REFERNCES]</td><td><ol class="first last arabic simple">
-<li>A column pre-ordering strategy for the unsymmetric-pattern multifrontal method, T. A. Davis, ACM Transactions on Mathematical Software, vol 30, no. 2, June 2004, pp. 165-195.</li>
-<li>Algorithm 832: UMFPACK, an unsymmetric-pattern multifrontal method, T. A. Davis, ACM Transactions on Mathematical Software, vol 30, no. 2, June 2004, pp. 196-199.</li>
-<li>A combined unifrontal/multifrontal method for unsymmetric sparse matrices, T. A. Davis and I. S. Duff, ACM Transactions on Mathematical Software, vol. 25, no. 1, pp. 1-19, March 1999.</li>
-<li>An unsymmetric-pattern multifrontal method for sparse LU factorization, T. A. Davis and I. S. Duff, SIAM Journal on Matrix Analysis and Applications, vol 18, no. 1, pp. 140-158, Jan. 1997.</li>
+<dl class="citation">
+<dt class="label" id="refernces"><span class="brackets">REFERNCES</span></dt>
+<dd><ol class="arabic simple">
+<li><p>A column pre-ordering strategy for the unsymmetric-pattern multifrontal method, T. A. Davis, ACM Transactions on Mathematical Software, vol 30, no. 2, June 2004, pp. 165-195.</p></li>
+<li><p>Algorithm 832: UMFPACK, an unsymmetric-pattern multifrontal method, T. A. Davis, ACM Transactions on Mathematical Software, vol 30, no. 2, June 2004, pp. 196-199.</p></li>
+<li><p>A combined unifrontal/multifrontal method for unsymmetric sparse matrices, T. A. Davis and I. S. Duff, ACM Transactions on Mathematical Software, vol. 25, no. 1, pp. 1-19, March 1999.</p></li>
+<li><p>An unsymmetric-pattern multifrontal method for sparse LU factorization, T. A. Davis and I. S. Duff, SIAM Journal on Matrix Analysis and Applications, vol 18, no. 1, pp. 140-158, Jan. 1997.</p></li>
 </ol>
-</td></tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </div>
 
 

@@ -154,7 +154,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>3. Command Manual</li>
+      <li><span class="section-number">3. </span>Command Manual</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,17 +174,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="command-manual">
-<h1>3. Command Manual<a class="headerlink" href="#command-manual" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Command Manual<a class="headerlink" href="#command-manual" title="Permalink to this headline">¶</a></h1>
 <p>To understand how to run a finite element simulation using OpenSees, it is helpful to have a small understanding of the following abstractions. In OpenSees there exists:</p>
 <ol class="arabic simple">
-<li>The <strong>Model Generator</strong>, code that allows the user to build a finite element model.</li>
-<li>The <strong>Domain</strong>, code that holds the current state and the last committed state of the finite element model.</li>
-<li>The <strong>Analysis</strong>, code that moves the state of the model from one converged state to another via a number of trial steps.</li>
-<li>The <strong>Recorders</strong>, code that allows the user to obtain output from a finite element analysis, e.g. to record the node displacement history.</li>
+<li><p>The <strong>Model Generator</strong>, code that allows the user to build a finite element model.</p></li>
+<li><p>The <strong>Domain</strong>, code that holds the current state and the last committed state of the finite element model.</p></li>
+<li><p>The <strong>Analysis</strong>, code that moves the state of the model from one converged state to another via a number of trial steps.</p></li>
+<li><p>The <strong>Recorders</strong>, code that allows the user to obtain output from a finite element analysis, e.g. to record the node displacement history.</p></li>
 </ol>
 <div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../_images/OpenSeesMainAbstractions.png"><img alt="../_images/OpenSeesMainAbstractions.png" src="../_images/OpenSeesMainAbstractions.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">OpenSees Abstractions</span></p>
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">OpenSees Abstractions</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The OpenSees interpreters add <a class="reference external" href="http://en.wikipedia.org/wiki/Command_(computing)">commands</a> to interpreters, e.g. Python and Tcl, to allow the user to specify the model builder, the domain, the analysis and the output. Each of these added commands is associated (bound) with a C++ procedure that is provided in the OpenSees Framework. It is this procedure that is called upon by the interpreter to parse the command when it is encountered. In this document we focus primarily on those commands which have been added to these languages. All existing commands that exist in the Tcl and Python languages are available to these interpreters. We provide a brief [[Introduction To Tcl]], more detailed documentation on these existing commands can be found in books and on-line.</p>
 <div class="toctree-wrapper compound" id="id1">

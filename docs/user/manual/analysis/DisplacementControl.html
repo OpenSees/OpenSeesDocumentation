@@ -168,13 +168,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userManual.html">3. Command Manual</a> &raquo;</li>
+          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../analysisCommands.html">3.2. Analysis Commands</a> &raquo;</li>
+          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
         
-          <li><a href="integrator.html">3.2.6. integrator Command</a> &raquo;</li>
+          <li><a href="integrator.html"><span class="section-number">3.2.6. </span>integrator Command</a> &raquo;</li>
         
-      <li>3.2.6.2. DisplacementControl Command</li>
+      <li><span class="section-number">3.2.6.2. </span>DisplacementControl Command</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -194,11 +194,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="displacementcontrol-command">
-<h1>3.2.6.2. DisplacementControl Command<a class="headerlink" href="#displacementcontrol-command" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2.6.2. </span>DisplacementControl Command<a class="headerlink" href="#displacementcontrol-command" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a DisplacementControl integrator object. In an analysis step with Displacement Control we seek to determine the time step that will result in a displacement increment for a particular degree-of-freedom at a node to be a prescribed value.</p>
 <dl class="function">
 <dt>
-<code class="descname">integrator DisplacementControl $node $dof $incr &lt;$numIter :math`Delta U text{min}` $:math:Delta U text{max}`&gt;</code></dt>
+<code class="sig-name descname">integrator DisplacementControl $node $dof $incr &lt;$numIter :math`Delta U text{min}` $:math:Delta U text{max}`&gt;</code></dt>
 <dd><p>$node, <em>integer</em>, node whose response controls solution
 $dof, <em>integer</em>, degree of freedom at the node, valid options: 1 through ndf at node.
 $incr, <em>float</em>, first displacement increment &lt;math&gt;Delta U_{text{dof}}&lt;/math&gt;
@@ -209,7 +209,7 @@ $&lt;math&gt;Delta U text{max}&lt;/math&gt;, <em>float</em>, the max step size t
 
 <p>integrator DisplacementControl 1 2 0.1; # displacement control algorithm seeking constant increment of 0.1 at node 1 at 2’nd dof.</p>
 <div class="section" id="theory">
-<h2>3.2.6.2.1. THEORY<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.6.2.1. </span>THEORY<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 <p>If we write the governing finite element equation at :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>t + Delta t` as:</p>
 <div class="math notranslate nohighlight">
 \[R(U_{t+\Delta t}, \lambda_{t+\Delta t}) = \lambda_{t+\Delta t} F^{ext} - F(U_{t+\Delta t}) \!`\]</div>

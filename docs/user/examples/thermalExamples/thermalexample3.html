@@ -166,11 +166,11 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../userExamples.html">4. Examples</a> &raquo;</li>
+          <li><a href="../../userExamples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-          <li><a href="../thermalExamples.html">4.2. Thermal Examples</a> &raquo;</li>
+          <li><a href="../thermalExamples.html"><span class="section-number">4.2. </span>Thermal Examples</a> &raquo;</li>
         
-      <li>4.2.3. Example 3</li>
+      <li><span class="section-number">4.2.3. </span>Example 3</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,9 +190,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="example-3">
-<h1>4.2.3. Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.2.3. </span>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="a-6m-long-beam-has-a-uniform-applied-load-of-10-kn-m-with-the-loading-sustained-the-beam-is-heated-to-a-target-temperature-of-1180-o-c">
-<h2>4.2.3.1. A 6m long beam has a uniform applied load of 10 kN/m. With the loading sustained, the beam is heated to a target temperature of 1180 <sup>o</sup> C.<a class="headerlink" href="#a-6m-long-beam-has-a-uniform-applied-load-of-10-kn-m-with-the-loading-sustained-the-beam-is-heated-to-a-target-temperature-of-1180-o-c" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.3.1. </span>A 6m long beam has a uniform applied load of 10 kN/m. With the loading sustained, the beam is heated to a target temperature of 1180 <sup>o</sup> C.<a class="headerlink" href="#a-6m-long-beam-has-a-uniform-applied-load-of-10-kn-m-with-the-loading-sustained-the-beam-is-heated-to-a-target-temperature-of-1180-o-c" title="Permalink to this headline">¶</a></h2>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../_images/Example3_fig1.png"><img alt="../../../_images/Example3_fig1.png" src="../../../_images/Example3_fig1.png" style="width: 500px;" /></a>
 </div>
@@ -205,28 +205,28 @@ displacement of the beam: (i) including 2nd order geometric
 transformations, and (ii) restraining the horizontal displacement of the
 boundary conditions</p>
 <p>Download Example 3   files:</p>
-<p><a class="reference download internal" download="" href="../../../_downloads/038d4fa24616940c6cc8b306bf5815ba/Example3.tcl"><code class="xref download docutils literal notranslate"><span class="pre">Example3.tcl</span></code></a>.</p>
-<p><a class="reference download internal" download="" href="../../../_downloads/1fbf8f86ee3d838f8bf6611d0a019f0a/WsectionThermal.tcl"><code class="xref download docutils literal notranslate"><span class="pre">WsectionThermal.tcl</span></code></a>.</p>
-<p><a class="reference download internal" download="" href="../../../_downloads/a15c7ef1af0126965c736db2fcd12944/Example3_OUTPUT.zip"><code class="xref download docutils literal notranslate"><span class="pre">Example</span> <span class="pre">3</span> <span class="pre">Outputs</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../../../_downloads/67fc016ca652898116a80a032e096355/Example3.tcl"><code class="xref download docutils literal notranslate"><span class="pre">Example3.tcl</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../../../_downloads/30e981088293afbd9e8f0ea2d459c693/WsectionThermal.tcl"><code class="xref download docutils literal notranslate"><span class="pre">WsectionThermal.tcl</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../../../_downloads/48789d9b244bc3a00300b95065a2c096/Example3_OUTPUT.zip"><code class="xref download docutils literal notranslate"><span class="pre">Example</span> <span class="pre">3</span> <span class="pre">Outputs</span></code></a>.</p>
 <div class="section" id="objectives">
-<h3>4.2.3.1.1. Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.1. </span>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Develop a simply supported steel beam model using displacement-based
-beam elements with tempurature-dependent material properites,</li>
-<li>Record the midspan vertical displacment due to a linear
+<li><p>Develop a simply supported steel beam model using displacement-based
+beam elements with tempurature-dependent material properites,</p></li>
+<li><p>Record the midspan vertical displacment due to a linear
 time-temperature heating curve and a uniformly distributed gravity
-load, and</li>
-<li>Demonstrate the difference in midspan displacement of the beam when
+load, and</p></li>
+<li><p>Demonstrate the difference in midspan displacement of the beam when
 including 2nd order geometric transformations and restraining the
-beam against horizontal displacement of the beam ends.</li>
+beam against horizontal displacement of the beam ends.</p></li>
 </ol>
 </div>
 <div class="section" id="material">
-<h3>4.2.3.1.2. Material<a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.2. </span>Material<a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h3>
 <p>The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties according to Eurocode 3 carbon steel. More details of Steel01 can be found at: <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel01_Material">Steel01 Material</a></p>
 <dl class="function">
 <dt>
-<code class="descname">uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;</code></dt>
+<code class="sig-name descname">uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;</code></dt>
 <dd></dd></dl>
 
 <p>Es = 210000 MPa (Young’s modulus of elasticity at ambient temperatures)</p>
@@ -234,14 +234,14 @@ beam against horizontal displacement of the beam ends.</li>
 <p>b = 0.01 (Strain-Hardening Ratio)</p>
 </div>
 <div class="section" id="transformation">
-<h3>4.2.3.1.3. Transformation<a class="headerlink" href="#transformation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.3. </span>Transformation<a class="headerlink" href="#transformation" title="Permalink to this headline">¶</a></h3>
 <p>Both Linear &amp; Corotational (Non-Linear)Transformations were used, and
 the resulting midspan displacements of the beams were recorded to view
 differences of including 2nd order bending effects.</p>
 <blockquote>
 <div><dl class="function">
 <dt>
-<code class="descname">geomTransf Linear $transftag;</code></dt>
+<code class="sig-name descname">geomTransf Linear $transftag;</code></dt>
 <dd></dd></dl>
 
 </div></blockquote>
@@ -249,7 +249,7 @@ differences of including 2nd order bending effects.</p>
 <blockquote>
 <div><dl class="function">
 <dt>
-<code class="descname">geomTransf Corotational $transftag;</code></dt>
+<code class="sig-name descname">geomTransf Corotational $transftag;</code></dt>
 <dd></dd></dl>
 
 </div></blockquote>
@@ -257,69 +257,69 @@ differences of including 2nd order bending effects.</p>
 Transformation</a></p>
 </div>
 <div class="section" id="section">
-<h3>4.2.3.1.4. section<a class="headerlink" href="#section" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.4. </span>section<a class="headerlink" href="#section" title="Permalink to this headline">¶</a></h3>
 <p>This example uses a W-shape beam, therefore an external .tcl script is used to define the fiber sections. This script uses fibersecThermal to procure a fibered W-shape section with a section tag to be used while defining elements. Eight fibers are used throughout the web and four fibers within each flange.</p>
 <p>In previous versions of OpenSees, a default value for torsional stiffness was used (GJ). In versions 3.1.0 and newer fiber sections require a value for torsional stiffness. This is a 2D example with negligible torsion, however a value is required. The Young’s Modulus is used for convenience.</p>
 <p>Wsection dimensions:</p>
 <blockquote>
 <div><dl class="function">
 <dt>
-<code class="descname">set d 355;    #mm</code></dt>
+<code class="sig-name descname">set d 355;    #mm</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">set bf 171.5; #mm</code></dt>
+<code class="sig-name descname">set bf 171.5; #mm</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">set tf 11.5;  #mm</code></dt>
+<code class="sig-name descname">set tf 11.5;  #mm</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">set tw 7.4;  #mm</code></dt>
+<code class="sig-name descname">set tw 7.4;  #mm</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">set nfdw 8; #mm</code></dt>
+<code class="sig-name descname">set nfdw 8; #mm</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">set nftw 1; #mm</code></dt>
+<code class="sig-name descname">set nftw 1; #mm</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">set nfbf 1; #mm</code></dt>
+<code class="sig-name descname">set nfbf 1; #mm</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">set nftf 4; #mm</code></dt>
+<code class="sig-name descname">set nftf 4; #mm</code></dt>
 <dd></dd></dl>
 
 </div></blockquote>
 <ul class="simple">
-<li>secTag - section tag</li>
-<li>matTag - material tag</li>
-<li>d  = nominal depth</li>
-<li>tw = web thickness</li>
-<li>bf = flange width</li>
-<li>tf = flange thickness</li>
-<li>nfdw = number of fibers along web depth</li>
-<li>nftw = number of fibers along web thickness</li>
-<li>nfbf = number of fibers along flange width</li>
-<li>nftf = number of fibers along flange thickness</li>
-<li>Gj = torsional stiffness</li>
+<li><p>secTag - section tag</p></li>
+<li><p>matTag - material tag</p></li>
+<li><p>d  = nominal depth</p></li>
+<li><p>tw = web thickness</p></li>
+<li><p>bf = flange width</p></li>
+<li><p>tf = flange thickness</p></li>
+<li><p>nfdw = number of fibers along web depth</p></li>
+<li><p>nftw = number of fibers along web thickness</p></li>
+<li><p>nfbf = number of fibers along flange width</p></li>
+<li><p>nftf = number of fibers along flange thickness</p></li>
+<li><p>Gj = torsional stiffness</p></li>
 </ul>
 <p>Wsection secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj</p>
 <dl class="function">
 <dt>
-<code class="descname">Wsection 1 1 $d $bf $tf $tw 8 1 1 4 $Es</code></dt>
+<code class="sig-name descname">Wsection 1 1 $d $bf $tf $tw 8 1 1 4 $Es</code></dt>
 <dd></dd></dl>
 
 <div class="align-center figure">
@@ -328,7 +328,7 @@ Transformation</a></p>
 <p><strong>Cross section of W-shape showing fibers in the flanges and the web</strong></p>
 </div>
 <div class="section" id="element">
-<h3>4.2.3.1.5. Element<a class="headerlink" href="#element" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.5. </span>Element<a class="headerlink" href="#element" title="Permalink to this headline">¶</a></h3>
 <p>dispBeamColumnThermal elements are used because temperature-dependent
 thermal and mechanical steel properties can be applied to these
 elements. Any portion of the structure that is being heated must use
@@ -341,7 +341,7 @@ beam.</p>
 <p>dispBeamColumnThermal $eleTag $iNode $jNode $numIntgrPts $secTag $TransfTag;</p>
 <dl class="function">
 <dt>
-<code class="descname">element dispBeamColumnThermal $secTag 1 2 5 $secTag $transftag;</code></dt>
+<code class="sig-name descname">element dispBeamColumnThermal $secTag 1 2 5 $secTag $transftag;</code></dt>
 <dd></dd></dl>
 
 <p>This example will build off of the benchmarked examples and therefore
@@ -349,35 +349,35 @@ used 5 iteration points in each element to simulate the beam bending and
 thermal expansion.</p>
 </div>
 <div class="section" id="output-recorders">
-<h3>4.2.3.1.6. Output Recorders<a class="headerlink" href="#output-recorders" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.6. </span>Output Recorders<a class="headerlink" href="#output-recorders" title="Permalink to this headline">¶</a></h3>
 <p>$dataDir is defined at the beginning of the model, this creates a folder
 within your working directory where output files will be saved.</p>
 <dl class="function">
 <dt>
-<code class="descname">set dataDir Examples/EXAMPLE3_OUTPUT;</code></dt>
+<code class="sig-name descname">set dataDir Examples/EXAMPLE3_OUTPUT;</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">file mkdir $dataDir;</code></dt>
+<code class="sig-name descname">file mkdir $dataDir;</code></dt>
 <dd></dd></dl>
 
 <p>Displacement of the midspan node (4) in DOF 2 (Vertical Displacement)</p>
 <dl class="function">
 <dt>
-<code class="descname">recorder Node -file $dataDir/Midspan_Disp.out&quot; -time -node 4 -dof 2 disp;</code></dt>
+<code class="sig-name descname">recorder Node -file $dataDir/Midspan_Disp.out&quot; -time -node 4 -dof 2 disp;</code></dt>
 <dd></dd></dl>
 
 <p>Reaction forces at end nodes (nodes 1 &amp; 7)</p>
 <dl class="function">
 <dt>
-<code class="descname">recorder Node -file $dataDir/RXNs.out -time -node 1 7 -dof 2 reaction;</code></dt>
+<code class="sig-name descname">recorder Node -file $dataDir/RXNs.out -time -node 1 7 -dof 2 reaction;</code></dt>
 <dd></dd></dl>
 
 <p>Learn more about the Recorder Command: <a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Recorder_Command">Recorder Command</a></p>
 </div>
 <div class="section" id="thermal-loading">
-<h3>4.2.3.1.7. Thermal Loading<a class="headerlink" href="#thermal-loading" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.7. </span>Thermal Loading<a class="headerlink" href="#thermal-loading" title="Permalink to this headline">¶</a></h3>
 <p>This particular model is heating a beam to a set temperature over the
 time period of the model. We are not asking OpenSees to use a specific
 time-temperature curve, rather linearly ramp up the temperature from
@@ -386,7 +386,7 @@ ambient to 1180 <sup>o</sup> C.</p>
 <p>T = Max Temperature [<sup>o</sup> C]</p>
 <dl class="function">
 <dt>
-<code class="descname">set T 1180;</code></dt>
+<code class="sig-name descname">set T 1180;</code></dt>
 <dd></dd></dl>
 
 <p>In OpenSees, the user can define 2 or 9 temperature data points
@@ -401,13 +401,13 @@ respectively.</p>
 <p>Top fiber of beam</p>
 <dl class="function">
 <dt>
-<code class="descname">set Y1 [expr $d/2];</code></dt>
+<code class="sig-name descname">set Y1 [expr $d/2];</code></dt>
 <dd></dd></dl>
 
 <p>Bottom fiber of beam</p>
 <dl class="function">
 <dt>
-<code class="descname">set Y2 [expr -$d/2];</code></dt>
+<code class="sig-name descname">set Y2 [expr -$d/2];</code></dt>
 <dd></dd></dl>
 
 <div class="align-center figure">
@@ -423,12 +423,12 @@ complex temperature loading.</p>
 target tempurature, $T using a for loop for effecency. The syntax for this is:</p>
 <dl class="function">
 <dt>
-<code class="descname">pattern Plain 3 Linear {for {set level 1} {$level &lt;= 6} {incr level 1} {set eleID $level eleLoad -ele $eleID -type -beamThermal $T $Y2 $T $Y1;}}</code></dt>
+<code class="sig-name descname">pattern Plain 3 Linear {for {set level 1} {$level &lt;= 6} {incr level 1} {set eleID $level eleLoad -ele $eleID -type -beamThermal $T $Y2 $T $Y1;}}</code></dt>
 <dd></dd></dl>
 
 </div>
 <div class="section" id="thermal-analysis">
-<h3>4.2.3.1.8. Thermal Analysis<a class="headerlink" href="#thermal-analysis" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.8. </span>Thermal Analysis<a class="headerlink" href="#thermal-analysis" title="Permalink to this headline">¶</a></h3>
 <p>Thermal loading is applied in 1000 steps, with a load factor of 0.001.
 Each step is a 0.001 increment of the maximum temperature specified in
 the thermal loading step: $T. The analysis is a static analysis and the
@@ -442,7 +442,7 @@ are performed to determine the proper load factor to use in structural
 fire engineering analyses.</p>
 <dl class="function">
 <dt>
-<code class="descname">set Nstep 1000;</code></dt>
+<code class="sig-name descname">set Nstep 1000;</code></dt>
 <dd></dd></dl>
 
 <p>Thermal load is applied in 1000 steps. Each step is an 0.001 increment
@@ -450,22 +450,22 @@ of the maximum temperature specified in the thermal loading step $T
 (1180)</p>
 <dl class="function">
 <dt>
-<code class="descname">set Factor [expr 1.0/$Nstep];</code></dt>
+<code class="sig-name descname">set Factor [expr 1.0/$Nstep];</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">integrator LoadControl $Factor;</code></dt>
+<code class="sig-name descname">integrator LoadControl $Factor;</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<code class="descname">analyze $Nstep;</code></dt>
+<code class="sig-name descname">analyze $Nstep;</code></dt>
 <dd></dd></dl>
 
 </div>
 <div class="section" id="output-plots">
-<h3>4.2.3.1.9. Output Plots<a class="headerlink" href="#output-plots" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.9. </span>Output Plots<a class="headerlink" href="#output-plots" title="Permalink to this headline">¶</a></h3>
 <p>After the model has completed running, the results will be a vertical
 midspan dislamcent of the recorded node. Since the temperature was
 linearly ramped up from ambient to 1180 <sup>o</sup> C, the user can develop a
@@ -480,7 +480,7 @@ boundary conditions are plotted. The same model was excuted in the finite elemen
 </div></blockquote>
 </div>
 <div class="section" id="sources">
-<h3>4.2.3.1.10. Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1.10. </span>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h3>
 <p>[1] W. Maddalozzo and E.C. Fischer, “Post-earthquake fire performance of steel buildings,” World Conference on Earthquake Engineering, 17WCEE,
 Sendai, Japan - September 13-18, 2020.</p>
 </div>
