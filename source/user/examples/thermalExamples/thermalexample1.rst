@@ -185,7 +185,7 @@ After the model has completed running, the results will be a horizontal displace
 Thermal expansion is the change is length divided by the original length. This could also be called thermal strain. The thermal expansion of the beam is plotted below and compared to the Eurocode 3 [1]temperature-dependent thermal expansion. We can see that the modeled thermal expansion matches the material properties. This is important to check that the temperatures and material properties are assigned propertly in the model.
 
 
-.. figure:: figures/Example1_output.png
+.. figure:: figures/Example1_Output.png
 	:align: center
 	:width: 500px
 	:figclass: align-center

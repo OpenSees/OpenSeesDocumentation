@@ -92,5 +92,5 @@ Each example script does the following:
 Author Info
 -----------
 
-- [ Dr. Erica Fischer](https://www.ericafischer.org/)
+- `Dr. Erica Fischer <https://www.ericafischer.org/>`_
 - Walker Maddalozzo
