@@ -10,11 +10,7 @@
 	wipe all;							# clear memory of past model definitions
 	model BasicBuilder -ndm 2 -ndf 3;	# Define the model builder, ndm = #dimension, ndf = #dofs
 	source WsectionThermal.tcl
-	#source DisplayModel2D.tcl;			# procedure for displaying a 2D perspective of model	
-	#source DisplayPlane.tcl;
-	#procedure for displaying a plane in a model
 
-	
 	set dataDir Example3_OUTPUT;		# name of output folder
 	file mkdir $dataDir; 
 
@@ -90,7 +86,7 @@ uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;
 # sources Wsection.tcl which created a fibered section using dimensions d,bf,tf,tw and the number of fibers to be created. 
 
 # Wsection $secTag $matTag $d $bf $tf $tw $nfdw $nftw $nfbf $nftf
-WsectionThermal  $secTag $matTag $d $bf $tf $tw $nfdw $nftw $nfbf $nftf;
+WsectionThermal  $secTag $matTag $d $bf $tf $tw $nfdw $nftw $nfbf $nftf $Es;
 
 
 

@@ -103,9 +103,9 @@ Wsection dimensions:
 * nftf = number of fibers along flange thickness 
 * Gj = torsional stiffness
 
-Wsection secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj 
+WsectionThermal secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj 
 
-.. function:: Wsection 1 1 $d $bf $tf $tw 8 1 1 4 $Es
+.. function:: WsectionThermal 1 1 $d $bf $tf $tw 8 1 1 4 $Es
 
 .. figure:: figures/Wsection_FiberSection.png
 	:align: center
