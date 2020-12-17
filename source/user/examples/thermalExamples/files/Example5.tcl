@@ -6,7 +6,7 @@
 
 
 wipe all;					
-set dataDir Examples/Example5_OUTPUT;	# name of output folder
+set dataDir Example5_OUTPUT;	# name of output folder
 file mkdir $dataDir; 					#create output folder		
 		
 model BasicBuilder -ndm 2 -ndf 3; #2D 3DOF
