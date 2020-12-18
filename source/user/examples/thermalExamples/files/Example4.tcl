@@ -4,7 +4,7 @@
 # Units: Newtons, m, seconds
 
 wipe;					
-set dataDir example4_OUTPUT;					# name of output folder
+set dataDir Example4_OUTPUT;					# name of output folder
 file mkdir $dataDir; 			    # create output folder			
 model BasicBuilder -ndm 2 -ndf 3;
 source WsectionThermal.tcl; 

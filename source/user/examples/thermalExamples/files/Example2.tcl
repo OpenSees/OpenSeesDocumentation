@@ -14,7 +14,7 @@
 	wipe all;									# clear memory of past model definitions
 	#	'basic', 'number of dimensions [ndm], number of degrees of freedom [ndf]'
 	model BasicBuilder -ndm 2 -ndf 3;   		# Define the model builder, ndm = #dimension, ndf = #dofs	
-	set dataDir Examples/EXAMPLE2_OUTPUT;		# name of output folder
+	set dataDir Example2_OUTPUT;		# name of output folder
 	file mkdir $dataDir;						# create output folder
 	
 	

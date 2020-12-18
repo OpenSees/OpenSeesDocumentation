@@ -99,8 +99,8 @@ WsectionThermal  $secTag $matTag $d $bf $tf $tw $nfdw $nftw $nfbf $nftf $Es;
 
 set transfTag 1;
 # Switch between Linear & Corotational to observe 2nd-order effects
-geomTransf Linear $transfTag; 
-#geomTransf Corotational $transfTag; 
+#geomTransf Linear $transfTag; 
+geomTransf Corotational $transfTag; 
 
 
 ############################# ELEMENT PROPERTIES ###########################################
@@ -162,7 +162,7 @@ puts "Loading Done. End Time: [getTime]"
 
 ############################# THERMAL LOADS  ###############################################
 
-set T  1000; 			#Max Temp - DEG CELCIUS
+set T  1180; 			#Max Temp - DEG CELCIUS
 set Y1 [expr $d/2]; 	#top fiber of beam
 set Y2 [expr -$d/2]; 	#Bottom fiber of beam
 
