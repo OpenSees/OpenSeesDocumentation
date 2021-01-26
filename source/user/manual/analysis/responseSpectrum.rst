@@ -106,4 +106,4 @@ Theory
    |  :download:`responseSpectrumExample.py <responseSpectrumExample.py>`   **(Python)**.
 
 
-Code Developed by: |fmk|
+Code Developed by: **Massimo Petracca** at ASDEA Software, Italy
