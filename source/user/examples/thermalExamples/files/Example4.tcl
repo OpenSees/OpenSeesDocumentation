@@ -4,11 +4,9 @@
 # Units: Newtons, m, seconds
 
 wipe;					
-set dataDir example4_OUTPUT;					# name of output folder
+set dataDir Example4_OUTPUT;					# name of output folder
 file mkdir $dataDir; 			    # create output folder			
 model BasicBuilder -ndm 2 -ndf 3;
-source DisplayPlane.tcl;		# procedure for displaying a plane in model
-source DisplayModel2D.tcl;		# procedure for displaying 2D perspective of model	
 source WsectionThermal.tcl; 
 
 
@@ -77,6 +75,7 @@ uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;
 
 ############################### MEMBER SECTIONS #############################################
 
+set secTag 1;
 set d 160;		# depth
 set bf 82;		# flange width
 set tf 7.4;		# flange thickness
@@ -89,7 +88,7 @@ set nftf 4;		# number of fibers along tf
 
 
 # Wsection $sectag
-Wsection  1 1 $d $bf $tf $tw $nfdw $nftw $nfbf $nftf	
+WsectionThermal  $secTag $matTag $d $bf $tf $tw $nfdw $nftw $nfbf $nftf	$Es;
 	
 
 ##################################### TRANSFORMATION DEFINITIONS ############################
@@ -98,9 +97,8 @@ Wsection  1 1 $d $bf $tf $tw $nfdw $nftw $nfbf $nftf
 #three transformation types can be chosen: Linear, PDelta, Corotational
 
 # transforamtion: geomTransf $type $TransfTag; 
-geomTransf Corotational 1  ; 
-
-
+set transfTag 1
+geomTransf Corotational $transfTag  ; 
 
 
 ############################# ELEMENT PROPERTIES ###########################################
@@ -112,38 +110,38 @@ geomTransf Corotational 1  ;
 
 #dispBeamColumnThermal $eleTag $iNode $jNode $numIntgrPts $secTag $TransfTag;
 				
-element	dispBeamColumnThermal	1	1	2	3	1	1; #column1
-element	dispBeamColumnThermal	2	2	3	3	1	1; #column1
-element	dispBeamColumnThermal	3	3	4	3	1	1; #column1
-element	dispBeamColumnThermal	4	4	5	3	1	1; #column1
-element	dispBeamColumnThermal	5	5	6	3	1	1; #column1
-element	dispBeamColumnThermal	6	6	7	3	1	1; #column1
-element	dispBeamColumnThermal	7	7	8	3	1	1; #column1
-element	dispBeamColumnThermal	8	8	9	3	1	1; #column1
-element	dispBeamColumnThermal	9	9	10	3	1	1; #column1
-element	dispBeamColumnThermal	10	10	11	3	1	1; #column1
+element	dispBeamColumnThermal	1	1	2	3	$secTag $transfTag; #column1
+element	dispBeamColumnThermal	2	2	3	3	$secTag $transfTag; #column1
+element	dispBeamColumnThermal	3	3	4	3	$secTag $transfTag; #column1
+element	dispBeamColumnThermal	4	4	5	3	$secTag $transfTag; #column1
+element	dispBeamColumnThermal	5	5	6	3	$secTag $transfTag; #column1
+element	dispBeamColumnThermal	6	6	7	3	$secTag $transfTag; #column1
+element	dispBeamColumnThermal	7	7	8	3	$secTag $transfTag; #column1
+element	dispBeamColumnThermal	8	8	9	3	$secTag $transfTag; #column1
+element	dispBeamColumnThermal	9	9	10	3	$secTag $transfTag; #column1
+element	dispBeamColumnThermal	10	10	11	3	$secTag $transfTag; #column1
 
-element	dispBeamColumnThermal	11	12	13	3	1	1; #column2
-element	dispBeamColumnThermal	12	13	14	3	1	1; #column2
-element	dispBeamColumnThermal	13	14	15	3	1	1; #column2
-element	dispBeamColumnThermal	14	15	16	3	1	1; #column2
-element	dispBeamColumnThermal	15	16	17	3	1	1; #column2
-element	dispBeamColumnThermal	16	17	18	3	1	1; #column2
-element	dispBeamColumnThermal	17	18	19	3	1	1; #column2
-element	dispBeamColumnThermal	18	19	20	3	1	1; #column2
-element	dispBeamColumnThermal	19	20	21	3	1	1; #column2
-element	dispBeamColumnThermal	20	21	22	3	1	1; #column2
+element	dispBeamColumnThermal	11	12	13	3	$secTag $transfTag; #column2
+element	dispBeamColumnThermal	12	13	14	3	$secTag $transfTag; #column2
+element	dispBeamColumnThermal	13	14	15	3	$secTag $transfTag; #column2
+element	dispBeamColumnThermal	14	15	16	3	$secTag $transfTag; #column2
+element	dispBeamColumnThermal	15	16	17	3	$secTag $transfTag; #column2
+element	dispBeamColumnThermal	16	17	18	3	$secTag $transfTag; #column2
+element	dispBeamColumnThermal	17	18	19	3	$secTag $transfTag; #column2
+element	dispBeamColumnThermal	18	19	20	3	$secTag $transfTag; #column2
+element	dispBeamColumnThermal	19	20	21	3	$secTag $transfTag; #column2
+element	dispBeamColumnThermal	20	21	22	3	$secTag $transfTag; #column2
 
-element	dispBeamColumnThermal	21	11	23	3	1	1; #beam1
-element	dispBeamColumnThermal	22	23	24	3	1	1; #beam1
-element	dispBeamColumnThermal	23	24	25	3	1	1; #beam1
-element	dispBeamColumnThermal	24	25	26	3	1	1; #beam1
-element	dispBeamColumnThermal	25	26	27	3	1	1; #beam1
-element	dispBeamColumnThermal	26	27	28	3	1	1; #beam1
-element	dispBeamColumnThermal	27	28	29	3	1	1; #beam1
-element	dispBeamColumnThermal	28	29	30	3	1	1; #beam1
-element	dispBeamColumnThermal	29	30	31	3	1	1; #beam1
-element	dispBeamColumnThermal	30	31	22	3	1	1; #beam1
+element	dispBeamColumnThermal	21	11	23	3	$secTag $transfTag; #beam1
+element	dispBeamColumnThermal	22	23	24	3	$secTag $transfTag; #beam1
+element	dispBeamColumnThermal	23	24	25	3	$secTag $transfTag; #beam1
+element	dispBeamColumnThermal	24	25	26	3	$secTag $transfTag; #beam1
+element	dispBeamColumnThermal	25	26	27	3	$secTag $transfTag; #beam1
+element	dispBeamColumnThermal	26	27	28	3	$secTag $transfTag; #beam1
+element	dispBeamColumnThermal	27	28	29	3	$secTag $transfTag; #beam1
+element	dispBeamColumnThermal	28	29	30	3	$secTag $transfTag; #beam1
+element	dispBeamColumnThermal	29	30	31	3	$secTag $transfTag; #beam1
+element	dispBeamColumnThermal	30	31	22	3	$secTag $transfTag; #beam1
 
 ############################# RECORDER OUTPUTS #############################################
 
@@ -153,12 +151,6 @@ recorder Node -file $dataDir/RXNS.out -time -node 1 12 -dof 2 3 reaction;
 #Displacement of the beam mid-span node (27), DOF 2 (Vertical Displacement)
 recorder Node -file $dataDir/Midspan_BeamDisp.out -time -node 27 -dof 2 disp;
 
-
-
-# view the deformed shape
-set ViewScale 10;
-DisplayModel2D DeformedShape $ViewScale ;	# display deformed shape, the scaling factor needs to be adjusted for each model
-#recorder plot Data/DFree.out ForceDisp 510 10 400 400 -columns 2 1; # a window to plot the load vs. nodal displacement
 
 ############################# GRAVITY LOADS ################################################
 
