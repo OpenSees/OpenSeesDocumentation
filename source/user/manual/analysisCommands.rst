@@ -30,5 +30,7 @@ In OpenSees, an analysis is an object which is composed by the aggregation of co
    analysis/analysis
    analysis/analyze
    analysis/eigen
+   analysis/modalProperties
+   analysis/responseSpectrum
 
 
