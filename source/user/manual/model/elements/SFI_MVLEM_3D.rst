@@ -27,7 +27,7 @@ Input Parameters
 
 .. admonition:: Command
 
-   element SFI_MVLEM_3D eleTag iNode jNode kNode lNode m  -thick {Thicknesses} -width {Widths} -mat {Material_tags} <-CoR c> <-thickMod tMod> <-Poisson Nu>  <-Density Dens>
+   element SFI_MVLEM_3D eleTag iNode jNode kNode lNode m  -thick {Thicknesses} -width {Widths} -mat {Material_tags} <-CoR c> <-ThickMod tMod> <-Poisson Nu>  <-Density Dens>
 
 .. csv-table:: 
    :header: "Parameter", "Type", "Description"
