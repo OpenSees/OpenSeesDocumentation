@@ -1,40 +1,43 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>&lt;no title&gt; &mdash; OpenSees Documentation  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.4.2.10. Pressure Dependent Multi Yield" href="PressureDependentMultiYield.html" />
@@ -78,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -107,6 +111,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -141,11 +146,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
@@ -160,7 +167,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../_sources/user/manual/material/ndMaterials/PressureIndependentMultiYieldExample1.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -296,7 +303,7 @@ wipe  #flush ouput stream
 </li>
 <li><p><strong>Python Code</strong></p></li>
 <li><p><strong>Matlab Code</strong></p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">clear </span><span class="s">all</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="s">all</span><span class="p">;</span>
 
 <span class="n">a1</span><span class="p">=</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;acce.out&#39;</span><span class="p">);</span>
 <span class="n">d1</span><span class="p">=</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;disp.out&#39;</span><span class="p">);</span>
@@ -309,10 +316,10 @@ wipe  #flush ouput stream
 <span class="n">accMul</span> <span class="p">=</span> <span class="mf">9.81</span><span class="p">;</span>
 
 <span class="c">%integration point 1 p-q</span>
-<span class="n">po</span><span class="p">=(</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="n"></span>
-<span class="n">for </span><span class="s">i=1:size(s1,1)</span><span class="p"></span>
+<span class="n">po</span><span class="p">=(</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">s1</span><span class="p">(:,</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">for</span> <span class="s">i=1:size(s1,1)</span>
 	<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=(</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span><span class="p">(</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span> <span class="mf">6.0</span><span class="o">*</span> <span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>^<span class="mi">2</span><span class="p">;</span>
-<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">sign</span><span class="p">(</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span>^<span class="mf">0.5</span><span class="p">;</span><span class="n"></span>
+<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">sign</span><span class="p">(</span><span class="n">s1</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span>^<span class="mf">0.5</span><span class="p">;</span>
 <span class="n">end</span>
 <span class="s">figure(1)</span><span class="p">;</span> <span class="n">clf</span><span class="p">;</span>
 <span class="c">%integration point 1 stress-strain</span>
@@ -329,10 +336,10 @@ wipe  #flush ouput stream
 <span class="n">saveas</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;SS_PQ1&#39;</span><span class="p">,</span><span class="s">&#39;jpg&#39;</span><span class="p">);</span>
 
 <span class="c">%integration point 3 p-q</span>
-<span class="n">po</span><span class="p">=(</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="n"></span>
-<span class="n">for </span><span class="s">i=1:size(s5,1)</span><span class="p"></span>
+<span class="n">po</span><span class="p">=(</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">s5</span><span class="p">(:,</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">for</span> <span class="s">i=1:size(s5,1)</span>
 	<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=(</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span><span class="p">(</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>^<span class="mi">2</span> <span class="o">+</span> <span class="mf">6.0</span><span class="o">*</span> <span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>^<span class="mi">2</span><span class="p">;</span>
-<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">sign</span><span class="p">(</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span>^<span class="mf">0.5</span><span class="p">;</span><span class="n"></span>
+<span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">sign</span><span class="p">(</span><span class="n">s5</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="n">qo</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span>^<span class="mf">0.5</span><span class="p">;</span>
 <span class="n">end</span>
 
 <span class="s">figure(4)</span><span class="p">;</span> <span class="n">clf</span><span class="p">;</span>
@@ -381,20 +388,25 @@ wipe  #flush ouput stream
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, The Regents of the University of California
+        &#169; Copyright 2020, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -402,7 +414,6 @@ wipe  #flush ouput stream
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -421,6 +432,7 @@ wipe  #flush ouput stream
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-2431545-1', 'auto');
+    
     ga('send', 'pageview');
     </script>
 

@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.2.10. modalProperties Command &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.2.11. responseSpectrum Command" href="responseSpectrum.html" />
+    <link rel="prev" title="3.2.9. eigen Command" href="eigen.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="constraints.html">3.2.1. constraints Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numberer.html">3.2.2. numberer Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system.html">3.2.3. system Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html">3.2.4. test Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algorithm.html">3.2.5. algorithm Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integrator.html">3.2.6. integrator Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html">3.2.7. analysis Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analyze.html">3.2.8. analyze Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eigen.html">3.2.9. eigen Command</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.2.10. modalProperties Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#theory">3.2.10.1. Theory</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="responseSpectrum.html">3.2.11. responseSpectrum Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
+        
+      <li><span class="section-number">3.2.10. </span>modalProperties Command</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/user/manual/analysis/modalProperties.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="modalproperties-command">
+<span id="modalproperties"></span><h1><span class="section-number">3.2.10. </span>modalProperties Command<a class="headerlink" href="#modalproperties-command" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">This command is used to compute the modal properties of a model after an <a class="reference internal" href="eigen.html#eigen"><span class="std std-ref">eigen Command</span></a>.</div>
+<div class="line">This command computes the following modal properties:</div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m_t\)</span> : A vector with the total mass of the structure for each DOF, considering both free and fixed DOFs.</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_f\)</span> : The total mass of the structure, but considering only the masses at free DOFs.</p></li>
+<li><p><span class="math notranslate nohighlight">\(CoM\)</span> : The center of mass.</p></li>
+<li><p><span class="math notranslate nohighlight">\(gm\)</span> : The generalized mass matrix.</p></li>
+<li><p><span class="math notranslate nohighlight">\(MPF\)</span> : The modal participation factors.</p></li>
+<li><p><span class="math notranslate nohighlight">\(MPM\)</span> : The modal participation masses.</p></li>
+<li><p><span class="math notranslate nohighlight">\(MPMc\)</span> : The cumulative modal participation masses.</p></li>
+<li><p><span class="math notranslate nohighlight">\(MPM\left(\%\right)\)</span> : The modal participation masse ratios.</p></li>
+<li><p><span class="math notranslate nohighlight">\(MPMc\left(\%\right)\)</span> : The cumulative modal participation masse ratios.</p></li>
+</ul>
+</div></blockquote>
+<dl class="py function">
+<dt>
+<code class="sig-name descname">modalProperties &lt;-print&gt; &lt;-file $reportFileName&gt; &lt;-unorm&gt;</code></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-print</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. If included, a report of the modal properties is printed to the console.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-file</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. If included, a report of the modal properties is printed to the file $reportFileName.</p></td>
+</tr>
+<tr class="row-even"><td><p>$reportFileName</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional, but mandatory if the -file option is included. Indicates the filename for the report. If the file does not exist, it will be created. If the file exists, it will be overwritten.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-unorm</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. If included, the computation of the modal properties will be carried out using a displacement-normalized version of the eigenvectors.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This command can be used only if a previous call to <a class="reference internal" href="eigen.html#eigen"><span class="std std-ref">eigen Command</span></a> has been performed.</p></li>
+<li><p>This command has only optional arguments, and they can be given in any order. Note, however, that the only requirement is that the <strong>$reportFileName</strong> must follow the <strong>-file</strong> option if used.</p></li>
+<li><p>The modal properties are computed and stored in the <strong>Domain</strong> object, so that they can be accessed later in the <a class="reference internal" href="responseSpectrum.html#responsespectrum"><span class="std std-ref">responseSpectrum Command</span></a>.</p></li>
+<li><p>This command directly accesses the mass matrix of the model, so it accounts for both nodal masses and element’s (distributed) masses. And the element mass matrix can be either lumped or consistent.</p></li>
+<li><p>The global mass matrix is then stored into a temporary sparse matrix storage, so it can be used for both small and large models.</p></li>
+<li><p>This command can be used for both 2D problems (-ndm = 2, -ndf = 2 or 3) and 3D problems (-ndm = 3, -ndf = 3, 4 or 6). In both cases the algorithm computes rotational masses. If a node has rotational DOFs, the rotational masses account for both the direct rotational masses (i.e. those input by the user at rotational DOFs) and the effect of translational masses gyrating about the center of mass. If a node has no rotational DOF, only the latter is considered.</p></li>
+<li><p>Only the values in <span class="math notranslate nohighlight">\(gm\)</span> and <span class="math notranslate nohighlight">\(MPF\)</span> depend on the normalization of the eigenvectors. This normalization depends on the solver used in the <a class="reference internal" href="eigen.html#eigen"><span class="std std-ref">eigen Command</span></a>. The default -genBandArpack uses a mass-normalization, so that the <span class="math notranslate nohighlight">\(gm\)</span> is the identity. On the contrary, the -fullGenLapack uses a displacement-normalization, so that the largest component of the eigenvector is 1. If you use the -genBandArpack, but want a displacement-normalization of the eigenvectors, use the <strong>-unorm</strong> option.</p></li>
+</ul>
+</div>
+<div class="section" id="theory">
+<h2><span class="section-number">3.2.10.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">The eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> and the eigenvectors <span class="math notranslate nohighlight">\(\Phi\)</span> can be obtained after solving the <em>generalized eigenvalue problem</em> for two symmetric matrices <span class="math notranslate nohighlight">\(K\)</span> (stiffness) and <span class="math notranslate nohighlight">\(M\)</span> (mass) given by:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\left (K - \lambda M \right ) \Phi = 0\]</div>
+<div class="line-block">
+<div class="line">The global mass matrix <span class="math notranslate nohighlight">\(M\)</span> is given by the assembly of <span class="math notranslate nohighlight">\(n\)</span> elemental and nodal mass matrices <span class="math notranslate nohighlight">\(m_e\)</span>:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[M = \bigwedge_{i=1}^{n}m_e\]</div>
+<div class="line-block">
+<div class="line"><span class="math notranslate nohighlight">\(M\)</span> is not necessarily diagonal, because some elemental matrices <span class="math notranslate nohighlight">\(m_e\)</span> may be consistent. However, the computation of <span class="math notranslate nohighlight">\(CoM\)</span>, <span class="math notranslate nohighlight">\(m_t\)</span> and <span class="math notranslate nohighlight">\(m_f\)</span> requires a lumped version of <span class="math notranslate nohighlight">\(M\)</span>. The global lumped mass matrix <span class="math notranslate nohighlight">\(LM\)</span> can be computed by the assembly of a diagonalized version of the elemental mass matrices <span class="math notranslate nohighlight">\(m_e\)</span>:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[LM = \bigwedge_{i=1}^{n}diag\left(m_e\right)\]</div>
+<div class="line-block">
+<div class="line"><span class="math notranslate nohighlight">\(diag\left(m_e\right)\)</span> cannot be computed just by summing the summing the components of each row (in beams or solid with higher order interpolation, this would produces negative terms on the diagonal mass matrix that would be unphysical).</div>
+<div class="line">Instead we use the <strong>HRZ</strong> algorithm <a class="reference internal" href="#hintonetal1976" id="id1"><span>[HintonEtAl1976]</span></a>, named after the authors Hinton, Rock and Zienkiewicz: <em>“The procedure of lumping recommended in view of the infinite possibilities offered by condition (5) is to compute the diagonal terms of the consistent mass matrix and then scale these terms so as to preserve the total mass of the element”</em>.</div>
+<div class="line">The procedure is as follows:</div>
+</div>
+<blockquote>
+<div><ul>
+<li><p>compute <span class="math notranslate nohighlight">\(DM\)</span>, a vector containing the sum of each row of <span class="math notranslate nohighlight">\(m_e\)</span>.</p></li>
+<li><p>compute <span class="math notranslate nohighlight">\(SM\)</span>, a vector of size=ndf, obtained summing the components in <span class="math notranslate nohighlight">\(DM\)</span> pertaining to the same DOF (i to ndf). This procedures allows to obtain the total elemental mass for each DOF.</p></li>
+<li><p>compute <span class="math notranslate nohighlight">\(DC\)</span>, a vector containing only the diagonal terms in the consistent mass matrix <span class="math notranslate nohighlight">\(m_e\)</span>.</p></li>
+<li><p>compute <span class="math notranslate nohighlight">\(SC\)</span>, a vector of size=ndf, obtained summing the components in <span class="math notranslate nohighlight">\(DC\)</span> pertaining to the same DOF (i to ndf).</p></li>
+<li><p>now we can obtain the scale factors for each dof <span class="math notranslate nohighlight">\(i\)</span> as: <span class="math notranslate nohighlight">\(SM_i/SC_i\)</span>.</p></li>
+<li><div class="line-block">
+<div class="line">scale each diagonal term of the consistent mass matrix <span class="math notranslate nohighlight">\(DC_j\)</span> using the scale factor of the respective DOF <span class="math notranslate nohighlight">\(SM_i/SC_i\)</span>:</div>
+<div class="line"><span class="math notranslate nohighlight">\(diag\left(m_e\right)_j = DC_j \cdot SM_i/SC_i\)</span>.</div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line">The center of mass <span class="math notranslate nohighlight">\(CoM\)</span> and the total masses <span class="math notranslate nohighlight">\(m_t\)</span> and <span class="math notranslate nohighlight">\(m_f\)</span> of the structure, for each node <span class="math notranslate nohighlight">\(n\)</span> with position <span class="math notranslate nohighlight">\(X_n\)</span> and each DOF <span class="math notranslate nohighlight">\(i\)</span>, can now be easily computed from <span class="math notranslate nohighlight">\(LM\)</span>:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}m_{t_i} &amp;= \sum_{n=1}^{Nnodes} LM_{ni}\\
+m_{f_i} &amp;= \sum_{n=1}^{Nnodes} LM_{ni}\quad(\text{if}\:i = free)\\
+CoM_i &amp;= \frac{\sum_{n=1}^{Nnodes} X_{ni} \cdot LM_{ni}}{m_{f_i}} \quad(\text{if}\:i = free)\end{split}\]</div>
+<div class="line-block">
+<div class="line">The generalized mass matrix is</div>
+</div>
+<div class="math notranslate nohighlight">
+\[gm = \Phi^T M \Phi\]</div>
+<div class="line-block">
+<div class="line">If the default solver is used in the <a class="reference internal" href="eigen.html#eigen"><span class="std std-ref">eigen Command</span></a> (-genBandArpack), and the option <strong>-unorm</strong> is not used, the eigenvectors are mass-normalized and <span class="math notranslate nohighlight">\(gm\)</span> will be an identity matrix, i.e. a diagonal matrix whose diagonal entries are = 1, and whose size is <span class="math notranslate nohighlight">\(n_m \times n_m\)</span> (where <span class="math notranslate nohighlight">\(n_m\)</span> is the number of requested eigenvalues).</div>
+<div class="line"><br /></div>
+<div class="line">The modal participation factor matrix <span class="math notranslate nohighlight">\(MPF\)</span> is a <span class="math notranslate nohighlight">\(n_m \times ndf\)</span> matrix (where ndf = 3 in 2D and 6 in 3D), where each row contains the modal participation factors for each DOF. The modal participation factor for a certain mode <span class="math notranslate nohighlight">\(i\)</span> and DOF <span class="math notranslate nohighlight">\(j\)</span> indicates how strongly the motion (or rotation) associated to that DOF is represented in the eigenvector <span class="math notranslate nohighlight">\(i\)</span></div>
+</div>
+<div class="math notranslate nohighlight">
+\[MPF_{ij} = \frac{\Phi_{i}^T M T_j}{gm_{ii}}\]</div>
+<div class="line-block">
+<div class="line">where <span class="math notranslate nohighlight">\(T_j\)</span> defines the magnitude of the rigid body response to imposed rigid body motion (displacement or infinitesimal rotation) in the DOF <span class="math notranslate nohighlight">\(j\)</span>. Each <span class="math notranslate nohighlight">\(ndf \times 1\)</span> block <span class="math notranslate nohighlight">\(T_{nj}\)</span> corresponds to the node <span class="math notranslate nohighlight">\(n\)</span> and it is defined as (for the 3D/6DOFs case):</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_{nj} =
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; d_z &amp; -d_z \\
+0 &amp; 1 &amp; 0 &amp; -d_z &amp; 0 &amp; d_x \\
+0 &amp; 0 &amp; 1 &amp; d_y &amp; -d_x &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\begin{Bmatrix}
+e_1 \\
+e_2 \\
+e_3 \\
+e_4 \\
+e_5 \\
+e_6 \\
+\end{Bmatrix}\end{split}\]</div>
+<div class="line-block">
+<div class="line">where <span class="math notranslate nohighlight">\(e_j\)</span> is 1, and all other <span class="math notranslate nohighlight">\(e_p\:(\text{with}\:p \neq j)\)</span> are 0. <span class="math notranslate nohighlight">\(d_x\)</span>, <span class="math notranslate nohighlight">\(d_y\)</span> and <span class="math notranslate nohighlight">\(d_z\)</span> are the distances of the node <span class="math notranslate nohighlight">\(n\)</span> coordinates <span class="math notranslate nohighlight">\(X_n=\left(x, y, z\right)\)</span> from the center of mass <span class="math notranslate nohighlight">\(CoM=\left(x_0, y_0, z_0\right)\)</span>. Therefore, the modal participation factors accounts for the masses directly input at translational and rotational DOFs, and also the rotational masses given by the translational masses gyrating about the center of mass. Note, in fact, that even if the user does not input any rotational mass, or even if the user uses 3D solid elements with no rotational DOF, the modal participation factors associated to the rotational DOFs may be <span class="math notranslate nohighlight">\(\neq 0\)</span>.</div>
+<div class="line"><br /></div>
+<div class="line">The modal participation mass matrix <span class="math notranslate nohighlight">\(MPM\)</span> is a <span class="math notranslate nohighlight">\(n_m \times ndf\)</span> matrix (where ndf = 3 in 2D and 6 in 3D), where each row contains the modal participation masses for each DOF. The modal participation mass for a certain mode <span class="math notranslate nohighlight">\(i\)</span> and DOF <span class="math notranslate nohighlight">\(j\)</span> is defined as</div>
+</div>
+<div class="math notranslate nohighlight">
+\[MPM_{ij} = \frac{\left(\Phi_{i}^T M T_j\right)^2}{gm_{ii}}\]</div>
+<div class="line-block">
+<div class="line">If the modal participation masses for each mode in a particular DOF are summed, it should give the total mass of the structure for that DOF, exlcluding the masses at fixed DOFs.</div>
+</div>
+<dl class="citation">
+<dt class="label" id="hintonetal1976"><span class="brackets"><a class="fn-backref" href="#id1">HintonEtAl1976</a></span></dt>
+<dd><p>Hinton, E., Rock, T. &amp; Zienkiewicz, O. (1976). “A note on mass lumping and related processes in the Finite element method.” Earthquake Engineering and Structural Dynamics, 13, 9, p. A112.</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>The following example shows how to:</p>
+<ul class="simple">
+<li><p>Use the modalProperties command</p></li>
+<li><p>Print the results on the console (-print)</p></li>
+<li><p>Generate a report file in the current directory (-file ‘ModalReport.txt’)</p></li>
+<li><p>Use a displacement-normalization for the eigenvectors</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">modalProperties</span> <span class="o">-</span>print <span class="o">-</span>file <span class="s2">&quot;ModalReport.txt&quot;</span> <span class="o">-</span>unorm
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">modalProperties</span><span class="p">(</span><span class="s1">&#39;-print&#39;</span><span class="p">,</span> <span class="s1">&#39;-file&#39;</span><span class="p">,</span> <span class="s1">&#39;ModalReport.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;-unorm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For a complete example that runs an <strong>eigenvalue analysis</strong>, extracts the <strong>modal properties</strong> and runs a <strong>response spectrum analysis</strong>, see the documentation of the <a class="reference internal" href="responseSpectrum.html#responsespectrum"><span class="std std-ref">responseSpectrum Command</span></a></p>
+</div>
+<div class="admonition-reportfile admonition">
+<p class="admonition-title">ReportFile</p>
+<p>The generated report file looks like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># MODAL ANALYSIS REPORT
+
+* 1. DOMAIN SIZE:
+# This is the size of the problem: 2 for 2D problems, 3 for 3D problems.
+3
+
+
+* 2. EIGENVALUE ANALYSIS:
+#          MODE        LAMBDA         OMEGA     FREQUENCY        PERIOD
+# ------------- ------------- ------------- ------------- -------------
+              1        7578.8       87.0563       13.8554     0.0721738
+              2       8484.47       92.1112       14.6599     0.0682131
+              3       10518.5        102.56       16.3229     0.0612636
+              4         85779       292.881       46.6134     0.0214531
+              5       89260.1       298.764       47.5498     0.0210306
+              6        101089       317.945       50.6025     0.0197619
+              7   1.71885e+06       1311.05        208.66    0.00479249
+
+
+* 3. TOTAL MASS OF THE STRUCTURE:
+# The total masses (translational and rotational) of the structure
+# including the masses at fixed DOFs (if any).
+#            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- -------------
+           1600          1600          1600          7200         10000         10000
+
+
+* 4. TOTAL FREE MASS OF THE STRUCTURE:
+# The total masses (translational and rotational) of the structure
+# including only the masses at free DOFs.
+#            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- -------------
+           1600          1600          1600          7200         10000         10000
+
+
+* 5. CENTER OF MASS:
+# The center of mass of the structure, calculated from free masses.
+#             X             Y             Z
+# ------------- ------------- -------------
+              2           1.5           4.5
+
+
+* 6. MODAL PARTICIPATION FACTORS:
+# The participation factor for a certain mode &#39;a&#39; in a certain direction &#39;i&#39;
+# indicates how strongly displacement along (or rotation about)
+# the global axes is represented in the eigenvector of that mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1       1.20368             0             0             0      0.661418             0
+              2             0      -1.20172             0      0.637456             0             0
+              3             0             0             0             0             0      -2.39705
+              4      0.430981             0             0             0       -1.8352             0
+              5             0      -0.41375             0      -1.83591             0             0
+              6             0             0             0             0             0      0.780575
+              7             0             0      -1.17082             0             0             0
+
+
+* 7. MODAL PARTICIPATION MASSES:
+# The modal participation masses for each mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1       1418.18             0             0             0        428.21             0
+              2             0       1430.41             0        402.49             0             0
+              3             0             0             0             0             0       9041.23
+              4        181.82             0             0             0       3296.78             0
+              5             0        169.58             0       3338.87             0             0
+              6             0             0             0             0             0       958.755
+              7             0             0       1515.54             0             0             0
+
+
+* 8. MODAL PARTICIPATION MASSES (cumulative):
+# The cumulative modal participation masses for each mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1       1418.18             0             0             0        428.21             0
+              2       1418.18       1430.41             0        402.49        428.21             0
+              3       1418.18       1430.41             0        402.49        428.21       9041.23
+              4          1600       1430.41             0        402.49       3724.99       9041.23
+              5          1600       1599.99             0       3741.36       3724.99       9041.23
+              6          1600       1599.99             0       3741.36       3724.99       9999.99
+              7          1600       1599.99       1515.54       3741.36       3724.99       9999.99
+
+
+* 9. MODAL PARTICIPATION MASS RATIOS (%):
+# The modal participation mass ratios (%) for each mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1        88.636             0             0             0        4.2821             0
+              2             0       89.4005             0       5.59014             0             0
+              3             0             0             0             0             0       90.4123
+              4       11.3638             0             0             0       32.9678             0
+              5             0       10.5988             0       46.3732             0             0
+              6             0             0             0             0             0       9.58755
+              7             0             0       94.7214             0             0             0
+
+
+* 10. MODAL PARTICIPATION MASS RATIOS (%) (cumulative):
+# The cumulative modal participation mass ratios (%) for each mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1        88.636             0             0             0        4.2821             0
+              2        88.636       89.4005             0       5.59014        4.2821             0
+              3        88.636       89.4005             0       5.59014        4.2821       90.4123
+              4       99.9997       89.4005             0       5.59014       37.2499       90.4123
+              5       99.9997       99.9993             0       51.9633       37.2499       90.4123
+              6       99.9997       99.9993             0       51.9633       37.2499       99.9999
+              7       99.9997       99.9993       94.7214       51.9633       37.2499       99.9999
+</pre></div>
+</div>
+</div>
+<p>Code Developed by: <strong>Massimo Petracca</strong> at ASDEA Software, Italy</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

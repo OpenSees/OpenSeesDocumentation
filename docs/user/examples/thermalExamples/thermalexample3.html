@@ -1,40 +1,43 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.2.3. Example 3 &mdash; OpenSees Documentation  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="4.2.4. Example 4" href="thermalexample4.html" />
@@ -78,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -126,6 +130,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -160,11 +165,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../userExamples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
@@ -175,7 +182,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../_sources/user/examples/thermalExamples/thermalexample3.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -224,7 +231,7 @@ beam against horizontal displacement of the beam ends.</p></li>
 <div class="section" id="material">
 <h3><span class="section-number">4.2.3.1.2. </span>Material<a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h3>
 <p>The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties according to Eurocode 3 carbon steel. More details of Steel01 can be found at: <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel01_Material">Steel01 Material</a></p>
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;</code></dt>
 <dd></dd></dl>
@@ -239,7 +246,7 @@ beam against horizontal displacement of the beam ends.</p></li>
 the resulting midspan displacements of the beams were recorded to view
 differences of including 2nd order bending effects.</p>
 <blockquote>
-<div><dl class="function">
+<div><dl class="py function">
 <dt>
 <code class="sig-name descname">geomTransf Linear $transftag;</code></dt>
 <dd></dd></dl>
@@ -247,7 +254,7 @@ differences of including 2nd order bending effects.</p>
 </div></blockquote>
 <p>or</p>
 <blockquote>
-<div><dl class="function">
+<div><dl class="py function">
 <dt>
 <code class="sig-name descname">geomTransf Corotational $transftag;</code></dt>
 <dd></dd></dl>
@@ -262,42 +269,42 @@ Transformation</a></p>
 <p>In previous versions of OpenSees, a default value for torsional stiffness was used (GJ). In versions 3.1.0 and newer fiber sections require a value for torsional stiffness. This is a 2D example with negligible torsion, however a value is required. The Young’s Modulus is used for convenience.</p>
 <p>Wsection dimensions:</p>
 <blockquote>
-<div><dl class="function">
+<div><dl class="py function">
 <dt>
 <code class="sig-name descname">set d 355;    #mm</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set bf 171.5; #mm</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set tf 11.5;  #mm</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set tw 7.4;  #mm</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set nfdw 8; #mm</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set nftw 1; #mm</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set nfbf 1; #mm</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set nftf 4; #mm</code></dt>
 <dd></dd></dl>
@@ -316,10 +323,10 @@ Transformation</a></p>
 <li><p>nftf = number of fibers along flange thickness</p></li>
 <li><p>Gj = torsional stiffness</p></li>
 </ul>
-<p>Wsection secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj</p>
-<dl class="function">
+<p>WsectionThermal secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj</p>
+<dl class="py function">
 <dt>
-<code class="sig-name descname">Wsection 1 1 $d $bf $tf $tw 8 1 1 4 $Es</code></dt>
+<code class="sig-name descname">WsectionThermal 1 1 $d $bf $tf $tw 8 1 1 4 $Es</code></dt>
 <dd></dd></dl>
 
 <div class="align-center figure">
@@ -339,7 +346,7 @@ mechanical properties applied to them.</p>
 <p>This example was developed using 6 elements along the length of the
 beam.</p>
 <p>dispBeamColumnThermal $eleTag $iNode $jNode $numIntgrPts $secTag $TransfTag;</p>
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">element dispBeamColumnThermal $secTag 1 2 5 $secTag $transftag;</code></dt>
 <dd></dd></dl>
@@ -352,24 +359,24 @@ thermal expansion.</p>
 <h3><span class="section-number">4.2.3.1.6. </span>Output Recorders<a class="headerlink" href="#output-recorders" title="Permalink to this headline">¶</a></h3>
 <p>$dataDir is defined at the beginning of the model, this creates a folder
 within your working directory where output files will be saved.</p>
-<dl class="function">
+<dl class="py function">
 <dt>
-<code class="sig-name descname">set dataDir Examples/EXAMPLE3_OUTPUT;</code></dt>
+<code class="sig-name descname">set dataDir Examples/EXAMPLE3\_OUTPUT;</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">file mkdir $dataDir;</code></dt>
 <dd></dd></dl>
 
 <p>Displacement of the midspan node (4) in DOF 2 (Vertical Displacement)</p>
-<dl class="function">
+<dl class="py function">
 <dt>
-<code class="sig-name descname">recorder Node -file $dataDir/Midspan_Disp.out&quot; -time -node 4 -dof 2 disp;</code></dt>
+<code class="sig-name descname">recorder Node -file $dataDir/Midspan\_Disp.out&quot; -time -node 4 -dof 2 disp;</code></dt>
 <dd></dd></dl>
 
 <p>Reaction forces at end nodes (nodes 1 &amp; 7)</p>
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">recorder Node -file $dataDir/RXNs.out -time -node 1 7 -dof 2 reaction;</code></dt>
 <dd></dd></dl>
@@ -384,7 +391,7 @@ time-temperature curve, rather linearly ramp up the temperature from
 ambient to 1180 <sup>o</sup> C.</p>
 <p>Therefore, we set the maximum temperature as follows:</p>
 <p>T = Max Temperature [<sup>o</sup> C]</p>
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set T 1180;</code></dt>
 <dd></dd></dl>
@@ -399,13 +406,13 @@ fiber on the y-axis will be chosen. The beam has a depth of
 $d, therefore, Y1 = $d/2 &amp; Y2 = -$d/2 the top and bottom fibers
 respectively.</p>
 <p>Top fiber of beam</p>
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set Y1 [expr $d/2];</code></dt>
 <dd></dd></dl>
 
 <p>Bottom fiber of beam</p>
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set Y2 [expr -$d/2];</code></dt>
 <dd></dd></dl>
@@ -421,7 +428,7 @@ analysis. An external temperature data set could also be used for more
 complex temperature loading.</p>
 <p>Using a plain linear loading pattern, Elements 1-6 will be heated to the
 target tempurature, $T using a for loop for effecency. The syntax for this is:</p>
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">pattern Plain 3 Linear {for {set level 1} {$level &lt;= 6} {incr level 1} {set eleID $level eleLoad -ele $eleID -type -beamThermal $T $Y2 $T $Y1;}}</code></dt>
 <dd></dd></dl>
@@ -440,7 +447,7 @@ a load factor of 0.001 was used. OpenSees is sensitive to the load
 factor, therefore, it is important to ensure that benchmarking examples
 are performed to determine the proper load factor to use in structural
 fire engineering analyses.</p>
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set Nstep 1000;</code></dt>
 <dd></dd></dl>
@@ -448,17 +455,17 @@ fire engineering analyses.</p>
 <p>Thermal load is applied in 1000 steps. Each step is an 0.001 increment
 of the maximum temperature specified in the thermal loading step $T
 (1180)</p>
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">set Factor [expr 1.0/$Nstep];</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">integrator LoadControl $Factor;</code></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt>
 <code class="sig-name descname">analyze $Nstep;</code></dt>
 <dd></dd></dl>
@@ -492,20 +499,25 @@ Sendai, Japan - September 13-18, 2020.</p>
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, The Regents of the University of California
+        &#169; Copyright 2020, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -513,7 +525,6 @@ Sendai, Japan - September 13-18, 2020.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -532,6 +543,7 @@ Sendai, Japan - September 13-18, 2020.</p>
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-2431545-1', 'auto');
+    
     ga('send', 'pageview');
     </script>
 

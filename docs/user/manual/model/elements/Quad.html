@@ -1,44 +1,47 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.3.5. Quadrilateral Element &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.3.6. Quadrilateral Element &mdash; OpenSees Documentation  documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.3.6. SSPquad Element" href="SSPquad.html" />
-    <link rel="prev" title="3.1.3.4. Elastic Beam Column Element" href="elasticBeamColumn.html" /> 
+    <link rel="next" title="3.1.3.7. SSPquad Element" href="SSPquad.html" />
+    <link rel="prev" title="3.1.3.5. ASDShellQ4 Element" href="ASDShellQ4.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -78,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -98,11 +102,12 @@
 <li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.3.2. ZeroLength Section Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.3.3. ZeroLengthND Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.3.4. Elastic Beam Column Element</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.5. Quadrilateral Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.3.6. SSPquad Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.7. stdBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.8. bbarBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.9. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.3.5. ASDShellQ4 Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.6. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.3.7. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.8. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.9. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.10. SSPbrick Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
@@ -134,6 +139,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -168,11 +174,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
@@ -180,12 +188,12 @@
         
           <li><a href="../element.html"><span class="section-number">3.1.3. </span>Element Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.3.5. </span>Quadrilateral Element</li>
+      <li><span class="section-number">3.1.3.6. </span>Quadrilateral Element</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../_sources/user/manual/model/elements/Quad.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -200,7 +208,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="quadrilateral-element">
-<h1><span class="section-number">3.1.3.5. </span>Quadrilateral Element<a class="headerlink" href="#quadrilateral-element" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1.3.6. </span>Quadrilateral Element<a class="headerlink" href="#quadrilateral-element" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a FourNodeQuad element object which uses a bilinear isoparametric formulation.</p>
 <div class="admonition-command admonition">
 <p class="admonition-title">Command</p>
@@ -255,7 +263,7 @@
 </table>
 <div class="align-center figure" id="id1">
 <img alt="../../../../_images/quad.png" src="../../../../_images/quad.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.3.1 </span><span class="caption-text">Quad Element Node Numbering</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.2 </span><span class="caption-text">Quad Element Node Numbering</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -287,20 +295,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, The Regents of the University of California
+        &#169; Copyright 2020, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -308,7 +321,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -327,6 +339,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-2431545-1', 'auto');
+    
     ga('send', 'pageview');
     </script>
 

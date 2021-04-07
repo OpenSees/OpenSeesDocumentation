@@ -84,6 +84,11 @@ uniaxialMaterials/Viscous
 uniaxialMaterials/BoucWen
 uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
 
+.. toctree::
+   :maxdepth: 1
+   
+   uniaxialMaterials/HystereticPoly
+
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
 
 .. toctree::

@@ -6,13 +6,11 @@
 
 
 wipe all;					
-set dataDir Examples/Example5_OUTPUTS;	# name of output folder
-file mkdir $dataDir; 					create output folder		
+set dataDir Example5_OUTPUT;	# name of output folder
+file mkdir $dataDir; 					#create output folder		
 		
 model BasicBuilder -ndm 2 -ndf 3; #2D 3DOF
 
-source DisplayPlane.tcl;		# procedure for displaying a plane in model
-source DisplayModel2D.tcl;		# procedure for displaying 2D perspective of model	
 source WsectionThermal.tcl;
 
 
@@ -194,11 +192,6 @@ recorder Node -file $dataDir/U1.out -time -node 11 -dof 1  disp;	# displacements
 recorder Node -file $dataDir/U2.out -time -node 22 -dof 1  disp;	# displacements of node U2 DOF 1
 recorder Node -file $dataDir/RXNS.out -time -node 1 12 23 -dof 2 3 reaction; #support RXNS
 
-
-
-############################################## VISUALIZER ###################################################################
-set ViewScale 10;
-DisplayModel2D DeformedShape $ViewScale ;	# display deformed shape, the scaling factor needs to be adjusted for each model
 
 
 
