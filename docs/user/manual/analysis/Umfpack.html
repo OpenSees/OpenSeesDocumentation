@@ -33,7 +33,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -214,7 +213,7 @@
 <p>This command is used to construct a sparse system of equations which uses the <a class="reference external" href="https://people.sc.fsu.edu/~jburkardt/cpp_src/umfpack/umfpack.html">UmfPack</a>  solver. The following command is used to construct such a system:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">system Umfpack &lt;-lvalueFact $LVALUE&gt;</code></dt>
+<code class="sig-name descname"><span class="pre">system</span> <span class="pre">Umfpack</span> <span class="pre">&lt;-lvalueFact</span> <span class="pre">$LVALUE&gt;</span></code></dt>
 <dd></dd></dl>
 
 <p>(LVALUE*the number of nonzero entries) is the amount of additional memory set aside for fill in during the matrix solution, by default the LVALUE factor is 10. You only need to experiment with this if you get error messages back about LVALUE being too small.</p>

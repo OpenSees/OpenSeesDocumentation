@@ -33,7 +33,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -235,12 +234,12 @@ recorded parameters from the OpenSees model to experimental testing data
 <p>b = 0.001 (Strain-Hardening Ratio)</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set matTag 1;</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">matTag</span> <span class="pre">1;</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;</code></dt>
+<code class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">Steel01Thermal</span> <span class="pre">$matTag</span> <span class="pre">$Fy</span> <span class="pre">$Es</span> <span class="pre">$b;</span></code></dt>
 <dd></dd></dl>
 
 </div>
@@ -251,7 +250,7 @@ order bending effects were considered using the Corotational geometric
 transformation.</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">geomTransf Corotational $transftag;</code></dt>
+<code class="sig-name descname"><span class="pre">geomTransf</span> <span class="pre">Corotational</span> <span class="pre">$transftag;</span></code></dt>
 <dd></dd></dl>
 
 <p>Learn more about geometric transofrmations: <a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Geometric_Transformation_Command">Geometric
@@ -287,7 +286,7 @@ set tw 0.0038;  # web thickness</p>
 <p>WsectionThermal secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">WsectionThermal $secTag $matTag $d $bf $tf $tw 8 1 1 4 $Es</code></dt>
+<code class="sig-name descname"><span class="pre">WsectionThermal</span> <span class="pre">$secTag</span> <span class="pre">$matTag</span> <span class="pre">$d</span> <span class="pre">$bf</span> <span class="pre">$tf</span> <span class="pre">$tw</span> <span class="pre">8</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">4</span> <span class="pre">$Es</span></code></dt>
 <dd></dd></dl>
 
 <div class="align-center figure">
@@ -301,7 +300,7 @@ set tw 0.0038;  # web thickness</p>
 <p>dispBeamColumnThermal $eleTag $iNode $jNode $numIntgrPts $secTag $TransfTag;</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">element dispBeamColumnThermal 1 1 2 3 $secTag $transftag;</code></dt>
+<code class="sig-name descname"><span class="pre">element</span> <span class="pre">dispBeamColumnThermal</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">$secTag</span> <span class="pre">$transftag;</span></code></dt>
 <dd></dd></dl>
 
 <p>Each column and beam element is created using ten displacement-based elements with 3 iteration points in each element.</p>
@@ -311,30 +310,30 @@ set tw 0.0038;  # web thickness</p>
 <p>$dataDir is defined at the beginning of the model, this creates a folder within your working directory where output files will be saved.</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set dataDir Examples/EXAMPLE5_OUTPUT;</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">dataDir</span> <span class="pre">Examples/EXAMPLE5_OUTPUT;</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">file mkdir $dataDir;</code></dt>
+<code class="sig-name descname"><span class="pre">file</span> <span class="pre">mkdir</span> <span class="pre">$dataDir;</span></code></dt>
 <dd></dd></dl>
 
 <p>displacements of node U1 (node 11, top left), DOF 1 (Horizontal Displacement)</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">recorder Node -file $dataDir/Midspan_BeamDisp.out -time -node 11 -dof 1 disp;</code></dt>
+<code class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Node</span> <span class="pre">-file</span> <span class="pre">$dataDir/Midspan_BeamDisp.out</span> <span class="pre">-time</span> <span class="pre">-node</span> <span class="pre">11</span> <span class="pre">-dof</span> <span class="pre">1</span> <span class="pre">disp;</span></code></dt>
 <dd></dd></dl>
 
 <p>displacements of node U2 (node 22, top-middle), DOF 1 (Horizontal Displacement)</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">recorder Node -file $dataDir/Midspan_BeamDisp.out -time -node 22 -dof 1 disp;</code></dt>
+<code class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Node</span> <span class="pre">-file</span> <span class="pre">$dataDir/Midspan_BeamDisp.out</span> <span class="pre">-time</span> <span class="pre">-node</span> <span class="pre">22</span> <span class="pre">-dof</span> <span class="pre">1</span> <span class="pre">disp;</span></code></dt>
 <dd></dd></dl>
 
 <p>Reaction forces at support nodes (1, 12 &amp; 23):</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">recorder Node -file $dataDir/RXNS.out -time -node 1 12 23 -dof 2 3 reaction;</code></dt>
+<code class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Node</span> <span class="pre">-file</span> <span class="pre">$dataDir/RXNS.out</span> <span class="pre">-time</span> <span class="pre">-node</span> <span class="pre">1</span> <span class="pre">12</span> <span class="pre">23</span> <span class="pre">-dof</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">reaction;</span></code></dt>
 <dd></dd></dl>
 
 <p>Learn more about the Recorder Command: <a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Recorder_Command">Recorder
@@ -349,7 +348,7 @@ failure. The right bay remains at ambient tempurature.</p>
 <p>T = Max Temperature [ <sup>o</sup> C]</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set T 550;</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">T</span> <span class="pre">550;</span></code></dt>
 <dd></dd></dl>
 
 <p>In OpenSees, the user can define 2 or 9 temperature data points
@@ -363,13 +362,13 @@ respectively.</p>
 <p>Top fiber of beam</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set Y1 [expr $d/2];</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Y1</span> <span class="pre">[expr</span> <span class="pre">$d/2];</span></code></dt>
 <dd></dd></dl>
 
 <p>Bottom fiber of beam</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set Y2 [expr -$d/2];</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Y2</span> <span class="pre">[expr</span> <span class="pre">-$d/2];</span></code></dt>
 <dd></dd></dl>
 
 <p><strong>Location of defined input temperature locations on the member cross section (both beam and columns)</strong></p>
@@ -386,17 +385,17 @@ more complex temperature loading.</p>
 heated bay.</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">pattern Plain 2 Linear {</code></dt>
+<code class="sig-name descname"><span class="pre">pattern</span> <span class="pre">Plain</span> <span class="pre">2</span> <span class="pre">Linear</span> <span class="pre">{</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">for {set i 1} {$i &lt;= 20} {incr i} { eleLoad -ele $i -type -beamThermal $T $Y2 $T $Y1;}</code></dt>
+<code class="sig-name descname"><span class="pre">for</span> <span class="pre">{set</span> <span class="pre">i</span> <span class="pre">1}</span> <span class="pre">{$i</span> <span class="pre">&lt;=</span> <span class="pre">20}</span> <span class="pre">{incr</span> <span class="pre">i}</span> <span class="pre">{</span> <span class="pre">eleLoad</span> <span class="pre">-ele</span> <span class="pre">$i</span> <span class="pre">-type</span> <span class="pre">-beamThermal</span> <span class="pre">$T</span> <span class="pre">$Y2</span> <span class="pre">$T</span> <span class="pre">$Y1;}</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">for {set i 31} {$i &lt;= 40} {incr i} {eleLoad -ele $i -type -beamThermal $T $Y2 $T $Y1;}};</code></dt>
+<code class="sig-name descname"><span class="pre">for</span> <span class="pre">{set</span> <span class="pre">i</span> <span class="pre">31}</span> <span class="pre">{$i</span> <span class="pre">&lt;=</span> <span class="pre">40}</span> <span class="pre">{incr</span> <span class="pre">i}</span> <span class="pre">{eleLoad</span> <span class="pre">-ele</span> <span class="pre">$i</span> <span class="pre">-type</span> <span class="pre">-beamThermal</span> <span class="pre">$T</span> <span class="pre">$Y2</span> <span class="pre">$T</span> <span class="pre">$Y1;}};</span></code></dt>
 <dd></dd></dl>
 
 </div>
@@ -412,22 +411,22 @@ are performed to determine the proper load factor to use in structural
 fire engineering analyses.</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set Nstep 1000</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Nstep</span> <span class="pre">1000</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set Factor [expr 1.0/$Nstep];</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Factor</span> <span class="pre">[expr</span> <span class="pre">1.0/$Nstep];</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">integrator LoadControl $Factor;</code></dt>
+<code class="sig-name descname"><span class="pre">integrator</span> <span class="pre">LoadControl</span> <span class="pre">$Factor;</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">analyze $Nstep;</code></dt>
+<code class="sig-name descname"><span class="pre">analyze</span> <span class="pre">$Nstep;</span></code></dt>
 <dd></dd></dl>
 
 </div>

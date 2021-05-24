@@ -33,7 +33,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -231,7 +230,7 @@ function of temperature.</p></li>
 <p>The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties per Eurocode 3 [1]. More details of Steel01 can be found at: <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel01_Material">Steel01 Material</a></p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">uniaxialMaterial Steel01Thermal $matTag $Fy $Es $b;</code></dt>
+<code class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">Steel01Thermal</span> <span class="pre">$matTag</span> <span class="pre">$Fy</span> <span class="pre">$Es</span> <span class="pre">$b;</span></code></dt>
 <dd></dd></dl>
 
 <p>Es = 210 GPa (Young’s modulus of elasticity at ambient temperatures)</p>
@@ -244,7 +243,7 @@ function of temperature.</p></li>
 effects do not need to be considered.</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">geomTransf Linear $transftag;</code></dt>
+<code class="sig-name descname"><span class="pre">geomTransf</span> <span class="pre">Linear</span> <span class="pre">$transftag;</span></code></dt>
 <dd></dd></dl>
 
 <p>Learn more about geometric transofrmations: <a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Geometric_Transformation_Command">Geometric
@@ -255,62 +254,62 @@ Transformation</a></p>
 <p>The discretization of the steel section into four fibers is shown using the code below:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">section FiberThermal secTag -GJ $Es{</code></dt>
+<code class="sig-name descname"><span class="pre">section</span> <span class="pre">FiberThermal</span> <span class="pre">secTag</span> <span class="pre">-GJ</span> <span class="pre">$Es{</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set numSubdivIJ 2;     # horizontal division</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">numSubdivIJ</span> <span class="pre">2;</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">horizontal</span> <span class="pre">division</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set numSubdivJK 2;     # vertical division</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">numSubdivJK</span> <span class="pre">2;</span>&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">vertical</span> <span class="pre">division</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set yI -100; #mm</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">yI</span> <span class="pre">-100;</span> <span class="pre">#mm</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set zI -200; #mm</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">zI</span> <span class="pre">-200;</span> <span class="pre">#mm</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set yJ 100; #mm</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">yJ</span> <span class="pre">100;</span> <span class="pre">#mm</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set zJ -200; #mm</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">zJ</span> <span class="pre">-200;</span> <span class="pre">#mm</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set yK 100; #mm</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">yK</span> <span class="pre">100;</span> <span class="pre">#mm</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set zK 200; #mm</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">zK</span> <span class="pre">200;</span> <span class="pre">#mm</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set yL -100; #mm</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">yL</span> <span class="pre">-100;</span> <span class="pre">#mm</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set zL 200; #mm</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">zL</span> <span class="pre">200;</span> <span class="pre">#mm</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">patch quad $matTag $numSubdivIJ $numSubdivJK $yI $zI $yJ $zJ $yK $zK $yL $zL</code></dt>
+<code class="sig-name descname"><span class="pre">patch</span> <span class="pre">quad</span> <span class="pre">$matTag</span> <span class="pre">$numSubdivIJ</span> <span class="pre">$numSubdivJK</span> <span class="pre">$yI</span> <span class="pre">$zI</span> <span class="pre">$yJ</span> <span class="pre">$zJ</span> <span class="pre">$yK</span> <span class="pre">$zK</span> <span class="pre">$yL</span> <span class="pre">$zL</span></code></dt>
 <dd></dd></dl>
 
 <p>Sections that will be subjected to thermal loading must be created with fiberThermal or fibersecThermal.</p>
@@ -329,13 +328,13 @@ Transformation</a></p>
 <p>Element 1</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">element dispBeamColumnThermal 1 1 2 5 $secTag $transftag;</code></dt>
+<code class="sig-name descname"><span class="pre">element</span> <span class="pre">dispBeamColumnThermal</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">5</span> <span class="pre">$secTag</span> <span class="pre">$transftag;</span></code></dt>
 <dd></dd></dl>
 
 <p>Element 2</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">element dispBeamColumnThermal 1 2 3 5 $secTag $transftag;</code></dt>
+<code class="sig-name descname"><span class="pre">element</span> <span class="pre">dispBeamColumnThermal</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">5</span> <span class="pre">$secTag</span> <span class="pre">$transftag;</span></code></dt>
 <dd></dd></dl>
 
 </div>
@@ -344,35 +343,35 @@ Transformation</a></p>
 <p>Displacement of the middle of node (2) in DOF 1 (horizontal direction) and the horizontal reaction force from the boundary conditions is what we want to record. To do so, a folder within your working directory must be created. $dataDir is the command to create that folder and should be defined at the beginning of the model. This is where your output files will be saved.</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set dataDir Examples/EXAMPLE2_OUTPUT;</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">dataDir</span> <span class="pre">Examples/EXAMPLE2_OUTPUT;</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">file mkdir $dataDir;</code></dt>
+<code class="sig-name descname"><span class="pre">file</span> <span class="pre">mkdir</span> <span class="pre">$dataDir;</span></code></dt>
 <dd></dd></dl>
 
 <p>Displacement of the middle node (2) in DOF 1 (Horizontal Displacement)</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">recorder Node -file $dataDir/MidspanNodeDisp.out -time -node 2  -dof  1  disp;</code></dt>
+<code class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Node</span> <span class="pre">-file</span> <span class="pre">$dataDir/MidspanNodeDisp.out</span> <span class="pre">-time</span> <span class="pre">-node</span> <span class="pre">2</span>&#160; <span class="pre">-dof</span>&#160; <span class="pre">1</span>&#160; <span class="pre">disp;</span></code></dt>
 <dd></dd></dl>
 
 <p>Recording reactions at the boundary conditions:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">recorder Node -file $dataDir/BoundryRXN.out -time -node 1 3  -dof 1 2 reaction;</code></dt>
+<code class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Node</span> <span class="pre">-file</span> <span class="pre">$dataDir/BoundryRXN.out</span> <span class="pre">-time</span> <span class="pre">-node</span> <span class="pre">1</span> <span class="pre">3</span>&#160; <span class="pre">-dof</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">reaction;</span></code></dt>
 <dd></dd></dl>
 
 <p>Recording the section forces in Elements 1 &amp; 2:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">recorder Element -file $dataDir/ele_force_1.out -time -ele 1 section 2 force</code></dt>
+<code class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Element</span> <span class="pre">-file</span> <span class="pre">$dataDir/ele_force_1.out</span> <span class="pre">-time</span> <span class="pre">-ele</span> <span class="pre">1</span> <span class="pre">section</span> <span class="pre">2</span> <span class="pre">force</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">recorder Element -file $dataDir/ele_force_2.out -time -ele 2 section 2 force</code></dt>
+<code class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Element</span> <span class="pre">-file</span> <span class="pre">$dataDir/ele_force_2.out</span> <span class="pre">-time</span> <span class="pre">-ele</span> <span class="pre">2</span> <span class="pre">section</span> <span class="pre">2</span> <span class="pre">force</span></code></dt>
 <dd></dd></dl>
 
 <p>Learn more about the Recorder Command: <cite>Recorder Command &lt;http://opensees.berkeley.edu/wiki/index.php/Recorder_Command&gt;</cite> __</p>
@@ -387,7 +386,7 @@ ambient to 1180 <sup>o</sup> C.</p>
 <p>T = Max Tempurature [deg celcius]</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set T 1180;</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">T</span> <span class="pre">1180;</span></code></dt>
 <dd></dd></dl>
 
 <p>In OpenSees, the user can define 2 or 9 temperature data points
@@ -402,13 +401,13 @@ y-axis will be chosen. The beam has a depth of 200mm, therefore, Y1 =
 <p>Location of bottom extreme fiber of beam [mm]</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set Y1 -100;</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Y1</span> <span class="pre">-100;</span></code></dt>
 <dd></dd></dl>
 
 <p>Location of top extreme fiber of beam [mm]</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set Y2 100;</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Y2</span> <span class="pre">100;</span></code></dt>
 <dd></dd></dl>
 
 <div class="align-center figure">
@@ -424,7 +423,7 @@ more complex temperature loading.</p>
 will be heated to the target tempurature. The syntax for this is:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">pattern Plain 1 Linear {eleLoad -ele 1 -type –beamThermal $T $Y2 $T Y1; eleLoad -ele 2 -type –beamThermal $T $Y2 $T Y1 }</code></dt>
+<code class="sig-name descname"><span class="pre">pattern</span> <span class="pre">Plain</span> <span class="pre">1</span> <span class="pre">Linear</span> <span class="pre">{eleLoad</span> <span class="pre">-ele</span> <span class="pre">1</span> <span class="pre">-type</span> <span class="pre">–beamThermal</span> <span class="pre">$T</span> <span class="pre">$Y2</span> <span class="pre">$T</span> <span class="pre">Y1;</span> <span class="pre">eleLoad</span> <span class="pre">-ele</span> <span class="pre">2</span> <span class="pre">-type</span> <span class="pre">–beamThermal</span> <span class="pre">$T</span> <span class="pre">$Y2</span> <span class="pre">$T</span> <span class="pre">Y1</span> <span class="pre">}</span></code></dt>
 <dd></dd></dl>
 
 </div>
@@ -444,22 +443,22 @@ fire engineering analyses.</p>
 <blockquote>
 <div><dl class="py function">
 <dt>
-<code class="sig-name descname">set Nsteps 1000</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Nsteps</span> <span class="pre">1000</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">set Factor [expr 1.0/$Nsteps];</code></dt>
+<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Factor</span> <span class="pre">[expr</span> <span class="pre">1.0/$Nsteps];</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">integrator LoadControl $Factor;</code></dt>
+<code class="sig-name descname"><span class="pre">integrator</span> <span class="pre">LoadControl</span> <span class="pre">$Factor;</span></code></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt>
-<code class="sig-name descname">analyze $Nsteps;</code></dt>
+<code class="sig-name descname"><span class="pre">analyze</span> <span class="pre">$Nsteps;</span></code></dt>
 <dd></dd></dl>
 
 </div></blockquote>

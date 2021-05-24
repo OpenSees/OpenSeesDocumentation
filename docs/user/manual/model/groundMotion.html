@@ -33,7 +33,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -207,7 +206,7 @@
 <p>The groundMotion command is used to construct a GroundMotion object used by the ImposedMotionSP constraints in a MultipleSupportExcitation object. This command is of the following form:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">groundMotion $tag $type arg1? ...</code></dt>
+<code class="sig-name descname"><span class="pre">groundMotion</span> <span class="pre">$tag</span> <span class="pre">$type</span> <span class="pre">arg1?</span> <span class="pre">...</span></code></dt>
 <dd></dd></dl>
 
 <p>The type of GroundMotion created and the additional arguments required depends on the type? provided in the command. The following contain information about type? and the args required for each of the available ground motion types:</p>
@@ -244,7 +243,7 @@
 <p>Each GroundMotion object is associated with a number of TimeSeries objects, which define the acceleration, velocity and displacement records for that ground motion. The particular form of the command is as follows:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">groundMotion $gmTag Plain &lt;-accel $tsTag&gt; &lt;-vel $tsTag&gt; &lt;-disp $tsTag&gt; &lt;-int (IntegratorType intArgs)&gt; &lt;-fact $cFactor&gt;)</code></dt>
+<code class="sig-name descname"><span class="pre">groundMotion</span> <span class="pre">$gmTag</span> <span class="pre">Plain</span> <span class="pre">&lt;-accel</span> <span class="pre">$tsTag&gt;</span> <span class="pre">&lt;-vel</span> <span class="pre">$tsTag&gt;</span> <span class="pre">&lt;-disp</span> <span class="pre">$tsTag&gt;</span> <span class="pre">&lt;-int</span> <span class="pre">(IntegratorType</span> <span class="pre">intArgs)&gt;</span> <span class="pre">&lt;-fact</span> <span class="pre">$cFactor&gt;)</span></code></dt>
 <dd></dd></dl>
 
 <p>where</p>
@@ -261,7 +260,7 @@
 <p>This command is used to construct an interpolated GroundMotion object, where the motion is determined by combining several previously defined ground motions in the load pattern. The command is as follows:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">groundMotion $tag Interpolated $gmTag1 $gmTag2 ... -fact $fact1 $fact2 ...</code></dt>
+<code class="sig-name descname"><span class="pre">groundMotion</span> <span class="pre">$tag</span> <span class="pre">Interpolated</span> <span class="pre">$gmTag1</span> <span class="pre">$gmTag2</span> <span class="pre">...</span> <span class="pre">-fact</span> <span class="pre">$fact1</span> <span class="pre">$fact2</span> <span class="pre">...</span></code></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">

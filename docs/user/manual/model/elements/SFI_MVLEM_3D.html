@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>SFI-MVLEM-3D Element &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SFI-MVLEM-3D Element</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/model/elements/SFI_MVLEM_3D.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>c.. _SFI_MVLEM_3D:</p>
+<div class="section" id="sfi-mvlem-3d-element">
+<h1>SFI-MVLEM-3D Element<a class="headerlink" href="#sfi-mvlem-3d-element" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">Developed and implemented by:</div>
+<div class="line"><a class="reference external" href="mailto:kkolozvari&#37;&#52;&#48;fullerton&#46;edu">Kristijan Kolozvari</a> (CSU Fullerton)</div>
+<div class="line">Kamiar Kalbasi (CSU Fullerton)</div>
+<div class="line">Kutay Orakcal (Bogazici University)</div>
+<div class="line">John Wallace (UCLA)</div>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The SFI-MVLEM-3D model (Figure 1a) is a three-dimensional four-node element with 24 DOFs that incorporates axial-flexural-shear interaction and can be used for nonlinear analysis of non-rectangular reinforced concrete walls subjected to multidirectional loading. The SFI-MVLEM-3D model is an extension of the two-dimensional, two-node Shear-Flexure-Interaction Multiple-Vertical-Line-Element-Model (<a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/SFI_MVLEM_-_Cyclic_Shear-Flexure_Interaction_Model_for_RC_Walls">SFI-MVLEM</a>). The baseline SFI-MVLEM, which is essentially a line element for rectangular walls subjected to in-plane loading, is extended in this study to a three-dimensional model formulation by applying geometric transformation of the element degrees of freedom that converted it into a four-node element formulation (Figure 1b), as well as by incorporating linear elastic out-of-plane behavior based on the Kirchhoff plate theory (Figure 1c). The in-plane and the out-of-plane element behaviors are uncoupled in the present model.</p>
+<p>This element shall be used in Domain defined with <strong>-ndm 3 -ndf 6</strong>.</p>
+<div class="align-center figure" id="id2">
+<img alt="../../../../_images/SFI_MVLEM_3D_formulation.jpg" src="../../../../_images/SFI_MVLEM_3D_formulation.jpg" />
+<p class="caption"><span class="caption-text"><strong>Figure 1: SFI-MVLEM-3D Element Formulation</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="input-parameters">
+<h2>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-command admonition">
+<p class="admonition-title">Command</p>
+<p>element SFI_MVLEM_3D eleTag iNode jNode kNode lNode m  -thick {Thicknesses} -width {Widths} -mat {Material_tags} &lt;-CoR c&gt; &lt;-ThickMod tMod&gt; &lt;-Poisson Nu&gt;  &lt;-Density Dens&gt;</p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>eleTag</p></td>
+<td><p>integer</p></td>
+<td><p>unique element object tag</p></td>
+</tr>
+<tr class="row-odd"><td><p>iNode jNode kNode lNode</p></td>
+<td><p>4 integer</p></td>
+<td><p>tags of element nodes defined in counterclockwise direction|</p></td>
+</tr>
+<tr class="row-even"><td><p>m</p></td>
+<td><p>integer</p></td>
+<td><p>number of element fibers</p></td>
+</tr>
+<tr class="row-odd"><td><p>{Thicknesses}</p></td>
+<td><p><em>m</em> float</p></td>
+<td><p>array of <em>m</em> fiber thicknesses</p></td>
+</tr>
+<tr class="row-even"><td><p>{Widths}</p></td>
+<td><p><em>m</em> float</p></td>
+<td><p>array of <em>m</em> macro-fiber widths</p></td>
+</tr>
+<tr class="row-odd"><td><p>{Material_tags}</p></td>
+<td><p><em>m</em> float</p></td>
+<td><p>array of <em>m</em> macro-fiber nDMaterial (<a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/FSAM_-_2D_RC_Panel_Constitutive_Behavior">FSAM</a>) tags</p></td>
+</tr>
+<tr class="row-even"><td><p>c</p></td>
+<td><p>float</p></td>
+<td><p>location of center of rotation from the base (optional; default = 0.4 (recommended))</p></td>
+</tr>
+<tr class="row-odd"><td><p>tMod</p></td>
+<td><p>float</p></td>
+<td><p>thickness multiplier (optional; default = 0.63 equivalent to 0.25Ig for out-of-plane bending)</p></td>
+</tr>
+<tr class="row-even"><td><p>Nu</p></td>
+<td><p>float</p></td>
+<td><p>Poisson ratio for out-of-plane bending (optional; default = 0.25)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dens</p></td>
+<td><p>float</p></td>
+<td><p>Density (optional; default = 0.0)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="recorders">
+<h2>Recorders<a class="headerlink" href="#recorders" title="Permalink to this headline">¶</a></h2>
+<p>The following recorders are available with the SFI-MVLEM-3D element.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Recorder</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>globalForce</p></td>
+<td><p>Element global forces</p></td>
+</tr>
+<tr class="row-odd"><td><p>Curvature</p></td>
+<td><p>Element curvature</p></td>
+</tr>
+<tr class="row-even"><td><p>ShearDef</p></td>
+<td><p>Element deformation</p></td>
+</tr>
+<tr class="row-odd"><td><p>RCPanel $fibTag $Response</p></td>
+<td><p>Returns RC panel (macro-fiber) $Response for a $fibTag-th panel (1 ≤ fibTag ≤ m). For available $Response-s refer to nDMaterial (<a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/FSAM_-_2D_RC_Panel_Constitutive_Behavior">FSAM</a>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Specimen TUC (Constantin 2016) is analyzed using the SFI-MVLEM-3D. Figure 2a shows the photo of the test specimen and the multidirectional displacement pattern applied at the top of the wall, while Figure 2b-c show the SFI-MVLEM-3D model of specimen TUC.</p>
+<div class="align-center figure" id="id3">
+<img alt="../../../../_images/SFI_MVLEM_3D_TUC_model.jpg" src="../../../../_images/SFI_MVLEM_3D_TUC_model.jpg" />
+<p class="caption"><span class="caption-text"><strong>Figure 2: SFI-MVLEM-3D Model of Specimen TUB</strong></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Figure 3 compares measured and simulated load-deformation responses for specimen TUC in E-W (Figure 3a) and N-S (Figure 3b) directions, as well as for diagonal cycles between positions E-F (Figure 3c) and G-H (Figure 3d). As results comparisons illustrate, the SFI-MVLEM-3D predicts well the overall strength and stiffness of the wall for loading cycles in E-W (Figure 3a) and N-S (Figure 3b) directions where the behavior of the specimen was primarily in the linear elastic range since the maximum magnitude of displacements applied at the top of the wall corresponded to a drift level of only 1.0%. For diagonal cycles (Figure 3c and Figure 3d), the model slightly overestimates the initial stiffness of the specimens, but accurately captures the overall SRSS lateral load resisted by the specimen, with the only exception that the lateral load is overestimated during the last loading cycles corresponding to the largest drift of 2.5%. The cyclic stiffness and pinching characteristics of the wall are well-predicted by the model.</p>
+<div class="align-center figure" id="id4">
+<img alt="../../../../_images/SFI_MVLEM_3D_TUC_results_LD.jpg" src="../../../../_images/SFI_MVLEM_3D_TUC_results_LD.jpg" />
+<p class="caption"><span class="caption-text"><strong>Figure 3: Experimental vs. SFI-MVLEM-3D Load-Deformation Response of Specimen TUB</strong></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Side-by-side comparison of the analytically-obtained vertical strains (Figure 4a-c.1) and shear stresses along wall base (Figure 4a-c.2) demonstrates the capability of the model to capture the interaction between the axial tensile/compressive strains (and resulting stresses) and the in-plane shear stresses developing in the panel-fibers of the SFI-MVLEM-3D elements. Results presented in Figure 4 clearly illustrate that for each of the loading positions, the majority of the shear force demand imposed at the wall is resisted by the regions (panel-fibers) that are subjected to axial compression, while little-to-no shear stress occurs in the panel-fibers subjected to tension. Commonly used fiber-based models that treat axial/flexural and shear behaviors as uncoupled (e.g., displacement based element in OpenSees, shear wall element in Perform 3D) cannot capture this highly non-uniform distribution of shear demands across the wall cross-section and may be subject to considerable bias in predicting shear demands developing in the piers (flanges, web) of non-planar walls subjected to multi-directional seismic actions.</p>
+<div class="align-center figure" id="id5">
+<img alt="../../../../_images/SFI_MVLEM_3D_TUC_results_strain_stress.jpg" src="../../../../_images/SFI_MVLEM_3D_TUC_results_strain_stress.jpg" />
+<p class="caption"><span class="caption-text"><strong>Figure 4: Vertical strains (1) and shear stresses (2) at the base of wall specimen TUC at: a) Position E, b) Position G, and c) Position C. Positive (compressive) strains are shown at the outer face of the wall; negative (tensile) strains are plotted at the inner face of the wall. A magnitude scale for strains or stresses is provided in the upper left corner of each plot</strong></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>K. Kolozvari, K. Kalbasi, K. Orakcal &amp; J. W. Wallace (under review), “Three-dimensional shear-flexure interaction model for analysis of non-planar reinforced concrete walls”, Journal of Building Engineering.
+K. Kolozvari, K. Kalbasi, K. Orakcal, L. M. Massone &amp; J. W. Wallace (2019), “Shear–flexure-interaction models for planar and flanged reinforced concrete walls”, Bulletin of Eathquake Engineering, 17, pages 6391–6417. (<a class="reference external" href="https://link.springer.com/article/10.1007/s10518-019-00658-5">link</a>).</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -33,7 +33,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -179,19 +178,19 @@
 <p>To print all objects of the domain to a JSON file:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">print -JSON -file $fileName</code></dt>
+<code class="sig-name descname"><span class="pre">print</span> <span class="pre">-JSON</span> <span class="pre">-file</span> <span class="pre">$fileName</span></code></dt>
 <dd></dd></dl>
 
 <p>To print node information:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">print &lt;-file $fileName&gt; -node &lt;-flag $flag&gt; &lt;$node1 $node2 ...&gt;</code></dt>
+<code class="sig-name descname"><span class="pre">print</span> <span class="pre">&lt;-file</span> <span class="pre">$fileName&gt;</span> <span class="pre">-node</span> <span class="pre">&lt;-flag</span> <span class="pre">$flag&gt;</span> <span class="pre">&lt;$node1</span> <span class="pre">$node2</span> <span class="pre">...&gt;</span></code></dt>
 <dd></dd></dl>
 
 <p>To print element information:</p>
 <dl class="py function">
 <dt>
-<code class="sig-name descname">print &lt;-file $fileName&gt; -ele &lt;-flag $flag&gt; &lt;$ele1 $ele2 ...&gt;</code></dt>
+<code class="sig-name descname"><span class="pre">print</span> <span class="pre">&lt;-file</span> <span class="pre">$fileName&gt;</span> <span class="pre">-ele</span> <span class="pre">&lt;-flag</span> <span class="pre">$flag&gt;</span> <span class="pre">&lt;$ele1</span> <span class="pre">$ele2</span> <span class="pre">...&gt;</span></code></dt>
 <dd><p>$fileName    (optional) name of file to which data will be sent. overwrites existing file. default is to print to stderr)
 $flag             integer flag to be sent to the print() method, depending on the node and element type (optional)
 $node1 $node2 ..     (optional) integer tags of nodes to be printed. default is to print all.
