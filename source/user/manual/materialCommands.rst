@@ -11,8 +11,6 @@ Like many finite element applications, all nonlinear elements have associated wi
 
 #. **sections** which define coupled moment-curvature and axial-deformation relationships for beam column elements.
 
-These materials can additionally be tested with the built-in material testing commands.
-
 .. figure:: figures/OpenSeesMaterials.png
 	:align: center
 	:width: 400px
@@ -26,4 +24,10 @@ These materials can additionally be tested with the built-in material testing co
    material/uniaxialMaterial
    material/ndMaterial
    material/section
+   
+For simple investigation of material/section behavior, try the built-in material testing commands.
+
+.. toctree::
+   :maxdepth: 1
+   
    material/matTestCommands

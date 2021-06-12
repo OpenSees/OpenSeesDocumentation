@@ -3,9 +3,8 @@
 Material Testing Commands
 *************************
 
-The OpenSees material testing commands require that the test material/section first be specified with testUniaxialMaterial, testNDMaterial, or testSection.
-
-. 
+The material testing environment is separate from the OpenSees domain, and allows for simple tests to be performed on OpenSees materials, including uniaxial materials, n-dimensional materials, and section force-deformation relationships.
+In order to use the material testing commands, the test material/section must first be specified with testUniaxialMaterial, testNDMaterial, or testSection.
 
 .. function:: testUniaxialMaterial $matTag
 
@@ -42,7 +41,7 @@ This command sets and commits the strains/deformations to the material/section.
 
    $strains,  |listFloat|,     **ndf** input strains
    
-Alternatively, the trial strain or deformation values can be set with the setTrialStrain command and then committed with the commitStrain command.
+Alternatively, the trial strain or deformation values can be set with the setTrialStrain command and then later committed with the commitStrain command. 
 
 .. function:: setTrialStrain [ndf $strains]
 
@@ -54,17 +53,25 @@ Alternatively, the trial strain or deformation values can be set with the setTri
    
 .. function:: commitStrain
 
-Once the material/section strains/deformations are set, basic information about the state of the material/section can be queried with the commands getStrain, getStress, getTangent and getDampTangent.
+Once the material/section strains/deformations are set, information about the state of the material/section can be queried with the commands getStrain, getStress, getTangent and getDampTangent, and getResponse.
+
+The command getStrain simply returns the list of strain/deformation values inputted with setStrain or setTrialStrain.
 
 .. function:: getStrain()
 
+The command getStress returns a list of stress/force values corresponding to the inputted strain/deformations.
+
 .. function:: getStress()
+
+The command getTangent returns a list of the current tangents for each stress/strain or force/deformation relationship.
 
 .. function:: getTangent()
 
+The command getDampTangent returns the damping tangent (for uniaxial materials only).
+
 .. function:: getDampTangent()
 
-Additionally, material/section specific information can be queried with the getResponse command.
+The command getResponse returns material or section specific information.
 
 .. function:: getResponse $arg1 $arg2 ....
 
@@ -73,3 +80,4 @@ Additionally, material/section specific information can be queried with the getR
    :widths: 10, 10, 40
 
    $args,  |list|, list of the arguments for the material/section response
+   
