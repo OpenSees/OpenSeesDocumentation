@@ -63,7 +63,9 @@ The command getStress returns a list of stress/force values corresponding to the
 
 .. function:: getStress()
 
-The command getTangent returns a list of the current tangents for each stress/strain or force/deformation relationship.
+The command getTangent returns the tangent values corresponding to each stress/strain or force/deformation relationship. 
+For uniaxial materials and uniaxial sections, getTangent simply returns a single value. 
+For n-dimensional materials and non-uniaxial sections, getTangent returns the flattened (row-major) tangent matrix.
 
 .. function:: getTangent()
 
