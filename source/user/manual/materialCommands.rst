@@ -3,7 +3,7 @@
 Material Commands
 -----------------
 
-Like many finite element applications, all nonlinear elements have associated with them a material. It is the material in conjunction with the material that provides the force-displacement response of the element. In OpenSees materials are divided into three general types:
+Like many finite element applications, all nonlinear elements have associated with them a material. It is the material in conjunction with the element geometry that provides the force-displacement response of the element. In OpenSees materials are divided into three general types:
 
 #. **uniaxial materials** which define a uniaxial (1 dimensional) stress-strain relationship.
 
@@ -24,3 +24,10 @@ Like many finite element applications, all nonlinear elements have associated wi
    material/uniaxialMaterial
    material/ndMaterial
    material/section
+   
+For simple investigation of material/section behavior, try the built-in material testing commands.
+
+.. toctree::
+   :maxdepth: 1
+   
+   material/matTestCommands
