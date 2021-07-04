@@ -1,8 +1,8 @@
-.. _dispBeamColumnAsym:
+.. _mixedBeamColumnAsym:
 
-Displacement-Based Beam Element (Asymmetric Sections)
+Mixed Beam Element (Asymmetric Sections)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This command is used to construct a **DispBeamColumnAsym3d** element object, which is suitable for modeling flexural, flexural-torsionl and torsional buckling of members with asymmetric section such as angles and tees. It can also be used to model members with doublely-symmetric sections. The corotational total Lagrangian method is used to capture the axial-flexural-torsional interaction behavior, while the fiber section method is used for modeling material nonlinearity. The fibers and coordinates of the shear center should be defined with respect to the principal axes of the section. Note that warping is not considered in this element.
+This command is used to construct a **MixedBeamColumnAsym3d** element object, which is suitable for modeling flexural, flexural-torsionl and torsional buckling of members with asymmetric section such as angles and tees. It can also be used to model members with doublely-symmetric sections. The corotational total Lagrangian method is used to capture the axial-flexural-torsional interaction behavior, while the fiber section method is used for modeling material nonlinearity. The fibers and coordinates of the shear center should be defined with respect to the principal axes of the section. This element can represent a nonlinear curvature field within the element. Note that warping is not considered in this element.
 
 For more information about the element formulation, please refer to the references at the end of this page.
 
@@ -10,7 +10,7 @@ For more information about the element formulation, please refer to the referenc
 
 For 3D problems:
 
-.. function:: element dispBeamColumnAsym $eleTag $iNode $jNode $numIntgrPts $secTag $transfTag <-shearCenter $y0 $z0> <-integration integrType>
+.. function:: element mixedBeamColumnAsym $eleTag $iNode $jNode $numIntgrPts $secTag $transfTag <-shearCenter $y0 $z0> <-integration integrType>
 
 The required arguments are:
 
@@ -46,7 +46,7 @@ The optional arguments are:
 
 For 3D problems:
 
-.. function:: element  ('dispBeamColumnAsym', $eleTag, $iNode, $jNode, $transfTag, $integrTag, '-shearCenter', $y0, $z0)
+.. function:: element  ('mixedBeamColumnAsym', $eleTag, $iNode, $jNode, $transfTag, $integrTag, '-shearCenter', $y0, $z0)
 
 The required arguments are:
 
@@ -73,7 +73,7 @@ NOTES:
 
 .. admonition:: Example 
 
-   The following codes construct Example 4.6 in Du and Hajjar (2021). The libraries can be found from the OpenSeesWiki. The definition of the angle section (L3x2x0_25.tcl) is not provided here, but the mesh information is shown in the following Python code. Note that in order for clarity the mesh here is coarser than that used in Du and Hajjar (2021).
+   The following codes construct Example 4.2 in Du and Hajjar (2021). The libraries can be found from the OpenSeesWiki. The definition of the angle section (L3x2x0_25.tcl) is not provided here, but the mesh information is shown in the following Python code. Note that in order for clarity the mesh here is coarser than that used in Du and Hajjar (2021).
 
    1. **Tcl Code**
 
@@ -82,7 +82,7 @@ NOTES:
       # --------------------------------------------------------------------------------------------------
       # 3D Steel L-section beam subjected to compressive load on shear center
       # Xinlong Du, 9/25/2019
-      # Displacement-based beam-column element for asymmetric sections
+      # Mixed beam-column element for asymmetric sections
       # --------------------------------------------------------------------------------------------------
       set systemTime [clock seconds] 
       puts "Starting Analysis: [clock format $systemTime -format "%d-%b-%Y %H:%M:%S"]"
@@ -127,12 +127,12 @@ NOTES:
       set elemID $i
       set nodeI $i
       set nodeJ [expr $i+1]
-      element dispBeamColumnAsym $elemID $nodeI $nodeJ $numIntgrPts $ColSecTag $IDColTransf -shearCenter $y0 $z0;	
+      element mixedBeamColumnAsym $elemID $nodeI $nodeJ $numIntgrPts $ColSecTag $IDColTransf -shearCenter $y0 $z0;	
       } 
 
       # Define RECORDERS -------------------------------------------------------------
-      recorder Node -file $dataDir/DispDB6.out -time -node $EndNode -dof 1 2 3 4 5 6 disp;			# displacements of middle node
-      recorder Node -file $dataDir/ReacDB6.out -time -node $StartNode -dof 1 2 3 4 5 6 reaction;		# support reaction
+      recorder Node -file $dataDir/DispMB6.out -time -node $EndNode -dof 1 2 3 4 5 6 disp;			# displacements of middle node
+      recorder Node -file $dataDir/ReacMB6.out -time -node $StartNode -dof 1 2 3 4 5 6 reaction;		# support reaction
 
       # Define DISPLAY -------------------------------------------------------------
       DisplayModel3D DeformedShape;	 # options: DeformedShape NodeNumbers ModeShape
@@ -170,7 +170,7 @@ NOTES:
       # --------------------------------------------------------------------------------------------------
       # 3D Steel L-section beam subjected to compressive load on shear center
       # Xinlong Du, 5/31/2021
-      # Displacement-based beam-column element for asymmetric sections
+      # Mixed beam-column element for asymmetric sections
       # --------------------------------------------------------------------------------------------------
       #from openseespy.opensees import *
       from opensees import *
@@ -237,17 +237,17 @@ NOTES:
       vecxz=[0.0, 0.0, 1.0];
       geomTransf('Corotational', ColTransfTag, *vecxz);	#define geometric transformation: performs a corotational geometric transformation
       # Define Beam-Column Elements
-      numIntgrPts = 2;	# number of Gauss integration points
+      numIntgrPts = 5;	# number of Gauss integration points
       beamIntTag = 1;
       beamIntegration("Legendre",  beamIntTag, ColSecTag, numIntgrPts)
       for i in range (1,EndNode):
           elemID = i;
           nodeI = i;
           nodeJ = i+1;
-          element('dispBeamColumnAsym', elemID, *[nodeI, nodeJ], ColTransfTag, beamIntTag,'-shearCenter', *[y0, z0]);
+          element('mixedBeamColumnAsym', elemID, *[nodeI, nodeJ], ColTransfTag, beamIntTag,'-shearCenter', *[y0, z0]);
       # Define RECORDERS -------------------------------------------------------------
-      recorder('Node', '-file', f'{dataDir}/DispDB6.out', '-time', '-node', *[EndNode], '-dof', *[1, 2, 3, 4, 5, 6,], 'disp');
-      recorder('Node', '-file', f'{dataDir}/ReacDB6.out', '-time', '-node', *[StartNode], '-dof', *[1, 2, 3, 4, 5, 6,], 'reaction');
+      recorder('Node', '-file', f'{dataDir}/DispMB6.out', '-time', '-node', *[EndNode], '-dof', *[1, 2, 3, 4, 5, 6,], 'disp');
+      recorder('Node', '-file', f'{dataDir}/ReacMB6.out', '-time', '-node', *[StartNode], '-dof', *[1, 2, 3, 4, 5, 6,], 'reaction');
       #------------------------------------------------------------- 
       N = 15.0;
       timeSeries('Linear',1);
@@ -269,6 +269,6 @@ NOTES:
 
 **REFERENCES:**
 
-#. Du, X., & Hajjar, J. (2021). Three-dimensional nonlinear displacement-based beam element for members with angle and tee sections. Engineering Structures, 239, 112239.
+#. Du, X., & Hajjar, J. F. (2021). Three-dimensional nonlinear mixed 6-DOF beam element for thin-walled members. Thin-Walled Structures, 164, 107817.
 
 Code developed by: `Xinlong Du <https://github.com/dxl9838/>`_ |dxl| (Northeastern University).
