@@ -62,6 +62,8 @@ The following subsections contain information about **$eleType** and the number 
    elements/FlexureShearInteractionDisplacementBasedBeamColumnElement
    elements/MVLEM
    elements/SFI_MVLEM
+   elements/dispBeamColumnAsym
+   elements/mixedBeamColumnAsym
 
 
 4. Quadrilateral & Shell Elements
