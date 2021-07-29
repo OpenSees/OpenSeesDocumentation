@@ -47,11 +47,6 @@ Input Parameters
    Nu, float, Poisson ratio for out-of-plane bending (optional; default = 0.25)
    Dens, float, Density (optional; default = 0.0)
 
-OpenSeesPy Documentation
-########################
-
-OpenSeesPy user documetation for the MVLEM_3D element can be accessed from `HERE <https://openseespydoc.readthedocs.io/en/latest/src/MVLEM_3D.html>`_.
-
 Recorders
 #########
 
@@ -68,6 +63,10 @@ The following recorders are available with the MVLEM_3D element.
    Fiber_Stress_Concrete, Vertical concrete stresses in m fibers along the cross-section
    Fiber_Stress_Steel, Vertical steel stresses in m fibers along the cross-section
 
+OpenSeesPy Documentation
+########################
+
+OpenSeesPy user documetation for the MVLEM_3D element can be accessed from `HERE <https://openseespydoc.readthedocs.io/en/latest/src/MVLEM_3D.html>`_.
 
 Example
 #######
