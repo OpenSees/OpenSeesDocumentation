@@ -63,11 +63,15 @@ The following recorders are available with the MVLEM_3D element.
    Fiber_Stress_Concrete, Vertical concrete stresses in m fibers along the cross-section
    Fiber_Stress_Steel, Vertical steel stresses in m fibers along the cross-section
 
+OpenSeesPy Documentation
+########################
+
+OpenSeesPy user documetation for the MVLEM_3D element can be accessed from `HERE <https://openseespydoc.readthedocs.io/en/latest/src/MVLEM_3D.html>`_.
 
 Example
 #######
 
-Specimen TUB (Beyer et al. 2008) is analyzed using the MVLEM_3D. Figure 2a shows the photo of the test specimen and the multidirectional displacement pattern applied at the top of the wall, while Figure 2b-c show the MVLEM_3D model of specimen TUB. Tcl Input files can be downloaded from `HERE <https://github.com/kkolozvari/MVLEM-3D>`_.
+Specimen TUB (Beyer et al. 2008) is analyzed using the MVLEM_3D. Figure 2a shows the photo of the test specimen and the multidirectional displacement pattern applied at the top of the wall, while Figure 2b-c show the MVLEM_3D model of specimen TUB. Tcl Input files can be downloaded from `MVLEM-3D GitHub Page <https://github.com/kkolozvari/MVLEM-3D>`_.
 
 .. figure:: MVLEM_3D_TUB_model.jpg
 	:align: center
@@ -83,7 +87,7 @@ Specimen TUB (Beyer et al. 2008) is analyzed using the MVLEM_3D. Figure 2a shows
 
 Figure 4 compares experimentally measured and analytically predicted load deformation behavior of the specimen TUB in E-W, N-S, and diagonal loading directions. The model provides accurate predictions of the lateral load capacity and the stiffness under cyclic loading in loading directions parallel to the principal axes of the cross-section (E-W, N-S direction). Analysis results overestimate the lateral load capacity in diagonal loading directions due to plane-sections-remain-plane assumption implemented in the model formulation that cannot capture pronounced shear lag effect observed in the test specimen. 
 
-.. figure:: MVLEM_3D_TUB_results.jpg
+.. figure:: MVLEM_3D_TUB_results.JPG
 	:align: center
 	:figclass: align-center
 
@@ -92,4 +96,4 @@ Figure 4 compares experimentally measured and analytically predicted load deform
 References
 ##########
 
-K. Kolozvari, K. Kalbasi, K. Orakcal & J. W. Wallace (2021), "Three-Dimensional Model for Nonlinear Analysis of Slender Flanged Reinforced Concrete Walls", Engineering Structures.
+K. Kolozvari, K. Kalbasi, K. Orakcal & J. W. Wallace, "Three-Dimensional Model for Nonlinear Analysis of Slender Flanged Reinforced Concrete Walls", Engineering Structures, `Volume 236, 1 June 2021, 112105 <https://doi.org/10.1016/j.engstruct.2021.112105>`_.
