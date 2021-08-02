@@ -33,6 +33,7 @@ The following subsections contain information about **$matType**
    uniaxialMaterials/RambergOsgoodSteel
    uniaxialMaterials/SteelMPF
    uniaxialMaterials/UVCuniaxial
+   uniaxialMaterials/SteelFractureDI
 
 
 #. Concrete Materials
