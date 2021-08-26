@@ -192,4 +192,5 @@ The following subsections contain information about **$eleType** and the number 
    elements/AC3D8
    elements/ASI3D8
    elements/AV3D4
+   elements/ASDEmbeddedNodeElement
 
