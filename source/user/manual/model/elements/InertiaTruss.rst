@@ -1,6 +1,6 @@
 .. _InertiaTruss:
 
-InertiaTruss element
+InertiaTruss
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct an InertiaTruss element object. 
