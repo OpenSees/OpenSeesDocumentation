@@ -100,6 +100,7 @@ uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
    uniaxialMaterials/QzSimple1
    uniaxialMaterials/PyLiq1
    uniaxialMaterials/TzLiq1
+   uniaxialMaterials/QzLiq1
    uniaxialMaterials/PySimple1Gen
    uniaxialMaterials/TzSimple1Gen
 

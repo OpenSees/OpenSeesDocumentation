@@ -45,7 +45,7 @@ POST-FRACTURE CONSTITUTIVE LAW
 
 SteelFractureDI model uses the post-fracture constitutive law schematically described in Figure 1. Figure 1a depicts the instant of fracture when the stress drops to zero and remains there as long as the strain is increasing to simulate the opening of the crack. To model the potential crack closing that could occur after reversing the strain, the post-fracture constitutive law assumes a smooth curvilinear transition towards compressive stresses. This transition is controlled by four transient variables: :math:`ϵ_r`, :math:`ϵ_0`, :math:`ϵ_1`, and :math:`σ_1`. :math:`ϵ_r` is the maximum strain value to develop compressive stresses, :math:`ϵ_0` is the strain value at full contact of the fracture surface, :math:`ϵ_1` is the theoretical yielding strain in compression, and :math:`σ_1` is the compressive stress associated with :math:`ϵ_1` in the yield surface. Figure 1b shows the transient variables immediately after fracture. The trajectory of the compressive stress is depicted with a curvilinear arrow pointing downward. Figure 1c shows that a small reversal of strain causes an elastic reduction of compressive stress. This elastic response is simulated by keeping the same value of the transient variables. When the compressive excursion is large enough to cause yielding in compression (Figure 1d), the reference points are updated as soon as the strain reverses towards unloading as depicted in Figure 1e. This update of the transient variables simulates the plastic deformations on the surface of the fractured flange; therefore, contact occurs at a different location. Figure 1f shows a subsequent cycle of the crack closing at the new location of the fracture surface using the updated transient variables.
 
-.. figure:: SteelFractureDI_postFrac.gif
+.. figure:: ./figures/SteelFractureDI_postFrac.gif
 	:align: center
 	:figclass: align-center	
 
@@ -53,7 +53,7 @@ FRACTURE CRITERION
 
 SteelFractureDI is equipped with a stress-based fracture criterion that explicitly captures the fatigue damage that is accumulated with repeated cycles and that ultimately causes fracture. This is done using a real-time fracture index (FI) that compares the effective cummulative stress demand and the cummulative stress capacity. The capacity is a fixed value calles $sigcr that can be calculated based on experimental data ([GalvisEtAl12022]_ presents equations for modeling welded flanges in steel beam-to-column connections). The demand correspond to the difference of the tensile and compressive excursions. The fracture criterion only considers large excursions, exceding $sigmin, to accumulate damage. Figure 2a shows an example stress history and a red bad to denote the portion of the excursions that are not considered in the FI calculation. Figure 2b shows the evolution of the FI for the stress history shown in Figure 2a. The FI function shows a monotonic increasing trend representing the damage caused by tensile excursions that is not healed by the subsequent compressive excursion. The higher-frequency spikes correspond to the recoverable damage when the stress reverses.
 
-.. figure:: steelFractureDI_FI_evol.gif
+.. figure:: ./figures/steelFractureDI_FI_evol.gif
 	:align: center
 	:figclass: align-center
 

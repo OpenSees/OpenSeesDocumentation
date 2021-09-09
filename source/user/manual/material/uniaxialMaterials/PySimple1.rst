@@ -60,12 +60,12 @@ The flexibility of the above equations can be used to approximate different p-y 
 
 Viscous damping on the far-field (elastic) component of the p-y material is included for approximating radiation damping. For implementation in OpenSees the viscous damper is placed across the entire material, but the viscous force is calculated as proportional to the component of velocity (or displacement) that developed in the far-field elastic component of the material. For example, this correctly causes the damper force to become zero during load increments across a fully formed gap. In addition, the total force across the p-y material is restricted to pult in magnitude so that the viscous damper cannot cause the total force to exceed the near-field soil capacity. Users should also be familiar with numerical oscillations that can develop in viscous damper forces under transient loading with certain solution algorithms and damping ratios. In general, an HHT algorithm is preferred over a Newmark algorithm for reducing such oscillations in materials like PySimple1.
 
-.. figure:: PySimple1A.gif
+.. figure:: figures/PySimple1A.gif
 	:align: center
 	:figclass: align-center
 
 
-.. figure:: PySimple1B.gif
+.. figure:: figures/PySimple1B.gif
 	:align: center
 	:figclass: align-center
 
@@ -90,8 +90,6 @@ Code Developed by: `Ross Boulanger <https://faculty.engineering.ucdavis.edu/boul
 
 
 .. [BoulangerEtAl1999] Boulanger, R. W., Curras, C. J., Kutter, B. L., Wilson, D. W., and Abghari, A. (1999). "Seismic soil-pile-structure interaction experiments and analyses." Journal of Geotechnical and Geoenvironmental Engineering, ASCE, 125(9): 750-759. Only minor changes have been made in its implementation for OpenSees.
-
-.. [BoulangerEtAl1990] Boulanger, R.W., Curras, C.J., Kutter, B.L., Wilson, D.W., and Abghari, A. (1990). "Seismic Soil-pile-strcture interaction experiments and analysis", Jornal of Geotechnical and Geoenvironmental Engineering, ASCS, 125(9):750-759.
 
 
 
