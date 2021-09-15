@@ -20,7 +20,7 @@ function:: element InertiaTruss $eleTag $iNode $jNode $mr
 
 The valid queries to an InertiaTruss element when creating an ElementRecorder object are 'force' and ‘relAccel’, which output the axial force or relative acceleration between two end-nodes in local coordinates (along the element)
 
-This element has been tested for modal analysis and nonlinear time history analysis
+This element has been tested for modal analysis and linear/nonlinear time history analysis
 
 .. admonition:: Example 
 
