@@ -14,13 +14,13 @@ This command is used to construct an InertiaTruss element object.
 
    $eleTag, |integer|,	unique element object tag
    $iNode $jNode, |integer|,  end nodes
-   $mr, |float|,     the inertanceor inertial mass of an Inertia Truss
+   $mr, |float|,     the inertance or inertial mass of an Inertia Truss
 
 .. note::
 
 The valid queries to an InertiaTruss element when creating an ElementRecorder object are 'force' and ‘relAccel’, which output the axial force or relative acceleration between two end-nodes in local coordinates (along the element)
 
-This element has been tested for modal analysis and linear/nonlinear time history analysis
+This element has been examined for modal analysis and linear/nonlinear time history analysis
 
 .. admonition:: Example 
 
