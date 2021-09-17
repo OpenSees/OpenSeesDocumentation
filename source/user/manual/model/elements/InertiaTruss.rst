@@ -6,7 +6,7 @@ InertiaTruss
 This command is used to construct an InertiaTruss element object. 
 
 
-function:: element InertiaTruss $eleTag $iNode $jNode $mr
+.. function:: element InertiaTruss $eleTag $iNode $jNode $mr
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
