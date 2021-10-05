@@ -86,6 +86,13 @@ Usage Notes
       
       Exploded-view: Boundary Type Codes for 2D (left) and 3D (right) problems.
 
+.. admonition:: Note 3
+   
+   | The element works in two stages.
+   | In **Stage 0**, the element acts as a fix condition, suitable for the first gravity analysis. It stores the reactions and automatically converts them into applied boundary forces when switching from **Stage 0** to **Stage 1**.
+   | In **Stage 1**, the is converted into the real absorbing elements, and the reactions of the previous constraint element are applied as external forces.
+   | The conversion from **Stage 0** to **Stage 1** can be done with the **setParameter** command (See Example)
+
 .. warning::
 
    * The boundary elements should be an extrusion of the sides of the main model along their outward normal vector.
