@@ -103,129 +103,150 @@ Usage Notes
 
    1. **Tcl Code**
 
+   | This is a small 2D example of a rectangular soil domain. The base input is a Ricker Wavelet.
+   | With these boundary elements you should be able to **1) enforce the free-field solution** on the soil domain and **2) absorb outgoing waves** generated when the primary wave hits the free-surface.
+   | This is the expected output: The blue line is the acceleration recorded at the base of the model. Point **A** and **B** represent respectively the wave entering the domain and the same wave exiting the domain after being reflected
+     by the free surface. Their peak value should be exactly 1g. The purple line is the acceleration recorded at the top of the model (on the free surface). Point **C** represents the wave hitting the free-surface. Its peak value should be exactly 2g.
+
+   .. figure:: ASDAbsorbingBoundary_result.png
+      :align: center
+      :figclass: align-center
+
    .. code-block:: tcl
 
-      # 2D problem with 2 DOFs on both the constrained node and the retained nodes
-      # The embedding domain is a 1x1 triangle, and the constrained node is placed at its centroid.
-      # Here we apply a random displacement on each retained node,
-      # and the displacement of the constrained node should be the weighted average 
-      # of the displacements at the 3 retained nodes, with an equal weight = 1/3.
+      # ===================================================
+      # User parameters
+      # ===================================================
+      # material parameters
+      set E 3000000000.0
+      set poiss 0.3
+      set rho 2100.0
+      set thickness 1.0
+      set G [expr $E/(2.0*(1.0+$poiss))]
+      # domain size
+      set Lx 260.0
+      set Ly 140.0
+      # mesh size
+      set hx 10.0
+      set hy 1.0
+      # time increment
+      set dt 0.001
+      # predominant frequency of the Ricker Wavelet
+      set freq 10.0
+      # total duration of the dynamic analysis
+      set duration 1.0
       
-      model basic -ndm 2 -ndf 2
+      # builder
+      model Basic -ndm 2 -ndf 2
       
-      # define the embedding domain (a piece of a soild domain)
-      node 1 0.0 0.0
-      node 2 1.0 0.0
-      node 3 0.0 1.0
+      # time series
+      # we want to apply a Ricker Wavelet with predominant frequency = 10 Hz.
+      # It should be applied as velocity
+      set pi [expr acos(-1.0)]
+      set wl [expr sqrt(3.0/2.0)/$pi/$freq*10.0]
+      set ndiv [expr int($wl/$dt)]
+      set dt [expr $wl/$ndiv.0]
+      set ts_vals {}
+      for {set i 0} {$i < $ndiv} {incr i} {
+          set ix [expr $i.0*$dt-$wl/2.0]
+          set iy [expr $ix*exp(-$pi*$pi*$freq*$freq*$ix*$ix)]
+          lappend ts_vals $iy
+      }
+      set tsX 1
+      timeSeries Path $tsX -dt $dt -values $ts_vals  -factor 9.806
       
-      # define the embedded node
-      node 4 [expr 1.0/3.0] [expr 1.0/3.0]
+      # material
+      set matTag 1
+      nDMaterial ElasticIsotropic $matTag $E $poiss $rho
       
-      # define constraint element
-      element ASDEmbeddedNodeElement 1   4   1 2 3   -K 1.0e6
-      
-      # apply random imposed displacement in range 0.1-1.0
-      set U1 [list [expr 0.1 + 0.9*rand()] [expr 0.1 + 0.9*rand()]]
-      set U2 [list [expr 0.1 + 0.9*rand()] [expr 0.1 + 0.9*rand()]]
-      set U3 [list [expr 0.1 + 0.9*rand()] [expr 0.1 + 0.9*rand()]]
-      puts "Applying random X displacement:\nU1: $U1\nU2: $U2\nU3: $U3\n\n"
-      timeSeries Constant 1
-      pattern Plain 1 1 {
-         for {set i 1} {$i < 3} {incr i} {
-            sp 1 $i [lindex $U1 [expr $i - 1]]
-            sp 2 $i [lindex $U2 [expr $i - 1]]
-            sp 3 $i [lindex $U3 [expr $i - 1]]
-         }
+      # Define nodes on a regular grid with sizes hx-hy.
+      # For a more clear visualization we set the size of the absorbing elements larger.
+      # (note: the size of this element does not influence the results. The only constraint is that it
+      # should have a non-zero size!)
+      set ndivx [expr int($Lx/$hx) + 2]; # add 2 layers of absorbing elements (left and right)
+      set ndivy [expr int($Ly/$hy) + 1]; # add 1 layer of absorbing elements (bottom)
+      set abs_h [expr $hx*2.0]
+      for {set j 0} {$j <= $ndivy} {incr j} {
+          if {$j == 0} {set y [expr -$abs_h]} else {set y [expr ($j-1) * $hy]}
+          for {set i 0} {$i <= [expr $ndivx]} {incr i} {
+              if {$i == 0} {set x [expr -$abs_h]} elseif {$i == [expr $ndivx]} {set x [expr $Lx+$abs_h]} else {set x [expr ($i-1) * $hx]}
+              node [expr $j*($ndivx+1)+$i+1] [expr $x-$Lx/2.0] $y
+          }
       }
       
-      # run analysis
+      # Define elements.
+      # Save absorbing elements tags in a list
+      set abs_elements {}
+      for {set j 0} {$j < $ndivy} {incr j} {
+          # Yflag
+          if {$j == 0} {set Yflag "B"} else {set Yflag ""}
+          for {set i 0} {$i < [expr $ndivx]} {incr i} {
+              # Tags
+              set Etag [expr $j*($ndivx)+$i+1]
+              set N1 [expr $j*($ndivx+1)+$i+1]
+              set N2 [expr $N1+1]
+              set N4 [expr ($j+1)*($ndivx+1)+$i+1]
+              set N3 [expr $N4+1]
+              # Xflag
+              if {$i == 0} {set Xflag "L"} elseif {$i == [expr $ndivx-1]} {set Xflag "R"} else {set Xflag ""}
+              set btype "$Xflag$Yflag"
+              if {$btype != ""} {
+                  # absorbing element
+                  lappend abs_elements $Etag
+                  if {$Yflag != ""} {
+                      # bottom element
+                      element ASDAbsorbingBoundary2D $Etag $N1 $N2 $N3 $N4 $G $poiss $rho $thickness $btype -fx $tsX
+                  } else {
+                      # vertical element
+                      element ASDAbsorbingBoundary2D $Etag $N1 $N2 $N3 $N4 $G $poiss $rho $thickness $btype
+                  }
+              } else {
+                  # soil element
+                  element quad $Etag $N1 $N2 $N3 $N4 $thickness PlaneStrain $matTag 0.0 0.0 0.0 [expr -9.806*$rho]
+              }
+          }
+      }
+      
+      # Static analysis (or quasti static)
+      # The absorbing boundaries now are in STAGE 0, so they act as constraints
       constraints Transformation
-      numberer Plain
-      system FullGeneral
-      test NormUnbalance 1e-08 10 1
-      algorithm Linear
+      numberer RCM
+      system UmfPack
+      test NormUnbalance 0.0001 10 1
+      algorithm Newton
       integrator LoadControl 1.0
       analysis Static
-      analyze 1
+      set ok [analyze 1]
+      if {$ok != 0} {
+          error "Gravity analysis failed"
+      }
+      loadConst -time 0.0
+      wipeAnalysis
       
-      # compute expected solution
-      set UCref [list [expr ([lindex $U1 0] + [lindex $U2 0] + [lindex $U3 0] )/3.0] [expr ([lindex $U1 1] + [lindex $U2 1] + [lindex $U3 1] )/3.0]]
-      puts "Expected displacement at constrained node is (U1+U2+U3)/3:\n$UCref\n\n"
+      # update absorbing elements to STAGE 1 (absorbing)
+      setParameter -val 1 -ele {*}$abs_elements stage
       
-      # read results
-      set UC [list {*}[nodeDisp 4]]
-      puts "Obtained displacement at constrained node is UC:\n$UC\n\n"
+      # recorders
+      set soil_base [expr 1*($ndivx+1)+int($ndivx/2)+1]
+      set soil_top [expr $ndivy*($ndivx+1)+int($ndivx/2)+1]
+      recorder Node -file "soil_base.txt" -time -node $soil_base -dof 1 accel
+      recorder Node -file "soil_top.txt" -time -node $soil_top -dof 1 accel
       
-      # check error
-      set ER [list [expr abs([lindex $UC 0] - [lindex $UCref 0])/[lindex $UCref 0]] [expr abs([lindex $UC 1] - [lindex $UCref 1])/[lindex $UCref 1]]]
-      puts "Relative error is abs(UC-UCref)/UCref:\n$ER\n\n"
-      
-
-   2. **Python Code**
-
-   .. code-block:: python
-
-      # 2D problem with 2 DOFs on both the constrained node and the retained nodes
-      # The embedding domain is a 1x1 triangle, and the constrained node is placed at its centroid.
-      # Here we apply a random displacement on each retained node,
-      # and the displacement of the constrained node should be the weighted average 
-      # of the displacements at the 3 retained nodes, with an equal weight = 1/3.
-      from opensees import *
-      from random import random as rand
-      
-      model('basic', '-ndm', 2, '-ndf', 2)
-      
-      # define the embedding domain (a piece of a soild domain)
-      node(1, 0.0, 0.0)
-      node(2, 1.0, 0.0)
-      node(3, 0.0, 1.0)
-      
-      # define the embedded node
-      node(4, 1.0/3.0, 1.0/3.0)
-      
-      # define constraint element
-      element('ASDEmbeddedNodeElement', 1,   4,   1, 2, 3,   '-K', 1.0e6)
-      
-      # apply random imposed displacement in range 0.1-1.0
-      U1 = [0.1 + 0.9*rand(), 0.1 + 0.9*rand()]
-      U2 = [0.1 + 0.9*rand(), 0.1 + 0.9*rand()]
-      U3 = [0.1 + 0.9*rand(), 0.1 + 0.9*rand()]
-      print('Applying random X displacement:\nU1: {}\nU2: {}\nU3: {}\n\n'.format(U1,U2,U3))
-      timeSeries('Constant', 1)
-      pattern('Plain', 1, 1)
-      for i in range(1, 3):
-         sp(1, i, U1[i - 1])
-         sp(2, i, U2[i - 1])
-         sp(3, i, U3[i - 1])
-      
-      
-      # run analysis
-      constraints('Transformation')
-      numberer('Plain')
-      system('FullGeneral')
-      test('NormUnbalance', 1e-08, 10, 1)
-      algorithm('Linear')
-      integrator('LoadControl', 1.0)
-      analysis('Static')
-      analyze(1)
-      
-      # compute expected solution
-      UCref = [
-         (U1[0] + U2[0] + U3[0])/3.0,
-         (U1[1] + U2[1] + U3[1])/3.0
-         ]
-      print('Expected displacement at constrained node is (U1+U2+U3)/3:\n{}\n\n'.format(UCref))
-      
-      # read results
-      UC = nodeDisp(4)
-      print('Obtained displacement at constrained node is UC:\n{}\n\n'.format(UC))
-      
-      # check error
-      ER = [
-         abs(UC[0] - UCref[0])/UCref[0],
-         abs(UC[1] - UCref[1])/UCref[1]
-         ]
-      print('Relative error is abs(UC-UCref)/UCref:\n{}\n\n'.format(ER))
+      # Dynamic analysis
+      # The absorbing boundaries now are in STAGE 0, so they act as constraints
+      constraints Transformation
+      numberer RCM
+      system UmfPack
+      test NormUnbalance 0.0001 10 1
+      algorithm Newton
+      integrator TRBDF2
+      analysis Transient
+      set nsteps [expr int($duration/$dt)]
+      set dt [expr $duration/$nsteps.0]
+      set ok [analyze $nsteps $dt]
+      if {$ok != 0} {
+          error "Dynamic analysis failed"
+      }
 
 Code Developed by: **Massimo Petracca** at ASDEA Software, Italy.
 
