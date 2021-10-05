@@ -45,7 +45,7 @@ Theory
 
     * **F**: The Free-Field element, required to compute the free-field solution in parallel with the main model.
     * **D**: The Lysmer-Kuhlemeyer dashpots, required to absorb outgoing waves.
-    * **T**: The boundary tractions trasferred from the Free-Field to the Soil domain, required to impose the free-field solution to the boundaries of the main model.
+    * **T**: The boundary tractions transferred from the Free-Field to the Soil domain, required to impose the free-field solution to the boundaries of the main model.
 
 .. figure:: ASDAbsorbingBoundary_Theory.png
    :align: center
