@@ -193,4 +193,5 @@ The following subsections contain information about **$eleType** and the number 
    elements/ASI3D8
    elements/AV3D4
    elements/ASDEmbeddedNodeElement
+   elements/ASDAbsorbingBoundary
 
