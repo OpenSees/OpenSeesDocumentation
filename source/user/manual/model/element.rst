@@ -37,6 +37,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/zeroLengthContactNTS2D
    elements/zeroLengthInterface2D
    elements/zeroLengthImpact3D 
+   elements/zeroLengthContactASDimplex
 
 2. Trusss Elements
 
