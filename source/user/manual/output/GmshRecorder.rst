@@ -49,4 +49,4 @@ The GMSH recorder type is a *whole model* recorder, that is it is meant to recor
 
    Execution results in the files ``results.mesh.0.msh`` (where mesh info is stored) and ``results.disp.0.msh`` (where displacement response at each node are stored). In gmsh, open first the `mesh` file and then merge the `disp` file into the current model to generate a post-processing view. 
 
-Code developed by: |jaabell| based on code by |mhscott| and |fmk|.
+Code developed by: |jaabell| based on code by |mhscott|, |zhuminjie| and |fmk|.
