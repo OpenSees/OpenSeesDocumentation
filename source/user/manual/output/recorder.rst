@@ -32,6 +32,13 @@ The type of recorder created and the additional arguments required depends on th
    PlotRecorder
    VTK
 
+.. toctree::
+   :caption: 4. Recorders for whole-model output
+   :maxdepth: 1
+
+   PVDRecorder
+   MPCORecorder
+   GmshRecorder
 
 .. note::
 
