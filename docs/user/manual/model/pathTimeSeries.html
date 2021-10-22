@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
@@ -88,7 +91,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
@@ -122,7 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
@@ -208,31 +211,31 @@
 <p>This command is used to construct a Path TimeSeries object. The relationship between load factor and time is input by the user as a series of discrete points in the 2d space (load factor, time). The input points can come from a file or from a list in the script. When the time specified does not match any of the input points, linear interpolation is used between points. There are many ways to specify the load path:</p>
 <p>For a load path where the factors are specified in a tcl list with a constant time interval between points:</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">timeSeries</span> <span class="pre">Path</span> <span class="pre">$tag</span> <span class="pre">-dt</span> <span class="pre">$dt</span> <span class="pre">-values</span> <span class="pre">{list_of_values}</span> <span class="pre">&lt;-factor</span> <span class="pre">$cFactor&gt;</span> <span class="pre">&lt;-useLast&gt;</span> <span class="pre">&lt;-prependZero&gt;</span> <span class="pre">&lt;-startTime</span> <span class="pre">$tStart&gt;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">timeSeries</span> <span class="pre">Path</span> <span class="pre">$tag</span> <span class="pre">-dt</span> <span class="pre">$dt</span> <span class="pre">-values</span> <span class="pre">{list_of_values}</span> <span class="pre">&lt;-factor</span> <span class="pre">$cFactor&gt;</span> <span class="pre">&lt;-useLast&gt;</span> <span class="pre">&lt;-prependZero&gt;</span> <span class="pre">&lt;-startTime</span> <span class="pre">$tStart&gt;</span></span></dt>
 <dd></dd></dl>
 
 <p>For a load path where the factors are specified in a file for a constant time interval between points:</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">timeSeries</span> <span class="pre">Path</span> <span class="pre">$tag</span> <span class="pre">-dt</span> <span class="pre">$dt</span> <span class="pre">-filePath</span> <span class="pre">$filePath</span> <span class="pre">&lt;-factor</span> <span class="pre">$cFactor&gt;</span> <span class="pre">&lt;-useLast&gt;</span> <span class="pre">&lt;-prependZero&gt;</span> <span class="pre">&lt;-startTime</span> <span class="pre">$tStart&gt;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">timeSeries</span> <span class="pre">Path</span> <span class="pre">$tag</span> <span class="pre">-dt</span> <span class="pre">$dt</span> <span class="pre">-filePath</span> <span class="pre">$filePath</span> <span class="pre">&lt;-factor</span> <span class="pre">$cFactor&gt;</span> <span class="pre">&lt;-useLast&gt;</span> <span class="pre">&lt;-prependZero&gt;</span> <span class="pre">&lt;-startTime</span> <span class="pre">$tStart&gt;</span></span></dt>
 <dd></dd></dl>
 
 <p>For a load path where the values are specified at non-constant time intervals:</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">timeSeries</span> <span class="pre">Path</span> <span class="pre">$tag</span> <span class="pre">-time</span> <span class="pre">{list_of_times}</span> <span class="pre">-values</span> <span class="pre">{list_of_values}</span> <span class="pre">&lt;-factor</span> <span class="pre">$cFactor&gt;</span> <span class="pre">&lt;-useLast&gt;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">timeSeries</span> <span class="pre">Path</span> <span class="pre">$tag</span> <span class="pre">-time</span> <span class="pre">{list_of_times}</span> <span class="pre">-values</span> <span class="pre">{list_of_values}</span> <span class="pre">&lt;-factor</span> <span class="pre">$cFactor&gt;</span> <span class="pre">&lt;-useLast&gt;</span></span></dt>
 <dd></dd></dl>
 
 <p>For a load path where both time and values are specified in a list included in the command</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">timeSeries</span> <span class="pre">Path</span> <span class="pre">$tag</span> <span class="pre">-fileTime</span> <span class="pre">$fileTime</span> <span class="pre">-filePath</span> <span class="pre">$filePath</span> <span class="pre">&lt;-factor</span> <span class="pre">$cFactor&gt;</span> <span class="pre">&lt;-useLast&gt;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">timeSeries</span> <span class="pre">Path</span> <span class="pre">$tag</span> <span class="pre">-fileTime</span> <span class="pre">$fileTime</span> <span class="pre">-filePath</span> <span class="pre">$filePath</span> <span class="pre">&lt;-factor</span> <span class="pre">$cFactor&gt;</span> <span class="pre">&lt;-useLast&gt;</span></span></dt>
 <dd></dd></dl>
 
 <div class="admonition-example admonition">
 <p class="admonition-title">EXAMPLE:</p>
-<p>timeSeries Path 1 -dT 0.02 -filePath A-ELC270.AT2 -factor $G</p>
+<p>timeSeries Path 1 -dt 0.02 -filePath A-ELC270.AT2 -factor $G</p>
 <p>timeSeries Path 2 -time {0.0 0.2 0.4 1.0} -values {0.0 1.0 2.0 0.0}</p>
 </div>
 <p>Code developed by: <strong>fmk</strong></p>

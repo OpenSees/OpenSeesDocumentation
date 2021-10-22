@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.3.5. Gradient Inelastic (GI) Beam-Column Element &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.3.6. Gradient Inelastic (GI) Beam-Column Element &mdash; OpenSees Documentation  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
@@ -39,8 +42,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.3.6. ASDShellQ4 Element" href="ASDShellQ4.html" />
-    <link rel="prev" title="3.1.3.4. Elastic Beam Column Element" href="elasticBeamColumn.html" /> 
+    <link rel="next" title="3.1.3.7. Displacement-Based Beam Element (Asymmetric Sections)" href="dispBeamColumnAsym.html" />
+    <link rel="prev" title="3.1.3.5. Elastic Beam Column Element" href="elasticBeamColumn.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,7 +91,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
@@ -100,14 +103,19 @@
 <li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.3.1. ZeroLength Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.3.2. ZeroLength Section Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.3.3. ZeroLengthND Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.3.4. Elastic Beam Column Element</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.5. Gradient Inelastic (GI) Beam-Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.3.6. ASDShellQ4 Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.3.7. Quadrilateral Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.3.8. SSPquad Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.9. stdBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.10. bbarBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.11. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.3.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.3.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.3.7. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.3.8. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.3.9. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.3.10. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.3.11. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.12. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.13. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.15. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
@@ -126,7 +134,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
@@ -188,7 +196,7 @@
         
           <li><a href="../element.html"><span class="section-number">3.1.3. </span>Element Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.3.5. </span>Gradient Inelastic (GI) Beam-Column Element</li>
+      <li><span class="section-number">3.1.3.6. </span>Gradient Inelastic (GI) Beam-Column Element</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -208,15 +216,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gradient-inelastic-gi-beam-column-element">
-<span id="gradientinelasticbeamcolumn"></span><h1><span class="section-number">3.1.3.5. </span>Gradient Inelastic (GI) Beam-Column Element<a class="headerlink" href="#gradient-inelastic-gi-beam-column-element" title="Permalink to this headline">¶</a></h1>
+<span id="gradientinelasticbeamcolumn"></span><h1><span class="section-number">3.1.3.6. </span>Gradient Inelastic (GI) Beam-Column Element<a class="headerlink" href="#gradient-inelastic-gi-beam-column-element" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a <strong>gradientInelasticBeamColumn</strong> element object, which is based on a <strong>force/flexibility-based (FB) gradient inelastic (GI) element formulation</strong> with an iterative solution algorithm. The GI element formulation is based on the GI beam theory, which eliminates the strain localization and response objectivity problems by utilizing a set of gradient-based nonlocality relations that ensure the continuity of section strains (e.g., curvature) over the element length, upon the occurrence of softening at any section. The GI element does not necessitate any certain form of constitutive relations and permits users to use the same constitutive relations used in conventional FB element formulations. Moreover, the number of integration points in the GI element is not fixed and it could produce section strain (e.g., curvature) distributions with high resolutions.</p>
 <p>From the user’s perspective, the gradientInelasticBeamColumn element has similar input to other force-based fiber elements’ and the only additional parameter that this element requires is a characteristic length, <em>lc</em>, which controls the spread of plasticity/damage in the vicinity of a softening location. In the simulation of RC beams/columns, this parameter can be taken equal to the plastic hinge length. If <em>lc</em> equals zero, the GI beam element formulation turns into a conventional FB element formulation (i.e., as if the classical beam theory is used).</p>
 <p>For more information about the GI element formulation, please refer to this <a class="reference external" href="https://www.linkedin.com/feed/update/urn:li:activity:6712087651564044288/">post</a> and the references at the end of this page.</p>
 <p><strong>TCL ELEMENT COMMAND</strong></p>
 <p>For both 2D and 3D problems:</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">element</span>&#160; <span class="pre">gradientInelasticBeamColumn</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">$numIntgrPts</span> <span class="pre">$endSecTag1</span> <span class="pre">$intSecTag</span> <span class="pre">$endSecTag2</span> <span class="pre">$lambda1</span> <span class="pre">$lambda2</span> <span class="pre">$lc</span> <span class="pre">$transfTag</span> <span class="pre">&lt;-integration</span> <span class="pre">integrType&gt;</span> <span class="pre">&lt;-iter</span> <span class="pre">$maxIter</span> <span class="pre">$minTol</span> <span class="pre">$maxTol&gt;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span>&#160; <span class="pre">gradientInelasticBeamColumn</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">$numIntgrPts</span> <span class="pre">$endSecTag1</span> <span class="pre">$intSecTag</span> <span class="pre">$endSecTag2</span> <span class="pre">$lambda1</span> <span class="pre">$lambda2</span> <span class="pre">$lc</span> <span class="pre">$transfTag</span> <span class="pre">&lt;-integration</span> <span class="pre">integrType&gt;</span> <span class="pre">&lt;-iter</span> <span class="pre">$maxIter</span> <span class="pre">$minTol</span> <span class="pre">$maxTol&gt;</span></span></dt>
 <dd></dd></dl>
 
 <p>The required arguments are:</p>
@@ -325,13 +333,13 @@
 </table>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/GI_Fig1.png"><img alt="../../../../_images/GI_Fig1.png" src="../../../../_images/GI_Fig1.png" style="width: 325.5px; height: 169.5px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.1 </span><span class="caption-text">Fig. 1: Assignment of pre-defined sections to integration points at different parts of element</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.2 </span><span class="caption-text">Fig. 1: Assignment of pre-defined sections to integration points at different parts of element</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>PYTHON ELEMENT COMMAND</strong></p>
 <p>For both 2D and 3D problems:</p>
 <dl class="py function">
-<dt id="element">
-<code class="sig-name descname"><span class="pre">element</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">'gradientInelasticBeamColumn'</span></em>, <em class="sig-param"><span class="pre">$eleTag</span></em>, <em class="sig-param"><span class="pre">$iNode</span></em>, <em class="sig-param"><span class="pre">$jNode</span></em>, <em class="sig-param"><span class="pre">$transfTag</span></em>, <em class="sig-param"><span class="pre">$integrTag</span></em>, <em class="sig-param"><span class="pre">$lc</span></em>, <em class="sig-param"><span class="pre">'-iter'</span></em>, <em class="sig-param"><span class="pre">$maxIter</span></em>, <em class="sig-param"><span class="pre">$minTol</span></em>, <em class="sig-param"><span class="pre">$maxTol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="element">
+<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">'gradientInelasticBeamColumn'</span></em>, <em class="sig-param"><span class="pre">$eleTag</span></em>, <em class="sig-param"><span class="pre">$iNode</span></em>, <em class="sig-param"><span class="pre">$jNode</span></em>, <em class="sig-param"><span class="pre">$transfTag</span></em>, <em class="sig-param"><span class="pre">$integrTag</span></em>, <em class="sig-param"><span class="pre">$lc</span></em>, <em class="sig-param"><span class="pre">'-iter'</span></em>, <em class="sig-param"><span class="pre">$maxIter</span></em>, <em class="sig-param"><span class="pre">$minTol</span></em>, <em class="sig-param"><span class="pre">$maxTol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>The required arguments are:</p>
@@ -445,7 +453,7 @@
 </ul>
 <div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../../../../_images/GI_Fig2.png"><img alt="../../../../_images/GI_Fig2.png" src="../../../../_images/GI_Fig2.png" style="width: 984.8000000000001px; height: 412.8px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.2 </span><span class="caption-text">Fig. 2:  GI element application example</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.3 </span><span class="caption-text">Fig. 2:  GI element application example</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-python-example admonition">
 <p class="admonition-title"><strong>PYTHON EXAMPLE</strong></p>
