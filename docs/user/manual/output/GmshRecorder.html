@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4.2. nDMaterial Command &mdash; OpenSees Documentation  documentation</title>
+  <title>3.3.1.6. GMSH Recorder &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -42,8 +42,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.4.2.1. Elastic Isotropic Material" href="ndMaterials/ElasticIsotropic.html" />
-    <link rel="prev" title="3.4.1.10. QzLiq1 Material" href="uniaxialMaterials/QzLiq1.html" /> 
+    <link rel="next" title="3.4. Material Commands" href="../materialCommands.html" />
+    <link rel="prev" title="3.3.1.5. MPCO Recorder" href="MPCORecorder.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,27 +98,19 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.2. nDMaterial Command</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/ElasticIsotropic.html">3.4.2.1. Elastic Isotropic Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/ElasticOrthotropic.html">3.4.2.2. Elastic Orthotropic Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/J2Plasticity.html">3.4.2.3. J2 Plasticity Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/DruckerPrager.html">3.4.2.4. Drucker Prager Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/ManzariDafalias.html">3.4.2.5. Manzari Dafalias Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/BoundingCamClay.html">3.4.2.6. Bounding Cam Clay</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/PM4Sand.html">3.4.2.7. PM4Sand Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/PM4Silt.html">3.4.2.8. PM4Silt Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/PressureIndependentMultiYield.html">3.4.2.9. Pressure Independent Multi Yield</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/J2CyclicBoundingSurface.html">3.4.2.11. J2CyclicBoundingSurface Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ndMaterials/SAniSandMS.html">3.4.2.12. SAniSandMS Material</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="recorder.html">3.3.1. recorder Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="NodeRecorder.html">3.3.1.1. Node Recorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EnvelopeNodeRecorder.html">3.3.1.2. Envelope Node Recorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElementRecorder.html">3.3.1.3. Element Recorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVDRecorder.html">3.3.1.4. PVD Recorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MPCORecorder.html">3.3.1.5. MPCO Recorder</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.1.6. GMSH Recorder</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="section.html">3.4.3. section Command</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </li>
@@ -184,15 +176,17 @@
         
           <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+          <li><a href="../outputCommands.html"><span class="section-number">3.3. </span>Output Commands</a> &raquo;</li>
         
-      <li><span class="section-number">3.4.2. </span>nDMaterial Command</li>
+          <li><a href="recorder.html"><span class="section-number">3.3.1. </span>recorder Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.3.1.6. </span>GMSH Recorder</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/user/manual/material/ndMaterial.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/user/manual/output/GmshRecorder.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -205,12 +199,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ndmaterial-command">
-<span id="ndmaterial"></span><h1><span class="section-number">3.4.2. </span>nDMaterial Command<a class="headerlink" href="#ndmaterial-command" title="Permalink to this headline">¶</a></h1>
-<p>This command is used to construct an NDMaterial object which represents the stress-strain relationship at the gauss-point of a continuum element.</p>
+  <div class="section" id="gmsh-recorder">
+<span id="gmshrecorder"></span><h1><span class="section-number">3.3.1.6. </span>GMSH Recorder<a class="headerlink" href="#gmsh-recorder" title="Permalink to this headline">¶</a></h1>
+<p>The GMSH recorder type is a <em>whole model</em> recorder, that is it is meant to record all the model geometry and metadata along with selecetd response quantities. The output of this recorder is in the <code class="docutils literal notranslate"><span class="pre">.msh</span></code> file format (legacy version 2) which can be visualized with the <a class="reference external" href="https://gmsh.info/">gmsh</a> program. This recorder is enabled for use in parallel model (both OpenSeesMP and OpenSeesSP works).</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">nDMaterial</span> <span class="pre">$matType</span> <span class="pre">$matTag</span> <span class="pre">$matArgs</span></span></dt>
+<span class="sig-name descname"><span class="pre">recorder</span> <span class="pre">gmsh</span> <span class="pre">$fileBaseName</span> <span class="pre">$respType</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -226,75 +220,52 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>$matType</p></td>
+<tr class="row-even"><td><p>$fileBaseName</p></td>
 <td><p><em>string</em></p></td>
-<td><p>material type</p></td>
+<td><p>base-name of file to which output is sent (see note 1)</p></td>
 </tr>
-<tr class="row-odd"><td><p>$matTag</p></td>
-<td><p><em>integer</em></p></td>
-<td><p>unique material tag.</p></td>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><p>$matArgs</p></td>
-<td><p><em>list</em></p></td>
-<td><p>a list of material arguments with number dependent on material type</p></td>
+<tr class="row-even"><td><p>$respType</p></td>
+<td><p><em>string</em></p></td>
+<td><p>a string indicating response requested</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The valid queries to any uniaxial material when creating an ElementRecorder are ‘strain’, and ‘stress’. Some materials have additional queries to which they will respond. These are documented in the NOTES section for those materials.</p>
+<ol class="arabic simple">
+<li><p>This recorder writes several files readable by gmsh. The files are named using the convention be name <code class="docutils literal notranslate"><span class="pre">$fileBaseName.$respType.$rank.msh</span></code> where <code class="docutils literal notranslate"><span class="pre">$rank</span></code> is the MPI rank of current processor (always 0 in sequential mode, differs in parallel mode). The mesh information is always outputted (during the first write operation only, typically the first time-step) and stored in the file with name: <code class="docutils literal notranslate"><span class="pre">$fileBaseName.mesh.$rank.msh</span></code>.</p></li>
+<li><p>The valid strings for respType are:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>disp
+vel
+accel
+partition
+eleResponse
+</pre></div>
 </div>
-<p>The following contain information about matType? and the args required for each of the available material types:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/ElasticIsotropic.html">3.4.2.1. Elastic Isotropic Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/ElasticOrthotropic.html">3.4.2.2. Elastic Orthotropic Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/J2Plasticity.html">3.4.2.3. J2 Plasticity Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/DruckerPrager.html">3.4.2.4. Drucker Prager Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/ManzariDafalias.html">3.4.2.5. Manzari Dafalias Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/BoundingCamClay.html">3.4.2.6. Bounding Cam Clay</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/PM4Sand.html">3.4.2.7. PM4Sand Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/PM4Silt.html">3.4.2.8. PM4Silt Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/PressureIndependentMultiYield.html">3.4.2.9. Pressure Independent Multi Yield</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/J2CyclicBoundingSurface.html">3.4.2.11. J2CyclicBoundingSurface Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ndMaterials/SAniSandMS.html">3.4.2.12. SAniSandMS Material</a></li>
-</ul>
+<p>Note the response type <code class="docutils literal notranslate"><span class="pre">partition</span></code> is unique to this recorder type and it contains information on the partition each element was assigned (useful in parallel processing to check model partitioning).</p>
+<ol class="arabic" start="3">
+<li><div class="line-block">
+<div class="line">The function returns a value:</div>
+<div class="line">SUCCESS: <strong>&gt;0</strong> an integer tag that can be used as a handle on the recorder for the remove a recorder in the <span class="xref std std-ref">remove</span>.</div>
+<div class="line">FAILURE: <strong>-1</strong> recorder command failed (read the log)</div>
 </div>
-<p>Concrete Damage Model
-Plane Stress Material
-Plane Strain Material
-Multi Axial Cyclic Plasticity
-Plate Fiber Material
-Plane Stress Concrete Materials
-FSAM - 2D RC Panel Constitutive Behavior
-Tsinghua Sand Models
-CycLiqCP Material (Cyclic ElasticPlasticity)
-CycLiqCPSP Material
-Manzari Dafalias Material
-Stress Density Material
-Materials for Modeling Concrete Walls
-PlaneStressUserMaterial
-PlateFromPlaneStress
-PlateRebar
-LayeredShell
-Contact Materials for 2D and 3D
-ContactMaterial2D
-ContactMaterial3D
-Wrapper material for Initial State Analysis
-InitialStateAnalysisWrapper
-UC San Diego soil models (Linear/Nonlinear, dry/drained/undrained soil response under general 2D/3D static/cyclic loading conditions (please visit UCSD for examples)
-PressureIndependMultiYield Material
-PressureDependMultiYield Material
-PressureDependMultiYield02 Material
-PressureDependMultiYield03 Material
-UC San Diego Saturated Undrained soil
-FluidSolidPorousMaterial
-Misc.
-AcousticMedium
-Steel &amp; Reinforcing-Steel Materials
-UVCmultiaxial (Updated Voce-Chaboche)
-UVCplanestress (Updated Voce-Chaboche)</p>
+</li>
+</ol>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example:</p>
+<p>The following examples demonstrate the use of the gmsh recorder command to store displacement results</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> gmsh results disp
+</pre></div>
+</div>
+<p>Execution results in the files <code class="docutils literal notranslate"><span class="pre">results.mesh.0.msh</span></code> (where mesh info is stored) and <code class="docutils literal notranslate"><span class="pre">results.disp.0.msh</span></code> (where displacement response at each node are stored). In gmsh, open first the <cite>mesh</cite> file and then merge the <cite>disp</cite> file into the current model to generate a post-processing view.</p>
+</div>
+<p>Code developed by: <a href="#id1"><span class="problematic" id="id2">|jaabell|</span></a> based on code by <a href="#id3"><span class="problematic" id="id4">|mhscott|</span></a>, <a href="#id5"><span class="problematic" id="id6">|zhuminjie|</span></a> and <strong>fmk</strong>.</p>
 </div>
 
 
