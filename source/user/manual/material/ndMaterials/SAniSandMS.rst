@@ -3,7 +3,7 @@
 SAniSandMS Material
 ^^^^^^^^^^^^^^^^^^^
 
-Code Developed by: Haoyuan Liu (TUDelft), José A. Abell (UANDES, Chile), and Federico Pisaniò (TU Delft)
+Code Developed by: Haoyuan Liu (TUDelft), `José A. Abell <http://www.joseabell.com>`_ (UANDES, Chile), and Federico Pisanò (TU Delft)
 
 This command is used to construct a multi-dimensional [SAniSandMS]_ material, which is an extension of the Manzari-Dafalias (SAniSand) model to account for ratcheting effects using the memory-surface (MS) concept. This allows capturing the ratcheting effects in sands that occur in high-cyclic loading in the presence of a static stress field or in the case of assymetric loading. 
 
@@ -53,6 +53,17 @@ This command is used to construct a multi-dimensional [SAniSandMS]_ material, wh
    :align: center
    :width: 640px
    :figclass: align-center
+
+
+**Citation information. ** If you use SAniSandMS in your published research work, please cite [SAniSandMS]_ and also inform (jaabell *at* miuandes *dot* cl, to update the list of published artciles and works that use the code).
+
+Please report bugs as an issue on the main OpenSees repositoy and tag ``@jaabell`` 
+
+`<https://github.com/jaabell>`_
+
+`<http://www.joseabell.com>`_
+
+
 
 .. note::
 
@@ -107,4 +118,8 @@ This command is used to construct a multi-dimensional [SAniSandMS]_ material, wh
       :width: 600px
       :figclass: align-center
 
+List of works using SAniSandMS
+
 .. [SAniSandMS] Haoyuan Liu, Andrea Diambra, José Antonio Abell, Federico Pisanò. Memory-enhanced plasticity modelling of sand behaviour under undrained cyclic loading. Journal of Geotechnical and Geoenvironmental Engineering, Vol. 146, Issue 11 (November 2020)
+
+Haoyuan Liu, Evangelos Kementzetzidis, José Antonio Abell, Federico Pisanò From cyclic sand ratcheting to tilt accumulation in offshore monopiles: 3D FE modelling using SANISAND-MS. Géotechnique. Online March 8, 2021 (Ahead of print)
