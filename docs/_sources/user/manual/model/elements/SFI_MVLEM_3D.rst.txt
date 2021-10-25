@@ -14,6 +14,8 @@ Description
 
 The SFI-MVLEM-3D model (Figure 1a) is a three-dimensional four-node element with 24 DOFs that incorporates axial-flexural-shear interaction and can be used for nonlinear analysis of non-rectangular reinforced concrete walls subjected to multidirectional loading. The SFI-MVLEM-3D model is an extension of the two-dimensional, two-node Shear-Flexure-Interaction Multiple-Vertical-Line-Element-Model (`SFI-MVLEM <https://opensees.berkeley.edu/wiki/index.php/SFI_MVLEM_-_Cyclic_Shear-Flexure_Interaction_Model_for_RC_Walls>`_). The baseline SFI-MVLEM, which is essentially a line element for rectangular walls subjected to in-plane loading, is extended in this study to a three-dimensional model formulation by applying geometric transformation of the element degrees of freedom that converted it into a four-node element formulation (Figure 1b), as well as by incorporating linear elastic out-of-plane behavior based on the Kirchhoff plate theory (Figure 1c). The in-plane and the out-of-plane element behaviors are uncoupled in the present model.
 
+For additional information please visit `SFI-MVLEM-3D GitHub Page <https://github.com/kkolozvari/SFI-MVLEM-3D>`_.
+
 This element shall be used in Domain defined with **-ndm 3 -ndf 6**.
 
 .. figure:: SFI_MVLEM_3D_formulation.jpg
@@ -58,6 +60,11 @@ The following recorders are available with the SFI-MVLEM-3D element.
    ShearDef, Element deformation
    RCPanel $fibTag $Response, Returns RC panel (macro-fiber) $Response for a $fibTag-th panel (1 ≤ fibTag ≤ m). For available $Response-s refer to nDMaterial (`FSAM <https://opensees.berkeley.edu/wiki/index.php/FSAM_-_2D_RC_Panel_Constitutive_Behavior>`_)
 
+OpenSeesPy Documentation
+########################
+
+OpenSeesPy user documetation for the SFI_MVLEM_3D element can be accessed from `HERE <https://openseespydoc.readthedocs.io/en/latest/src/SFI_MVLEM_3D.html>`_.
+
 Example
 #######
 
@@ -88,5 +95,6 @@ Side-by-side comparison of the analytically-obtained vertical strains (Figure 4a
 References
 ##########
 
-K. Kolozvari, K. Kalbasi, K. Orakcal & J. W. Wallace (under review), "Three-dimensional shear-flexure interaction model for analysis of non-planar reinforced concrete walls", Journal of Building Engineering.
-K. Kolozvari, K. Kalbasi, K. Orakcal, L. M. Massone & J. W. Wallace (2019), "Shear–flexure-interaction models for planar and flanged reinforced concrete walls", Bulletin of Eathquake Engineering, 17, pages 6391–6417. (`link <https://link.springer.com/article/10.1007/s10518-019-00658-5>`_).
+K. Kolozvari, K. Kalbasi, K. Orakcal & J. W. Wallace (2021), "Three-dimensional shear-flexure interaction model for analysis of non-planar reinforced concrete walls", Journal of Building Engineering, Vol. 44, 102946. (`link <https://www.sciencedirect.com/science/article/pii/S2352710221008044>`_).
+
+K. Kolozvari, K. Kalbasi, K. Orakcal, L. M. Massone & J. W. Wallace (2019), "Shear–flexure-interaction models for planar and flanged reinforced concrete walls", Bulletin of Eathquake Engineering, Vol. 17, pages 6391–6417. (`link <https://link.springer.com/article/10.1007/s10518-019-00658-5>`_).

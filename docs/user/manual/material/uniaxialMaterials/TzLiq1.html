@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.4.1.9. TzLiq1 Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.4.1.10. QzLiq1 Material" href="QzLiq1.html" />
+    <link rel="prev" title="3.4.1.8. PyLiq1 Material" href="PyLiq1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.4.1.1. Steel01 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.4.1.2. Steel02 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.4.1.3. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.4.1.4. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.4.1.5. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.4.1.6. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.4.1.7. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.4.1.8. PyLiq1 Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.9. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.4.1.10. QzLiq1 Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+        
+          <li><a href="../uniaxialMaterial.html"><span class="section-number">3.4.1. </span>uniaxialMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4.1.9. </span>TzLiq1 Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/TzLiq1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tzliq1-material">
+<span id="tzliq1"></span><h1><span class="section-number">3.4.1.9. </span>TzLiq1 Material<a class="headerlink" href="#tzliq1-material" title="Permalink to this headline">¶</a></h1>
+<p>The command constructs a uniaxial t-z material that incorporates liquefaction effects. This t-z material is used with a zeroLength element to connect a pile (beam-column element) to a 2 D plane-strain FE mesh. The t-z material obtains the average mean effective stress (which decreases with increasing excess pore pressure) from two specified soil elements. Currently, the implementation requires that the specified soil elements consist of FluidSolidPorousMaterials in FourNodeQuad elements.</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">TzLiq1</span> <span class="pre">$matTag</span> <span class="pre">$soilType</span> <span class="pre">$tult</span> <span class="pre">$Z50</span> <span class="pre">&lt;$c&gt;</span> <span class="pre">$ele1</span> <span class="pre">$ele2</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">TzLiq1</span> <span class="pre">$matTag</span> <span class="pre">$soilType</span> <span class="pre">$tult</span> <span class="pre">$Z50</span> <span class="pre">&lt;$c&gt;</span> <span class="pre">-timeSeries</span> <span class="pre">$tag</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>integer tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$soilType</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>= 1 or 2. (see notes of <a class="reference internal" href="TzSimple1.html#tzsimple1"><span class="std std-ref">TzSimple1 Material</span></a>)</p></td>
+</tr>
+<tr class="row-even"><td><p>$tult</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Ultimate capacity of the t-z material.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Z50</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Displacement at which 50% of tult is mobilized in monotonic loading.</p></td>
+</tr>
+<tr class="row-even"><td><p>$c</p></td>
+<td><p><em>float</em></p></td>
+<td><p>The viscous damping term (dashpot).</p></td>
+</tr>
+<tr class="row-odd"><td><p>$ele1 $ele2</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>are the eleTag (element numbers) for the two solid elements from which TzLiq1 will obtain mean effective stresses and excess pore pressures.</p></td>
+</tr>
+<tr class="row-even"><td><p>$seriesTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>alternatively mean effective stress can be supplied by a time series  by specifying the text string -timeSeries and the tag of the series $seriesTag. (see <a class="reference internal" href="../../model/timeSeries.html#timeseries"><span class="std std-ref">Time Series Command</span></a>)</p></td>
+</tr>
+</tbody>
+</table>
+<p>To model the effects of liquefaction with TzLiq1, it is necessary to use the material stage updating command:</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">updateMaterialStage</span>&#160; <span class="pre">–material</span> <span class="pre">matNum</span>&#160; <span class="pre">–stage</span> <span class="pre">sNum</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matNum</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>material number (for TzLiq1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>$sNum</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>desired stage (valid values are 0 &amp; 1).</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With sNum=0, the TzLiq1 behavior will be independent of any pore pressure in the specified solidElem’s.</p>
+<p>When updateMaterialStage first sets sNum=1, TzLiq1 will obtain the average mean effective stress in the two solidElem’s and treat it as the initial consolidation stress prior to undrained loading. Thereafter, the behavior of TzLiq1 will depend on the mean effective stresses (and hence excess pore pressures) in the solidElem’s.</p>
+<p>The default value of sNum is 0 (i.e., sNum=0 if updateMaterialStage is not called).</p>
+<p>Note that the updateMaterialStage command is used with some soil material models, and that sNum=0 generally corresponds to the application of gravity loads (e.g., elastic behavior with no excess pore pressure development) and sNum=1 generally corresponds to undrained loading (e.g., plastic behavior with excess pore pressure development).</p>
+<p>Also refer to the notes of <a class="reference internal" href="TzSimple1.html#tzsimple1"><span class="std std-ref">TzSimple1 Material</span></a></p>
+</div>
+<p>TzLiq1 inherits TzSimple1 and modifies its response based on the mean effective stresses (and hence excess pore pressures) in the specified solid soil elements. The logic and implementation are the same as for how <a class="reference internal" href="PyLiq1.html#pyliq1"><span class="std std-ref">PyLiq1 Material</span></a> inherits and modifies <a class="reference internal" href="PySimple1.html#pysimple1"><span class="std std-ref">PySimple1 Material</span></a>.</p>
+<p>The constitutive response of TzLiq1 is taken as the constitutive response of <a class="reference internal" href="TzSimple1.html#tzsimple1"><span class="std std-ref">TzSimple1 Material</span></a> scaled in proportion to the mean effective stress within the specified solid soil elements or defined by the time series data. This means that the ultimate capacity (tult) and tangent modulus are scaled by a factor of (1-<span class="math notranslate nohighlight">\(r_u\)</span>). The TzLiq1 material behaves identically to the TzSimple1 material if there is no excess pore water pressure (i.e., sNum = 0 or <span class="math notranslate nohighlight">\(r_u=0\)</span>). The behaviour of Tzliq1 material in presense of excess pore pressure in soil is shown in <a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a>. Another example illustrating the use of TzLiq1 material for modeling shaft capacity in liquefiable soils is presented in <a class="reference internal" href="QzLiq1.html#figure-tzqzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.9</span></a> of <a class="reference internal" href="QzLiq1.html#qzliq1"><span class="std std-ref">QzLiq1 Material</span></a>.</p>
+<div class="align-center figure" id="id1">
+<span id="figure-tzliqmaterialresponse"></span><a class="reference internal image-reference" href="../../../../_images/TZLiqMaterialResponse.gif"><img alt="../../../../_images/TZLiqMaterialResponse.gif" src="../../../../_images/TZLiqMaterialResponse.gif" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.7 </span><span class="caption-text">TZLiq material response “with <span class="math notranslate nohighlight">\(r_u\)</span>” and “no <span class="math notranslate nohighlight">\(r_u\)</span>” effect during Case 1: cyclic loading and Case 2: monotonic loading.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-example-1-tzliq-material-response-with-math-r-u-and-no-math-r-u-effect-during-cyclic-and-monotonic-loading-download-tzliqexample-1-py-figures-tzliqexample-1-py-download-tzliqexample-2-py-figures-tzliqexample-2-py admonition">
+<p class="admonition-title">Example 1 : TZLiq Material Response “with <span class="math notranslate nohighlight">\(r_u\)</span>” and “no <span class="math notranslate nohighlight">\(r_u\)</span>” effect during cyclic and monotonic loading |  <a class="reference download internal" download="" href="../../../../_downloads/4a15c2b553255c7be7c536269946767e/TZLiqExample_1.py"><code class="xref download docutils literal notranslate"><span class="pre">TZLiqExample_1.py</span></code></a>  <a class="reference download internal" download="" href="../../../../_downloads/d3560034c7e9d55e9df5ef267165eec7/TZLiqExample_2.py"><code class="xref download docutils literal notranslate"><span class="pre">TZLiqExample_2.py</span></code></a></p>
+<p><a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> shows the material response of TZLiq1 spring in the presence of excess pore pressure in the soil. The model consisted of a movable pile node and a fixed soil node. The excess pore pressure ratio <span class="math notranslate nohighlight">\(r_u\)</span> calculated from the mean effective stress applied to the TZLiq spring is shown in <a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> (a). Two separate cases (Case 1 and Case 2) were analyzed to illustrate the behavior of TZLiq spring for cyclic and monotonic loading in liquifiable soils. The displacements were applied on the pile, and the response of the TZLiq spring was recorded.</p>
+<p>In Case 1, cyclic loading was applied to the TZLiq spring [<a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> (b)]. The response of the TZLiq spring was recorded for two scenarios: “no <span class="math notranslate nohighlight">\(r_u\)</span>” and “with <span class="math notranslate nohighlight">\(r_u\)</span>” effect. In the first scenario, “no <span class="math notranslate nohighlight">\(r_u\)</span> effect”, the TZLiq spring behaved independently of excess pore presses in soil (i.e, sNum=0). As expected, the cyclic behavior of TZLiq material was similar to the TZSimple material showing no effect of excess pore pressure on the capacity and stiffness of the spring [<a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> (c)]. In the second scenario, “with <span class="math notranslate nohighlight">\(r_u\)</span> effect”, the TZLiq material response was affected by the presence of excess pore pressure in the soil. To model this scenario, the sNum in the material update command was set to 1. The response is shown in <a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> (c). As excess pore pressure (or <span class="math notranslate nohighlight">\(r_u\)</span>) increased in soil, the capacity and stiffness of the TZLiq spring decreased. In the first cycle, at about <span class="math notranslate nohighlight">\(t \approx 2 sec\)</span>, with excess pore pressure ratio of <span class="math notranslate nohighlight">\(r_u \approx 0.1\)</span> and <span class="math notranslate nohighlight">\(z/z_{50} \approx 20\)</span>, the ultimate capacity of the TZLiq spring decreased to about <span class="math notranslate nohighlight">\(90 \% t_{ult}\)</span>. In the second cycle, at about <span class="math notranslate nohighlight">\(t \approx 8.5 sec\)</span>, with increased excess pore pressure ratio of <span class="math notranslate nohighlight">\(r_u \approx 0.5\)</span> and <span class="math notranslate nohighlight">\(z/z_{50} \approx 20\)</span>, the mobilized resistance of the TZLiq spring decreased to about <span class="math notranslate nohighlight">\(50 \% t_{ult}\)</span> which is equal to <span class="math notranslate nohighlight">\(50 \%\)</span> of the corresponding mobilized resistance for the case of “no <span class="math notranslate nohighlight">\(r_u\)</span> effect” [<a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> (c)]. When the soil nearly liquefied <span class="math notranslate nohighlight">\(r_u\geq0.95\)</span>, the QZLiq capacity and stiffness approached zero.</p>
+<p>In Case 2, a monotonic loading was applied to the TZLiq spring [<a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> (d)]. The response of the TZLiq spring was again recorded for two scenarios: “no <span class="math notranslate nohighlight">\(r_u\)</span>” and “with <span class="math notranslate nohighlight">\(r_u\)</span>” effect. In the first scenario, “no <span class="math notranslate nohighlight">\(r_u\)</span> effect”, the TZLiq spring behaved independently of excess pore presses in soil (i.e, sNum=0). As expected, as displacement increased the mobilized force on the TZLiq spring increased until the full capacity was mobilized (i.e., <span class="math notranslate nohighlight">\(t/t_{ult}=1\)</span>) [<a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> (d)]. In the second scenario, “with <span class="math notranslate nohighlight">\(r_u\)</span> effect”, the TZLiq material response was affected by the excess pore pressure ratio <span class="math notranslate nohighlight">\(r_u\)</span> in soil. While the relative movement of the pile node always increased, the mobilized shaft resistance <span class="math notranslate nohighlight">\(t/t_{ult}\)</span> showed a cyclic response <a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> (e)] because of the cyclic nature of the applied excess pore pressures [<a class="reference internal" href="#figure-tzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.7</span></a> (a)]. When the excess pore pressures increased, softening occurred, resulting in the decrease of mobilized shaft resistance. However, when excess pore pressures decreased, hardening occurred, and the mobilized shaft resistance increased.</p>
+</div>
+<p>The following constructs a TzSimple material with tag <strong>1</strong>, soil type <strong>2</strong>, <span class="math notranslate nohighlight">\(t_{ult}\)</span> of <strong>100.0</strong> and a <span class="math notranslate nohighlight">\(Z_{50}\)</span> of <strong>1e-5</strong>. The viscous daming term c is set to be <strong>0.0</strong> and the mean effective stress is supplied by the timeseries tag 1.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> TzLiq1 <span class="mi">1</span>  <span class="mi">2</span>  <span class="mf">100.0</span>  <span class="mi">1</span>e-5 <span class="mf">0.0</span> <span class="o">-</span>timeSeries <span class="mi">1</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;TzLiq1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;-timeSeries&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Code Developed by: <a class="reference external" href="https://faculty.engineering.ucdavis.edu/boulanger/">Ross Boulanger</a>, UC Davis</p>
+<dl class="citation">
+<dt class="label" id="boulangeretal1999"><span class="brackets">BoulangerEtAl1999</span></dt>
+<dd><p>Boulanger, R. W., Curras, C. J., Kutter, B. L., Wilson, D. W., and Abghari, A. (1999). “Seismic soil-pile-structure interaction experiments and analyses.” Journal of Geotechnical and Geoenvironmental Engineering, ASCE, 125(9): 750-759.</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

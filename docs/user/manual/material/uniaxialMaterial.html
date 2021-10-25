@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
@@ -88,7 +91,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
@@ -100,10 +103,14 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.1. uniaxialMaterial Command</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/Steel01.html">3.4.1.1. Steel01 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/Steel02.html">3.4.1.2. Steel02 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/HystereticPoly.html">3.4.1.3. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/PySimple1.html">3.4.1.4. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/TzSimple1.html">3.4.1.5. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/QzSimple1.html">3.4.1.6. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/SteelFractureDI.html">3.4.1.3. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/HystereticPoly.html">3.4.1.4. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/PySimple1.html">3.4.1.5. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/TzSimple1.html">3.4.1.6. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/QzSimple1.html">3.4.1.7. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/PyLiq1.html">3.4.1.8. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/TzLiq1.html">3.4.1.9. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uniaxialMaterials/QzLiq1.html">3.4.1.10. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="ndMaterial.html">3.4.2. nDMaterial Command</a></li>
@@ -117,7 +124,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
@@ -201,8 +208,8 @@
 <p>This command is used to construct a uniaxial material, which provides a uniaxial stress-strain (or force-deformation) relationships.
 .</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">$matType</span> <span class="pre">$matTag</span> <span class="pre">$matArgs</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">$matType</span> <span class="pre">$matTag</span> <span class="pre">$matArgs</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -240,6 +247,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/Steel01.html">3.4.1.1. Steel01 Material</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/Steel02.html">3.4.1.2. Steel02 Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/SteelFractureDI.html">3.4.1.3. SteelFractureDI Material</a></li>
 </ul>
 </div>
 <p>#. Concrete Materials
@@ -290,7 +298,7 @@ uniaxialMaterials/BoucWen
 uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/HystereticPoly.html">3.4.1.3. HystereticPoly Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/HystereticPoly.html">3.4.1.4. HystereticPoly Material</a></li>
 </ul>
 </div>
 <ol class="arabic simple">
@@ -298,9 +306,12 @@ uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)</p>
 </ol>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/PySimple1.html">3.4.1.4. PySimple1 Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/TzSimple1.html">3.4.1.5. TzSimple1 Material</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/QzSimple1.html">3.4.1.6. QzSimple1 Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/PySimple1.html">3.4.1.5. PySimple1 Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/TzSimple1.html">3.4.1.6. TzSimple1 Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/QzSimple1.html">3.4.1.7. QzSimple1 Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/PyLiq1.html">3.4.1.8. PyLiq1 Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/TzLiq1.html">3.4.1.9. TzLiq1 Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uniaxialMaterials/QzLiq1.html">3.4.1.10. QzLiq1 Material</a></li>
 </ul>
 </div>
 </div>

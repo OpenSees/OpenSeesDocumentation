@@ -28,7 +28,7 @@ The equations describing HystereticPoly behavior are described in [VaianaEtAl201
 
 The model may reproduce either force-displacement or stress-strain relationships. It is formulated by means of two asymptotic lines (blue) linked by transition curves (red):
 
-.. figure:: HystereticPoly01.gif
+.. figure:: figures/HystereticPoly01.gif
 	:align: center
 	:figclass: align-center
 
@@ -42,13 +42,13 @@ Where :math:`\bar{f}` is the value at which the asymptotic line crosses the vert
 
 In general, $alpha= :math:`\alpha` influences the amplitude of the loop:
 
-.. figure:: HystereticPoly02.gif
+.. figure:: figures/HystereticPoly02.gif
 	:align: center
 	:figclass: align-center
 
 while parameters $beta1 and $beta2 modify the shape of the loop:
 
-.. figure:: HystereticPoly03.gif
+.. figure:: figures/HystereticPoly03.gif
 	:align: center
 	:figclass: align-center
 

@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.4.1.3. SteelFractureDI Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.4.1.4. HystereticPoly Material" href="HystereticPoly.html" />
+    <link rel="prev" title="3.4.1.2. Steel02 Material" href="Steel02.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.4.1.1. Steel01 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.4.1.2. Steel02 Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.3. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.4.1.4. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.4.1.5. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.4.1.6. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.4.1.7. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.4.1.8. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.4.1.9. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.4.1.10. QzLiq1 Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+        
+          <li><a href="../uniaxialMaterial.html"><span class="section-number">3.4.1. </span>uniaxialMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4.1.3. </span>SteelFractureDI Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/SteelFractureDI.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="steelfracturedi-material">
+<span id="steelfracturedi"></span><h1><span class="section-number">3.4.1.3. </span>SteelFractureDI Material<a class="headerlink" href="#steelfracturedi-material" title="Permalink to this headline">¶</a></h1>
+<p>This command is used to construct a uniaxial Giuffre-Menegotto-Pinto steel material object similar to Steel02 but equipped with a real-time stress-based fracture criterion and a post-fracture constitutive law to simulate the behavior of steel flates after fracture.</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">SteelFractureDI</span> <span class="pre">$matTag</span> <span class="pre">$Fy</span> <span class="pre">$E</span> <span class="pre">$b</span> <span class="pre">$R0</span> <span class="pre">$cR1</span> <span class="pre">$cR2</span> <span class="pre">$a1</span> <span class="pre">$a2</span> <span class="pre">$a3</span> <span class="pre">$a4</span> <span class="pre">$sigcr</span> <span class="pre">$beta</span> <span class="pre">$sigmin</span> <span class="pre">$FI_lim</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>integer tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Fy</p></td>
+<td><p><em>float</em></p></td>
+<td><p>yield strength</p></td>
+</tr>
+<tr class="row-even"><td><p>$E0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>initial elastic tangent</p></td>
+</tr>
+<tr class="row-odd"><td><p>$b</p></td>
+<td><p><em>float</em></p></td>
+<td><p>strain-hardening ratio (ratio between post-yield tangent and initial elastic tangent)</p></td>
+</tr>
+<tr class="row-even"><td><p>R0 $CR1 $CR2</p></td>
+<td><p>3 <em>float</em></p></td>
+<td><p>parameters to control the transition from elastic to plastic branches.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$a1</p></td>
+<td><p><em>float</em></p></td>
+<td><p>isotropic hardening parameter. (optional: default = 0.0). see Steel02 documentation.</p></td>
+</tr>
+<tr class="row-even"><td><p>$a2</p></td>
+<td><p><em>float</em></p></td>
+<td><p>isotropic hardening parameter (optional: default = 1.0). see Steel02 documentation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$a3</p></td>
+<td><p><em>float</em></p></td>
+<td><p>isotropic hardening parameter. (optional: default = 0.0). see Steel02 documentation.</p></td>
+</tr>
+<tr class="row-even"><td><p>$a4</p></td>
+<td><p><em>float</em></p></td>
+<td><p>isotropic hardening parameter. (optional: default = 1.0). see Steel02 documentation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$sigInit</p></td>
+<td><p><em>float</em></p></td>
+<td><p>critical stress for fracture criterion</p></td>
+</tr>
+<tr class="row-even"><td><p>$beta</p></td>
+<td><p><em>float</em></p></td>
+<td><p>asymmetry factor for fracture criterion. See notes</p></td>
+</tr>
+<tr class="row-odd"><td><p>$sigmin</p></td>
+<td><p><em>float</em></p></td>
+<td><p>minimum stress to accumulate damage in the frature index calculation. See notes</p></td>
+</tr>
+<tr class="row-even"><td><p>$FI_lim</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Limit of the fracture index to trigger fracture. See notes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>$beta = 0 Ignores any reduction in the fracture index from compressive excursions.</p>
+<p>$beta = 1 Maximum reduction in the fracture index from compressive excursions.</p>
+<p>$sigmin: any stress with an absolute value below sigmin will be ignored when computing the fracture index. $sigmin is analogous to the endurance limit in classical fatigue-fracture theory.</p>
+<p>$FI_lim: The material calculates a fracture index (FI) at every load increment and when that value exceeds $FI_lim, any tensile capacity drops to zero and the response of the material corresponds to the post-fracture constitutive law.</p>
+<p>Recommended values for steel behavior: $R0=between 10 and 20, $cR1=0.925, $cR2=0.15, $a1=0.08, $a2=1.00, $a3=0.08, $a4=1.00</p>
+<p>Recommended values for fracture criterion (calibrated only to welded flanges in beam-to-column connections): $sigcr=compute based on material toughness (CVN), weld defect size (a0), and plate size (see <a class="reference internal" href="#galvisetal12022" id="id1"><span>[GalvisEtAl12022]</span></a> for equations), $beta=0.8 for pre-Northridge bottom flange or $beta=0.5 otherwise, $sigmin=0.4Fy_basemetal, and $FI_lim=1.0. The aleatory uncertainty in fracture prediction can be included by sampling the value of $FI_lim from a lognormal or Weibull distribution with median=1.0 and COV=0.25 for pre-Northridge connections and COV=0.35 for post-Northridge connections.</p>
+</div>
+<p>POST-FRACTURE CONSTITUTIVE LAW</p>
+<p>SteelFractureDI model uses the post-fracture constitutive law schematically described in Figure 1. Figure 1a depicts the instant of fracture when the stress drops to zero and remains there as long as the strain is increasing to simulate the opening of the crack. To model the potential crack closing that could occur after reversing the strain, the post-fracture constitutive law assumes a smooth curvilinear transition towards compressive stresses. This transition is controlled by four transient variables: <span class="math notranslate nohighlight">\(ϵ_r\)</span>, <span class="math notranslate nohighlight">\(ϵ_0\)</span>, <span class="math notranslate nohighlight">\(ϵ_1\)</span>, and <span class="math notranslate nohighlight">\(σ_1\)</span>. <span class="math notranslate nohighlight">\(ϵ_r\)</span> is the maximum strain value to develop compressive stresses, <span class="math notranslate nohighlight">\(ϵ_0\)</span> is the strain value at full contact of the fracture surface, <span class="math notranslate nohighlight">\(ϵ_1\)</span> is the theoretical yielding strain in compression, and <span class="math notranslate nohighlight">\(σ_1\)</span> is the compressive stress associated with <span class="math notranslate nohighlight">\(ϵ_1\)</span> in the yield surface. Figure 1b shows the transient variables immediately after fracture. The trajectory of the compressive stress is depicted with a curvilinear arrow pointing downward. Figure 1c shows that a small reversal of strain causes an elastic reduction of compressive stress. This elastic response is simulated by keeping the same value of the transient variables. When the compressive excursion is large enough to cause yielding in compression (Figure 1d), the reference points are updated as soon as the strain reverses towards unloading as depicted in Figure 1e. This update of the transient variables simulates the plastic deformations on the surface of the fractured flange; therefore, contact occurs at a different location. Figure 1f shows a subsequent cycle of the crack closing at the new location of the fracture surface using the updated transient variables.</p>
+<div class="align-center figure">
+<img alt="../../../../_images/SteelFractureDI_postFrac.gif" src="../../../../_images/SteelFractureDI_postFrac.gif" />
+</div>
+<p>FRACTURE CRITERION</p>
+<p>SteelFractureDI is equipped with a stress-based fracture criterion that explicitly captures the fatigue damage that is accumulated with repeated cycles and that ultimately causes fracture. This is done using a real-time fracture index (FI) that compares the effective cummulative stress demand and the cummulative stress capacity. The capacity is a fixed value calles $sigcr that can be calculated based on experimental data (<a class="reference internal" href="#galvisetal12022" id="id2"><span>[GalvisEtAl12022]</span></a> presents equations for modeling welded flanges in steel beam-to-column connections). The demand correspond to the difference of the tensile and compressive excursions. The fracture criterion only considers large excursions, exceding $sigmin, to accumulate damage. Figure 2a shows an example stress history and a red bad to denote the portion of the excursions that are not considered in the FI calculation. Figure 2b shows the evolution of the FI for the stress history shown in Figure 2a. The FI function shows a monotonic increasing trend representing the damage caused by tensile excursions that is not healed by the subsequent compressive excursion. The higher-frequency spikes correspond to the recoverable damage when the stress reverses.</p>
+<div class="align-center figure">
+<img alt="../../../../_images/steelFractureDI_FI_evol.gif" src="../../../../_images/steelFractureDI_FI_evol.gif" />
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>The following is used to construct a SteelFractureDI material with a tag of <strong>1</strong>, a yield strength of <strong>60.0</strong>, an initial tangent stiffness, E, of <strong>30000,0</strong>, a strain-hardening ratio of <strong>0.02</strong>, a sigma critical of <strong>120</strong>, an asymmetry factor of <strong>0.8</strong>, a minimum stress for damage accumulation of <strong>20.0</strong>, and a fracture index limit for fracture of <strong>1.00</strong>.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> SteelFractureDI <span class="mf">60.0</span> <span class="mf">30000.0</span> <span class="mf">0.02</span> <span class="mf">20.0</span> .925 .15 <span class="mf">0.08</span> <span class="mf">1.00</span> <span class="mf">0.08</span> <span class="mf">1.00</span> <span class="mi">120</span> <span class="mf">0.8</span> <span class="mi">20</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;SteelFractureDI&#39;</span><span class="p">,</span><span class="mf">60.0</span><span class="p">,</span><span class="mf">30000.0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">.925</span><span class="p">,</span> <span class="mf">.15</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="citation">
+<dt class="label" id="galvisetal12022"><span class="brackets">GalvisEtAl12022</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Galvis, F. A., Deierlein, G. G., Yen, W. Y., Molina Hutt, C. (2022). “Fracture-Mechanics Based Material Model for Fiber Simulation of Flange Fractures in Steel Moment Frame Connections”. Journal of Structural Engineering, ASCE [in review].</p>
+</dd>
+</dl>
+<p>Code Developed by: <a href="#id3"><span class="problematic" id="id4">|Francisco A. Galvis|</span></a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.3.4. ZeroLengthContactASDimplex Element &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.3.5. Elastic Beam Column Element" href="elasticBeamColumn.html" />
+    <link rel="prev" title="3.1.3.3. ZeroLengthND Element" href="zeroLengthND.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. Model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.3. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.3.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.3.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.3.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.3.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.3.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.3.7. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.3.8. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.3.9. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.3.10. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.3.11. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.12. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.13. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.15. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.6. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.7. Pattern Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+        
+          <li><a href="../element.html"><span class="section-number">3.1.3. </span>Element Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.3.4. </span>ZeroLengthContactASDimplex Element</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/model/elements/zeroLengthContactASDimplex.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="zerolengthcontactasdimplex-element">
+<span id="zerolengthcontactasdimplex"></span><h1><span class="section-number">3.1.3.4. </span>ZeroLengthContactASDimplex Element<a class="headerlink" href="#zerolengthcontactasdimplex-element" title="Permalink to this headline">¶</a></h1>
+<p>This command is used to construct zeroLengthContactASDimplex element object. The zeroLengthContactASDimplex element is a 2-node zeroLength contact element with the following features:</p>
+<ol class="arabic simple">
+<li><p>It is a penalty-based frictional contact element following the Mohr-Coulomb criterion.</p></li>
+<li><p>It can use a standard Backward-Euler integration scheme, or an IMPL-EX integration scheme. The IMPL-EX integration performs a linear extrapolation of the internal variables during the global newton iterations. In this way the element depends only linearly on the trial strain. In the commit stage, instead, a standard implicit computation is performed to partially correct the error generated by the explicit computation. For more details, please refer to <a class="reference internal" href="#oliveretal" id="id1"><span>[OliverEtAl]</span></a>.</p></li>
+<li><p>It can be used in both 2D and 3D problems.</p></li>
+<li><p>This element supports both 2 and 3 DOFs in 2D problems, and both 3,4 and 6 DOFs in 3D problems.</p></li>
+<li><p>The two nodes can have different DOFs, so this element can be easily used to connect different elements (Solids (3 DOFs) to Beams/Shells (6 DOFs) or UP-Solids (4 DOFs).</p></li>
+<li><p>It can be arbitrarily oriented in space, using a user-defined contact vector. If not specified, the global X axis is considered as contact vector.</p></li>
+</ol>
+<div class="align-center figure" id="id2">
+<img alt="../../../../_images/ZeroLengthContactASDimplex.png" src="../../../../_images/ZeroLengthContactASDimplex.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1 </span><span class="caption-text">Nodes and contact direction</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">ZeroLengthContactASDimplex</span> <span class="pre">$eleTag</span> <span class="pre">$n1</span> <span class="pre">$n2</span> <span class="pre">$Kn</span> <span class="pre">$Kt</span> <span class="pre">$mu</span> <span class="pre">&lt;-orient</span> <span class="pre">$nx</span> <span class="pre">$ny</span> <span class="pre">$nz&gt;</span> <span class="pre">&lt;-intType</span> <span class="pre">$type&gt;</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$eleTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>unique integer tag identifying element object</p></td>
+</tr>
+<tr class="row-odd"><td><p>$n1 $n2</p></td>
+<td><p>2 <em>integer</em></p></td>
+<td><p>the two nodes defining the element</p></td>
+</tr>
+<tr class="row-even"><td><p>$Kn</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Penalty stiffness for normal contact</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Kt</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Penalty stiffness for tangential contact</p></td>
+</tr>
+<tr class="row-even"><td><p>$mu</p></td>
+<td><p><em>float</em></p></td>
+<td><p>friction coefficient = tan(Phi) where Phi is the angle of internal friction</p></td>
+</tr>
+<tr class="row-odd"><td><p>-orient</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag, if provided, the user should specify the 3 components of the normal contact vector. If not provided the global X axis is used</p></td>
+</tr>
+<tr class="row-even"><td><p>$nx $ny $nz</p></td>
+<td><p><em>float</em></p></td>
+<td><p>the 3 components of the normal contact vector. Note that also for 2D problems all 3 components should be provided (the 3rd one must be zero)</p></td>
+</tr>
+<tr class="row-odd"><td><p>-intType</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag, if provided, the user can specify the integration scheme. If not provided the default implicit scheme is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>$type</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>the integration scheme: 0 = implicit (default), 1 = IMPL-EX</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><strong>Tcl Code</strong></p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c">## model</span>
+<span class="nv">model</span> basic <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
+
+<span class="c"># nodes</span>
+<span class="nv">node</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="nv">node</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">0</span>
+
+<span class="c"># a linear time series</span>
+<span class="nv">timeSeries</span> Linear <span class="mi">1</span>
+
+<span class="c"># contact element</span>
+<span class="k">set</span> Kn <span class="mf">1.0</span>e10
+<span class="k">set</span> Kt <span class="mf">100.0</span>
+<span class="k">set</span> mu <span class="mf">0.5</span>
+<span class="nv">element</span> zeroLengthContactASDimplex <span class="mi">1</span>   <span class="mi">1</span> <span class="mi">2</span>   <span class="nv">$Kn</span> <span class="nv">$Kt</span> <span class="nv">$mu</span> <span class="o">-</span>orient <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+
+<span class="c"># initial fixities</span>
+<span class="nv">fix</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">0</span>
+
+<span class="c"># set normal force = -10</span>
+<span class="k">set</span> N <span class="o">-</span><span class="mf">10.0</span>
+<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
+  <span class="nb">load</span> <span class="mi">2</span> <span class="mf">0.0</span> <span class="nv">$N</span>
+<span class="k">}</span>
+<span class="nv">constraints</span> Transformation
+<span class="nv">numberer</span> Plain
+<span class="nv">system</span> FullGeneral
+<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-6 <span class="mi">10</span> <span class="mi">0</span>
+<span class="nv">algorithm</span> Newton
+<span class="nv">integrator</span> LoadControl <span class="mf">1.0</span>
+<span class="nv">analysis</span> Static
+<span class="nv">analyze</span> <span class="mi">1</span>
+<span class="nv">loadConst</span> <span class="o">-</span>time <span class="mf">0.0</span>
+
+<span class="c"># remove horizontal constraint</span>
+<span class="nv">remove</span> sp <span class="mi">2</span> <span class="mi">1</span>
+
+<span class="c"># apply an horizontal imposed displacement = 1</span>
+<span class="nv">pattern</span> Plain <span class="mi">2</span> <span class="mi">1</span> <span class="k">{</span>
+  <span class="nv">sp</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mf">1.0</span>
+<span class="k">}</span>
+<span class="nv">constraints</span> Transformation
+<span class="nv">numberer</span> Plain
+<span class="nv">system</span> FullGeneral
+<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-6 <span class="mi">10</span> <span class="mi">0</span>
+<span class="nv">algorithm</span> Newton
+<span class="nv">integrator</span> LoadControl <span class="mf">0.01</span>
+<span class="nv">analysis</span> Static
+<span class="nv">analyze</span> <span class="mi">100</span>
+
+<span class="c"># check results</span>
+<span class="nv">reactions</span>
+<span class="k">set</span> reference <span class="k">[expr</span> abs<span class="k">(</span><span class="nv">$N</span><span class="o">*</span><span class="nv">$mu</span><span class="k">)]</span>
+<span class="k">set</span> RFx <span class="k">[expr</span> abs<span class="k">([</span><span class="nv">nodeReaction</span> <span class="mi">2</span> <span class="mi">1</span><span class="k">])]</span>
+<span class="k">set</span> err <span class="k">[expr</span> abs<span class="k">(</span><span class="nv">$RFx-$reference</span><span class="k">)</span><span class="o">/</span><span class="nv">$reference</span><span class="k">]</span>
+<span class="nb">puts</span> <span class="s2">&quot;Expected X force: $reference&quot;</span>
+<span class="nb">puts</span> <span class="s2">&quot;Obtained X force: $RFx&quot;</span>
+<span class="nb">puts</span> <span class="s2">&quot;Relative Error: [expr $err*100.0] %&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Code Developed by: <strong>Onur Deniz Akan</strong> at IUSS, Italy &amp; <strong>Massimo Petracca</strong> at ASDEA Software, Italy.</p>
+<dl class="citation">
+<dt class="label" id="oliveretal"><span class="brackets"><a class="fn-backref" href="#id1">OliverEtAl</a></span></dt>
+<dd><div class="line-block">
+<div class="line">Oliver, Javier, Alfredo Edmundo Huespe, and J. C. Cante. “An implicit/explicit integration scheme to increase computability of non-linear material and contact/friction problems.” Computer Methods in Applied Mechanics and Engineering 197.21-24 (2008): 1865-1889. (<a class="reference external" href="https://upcommons.upc.edu/bitstream/handle/2117/185752/2019_J_ENG_MECH_Titscher_IMPL-EX.pdf?sequence=1">Link to article</a>)</div>
+</div>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

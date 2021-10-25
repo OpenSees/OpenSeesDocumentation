@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
@@ -86,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
@@ -95,7 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
@@ -183,10 +186,11 @@
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The SFI-MVLEM-3D model (Figure 1a) is a three-dimensional four-node element with 24 DOFs that incorporates axial-flexural-shear interaction and can be used for nonlinear analysis of non-rectangular reinforced concrete walls subjected to multidirectional loading. The SFI-MVLEM-3D model is an extension of the two-dimensional, two-node Shear-Flexure-Interaction Multiple-Vertical-Line-Element-Model (<a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/SFI_MVLEM_-_Cyclic_Shear-Flexure_Interaction_Model_for_RC_Walls">SFI-MVLEM</a>). The baseline SFI-MVLEM, which is essentially a line element for rectangular walls subjected to in-plane loading, is extended in this study to a three-dimensional model formulation by applying geometric transformation of the element degrees of freedom that converted it into a four-node element formulation (Figure 1b), as well as by incorporating linear elastic out-of-plane behavior based on the Kirchhoff plate theory (Figure 1c). The in-plane and the out-of-plane element behaviors are uncoupled in the present model.</p>
+<p>For additional information please visit <a class="reference external" href="https://github.com/kkolozvari/SFI-MVLEM-3D">SFI-MVLEM-3D GitHub Page</a>.</p>
 <p>This element shall be used in Domain defined with <strong>-ndm 3 -ndf 6</strong>.</p>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id3">
 <img alt="../../../../_images/SFI_MVLEM_3D_formulation.jpg" src="../../../../_images/SFI_MVLEM_3D_formulation.jpg" />
-<p class="caption"><span class="caption-text"><strong>Figure 1: SFI-MVLEM-3D Element Formulation</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Figure 1: SFI-MVLEM-3D Element Formulation</strong></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="input-parameters">
@@ -280,28 +284,36 @@
 </tbody>
 </table>
 </div>
+<div class="section" id="openseespy-documentation">
+<h2>OpenSeesPy Documentation<a class="headerlink" href="#openseespy-documentation" title="Permalink to this headline">¶</a></h2>
+<p>OpenSeesPy user documetation for the SFI_MVLEM_3D element can be accessed from <a class="reference external" href="https://openseespydoc.readthedocs.io/en/latest/src/SFI_MVLEM_3D.html">HERE</a>.</p>
+</div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>Specimen TUC (Constantin 2016) is analyzed using the SFI-MVLEM-3D. Figure 2a shows the photo of the test specimen and the multidirectional displacement pattern applied at the top of the wall, while Figure 2b-c show the SFI-MVLEM-3D model of specimen TUC.</p>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id4">
 <img alt="../../../../_images/SFI_MVLEM_3D_TUC_model.jpg" src="../../../../_images/SFI_MVLEM_3D_TUC_model.jpg" />
-<p class="caption"><span class="caption-text"><strong>Figure 2: SFI-MVLEM-3D Model of Specimen TUB</strong></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Figure 2: SFI-MVLEM-3D Model of Specimen TUB</strong></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Figure 3 compares measured and simulated load-deformation responses for specimen TUC in E-W (Figure 3a) and N-S (Figure 3b) directions, as well as for diagonal cycles between positions E-F (Figure 3c) and G-H (Figure 3d). As results comparisons illustrate, the SFI-MVLEM-3D predicts well the overall strength and stiffness of the wall for loading cycles in E-W (Figure 3a) and N-S (Figure 3b) directions where the behavior of the specimen was primarily in the linear elastic range since the maximum magnitude of displacements applied at the top of the wall corresponded to a drift level of only 1.0%. For diagonal cycles (Figure 3c and Figure 3d), the model slightly overestimates the initial stiffness of the specimens, but accurately captures the overall SRSS lateral load resisted by the specimen, with the only exception that the lateral load is overestimated during the last loading cycles corresponding to the largest drift of 2.5%. The cyclic stiffness and pinching characteristics of the wall are well-predicted by the model.</p>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id5">
 <img alt="../../../../_images/SFI_MVLEM_3D_TUC_results_LD.jpg" src="../../../../_images/SFI_MVLEM_3D_TUC_results_LD.jpg" />
-<p class="caption"><span class="caption-text"><strong>Figure 3: Experimental vs. SFI-MVLEM-3D Load-Deformation Response of Specimen TUB</strong></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Figure 3: Experimental vs. SFI-MVLEM-3D Load-Deformation Response of Specimen TUB</strong></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Side-by-side comparison of the analytically-obtained vertical strains (Figure 4a-c.1) and shear stresses along wall base (Figure 4a-c.2) demonstrates the capability of the model to capture the interaction between the axial tensile/compressive strains (and resulting stresses) and the in-plane shear stresses developing in the panel-fibers of the SFI-MVLEM-3D elements. Results presented in Figure 4 clearly illustrate that for each of the loading positions, the majority of the shear force demand imposed at the wall is resisted by the regions (panel-fibers) that are subjected to axial compression, while little-to-no shear stress occurs in the panel-fibers subjected to tension. Commonly used fiber-based models that treat axial/flexural and shear behaviors as uncoupled (e.g., displacement based element in OpenSees, shear wall element in Perform 3D) cannot capture this highly non-uniform distribution of shear demands across the wall cross-section and may be subject to considerable bias in predicting shear demands developing in the piers (flanges, web) of non-planar walls subjected to multi-directional seismic actions.</p>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id6">
 <img alt="../../../../_images/SFI_MVLEM_3D_TUC_results_strain_stress.jpg" src="../../../../_images/SFI_MVLEM_3D_TUC_results_strain_stress.jpg" />
-<p class="caption"><span class="caption-text"><strong>Figure 4: Vertical strains (1) and shear stresses (2) at the base of wall specimen TUC at: a) Position E, b) Position G, and c) Position C. Positive (compressive) strains are shown at the outer face of the wall; negative (tensile) strains are plotted at the inner face of the wall. A magnitude scale for strains or stresses is provided in the upper left corner of each plot</strong></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Figure 4: Vertical strains (1) and shear stresses (2) at the base of wall specimen TUC at: a) Position E, b) Position G, and c) Position C. Positive (compressive) strains are shown at the outer face of the wall; negative (tensile) strains are plotted at the inner face of the wall. A magnitude scale for strains or stresses is provided in the upper left corner of each plot</strong></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p>K. Kolozvari, K. Kalbasi, K. Orakcal &amp; J. W. Wallace (under review), “Three-dimensional shear-flexure interaction model for analysis of non-planar reinforced concrete walls”, Journal of Building Engineering.
-K. Kolozvari, K. Kalbasi, K. Orakcal, L. M. Massone &amp; J. W. Wallace (2019), “Shear–flexure-interaction models for planar and flanged reinforced concrete walls”, Bulletin of Eathquake Engineering, 17, pages 6391–6417. (<a class="reference external" href="https://link.springer.com/article/10.1007/s10518-019-00658-5">link</a>).</p>
+<ol class="upperalpha simple" start="11">
+<li><p>Kolozvari, K. Kalbasi, K. Orakcal &amp; J. W. Wallace (2021), “Three-dimensional shear-flexure interaction model for analysis of non-planar reinforced concrete walls”, Journal of Building Engineering, Vol. 44, 102946. (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2352710221008044">link</a>).</p></li>
+</ol>
+<ol class="upperalpha simple" start="11">
+<li><p>Kolozvari, K. Kalbasi, K. Orakcal, L. M. Massone &amp; J. W. Wallace (2019), “Shear–flexure-interaction models for planar and flanged reinforced concrete walls”, Bulletin of Eathquake Engineering, Vol. 17, pages 6391–6417. (<a class="reference external" href="https://link.springer.com/article/10.1007/s10518-019-00658-5">link</a>).</p></li>
+</ol>
 </div>
 </div>
 
