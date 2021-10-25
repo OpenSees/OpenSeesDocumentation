@@ -15,34 +15,31 @@ set delta_qav -75.0;
 set delta_qcyc -60.0; 
 
 
-
 set G0        110.  ; # [Adimensional]
 set nu        0.05  ; # [Adimensional]
 set e_init    0.72  ; # [Adimensional]
 set Mc        1.27  ; # [Adimensional]
 set c         0.712 ; # [Adimensional]
 set lambda_c  0.049 ; # [Adimensional]
-set e0        0.845  ; # [Adimensional]
-set ksi       0.27   ; # [Adimensional]
+set e0        0.845 ; # [Adimensional]
+set ksi       0.27  ; # [Adimensional]
 set P_atm     101.3 ; # [kPa]
 set m         0.01  ; # [Adimensional]
 set h0        5.95  ; # [Adimensional]
 set ch        1.01  ; # [Adimensional]
-set nb        2.0  ; # [Adimensional]
+set nb        2.0   ; # [Adimensional]
 set A0        1.06  ; # [Adimensional]
-set nd        1.17   ; # [Adimensional]
+set nd        1.17  ; # [Adimensional]
 set z_max     4     ; # For SAniSand [Adimensional]
 set cz        0     ; # For SAniSand [Adimensional]
-set mu0       260.   ; # For RatchySand [Adimensional]
-set zeta      0.0005  ; # For RatchySand [Adimensional]
-set beta      1   ; # For RatchySand [Adimensional]
+set mu0       260.  ; # For SAniSand [Adimensional]
+set zeta      0.0005; # For SAniSand [Adimensional]
+set beta      1     ; # For SAniSand [Adimensional]
 set w1        0.5   ;
 set w2        2     ;
 set Den       1.584 ; # [Mg/m^3]
-set fabric_flag   0 ;
-set flow_flag     0 ;
 set intScheme 3     ; # Corresponds to Modified-Euler integration scheme
-set TanType   1     ; # 0: elastic stiffness, 1: continuum elastoplastic stiffness, 2: consistent elastoplastic stiffness
+set TanType   1     ; # 0: elastic stiffness, 1: continuum elastoplastic stiffness
 set JacoType  1     ; # Not used in explicit methods
 set TolF      1.0e-6; # Tolerances, not used in explicit
 set TolR      1.0e-6; # Tolerances, not used in explicit
@@ -51,7 +48,7 @@ set TolR      1.0e-6; # Tolerances, not used in explicit
 set P_ref $P_atm
  
 # Create material   
-nDMaterial SAniSandMS  1 $G0 $nu $e_init $Mc $c $lambda_c $e0 $ksi $P_atm $m $h0 $ch $nb $A0 $nd $zeta $mu0 $beta $Den $fabric_flag $flow_flag $intScheme $TanType $JacoType $TolF $TolR
+nDMaterial SAniSandMS  1 $G0 $nu $e_init $Mc $c $lambda_c $e0 $ksi $P_atm $m $h0 $ch $nb $A0 $nd $zeta $mu0 $beta $Den  $intScheme $TanType $JacoType $TolF $TolR
 set type "RK"
 
 
