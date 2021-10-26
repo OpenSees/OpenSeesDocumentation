@@ -29,7 +29,7 @@ For a load path where both time and values are specified in a list included in t
       $tag, |integer|,	   unique tag among TimeSeries objects.
       $filePath, |string|, file containing the load factors values
       $fileTime, |string|,  file containing the time values for corresponding load factors
-      $dT, |float|,	   time interval between specified points.
+      $dt, |float|,	   time interval between specified points.
       {list_of_times}	 time values in a tcl list
       {list_of_values}	 load factor values in a tcl list
       $cFactor, |float|, optional, a factor to multiply load factors by (default = 1.0)
@@ -47,7 +47,7 @@ For a load path where both time and values are specified in a list included in t
 
 .. admonition:: EXAMPLE:
 
-   timeSeries Path 1 -dT 0.02 -filePath A-ELC270.AT2 -factor $G
+   timeSeries Path 1 -dt 0.02 -filePath A-ELC270.AT2 -factor $G
    
    timeSeries Path 2 -time {0.0 0.2 0.4 1.0} -values {0.0 1.0 2.0 0.0}
 

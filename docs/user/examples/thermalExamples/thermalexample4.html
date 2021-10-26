@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
@@ -88,7 +91,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
@@ -116,7 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
@@ -228,8 +231,8 @@ for the elements calculated through heat transfer analysis.</p>
 <h3><span class="section-number">4.2.4.1.2. </span>Material<a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h3>
 <p>The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties according to Eurocode 3 carbon steel. More details of Steel01 can be found at: <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel01_Material">Steel01 Material</a></p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">Steel01Thermal</span> <span class="pre">$matTag</span> <span class="pre">$Fy</span> <span class="pre">$Es</span> <span class="pre">$b;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">Steel01Thermal</span> <span class="pre">$matTag</span> <span class="pre">$Fy</span> <span class="pre">$Es</span> <span class="pre">$b;</span></span></dt>
 <dd></dd></dl>
 
 <p>Es = 210000 MPa (Young’s modulus of elasticity at ambient temperatures)</p>
@@ -242,8 +245,8 @@ for the elements calculated through heat transfer analysis.</p>
 order bending effects were considered using the Corotational geometric
 transformation.</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">geomTransf</span> <span class="pre">Corotational</span> <span class="pre">$transftag;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">geomTransf</span> <span class="pre">Corotational</span> <span class="pre">$transftag;</span></span></dt>
 <dd></dd></dl>
 
 <p>Learn more about geometric transofrmations: <a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Geometric_Transformation_Command">Geometric
@@ -256,48 +259,48 @@ Transformation</a></p>
 <p>Wsection dimensions:</p>
 <blockquote>
 <div><dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">secTag</span> <span class="pre">1;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">secTag</span> <span class="pre">1;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">d</span> <span class="pre">160;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">d</span> <span class="pre">160;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">bf</span> <span class="pre">82;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">bf</span> <span class="pre">82;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">tf</span> <span class="pre">7.4;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">tf</span> <span class="pre">7.4;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">et</span> <span class="pre">tw</span> <span class="pre">5.0;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">et</span> <span class="pre">tw</span> <span class="pre">5.0;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">nfdw</span> <span class="pre">8;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">nfdw</span> <span class="pre">8;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">nftw</span> <span class="pre">1;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">nftw</span> <span class="pre">1;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">nfbf</span> <span class="pre">1;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">nfbf</span> <span class="pre">1;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">nftf</span> <span class="pre">4;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">nftf</span> <span class="pre">4;</span></span></dt>
 <dd></dd></dl>
 
 </div></blockquote>
@@ -316,8 +319,8 @@ Transformation</a></p>
 </ul>
 <p>WsectionThermal secTag matTag d bf tf tw nfdw nftw nfbf nftf Gj</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">WsectionThermal</span> <span class="pre">$secTag</span> <span class="pre">$matTag</span> <span class="pre">$d</span> <span class="pre">$bf</span> <span class="pre">$tf</span> <span class="pre">$tw</span> <span class="pre">8</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">4</span> <span class="pre">$Es</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">WsectionThermal</span> <span class="pre">$secTag</span> <span class="pre">$matTag</span> <span class="pre">$d</span> <span class="pre">$bf</span> <span class="pre">$tf</span> <span class="pre">$tw</span> <span class="pre">8</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">4</span> <span class="pre">$Es</span></span></dt>
 <dd></dd></dl>
 
 <div class="align-center figure">
@@ -336,8 +339,8 @@ element type that could have tempurature-dependent thermal and
 mechanical properties applied to them.</p>
 <p>dispBeamColumnThermal $eleTag $iNode $jNode $numIntgrPts $secTag $TransfTag;</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">element</span> <span class="pre">dispBeamColumnThermal</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">$secTag</span> <span class="pre">$transftag;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">dispBeamColumnThermal</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">$secTag</span> <span class="pre">$transftag;</span></span></dt>
 <dd></dd></dl>
 
 <p>Each column and beam element is created using ten displacement-based elements with 3 iteration points in each element.</p>
@@ -348,20 +351,20 @@ mechanical properties applied to them.</p>
 within your working directory where output files will be saved. &gt;set
 dataDir Examples/EXAMPLE4_OUTPUT;</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">file</span> <span class="pre">mkdir</span> <span class="pre">$dataDir;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">file</span> <span class="pre">mkdir</span> <span class="pre">$dataDir;</span></span></dt>
 <dd></dd></dl>
 
 <p>Displacement of the beam midspan node (27), DOF 2 (Vertical Displacement)</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Node</span> <span class="pre">-file</span> <span class="pre">$dataDir/Midspan_BeamDisp.out</span> <span class="pre">-time</span> <span class="pre">-node</span> <span class="pre">27</span> <span class="pre">-dof</span> <span class="pre">2</span> <span class="pre">disp;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Node</span> <span class="pre">-file</span> <span class="pre">$dataDir/Midspan_BeamDisp.out</span> <span class="pre">-time</span> <span class="pre">-node</span> <span class="pre">27</span> <span class="pre">-dof</span> <span class="pre">2</span> <span class="pre">disp;</span></span></dt>
 <dd></dd></dl>
 
 <p>Reaction forces at end nodes. (1 &amp; 12)</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Node</span> <span class="pre">-file</span> <span class="pre">$dataDir/RXNS.out</span> <span class="pre">-time</span> <span class="pre">-node</span> <span class="pre">1</span> <span class="pre">12</span> <span class="pre">-dof</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">reaction;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">recorder</span> <span class="pre">Node</span> <span class="pre">-file</span> <span class="pre">$dataDir/RXNS.out</span> <span class="pre">-time</span> <span class="pre">-node</span> <span class="pre">1</span> <span class="pre">12</span> <span class="pre">-dof</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">reaction;</span></span></dt>
 <dd></dd></dl>
 
 <p>Learn more about the Recorder Command: <a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Recorder_Command">Recorder
@@ -394,20 +397,20 @@ set Y9 [expr $d/2];
 <p>The bottom extreme fiber temperature must be defined first in the thermal load pattern. The input temperature files must be in your working directories or have their paths specified.</p>
 <p><strong>Temperature loading for the beam</strong></p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">pattern</span> <span class="pre">Plain</span> <span class="pre">11</span> <span class="pre">Linear</span> <span class="pre">{</span> <span class="pre">for</span> <span class="pre">{set</span> <span class="pre">level</span> <span class="pre">21}</span> <span class="pre">{$level</span> <span class="pre">&lt;=</span> <span class="pre">30}</span> <span class="pre">{incr</span> <span class="pre">level</span> <span class="pre">1}</span> <span class="pre">{set</span> <span class="pre">eleID</span> <span class="pre">$level;</span> <span class="pre">eleLoad</span> <span class="pre">-ele</span> <span class="pre">$eleID</span> <span class="pre">-type</span> <span class="pre">-beamThermal</span> <span class="pre">-source</span> <span class="pre">BeamTemp.txt</span> <span class="pre">$Y9</span> <span class="pre">$Y8</span> <span class="pre">$Y7</span> <span class="pre">$Y6</span> <span class="pre">$Y5</span> <span class="pre">$Y4</span> <span class="pre">$Y3</span> <span class="pre">$Y2</span> <span class="pre">$Y1;}}</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">pattern</span> <span class="pre">Plain</span> <span class="pre">11</span> <span class="pre">Linear</span> <span class="pre">{</span> <span class="pre">for</span> <span class="pre">{set</span> <span class="pre">level</span> <span class="pre">21}</span> <span class="pre">{$level</span> <span class="pre">&lt;=</span> <span class="pre">30}</span> <span class="pre">{incr</span> <span class="pre">level</span> <span class="pre">1}</span> <span class="pre">{set</span> <span class="pre">eleID</span> <span class="pre">$level;</span> <span class="pre">eleLoad</span> <span class="pre">-ele</span> <span class="pre">$eleID</span> <span class="pre">-type</span> <span class="pre">-beamThermal</span> <span class="pre">-source</span> <span class="pre">BeamTemp.txt</span> <span class="pre">$Y9</span> <span class="pre">$Y8</span> <span class="pre">$Y7</span> <span class="pre">$Y6</span> <span class="pre">$Y5</span> <span class="pre">$Y4</span> <span class="pre">$Y3</span> <span class="pre">$Y2</span> <span class="pre">$Y1;}}</span></span></dt>
 <dd></dd></dl>
 
 <p><strong>Temperature loading for column 1</strong></p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">pattern</span> <span class="pre">Plain</span> <span class="pre">11</span> <span class="pre">Linear</span> <span class="pre">{</span> <span class="pre">for</span> <span class="pre">{set</span> <span class="pre">level</span> <span class="pre">1}</span> <span class="pre">{$level</span> <span class="pre">&lt;=</span> <span class="pre">10}</span> <span class="pre">{incr</span> <span class="pre">level</span> <span class="pre">1}</span> <span class="pre">{set</span> <span class="pre">eleID</span> <span class="pre">$level;</span> <span class="pre">eleLoad</span> <span class="pre">-ele</span> <span class="pre">$eleID</span> <span class="pre">-type</span> <span class="pre">-beamThermal</span> <span class="pre">-source</span> <span class="pre">Column1Temp.txt</span> <span class="pre">$Y9</span> <span class="pre">$Y8</span> <span class="pre">$Y7</span> <span class="pre">$Y6</span> <span class="pre">$Y5</span> <span class="pre">$Y4</span> <span class="pre">$Y3</span> <span class="pre">$Y2</span> <span class="pre">$Y1;}}</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">pattern</span> <span class="pre">Plain</span> <span class="pre">11</span> <span class="pre">Linear</span> <span class="pre">{</span> <span class="pre">for</span> <span class="pre">{set</span> <span class="pre">level</span> <span class="pre">1}</span> <span class="pre">{$level</span> <span class="pre">&lt;=</span> <span class="pre">10}</span> <span class="pre">{incr</span> <span class="pre">level</span> <span class="pre">1}</span> <span class="pre">{set</span> <span class="pre">eleID</span> <span class="pre">$level;</span> <span class="pre">eleLoad</span> <span class="pre">-ele</span> <span class="pre">$eleID</span> <span class="pre">-type</span> <span class="pre">-beamThermal</span> <span class="pre">-source</span> <span class="pre">Column1Temp.txt</span> <span class="pre">$Y9</span> <span class="pre">$Y8</span> <span class="pre">$Y7</span> <span class="pre">$Y6</span> <span class="pre">$Y5</span> <span class="pre">$Y4</span> <span class="pre">$Y3</span> <span class="pre">$Y2</span> <span class="pre">$Y1;}}</span></span></dt>
 <dd></dd></dl>
 
 <p><strong>Temperature loading for column 2</strong></p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">pattern</span> <span class="pre">Plain</span> <span class="pre">11</span> <span class="pre">Linear</span> <span class="pre">{</span> <span class="pre">for</span> <span class="pre">{set</span> <span class="pre">level</span> <span class="pre">11}</span> <span class="pre">{$level</span> <span class="pre">&lt;=</span> <span class="pre">20}</span> <span class="pre">{incr</span> <span class="pre">level</span> <span class="pre">1}</span> <span class="pre">{set</span> <span class="pre">eleID</span> <span class="pre">$level;</span> <span class="pre">eleLoad</span> <span class="pre">-ele</span> <span class="pre">$eleID</span> <span class="pre">-type</span> <span class="pre">-beamThermal</span> <span class="pre">-source</span> <span class="pre">Column2Temp.txt</span> <span class="pre">$Y9</span> <span class="pre">$Y8</span> <span class="pre">$Y7</span> <span class="pre">$Y6</span> <span class="pre">$Y5</span> <span class="pre">$Y4</span> <span class="pre">$Y3</span> <span class="pre">$Y2</span> <span class="pre">$Y1;}}</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">pattern</span> <span class="pre">Plain</span> <span class="pre">11</span> <span class="pre">Linear</span> <span class="pre">{</span> <span class="pre">for</span> <span class="pre">{set</span> <span class="pre">level</span> <span class="pre">11}</span> <span class="pre">{$level</span> <span class="pre">&lt;=</span> <span class="pre">20}</span> <span class="pre">{incr</span> <span class="pre">level</span> <span class="pre">1}</span> <span class="pre">{set</span> <span class="pre">eleID</span> <span class="pre">$level;</span> <span class="pre">eleLoad</span> <span class="pre">-ele</span> <span class="pre">$eleID</span> <span class="pre">-type</span> <span class="pre">-beamThermal</span> <span class="pre">-source</span> <span class="pre">Column2Temp.txt</span> <span class="pre">$Y9</span> <span class="pre">$Y8</span> <span class="pre">$Y7</span> <span class="pre">$Y6</span> <span class="pre">$Y5</span> <span class="pre">$Y4</span> <span class="pre">$Y3</span> <span class="pre">$Y2</span> <span class="pre">$Y1;}}</span></span></dt>
 <dd></dd></dl>
 
 </div>
@@ -425,23 +428,23 @@ factor, therefore, it is important to ensure that benchmarking examples
 are performed to determine the proper load factor to use in structural
 fire engineering analyses.</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Nstep</span> <span class="pre">1000;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">Nstep</span> <span class="pre">1000;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">set</span> <span class="pre">Factor</span> <span class="pre">[expr</span> <span class="pre">1.0/$Nstep];</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span> <span class="pre">Factor</span> <span class="pre">[expr</span> <span class="pre">1.0/$Nstep];</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">integrator</span> <span class="pre">LoadControl</span> <span class="pre">$Factor;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">integrator</span> <span class="pre">LoadControl</span> <span class="pre">$Factor;</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">analyze</span> <span class="pre">$Nstep;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">analyze</span> <span class="pre">$Nstep;</span></span></dt>
 <dd></dd></dl>
 
 </div>

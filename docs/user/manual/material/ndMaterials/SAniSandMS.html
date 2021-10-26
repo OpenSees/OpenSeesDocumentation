@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.4.2.12. SAniSandMS Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.4.3. section Command" href="../section.html" />
+    <link rel="prev" title="3.4.2.11. J2CyclicBoundingSurface Material" href="J2CyclicBoundingSurface.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ElasticIsotropic.html">3.4.2.1. Elastic Isotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticOrthotropic.html">3.4.2.2. Elastic Orthotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2Plasticity.html">3.4.2.3. J2 Plasticity Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DruckerPrager.html">3.4.2.4. Drucker Prager Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ManzariDafalias.html">3.4.2.5. Manzari Dafalias Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundingCamClay.html">3.4.2.6. Bounding Cam Clay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Sand.html">3.4.2.7. PM4Sand Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Silt.html">3.4.2.8. PM4Silt Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureIndependentMultiYield.html">3.4.2.9. Pressure Independent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.4.2.11. J2CyclicBoundingSurface Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.2.12. SAniSandMS Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+        
+          <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4.2.12. </span>SAniSandMS Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/ndMaterials/SAniSandMS.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sanisandms-material">
+<span id="sanisandms"></span><h1><span class="section-number">3.4.2.12. </span>SAniSandMS Material<a class="headerlink" href="#sanisandms-material" title="Permalink to this headline">¶</a></h1>
+<p>Code Developed by: Haoyuan Liu (TUDelft), <a class="reference external" href="http://www.joseabell.com">José A. Abell</a> (UANDES, Chile), and Federico Pisanò (TU Delft)</p>
+<p>This command is used to construct a multi-dimensional <a class="reference internal" href="#id7" id="id1"><span>[SAniSandMS]</span></a> material, which is an extension of the Manzari-Dafalias (SAniSand) model to account for ratcheting effects using the memory-surface (MS) concept. This allows capturing the ratcheting effects in sands that occur in high-cyclic loading in the presence of a static stress field or in the case of assymetric loading.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../_images/SAniSandMS-fig0a.png"><img alt="../../../../_images/SAniSandMS-fig0a.png" src="../../../../_images/SAniSandMS-fig0a.png" style="width: 400px;" /></a>
+</div>
+<div class="admonition-function admonition">
+<p class="admonition-title">function</p>
+<p>nDMaterial SAniSandMS  $matTag $G0 $nu $e_init $Mc $c $lambda_c $e0 $ksi $P_atm $m $h0 $ch $nb $A0 $nd $zeta $mu0 $beta $Den $fabric_flag $flow_flag $intScheme $TanType $JacoType $TolF $TolR</p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>unique tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$G0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>dimensionless shear modulus constant</p></td>
+</tr>
+<tr class="row-even"><td><p>$nu</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Poisson ratio</p></td>
+</tr>
+<tr class="row-odd"><td><p>$e_init</p></td>
+<td><p><em>float</em></p></td>
+<td><p>initial void ratio</p></td>
+</tr>
+<tr class="row-even"><td><p>$Mc</p></td>
+<td><p><em>float</em></p></td>
+<td><p>critical state stress ratio</p></td>
+</tr>
+<tr class="row-odd"><td><p>$c</p></td>
+<td><p><em>float</em></p></td>
+<td><p>ratio of critical state stress ratio in extension and compression</p></td>
+</tr>
+<tr class="row-even"><td><p>$lambda_c</p></td>
+<td><p><em>float</em></p></td>
+<td><p>critical state line constant</p></td>
+</tr>
+<tr class="row-odd"><td><p>$e0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>reference critical void ratio at p = 0</p></td>
+</tr>
+<tr class="row-even"><td><p>$ksi</p></td>
+<td><p><em>float</em></p></td>
+<td><p>critical state line constant</p></td>
+</tr>
+<tr class="row-odd"><td><p>$P_atm</p></td>
+<td><p><em>float</em></p></td>
+<td><p>atmospheric pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>$m</p></td>
+<td><p><em>float</em></p></td>
+<td><p>yield locus opening parameter (radius of yield surface in stress ratio space)</p></td>
+</tr>
+<tr class="row-odd"><td><p>$h0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>hardening parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>$ch</p></td>
+<td><p><em>float</em></p></td>
+<td><p>hardening parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$nb</p></td>
+<td><p><em>float</em></p></td>
+<td><p>bounding surface void ratio dependence parameter  $nb ≥ 0</p></td>
+</tr>
+<tr class="row-even"><td><p>$A0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>intrinsic dilatancy parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$nd</p></td>
+<td><p><em>float</em></p></td>
+<td><p>dilatancy surface parameter $nd ≥ 0</p></td>
+</tr>
+<tr class="row-even"><td><p>$zeta</p></td>
+<td><p><em>float</em></p></td>
+<td><p>memory surface shrinkage parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$mu0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>ratcheting parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>$beta</p></td>
+<td><p><em>float</em></p></td>
+<td><p>dilatancy memory parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Den</p></td>
+<td><p><em>float</em></p></td>
+<td><p>mass density of the material</p></td>
+</tr>
+<tr class="row-even"><td><p>$fabric_flag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>(deprecated)</p></td>
+</tr>
+<tr class="row-odd"><td><p>$flow_flag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>(deprecated)</p></td>
+</tr>
+<tr class="row-even"><td><p>$intScheme</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>constitutive integration method (1: modified Euler | 3: Runge-Kutta 4th order with error control (recommended))</p></td>
+</tr>
+<tr class="row-odd"><td><p>$TanType</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>type of tangent stiffness to report (0: elastic stiffness | 1: continuum elastoplastic stiffness | 2: consistent elastoplastic stiffness)</p></td>
+</tr>
+<tr class="row-even"><td><p>$JacoType</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>placeholder (not used in explicit methods)</p></td>
+</tr>
+<tr class="row-odd"><td><p>$TolF</p></td>
+<td><p><em>float</em></p></td>
+<td><p>tolerance for the yield surface</p></td>
+</tr>
+<tr class="row-even"><td><p>$TolR</p></td>
+<td><p><em>float</em></p></td>
+<td><p>placeholder (not used in explicit methods)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../_images/SAniSandMS-fig0b.png"><img alt="../../../../_images/SAniSandMS-fig0b.png" src="../../../../_images/SAniSandMS-fig0b.png" style="width: 640px;" /></a>
+</div>
+<p><a href="#id2"><span class="problematic" id="id3">**</span></a>Citation information. ** If you use SAniSandMS in your published research work, please cite <a class="reference internal" href="#id7" id="id4"><span>[SAniSandMS]</span></a> and also inform (jaabell <em>at</em> miuandes <em>dot</em> cl, to update the list of published artciles and works that use the code).</p>
+<p>Please report bugs as an issue on the main OpenSees repositoy and tag <code class="docutils literal notranslate"><span class="pre">&#64;jaabell</span></code></p>
+<p><a class="reference external" href="https://github.com/jaabell">https://github.com/jaabell</a></p>
+<p><a class="reference external" href="http://www.joseabell.com">http://www.joseabell.com</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The material formulations for the SAniSandMS object are “ThreeDimensional” and “PlaneStrain”</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Valid Element Recorder queries are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stress</span></code> returns stress tensor</p></li>
+<li><p><a href="#id5"><span class="problematic" id="id6">``</span></a>strain``returns strain tensor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code>  for <span class="math notranslate nohighlight">\(\mathbf{\alpha}\)</span>, the back-stress ratio tensor for the yield surface</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alphaM</span></code>  for <span class="math notranslate nohighlight">\(\mathbf{\alpha^M}\)</span>, the back-stress ratio tensor for the memory surface</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha_in</span></code> for <span class="math notranslate nohighlight">\(\mathbf{\alpha_{in}}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MM</span></code> size of memory surface</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">estrain</span></code> elastic strain tensor</p></li>
+</ul>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> Element <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$numElem</span> <span class="o">-</span>time <span class="o">-</span>file stress.out  stress
+
+<span class="c">#. Elastic or Elastoplastic response could be enforced by</span>
+   <span class="nv">Elastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">0</span>
+   <span class="nv">Elastoplastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>This example, provides an assymetric drained triaxial test of the constitutive model to show the effect of ratcheting. First the sample is compressed isotropically to 200KPa, then a cyclic deviator stress is applied.</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span>set test_type &quot;drained_triaxial_cyc&quot; ;# Used in recorders.tcl
+
+wipe
+ 
+# Create a 3D model with 4 Degrees of Freedom
+model BasicBuilder -ndm 3 -ndf 3
+ 
+# Confinement Stress
+set pConf -200.0
+
+# Increment of q added at constant p0 (will be the average during cyclic loading)
+set delta_qav -75.0; 
+
+# Amplitude of cyclic deviatoric stress
+set delta_qcyc -60.0; 
+
+
+
+set G0        110.  ; # [Adimensional]
+set nu        0.05  ; # [Adimensional]
+set e_init    0.72  ; # [Adimensional]
+set Mc        1.27  ; # [Adimensional]
+set c         0.712 ; # [Adimensional]
+set lambda_c  0.049 ; # [Adimensional]
+set e0        0.845  ; # [Adimensional]
+set ksi       0.27   ; # [Adimensional]
+set P_atm     101.3 ; # [kPa]
+set m         0.01  ; # [Adimensional]
+set h0        5.95  ; # [Adimensional]
+set ch        1.01  ; # [Adimensional]
+set nb        2.0  ; # [Adimensional]
+set A0        1.06  ; # [Adimensional]
+set nd        1.17   ; # [Adimensional]
+set z_max     4     ; # For SAniSand [Adimensional]
+set cz        0     ; # For SAniSand [Adimensional]
+set mu0       260.   ; # For RatchySand [Adimensional]
+set zeta      0.0005  ; # For RatchySand [Adimensional]
+set beta      1   ; # For RatchySand [Adimensional]
+set w1        0.5   ;
+set w2        2     ;
+set Den       1.584 ; # [Mg/m^3]
+set fabric_flag   0 ;
+set flow_flag     0 ;
+set intScheme 3     ; # Corresponds to Modified-Euler integration scheme
+set TanType   1     ; # 0: elastic stiffness, 1: continuum elastoplastic stiffness, 2: consistent elastoplastic stiffness
+set JacoType  1     ; # Not used in explicit methods
+set TolF      1.0e-6; # Tolerances, not used in explicit
+set TolR      1.0e-6; # Tolerances, not used in explicit
+
+#Reference atmospheric pressure
+set P_ref $P_atm
+ 
+# Create material   
+nDMaterial SAniSandMS  1 $G0 $nu $e_init $Mc $c $lambda_c $e0 $ksi $P_atm $m $h0 $ch $nb $A0 $nd $zeta $mu0 $beta $Den $fabric_flag $flow_flag $intScheme $TanType $JacoType $TolF $TolR
+set type &quot;RK&quot;
+
+
+# Create nodes
+node 1  1.0 0.0 0.0
+node 2  1.0 1.0 0.0
+node 3  0.0 1.0 0.0 
+node 4  0.0 0.0 0.0
+node 5  1.0 0.0 1.0
+node 6  1.0 1.0 1.0
+node 7  0.0 1.0 1.0
+node 8  0.0 0.0 1.0
+ 
+# Create Fixities
+fix 1   0 1 1 
+fix 2   0 0 1 
+fix 3   1 0 1 
+fix 4   1 1 1 
+fix 5   0 1 0 
+fix 6   0 0 0 
+fix 7   1 0 0 
+fix 8   1 1 0 
+ 
+ 
+
+# Create element
+#       SSPbrickUP  tag    i j k l m n p q  matTag  fBulk  fDen    k1    k2   k3   void   alpha    &lt;b1 b2 b3&gt;
+element SSPbrick   1     1 2 3 4 5 6 7 8    1
+ 
+recorder Element -file ${type}_${test_type}_stress.out -ele 1  -time stress
+recorder Element -file ${type}_${test_type}_strain.out -ele 1 -time strain
+
+
+# Create analysis
+constraints Transformation
+test        NormDispIncr 1.0e-4 20 0
+algorithm   Newton
+numberer    RCM
+system      BandGeneral
+integrator  LoadControl 0.0001
+analysis    Static
+ 
+ 
+# Apply confinement pressure
+set pNode [expr $pConf / 4.0]
+pattern Plain 1 {Series -time {0 1 100} -values {0 1 1} -factor 1} {
+    load 1  $pNode  0.0    0.0    
+    load 2  $pNode  $pNode 0.0    
+    load 3  0.0     $pNode 0.0    
+    load 4  0.0     0.0    0.0    
+    load 5  $pNode  0.0    $pNode 
+    load 6  $pNode  $pNode $pNode 
+    load 7  0.0     $pNode $pNode 
+    load 8  0.0     0.0    $pNode 
+}
+analyze 10000
+ 
+
+
+
+loadConst
+
+
+puts &quot;Starting monotonic analysis&quot;
+
+
+# Apply confinement pressure
+set delta_sigma_a [expr $delta_qav*2./3.]
+set delta_sigma_r [expr -$delta_sigma_a/2]
+set pNode2 [expr $delta_sigma_r / 4.0 ]
+set pNode1 [expr $delta_sigma_a / 4.0]
+pattern Plain 3 {Series -time {1 2 100} -values {0 1 1} -factor 1} {
+    load 1  $pNode2  0.0     0.0    
+    load 2  $pNode2  $pNode2 0.0    
+    load 3  0.0      $pNode2 0.0    
+    load 4  0.0      0.0     0.0    
+    load 5  $pNode2  0.0     $pNode1 
+    load 6  $pNode2  $pNode2 $pNode1 
+    load 7  0.0      $pNode2 $pNode1 
+    load 8  0.0      0.0     $pNode1 
+}
+
+
+integrator LoadControl 0.0001
+analyze 10000
+ 
+
+
+
+loadConst
+
+
+
+
+puts &quot;Starting cyclic analysis&quot;
+
+
+set Ncyc 1000
+set NcycActuallyDo 1000
+set dT      [expr 0.001]
+set tmax    [expr $NcycActuallyDo]
+set numStep [expr int(2.0*$tmax / $dT)]
+ 
+
+
+
+
+
+
+
+set qlist [list 0]
+set timelist [list 2]
+
+for {set i 1} {$i &lt;= $Ncyc} {incr i} {
+   lappend qlist [expr $delta_qcyc/4.0] [expr -$delta_qcyc/4.0]     
+   lappend timelist [expr 2*$i + 1] [expr 2*$i + 2]
+}
+
+set tsq &quot;{Series      -time {$timelist} -values {$qlist} }&quot; ;#-factor 1}&quot;
+puts $tsq
+
+# return
+
+
+eval &quot;pattern Plain 4 $tsq { load 5  0 0 1.0;  }&quot;
+eval &quot;pattern Plain 5 $tsq { load 6  0 0 1.0;  }&quot;
+eval &quot;pattern Plain 6 $tsq { load 7  0 0 1.0;  }&quot;
+eval &quot;pattern Plain 7 $tsq { load 8  0 0 1.0;  }&quot;
+
+
+
+
+
+# Analyze and use substepping if needed
+set remStep $numStep
+set success 0
+integrator  LoadControl $dT
+proc subStepAnalyze {dT subStep} {
+    if {$subStep &gt; 10} {
+        return -10
+    }
+    for {set i 1} {$i &lt; 3} {incr i} {
+        puts &quot;Try dT = $dT&quot;
+        # set success [analyze 1 $dT]
+        integrator  LoadControl $dT
+        set success [analyze 1]
+        if {$success != 0} {
+            set success [subStepAnalyze [expr $dT/2.0] [expr $subStep+1]]
+            if {$success == -10} {
+                puts &quot;Did not converge.&quot;
+                return success
+            }
+        } else {
+            if {$i==1} {
+                puts &quot;Substep $subStep : Left side converged with dT = $dT&quot;
+            } else {
+                puts &quot;Substep $subStep : Right side converged with dT = $dT&quot;
+            }
+        }
+    }
+    return success
+}
+ 
+puts &quot;Finished static Start analysis&quot;
+set startT [clock seconds]
+
+
+set startTime  [getTime]
+while {$success != -10} {
+    set subStep 0
+    integrator  LoadControl $dT
+    set success [analyze $remStep  $dT]
+    if {$success == 0} {
+        puts &quot;Analysis Finished&quot;
+        break
+    } else {
+        set curTime  [getTime]
+        puts &quot;Analysis failed at $curTime . Try substepping.&quot;
+        set success  [subStepAnalyze [expr $dT/2.0] [incr subStep]]
+        set curStep  [expr int(($curTime-$startTime)/$dT + 1)]
+        set remStep  [expr int($numStep-$curStep)]
+        puts &quot;Current step: $curStep , Remaining steps: $remStep&quot;
+    }
+}
+set endT [clock seconds]
+puts &quot;loading analysis execution time: [expr $endT-$startT] seconds.&quot;
+
+
+
+
+
+wipe
+</pre></div>
+</div>
+<p>The script produces an output that can be visualized as follows.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../_images/SAniSandMS-fig1.png"><img alt="../../../../_images/SAniSandMS-fig1.png" src="../../../../_images/SAniSandMS-fig1.png" style="width: 600px;" /></a>
+</div>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../_images/SAniSandMS-fig2.png"><img alt="../../../../_images/SAniSandMS-fig2.png" src="../../../../_images/SAniSandMS-fig2.png" style="width: 600px;" /></a>
+</div>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../_images/SAniSandMS-fig3.png"><img alt="../../../../_images/SAniSandMS-fig3.png" src="../../../../_images/SAniSandMS-fig3.png" style="width: 600px;" /></a>
+</div>
+</div>
+<p>List of works using SAniSandMS</p>
+<dl class="citation">
+<dt class="label" id="id7"><span class="brackets">SAniSandMS</span></dt>
+<dd><p>Haoyuan Liu, Andrea Diambra, José Antonio Abell, Federico Pisanò. Memory-enhanced plasticity modelling of sand behaviour under undrained cyclic loading. Journal of Geotechnical and Geoenvironmental Engineering, Vol. 146, Issue 11 (November 2020)</p>
+</dd>
+</dl>
+<p>Haoyuan Liu, Evangelos Kementzetzidis, José Antonio Abell, Federico Pisanò From cyclic sand ratcheting to tilt accumulation in offshore monopiles: 3D FE modelling using SANISAND-MS. Géotechnique. Online March 8, 2021 (Ahead of print)</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

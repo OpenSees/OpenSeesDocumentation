@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4.1.3. HystereticPoly Material &mdash; OpenSees Documentation  documentation</title>
+  <title>3.4.1.4. HystereticPoly Material &mdash; OpenSees Documentation  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -30,18 +32,19 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.4.1.4. PySimple1 Material" href="PySimple1.html" />
-    <link rel="prev" title="3.4.1.2. Steel02 Material" href="Steel02.html" /> 
+    <link rel="next" title="3.4.1.5. PySimple1 Material" href="PySimple1.html" />
+    <link rel="prev" title="3.4.1.3. SteelFractureDI Material" href="SteelFractureDI.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,7 +92,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Applications for Users</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
@@ -101,10 +104,14 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.4.1.1. Steel01 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.4.1.2. Steel02 Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.3. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.4.1.4. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.4.1.5. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.4.1.6. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.4.1.3. SteelFractureDI Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.4. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.4.1.5. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.4.1.6. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.4.1.7. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.4.1.8. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.4.1.9. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.4.1.10. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a></li>
@@ -118,7 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Framework for Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
@@ -180,7 +187,7 @@
         
           <li><a href="../uniaxialMaterial.html"><span class="section-number">3.4.1. </span>uniaxialMaterial Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.4.1.3. </span>HystereticPoly Material</li>
+      <li><span class="section-number">3.4.1.4. </span>HystereticPoly Material</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,11 +207,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hystereticpoly-material">
-<span id="hystereticpoly"></span><h1><span class="section-number">3.4.1.3. </span>HystereticPoly Material<a class="headerlink" href="#hystereticpoly-material" title="Permalink to this headline">¶</a></h1>
+<span id="hystereticpoly"></span><h1><span class="section-number">3.4.1.4. </span>HystereticPoly Material<a class="headerlink" href="#hystereticpoly-material" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct the uniaxial HystereticPoly material producing smooth hysteretic loops and local maxima/minima. It is based on a polynomial formulation of its tangent stiffness.</p>
 <dl class="py function">
-<dt>
-<code class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">HystereticPoly</span> <span class="pre">$matTag</span> <span class="pre">$ka</span> <span class="pre">$kb</span> <span class="pre">$alpha</span> <span class="pre">$beta1</span> <span class="pre">$beta2</span> <span class="pre">&lt;$delta&gt;</span></code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">HystereticPoly</span> <span class="pre">$matTag</span> <span class="pre">$ka</span> <span class="pre">$kb</span> <span class="pre">$alpha</span> <span class="pre">$beta1</span> <span class="pre">$beta2</span> <span class="pre">&lt;$delta&gt;</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">

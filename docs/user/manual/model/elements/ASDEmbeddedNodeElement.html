@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.3.15. ASDEmbeddedNode Element &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)" href="ASDAbsorbingBoundary.html" />
+    <link rel="prev" title="3.1.3.14. SSPbrick Element" href="SSPbrick.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. Model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.3. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.3.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.3.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.3.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.3.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.3.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.3.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.3.7. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.3.8. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.3.9. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.3.10. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.3.11. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.12. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.13. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.15. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.6. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.7. Pattern Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+        
+          <li><a href="../element.html"><span class="section-number">3.1.3. </span>Element Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.3.15. </span>ASDEmbeddedNode Element</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/model/elements/ASDEmbeddedNodeElement.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="asdembeddednode-element">
+<span id="asdembeddednodeelement"></span><h1><span class="section-number">3.1.3.15. </span>ASDEmbeddedNode Element<a class="headerlink" href="#asdembeddednode-element" title="Permalink to this headline">¶</a></h1>
+<p>This command is used to construct an ASDEmbeddedNodeElement object.</p>
+<p>The ASDEmbeddedNodeElement is a constraint between <strong>one constrained</strong> node and <strong>many retained</strong> nodes.
+Since in OpenSees a Multi-Point constraint can have only one retained node, this constraint was implemented as an Element, thus imposing the constraint using the Penalty approach.</p>
+<p>It constrains the displacements of the constrained node (NC) to be the <strong>weighted average</strong> of the displacements of the surrounding retained nodes (NRi). The same is done with the infinitesimal rotation, if the constrained node has rotational DOFs.</p>
+<p>The constrained node should be inside (or on the boundary of) the domain defined by the retained nodes.</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">ASDEmbeddedNodeElement</span> <span class="pre">$eleTag</span> <span class="pre">$Cnode</span> <span class="pre">$Rnode1</span> <span class="pre">$Rnode2</span> <span class="pre">$Rnode3</span> <span class="pre">&lt;$Rnode4&gt;</span> <span class="pre">&lt;-K</span> <span class="pre">$K&gt;</span> <span class="pre">&lt;-rot&gt;</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$eleTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>unique integer tag identifying element object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Cnode</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>the constrained node</p></td>
+</tr>
+<tr class="row-even"><td><p>$Rnode1 $Rnode2 $Rnode3 &lt;$Rnode4&gt;</p></td>
+<td><p>3 or 4 <em>integer</em></p></td>
+<td><p>the 3 (or 4) retained nodes defining the surrounding triangle (or tetrahedron) domain.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-K</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag. if provided, the user should use a user-defined penalty stiffness.</p></td>
+</tr>
+<tr class="row-even"><td><p>$K</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional float, mandatory if -K flag is provided (default = 1.0e18).</p>
+<p>This is the penalty stiffness used to impose the constraint.</p>
+<p>This value is automatically multiplied by the area (or volume) of the surrounding domain, so that it is mesh-independent.</p>
+<p>You can estimate this value to be equal to, or slightly larger than the Young’s modulus of the material used for the surrounding domain.</p>
+<p>Do not use extremely large values, otherwise the system will be ill-conditioned.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>-rot</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag. if provided, and if the constrained node has rotational DOFs, its rotation will be constrained as well.</p></td>
+</tr>
+</tbody>
+</table>
+<p>This element can be used in both 2D and 3D problems:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>2D Problem:</dt><dd><ul>
+<li><p>3 retained nodes forming a triangle.</p></li>
+<li><p>retained and constrained nodes can have 2 or 3 DOFs.</p></li>
+<li><p>if the constrained node has 3 DOFs, its rotation can be constrained as well.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>3D Problem:</dt><dd><ul>
+<li><p>3 retained nodes forming a triangle (if the surrounding domain is a Shell).</p></li>
+<li><p>4 retained nodes forming a tetrahedron (if the surrounding domain is a Solid).</p></li>
+<li><p>retained and constrained nodes can have 3, 4 or 6 DOFs.</p></li>
+<li><p>if the constrained node has 6 DOFs, its rotation can be constrained as well.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="align-center figure" id="id1">
+<img alt="../../../../_images/ASDEmbeddedNodeElement_geometry.png" src="../../../../_images/ASDEmbeddedNodeElement_geometry.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.3.12 </span><span class="caption-text">Embedding geometry defined by the retained nodes. (Left) triangle for 2D continuum problems or 3D shell problems. (Right) tetrahedron for 3D continuum problems.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The constraint equations, imposed by this element, are the following for the 2D case. Similar equations can be easily derived for the 3D case:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gathered}
+UC_{x} = \sum_{i=1}^{3} N_{i}\left (\xi,\eta\right ) UR_{x,i} \\
+UC_{y} = \sum_{i=1}^{3} N_{i}\left (\xi,\eta\right ) UR_{y,i} \\
+\theta C_{z} = \sum_{i=1}^{3} \left (
+\frac{\partial N_{i}\left (\xi,\eta\right )}{\partial X}UR_{y,i} -
+\frac{\partial N_{i}\left (\xi,\eta\right )}{\partial Y}UR_{x,i}
+\right ) / 2
+\end{gathered}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Even though the support domain can be only a triangle or a tetrahedron, it does not mean that you cannot embed a node in a quadrilateral or hexaedron. You just need to find the sub-triangle (for the quadrilateral) or the sub-tetrahedron (for the hexaedron) that contains the constrained node.</p></li>
+</ul>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># 2D problem with 2 DOFs on both the constrained node and the retained nodes</span>
+<span class="c"># The embedding domain is a 1x1 triangle, and the constrained node is placed at its centroid.</span>
+<span class="c"># Here we apply a random displacement on each retained node,</span>
+<span class="c"># and the displacement of the constrained node should be the weighted average</span>
+<span class="c"># of the displacements at the 3 retained nodes, with an equal weight = 1/3.</span>
+
+<span class="nv">model</span> basic <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
+
+<span class="c"># define the embedding domain (a piece of a soild domain)</span>
+<span class="nv">node</span> <span class="mi">1</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">2</span> <span class="mf">1.0</span> <span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">3</span> <span class="mf">0.0</span> <span class="mf">1.0</span>
+
+<span class="c"># define the embedded node</span>
+<span class="nv">node</span> <span class="mi">4</span> <span class="k">[expr</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">3.0</span><span class="k">]</span> <span class="k">[expr</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">3.0</span><span class="k">]</span>
+
+<span class="c"># define constraint element</span>
+<span class="nv">element</span> ASDEmbeddedNodeElement <span class="mi">1</span>   <span class="mi">4</span>   <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>   <span class="o">-</span>K <span class="mf">1.0</span>e6
+
+<span class="c"># apply random imposed displacement in range 0.1-1.0</span>
+<span class="k">set</span> U1 <span class="k">[</span><span class="nb">list</span> <span class="k">[expr</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span>rand<span class="k">()]</span> <span class="k">[expr</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span>rand<span class="k">()]]</span>
+<span class="k">set</span> U2 <span class="k">[</span><span class="nb">list</span> <span class="k">[expr</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span>rand<span class="k">()]</span> <span class="k">[expr</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span>rand<span class="k">()]]</span>
+<span class="k">set</span> U3 <span class="k">[</span><span class="nb">list</span> <span class="k">[expr</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span>rand<span class="k">()]</span> <span class="k">[expr</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span>rand<span class="k">()]]</span>
+<span class="nb">puts</span> <span class="s2">&quot;Applying random X displacement:\nU1: $U1\nU2: $U2\nU3: $U3\n\n&quot;</span>
+<span class="nv">timeSeries</span> Constant <span class="mi">1</span>
+<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
+   <span class="k">for</span> <span class="k">{set</span> i <span class="mi">1</span><span class="k">}</span> <span class="k">{</span><span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">3</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> i<span class="k">}</span> <span class="k">{</span>
+      <span class="nv">sp</span> <span class="mi">1</span> <span class="nv">$i</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$U1</span> <span class="k">[expr</span> <span class="nv">$i</span> <span class="o">-</span> <span class="mi">1</span><span class="k">]]</span>
+      <span class="nv">sp</span> <span class="mi">2</span> <span class="nv">$i</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$U2</span> <span class="k">[expr</span> <span class="nv">$i</span> <span class="o">-</span> <span class="mi">1</span><span class="k">]]</span>
+      <span class="nv">sp</span> <span class="mi">3</span> <span class="nv">$i</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$U3</span> <span class="k">[expr</span> <span class="nv">$i</span> <span class="o">-</span> <span class="mi">1</span><span class="k">]]</span>
+   <span class="k">}</span>
+<span class="k">}</span>
+
+<span class="c"># run analysis</span>
+<span class="nv">constraints</span> Transformation
+<span class="nv">numberer</span> Plain
+<span class="nv">system</span> FullGeneral
+<span class="nv">test</span> NormUnbalance <span class="mi">1</span>e-08 <span class="mi">10</span> <span class="mi">1</span>
+<span class="nv">algorithm</span> Linear
+<span class="nv">integrator</span> LoadControl <span class="mf">1.0</span>
+<span class="nv">analysis</span> Static
+<span class="nv">analyze</span> <span class="mi">1</span>
+
+<span class="c"># compute expected solution</span>
+<span class="k">set</span> UCref <span class="k">[</span><span class="nb">list</span> <span class="k">[expr</span> <span class="k">([</span><span class="nb">lindex</span> <span class="nv">$U1</span> <span class="mi">0</span><span class="k">]</span> <span class="o">+</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$U2</span> <span class="mi">0</span><span class="k">]</span> <span class="o">+</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$U3</span> <span class="mi">0</span><span class="k">]</span> <span class="k">)</span><span class="o">/</span><span class="mf">3.0</span><span class="k">]</span> <span class="k">[expr</span> <span class="k">([</span><span class="nb">lindex</span> <span class="nv">$U1</span> <span class="mi">1</span><span class="k">]</span> <span class="o">+</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$U2</span> <span class="mi">1</span><span class="k">]</span> <span class="o">+</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$U3</span> <span class="mi">1</span><span class="k">]</span> <span class="k">)</span><span class="o">/</span><span class="mf">3.0</span><span class="k">]]</span>
+<span class="nb">puts</span> <span class="s2">&quot;Expected displacement at constrained node is (U1+U2+U3)/3:\n$UCref\n\n&quot;</span>
+
+<span class="c"># read results</span>
+<span class="k">set</span> UC <span class="k">[</span><span class="nb">list</span> <span class="k">{</span><span class="o">*</span><span class="k">}[</span><span class="nv">nodeDisp</span> <span class="mi">4</span><span class="k">]]</span>
+<span class="nb">puts</span> <span class="s2">&quot;Obtained displacement at constrained node is UC:\n$UC\n\n&quot;</span>
+
+<span class="c"># check error</span>
+<span class="k">set</span> ER <span class="k">[</span><span class="nb">list</span> <span class="k">[expr</span> abs<span class="k">([</span><span class="nb">lindex</span> <span class="nv">$UC</span> <span class="mi">0</span><span class="k">]</span> <span class="nv">-</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$UCref</span> <span class="mi">0</span><span class="k">])</span><span class="o">/</span><span class="k">[</span><span class="nb">lindex</span> <span class="nv">$UCref</span> <span class="mi">0</span><span class="k">]]</span> <span class="k">[expr</span> abs<span class="k">([</span><span class="nb">lindex</span> <span class="nv">$UC</span> <span class="mi">1</span><span class="k">]</span> <span class="nv">-</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$UCref</span> <span class="mi">1</span><span class="k">])</span><span class="o">/</span><span class="k">[</span><span class="nb">lindex</span> <span class="nv">$UCref</span> <span class="mi">1</span><span class="k">]]]</span>
+<span class="nb">puts</span> <span class="s2">&quot;Relative error is abs(UC-UCref)/UCref:\n$ER\n\n&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2D problem with 2 DOFs on both the constrained node and the retained nodes</span>
+<span class="c1"># The embedding domain is a 1x1 triangle, and the constrained node is placed at its centroid.</span>
+<span class="c1"># Here we apply a random displacement on each retained node,</span>
+<span class="c1"># and the displacement of the constrained node should be the weighted average</span>
+<span class="c1"># of the displacements at the 3 retained nodes, with an equal weight = 1/3.</span>
+<span class="kn">from</span> <span class="nn">opensees</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span> <span class="k">as</span> <span class="n">rand</span>
+
+<span class="n">model</span><span class="p">(</span><span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="s1">&#39;-ndm&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;-ndf&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># define the embedding domain (a piece of a soild domain)</span>
+<span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">node</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">node</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1"># define the embedded node</span>
+<span class="n">node</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span>
+
+<span class="c1"># define constraint element</span>
+<span class="n">element</span><span class="p">(</span><span class="s1">&#39;ASDEmbeddedNodeElement&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>   <span class="mi">4</span><span class="p">,</span>   <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>   <span class="s1">&#39;-K&#39;</span><span class="p">,</span> <span class="mf">1.0e6</span><span class="p">)</span>
+
+<span class="c1"># apply random imposed displacement in range 0.1-1.0</span>
+<span class="n">U1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">rand</span><span class="p">(),</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">rand</span><span class="p">()]</span>
+<span class="n">U2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">rand</span><span class="p">(),</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">rand</span><span class="p">()]</span>
+<span class="n">U3</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">rand</span><span class="p">(),</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">rand</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Applying random X displacement:</span><span class="se">\n</span><span class="s1">U1: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">U2: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">U3: </span><span class="si">{}</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">U1</span><span class="p">,</span><span class="n">U2</span><span class="p">,</span><span class="n">U3</span><span class="p">))</span>
+<span class="n">timeSeries</span><span class="p">(</span><span class="s1">&#39;Constant&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pattern</span><span class="p">(</span><span class="s1">&#39;Plain&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+   <span class="n">sp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">U1</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+   <span class="n">sp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">U2</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+   <span class="n">sp</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">U3</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+
+
+<span class="c1"># run analysis</span>
+<span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>
+<span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;Plain&#39;</span><span class="p">)</span>
+<span class="n">system</span><span class="p">(</span><span class="s1">&#39;FullGeneral&#39;</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="s1">&#39;NormUnbalance&#39;</span><span class="p">,</span> <span class="mf">1e-08</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;Linear&#39;</span><span class="p">)</span>
+<span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;LoadControl&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">analysis</span><span class="p">(</span><span class="s1">&#39;Static&#39;</span><span class="p">)</span>
+<span class="n">analyze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># compute expected solution</span>
+<span class="n">UCref</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">(</span><span class="n">U1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">U2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">U3</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span>
+   <span class="p">(</span><span class="n">U1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">U2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">U3</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mf">3.0</span>
+   <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expected displacement at constrained node is (U1+U2+U3)/3:</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">UCref</span><span class="p">))</span>
+
+<span class="c1"># read results</span>
+<span class="n">UC</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obtained displacement at constrained node is UC:</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">UC</span><span class="p">))</span>
+
+<span class="c1"># check error</span>
+<span class="n">ER</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="nb">abs</span><span class="p">(</span><span class="n">UC</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">UCref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="n">UCref</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+   <span class="nb">abs</span><span class="p">(</span><span class="n">UC</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">UCref</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">UCref</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+   <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Relative error is abs(UC-UCref)/UCref:</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ER</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>Code Developed by: <strong>Massimo Petracca</strong> at ASDEA Software, Italy.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

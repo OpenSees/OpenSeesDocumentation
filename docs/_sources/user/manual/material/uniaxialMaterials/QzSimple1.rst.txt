@@ -70,12 +70,12 @@ Viscous damping on the far-field (elastic) component of the :math:`q-z` material
 Examples of the monotonic backbones and cyclic loading response of QzSimple1 are given in the following plots.
 
 
-.. figure:: QzSimple1A.gif
+.. figure:: figures/QzSimple1A.gif
 	:align: center
 	:figclass: align-center
 
 
-.. figure:: QzSimple1B.gif
+.. figure:: figures/QzSimple1B.gif
 	:align: center
 	:figclass: align-center
 
@@ -97,6 +97,5 @@ Examples of the monotonic backbones and cyclic loading response of QzSimple1 are
 
 Code Developed by: `Ross Boulanger <https://faculty.engineering.ucdavis.edu/boulanger/>`_, UC Davis 
 
+
 .. [BoulangerEtAl1999] Boulanger, R. W., Curras, C. J., Kutter, B. L., Wilson, D. W., and Abghari, A. (1999). "Seismic soil-pile-structure interaction experiments and analyses." Journal of Geotechnical and Geoenvironmental Engineering, ASCE, 125(9): 750-759. Only minor changes have been made in its implementation for OpenSees.
-
-

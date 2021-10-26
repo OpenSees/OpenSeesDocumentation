@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.4.1.8. PyLiq1 Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.4.1.9. TzLiq1 Material" href="TzLiq1.html" />
+    <link rel="prev" title="3.4.1.7. QzSimple1 Material" href="QzSimple1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.4.1.1. Steel01 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.4.1.2. Steel02 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.4.1.3. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.4.1.4. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.4.1.5. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.4.1.6. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.4.1.7. QzSimple1 Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.8. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.4.1.9. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.4.1.10. QzLiq1 Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+        
+          <li><a href="../uniaxialMaterial.html"><span class="section-number">3.4.1. </span>uniaxialMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4.1.8. </span>PyLiq1 Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/PyLiq1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyliq1-material">
+<span id="pyliq1"></span><h1><span class="section-number">3.4.1.8. </span>PyLiq1 Material<a class="headerlink" href="#pyliq1-material" title="Permalink to this headline">¶</a></h1>
+<p>This command constructs a uniaxial p-y material that incorporates liquefaction effects. This p-y material is used with a zeroLength element to connect a pile (beam-column element) to a 2 D plane-strain FE mesh or displacement boundary condition. The p-y material obtains the average mean effective stress (which decreases with increasing excess pore pressure) either from two specified soil elements, or from a time series. Currently, the implementation requires that the specified soil elements consist of FluidSolidPorousMaterials in FourNodeQuad elements, or PressureDependMultiYield or PressureDependMultiYield02 materials in FourNodeQuadUP or NineFourQuadUP elements. There are two possible forms:</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">PyLiq1</span> <span class="pre">$matTag</span> <span class="pre">$soilType</span> <span class="pre">$pult</span> <span class="pre">$Y50</span> <span class="pre">$Cd</span> <span class="pre">&lt;$c&gt;</span> <span class="pre">$pRes</span> <span class="pre">$ele1</span> <span class="pre">$ele2</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">PyLiq1</span> <span class="pre">$matTag</span> <span class="pre">$soilType</span> <span class="pre">$pult</span> <span class="pre">$Y50</span> <span class="pre">$Cd</span> <span class="pre">&lt;$c&gt;</span> <span class="pre">$pRes</span> <span class="pre">-timeSeries</span> <span class="pre">$tag</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>integer tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$soilType</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>= 1 for clay; = 2 for sand. (see <a class="reference internal" href="PySimple1.html#pysimple1"><span class="std std-ref">PySimple1 Material</span></a>)</p></td>
+</tr>
+<tr class="row-even"><td><p>$pult</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Ultimate capacity of the p-y material.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Y50</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Displacement at which 50% of pult is mobilized in monotonic loading.</p></td>
+</tr>
+<tr class="row-even"><td><p>$Cd</p></td>
+<td><p><em>float</em></p></td>
+<td><p>To set the drag resistance within a fully-mobilized gap as Cd*pult.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$c</p></td>
+<td><p><em>float</em></p></td>
+<td><p>The viscous damping term (dashpot).</p></td>
+</tr>
+<tr class="row-even"><td><p>$pReS</p></td>
+<td><p><em>float</em></p></td>
+<td><p>sets the minimum (or residual) peak resistance that the material retains as the adjacent solid soil elements liquefy.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$ele1 $ele2</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>are the eleTag (element numbers) for the two solid elements from which PyLiq1 will obtain mean effective stresses and excess pore pressures.</p></td>
+</tr>
+<tr class="row-even"><td><p>$seriesTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>alternatively mean effective stress can be supplied by a time series  by specifying the text string -timeSeries and the tag of the series $seriesTag. (see <a class="reference internal" href="../../model/timeSeries.html#timeseries"><span class="std std-ref">Time Series Command</span></a>)</p></td>
+</tr>
+</tbody>
+</table>
+<p>To model the effects of liquefaction with PyLiq1, it is necessary to use the material stage updating command:</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">updateMaterialStage</span>&#160; <span class="pre">–material</span> <span class="pre">matNum</span>&#160; <span class="pre">–stage</span> <span class="pre">sNum</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matNum</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>material number (for PyLiq1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>$sNum</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>desired stage (valid values are 0 &amp; 1).</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With sNum=0, the PyLiq1 behavior will be independent of any pore pressure in the specified solidElem’s.</p>
+<p>When updateMaterialStage first sets sNum=1, PyLiq1 will obtain the average mean effective stress in the two solidElem’s and treat it as the initial consolidation stress prior to undrained loading. Thereafter, the behavior of PyLiq1 will depend on the mean effective stresses (and hence excess pore pressures) in the solidElem’s.</p>
+<p>The default value of sNum is 0 (i.e., sNum=0 if updateMaterialStage is not called).</p>
+<p>Note that the updateMaterialStage command is used with some soil material models, and that sNum=0 generally corresponds to the application of gravity loads (e.g., elastic behavior with no excess pore pressure development) and sNum=1 generally corresponds to undrained loading (e.g., plastic behavior with excess pore pressure development).</p>
+<p>Also refer to the notes of <a class="reference internal" href="PySimple1.html#pysimple1"><span class="std std-ref">PySimple1 Material</span></a></p>
+</div>
+<p>The PyLiq1 material inherits the PySimple1 material, and behaves identically to the PySimple1 material if there is no excess pore water pressure (i.e., sNum = 0 or <span class="math notranslate nohighlight">\(r_u=0\)</span>). The constitutive equations can be found in the description of <a class="reference internal" href="PySimple1.html#pysimple1"><span class="std std-ref">PySimple1 Material</span></a>.</p>
+<p>The PyLiq1 material modifies the p-y behavior in response to the average mean effective stress (p′), as affected by the excess pore water pressures, in two specified solid soil elements. The PyLiq1 material is used within a zeroLength element, and that zeroLength element generally shares a node with some solid soil elements (e.g., most commonly 1, 2, or 4 solid elements in a 2D mesh). Specifying two solid soil elements allows the PyLiq1 material to depend on pore pressures above and below its nodal position (essentially covering its full tributary length). The mean effective stress is affected by changes in mean total stress and excess pore pressure. For modeling purposes, an excess pore water pressure ratio is calculated as</p>
+<div class="math notranslate nohighlight">
+\[r_u=1-p'/p_c'\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_c'\)</span> is obtained from the specified solid soil elements and used within PyLiq1. The constitutive response of PyLiq1 is then taken as the constitutive response of PySimple1 scaled in proportion to the mean effective stress within the specified solid soil elements. This means that the ultimate capacity (pult) and tangent modulus are scaled by a factor of (1-<span class="math notranslate nohighlight">\(r_u\)</span>).</p>
+<p>Two additional constraints are then placed on the constitutive response. The first is that the scaled ultimate capacity cannot fall below the specified residual capacity of the material (i.e., pRes). The second constraint applies to the situation where the mean effective stress in the adjacent solid soil elements is incrementally increasing [e.g., the pore pressures decrease as the soils are incrementally dilatant (phase transformation)]. In this “hardening” situation, the loading path from the p-y relation at time “<span class="math notranslate nohighlight">\(i\)</span>” to time “<span class="math notranslate nohighlight">\(i+1\)</span>” is bounded by the material’ elastic stiffness (i.e., the unload/reloading stiffness); e.g., the incremental loading path cannot be steeper than the elastic stiffness. Note that the above approach only provides a first-order approximation for the softening effects of liquefaction on p-y behavior.</p>
+<div class="align-center figure">
+<img alt="../../../../_images/PyLiq1MaterialResponse.gif" src="../../../../_images/PyLiq1MaterialResponse.gif" />
+</div>
+<p>Two simple examples of PyLiq1 behavior are presented in the above figures. In these examples, there is a single FourNodeQuad element containing a FluidSolidPorousMaterial with a PressureDependMultiYield soil material. This solid element is connected to an elastic pile via a single “p-y” element (i.e., a zeroLength element containing a PyLiq1 material). The solid element is an order of magnitude stiffer than the p-y element, and is subjected to transient cyclic simple shear loading.</p>
+<div class="admonition-example-1-pyliq1-behaviour-during-liquefaction-without-lateral-spreading admonition">
+<p class="admonition-title">Example 1 : PyLiq1 behaviour during liquefaction without lateral spreading</p>
+<p>In the first example (Figure 1), the adjacent soil element is subjected to uniform cyclic loading that produces triggering of liquefaction (<span class="math notranslate nohighlight">\(r_u\)</span> = 100%) in about 7 cycles. The cyclic shear stress ratio (CSR), excess pore water pressure ratio (<span class="math notranslate nohighlight">\(r_u\)</span>), and shear strain (<span class="math notranslate nohighlight">\(\gamma\)</span>) versus cycle number for the solid soil element are plotted on the left side of the Figure. The soil element experiences uniform cyclic deformations; e.g., lateral spreading does not develop because the horizontal cyclic loading has no static bias in either direction. The pile is set as relatively rigid. Two different cases are then presented for the p-y element response.</p>
+<p>In the first case, sNum=0 such that the p-y element is independent of changes in mean effective stress (or excess pore pressure) in the soil element. The resulting behavior is shown in the upper right-hand plot of the Figure.</p>
+<p>In the second case, sNum was set to 1 prior to cyclic loading, and thus the resulting behavior is dependent on the excess pore pressure in the soil element (lower right-hand plot of the Figure). The p-y element exhibits the overall softening that is expected when the adjacent soil element liquefies, and also shows temporary stiffening (hardening) when the adjacent soil goes through phase transformation (with its associated drop in excess pore pressure). In these plots, the “p” is normalized by the pult for drained monotonic loading.</p>
+</div>
+<div class="admonition-example-2-pyliq1-behaviour-during-liquefaction-with-lateral-spreading admonition">
+<p class="admonition-title">Example 2 : PyLiq1 behaviour during liquefaction with lateral spreading</p>
+<p>In the second example (Figure 2), the adjacent soil element is subjected to a static shear load plus uniform cyclic loading such that triggering of liquefaction is accompanied by progressive lateral deformation in the direction of the static load bias (i.e., lateral spreading). Again, the left side of the Figure shows the CSR, <span class="math notranslate nohighlight">\(r_u\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> versus cycle number for the solid soil element. sNum was set to 1 prior to cyclic loading such that the p-y behavior is dependent on the excess pore pressure in the soil element. The residual capacity (pRes) of the p-y material is 10% of the drained ultimate capacity. Two different cases are then presented.</p>
+<p>In the first case, the pile is set as relatively rigid. The resulting behavior is shown in the upper right-hand plot of the Figure. The peak “p” occurs just as triggering of liquefaction occurs in the soil element, and is about 0.49 times the drained monotonic capacity pult. Subsequent peaks in “p” drop a bit to about 0.46 times pult.</p>
+<p>In the second case, the pile has a finite elastic stiffness such that it’s peak elastic deflection in this example is equal in magnitude to about 10 times the y50 value for the p-y element. The resulting behavior is shown in the lower right-hand plot of the Figure. Again, the peak “p” occurs just as triggering of liquefaction occurs in the soil element, being about 0.18pult in this case. Subsequent peaks in “p” drop by about 20% to about 0.14pult. The inclusion of pile flexibility reduced, by a factor of about 3, the peak values of “p” that developed in the p-y element as the soil progressively spread past the pile. During each cycle of loading, the soil element cyclically ratchets in the direction of the static load bias and alternates between being extremely soft (ru = 100%) and then stiffening when it goes through phase transformation (<span class="math notranslate nohighlight">\(r_u\)</span> drops). As the soil stiffens, the p-y element gains strength, transferring load onto the pile and causing the pile to elastically deform in the direction of loading. Then when the soil is unloaded and ru becomes 100% again, the p-y element loses strength, unloading the pile and allowing the pile to elastically return closer to its undeformed position. In each cycle of loading and progressive spreading of the soil, the magnitude of “p” that develops against the pile depends on the pile’s flexibility relative to the displacement range over which the soil goes through phase transformation.</p>
+</div>
+<p>The following constructs a PyLiq material with tag <strong>1</strong>, soil type <strong>2</strong> (sand), <span class="math notranslate nohighlight">\(p_{ult}\)</span> of <strong>4577.81</strong> and a <span class="math notranslate nohighlight">\(Y_{50}\)</span> of <strong>0.0066</strong>. Cd is set to <strong>0.3</strong> to define drag resistance of <span class="math notranslate nohighlight">\(0.3 p_{ult}\)</span> within a fully mobilized gap. The viscous damping term <span class="math notranslate nohighlight">\(c\)</span> is also set to be 0. The minimum (or residual) peak resistance that material retains when soil liquefy is set to :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>pRes`=0.1. The mean effective stress is supplied by the timeseries tag 1.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> PyLiq1 <span class="mi">1</span> <span class="mi">2</span> <span class="mf">4577.81</span> <span class="mf">0.0066</span> <span class="mf">0.3</span> <span class="mf">0.0</span> <span class="mf">0.1</span> <span class="o">-</span>timeSeries <span class="mi">1</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;PyLiq1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">4577.81</span><span class="p">,</span> <span class="mf">0.0066</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;-timeseries&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Code Developed by: <a class="reference external" href="https://faculty.engineering.ucdavis.edu/boulanger/">Ross Boulanger</a>, UC Davis</p>
+<dl class="citation">
+<dt class="label" id="boulangeretal1999"><span class="brackets">BoulangerEtAl1999</span></dt>
+<dd><p>Boulanger, R. W., Curras, C. J., Kutter, B. L., Wilson, D. W., and Abghari, A. (1999). “Seismic soil-pile-structure interaction experiments and analyses.” Journal of Geotechnical and Geoenvironmental Engineering, ASCE, 125(9): 750-759.</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

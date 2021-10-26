@@ -58,7 +58,7 @@ Viscous damping on the far-field (elastic) component of the t-z material is incl
 Examples of the cyclic loading response of TzSimple1 are given in the following plots. Note that the response for tzType = 2 has greater nonlinearity at smaller displacements (and hence greater hysteretic damping) and that it approaches tult more gradually (such that t/tult is still well below
 
 
-.. figure:: TzSimple1.gif
+.. figure:: figures/TzSimple1.gif
 	:align: center
 	:figclass: align-center
 
@@ -82,4 +82,7 @@ Examples of the cyclic loading response of TzSimple1 are given in the following 
 Code Developed by: `Ross Boulanger <https://faculty.engineering.ucdavis.edu/boulanger/>`_, UC Davis 
 
 
-.. [BoulangerEtAl1990] Boulanger, R.W., Curras, C.J., Kutter, B.L., Wilson, D.W., and Abghari, A. (1990). "Seismic Soil-pile-strcture interaction experiments and analysis", Jornal of Geotechnical and Geoenvironmental Engineering, ASCS, 125(9):750-759.
+.. [BoulangerEtAl1999] Boulanger, R. W., Curras, C. J., Kutter, B. L., Wilson, D. W., and Abghari, A. (1999). "Seismic soil-pile-structure interaction experiments and analyses." Journal of Geotechnical and Geoenvironmental Engineering, ASCE, 125(9): 750-759. Only minor changes have been made in its implementation for OpenSees.
+
+
+
