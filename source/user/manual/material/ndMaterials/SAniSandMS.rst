@@ -68,17 +68,16 @@ And :math:`\sigma^p` is the stress prediction using a :math:`p`-th order integra
    :width: 640px
    :figclass: align-center
 
+The above equations differ from those in the main reference by Liu et al. (2019) in that the use of the yield back-stress ratio :math:`\alpha` is resumed here, as in Dafalias and Manzari (2004), to avoid certain numerical inconveniences. 
 
 .. admonition:: Citation information
 
-   If you use SANISAND-MS in your published research work, please cite the main reference ([SANISAND-MS]_) and also inform ``jaabell`` (*at* miuandes *dot* cl), to update the list of published artciles and works that use the code.
+   If you use SANISAND-MS in your published research work, please cite the main reference ([SANISAND-MS]_) and also inform ``jaabell`` (*at* miuandes *dot* cl), to update the list of published articles and works that use the code.
 
 
 .. admonition:: Naming convention
 
    In text documents we use the spelling `SANISAND-MS`, but the OpenSees implementation uses ``SAniSandMS`` to accomodate coding conventions in OpenSees. 
-
-   `<http://www.joseabell.com>`_
 
 
 
