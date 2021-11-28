@@ -89,6 +89,7 @@ uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
    :maxdepth: 1
    
    uniaxialMaterials/HystereticPoly
+   uniaxialMaterials/DowelType
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
 
