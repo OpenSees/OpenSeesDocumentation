@@ -1,7 +1,7 @@
 .. _DowelType:
 
-DowelType Material
-^^^^^^^^^^^^^^^^^^
+DowelType Timber Joint Material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct a uniaxial force-displacement or moment-rotation model which simulates the hysteresis of a dowel-type timber joint, including nails, screws, and bolts, etc. The model has the following features:
 
@@ -42,6 +42,7 @@ The command to create a DowelType joint model has three variations, correspondin
    $c, |float|, Hysteresis curvature factor. Curvature increases when c is larger. (0 <= $c < 2) 
    $beta, |float|, An amplification factor of the maximum displacement to account for maximum displacement based reloading stiffness and strength degradation. ( $beta >= 1 ) 
    $gamma, |float|, A factor related to the energy-based damage index to account for energy based reloading stiffness and strength degradation. ( $gamma >= 1 ) 
+   $eta, |float|, A factor related to the extent that the force intercept varies with the maximum displacement. ( $eta >= 1 ) 
    $Dy, |float|, Apparent yielding displacement. 
    $alpha_p, |float|, Stiffness degradation factor for pinching line. 
    $alpha_u, |float|, Stiffness degradation factor for unloading line. 
