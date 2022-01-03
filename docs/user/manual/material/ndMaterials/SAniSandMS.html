@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4.2.12. SAniSandMS Material &mdash; OpenSees Documentation  documentation</title>
+  <title>3.4.2.12. SANISAND-MS Material &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -114,7 +114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="PressureIndependentMultiYield.html">3.4.2.9. Pressure Independent Multi Yield</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
 <li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.4.2.11. J2CyclicBoundingSurface Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.2.12. SAniSandMS Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.2.12. SANISAND-MS Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
@@ -189,7 +189,7 @@
         
           <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.4.2.12. </span>SAniSandMS Material</li>
+      <li><span class="section-number">3.4.2.12. </span>SANISAND-MS Material</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -208,17 +208,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sanisandms-material">
-<span id="sanisandms"></span><h1><span class="section-number">3.4.2.12. </span>SAniSandMS Material<a class="headerlink" href="#sanisandms-material" title="Permalink to this headline">¶</a></h1>
-<p>Code Developed by: Haoyuan Liu (TUDelft), <a class="reference external" href="http://www.joseabell.com">José A. Abell</a> (UANDES, Chile), and Federico Pisanò (TU Delft)</p>
-<p>This command is used to construct a multi-dimensional <a class="reference internal" href="#id7" id="id1"><span>[SAniSandMS]</span></a> material, which is an extension of the Manzari-Dafalias (SAniSand) model to account for ratcheting effects using the memory-surface (MS) concept. This allows capturing the ratcheting effects in sands that occur in high-cyclic loading in the presence of a static stress field or in the case of assymetric loading.</p>
+  <div class="section" id="sanisand-ms-material">
+<span id="sanisandms"></span><h1><span class="section-number">3.4.2.12. </span>SANISAND-MS Material<a class="headerlink" href="#sanisand-ms-material" title="Permalink to this headline">¶</a></h1>
+<p><strong>Code Developed by</strong>: <a class="reference external" href="https://www.linkedin.com/in/haoyuan-liu-059500171/?originalSubdomain=nl">Haoyuan Liu</a> (Norwegian Geotechnical Institute (NGI), formerly TUDelft), <a class="reference external" href="http://www.joseabell.com">José A. Abell</a> (UANDES, Chile), <a class="reference external" href="https://research-information.bris.ac.uk/en/persons/andrea-diambra">Andrea Diambra</a> (University of Bristol), and <a class="reference external" href="https://www.tudelft.nl/citg/over-faculteit/afdelingen/geoscience-engineering/sections/geo-engineering/staff/academic-staff/dr-f-federico-pisano">Federico Pisanò</a> (TU Delft).</p>
+<p>This command is used to construct a multi-dimensional SANISAND-MS (<code class="docutils literal notranslate"><span class="pre">SAniSandMS</span></code>) material, which is an extension of the Manzari-Dafalias (SAniSand) model with cyclic ratcheting control using the memory-surface (MS) concept. This allows capturing the ratcheting effects in sands that occur in high-cyclic loading in the presence of a static stress field or in the case of assymetric loading.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../_images/SAniSandMS-fig0a.png"><img alt="../../../../_images/SAniSandMS-fig0a.png" src="../../../../_images/SAniSandMS-fig0a.png" style="width: 400px;" /></a>
 </div>
-<div class="admonition-function admonition">
-<p class="admonition-title">function</p>
+<div class="admonition-tcl-command admonition">
+<p class="admonition-title">TCL command:</p>
 <p>nDMaterial SAniSandMS  $matTag $G0 $nu $e_init $Mc $c $lambda_c $e0 $ksi $P_atm $m $h0 $ch $nb $A0 $nd $zeta $mu0 $beta $Den $fabric_flag $flow_flag $intScheme $TanType $JacoType $TolF $TolR</p>
+<p>Please report bugs as an issue on the main OpenSees repositoy and tag <code class="docutils literal notranslate"><span class="pre">&#64;jaabell</span></code></p>
 </div>
+<p>Where,</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -322,11 +324,11 @@
 </tr>
 <tr class="row-even"><td><p>$intScheme</p></td>
 <td><p><em>integer</em></p></td>
-<td><p>constitutive integration method (1: modified Euler | 3: Runge-Kutta 4th order with error control (recommended))</p></td>
+<td><p>constitutive integration method (3: Runge-Kutta 4th order with error control (the only one currently implemented))</p></td>
 </tr>
 <tr class="row-odd"><td><p>$TanType</p></td>
 <td><p><em>integer</em></p></td>
-<td><p>type of tangent stiffness to report (0: elastic stiffness | 1: continuum elastoplastic stiffness | 2: consistent elastoplastic stiffness)</p></td>
+<td><p>type of tangent stiffness to report (0: elastic stiffness | 1: continuum elastoplastic stiffness )</p></td>
 </tr>
 <tr class="row-even"><td><p>$JacoType</p></td>
 <td><p><em>integer</em></p></td>
@@ -334,31 +336,42 @@
 </tr>
 <tr class="row-odd"><td><p>$TolF</p></td>
 <td><p><em>float</em></p></td>
-<td><p>tolerance for the yield surface</p></td>
+<td><p>tolerance for yield surface intersection calculation (stress units)</p></td>
 </tr>
-<tr class="row-even"><td><p>$TolR</p></td>
+<tr class="row-even"><td><p>$TolE</p></td>
 <td><p><em>float</em></p></td>
-<td><p>placeholder (not used in explicit methods)</p></td>
+<td><p>(adimensional) relative error for explicit integrator</p></td>
 </tr>
 </tbody>
 </table>
+<p>The current implementation on SANISAND-MS uses fourth-order Runge-Kutta with error control for constitutive integration. The strain coming from a finite-element containing SANISAND-MS is applied incrementally by subdividing automatically to keep the constitutive integration error below the parameter <code class="docutils literal notranslate"><span class="pre">$TolE</span></code>. The integration error <span class="math notranslate nohighlight">\(e\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}e = \max\left\lbrace e_{\sigma},\, e_{\alpha} \right\rbrace \\
+e_{\sigma} = \dfrac{\Vert \sigma^5 - \sigma^4 \Vert}{\Vert \sigma^4 \Vert} \\
+e_{\alpha} = \dfrac{\Vert \alpha^5 - \alpha^4 \Vert}{\Vert \alpha^4 \Vert}\end{split}\]</div>
+<p>And <span class="math notranslate nohighlight">\(\sigma^p\)</span> is the stress prediction using a <span class="math notranslate nohighlight">\(p\)</span>-th order integration formula, and likewise for the backstress <span class="math notranslate nohighlight">\(\alpha^p\)</span>. Thus, in the code a 5-th order formula to approximate and bound the integration error, while integration advances using the fourth-order equation (RK45).</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../_images/SAniSandMS-fig0b.png"><img alt="../../../../_images/SAniSandMS-fig0b.png" src="../../../../_images/SAniSandMS-fig0b.png" style="width: 640px;" /></a>
 </div>
-<p><a href="#id2"><span class="problematic" id="id3">**</span></a>Citation information. ** If you use SAniSandMS in your published research work, please cite <a class="reference internal" href="#id7" id="id4"><span>[SAniSandMS]</span></a> and also inform (jaabell <em>at</em> miuandes <em>dot</em> cl, to update the list of published artciles and works that use the code).</p>
-<p>Please report bugs as an issue on the main OpenSees repositoy and tag <code class="docutils literal notranslate"><span class="pre">&#64;jaabell</span></code></p>
-<p><a class="reference external" href="https://github.com/jaabell">https://github.com/jaabell</a></p>
-<p><a class="reference external" href="http://www.joseabell.com">http://www.joseabell.com</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p>The above equations differ from those in the main reference by Liu et al. (2019) in that the use of the yield back-stress ratio <span class="math notranslate nohighlight">\(\alpha\)</span> is resumed here, as in Dafalias and Manzari (2004), to avoid certain numerical inconveniences.</p>
+<div class="admonition-citation-information admonition">
+<p class="admonition-title">Citation information</p>
+<p>If you use SANISAND-MS in your published research work, please cite the main reference (<a class="reference internal" href="#sanisand-ms" id="id1"><span>[SANISAND-MS]</span></a>) and also inform <code class="docutils literal notranslate"><span class="pre">jaabell</span></code> (<em>at</em> miuandes <em>dot</em> cl), to update the list of published articles and works that use the code.</p>
+</div>
+<div class="admonition-naming-convention admonition">
+<p class="admonition-title">Naming convention</p>
+<p>In text documents we use the spelling <cite>SANISAND-MS</cite>, but the OpenSees implementation uses <code class="docutils literal notranslate"><span class="pre">SAniSandMS</span></code> to accomodate coding conventions in OpenSees.</p>
+</div>
+<div class="admonition-available-formulations admonition">
+<p class="admonition-title">Available formulations</p>
 <p>The material formulations for the SAniSandMS object are “ThreeDimensional” and “PlaneStrain”</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Valid Element Recorder queries are:</p>
+<div class="admonition-recorder-queries admonition">
+<p class="admonition-title">Recorder queries</p>
+<p>Valid Element recorder queries are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">stress</span></code> returns stress tensor</p></li>
-<li><p><a href="#id5"><span class="problematic" id="id6">``</span></a>strain``returns strain tensor</p></li>
+<li><p><a href="#id2"><span class="problematic" id="id3">``</span></a>strain``returns strain tensor</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code>  for <span class="math notranslate nohighlight">\(\mathbf{\alpha}\)</span>, the back-stress ratio tensor for the yield surface</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">alphaM</span></code>  for <span class="math notranslate nohighlight">\(\mathbf{\alpha^M}\)</span>, the back-stress ratio tensor for the memory surface</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">alpha_in</span></code> for <span class="math notranslate nohighlight">\(\mathbf{\alpha_{in}}\)</span></p></li>
@@ -375,7 +388,7 @@
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>This example, provides an assymetric drained triaxial test of the constitutive model to show the effect of ratcheting. First the sample is compressed isotropically to 200KPa, then a cyclic deviator stress is applied.</p>
+<p>This example, provides an asymetric drained triaxial test of the constitutive model to show the effect of ratcheting. First the sample is compressed isotropically to 200KPa, then a cyclic deviator stress is applied.</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span>set test_type &quot;drained_triaxial_cyc&quot; ;# Used in recorders.tcl
 
 wipe
@@ -393,34 +406,31 @@ set delta_qav -75.0;
 set delta_qcyc -60.0; 
 
 
-
 set G0        110.  ; # [Adimensional]
 set nu        0.05  ; # [Adimensional]
 set e_init    0.72  ; # [Adimensional]
 set Mc        1.27  ; # [Adimensional]
 set c         0.712 ; # [Adimensional]
 set lambda_c  0.049 ; # [Adimensional]
-set e0        0.845  ; # [Adimensional]
-set ksi       0.27   ; # [Adimensional]
+set e0        0.845 ; # [Adimensional]
+set ksi       0.27  ; # [Adimensional]
 set P_atm     101.3 ; # [kPa]
 set m         0.01  ; # [Adimensional]
 set h0        5.95  ; # [Adimensional]
 set ch        1.01  ; # [Adimensional]
-set nb        2.0  ; # [Adimensional]
+set nb        2.0   ; # [Adimensional]
 set A0        1.06  ; # [Adimensional]
-set nd        1.17   ; # [Adimensional]
+set nd        1.17  ; # [Adimensional]
 set z_max     4     ; # For SAniSand [Adimensional]
 set cz        0     ; # For SAniSand [Adimensional]
-set mu0       260.   ; # For RatchySand [Adimensional]
-set zeta      0.0005  ; # For RatchySand [Adimensional]
-set beta      1   ; # For RatchySand [Adimensional]
+set mu0       260.  ; # For SAniSand [Adimensional]
+set zeta      0.0005; # For SAniSand [Adimensional]
+set beta      1     ; # For SAniSand [Adimensional]
 set w1        0.5   ;
 set w2        2     ;
 set Den       1.584 ; # [Mg/m^3]
-set fabric_flag   0 ;
-set flow_flag     0 ;
 set intScheme 3     ; # Corresponds to Modified-Euler integration scheme
-set TanType   1     ; # 0: elastic stiffness, 1: continuum elastoplastic stiffness, 2: consistent elastoplastic stiffness
+set TanType   1     ; # 0: elastic stiffness, 1: continuum elastoplastic stiffness
 set JacoType  1     ; # Not used in explicit methods
 set TolF      1.0e-6; # Tolerances, not used in explicit
 set TolR      1.0e-6; # Tolerances, not used in explicit
@@ -429,7 +439,7 @@ set TolR      1.0e-6; # Tolerances, not used in explicit
 set P_ref $P_atm
  
 # Create material   
-nDMaterial SAniSandMS  1 $G0 $nu $e_init $Mc $c $lambda_c $e0 $ksi $P_atm $m $h0 $ch $nb $A0 $nd $zeta $mu0 $beta $Den $fabric_flag $flow_flag $intScheme $TanType $JacoType $TolF $TolR
+nDMaterial SAniSandMS  1 $G0 $nu $e_init $Mc $c $lambda_c $e0 $ksi $P_atm $m $h0 $ch $nb $A0 $nd $zeta $mu0 $beta $Den  $intScheme $TanType $JacoType $TolF $TolR
 set type &quot;RK&quot;
 
 
@@ -635,13 +645,27 @@ wipe
 <a class="reference internal image-reference" href="../../../../_images/SAniSandMS-fig3.png"><img alt="../../../../_images/SAniSandMS-fig3.png" src="../../../../_images/SAniSandMS-fig3.png" style="width: 600px;" /></a>
 </div>
 </div>
-<p>List of works using SAniSandMS</p>
+<p><strong>Main references</strong></p>
 <dl class="citation">
-<dt class="label" id="id7"><span class="brackets">SAniSandMS</span></dt>
-<dd><p>Haoyuan Liu, Andrea Diambra, José Antonio Abell, Federico Pisanò. Memory-enhanced plasticity modelling of sand behaviour under undrained cyclic loading. Journal of Geotechnical and Geoenvironmental Engineering, Vol. 146, Issue 11 (November 2020)</p>
+<dt class="label" id="sanisand-ms"><span class="brackets"><a class="fn-backref" href="#id1">SANISAND-MS</a></span></dt>
+<dd><p>Liu, H. Y., Abell, J. A., Diambra, A., &amp; Pisanò, F. (2019). <a class="reference external" href="https://www.researchgate.net/publication/328211282_Modelling_the_cyclic_ratcheting_of_sands_through_memory-enhanced_bounding_surface_plasticity">Modelling the cyclic ratcheting of sands through</a>. Géotechnique, 69(9), 783-800.</p>
+</dd>
+<dt class="label" id="phdthesis"><span class="brackets">PhDThesis</span></dt>
+<dd><p>Liu, H.Y.  (2020). <a class="reference external" href="https://repository.tudelft.nl/islandora/object/uuid%3A6e3ae33c-e95d-474f-8d6b-d8c0f8aa4788?collection=research">Constitutive modelling of cyclic sand behaviour for offshore foundations</a> (Doctoral dissertation, Delft University of Technology).</p>
 </dd>
 </dl>
-<p>Haoyuan Liu, Evangelos Kementzetzidis, José Antonio Abell, Federico Pisanò From cyclic sand ratcheting to tilt accumulation in offshore monopiles: 3D FE modelling using SANISAND-MS. Géotechnique. Online March 8, 2021 (Ahead of print)</p>
+<p><strong>List of works using SANISAND-MS</strong></p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets">1</span></dt>
+<dd><p>Liu, H. Y., &amp; Pisano, F. (2019). <a class="reference external" href="https://www.icevirtuallibrary.com/doi/pdf/10.1680/jgele.18.00187">Prediction of oedometer terminal densities through a memory-enhanced cyclic model for sand</a>. Géotechnique Letters, 9(2), 81-88.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">2</span></dt>
+<dd><p>Liu, H. Y., Kementzetzidis, E., Abell, J. A., &amp; Pisanò, F. (2021). <a class="reference external" href="https://www.icevirtuallibrary.com/doi/pdf/10.1680/jgeot.20.P.029">From cyclic sand ratcheting to tilt accumulation of offshore monopiles: 3D FE modelling using SANISAND-MS</a>. Géotechnique, 1-16.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">3</span></dt>
+<dd><p>Liu, H.Y., &amp; Kaynia, A. M. (2021). <a class="reference external" href="https://www.icevirtuallibrary.com/doi/pdf/10.1680/jgeot.21.00068">Characteristics of cyclic undrained model SANISAND-MSu and their effects on response of monopiles for offshore wind structures</a>. Géotechnique, 1-39.</p>
+</dd>
+</dl>
 </div>
 
 

@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.4.1.4. DuctileFracture Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.4.1.5. HystereticPoly Material" href="HystereticPoly.html" />
+    <link rel="prev" title="3.4.1.3. SteelFractureDI Material" href="SteelFractureDI.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.4.1.1. Steel01 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.4.1.2. Steel02 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.4.1.3. SteelFractureDI Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.4. DuctileFracture Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.4.1.5. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.4.1.6. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.4.1.7. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.4.1.8. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.4.1.9. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.4.1.10. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.4.1.11. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.4.1.12. QzLiq1 Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+        
+          <li><a href="../uniaxialMaterial.html"><span class="section-number">3.4.1. </span>uniaxialMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4.1.4. </span>DuctileFracture Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/DuctileFracture.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ductilefracture-material">
+<span id="ductile-fracture"></span><h1><span class="section-number">3.4.1.4. </span>DuctileFracture Material<a class="headerlink" href="#ductilefracture-material" title="Permalink to this headline">¶</a></h1>
+<p>This command is used to construct a uniaxial material object for simulating reinforcement steel fracture under monotonic/cyclic loads.
+The material is based on a newly developed Reinforcement Ductile Fracture Model (RDFM) (<a class="reference internal" href="#zhong2021" id="id1"><span>[Zhong2021]</span></a>, <a class="reference internal" href="#zhongdeierlein2022a" id="id2"><span>[ZhongDeierlein2022a]</span></a>).</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">DuctileFracture</span> <span class="pre">$matTag</span> <span class="pre">$baseTag</span> <span class="pre">-c_momo</span> <span class="pre">$c_mono</span> <span class="pre">-c_cycl</span> <span class="pre">$c_cycl</span> <span class="pre">-c_symm</span> <span class="pre">$c_symm</span> <span class="pre">&lt;-E_s</span> <span class="pre">$E_s&gt;</span> <span class="pre">&lt;-esu</span> <span class="pre">$esu&gt;</span> <span class="pre">&lt;-k1</span> <span class="pre">$k1&gt;</span> <span class="pre">&lt;-k2</span> <span class="pre">$k2&gt;</span> <span class="pre">&lt;-db</span> <span class="pre">$db&gt;</span> <span class="pre">&lt;-b1</span> <span class="pre">$b1&gt;</span> <span class="pre">&lt;-b2</span> <span class="pre">$b2&gt;</span> <span class="pre">&lt;-FImax</span> <span class="pre">$FImax&gt;</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>integer tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$baseTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>integer tag identifying the base material (describing the constitutive model) wrapped by DuctileFracture</p></td>
+</tr>
+<tr class="row-even"><td><p>$c_mono</p></td>
+<td><p><em>float</em></p></td>
+<td><p>void-growth coefficient</p></td>
+</tr>
+<tr class="row-odd"><td><p>$c_cycl</p></td>
+<td><p><em>float</em></p></td>
+<td><p>cyclic deterioration coefficient</p></td>
+</tr>
+<tr class="row-even"><td><p>$c_symm</p></td>
+<td><p><em>float</em></p></td>
+<td><p>symmetry coefficient</p></td>
+</tr>
+<tr class="row-odd"><td><p>$E_s</p></td>
+<td><p><em>float</em></p></td>
+<td><p>initial elastic tangent (optional: default = 29000.0 ksi).</p></td>
+</tr>
+<tr class="row-even"><td><p>$esu</p></td>
+<td><p><em>float</em></p></td>
+<td><p>uniform strain of the reinforcement</p></td>
+</tr>
+<tr class="row-odd"><td><p>$k1</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Necking Amplification Model strain coefficient (optional: default = 1.0). see note.</p></td>
+</tr>
+<tr class="row-even"><td><p>$k2</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Necking Amplification Model stress coefficient (optional: default = 0.0). see note.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$db</p></td>
+<td><p><em>float</em></p></td>
+<td><p>bar diameter (optional: only used when considering bar buckling). see note.</p></td>
+</tr>
+<tr class="row-even"><td><p>$b1</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Buckling Adjustment Model amplitude coefficient (optional: default = 0.0). see note.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$b2</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Buckling Adjustment Model strain coefficient (optional: default = 1000.0). see note.</p></td>
+</tr>
+<tr class="row-even"><td><p>$FImax</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Fracture Index at bar fracture (optional: default = 1.0).</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The RDFM extends the previous studies on simulating ductile fractures of structural steel materials
+(e.g., <a class="reference internal" href="#kavindedeierlein2007" id="id3"><span>[KavindeDeierlein2007]</span></a>, <a class="reference internal" href="#smithetal2017" id="id4"><span>[SmithEtAl2017]</span></a>) to quantify the damage of reinforcing steel material by a
+Fracture Index (<span class="math notranslate nohighlight">\(FI\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[FI = Ce^{\lambda \int_{T&lt;0} d\epsilon_p}\int(\beta e^{1.3T}-e^{-1.3T})d\epsilon_p\]</div>
+<p>where modeling parameters are <span class="math notranslate nohighlight">\(C\)</span> (void-growth coefficient), <span class="math notranslate nohighlight">\(\lambda\)</span>,
+and <span class="math notranslate nohighlight">\(\beta\)</span> in the FI equation. <span class="math notranslate nohighlight">\(T\)</span> is stress triaxiaility, the ratio of
+hydrostatic stress and effective stress. <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>
+are path-dependent:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\beta = 1.0+(\beta_0-1.0)\left[\frac{min(\Delta\epsilon_{max},\Delta\epsilon_{th})}{\Delta\epsilon_{th}}\right]^\gamma\\\lambda = \lambda_0\left[\frac{min(\Delta\epsilon_{max},\Delta\epsilon_{th})}{\Delta\epsilon_{th}}\right]^\gamma\end{aligned}\end{align} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda_0\)</span> is cyclic deterioration coefficient, and <span class="math notranslate nohighlight">\(\beta_0\)</span> is symmetry coefficient. These three
+coefficients <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(\lambda_0\)</span>, and <span class="math notranslate nohighlight">\(\beta_0\)</span> are material specific which corresponds to different
+fracture resistances for different reinforcing steel materials. Given a plastic steel strain history, the influence
+of these three coefficients on <span class="math notranslate nohighlight">\(FI\)</span> are show in <a class="reference internal" href="#fig-ductilefracture-mp-infl"><span class="std std-numref">Fig. 3.4.1.7</span></a>. In <em>DuctileFracture</em>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(\lambda_0\)</span>, and <span class="math notranslate nohighlight">\(\beta_0\)</span> are $c_mono, $c_cycl, and $c_symm,
+respectively.</p>
+<p>Comparing to traditional Coffin-Manson fatigue model, the RDFM can (1) predict ultra-low cycle and monontonic bar fracture
+based on void growth/shrinkage mechanism, (2) simulate the influence of buckling-induced strain localization
+on bar fracture, and (3) consider the path-dependency of buckling effects on longitudinal bar ruptures
+in reinforced concrete beams and columns. These features are implemented as the Necking Amplification Model (NAM) and
+Buckling Adjustment Model (BAM) as shown in the flowchart <a class="reference internal" href="#fig-ductilefracture-workflow"><span class="std std-numref">Fig. 3.4.1.8</span></a>.</p>
+<p>The two NAM modeling coefficients <span class="math notranslate nohighlight">\(k_1\)</span> ($k1) and <span class="math notranslate nohighlight">\(k_2\)</span> ($k2) are calibrated to reinforcing steel bar fracture test data,
+and the two BAM modeling coefficients <span class="math notranslate nohighlight">\(b1\)</span> ($b_1) and <span class="math notranslate nohighlight">\(b2\)</span> ($b2) are calibrated to cyclic bar fatigue test data with observed
+buckling effects. Based on the calibration, along with <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(\lambda_0\)</span>, and <span class="math notranslate nohighlight">\(\beta_0\)</span>, the modeling coefficients in the <em>DuctileFracture</em>
+are suggested to be estimated by (<a class="reference internal" href="#zhong2021" id="id5"><span>[Zhong2021]</span></a>, <a class="reference internal" href="#zhongdeierlein2022b" id="id6"><span>[ZhongDeierlein2022b]</span></a>):</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}C = e^{-3.96-1.85ln\epsilon_{su}+0.20ln\left(\frac{d_b}{8in}\right)}\\\lambda_0 = e^{5.90+1.53ln\left(\frac{f_y}{60ksi}\right)+2.32ln\epsilon_{su}+1.11ln\left(\frac{d_b}{8in}\right)}\\\beta_0 = 1.05\\k_1 = e^{2.21-0.32ln\left(\frac{T}{Y}\right)-0.66ln\left(\frac{d_b}{8in}\right)}\\k_2 = e^{1.29+0.64ln\left(\frac{f_y}{60ksi}\right)-0.46ln\left(\frac{d_b}{8in}\right)}\\b_1 = e^{-2.53-1.90ln\left(\frac{T}{Y}\right)-1.36ln\left(\frac{d_b}{8in}\right)-0.43ln\left(\frac{R_{min}}{1.5H}\right)}\\b_2 = e^{-3.29-0.49ln\epsilon_{su}-0.14ln\left(\frac{R_{min}}{1.5H}\right)-0.70ln\left(\frac{s^*}{d_b}\right)}\end{aligned}\end{align} \]</div>
+</div>
+<div class="figure align-center" id="id7">
+<span id="fig-ductilefracture-mp-infl"></span><a class="reference internal image-reference" href="../../../../_images/DuctileFracture_mp_infl.png"><img alt="../../../../_images/DuctileFracture_mp_infl.png" src="../../../../_images/DuctileFracture_mp_infl.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.7 </span><span class="caption-text">Influence of <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(\lambda_0\)</span>, and <span class="math notranslate nohighlight">\(\beta_0\)</span> on <span class="math notranslate nohighlight">\(FI\)</span>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id8">
+<span id="fig-ductilefracture-workflow"></span><a class="reference internal image-reference" href="../../../../_images/DuctileFracture_Workflow.png"><img alt="../../../../_images/DuctileFracture_Workflow.png" src="../../../../_images/DuctileFracture_Workflow.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.8 </span><span class="caption-text">Reinforcement Ductile Fracture Simulation.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>The following is used to construct a <em>DuctileFracture</em> along with a base material using <em>ReinforcingSteel</em>.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> Steel02 <span class="mi">1</span> <span class="mf">64.7</span> <span class="mf">30944.0</span> <span class="mf">0.012</span> <span class="mi">18</span> <span class="mf">0.925</span> <span class="mf">0.15</span>
+<span class="nv">uniaxialMaterial</span> DuctileFracture <span class="mi">2</span> <span class="mi">1</span> <span class="o">-</span>c_mono <span class="mf">1.255</span> <span class="o">-</span>c_cycl <span class="mf">1.383</span> <span class="o">-</span>c_symm <span class="mf">1.05</span> <span class="o">-</span>E_s <span class="mf">30944.0</span> <span class="o">-</span>esu <span class="mf">0.10</span> <span class="o">-</span>k1 <span class="mf">11.30</span> <span class="o">-</span>k2 <span class="mf">4.49</span> <span class="o">-</span>db <span class="mf">0.63</span> <span class="o">-</span>b1 <span class="mf">0.04</span> <span class="o">-</span>b2 <span class="mf">0.02</span><span class="k">;</span>
+</pre></div>
+</div>
+</div>
+<dl class="citation">
+<dt class="label" id="zhong2021"><span class="brackets">Zhong2021</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id5">2</a>)</span></dt>
+<dd><p>Zhong, K. (2020). “<a class="reference external" href="https://searchworks.stanford.edu/view/13751299">Influence of Reinforcing Steel Fracture on Seismic Performance of Concrete Structures: Fracture Simulation, Earthquake Duration Effects, and Design Strategies</a>”. PhD Dissertation, Stanford University.</p>
+</dd>
+<dt class="label" id="zhongdeierlein2022a"><span class="brackets"><a class="fn-backref" href="#id2">ZhongDeierlein2022a</a></span></dt>
+<dd><p>Zhong, K., Deierlein. G. G. (2022). “Reinforcement Fracture Simulation. I: Damage Model for Bare Bar Fatigue and Fracture”.</p>
+</dd>
+<dt class="label" id="zhongdeierlein2022b"><span class="brackets"><a class="fn-backref" href="#id6">ZhongDeierlein2022b</a></span></dt>
+<dd><p>Zhong, K., Deierlein. G. G. (2022). “Reinforcement Fracture Simulation. II: Predictive Equations and Application for Reinforcement in Concrete Structures”.</p>
+</dd>
+<dt class="label" id="kavindedeierlein2007"><span class="brackets"><a class="fn-backref" href="#id3">KavindeDeierlein2007</a></span></dt>
+<dd><p>Kanvinde A M, Deierlein G G. (2007). “<a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-9399(2007)133:6(701)">Cyclic void growth model to assess ductile fracture initiation in structural steels due to ultra low cycle fatigue</a>”[J]. Journal of engineering mechanics, 133(6): 701-712.</p>
+</dd>
+<dt class="label" id="smithetal2017"><span class="brackets"><a class="fn-backref" href="#id4">SmithEtAl2017</a></span></dt>
+<dd><p>Smith C, Kanvinde A, Deierlein G. (2017). “<a class="reference external" href="https://doi.org/10.1016/j.engfracmech.2016.10.011">A local criterion for ductile fracture under low-triaxiality axisymmetric stress states</a>”[J]. Engineering Fracture Mechanics, 169: 321-335.</p>
+</dd>
+</dl>
+<p>Code Developed by: Kuanshi Zhong (<a class="reference external" href="mailto:kuanshi&#37;&#52;&#48;stanford&#46;edu">kuanshi<span>&#64;</span>stanford<span>&#46;</span>edu</a>), Gregory Deierlein</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

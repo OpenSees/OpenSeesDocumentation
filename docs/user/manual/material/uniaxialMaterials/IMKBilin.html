@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>IMKBilin Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>IMKBilin Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/IMKBilin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imkbilin-material">
+<h1>IMKBilin Material<a class="headerlink" href="#imkbilin-material" title="Permalink to this headline">¶</a></h1>
+<p>This command is used to construct a material with a hysteretic bilinear response based on the modified Ibarra-Medina-Krawinkler deterioration model.</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">IMKBilin</span> <span class="pre">$matTag</span> <span class="pre">$Ke</span> <span class="pre">$Up_pos</span> <span class="pre">$Upc_pos</span> <span class="pre">$Uu_pos</span> <span class="pre">$Fy_pos</span> <span class="pre">$FmaxFy_pos</span> <span class="pre">$FresFy_pos</span> <span class="pre">$Up_neg</span> <span class="pre">$Upc_neg</span> <span class="pre">$Uu_neg</span> <span class="pre">$Fy_neg</span> <span class="pre">$FmaxFy_neg</span> <span class="pre">$FresFy_neg</span> <span class="pre">$Lamda_S</span> <span class="pre">$Lamda_C</span> <span class="pre">$Lamda_K</span> <span class="pre">$c_S</span> <span class="pre">$c_C</span> <span class="pre">$c_K</span> <span class="pre">$D_pos</span> <span class="pre">$D_neg</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>integer tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Ke</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Elastic stiffness</p></td>
+</tr>
+<tr class="row-even"><td><p>$dp_pos</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Pre-capping deformation in positive loading direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>$dpc_pos</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Post-capping deformation in positive loading direction</p></td>
+</tr>
+<tr class="row-even"><td><p>$du_pos</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Ultimate deformation in positive loading direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Fy_pos</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Yield strength in positive loading direction</p></td>
+</tr>
+<tr class="row-even"><td><p>$FmaxFy_pos</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Maximum-to-yield strength ratio in positive loading direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>$FresFy_pos</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Residual-to-yield strength ratio in positive loading direction</p></td>
+</tr>
+<tr class="row-even"><td><p>$dp_neg</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Pre-capping deformation in negative loading direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>$dpc_neg</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Post-capping deformation in negative loading direction</p></td>
+</tr>
+<tr class="row-even"><td><p>$du_neg</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Ultimate deformation in negative loading direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Fy_neg</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Yield strength in negative loading direction</p></td>
+</tr>
+<tr class="row-even"><td><p>$FmaxFy_neg</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Maximum-to-yield strength ratio in negative loading direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>$FresFy_neg</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Residual-to-yield strength ratio in negative loading direction</p></td>
+</tr>
+<tr class="row-even"><td><p>$Lamda_S</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Cyclic deterioration parameter for yield strength deterioration</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Lamda_C</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Cyclic deterioration parameter for post-capping stiffness deterioration</p></td>
+</tr>
+<tr class="row-even"><td><p>$Lamda_K</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Cyclic deterioration parameter for unloading stiffness deterioration</p></td>
+</tr>
+<tr class="row-odd"><td><p>$c_S</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Rate of yield strength deterioration</p></td>
+</tr>
+<tr class="row-even"><td><p>$c_C</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Rate of post-capping stiffness deterioration</p></td>
+</tr>
+<tr class="row-odd"><td><p>$c_K</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Rate of unloading stiffness deterioration</p></td>
+</tr>
+<tr class="row-even"><td><p>$D_pos</p></td>
+<td><p><em>float</em></p></td>
+<td><p>rate of cyclic deterioration in the positive loading direction. This parameter is used to create asymmetric hysteretic behavior as in the case of a composite beam (0&lt; D_pos &lt;1). For symmetric hysteretic response use 1.0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$D_neg</p></td>
+<td><p><em>float</em></p></td>
+<td><p>rate of cyclic deterioration in the negative loading direction. This parameter is used to create asymmetric hysteretic behavior as in the case of a composite beam (0&lt; D_pos &lt;1). For symmetric hysteretic response use 1.0.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All material model parameters (in both the positive and negative direction) shall be specified as positive values.</p>
+</div>
+<dl class="citation">
+<dt class="label" id="ibarraetal2005"><span class="brackets">IbarraEtAl2005</span></dt>
+<dd><p>Ibarra, L. F., Medina, R. A., and Krawinkler, H. (2005). “Hysteretic models that incorporate strength and stiffness deterioration.” Earthquake Engineering &amp; Structural Dynamics, 34(12), 1489-1511, Doi: 10.1002/eqe.495.</p>
+</dd>
+</dl>
+<blockquote id="fig-imkbilin">
+<div><p>IMKBilin backbone curve</p>
+</div></blockquote>
+<div class="align-center figure" id="id1">
+<img alt="../../../../_images/IMKBilin.jpg" src="../../../../_images/IMKBilin.jpg" />
+<p class="caption"><span class="caption-text">IMKBilin sample response</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure">
+<img alt="user/manual/material/uniaxialMaterials/figures/IMKBilin-sampleresponse.jpg" src="user/manual/material/uniaxialMaterials/figures/IMKBilin-sampleresponse.jpg" />
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>The following is used to construct a IMKBilin material with symmetric hysteretic response.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke            <span class="mf">100000.0</span><span class="k">;</span>
+<span class="k">set</span> My            <span class="mf">100.0</span><span class="k">;</span>
+<span class="k">set</span> Mc_My   <span class="mf">1.15</span><span class="k">;</span>
+<span class="k">set</span> Mres_My <span class="mf">0.1</span><span class="k">;</span>
+<span class="k">set</span> thetap  <span class="mf">0.010</span><span class="k">;</span>
+<span class="k">set</span> thetau  <span class="mf">0.2</span><span class="k">;</span>
+<span class="k">set</span> thetapc <span class="mf">0.1</span><span class="k">;</span>
+<span class="k">set</span> lambdaS <span class="mi">1</span><span class="k">;</span>
+<span class="k">set</span> lambdaC <span class="mi">1</span><span class="k">;</span>
+<span class="k">set</span> lambdaK <span class="mi">1</span><span class="k">;</span>
+
+<span class="nv">uniaxialMaterial</span> IMKBilin <span class="mi">1</span> <span class="nv">$Ke</span> <span class="nv">$thetap</span> <span class="nv">$thetapc</span> <span class="nv">$thetau</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$thetap</span> <span class="nv">$thetapc</span> <span class="nv">$thetau</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$lambdaS</span> <span class="nv">$lambdaC</span> <span class="nv">$lambdaK</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="k">;</span>
+</pre></div>
+</div>
+</div>
+<p>Code Developed by: <a href="#id2"><span class="problematic" id="id3">|aelkady|</span></a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

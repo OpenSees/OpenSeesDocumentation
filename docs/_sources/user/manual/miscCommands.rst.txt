@@ -12,6 +12,7 @@ These are commands added to the interpreter which don't fit into one of the othe
    misc/nodeVel
    misc/nodeAccel
    misc/eleResponse
+   misc/getCrdTransfTags
 
 .. toctree::
    :caption: 2. Commands that don't return values

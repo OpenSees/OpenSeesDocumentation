@@ -34,6 +34,7 @@ The following subsections contain information about **$matType**
    uniaxialMaterials/SteelMPF
    uniaxialMaterials/UVCuniaxial
    uniaxialMaterials/SteelFractureDI
+   uniaxialMaterials/DuctileFracture
 
 
 #. Concrete Materials
@@ -89,6 +90,7 @@ uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
    :maxdepth: 1
    
    uniaxialMaterials/HystereticPoly
+   uniaxialMaterials/DowelType
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
 

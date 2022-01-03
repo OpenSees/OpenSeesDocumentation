@@ -7,14 +7,15 @@ SteelFractureDI Material
 This command is used to construct a uniaxial Giuffre-Menegotto-Pinto steel material object similar to Steel02 but equipped with a real-time stress-based fracture criterion and a post-fracture constitutive law to simulate the behavior of steel flates after fracture.
 
 
-.. function:: uniaxialMaterial SteelFractureDI $matTag $Fy $E $b $R0 $cR1 $cR2 $a1 $a2 $a3 $a4 $sigcr $beta $sigmin $FI_lim
+.. function:: uniaxialMaterial SteelFractureDI $matTag $Fy $FyC $E $b $R0 $cR1 $cR2 $a1 $a2 $a3 $a4 $sigcr $beta $sigmin $FI_lim
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
 
    $matTag, |integer|,	    integer tag identifying material
-   $Fy, |float|, yield strength
+   $Fy, |float|, tension yield strength
+   $FyC, |float|, Compression yield strength
    $E0, |float|, initial elastic tangent
    $b, |float|, strain-hardening ratio (ratio between post-yield tangent and initial elastic tangent)
    R0 $CR1 $CR2, 3 |float|, parameters to control the transition from elastic to plastic branches.
@@ -65,13 +66,13 @@ SteelFractureDI is equipped with a stress-based fracture criterion that explicit
 
    .. code-block:: tcl
 
-      uniaxialMaterial SteelFractureDI 60.0 30000.0 0.02 20.0 .925 .15 0.08 1.00 0.08 1.00 120 0.8 20 1.0
+      uniaxialMaterial SteelFractureDI 60.0 60.0 30000.0 0.02 20.0 .925 .15 0.08 1.00 0.08 1.00 120 0.8 20 1.0
 
    2. **Python Code**
 
    .. code-block:: python
 
-      uniaxialMaterial('SteelFractureDI',60.0,30000.0, 0.02, 20.0, .925, .15, 0.08, 1.00, 0.08, 1.00, 120, 0.8, 20, 1.0)
+      uniaxialMaterial('SteelFractureDI',60.0, 60.0, 30000.0, 0.02, 20.0, .925, .15, 0.08, 1.00, 0.08, 1.00, 120, 0.8, 20, 1.0)
 
 .. [GalvisEtAl12022] Galvis, F. A., Deierlein, G. G., Yen, W. Y., Molina Hutt, C. (2022). "Fracture-Mechanics Based Material Model for Fiber Simulation of Flange Fractures in Steel Moment Frame Connections". Journal of Structural Engineering, ASCE [in review].
 
