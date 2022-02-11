@@ -9,14 +9,14 @@ This command is used to construct a number of Multi-Point Constraint (MP_Constra
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
 
-   $perpDirn, |integer|,  direction perpendicular to the rigid plane (i.e. direction 3 corresponds to the 1-2 plane)
-   $retainedNodeTag, |integer|,  integer tag identifying the master node
-   $constrainedNodeTag1 $constrainedNodeTag2 ... , |integerList|, integar tags identifying the slave nodes
+   $perpDirn, |integer|,  direction perpendicular to the rigid plane (i.e. direction 3 (Z) corresponds to the 1-2 (X-Y) plane) -- for 2D models direction of rigid motion (1 (X) or 2 (Y))
+   $retainedNodeTag, |integer|,  integer tag identifying the primary (retained) node
+   $constrainedNodeTag1 $constrainedNodeTag2 ... , |integerList|, integer tags identifying the secondary (constrained) nodes
 
 .. note::
-   1. The constraint object is constructed assuming small rotations.
+   1. The constraint object is constructed assuming small rotations in 3D.
 
-   2. The rigidDiaphragm command works only for problems in three dimensions with six-degrees-of-freedom at the nodes (ndf = 6).
+   2. The rigidDiaphragm command works for problems in three dimensions with six-degrees-of-freedom at the nodes (ndf=6) and in two dimensions with ndf=3.
 
 
 .. admonition:: Example:

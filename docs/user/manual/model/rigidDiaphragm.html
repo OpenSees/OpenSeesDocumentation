@@ -227,23 +227,23 @@
 <tbody>
 <tr class="row-even"><td><p>$perpDirn</p></td>
 <td><p><em>integer</em></p></td>
-<td><p>direction perpendicular to the rigid plane (i.e. direction 3 corresponds to the 1-2 plane)</p></td>
+<td><p>direction perpendicular to the rigid plane (i.e. direction 3 (Z) corresponds to the 1-2 (X-Y) plane) – for 2D models direction of rigid motion (1 (X) or 2 (Y))</p></td>
 </tr>
 <tr class="row-odd"><td><p>$retainedNodeTag</p></td>
 <td><p><em>integer</em></p></td>
-<td><p>integer tag identifying the master node</p></td>
+<td><p>integer tag identifying the primary (retained) node</p></td>
 </tr>
 <tr class="row-even"><td><p>$constrainedNodeTag1 $constrainedNodeTag2 …</p></td>
 <td><p><em>list integer</em></p></td>
-<td><p>integar tags identifying the slave nodes</p></td>
+<td><p>integer tags identifying the secondary (constrained) nodes</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>The constraint object is constructed assuming small rotations.</p></li>
-<li><p>The rigidDiaphragm command works only for problems in three dimensions with six-degrees-of-freedom at the nodes (ndf = 6).</p></li>
+<li><p>The constraint object is constructed assuming small rotations in 3D.</p></li>
+<li><p>The rigidDiaphragm command works for problems in three dimensions with six-degrees-of-freedom at the nodes (ndf=6) and in two dimensions with ndf=3.</p></li>
 </ol>
 </div>
 <div class="admonition-example admonition">
