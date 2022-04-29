@@ -89,7 +89,9 @@ uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
 .. toctree::
    :maxdepth: 1
    
+   uniaxialMaterials/HystereticAsym (Smooth asymmetric hysteresis)
    uniaxialMaterials/HystereticPoly
+   uniaxialMaterials/HystereticSmooth (Smooth hysteretic material)
    uniaxialMaterials/DowelType
    uniaxialMaterials/BoucWenInfill
 
