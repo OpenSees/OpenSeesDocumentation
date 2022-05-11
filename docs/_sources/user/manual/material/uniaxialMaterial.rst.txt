@@ -75,7 +75,7 @@ The following subsections contain information about **$matType**
 
    .. toctree::
       :maxdepth: 1
-   
+
       uniaxialMaterials/CastFuse
       uniaxialMaterials/ViscousDamper
       uniaxialMaterials/BilinearOilDamper
@@ -99,6 +99,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
       uniaxialMaterials/HystereticPoly
       uniaxialMaterials/DowelType
+      uniaxialMaterials/BoucWenInfill
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
 
