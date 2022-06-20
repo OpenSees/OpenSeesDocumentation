@@ -29,7 +29,7 @@ Typical Hysteretic Stress-Strain Relation for material
   :align: center
   :figclass: align-center
 
-Typical Hysteretic Stress-Strain Relation for material 
+Comparison with Concrete01
 
 .. figure:: figures/Concrete02Hysteretic.jpg
   :align: center
