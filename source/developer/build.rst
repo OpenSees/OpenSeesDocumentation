@@ -4,13 +4,12 @@
 Building Application
 ********************
 
-The OpenSees applications are built using `CMake <https://cmake.org/>`_, an extensible open-source system that manages the build system. It provides a uniform build process across a range of operating systems: Windows, MacOS and different vesrions of Linux. CMake needs to be installed on your system.
+The OpenSees applications are built using `CMake <https://cmake.org/>`_, an extensible open-source system that manages the build system. It provides a uniform build process across a range of operating systems: Windows, MacOS and different version of Linux. CMake needs to be installed on your system.
 
 .. note::
-   All code instructions below are run from a **Terminal** application. Type cmd in the Windows search or terminal in MacOS spotlight to start the application. If you are on a Unix machinem this note may cause you some amusement!
+   All code instructions below are run from a **Terminal** application. Type cmd in the Windows search or terminal in MacOS spotlight to start the application. If you are on a Unix machine this note may cause you some amusement!
 
-To build the OpenSees applications you need C, C++ and Fortran compilers, MPI i
-s and development Python is optional. The `Conan <https://conan.io/>`_ package manager system is also optional, but it will install on your system some needed external libraries which you are required to install by yourself if you don't wish to uses conan. These external libraries are: mysql, tcl, HDF5.
+To build the OpenSees applications you need C, C++ and Fortran compilers, MPI is and development Python is optional. The `Conan <https://conan.io/>`_ package manager system is also optional, but it will install on your system some needed external libraries which you are required to install by yourself if you don't wish to uses conan. These external libraries are: mysql, tcl, HDF5.
 
 The following provides links to the software required.
 
@@ -67,7 +66,7 @@ The following provides links to the software required.
 Building the OpenSees Applications
 **********************************
 
-With everything installed the build process is somehwat simple!
+With everything installed the build process is somewhat simple!
 
 1. Obtain the source code:
 
