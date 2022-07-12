@@ -12,7 +12,7 @@ It constrains the displacements of the constrained node (NC) to be the **weighte
 
 The constrained node should be inside (or on the boundary of) the domain defined by the retained nodes.
 
-.. function:: element ASDEmbeddedNodeElement $eleTag $Cnode $Rnode1 $Rnode2 $Rnode3 <$Rnode4> <-K $K> <-rot>
+.. function:: element ASDEmbeddedNodeElement $eleTag $Cnode $Rnode1 $Rnode2 $Rnode3 <$Rnode4> <-rot> <-p> <-K $K> <-KP $KP>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -21,6 +21,8 @@ The constrained node should be inside (or on the boundary of) the domain defined
    $eleTag, |integer|, unique integer tag identifying element object.
    $Cnode, |integer|, the constrained node
    $Rnode1 $Rnode2 $Rnode3 <$Rnode4>, 3 or 4 |integer|, the 3 (or 4) retained nodes defining the surrounding triangle (or tetrahedron) domain.
+   -rot, |string|, "optional flag. if provided, and if the constrained node has rotational DOFs, its rotation will be constrained as well."
+   -p, |string|, "optional flag. if provided, and if the constrained and retained nodes have pressure DOFs, it will be constrained as well."
    -K, |string|, "optional flag. if provided, the user should use a user-defined penalty stiffness."
    $K, |float|, "optional float, mandatory if -K flag is provided (default = 1.0e18).
    
@@ -31,7 +33,8 @@ The constrained node should be inside (or on the boundary of) the domain defined
    You can estimate this value to be equal to, or slightly larger than the Young's modulus of the material used for the surrounding domain.
    
    Do not use extremely large values, otherwise the system will be ill-conditioned."
-   -rot, |string|, "optional flag. if provided, and if the constrained node has rotational DOFs, its rotation will be constrained as well."
+   -KP, |string|, "optional flag. if provided, the user should use a user-defined penalty stiffness for the pressure DOF."
+   $KP, |float|, "optional float, mandatory if -KP flag is provided (default = 1.0e18)."
 
 This element can be used in both 2D and 3D problems:
 
