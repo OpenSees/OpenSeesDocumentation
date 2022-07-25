@@ -195,4 +195,5 @@ The following subsections contain information about **$eleType** and the number 
    elements/AV3D4
    elements/ASDEmbeddedNodeElement
    elements/ASDAbsorbingBoundary
+   elements/RockingBC
 
