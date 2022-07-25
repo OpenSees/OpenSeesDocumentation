@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4.1.5. IMKBilin Material &mdash; OpenSees Documentation  documentation</title>
+  <title>3.4.1.10. BoucWenInfill Material &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -36,14 +36,15 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.4.1.6. IMKPeakOriented Material" href="IMKPeakOriented.html" />
-    <link rel="prev" title="3.4.1.4. DuctileFracture Material" href="DuctileFracture.html" /> 
+    <link rel="next" title="3.4.1.11. PySimple1 Material" href="PySimple1.html" />
+    <link rel="prev" title="3.4.1.9. DowelType Timber Joint Material" href="DowelType.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -105,12 +106,12 @@
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.4.1.2. Steel02 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.4.1.3. SteelFractureDI Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.4.1.4. DuctileFracture Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.5. IMKBilin Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.4.1.5. IMKBilin Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.4.1.6. IMKPeakOriented Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.4.1.7. IMKPinching Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.4.1.8. HystereticPoly Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.4.1.9. DowelType Timber Joint Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.4.1.10. BoucWenInfill Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.10. BoucWenInfill Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.4.1.11. PySimple1 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.4.1.12. TzSimple1 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.4.1.13. QzSimple1 Material</a></li>
@@ -193,13 +194,13 @@
         
           <li><a href="../uniaxialMaterial.html"><span class="section-number">3.4.1. </span>uniaxialMaterial Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.4.1.5. </span>IMKBilin Material</li>
+      <li><span class="section-number">3.4.1.10. </span>BoucWenInfill Material</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/IMKBilin.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/BoucWenInfill.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -212,12 +213,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="imkbilin-material">
-<h1><span class="section-number">3.4.1.5. </span>IMKBilin Material<a class="headerlink" href="#imkbilin-material" title="Permalink to this headline">¶</a></h1>
-<p>This command is used to construct a material with a hysteretic bilinear response based on the modified Ibarra-Medina-Krawinkler deterioration model.</p>
+  <div class="section" id="boucweninfill-material">
+<span id="boucweninfill"></span><h1><span class="section-number">3.4.1.10. </span>BoucWenInfill Material<a class="headerlink" href="#boucweninfill-material" title="Permalink to this headline">¶</a></h1>
+<p>This command is used to construct the uniaxial BoucWenInfill material producing smooth hysteretic loops with stiffness and strength degradation and pinching effect. The pinching formulation is particularly suitable to simulate the behavior of infill panels and masonry walls.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">IMKBilin</span> <span class="pre">$matTag</span> <span class="pre">$Ke</span> <span class="pre">$Up_pos</span> <span class="pre">$Upc_pos</span> <span class="pre">$Uu_pos</span> <span class="pre">$Fy_pos</span> <span class="pre">$FmaxFy_pos</span> <span class="pre">$FresFy_pos</span> <span class="pre">$Up_neg</span> <span class="pre">$Upc_neg</span> <span class="pre">$Uu_neg</span> <span class="pre">$Fy_neg</span> <span class="pre">$FmaxFy_neg</span> <span class="pre">$FresFy_neg</span> <span class="pre">$Lamda_S</span> <span class="pre">$Lamda_C</span> <span class="pre">$Lamda_K</span> <span class="pre">$c_S</span> <span class="pre">$c_C</span> <span class="pre">$c_K</span> <span class="pre">$D_pos</span> <span class="pre">$D_neg</span></span></dt>
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">BoucWenInfill</span> <span class="pre">$matTag</span> <span class="pre">$mass</span> <span class="pre">$alpha</span> <span class="pre">$beta0</span> <span class="pre">$eta0</span> <span class="pre">$n</span> <span class="pre">$k</span> <span class="pre">$xy</span> <span class="pre">$deltak</span> <span class="pre">$deltaf</span> <span class="pre">$psi</span> <span class="pre">$Zs</span> <span class="pre">$As</span> <span class="pre">$epsp</span> <span class="pre">$tol</span> <span class="pre">$maxIter</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -235,135 +236,99 @@
 <tbody>
 <tr class="row-even"><td><p>$matTag</p></td>
 <td><p><em>integer</em></p></td>
-<td><p>integer tag identifying material</p></td>
+<td><p>integer tag identifying material.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$Ke</p></td>
+<tr class="row-odd"><td><p>$mass</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Elastic stiffness</p></td>
+<td><p>mass of the system.</p></td>
 </tr>
-<tr class="row-even"><td><p>$dp_pos</p></td>
+<tr class="row-even"><td><p>$alpha</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Pre-capping deformation in positive loading direction</p></td>
+<td><p>ratio of post-yield stiffness to the initial elastic stiffness (0&lt;$alpha&lt;1).</p></td>
 </tr>
-<tr class="row-odd"><td><p>$dpc_pos</p></td>
+<tr class="row-odd"><td><p>$beta0 $eta0</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Post-capping deformation in positive loading direction</p></td>
+<td><p>parameters that control the shape of the hysteresis loop (-1&lt;$eta0&lt;1).</p></td>
 </tr>
-<tr class="row-even"><td><p>$du_pos</p></td>
+<tr class="row-even"><td><p>$n</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Ultimate deformation in positive loading direction</p></td>
+<td><p>Parameter that controls the transition from linear to nonlinear range.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$Fy_pos</p></td>
+<tr class="row-odd"><td><p>$k</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Yield strength in positive loading direction</p></td>
+<td><p>Initial elastic stiffness.</p></td>
 </tr>
-<tr class="row-even"><td><p>$FmaxFy_pos</p></td>
+<tr class="row-even"><td><p>$xy</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Maximum-to-yield strength ratio in positive loading direction</p></td>
+<td><p>yielding displacement of the system</p></td>
 </tr>
-<tr class="row-odd"><td><p>$FresFy_pos</p></td>
+<tr class="row-odd"><td><p>$deltak $deltaf</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Residual-to-yield strength ratio in positive loading direction</p></td>
+<td><p>Parameters that control respectively stiffness and strength degradation.</p></td>
 </tr>
-<tr class="row-even"><td><p>$dp_neg</p></td>
+<tr class="row-even"><td><p>$psi</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Pre-capping deformation in negative loading direction</p></td>
+<td><p>Parameter that controls the rate of stiffness degradation.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$dpc_neg</p></td>
+<tr class="row-odd"><td><p>$Zs</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Post-capping deformation in negative loading direction</p></td>
+<td><p>parameter that controls the extension of pinching along z-axis.</p></td>
 </tr>
-<tr class="row-even"><td><p>$du_neg</p></td>
+<tr class="row-even"><td><p>$As</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Ultimate deformation in negative loading direction</p></td>
+<td><p>parameter that controls the extension of pinching along x-axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$Fy_neg</p></td>
+<tr class="row-odd"><td><p>$epsp</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Yield strength in negative loading direction</p></td>
+<td><p>pinching activation energy.</p></td>
 </tr>
-<tr class="row-even"><td><p>$FmaxFy_neg</p></td>
+<tr class="row-even"><td><p>$tol</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Maximum-to-yield strength ratio in negative loading direction</p></td>
+<td><p>tolerance in each integration step.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$FresFy_neg</p></td>
+<tr class="row-odd"><td><p>$maxIter</p></td>
 <td><p><em>float</em></p></td>
-<td><p>Residual-to-yield strength ratio in negative loading direction</p></td>
-</tr>
-<tr class="row-even"><td><p>$Lamda_S</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Cyclic deterioration parameter for yield strength deterioration</p></td>
-</tr>
-<tr class="row-odd"><td><p>$Lamda_C</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Cyclic deterioration parameter for post-capping stiffness deterioration</p></td>
-</tr>
-<tr class="row-even"><td><p>$Lamda_K</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Cyclic deterioration parameter for unloading stiffness deterioration</p></td>
-</tr>
-<tr class="row-odd"><td><p>$c_S</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Rate of yield strength deterioration</p></td>
-</tr>
-<tr class="row-even"><td><p>$c_C</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Rate of post-capping stiffness deterioration</p></td>
-</tr>
-<tr class="row-odd"><td><p>$c_K</p></td>
-<td><p><em>float</em></p></td>
-<td><p>Rate of unloading stiffness deterioration</p></td>
-</tr>
-<tr class="row-even"><td><p>$D_pos</p></td>
-<td><p><em>float</em></p></td>
-<td><p>rate of cyclic deterioration in the positive loading direction. This parameter is used to create asymmetric hysteretic behavior as in the case of a composite beam (0&lt; D_pos &lt;1). For symmetric hysteretic response use 1.0.</p></td>
-</tr>
-<tr class="row-odd"><td><p>$D_neg</p></td>
-<td><p><em>float</em></p></td>
-<td><p>rate of cyclic deterioration in the negative loading direction. This parameter is used to create asymmetric hysteretic behavior as in the case of a composite beam (0&lt; D_pos &lt;1). For symmetric hysteretic response use 1.0.</p></td>
+<td><p>maximum number of iterations for each integration step.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>All material model parameters (in both the positive and negative direction) shall be specified as positive values.</p>
+<p>The determination of constitutive parameters is supported by their physical meaning. In case of infill panels, empirical correlation laws between the model parameters and the geometrical and mechanical properties of infilled frames can be found in <a class="reference internal" href="#sirottietal2021" id="id1"><span>[SirottiEtAL2021]</span></a>.</p>
 </div>
-<dl class="citation">
-<dt class="label" id="ibarraetal2005"><span class="brackets">IbarraEtAl2005</span></dt>
-<dd><p>Ibarra, L. F., Medina, R. A., and Krawinkler, H. (2005). “Hysteretic models that incorporate strength and stiffness deterioration.” Earthquake Engineering &amp; Structural Dynamics, 34(12), 1489-1511, Doi: 10.1002/eqe.495.</p>
-</dd>
-</dl>
-<blockquote id="fig-imkbilin">
-<div><p>IMKBilin backbone curve</p>
-</div></blockquote>
-<div class="align-center figure" id="id1">
-<img alt="../../../../_images/IMKBilin.jpg" src="../../../../_images/IMKBilin.jpg" />
-<p class="caption"><span class="caption-number">Fig. 3.4.1.9 </span><span class="caption-text">IMKBilin sample response</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p>The equations governing the BoucWenInfill behavior are described in <span id="id2">[SirottiEtAl2021]</span>. Other references can be found in <a class="reference internal" href="#pelliciarietal2020" id="id3"><span>[PelliciariEtAl2020]</span></a> for stiffness and strength degradation and in <a class="reference internal" href="#madanetal1997" id="id4"><span>[MadanEtAl1997]</span></a> for the pinching formulation.</p>
+<p>The model may reproduce either force-displacement or stress-strain relationships.</p>
+<p>Parameters $deltak, $deltaf and $psi regulate respectively stiffness, strength degradation and the rate of stiffness degradation.</p>
+<div class="align-center figure">
+<img alt="../../../../_images/BoucWenInfill1.png" src="../../../../_images/BoucWenInfill1.png" />
+</div>
+<p>Parameters $Zs, $As and $epsp control the amount and activation of the pinching effect:</p>
+<div class="align-center figure">
+<img alt="../../../../_images/BoucWenInfill2.png" src="../../../../_images/BoucWenInfill2.png" />
 </div>
 <div class="align-center figure">
-<img alt="user/manual/material/uniaxialMaterials/figures/IMKBilin-sampleresponse.jpg" src="user/manual/material/uniaxialMaterials/figures/IMKBilin-sampleresponse.jpg" />
+<img alt="../../../../_images/BoucWenInfill3.png" src="../../../../_images/BoucWenInfill3.png" />
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>The following is used to construct a IMKBilin material with symmetric hysteretic response.</p>
-<ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
-</ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke            <span class="mf">100000.0</span><span class="k">;</span>
-<span class="k">set</span> My            <span class="mf">100.0</span><span class="k">;</span>
-<span class="k">set</span> Mc_My   <span class="mf">1.15</span><span class="k">;</span>
-<span class="k">set</span> Mres_My <span class="mf">0.1</span><span class="k">;</span>
-<span class="k">set</span> thetap  <span class="mf">0.010</span><span class="k">;</span>
-<span class="k">set</span> thetau  <span class="mf">0.2</span><span class="k">;</span>
-<span class="k">set</span> thetapc <span class="mf">0.1</span><span class="k">;</span>
-<span class="k">set</span> lambdaS <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaC <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaK <span class="mi">1</span><span class="k">;</span>
-
-<span class="nv">uniaxialMaterial</span> IMKBilin <span class="mi">1</span> <span class="nv">$Ke</span> <span class="nv">$thetap</span> <span class="nv">$thetapc</span> <span class="nv">$thetau</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$thetap</span> <span class="nv">$thetapc</span> <span class="nv">$thetau</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$lambdaS</span> <span class="nv">$lambdaC</span> <span class="nv">$lambdaK</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="k">;</span>
+<p>The following instruction builds a BoucWenInfill material with tag <strong>1</strong>, parameters reported in the table above, tolerance $tol = <span class="math notranslate nohighlight">\(10^{-6}\)</span> and maximum number of iterations $maxIter = <span class="math notranslate nohighlight">\(10^{6}\)</span>.</p>
+<p><strong>Tcl Code</strong></p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> BoucWenInfill <span class="mi">1</span> <span class="mi">1</span> <span class="mf">0.06</span> <span class="mf">0.25</span> <span class="mf">0.1</span> <span class="mf">1.2</span> <span class="mi">65</span> <span class="mi">1</span> <span class="mf">0.005</span> <span class="mf">0.005</span> <span class="mf">0.001</span> <span class="mf">0.01</span> <span class="mi">5</span> <span class="mi">10000</span> <span class="mi">10</span>e-6 <span class="mi">10</span>e6
 </pre></div>
 </div>
 </div>
-<p>Code Developed by: <a href="#id2"><span class="problematic" id="id3">|aelkady|</span></a></p>
+<p>Code Developed by: Stefano Sirotti, University of Modena and Reggio Emilia, Italy, <a class="reference external" href="mailto:stefano&#46;sirotti&#37;&#52;&#48;unimore&#46;it">stefano<span>&#46;</span>sirotti<span>&#64;</span>unimore<span>&#46;</span>it</a></p>
+<dl class="citation">
+<dt class="label" id="sirottietal2021"><span class="brackets">SirottiEtAL2021</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Sirotti, S., Pelliciari, M., Di Trapani, F., Briseghella, B., Carlo Marano, G., Nuti, C., &amp; Tarantino, A. M. (2021). Development and validation of new Bouc–Wen data-driven hysteresis model for masonry infilled RC frames. Journal of Engineering Mechanics, 147(11), 04021092. DOI: <a class="reference external" href="https://doi.org/10.1061/(ASCE)EM.1943-7889.0002001">https://doi.org/10.1061/(ASCE)EM.1943-7889.0002001</a>.</p>
+</dd>
+<dt class="label" id="pelliciarietal2020"><span class="brackets"><a class="fn-backref" href="#id3">PelliciariEtAl2020</a></span></dt>
+<dd><p>Pelliciari, M., Briseghella, B., Tondolo, F., Veneziano, L., Nuti, C., Greco, R., … &amp; Tarantino, A. M. (2020). A degrading Bouc–Wen model for the hysteresis of reinforced concrete structural elements. Structure and Infrastructure Engineering, 16(7), 917-930. DOI: <a class="reference external" href="https://doi.org/10.1080/15732479.2019.1674893">https://doi.org/10.1080/15732479.2019.1674893</a>.</p>
+</dd>
+<dt class="label" id="madanetal1997"><span class="brackets"><a class="fn-backref" href="#id4">MadanEtAl1997</a></span></dt>
+<dd><p>Madan, A., Reinhorn, A. M., Mander, J. B., &amp; Valles, R. E. (1997). Modeling of masonry infill panels for structural analysis. Journal of structural engineering, 123(10), 1295-1302. DOI: <a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-9445(1997)123:10(1295">https://doi.org/10.1061/(ASCE)0733-9445(1997)123:10(1295</a>).</p>
+</dd>
+</dl>
 </div>
 
 

@@ -21,79 +21,91 @@ The following subsections contain information about **$matType**
 
 #. Steel & Reinforcing-Steel Materials
 
-.. toctree::
-   :maxdepth: 1
+   .. toctree::
+      :maxdepth: 1
 
-   uniaxialMaterials/Steel01
-   uniaxialMaterials/Steel02
-   uniaxialMaterials/Steel4
-   uniaxialMaterials/Hysteretic
-   uniaxialMaterials/ReinforcingSteel
-   uniaxialMaterials/DoddRestrepo
-   uniaxialMaterials/RambergOsgoodSteel
-   uniaxialMaterials/SteelMPF
-   uniaxialMaterials/UVCuniaxial
-   uniaxialMaterials/SteelFractureDI
-   uniaxialMaterials/DuctileFracture
+      uniaxialMaterials/Steel01
+      uniaxialMaterials/Steel02
+      uniaxialMaterials/Steel4
+      uniaxialMaterials/Hysteretic
+      uniaxialMaterials/ReinforcingSteel
+      uniaxialMaterials/DoddRestrepo
+      uniaxialMaterials/RambergOsgoodSteel
+      uniaxialMaterials/SteelMPF
+      uniaxialMaterials/UVCuniaxial
+      uniaxialMaterials/SteelFractureDI
+      uniaxialMaterials/DuctileFracture
 
 
 #. Concrete Materials
-uniaxialMaterials/Concrete01
-uniaxialMaterials/Concrete02
-uniaxialMaterials/Concrete04
-uniaxialMaterials/Concrete06
-uniaxialMaterials/Concrete07
-uniaxialMaterials/Concrete01
-uniaxialMaterials/ConfinedConcrete01
-uniaxialMaterials/ConcreteD
-uniaxialMaterials/FRPConfinedConcrete
-uniaxialMaterials/ConcreteCM
+
+   .. toctree::
+      :maxdepth: 1
+
+      uniaxialMaterials/Concrete01
+      uniaxialMaterials/Concrete02
+      uniaxialMaterials/Concrete04
+      uniaxialMaterials/Concrete06
+      uniaxialMaterials/Concrete07
+      uniaxialMaterials/ConfinedConcrete01
+      uniaxialMaterials/ConcreteD
+      uniaxialMaterials/FRPConfinedConcrete
+      uniaxialMaterials/ConcreteCM
 
 #. Some Standard Uniaxial Materials
-uniaxialMaterials/Elastic
-uniaxialMaterials/ElasticPP
-uniaxialMaterials/ElasticPP_Gap
-uniaxialMaterials/ElasticNoTension
-uniaxialMaterials/ElasticBilin
-uniaxialMaterials/ElasticMultiLinear
-uniaxialMaterials/MultiLinear
-uniaxialMaterials/Parallel
-uniaxialMaterials/Series
-uniaxialMaterials/InitialStrain
-uniaxialMaterials/InitialStress
-uniaxialMaterials/MinMax
+
+   .. toctree::
+      :maxdepth: 1
+		 
+      uniaxialMaterials/Elastic
+      uniaxialMaterials/ElasticPP
+      uniaxialMaterials/ElasticPP_Gap
+      uniaxialMaterials/ElasticNoTension
+      uniaxialMaterials/ElasticBilin
+      uniaxialMaterials/ElasticMultiLinear
+      uniaxialMaterials/MultiLinear
+      uniaxialMaterials/Parallel
+      uniaxialMaterials/Series
+      uniaxialMaterials/InitialStrain
+      uniaxialMaterials/InitialStress
+      uniaxialMaterials/MinMax
 
 #. Other Uniaxial Materials
-uniaxialMaterials/CastFuse
-uniaxialMaterials/ViscousDamper
-uniaxialMaterials/BilinearOilDamper
-uniaxialMaterials/Modified Ibarra-Medina-Krawinkler Deterioration Model with Bilinear Hysteretic Response (Bilin Material)
-uniaxialMaterials/Modified Ibarra-Medina-Krawinkler Deterioration Model with Peak-Oriented Hysteretic Response (ModIMKPeakOriented Material)
-uniaxialMaterials/Modified Ibarra-Medina-Krawinkler Deterioration Model with Pinched Hysteretic Response (ModIMKPinching Material)
-uniaxialMaterials/SAWS
-uniaxialMaterials/BARSLIP
-uniaxialMaterials/Bond_SP01 - - Strain Penetration Model for Fully Anchored Steel Reinforcing Bars
-uniaxialMaterials/Fatigue
-uniaxialMaterials/Hardening
-uniaxialMaterials/Impact
-uniaxialMaterials/Hyperbolic Gap
-uniaxialMaterials/LimitState
-uniaxialMaterials/PathIndependent
-uniaxialMaterials/Pinching4
-uniaxialMaterials/Engineered Cementitious Composites
-uniaxialMaterials/SelfCentering
-uniaxialMaterials/Viscous
-uniaxialMaterials/BoucWen
-uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
 
-.. toctree::
-   :maxdepth: 1
-   
-   uniaxialMaterials/HystereticAsym (Smooth asymmetric hysteresis)
-   uniaxialMaterials/HystereticPoly
-   uniaxialMaterials/HystereticSmooth (Smooth hysteretic material)
-   uniaxialMaterials/DowelType
-   uniaxialMaterials/BoucWenInfill
+   .. toctree::
+      :maxdepth: 1
+
+      uniaxialMaterials/CastFuse
+      uniaxialMaterials/ViscousDamper
+      uniaxialMaterials/BilinearOilDamper
+      uniaxialMaterials/IMKBilin
+      uniaxialMaterials/IMKPeakOriented
+      uniaxialMaterials/IMKPinching
+      uniaxialMaterials/SAWS
+      uniaxialMaterials/BARSLIP
+      uniaxialMaterials/Bond_SP01 - - Strain Penetration Model for Fully Anchored Steel Reinforcing Bars
+      uniaxialMaterials/Fatigue
+      uniaxialMaterials/Hardening
+      uniaxialMaterials/Impact
+      uniaxialMaterials/Hyperbolic Gap
+      uniaxialMaterials/LimitState
+      uniaxialMaterials/PathIndependent
+      uniaxialMaterials/Pinching4
+      uniaxialMaterials/Engineered Cementitious Composites
+      uniaxialMaterials/SelfCentering
+      uniaxialMaterials/Viscous
+      uniaxialMaterials/BoucWen
+      uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
+      uniaxialMaterials/HystereticPoly
+      uniaxialMaterials/HystereticAsym (Smooth asymmetric hysteresis)
+      uniaxialMaterials/HystereticPoly
+      uniaxialMaterials/HystereticSmooth (Smooth hysteretic material)
+      uniaxialMaterials/DowelType
+      uniaxialMaterials/BoucWenInfill
+      uniaxialMaterials/ViscoelasticGap
+      uniaxialMaterials/HertzDamp
+      uniaxialMaterials/JankowskiImpact
+
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
 
