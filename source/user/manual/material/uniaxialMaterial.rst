@@ -97,11 +97,15 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/BoucWen
       uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
       uniaxialMaterials/HystereticPoly
+      uniaxialMaterials/HystereticAsym (Smooth asymmetric hysteresis)
+      uniaxialMaterials/HystereticPoly
+      uniaxialMaterials/HystereticSmooth (Smooth hysteretic material)
       uniaxialMaterials/DowelType
       uniaxialMaterials/BoucWenInfill
       uniaxialMaterials/ViscoelasticGap
       uniaxialMaterials/HertzDamp
       uniaxialMaterials/JankowskiImpact
+
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
 
