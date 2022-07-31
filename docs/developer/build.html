@@ -42,7 +42,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. References" href="references.html" />
+    <link rel="next" title="3. References" href="references.html" />
     <link rel="prev" title="1. Source Code" href="sourceCode.html" /> 
 </head>
 
@@ -103,12 +103,23 @@
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sourceCode.html">1. Source Code</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="issues.html">7. Issues</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Building Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#windows-10">2.1. Windows 10</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#software-requirements">2.1.1. Software Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-opensees-applications">2.1.2. Building the OpenSees Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#macos">2.2. MacOS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.2.1. Software Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.2.2. Building the OpenSees Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -178,18 +189,23 @@
             
   <div class="section" id="building-application">
 <span id="build"></span><h1><span class="section-number">2. </span>Building Application<a class="headerlink" href="#building-application" title="Permalink to this headline">¶</a></h1>
-<p>The OpenSees applications are built using <a class="reference external" href="https://cmake.org/">CMake</a>, an extensible open-source system that manages the build system. It provides a uniform build process across a range of operating systems: Windows, MacOS and different vesrions of Linux. CMake needs to be installed on your system.</p>
+<p>The OpenSees applications are built using <a class="reference external" href="https://cmake.org/">CMake</a>, an extensible open-source system that manages the build system. It provides a uniform build process across a range of operating systems: Windows, MacOS and different version of Linux. CMake needs to be installed on your system. For it to work, other applications such as C, C++ and Fortran compilers need to be also installed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>All code instructions below are run from a <strong>Terminal</strong> application. Type cmd in the Windows search or terminal in MacOS spotlight to start the application. If you are on a Unix machinem this note may cause you some amusement!</p>
+<p>Most code instructions below are run from a <strong>Terminal</strong> application. Type <strong>cmd</strong> in the Windows search or <strong>terminal</strong> in MacOS spotlight to start the application. If you are on a Unix machine this note may cause you some amusement!</p>
 </div>
-<p>To build the OpenSees applications you need C, C++ and Fortran compilers, MPI i
-s and development Python is optional. The <a class="reference external" href="https://conan.io/">Conan</a> package manager system is also optional, but it will install on your system some needed external libraries which you are required to install by yourself if you don’t wish to uses conan. These external libraries are: mysql, tcl, HDF5.</p>
-<p>The following provides links to the software required.</p>
-<ul>
-<li><p><strong>C++17 compliant compiler</strong>: many of the newer code being added by developers use C++17 features; consequently, a newer C++17 compliant compiler is suggested. For Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community Edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development;</p></li>
-<li><p><strong>Fortran Compiler</strong>: There are not many free options for Windows. We suggest Intel’s <a href="#id3"><span class="problematic" id="id4">`oneAPI &lt;https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html&quot;`_</span></a> toolkits. To install the Fortran compiler you need to install TWO toolkits, the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">base toolkit</a> and the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html">HPC toolkit</a>.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with <strong>MPI</strong> for building and running the parallel OpenSees applications.</p>
-<div class="admonition note">
+<div class="section" id="windows-10">
+<h2><span class="section-number">2.1. </span>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="software-requirements">
+<h3><span class="section-number">2.1.1. </span>Software Requirements<a class="headerlink" href="#software-requirements" title="Permalink to this headline">¶</a></h3>
+<p>For Windows 10 the user must have the following applications installed on their computer: CMake, VisualStudio Basic, Intel One Basic and HPC Toolkits and Conan:</p>
+<ol class="arabic simple">
+<li><p><strong>CMake</strong>: We use <a class="reference external" href="https://cmake.org/download/">CMake</a> for managing the build process. Version 3.20 or later is recommended.</p></li>
+<li><p><strong>Visual Studio</strong>: <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community Edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development;</p></li>
+<li><p><strong>IntelOne Basic &amp; HPC Toolkits</strong>: Intel’s <a href="#id4"><span class="problematic" id="id5">`oneAPI &lt;https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html&quot;`_</span></a> toolkits. To install the Fortran compiler you need to install TWO toolkits, the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">base toolkit</a> and the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html">HPC toolkit</a>.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with <strong>MPI</strong> for building and running the parallel OpenSees applications.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <blockquote>
 <div><p>When downloading, you do not need to sign up with Intel. After you select the Download button a new window pops up titled ‘Get Your Download’. In bottom left had corner you can select the ‘Continue as Guest’ link to start a download without logging in.</p>
@@ -202,97 +218,121 @@ s and development Python is optional. The <a class="reference external" href="ht
 </ol>
 </div>
 </div>
-</li>
-<li><p><strong>CMake</strong>: We use <a class="reference external" href="https://cmake.org/download/">CMake</a> for managing the build process. Version 3.20 or later is recommended.</p></li>
-<li><p><strong>Python</strong>: Conan requires at least Python 3.7. Builing the OpenSeesPy library requires development version installation so you have the Python header and lib files.</p></li>
-<li><p><strong>Conan</strong>: This repository uses <a class="reference external" href="https://conan.io/">Conan</a> for dependency management. Conan is a python library and can be installed using the following <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">instructions</a>. Version 1.25 or later is recommended.</p>
-<ol class="arabic simple">
-<li><p>Conan is installed with pip.</p></li>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p><strong>Python</strong>: Conan is installed via Python and as a conseequence Python must be installed. Conan requires at least Python 3.7. Builing the OpenSeesPy library requires development version installation so you have the Python header and lib files.</p></li>
+<li><p><strong>Conan</strong>: The build process for OpenSees uses <a class="reference external" href="https://conan.io/">Conan</a> for dependency management. Conan is a python library and can be installed using the following <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">instructions</a>. Version 1.25 or later is recommended. Python is installed using the Terminal application. Type the following in the Terminal window.</p></li>
 </ol>
-<blockquote>
-<div><blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install conan</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install conan</span>
+<span class="go">conan profile new default --detect</span>
+<span class="go">conan profile show</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If on Mac or when you use python you invoke python3, use <strong>pip3</strong> instaed of <strong>pip</strong> in the above.</p>
-</div>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p>Once installed, on Windows you need a default Conan profile to be set up for building packages.</p></li>
-</ol>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile new default --detect</span>
-</pre></div>
-</div>
+<div><p>If the compiler name and compiler version are <em>not</em> listed, you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:</p>
 </div></blockquote>
-<ol class="arabic simple" start="3">
-<li><p>You can check the default profile of your build environment using:</p></li>
-</ol>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile show default</span>
-</pre></div>
-</div>
-</div></blockquote>
-<ol class="arabic simple" start="4">
-<li><p>If the compiler name and compiler version are <em>not</em> listed, you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:</p></li>
-</ol>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile update settings.compiler=&quot;Visual Studio&quot; default</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile update settings.compiler=&quot;Visual Studio&quot; default</span>
 <span class="go">conan profile update settings.compiler.version=&quot;16&quot; default</span>
 </pre></div>
 </div>
-</div></blockquote>
-</div></blockquote>
-</li>
-</ul>
+</div>
 </div>
 <div class="section" id="building-the-opensees-applications">
-<h1><span class="section-number">3. </span>Building the OpenSees Applications<a class="headerlink" href="#building-the-opensees-applications" title="Permalink to this headline">¶</a></h1>
-<p>With everything installed the build process is somehwat simple!</p>
+<h3><span class="section-number">2.1.2. </span>Building the OpenSees Applications<a class="headerlink" href="#building-the-opensees-applications" title="Permalink to this headline">¶</a></h3>
+<p>With everything installed the build process is somewhat simple!</p>
 <ol class="arabic">
 <li><p>Obtain the source code:</p>
 <blockquote>
-<div><blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
+<span class="s2">&quot;C:\Program Files (x86)\Intel\oneAPI\setVars&quot;</span> <span class="n">intel64</span> <span class="n">mod</span>
+<span class="n">cd</span> <span class="n">OpenSees</span>
+<span class="n">mkdir</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
+<span class="n">cmake</span> <span class="o">..</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSees</span>
 </pre></div>
 </div>
 </div></blockquote>
-<ol class="arabic simple">
-<li><p>To build the applications you need to now navigate to the <strong>OpenSees</strong> folder that was created with the <strong>git clone</strong> command. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change director to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).</p></li>
-</ol>
-</div></blockquote>
 </li>
 </ol>
-<p>For those developers using the Windows operating system, in a terminal you need to type the following (NOTE Powershell is different):</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&quot;C:\Program Files (x86)\Intel\oneAPI\setVars&quot; intel64 mod</span>
-<span class="go">mkdir build</span>
-<span class="go">cd build</span>
-<span class="go">conan install .. --build missing</span>
-<span class="go">cmake .. -G &quot;Visual Studio 16 2019&quot;</span>
-<span class="go">cmake --build . --config Release</span>
-<span class="go">cmake --install .</span>
-<span class="go">cd ..</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR_USER_NAME</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="macos">
+<h2><span class="section-number">2.2. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3><span class="section-number">2.2.1. </span>Software Requirements<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>For MacOS the user must have the following applications installed on their computer: xcode command line tools, brew, cmake, gcc, gfortran, python, and open-mpi. All the applications are installed via the command line. Some of these you can skip as you may already have them installed.</p>
+<ol class="arabic">
+<li><p><strong>XCODE Command Line Tools</strong>: To make Apple Clang and git available, type the following in a terminal application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="n">install</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>if <cite>xcode-select: error: command line tools are already installed, use “Software Update” to install updates</cite> appears, skip because it’s already installed.</p></li>
+<li><p>if <cite>xcode-select: error: command line tools are already installed, use “Software Update” to install updates</cite> appears, skip because it’s already installed.</p></li>
+</ol>
+</div>
+<ol class="arabic" start="2">
+<li><p><strong>brew</strong>: To install the HomeBrew package manager, type the following in a terminal window:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>cmake, gfortran, python &amp; open-mpi</strong>. Now we will use brew to install these applications. Again from the command line type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">cmake</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">gfortran</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="nb">open</span><span class="o">-</span><span class="n">mpi</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">python</span><span class="o">@</span><span class="mf">3.9</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>conan</strong> In a new terminal window type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">conan</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3><span class="section-number">2.2.2. </span>Building the OpenSees Applications<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>With everything installed the build process is somehwat simple! Again from a terminal window:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">OpenSees</span>
+<span class="n">mkdir</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
+<span class="n">cmake</span> <span class="o">..</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSees</span>
 </pre></div>
 </div>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p>The intel compilers don’t change anything on user PATH when installing. The first command is setting up the environment variables for the terminal shell you are in. It only needs to be called once.</p></li>
-<li><p>On Windows, it is necessary to specify a compiler for CMake. This is done with the -G option. If you have installed a different Visual Studio version, type the following at the command line to see options available.</p></li>
-</ol>
+<p>If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake --help</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR_USER_NAME</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </div></blockquote>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you have multiple Visual Studio’s installed, it is necessary the conan profile and the -G selection to match otherwise the third step will fail.</p>
+</div>
 </div>
 </div>
 

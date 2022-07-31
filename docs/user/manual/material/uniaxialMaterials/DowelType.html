@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4.1.9. DowelType Timber Joint Material &mdash; OpenSees Documentation  documentation</title>
+  <title>3.4.1.12. DowelType Timber Joint Material &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.4.1.10. PySimple1 Material" href="PySimple1.html" />
-    <link rel="prev" title="3.4.1.8. HystereticPoly Material" href="HystereticPoly.html" /> 
+    <link rel="next" title="3.4.1.13. BoucWenInfill Material" href="BoucWenInfill.html" />
+    <link rel="prev" title="3.4.1.11. HystereticPoly Material" href="HystereticPoly.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -106,21 +106,27 @@
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.4.1.2. Steel02 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.4.1.3. SteelFractureDI Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.4.1.4. DuctileFracture Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.4.1.5. IMKBilin Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.4.1.6. IMKPeakOriented Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.4.1.7. IMKPinching Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.4.1.8. HystereticPoly Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.9. DowelType Timber Joint Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.4.1.10. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.4.1.11. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.4.1.12. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.4.1.13. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.4.1.14. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.4.1.15. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.4.1.5. Concrete01 Material – Zero Tensile Strength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.4.1.6. Concrete02 Material – Linear Tension Softening</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.4.1.7. Concrete04 Material – Popovics Concrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.4.1.8. IMKBilin Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.4.1.9. IMKPeakOriented Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.4.1.10. IMKPinching Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.4.1.11. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.4.1.11. HystereticPoly Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.12. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.4.1.13. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.4.1.14. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.4.1.15. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.4.1.16. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.4.1.17. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.4.1.18. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.4.1.19. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.4.2. nDMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../matTestCommands.html">3.4.4. Material Testing Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
@@ -134,11 +140,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -193,7 +198,7 @@
         
           <li><a href="../uniaxialMaterial.html"><span class="section-number">3.4.1. </span>uniaxialMaterial Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.4.1.9. </span>DowelType Timber Joint Material</li>
+      <li><span class="section-number">3.4.1.12. </span>DowelType Timber Joint Material</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -213,7 +218,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="doweltype-timber-joint-material">
-<span id="doweltype"></span><h1><span class="section-number">3.4.1.9. </span>DowelType Timber Joint Material<a class="headerlink" href="#doweltype-timber-joint-material" title="Permalink to this headline">¶</a></h1>
+<span id="doweltype"></span><h1><span class="section-number">3.4.1.12. </span>DowelType Timber Joint Material<a class="headerlink" href="#doweltype-timber-joint-material" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a uniaxial force-displacement or moment-rotation model which simulates the hysteresis of a dowel-type timber joint, including nails, screws, and bolts, etc. The model has the following features:</p>
 <ol class="arabic simple">
 <li><p>The envelope can be specified with any of the following models: (1) exponential, (2) cubic Bezier, and (3) piece-wise linear, by providing a flag before the defining parameters.</p></li>

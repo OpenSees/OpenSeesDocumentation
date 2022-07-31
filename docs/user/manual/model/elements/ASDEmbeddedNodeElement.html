@@ -117,6 +117,7 @@
 <li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.15. ASDEmbeddedNode Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.17. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
@@ -139,11 +140,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -226,7 +226,7 @@ Since in OpenSees a Multi-Point constraint can have only one retained node, this
 <p>The constrained node should be inside (or on the boundary of) the domain defined by the retained nodes.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">element</span> <span class="pre">ASDEmbeddedNodeElement</span> <span class="pre">$eleTag</span> <span class="pre">$Cnode</span> <span class="pre">$Rnode1</span> <span class="pre">$Rnode2</span> <span class="pre">$Rnode3</span> <span class="pre">&lt;$Rnode4&gt;</span> <span class="pre">&lt;-K</span> <span class="pre">$K&gt;</span> <span class="pre">&lt;-rot&gt;</span></span></dt>
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">ASDEmbeddedNodeElement</span> <span class="pre">$eleTag</span> <span class="pre">$Cnode</span> <span class="pre">$Rnode1</span> <span class="pre">$Rnode2</span> <span class="pre">$Rnode3</span> <span class="pre">&lt;$Rnode4&gt;</span> <span class="pre">&lt;-rot&gt;</span> <span class="pre">&lt;-p&gt;</span> <span class="pre">&lt;-K</span> <span class="pre">$K&gt;</span> <span class="pre">&lt;-KP</span> <span class="pre">$KP&gt;</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -254,6 +254,14 @@ Since in OpenSees a Multi-Point constraint can have only one retained node, this
 <td><p>3 or 4 <em>integer</em></p></td>
 <td><p>the 3 (or 4) retained nodes defining the surrounding triangle (or tetrahedron) domain.</p></td>
 </tr>
+<tr class="row-odd"><td><p>-rot</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag. if provided, and if the constrained node has rotational DOFs, its rotation will be constrained as well.</p></td>
+</tr>
+<tr class="row-even"><td><p>-p</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag. if provided, and if the constrained and retained nodes have pressure DOFs, it will be constrained as well.</p></td>
+</tr>
 <tr class="row-odd"><td><p>-K</p></td>
 <td><p><em>string</em></p></td>
 <td><p>optional flag. if provided, the user should use a user-defined penalty stiffness.</p></td>
@@ -267,9 +275,13 @@ Since in OpenSees a Multi-Point constraint can have only one retained node, this
 <p>Do not use extremely large values, otherwise the system will be ill-conditioned.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p>-rot</p></td>
+<tr class="row-odd"><td><p>-KP</p></td>
 <td><p><em>string</em></p></td>
-<td><p>optional flag. if provided, and if the constrained node has rotational DOFs, its rotation will be constrained as well.</p></td>
+<td><p>optional flag. if provided, the user should use a user-defined penalty stiffness for the pressure DOF.</p></td>
+</tr>
+<tr class="row-even"><td><p>$KP</p></td>
+<td><p><em>float</em></p></td>
+<td><p>optional float, mandatory if -KP flag is provided (default = 1.0e18).</p></td>
 </tr>
 </tbody>
 </table>

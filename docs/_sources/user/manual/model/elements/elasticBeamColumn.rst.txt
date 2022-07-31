@@ -9,9 +9,13 @@ For a two-dimensional problem:
 
 .. function:: element elasticBeamColumn $eleTag $iNode $jNode $A $E $Iz $transfTag <-mass $massDens> <-cMass>
 
+.. function:: element elasticBeamColumn $eleTag $iNode $jNode $secTag $transfTag <-mass $massDens> <-cMass>
+
 For a three-dimensional problem:
 
 .. function:: element elasticBeamColumn $eleTag $iNode $jNode $A $E $G $J $Iy $Iz $transfTag <-mass $massDens> <-cMass>
+
+.. function:: element elasticBeamColumn $eleTag $iNode $jNode $secTag $transfTag <-mass $massDens> <-cMass>
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
@@ -24,6 +28,7 @@ For a three-dimensional problem:
    $J, |float|,     torsional moment of inertia of cross section
    $Iz, |float|,    second moment of area about the local z-axis
    $Iy, |float|,    second moment of area about the local y-axis
+   $secTag, |integer|, identifer for previously-defined section object
    $transfTag, |integer|,    identifier for previously-defined coordinate-transformation object
    $massDens, |float|, element mass per unit length (optional: default = 0.0)
    -cMass, |string|, to form consistent mass matrix (optional)

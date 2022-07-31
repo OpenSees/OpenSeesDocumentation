@@ -116,6 +116,7 @@
 <li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.15. ASDEmbeddedNode Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.17. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
@@ -138,11 +139,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -225,10 +225,20 @@
 <span class="sig-name descname"><span class="pre">element</span> <span class="pre">elasticBeamColumn</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">$A</span> <span class="pre">$E</span> <span class="pre">$Iz</span> <span class="pre">$transfTag</span> <span class="pre">&lt;-mass</span> <span class="pre">$massDens&gt;</span> <span class="pre">&lt;-cMass&gt;</span></span></dt>
 <dd></dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">elasticBeamColumn</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">$secTag</span> <span class="pre">$transfTag</span> <span class="pre">&lt;-mass</span> <span class="pre">$massDens&gt;</span> <span class="pre">&lt;-cMass&gt;</span></span></dt>
+<dd></dd></dl>
+
 <p>For a three-dimensional problem:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">element</span> <span class="pre">elasticBeamColumn</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">$A</span> <span class="pre">$E</span> <span class="pre">$G</span> <span class="pre">$J</span> <span class="pre">$Iy</span> <span class="pre">$Iz</span> <span class="pre">$transfTag</span> <span class="pre">&lt;-mass</span> <span class="pre">$massDens&gt;</span> <span class="pre">&lt;-cMass&gt;</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">elasticBeamColumn</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">$secTag</span> <span class="pre">$transfTag</span> <span class="pre">&lt;-mass</span> <span class="pre">$massDens&gt;</span> <span class="pre">&lt;-cMass&gt;</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -276,15 +286,19 @@
 <td><p><em>float</em></p></td>
 <td><p>second moment of area about the local y-axis</p></td>
 </tr>
-<tr class="row-even"><td><p>$transfTag</p></td>
+<tr class="row-even"><td><p>$secTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>identifer for previously-defined section object</p></td>
+</tr>
+<tr class="row-odd"><td><p>$transfTag</p></td>
 <td><p><em>integer</em></p></td>
 <td><p>identifier for previously-defined coordinate-transformation object</p></td>
 </tr>
-<tr class="row-odd"><td><p>$massDens</p></td>
+<tr class="row-even"><td><p>$massDens</p></td>
 <td><p><em>float</em></p></td>
 <td><p>element mass per unit length (optional: default = 0.0)</p></td>
 </tr>
-<tr class="row-even"><td><p>-cMass</p></td>
+<tr class="row-odd"><td><p>-cMass</p></td>
 <td><p><em>string</em></p></td>
 <td><p>to form consistent mass matrix (optional)</p></td>
 </tr>

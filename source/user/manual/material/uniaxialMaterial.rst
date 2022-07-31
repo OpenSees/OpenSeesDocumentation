@@ -21,20 +21,20 @@ The following subsections contain information about **$matType**
 
 #. Steel & Reinforcing-Steel Materials
 
-.. toctree::
-   :maxdepth: 1
+   .. toctree::
+      :maxdepth: 1
 
-   uniaxialMaterials/Steel01
-   uniaxialMaterials/Steel02
-   uniaxialMaterials/Steel4
-   uniaxialMaterials/Hysteretic
-   uniaxialMaterials/ReinforcingSteel
-   uniaxialMaterials/DoddRestrepo
-   uniaxialMaterials/RambergOsgoodSteel
-   uniaxialMaterials/SteelMPF
-   uniaxialMaterials/UVCuniaxial
-   uniaxialMaterials/SteelFractureDI
-   uniaxialMaterials/DuctileFracture
+      uniaxialMaterials/Steel01
+      uniaxialMaterials/Steel02
+      uniaxialMaterials/Steel4
+      uniaxialMaterials/Hysteretic
+      uniaxialMaterials/ReinforcingSteel
+      uniaxialMaterials/DoddRestrepo
+      uniaxialMaterials/RambergOsgoodSteel
+      uniaxialMaterials/SteelMPF
+      uniaxialMaterials/UVCuniaxial
+      uniaxialMaterials/SteelFractureDI
+      uniaxialMaterials/DuctileFracture
 
 
 #. Concrete Materials
@@ -47,7 +47,6 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Concrete04
       uniaxialMaterials/Concrete06
       uniaxialMaterials/Concrete07
-      uniaxialMaterials/Concrete01
       uniaxialMaterials/ConfinedConcrete01
       uniaxialMaterials/ConcreteD
       uniaxialMaterials/FRPConfinedConcrete
@@ -98,8 +97,15 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/BoucWen
       uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
       uniaxialMaterials/HystereticPoly
+      uniaxialMaterials/HystereticAsym (Smooth asymmetric hysteresis)
+      uniaxialMaterials/HystereticPoly
+      uniaxialMaterials/HystereticSmooth (Smooth hysteretic material)
       uniaxialMaterials/DowelType
       uniaxialMaterials/BoucWenInfill
+      uniaxialMaterials/ViscoelasticGap
+      uniaxialMaterials/HertzDamp
+      uniaxialMaterials/JankowskiImpact
+
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
 

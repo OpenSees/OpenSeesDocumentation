@@ -4,7 +4,13 @@
 Building Application
 ********************
 
-The OpenSees applications are built using `CMake <https://cmake.org/>`_, an extensible open-source system that manages the build system. It provides a uniform build process across a range of operating systems: Windows, MacOS and different vesrions of Linux. CMake needs to be installed on your system.
+The OpenSees applications are built using `CMake <https://cmake.org/>`_, an extensible open-source system that manages the build system. It provides a uniform build process across a range of operating systems: Windows, MacOS and different version of Linux. CMake needs to be installed on your system. For it to work, other applications such as C, C++ and Fortran compilers need to be also installed.
+
+
+.. note::
+   
+   Most code instructions below are run from a **Terminal** application. Type **cmd** in the Windows search or **terminal** in MacOS spotlight to start the application. If you are on a Unix machine this note may cause you some amusement!
+
 
 Windows 10
 **********
@@ -12,7 +18,7 @@ Windows 10
 Software Requirements
 ^^^^^^^^^^^^^^^^^^^^^
 
-For Windows 10 the user must have the following applications installed on their computer: CMake, VisualStudio Basic, INtel One Basic and HPC Toolkits and Conan:
+For Windows 10 the user must have the following applications installed on their computer: CMake, VisualStudio Basic, Intel One Basic and HPC Toolkits and Conan:
 
 1. **CMake**: We use `CMake <https://cmake.org/download/>`_ for managing the build process. Version 3.20 or later is recommended.  
 
@@ -53,7 +59,7 @@ For Windows 10 the user must have the following applications installed on their 
 Building the OpenSees Applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-With everything installed the build process is somehwat simple!
+With everything installed the build process is somewhat simple!
 
 1. Obtain the source code:
 
@@ -68,7 +74,15 @@ With everything installed the build process is somehwat simple!
          cmake .. 
          cmake --build . --config Release --target OpenSees
 
+.. note::
 
+   If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.
+
+      .. code::
+
+         git clone https://github.com/YOUR_USER_NAME/OpenSees.git   
+
+   
 MacOS
 *****
 
@@ -131,3 +145,10 @@ With everything installed the build process is somehwat simple! Again from a ter
          cmake --build . --config Release --target OpenSees	 
 
 
+.. note::
+
+   If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.
+
+      .. code::
+
+         git clone https://github.com/YOUR_USER_NAME/OpenSees.git   
