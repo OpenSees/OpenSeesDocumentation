@@ -116,6 +116,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">2.2.3. Building the OpenSees Applications</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuntu">2.3. Ubuntu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2.3.1. Software Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.3.2. Obtaining the source code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.3.3. Building the OpenSees Applications</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">3. References</a></li>
@@ -204,7 +210,7 @@
 <ol class="arabic simple">
 <li><p><strong>CMake</strong>: We use <a class="reference external" href="https://cmake.org/download/">CMake</a> for managing the build process. Version 3.20 or later is recommended.</p></li>
 <li><p><strong>Visual Studio</strong>: <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community Edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development;</p></li>
-<li><p><strong>IntelOne Basic &amp; HPC Toolkits</strong>: Intel’s <a href="#id5"><span class="problematic" id="id6">`oneAPI &lt;https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html&quot;`_</span></a> toolkits. To install the Fortran compiler you need to install TWO toolkits, the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">base toolkit</a> and the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html">HPC toolkit</a>.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with <strong>MPI</strong> for building and running the parallel OpenSees applications.</p></li>
+<li><p><strong>IntelOne Basic &amp; HPC Toolkits</strong>: Intel’s <a href="#id8"><span class="problematic" id="id9">`oneAPI &lt;https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html&quot;`_</span></a> toolkits. To install the Fortran compiler you need to install TWO toolkits, the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">base toolkit</a> and the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html">HPC toolkit</a>.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with <strong>MPI</strong> for building and running the parallel OpenSees applications.</p></li>
 </ol>
 <blockquote>
 <div><div class="admonition note">
@@ -358,10 +364,95 @@
 </pre></div>
 </div>
 </div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If conan fails, try updating conan to the latest with the following (NOTE: the update has worked if the versio nnumbers are different):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">-</span><span class="n">io</span><span class="o">/</span><span class="n">conan</span><span class="o">.</span><span class="n">git</span> <span class="n">conansrc</span>
+<span class="n">cd</span> <span class="n">conansrc</span><span class="o">/</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+<span class="n">conan</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
 <li><p>You only have to issue the first 4 commands once. The fifth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type  the last command.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="ubuntu">
+<h2><span class="section-number">2.3. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><strong>Applications installed with apt</strong>: For Ubuntu the user must have a number of packages installed on their system. These can all be installed using the app application using the following commands issued in a terminal window.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">cmake</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">gcc</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">gfortran</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">liblapack</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">openmpi</span><span class="o">-</span><span class="nb">bin</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libopenmpi</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libmkl</span><span class="o">-</span><span class="n">blacs</span><span class="o">-</span><span class="n">openmpi</span><span class="o">-</span><span class="n">lp64</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>conan</strong> In a new terminal window type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">conan</span>
+
+<span class="o">..</span> <span class="n">warning</span><span class="p">::</span>
+
+   <span class="n">Read</span> <span class="n">the</span> <span class="n">output</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">last</span> <span class="n">command</span><span class="o">.</span> <span class="n">When</span> <span class="n">installing</span> <span class="n">conan</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">conan</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">added</span> <span class="n">to</span> <span class="n">your</span> <span class="n">PATH</span> <span class="n">environ</span> <span class="n">variable</span><span class="o">.</span> <span class="n">You</span> <span class="n">will</span> <span class="n">need</span> <span class="n">to</span> <span class="n">add</span> <span class="n">it</span> <span class="n">to</span> <span class="n">your</span> <span class="n">PATH</span> <span class="n">variable</span><span class="p">,</span> <span class="ow">or</span> <span class="n">modify</span> <span class="n">the</span> <span class="o">**</span><span class="n">conan</span> <span class="n">install</span> <span class="o">**</span> <span class="n">command</span> <span class="n">below</span> <span class="n">to</span> <span class="n">include</span> <span class="n">full</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="o">**</span><span class="n">conan</span><span class="o">**</span> <span class="n">exe</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3><span class="section-number">2.3.2. </span>Obtaining the source code<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic">
+<li><p>If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR_USER_NAME</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p>To update the code to the latest code in the repo, type the following from inside the OpenSees directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id7">
+<h3><span class="section-number">2.3.3. </span>Building the OpenSees Applications<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>With everything installed the build process is somehwat simple! Again from a terminal window:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
+<span class="n">mkdir</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
+<span class="n">cmake</span> <span class="o">..</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSees</span> <span class="o">--</span><span class="n">parallel</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>You only have to issue the first 4 commands once. The fifth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type the last command.</p></li>
+<li><p>If you have more than <strong>4</strong> cores available, you can use the exra cores by changing the <strong>4</strong> value!</p></li>
 </ol>
 </div>
 </div>
