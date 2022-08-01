@@ -54,18 +54,39 @@ For Windows 10 the user must have the following applications installed on their 
 
        conan profile update settings.compiler="Visual Studio" default
        conan profile update settings.compiler.version="16" default
-  
 
-Building the OpenSees Applications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Obtaining the source code       
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-With everything installed the build process is somewhat simple!
-
-1. Obtain the source code:
+To obtain the source code, from a terminal **cd** to the directory you want to place OpenSees and then type the following:
 
       .. code::
 
          git clone https://github.com/OpenSees/OpenSees.git
+
+
+.. note::
+
+   1. If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.
+
+      .. code::
+
+         git clone https://github.com/YOUR_USER_NAME/OpenSees.git
+
+   2. To update the code to the latest code in the repo, type the following from inside the OpenSees directory:
+
+      .. code::
+
+         git pull
+
+	 
+Building the OpenSees Applications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+With everything installed the build process is somewhat simple! From a terminal type the following:
+
+      .. code::
+	 
 	 "C:\Program Files (x86)\Intel\oneAPI\setVars" intel64 mod
 	 cd OpenSees
          mkdir build
@@ -73,14 +94,6 @@ With everything installed the build process is somewhat simple!
          conan install .. --build missing
          cmake .. 
          cmake --build . --config Release --target OpenSees
-
-.. note::
-
-   If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.
-
-      .. code::
-
-         git clone https://github.com/YOUR_USER_NAME/OpenSees.git   
 
    
 MacOS
@@ -129,6 +142,30 @@ For MacOS the user must have the following applications installed on their compu
       pip3 install conan
 
 
+Obtaining the source code       
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To obtain the source code, from a terminal **cd** to the directory you want to place OpenSees and then type the following:
+
+      .. code::
+
+         git clone https://github.com/OpenSees/OpenSees.git
+
+
+.. note::
+
+   1. If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.
+
+      .. code::
+
+         git clone https://github.com/YOUR_USER_NAME/OpenSees.git
+
+   2. To update the code to the latest code in the repo, type the following from inside the OpenSees directory:
+
+      .. code::
+
+         git pull
+      
 Building the OpenSees Applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -136,7 +173,6 @@ With everything installed the build process is somehwat simple! Again from a ter
 
       .. code::
 
-         git clone https://github.com/OpenSees/OpenSees.git
 	 cd OpenSees
          mkdir build
          cd build
@@ -147,8 +183,4 @@ With everything installed the build process is somehwat simple! Again from a ter
 
 .. note::
 
-   If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.
-
-      .. code::
-
-         git clone https://github.com/YOUR_USER_NAME/OpenSees.git   
+   1. You only have to issue the first 4 commands once. The fifth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type  the last command.
