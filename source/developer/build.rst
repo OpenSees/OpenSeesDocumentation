@@ -24,6 +24,11 @@ For Windows 10 the user must have the following applications installed on their 
 
 2. **Visual Studio**: `Visual Studio (Community Edition) <https://visualstudio.microsoft.com/vs/>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development;   
 
+.. warning::
+
+   The very latest release of MSVC,  2022.2, does not currently work with Intel OneAPI. INstall the version 2022.1 or the 2019 version of MSCV.
+   
+   
 3. **IntelOne Basic & HPC Toolkits**: Intel's `oneAPI <https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html"`_ toolkits. To install the Fortran compiler you need to install TWO toolkits, the `base toolkit <https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html>`_ and the `HPC toolkit <https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html>`_.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with **MPI** for building and running the parallel OpenSees applications.
 
   .. note::
@@ -32,8 +37,8 @@ For Windows 10 the user must have the following applications installed on their 
 
    .. warning::
 
-         1. The install of the latest version of the base toolkit failed for me due to issues installing Python. The error pops up right at the end. To overcome the problem, I choose to install the selected components option and choose every package BUT Python.
-         2. On windows order matters, the INtel compilers come after Visual Studio. If you reverse the order or if the install was not successfullm cmake when running below will give an error message about failing to find a fortran compiler.
+         1. The install of the latest version of the base toolkit may fail due to issues installing Python. The error pops up right at the end. To overcome the problem, choose to install the selected components option and choose every package BUT Python.
+         2. On windows order matters, the Intel compilers come after Visual Studio. If you reverse the order or if the install was not successfullm cmake when running below will give an error message about failing to find a fortran compiler.
 
 4. **Python**: Conan is installed via Python and as a conseequence Python must be installed. Conan requires at least Python 3.7. Builing the OpenSeesPy library requires development version installation so you have the Python header and lib files.
 
@@ -45,17 +50,7 @@ For Windows 10 the user must have the following applications installed on their 
         conan profile new default --detect
 	conan profile show
 
-
-.. note::
-    
-       If the compiler name and compiler version are *not* listed, you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:
-
-    .. code:: console
-
-       conan profile update settings.compiler="Visual Studio" default
-       conan profile update settings.compiler.version="16" default
-
-Obtaining the source code       
+Obtaining the Source Code       
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To obtain the source code, from a terminal **cd** to the directory you want to place OpenSees and then type the following:
@@ -63,7 +58,6 @@ To obtain the source code, from a terminal **cd** to the directory you want to p
       .. code::
 
          git clone https://github.com/OpenSees/OpenSees.git
-
 
 .. note::
 
@@ -94,6 +88,47 @@ With everything installed the build process is somewhat simple! From a terminal 
          conan install .. --build missing
          cmake .. 
          cmake --build . --config Release --target OpenSees
+
+.. warning::
+
+   If OpenSees fails to run, it may prompt that this is due to a missing .dll, **mkl_intel_thread.2.dll**. This file can be found in your **C:\Program Files (x86)\Intel\oneAPI\mkl\latest\redist\intel64** directory. Copy the file from there to the **bin**folder.
+
+
+Building the OpenSeesPy Library
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+With everything installed the build process is somewhat simple! Again from a terminal window:
+
+      .. code::
+
+	 cd OpenSees
+         mkdir build
+         cd build
+         conan install .. --build missing
+         cmake .. 
+         cmake --build . --config Release --target OpenSeesPy
+	 mv ./lib/OpenSeesPy.dylib ./lib/opensees.so
+
+.. warning::
+
+   This last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named **opensees.pyd** (go figure). Also to import this module now in your code you can do one of 2 things:
+
+   1. If you have used pip3 to install openseespy, you can replace the opensees.pyd file in the site_package location with the opensees.pyd above. To find the location of this module, use the following:
+
+      .. code::
+
+	 python3
+	 import opensees
+	 import inspect
+	 inspect.getFile(opensees)
+
+      You may of course want to give the existing file a new name with the **copy** command before you overwrite it just in case!
+		
+   2. If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your **PYTHONPATH** env variables. Search for **env settings** in search bar lower left. Add a line to the PYTHONPATH variable with your location of the **bin** folder.
+
+   3. Please note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of **cmake ..** for the python library used.
+
+   3. Finally if it fails to import the the dynamic library it could be due again to the missing *mkl_intel_thread.2.dll** problem described above (though this time no nice warning message is given about the name of the missing dll). Follow the instructions shown above.
 
    
 MacOS
@@ -142,7 +177,7 @@ For MacOS the user must have the following applications installed on their compu
       pip3 install conan
 
 
-Obtaining the source code       
+Obtaining the Source Code       
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To obtain the source code, from a terminal **cd** to the directory you want to place OpenSees and then type the following:
@@ -201,7 +236,7 @@ With everything installed the build process is somehwat simple! Again from a ter
 Building the OpenSeesPy Library
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-With everything installed the build process is somehwat simple! Again from a terminal window:
+With everything installed the build process is somewhat simple! Again from a terminal window:
 
       .. code::
 
@@ -286,8 +321,8 @@ To obtain the source code, from a terminal **cd** to the directory you want to p
 
          git pull
       
-Building the OpenSees Applications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Building the OpenSees Tcl Interpreter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 With everything installed the build process is somehwat simple! Again from a terminal window:
 
@@ -306,3 +341,37 @@ With everything installed the build process is somehwat simple! Again from a ter
    1. You only have to issue the first 4 commands once. The fifth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type the last command.
    2. If you have more than **4** cores available, you can use the exra cores by changing the **4** value!
       
+Building the OpenSeesPy Library
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+With everything installed the build process is somewhat simple! Again from a terminal window:
+
+      .. code::
+
+	 cd OpenSees
+         mkdir build
+         cd build
+         conan install .. --build missing
+         cmake .. 
+         cmake --build . --config Release --target OpenSeesPy
+	 mv ./lib/OpenSeesPy.so ./lib/opensees.so
+
+.. warning::
+
+   This last copy is needed as the OpenSeesPy.dylib module at present actually needs to load from a file named **opensees.so** (go figure). Also to import this module now in your code you can do one of 2 things:
+
+   1. If you have used pip3 to install openseespy, you can replace the opensees.so file in the site_package location with the opensees.so above. To find the location of this module, use the following:
+
+      .. code::
+
+	 python3
+	 import opensees
+	 import inspect
+	 inspect.getFile(opensees)
+
+      You may of course want to give the existing file a new name with the **mv** command.
+		
+   2. If you have not installed openseespy or you want to load the .so you built instead of the installed one you can add the path to opensees.so to your **PYTHONPATH** env variables with export PYTHONPATH=$PWD or PYTHONPATH=$PWD:$PYTHONPATH depending on if PYTHONPATH exists when you type **env** in the terminal. NOTE: Using $PWD assumes you are in the directory containg the lib file.
+
+   3. Finally plase note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of **cmake ..** for the python library used.      
+
