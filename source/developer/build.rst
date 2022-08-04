@@ -80,8 +80,8 @@ To obtain the source code, from a terminal **cd** to the directory you want to p
          git pull
 
 	 
-Building the OpenSees Applications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Building the OpenSees Tcl Interpreter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 With everything installed the build process is somewhat simple! From a terminal type the following:
 
@@ -166,8 +166,8 @@ To obtain the source code, from a terminal **cd** to the directory you want to p
 
          git pull
       
-Building the OpenSees Applications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Building the OpenSees Tcl Application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 With everything installed the build process is somehwat simple! Again from a terminal window:
 
@@ -198,6 +198,41 @@ With everything installed the build process is somehwat simple! Again from a ter
    1. You only have to issue the first 4 commands once. The fifth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type  the last command.
 
 
+Building the OpenSeesPy Library
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+With everything installed the build process is somehwat simple! Again from a terminal window:
+
+      .. code::
+
+	 cd OpenSees
+         mkdir build
+         cd build
+         conan install .. --build missing
+         cmake .. 
+         cmake --build . --config Release --target OpenSeesPy
+	 mv ./lib/OpenSeesPy.dylib ./lib/opensees.so
+
+.. warning::
+
+   This last copy is needed as the OpenSeesPy.dylib module at present actually needs to load from a file named **opensees.so** (go figure). Also to import this module now in your code you can do one of 2 things:
+
+   1. If you have used pip3 to install openseespy, you can replace the opensees.so file in the site_package location with the opensees.so above. To find the location of this module, use the following:
+
+      .. code::
+
+	 python3
+	 import opensees
+	 import inspect
+	 inspect.getFile(opensees)
+
+      You may of course want to give the existing file a new name with the **mv** command.
+		
+   2. If you have not installed openseespy or you want to load the .so you built instead of the installed one you can add the path to opensees.so to your **PYTHONPATH** env variables with export PYTHONPATH=$PWD or PYTHONPATH=$PWD:$PYTHONPATH depending on if PYTHONPATH exists when you type **env** in the terminal. NOTE: Using $PWD assumes you are in the directory containg the lib file.
+
+   3. Finally plase note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of **cmake ..** for the python library used.      
+
+      
 Ubuntu
 ******
 
@@ -207,13 +242,13 @@ Software Requirements
 1. **Applications installed with apt**: For Ubuntu the user must have a number of packages installed on their system. These can all be installed using the app application using the following commands issued in a terminal window.
 
    .. code::
-      
+
+      sudo apt-get update      
       sudo apt install -y cmake
       sudo apt install -y gcc
       sudo apt install -y gfortran
       sudo apt install -y liblapack-dev
       sudo apt install -y python3-pip
-      sudo apt install -y openmpi-bin      
       sudo apt install -y libopenmpi-dev
       sudo apt install -y libmkl-blacs-openmpi-lp64
 
