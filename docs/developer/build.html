@@ -120,7 +120,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ubuntu">2.3. Ubuntu</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id7">2.3.1. Software Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">2.3.2. Obtaining the source code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">2.3.2. Obtaining the Source Code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id9">2.3.3. Building the OpenSees Tcl Interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id10">2.3.4. Building the OpenSeesPy Library</a></li>
 </ul>
@@ -299,19 +299,19 @@
 <span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
 <span class="n">cmake</span> <span class="o">..</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSeesPy</span>
-<span class="n">mv</span> <span class="o">./</span><span class="n">lib</span><span class="o">/</span><span class="n">OpenSeesPy</span><span class="o">.</span><span class="n">dylib</span> <span class="o">./</span><span class="n">lib</span><span class="o">/</span><span class="n">opensees</span><span class="o">.</span><span class="n">so</span>
+<span class="n">mv</span> <span class="o">./</span><span class="n">lib</span><span class="o">/</span><span class="n">OpenSeesPy</span><span class="o">.</span><span class="n">dylib</span> <span class="o">./</span><span class="n">lib</span><span class="o">/</span><span class="n">opensees</span><span class="o">.</span><span class="n">pyd</span>
 </pre></div>
 </div>
 </div></blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named <strong>opensees.pyd</strong> (go figure). Also to import this module now in your code you can do one of 2 things:</p>
+<p>This last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named <strong>opensees.pyd</strong>. To import this module in a python script you can do one of 2 things:</p>
 <ol class="arabic">
 <li><p>If you have used pip3 to install openseespy, you can replace the opensees.pyd file in the site_package location with the opensees.pyd above. To find the location of this module, use the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
 <span class="kn">import</span> <span class="nn">opensees</span>
 <span class="kn">import</span> <span class="nn">inspect</span>
-<span class="n">inspect</span><span class="o">.</span><span class="n">getFile</span><span class="p">(</span><span class="n">opensees</span><span class="p">)</span>
+<span class="n">inspect</span><span class="o">.</span><span class="n">getfile</span><span class="p">(</span><span class="n">opensees</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You may of course want to give the existing file a new name with the <strong>copy</strong> command before you overwrite it just in case!</p>
@@ -320,7 +320,7 @@
 <li><p>Please note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of <strong>cmake ..</strong> for the python library used.</p></li>
 </ol>
 <ol class="arabic simple" start="3">
-<li><p>Finally if it fails to import the the dynamic library it could be due again to the missing <em>mkl_intel_thread.2.dll*</em> problem described above (though this time no nice warning message is given about the name of the missing dll). Follow the instructions shown above.</p></li>
+<li><p>Finally if it fails to import the the dynamic library it could be due again to the missing <strong>mkl_intel_thread.2.dll</strong> problem described above, though this time no nice warning message is given about the name of the missing dll. Follow the instructions shown above.</p></li>
 </ol>
 </div>
 </div>
@@ -436,7 +436,7 @@
 </div></blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This last copy is needed as the OpenSeesPy.dylib module at present actually needs to load from a file named <strong>opensees.so</strong> (go figure). Also to import this module now in your code you can do one of 2 things:</p>
+<p>This last copy is needed as the OpenSeesPy.dylib module at present actually needs to load from a file named <strong>opensees.so</strong> To import this module now in your code you must do one of 2 things:</p>
 <ol class="arabic">
 <li><p>If you have used pip3 to install openseespy, you can replace the opensees.so file in the site_package location with the opensees.so above. To find the location of this module, use the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
@@ -447,7 +447,7 @@
 </div>
 <p>You may of course want to give the existing file a new name with the <strong>mv</strong> command.</p>
 </li>
-<li><p>If you have not installed openseespy or you want to load the .so you built instead of the installed one you can add the path to opensees.so to your <strong>PYTHONPATH</strong> env variables with export PYTHONPATH=$PWD or PYTHONPATH=$PWD:$PYTHONPATH depending on if PYTHONPATH exists when you type <strong>env</strong> in the terminal. NOTE: Using $PWD assumes you are in the directory containg the lib file.</p></li>
+<li><p>If you have not installed openseespy or you want to load the .so you built instead of the installed one you can add the path to opensees.so to your <strong>PYTHONPATH</strong> env variables with export PYTHONPATH=$PWD or PYTHONPATH=$PWD:$PYTHONPATH depending on if PYTHONPATH exists when you type <strong>env</strong> in the terminal. NOTE: Using $PWD assumes you are in the directory containing the lib file, other put in the full path to the directory.</p></li>
 <li><p>Finally plase note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of <strong>cmake ..</strong> for the python library used.</p></li>
 </ol>
 </div>
@@ -482,7 +482,7 @@
 </ol>
 </div>
 <div class="section" id="id8">
-<h3><span class="section-number">2.3.2. </span>Obtaining the source code<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>

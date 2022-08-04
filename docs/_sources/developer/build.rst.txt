@@ -107,11 +107,11 @@ With everything installed the build process is somewhat simple! Again from a ter
          conan install .. --build missing
          cmake .. 
          cmake --build . --config Release --target OpenSeesPy
-	 mv ./lib/OpenSeesPy.dylib ./lib/opensees.so
+	 mv ./lib/OpenSeesPy.dylib ./lib/opensees.pyd
 
 .. warning::
 
-   This last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named **opensees.pyd** (go figure). Also to import this module now in your code you can do one of 2 things:
+   This last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named **opensees.pyd**. To import this module in a python script you can do one of 2 things:
 
    1. If you have used pip3 to install openseespy, you can replace the opensees.pyd file in the site_package location with the opensees.pyd above. To find the location of this module, use the following:
 
@@ -120,7 +120,7 @@ With everything installed the build process is somewhat simple! Again from a ter
 	 python3
 	 import opensees
 	 import inspect
-	 inspect.getFile(opensees)
+	 inspect.getfile(opensees)
 
       You may of course want to give the existing file a new name with the **copy** command before you overwrite it just in case!
 		
@@ -128,7 +128,7 @@ With everything installed the build process is somewhat simple! Again from a ter
 
    3. Please note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of **cmake ..** for the python library used.
 
-   3. Finally if it fails to import the the dynamic library it could be due again to the missing *mkl_intel_thread.2.dll** problem described above (though this time no nice warning message is given about the name of the missing dll). Follow the instructions shown above.
+   3. Finally if it fails to import the the dynamic library it could be due again to the missing **mkl_intel_thread.2.dll** problem described above, though this time no nice warning message is given about the name of the missing dll. Follow the instructions shown above.
 
    
 MacOS
@@ -250,7 +250,7 @@ With everything installed the build process is somewhat simple! Again from a ter
 
 .. warning::
 
-   This last copy is needed as the OpenSeesPy.dylib module at present actually needs to load from a file named **opensees.so** (go figure). Also to import this module now in your code you can do one of 2 things:
+   This last copy is needed as the OpenSeesPy.dylib module at present actually needs to load from a file named **opensees.so** To import this module now in your code you must do one of 2 things:
 
    1. If you have used pip3 to install openseespy, you can replace the opensees.so file in the site_package location with the opensees.so above. To find the location of this module, use the following:
 
@@ -263,7 +263,7 @@ With everything installed the build process is somewhat simple! Again from a ter
 
       You may of course want to give the existing file a new name with the **mv** command.
 		
-   2. If you have not installed openseespy or you want to load the .so you built instead of the installed one you can add the path to opensees.so to your **PYTHONPATH** env variables with export PYTHONPATH=$PWD or PYTHONPATH=$PWD:$PYTHONPATH depending on if PYTHONPATH exists when you type **env** in the terminal. NOTE: Using $PWD assumes you are in the directory containg the lib file.
+   2. If you have not installed openseespy or you want to load the .so you built instead of the installed one you can add the path to opensees.so to your **PYTHONPATH** env variables with export PYTHONPATH=$PWD or PYTHONPATH=$PWD:$PYTHONPATH depending on if PYTHONPATH exists when you type **env** in the terminal. NOTE: Using $PWD assumes you are in the directory containing the lib file, other put in the full path to the directory.
 
    3. Finally plase note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of **cmake ..** for the python library used.      
 
@@ -297,7 +297,7 @@ Software Requirements
 
 	 Read the output from the last command. When installing conan, the path to conan may not be added to your PATH environ variable. You will need to add it to your PATH variable, or modify the **conan install ** command below to include full path to the **conan** exe.
 
-Obtaining the source code       
+Obtaining the Source Code       
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To obtain the source code, from a terminal **cd** to the directory you want to place OpenSees and then type the following:
