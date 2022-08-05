@@ -299,7 +299,8 @@
 <span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
 <span class="n">cmake</span> <span class="o">..</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSeesPy</span>
-<span class="n">mv</span> <span class="o">./</span><span class="n">lib</span><span class="o">/</span><span class="n">OpenSeesPy</span><span class="o">.</span><span class="n">dylib</span> <span class="o">./</span><span class="n">lib</span><span class="o">/</span><span class="n">opensees</span><span class="o">.</span><span class="n">pyd</span>
+<span class="n">cd</span> <span class="n">lib</span>
+<span class="n">copy</span> <span class="n">OpenSeesPy</span><span class="o">.</span><span class="n">dylib</span> <span class="n">opensees</span><span class="o">.</span><span class="n">pyd</span>
 </pre></div>
 </div>
 </div></blockquote>
