@@ -3,7 +3,8 @@
 Concrete02 Material -- Linear Tension Softening
 ^^^^^^^^^^^^^^^^^^
 
-This command is used to construct a uniaxial concrete material as described in [Yassin1994]_
+This command is used to construct a uniaxial concrete material as described in [Yassin1994]_ paper.
+
 .. function:: uniaxialMaterial Concrete02 $matTag $fpc $epsc0 $fpcu $epsU $lambda $ft $Ets 
 
 .. csv-table:: 
