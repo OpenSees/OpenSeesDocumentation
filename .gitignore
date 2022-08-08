@@ -274,7 +274,8 @@ latexmkrc
 # build folder of the docs
 docs/_build
 docs/build
-
+docs/
+build/
 # emacs edited files
 *~
 __pycache__
