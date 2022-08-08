@@ -5,10 +5,14 @@ This command is used to construct a DisplacementControl integrator object. In an
 
 .. function:: integrator DisplacementControl $node $dof $incr <$numIter :math`\Delta U \text{min}` $:math:\Delta U \text{max}`>
 
+.. csv-table:: 
+   :header: "Argument", "Type", "Description"
+   :widths: 10, 10, 40
+
    $node, |integer|, node whose response controls solution
-   $dof, |integer|, degree of freedom at the node, valid options: 1 through ndf at node.
+   $dof, |integer|, degree of freedom at the node valid options: 1 through ndf at node.
    $incr, |float|, first displacement increment <math>\Delta U_{\text{dof}}</math>
-   $numIter, |integer|, the number of iterations the user would like to occur in the solution algorithm. Optional, default = 1.0.
+   $numIter, |integer|, the number of iterations the user would like to occur in the solution algorithm. Optional default = 1.0.
    $:math:`\Delta U \text{min}`, |float|,   the min step size the user will allow. optional: default :math`= \Delta U_{min} = \Delta U_0`
    $<math>\Delta U \text{max}</math>, |float|, the max step size the user will allow. optional: default :math:`= \Delta U_{max} = \Delta U_0`
    
