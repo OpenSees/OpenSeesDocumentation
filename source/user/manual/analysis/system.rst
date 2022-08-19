@@ -13,12 +13,12 @@ The following contain information about systemType? and the args required for ea
 
 .. toctree::
 
-   BandGeneral
-   BandSPD
-   ProfileSPD
-   SuperLU
-   Umfpack
-   FullGeneral
-   SparseSYM
-   Mumps
-   Cusp
+   system/BandGeneral
+   system/BandSPD
+   system/ProfileSPD
+   system/SuperLU
+   system/Umfpack
+   system/FullGeneral
+   system/SparseSYM
+   system/Mumps
+   system/Cusp

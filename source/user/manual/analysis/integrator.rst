@@ -25,23 +25,25 @@ The type of integrator used in the analysis is dependent on whether it is a stat
 Static Integrators:
 
 .. toctree::
+   :maxdepth: 1
 
-   LoadControl
-   DisplacementControl
-   MinimumUnbalancedDisplacementNorm
-   ArcLength
+   integrator/LoadControl
+   integrator/DisplacementControl
+   integrator/MinimumUnbalancedDisplacementNorm
+   integrator/ArcLength
 
 Transient Integrators:
 
 .. toctree::
+   :maxdepth: 1
 
-   CentralDifference
-   Newmark
-   HHT
-   GeneralizedAlpha
-   TRBDF2
-   TRBDF3
-   ExplicitDifference
+   integrator/CentralDifference
+   integrator/Newmark
+   integrator/HHT
+   integrator/GeneralizedAlpha
+   integrator/TRBDF2
+   integrator/TRBDF3
+   integrator/ExplicitDifference
 
 
 Code developed by: |fmk|

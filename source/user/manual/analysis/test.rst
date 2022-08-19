@@ -12,11 +12,11 @@ The following contain information about testType? and the args required for each
 
 .. toctree::
 
-   NormUnbalance
-   NormDispIncr
-   NormEnergyIncr
-   RelativeNormUnbalance
-   RelativeNormDispIncr
-   RelativeEnergyIncr
-   TotalRelativeNormDisplacementIncrement
-   FixedNumberIterations
+   test/NormUnbalance
+   test/NormDispIncr
+   test/NormEnergyIncr
+   test/RelativeNormUnbalance
+   test/RelativeNormDispIncr
+   test/RelativeEnergyIncr
+   test/TotalRelativeNormDisplacementIncrement
+   test/FixedNumberIterations
