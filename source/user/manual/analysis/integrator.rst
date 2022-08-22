@@ -32,6 +32,7 @@ Static Integrators:
    integrator/MinimumUnbalancedDisplacementNorm
    integrator/ArcLength
 
+
 Transient Integrators:
 
 .. toctree::
@@ -45,6 +46,13 @@ Transient Integrators:
    integrator/TRBDF3
    integrator/ExplicitDifference
 
+
+Utility Integrators:
+
+.. toctree::
+   :maxdepth: 1
+
+   integrator/gimmeMCK
 
 Code developed by: |fmk|
 

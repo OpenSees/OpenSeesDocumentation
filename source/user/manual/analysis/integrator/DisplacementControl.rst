@@ -3,13 +3,16 @@ DisplacementControl Command
 
 This command is used to construct a DisplacementControl integrator object. In an analysis step with Displacement Control we seek to determine the time step that will result in a displacement increment for a particular degree-of-freedom at a node to be a prescribed value.
 
-.. function:: integrator DisplacementControl $node $dof $incr <$numIter $dUmin $dUmax>
+
+.. function:: integrator DisplacementControl $node $dof $incr <$numIter :math`\Delta U \text{min}` $:math:\Delta U \text{max}`>
+
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
 
    $node, |integer|, node whose response controls solution
+
    $dof, |integer|, degree of freedom at the node; valid options: 1 through ndf at node.
    $incr, |float|, first displacement increment <math>\Delta U_{\text{dof}}</math>
    $numIter, |integer|, the number of iterations the user would like to occur in the solution algorithm. Optional; default = 1.0.
@@ -19,11 +22,13 @@ This command is used to construct a DisplacementControl integrator object. In an
 :math:`f(x_n+\Delta x) = 0`
 
 
+
 integrator DisplacementControl 1 2 0.1; # displacement control algorithm seeking constant increment of 0.1 at node 1 at 2'nd dof.
 
 
 Theory
-^^^^^^
+=======
+
 
 If we write the governing finite element equation at :math:`t + \Delta t\` as:
 
