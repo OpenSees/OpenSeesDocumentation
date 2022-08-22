@@ -26,24 +26,26 @@ Static Integrators:
 
 .. toctree::
    :maxdepth: 1
-   
+
    integrator/LoadControl
    integrator/DisplacementControl
-   MinimumUnbalancedDisplacementNorm
-   ArcLength
+   integrator/MinimumUnbalancedDisplacementNorm
+   integrator/ArcLength
+
 
 Transient Integrators:
 
 .. toctree::
    :maxdepth: 1
 
-   CentralDifference
+   integrator/CentralDifference
    integrator/Newmark
-   HHT
-   GeneralizedAlpha
-   TRBDF2
-   TRBDF3
-   ExplicitDifference
+   integrator/HHT
+   integrator/GeneralizedAlpha
+   integrator/TRBDF2
+   integrator/TRBDF3
+   integrator/ExplicitDifference
+
 
 Utility Integrators:
 

@@ -1,4 +1,7 @@
+.. _Newton:
 
+Newton Algorithm
+----------------
 This command is used to construct a NewtonRaphson algorithm object which is uses the Newton-Raphson algorithm to solve the nonlinear residual equation. The Newton-Raphson method is the most widely used and most robust method for solving nonlinear algebraic equations. The command is of the following form:
 
 .. function:: algorithm Newton <-initial> <-initialThenCurrent>
@@ -16,16 +19,20 @@ The Newton method used in finite element analysis is identical to that taught in
 The Taylor series of :math:`r(x)\,\!` about the point :math:`x=x_n+\Delta x\,\!` is given by
 
 :math:`f(x_n+\Delta x) = f(x_n)+r^{'}(x_n)\Delta x + 1/2r^{}(x_n) \Delta x^2+....\,\!`
+
 Keeping terms only to first order,
 
-:math:`f(x_n+\Delta x) \approx f(x_n)+r^'(x_n)\Delta x = f(x_n)+ \frac{df(x_n)}{dx}\Delta x`
+:math:`f(x_n+\Delta x) \approx f(x_n)+r^{'}(x_n)\Delta x = f(x_n)+ \frac{df(x_n)}{dx}\Delta x`
+
 and since at the root we wish to find :math:`x_n + \Delta x`, the function equates to 0, i.e. :math:`f(x_n+\Delta x) = 0`, we can solve for an approximate :math:`\Delta x`
 
-:math:` \Delta x \approx -\frac{f(x_n)}{f^'(x_n)} = - \frac{df(x_n)}{dx}^{-1}f(x_n)`
+:math:`\Delta x \approx -\frac{f(x_n)}{f^{'}(x_n)} = - \frac{df(x_n)}{dx}^{-1}f(x_n)`
+
 The Newmark method is thus an iterative method in which, starting at a good initial guess :math:`x_0\,\!` we keep iterating until our convergence criteria is met with the following:
 
-:math:` \Delta x = - \frac{df(x_n)}{dx}^{-1}f(x_n)\,\!`
-:math:` x_{n+1} = x_n + \Delta x\,\!`
+:math:`\Delta x = - \frac{df(x_n)}{dx}^{-1}f(x_n)\,\!`
+
+:math:`x_{n+1} = x_n + \Delta x\,\!`
 
 The method is generalized to n unknowns by replacing the above scalar equations with matrix ones.
 

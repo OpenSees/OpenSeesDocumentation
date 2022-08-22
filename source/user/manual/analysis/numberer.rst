@@ -20,8 +20,8 @@ The following contain information about numbererType? and the args required for 
 
 .. toctree::
 
-    PlainNumberer
-    RCM
-    AMD
+    numberer/PlainNumberer
+    numberer/RCM
+    numberer/AMD
 
 Code developed by: |fmk|
