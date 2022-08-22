@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.2.9. eigen Command &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -121,18 +123,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -204,8 +205,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="eigen-command">
-<span id="eigen"></span><h1><span class="section-number">3.2.9. </span>eigen Command<a class="headerlink" href="#eigen-command" title="Permalink to this headline">¶</a></h1>
+  <section id="eigen-command">
+<span id="eigen"></span><h1><span class="section-number">3.2.9. </span>eigen Command<a class="headerlink" href="#eigen-command" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to perform the eigenvalue analysis.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -246,8 +247,8 @@
 <li><p>The default eigensolver is able to solve only for N-1 eigenvalues, where N is the number of inertial DOFs. When running into this limitation the -fullGenLapack solver can be used instead of the default Arpack solver.</p></li>
 </ol>
 </div>
-<div class="section" id="theory">
-<h2><span class="section-number">3.2.9.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<section id="theory">
+<h2><span class="section-number">3.2.9.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">¶</a></h2>
 <div class="line-block">
 <div class="line">A <em>generalized eigenvalue problem</em> for two symmetric matrices <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(M\)</span> of size <span class="math notranslate nohighlight">\(n \times n\)</span> is given by:</div>
 </div>
@@ -289,8 +290,8 @@
 </div>
 </div>
 <p>Code Developed by: <strong>fmk</strong></p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

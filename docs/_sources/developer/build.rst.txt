@@ -107,8 +107,8 @@ With everything installed the build process is somewhat simple! Again from a ter
          conan install .. --build missing
          cmake .. 
          cmake --build . --config Release --target OpenSeesPy
-	 cd lib
-	 copy OpenSeesPy.dylib opensees.pyd
+	 cd bin
+	 copy OpenSeesPy.dll opensees.pyd
 
 .. warning::
 

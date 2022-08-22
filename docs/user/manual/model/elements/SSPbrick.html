@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.1.3.14. SSPbrick Element &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -116,6 +118,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.14. SSPbrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.15. ASDEmbeddedNode Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.17. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
@@ -131,18 +134,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -216,8 +218,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sspbrick-element">
-<h1><span class="section-number">3.1.3.14. </span>SSPbrick Element<a class="headerlink" href="#sspbrick-element" title="Permalink to this headline">¶</a></h1>
+  <section id="sspbrick-element">
+<h1><span class="section-number">3.1.3.14. </span>SSPbrick Element<a class="headerlink" href="#sspbrick-element" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct an eight-node ssp brick element. The SSPbrick element is an eight-node hexahedral element using physically stabilized single-point integration (SSP –&gt; Stabilized Single Point). The stabilization incorporates an enhanced assumed strain field, resulting in an element which is free from volumetric and shear locking. The elimination of shear locking results in greater coarse mesh accuracy in bending dominated problems, and the elimination of volumetric locking improves accuracy in nearly-incompressible problems. Analysis times are generally faster than corresponding full integration elements.</p>
 <div class="admonition-command admonition">
 <p class="admonition-title">Command</p>
@@ -254,10 +256,12 @@
 </tr>
 </tbody>
 </table>
-<div class="align-center figure" id="id1">
+<figure class="align-center" id="id1">
 <img alt="../../../../_images/brick.png" src="../../../../_images/brick.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.3.11 </span><span class="caption-text">stdBrick Element Node Numbering</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1.3.11 </span><span class="caption-text">stdBrick Element Node Numbering</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <blockquote>
@@ -288,7 +292,7 @@
 </div>
 </div>
 <p>Code Developed by: <a class="reference external" href="https://www.canterbury.ac.nz/engineering/contact-us/people/chris-mcgann.html">Chris McGann</a>, <a class="reference external" href="https://www.ce.washington.edu/facultyfinder/pedro-arduino">Pedro Arduino</a>, <a class="reference external" href="https://www.ce.washington.edu/facultyfinder/peter-mackenzie-helnwein">Peter Mackenzie-Helnwein</a> at University of Washington.</p>
-</div>
+</section>
 
 
            </div>

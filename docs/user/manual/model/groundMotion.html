@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.1.7.3.1. Ground Motion &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -107,6 +109,7 @@
 <li class="toctree-l4"><a class="reference internal" href="plainPattern.html">3.1.7.1. Plain Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="uniformExcitationPattern.html">3.1.7.2. Uniform Excitation</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="multiSupportPattern.html">3.1.7.3. Multisupport Excitation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="H5DRM.html">3.1.7.4. H5DRM Pattern</a></li>
 </ul>
 </li>
 </ul>
@@ -118,18 +121,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -205,8 +207,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ground-motion">
-<span id="groundmotion"></span><h1><span class="section-number">3.1.7.3.1. </span>Ground Motion<a class="headerlink" href="#ground-motion" title="Permalink to this headline">¶</a></h1>
+  <section id="ground-motion">
+<span id="groundmotion"></span><h1><span class="section-number">3.1.7.3.1. </span>Ground Motion<a class="headerlink" href="#ground-motion" title="Permalink to this heading">¶</a></h1>
 <p>The groundMotion command is used to construct a GroundMotion object used by the ImposedMotionSP constraints in a MultipleSupportExcitation object. This command is of the following form:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -242,8 +244,8 @@
 </tbody>
 </table>
 <p>There are presently two type of groundMotions that can be created: 1) <a class="reference internal" href="#plaingroundmotion"><span class="std std-ref">Plain Ground Motion</span></a> and 2) <span class="xref std std-ref">interpolaatedGroundMotion</span></p>
-<div class="section" id="plain-ground-motion">
-<span id="plaingroundmotion"></span><h2>Plain Ground Motion<a class="headerlink" href="#plain-ground-motion" title="Permalink to this headline">¶</a></h2>
+<section id="plain-ground-motion">
+<span id="plaingroundmotion"></span><h2>Plain Ground Motion<a class="headerlink" href="#plain-ground-motion" title="Permalink to this heading">¶</a></h2>
 <p>Each GroundMotion object is associated with a number of TimeSeries objects, which define the acceleration, velocity and displacement records for that ground motion. The particular form of the command is as follows:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -258,9 +260,9 @@
 <p>If only the acceleration TimeSeries is provided, numerical integration will be used to determine the velocities and displacements. If only velocity are provided, numerical integration is used to obtain the displacements.</p>
 <p>For earthquake excitations it is important that the user provide the displacement time history, as the one generated using the trapezoidal method will not provide good results.</p>
 </div>
-</div>
-<div class="section" id="interpolated-ground-motion">
-<span id="interpolatedgroundmotion"></span><h2>Interpolated Ground Motion<a class="headerlink" href="#interpolated-ground-motion" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="interpolated-ground-motion">
+<span id="interpolatedgroundmotion"></span><h2>Interpolated Ground Motion<a class="headerlink" href="#interpolated-ground-motion" title="Permalink to this heading">¶</a></h2>
 <p>This command is used to construct an interpolated GroundMotion object, where the motion is determined by combining several previously defined ground motions in the load pattern. The command is as follows:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -323,8 +325,8 @@
 </div>
 </div>
 <p>Code Developed by: <strong>fmk</strong></p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

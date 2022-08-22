@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3. Command Manual &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -104,7 +106,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -182,8 +184,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="command-manual">
-<h1><span class="section-number">3. </span>Command Manual<a class="headerlink" href="#command-manual" title="Permalink to this headline">¶</a></h1>
+  <section id="command-manual">
+<h1><span class="section-number">3. </span>Command Manual<a class="headerlink" href="#command-manual" title="Permalink to this heading">¶</a></h1>
 <p>To understand how to run a finite element simulation using OpenSees, it is helpful to have a small understanding of the following abstractions. In OpenSees there exists:</p>
 <ol class="arabic simple">
 <li><p>The <strong>Model Generator</strong>, code that allows the user to build a finite element model.</p></li>
@@ -191,10 +193,12 @@
 <li><p>The <strong>Analysis</strong>, code that moves the state of the model from one converged state to another via a number of trial steps.</p></li>
 <li><p>The <strong>Recorders</strong>, code that allows the user to obtain output from a finite element analysis, e.g. to record the node displacement history.</p></li>
 </ol>
-<div class="align-center figure" id="id2">
+<figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/OpenSeesMainAbstractions.png"><img alt="../_images/OpenSeesMainAbstractions.png" src="../_images/OpenSeesMainAbstractions.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">OpenSees Abstractions</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">OpenSees Abstractions</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>The OpenSees interpreters add <a class="reference external" href="http://en.wikipedia.org/wiki/Command_(computing)">commands</a> to interpreters, e.g. Python and Tcl, to allow the user to specify the model builder, the domain, the analysis and the output. Each of these added commands is associated (bound) with a C++ procedure that is provided in the OpenSees Framework. It is this procedure that is called upon by the interpreter to parse the command when it is encountered. In this document we focus primarily on those commands which have been added to these languages. All existing commands that exist in the Tcl and Python languages are available to these interpreters. We provide a brief [[Introduction To Tcl]], more detailed documentation on these existing commands can be found in books and on-line.</p>
 <div class="toctree-wrapper compound" id="id1">
 <ul>
@@ -205,7 +209,7 @@
 <li class="toctree-l1"><a class="reference internal" href="manual/miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

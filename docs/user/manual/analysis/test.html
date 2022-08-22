@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.2.4. test Command &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -43,8 +45,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.2.4.1. Norm Unbalance" href="NormUnbalance.html" />
-    <link rel="prev" title="3.2.3.8. Mumps Solver" href="Mumps.html" /> 
+    <link rel="next" title="3.2.4.1. Norm Unbalance" href="test/NormUnbalance.html" />
+    <link rel="prev" title="3.2.3.8. Mumps Solver" href="system/Mumps.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,10 +105,10 @@
 <li class="toctree-l3"><a class="reference internal" href="numberer.html">3.2.2. numberer Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="system.html">3.2.3. system Command</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.2.4. test Command</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="NormUnbalance.html">3.2.4.1. Norm Unbalance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="NormDispIncr.html">3.2.4.2. Norm Displacement Increment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="NormEnergyIncr.html">3.2.4.3. Energy Increment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RelativeNormUnbalance.html">3.2.4.4. Relative Norm Unbalance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test/NormUnbalance.html">3.2.4.1. Norm Unbalance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test/NormDispIncr.html">3.2.4.2. Norm Displacement Increment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test/NormEnergyIncr.html">3.2.4.3. Energy Increment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test/RelativeNormUnbalance.html">3.2.4.4. Relative Norm Unbalance</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="algorithm.html">3.2.5. algorithm Command</a></li>
@@ -124,7 +126,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -206,8 +208,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="test-command">
-<span id="test"></span><h1><span class="section-number">3.2.4. </span>test Command<a class="headerlink" href="#test-command" title="Permalink to this headline">¶</a></h1>
+  <section id="test-command">
+<span id="test"></span><h1><span class="section-number">3.2.4. </span>test Command<a class="headerlink" href="#test-command" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct the <strong>Convergence Test</strong>. The convergence test is that object the <a class="reference internal" href="algorithm.html#algorithm"><span class="std std-ref">algorithm Command</span></a> uses to detect if convergence has been achieved. The convergence test is applied to the matrix equation, <span class="math notranslate nohighlight">\(Ax=b\)</span> stored in the <a class="reference internal" href="system.html#system"><span class="std std-ref">system Command</span></a>. In the finite element setting and under normal integration schemes and algorithms, the <span class="math notranslate nohighlight">\(x\)</span> corresponds to the displacement increment and <span class="math notranslate nohighlight">\(b\)</span> the unbalanced forces.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -217,13 +219,13 @@
 <p>The following contain information about testType? and the args required for each of the available system types:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="NormUnbalance.html">3.2.4.1. Norm Unbalance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NormDispIncr.html">3.2.4.2. Norm Displacement Increment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NormEnergyIncr.html">3.2.4.3. Energy Increment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RelativeNormUnbalance.html">3.2.4.4. Relative Norm Unbalance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test/NormUnbalance.html">3.2.4.1. Norm Unbalance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test/NormDispIncr.html">3.2.4.2. Norm Displacement Increment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test/NormEnergyIncr.html">3.2.4.3. Energy Increment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test/RelativeNormUnbalance.html">3.2.4.4. Relative Norm Unbalance</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

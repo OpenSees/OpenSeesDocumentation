@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.4.1.13. BoucWenInfill Material &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -133,7 +135,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -217,8 +219,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="boucweninfill-material">
-<span id="boucweninfill"></span><h1><span class="section-number">3.4.1.13. </span>BoucWenInfill Material<a class="headerlink" href="#boucweninfill-material" title="Permalink to this headline">¶</a></h1>
+  <section id="boucweninfill-material">
+<span id="boucweninfill"></span><h1><span class="section-number">3.4.1.13. </span>BoucWenInfill Material<a class="headerlink" href="#boucweninfill-material" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct the uniaxial BoucWenInfill material producing smooth hysteretic loops with stiffness and strength degradation and pinching effect. The pinching formulation is particularly suitable to simulate the behavior of infill panels and masonry walls.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -303,16 +305,16 @@
 <p>The equations governing the BoucWenInfill behavior are described in <span id="id2">[SirottiEtAl2021]</span>. Other references can be found in <a class="reference internal" href="#pelliciarietal2020" id="id3"><span>[PelliciariEtAl2020]</span></a> for stiffness and strength degradation and in <a class="reference internal" href="#madanetal1997" id="id4"><span>[MadanEtAl1997]</span></a> for the pinching formulation.</p>
 <p>The model may reproduce either force-displacement or stress-strain relationships.</p>
 <p>Parameters $deltak, $deltaf and $psi regulate respectively stiffness, strength degradation and the rate of stiffness degradation.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/BoucWenInfill1.png" src="../../../../_images/BoucWenInfill1.png" />
-</div>
+</figure>
 <p>Parameters $Zs, $As and $epsp control the amount and activation of the pinching effect:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/BoucWenInfill2.png" src="../../../../_images/BoucWenInfill2.png" />
-</div>
-<div class="align-center figure">
+</figure>
+<figure class="align-center">
 <img alt="../../../../_images/BoucWenInfill3.png" src="../../../../_images/BoucWenInfill3.png" />
-</div>
+</figure>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>The following instruction builds a BoucWenInfill material with tag <strong>1</strong>, parameters reported in the table above, tolerance $tol = <span class="math notranslate nohighlight">\(10^{-6}\)</span> and maximum number of iterations $maxIter = <span class="math notranslate nohighlight">\(10^{6}\)</span>.</p>
@@ -333,7 +335,7 @@
 <dd><p>Madan, A., Reinhorn, A. M., Mander, J. B., &amp; Valles, R. E. (1997). Modeling of masonry infill panels for structural analysis. Journal of structural engineering, 123(10), 1295-1302. DOI: <a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-9445(1997)123:10(1295">https://doi.org/10.1061/(ASCE)0733-9445(1997)123:10(1295</a>).</p>
 </dd>
 </dl>
-</div>
+</section>
 
 
            </div>

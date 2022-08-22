@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.2. Analysis Commands &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -44,7 +46,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3.2.1. constraints Command" href="analysis/constraints.html" />
-    <link rel="prev" title="3.1.7.3.2. Imposed Motion Command" href="model/imposedMotion.html" /> 
+    <link rel="prev" title="3.1.7.4. H5DRM Pattern" href="model/H5DRM.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -118,7 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -198,8 +200,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="analysis-commands">
-<span id="lblanalysiscommands"></span><h1><span class="section-number">3.2. </span>Analysis Commands<a class="headerlink" href="#analysis-commands" title="Permalink to this headline">¶</a></h1>
+  <section id="analysis-commands">
+<span id="lblanalysiscommands"></span><h1><span class="section-number">3.2. </span>Analysis Commands<a class="headerlink" href="#analysis-commands" title="Permalink to this heading">¶</a></h1>
 <p>In OpenSees, an analysis is an object which is composed by the aggregation of component objects. It is the component objects which define the type of analysis that is performed on the model. The component classes, as shown in the figure below, consist of the following:</p>
 <ol class="arabic simple">
 <li><p>Constraint Handler – determines how the constraint equations are enforced in the analysis – how it handles the boundary conditions/imposed displacements</p></li>
@@ -209,10 +211,12 @@
 <li><p>Solution Algorithm – determines the sequence of steps taken to solve the non-linear equation at the current time step</p></li>
 <li><p>Integrator – determines the equations to solve, the predictive step, and how to update the response at the nodes given the solution to <span class="math notranslate nohighlight">\(Ax=b\)</span></p></li>
 </ol>
-<div class="align-center figure" id="id1">
+<figure class="align-center" id="id1">
 <img alt="../../_images/OpenSeesAnalysis.png" src="../../_images/OpenSeesAnalysis.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">OpenSees Analysis</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">OpenSees Analysis</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="analysis/constraints.html">3.2.1. constraints Command</a></li>
@@ -228,7 +232,7 @@
 <li class="toctree-l1"><a class="reference internal" href="analysis/responseSpectrum.html">3.2.11. responseSpectrum Command</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

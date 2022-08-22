@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.2.2. numberer Command &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -42,8 +44,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.2.2.1. Plain Numberer" href="PlainNumberer.html" />
-    <link rel="prev" title="3.2.1.4. Lagrange Multipliers" href="lagrangeMultipliers.html" /> 
+    <link rel="next" title="3.2.2.1. Plain Numberer" href="numberer/PlainNumberer.html" />
+    <link rel="prev" title="3.2.1.4. Lagrange Multipliers" href="constraint/lagrangeMultipliers.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,9 +102,9 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="constraints.html">3.2.1. constraints Command</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.2.2. numberer Command</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PlainNumberer.html">3.2.2.1. Plain Numberer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RCM.html">3.2.2.2. Reverse Cuthill McKee Numberer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="AMD.html">3.2.2.3. Alternative Min Degree Numberer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numberer/PlainNumberer.html">3.2.2.1. Plain Numberer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numberer/RCM.html">3.2.2.2. Reverse Cuthill McKee Numberer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numberer/AMD.html">3.2.2.3. Alternative Min Degree Numberer</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="system.html">3.2.3. system Command</a></li>
@@ -122,18 +124,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -205,8 +206,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="numberer-command">
-<span id="numberer"></span><h1><span class="section-number">3.2.2. </span>numberer Command<a class="headerlink" href="#numberer-command" title="Permalink to this headline">¶</a></h1>
+  <section id="numberer-command">
+<span id="numberer"></span><h1><span class="section-number">3.2.2. </span>numberer Command<a class="headerlink" href="#numberer-command" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct the <strong>DOF_Numberer</strong> object. The <strong>DOF_Numberer</strong> object determines the mapping between equation numbers in the system of equations and the degrees-of-freedom at the nodes, basically how degrees-of-freedom are numbered.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -239,13 +240,13 @@
 <p>The following contain information about numbererType? and the args required for each of the available dof numberer types:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="PlainNumberer.html">3.2.2.1. Plain Numberer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RCM.html">3.2.2.2. Reverse Cuthill McKee Numberer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="AMD.html">3.2.2.3. Alternative Min Degree Numberer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numberer/PlainNumberer.html">3.2.2.1. Plain Numberer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numberer/RCM.html">3.2.2.2. Reverse Cuthill McKee Numberer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numberer/AMD.html">3.2.2.3. Alternative Min Degree Numberer</a></li>
 </ul>
 </div>
 <p>Code developed by: <strong>fmk</strong></p>
-</div>
+</section>
 
 
            </div>

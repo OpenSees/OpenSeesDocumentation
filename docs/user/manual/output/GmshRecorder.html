@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.3.1.6. GMSH Recorder &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -115,18 +117,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -200,8 +201,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gmsh-recorder">
-<span id="gmshrecorder"></span><h1><span class="section-number">3.3.1.6. </span>GMSH Recorder<a class="headerlink" href="#gmsh-recorder" title="Permalink to this headline">¶</a></h1>
+  <section id="gmsh-recorder">
+<span id="gmshrecorder"></span><h1><span class="section-number">3.3.1.6. </span>GMSH Recorder<a class="headerlink" href="#gmsh-recorder" title="Permalink to this heading">¶</a></h1>
 <p>The GMSH recorder type is a <em>whole model</em> recorder, that is it is meant to record all the model geometry and metadata along with selecetd response quantities. The output of this recorder is in the <code class="docutils literal notranslate"><span class="pre">.msh</span></code> file format (legacy version 2) which can be visualized with the <a class="reference external" href="https://gmsh.info/">gmsh</a> program. This recorder is enabled for use in parallel model (both OpenSeesMP and OpenSeesSP works).</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -267,7 +268,7 @@ eleResponse
 <p>Execution results in the files <code class="docutils literal notranslate"><span class="pre">results.mesh.0.msh</span></code> (where mesh info is stored) and <code class="docutils literal notranslate"><span class="pre">results.disp.0.msh</span></code> (where displacement response at each node are stored). In gmsh, open first the <cite>mesh</cite> file and then merge the <cite>disp</cite> file into the current model to generate a post-processing view.</p>
 </div>
 <p>Code developed by: <a href="#id1"><span class="problematic" id="id2">|jaabell|</span></a> based on code by <a href="#id3"><span class="problematic" id="id4">|mhscott|</span></a>, <a href="#id5"><span class="problematic" id="id6">|zhuminjie|</span></a> and <strong>fmk</strong>.</p>
-</div>
+</section>
 
 
            </div>

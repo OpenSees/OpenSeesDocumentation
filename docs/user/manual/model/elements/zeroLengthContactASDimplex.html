@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.1.3.4. ZeroLengthContactASDimplex Element &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -116,6 +118,7 @@
 <li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.15. ASDEmbeddedNode Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.17. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
@@ -131,18 +134,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -216,8 +218,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="zerolengthcontactasdimplex-element">
-<span id="zerolengthcontactasdimplex"></span><h1><span class="section-number">3.1.3.4. </span>ZeroLengthContactASDimplex Element<a class="headerlink" href="#zerolengthcontactasdimplex-element" title="Permalink to this headline">¶</a></h1>
+  <section id="zerolengthcontactasdimplex-element">
+<span id="zerolengthcontactasdimplex"></span><h1><span class="section-number">3.1.3.4. </span>ZeroLengthContactASDimplex Element<a class="headerlink" href="#zerolengthcontactasdimplex-element" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct zeroLengthContactASDimplex element object. The zeroLengthContactASDimplex element is a 2-node zeroLength contact element with the following features:</p>
 <ol class="arabic simple">
 <li><p>It is a penalty-based frictional contact element following the Mohr-Coulomb criterion.</p></li>
@@ -227,10 +229,12 @@
 <li><p>The two nodes can have different DOFs, so this element can be easily used to connect different elements (Solids (3 DOFs) to Beams/Shells (6 DOFs) or UP-Solids (4 DOFs).</p></li>
 <li><p>It can be arbitrarily oriented in space, using a user-defined contact vector. If not specified, the global X axis is considered as contact vector.</p></li>
 </ol>
-<div class="align-center figure" id="id2">
+<figure class="align-center" id="id2">
 <img alt="../../../../_images/ZeroLengthContactASDimplex.png" src="../../../../_images/ZeroLengthContactASDimplex.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.3.1 </span><span class="caption-text">Nodes and contact direction</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1.3.1 </span><span class="caption-text">Nodes and contact direction</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">element</span> <span class="pre">ZeroLengthContactASDimplex</span> <span class="pre">$eleTag</span> <span class="pre">$n1</span> <span class="pre">$n2</span> <span class="pre">$Kn</span> <span class="pre">$Kt</span> <span class="pre">$mu</span> <span class="pre">&lt;-orient</span> <span class="pre">$nx</span> <span class="pre">$ny</span> <span class="pre">$nz&gt;</span> <span class="pre">&lt;-intType</span> <span class="pre">$type&gt;</span></span></dt>
@@ -360,7 +364,7 @@
 </div>
 </dd>
 </dl>
-</div>
+</section>
 
 
            </div>

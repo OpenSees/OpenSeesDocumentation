@@ -36,3 +36,4 @@ The type of pattern created and the additional arguments required depends on the
    uniformExcitationPattern
    multiSupportPattern
    DRM
+   H5DRM

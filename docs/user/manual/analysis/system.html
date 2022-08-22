@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.2.3. system Command &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -43,8 +45,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.2.3.1. BandGeneral System" href="BandGeneral.html" />
-    <link rel="prev" title="3.2.2.3. Alternative Min Degree Numberer" href="AMD.html" /> 
+    <link rel="next" title="3.2.3.1. BandGeneral System" href="system/BandGeneral.html" />
+    <link rel="prev" title="3.2.2.3. Alternative Min Degree Numberer" href="numberer/AMD.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,14 +104,14 @@
 <li class="toctree-l3"><a class="reference internal" href="constraints.html">3.2.1. constraints Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="numberer.html">3.2.2. numberer Command</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.2.3. system Command</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="BandGeneral.html">3.2.3.1. BandGeneral System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BandSPD.html">3.2.3.2. BandSPD System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ProfileSPD.html">3.2.3.3. ProfileSPD System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SuperLU.html">3.2.3.4. SuperLU System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Umfpack.html">3.2.3.5. Umfpack System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FullGeneral.html">3.2.3.6. FullGeneral System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SparseSYM.html">3.2.3.7. SparseSYM Solver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Mumps.html">3.2.3.8. Mumps Solver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/BandGeneral.html">3.2.3.1. BandGeneral System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/BandSPD.html">3.2.3.2. BandSPD System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/ProfileSPD.html">3.2.3.3. ProfileSPD System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/SuperLU.html">3.2.3.4. SuperLU System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/Umfpack.html">3.2.3.5. Umfpack System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/FullGeneral.html">3.2.3.6. FullGeneral System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/SparseSYM.html">3.2.3.7. SparseSYM Solver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/Mumps.html">3.2.3.8. Mumps Solver</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="test.html">3.2.4. test Command</a></li>
@@ -128,7 +130,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -210,8 +212,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="system-command">
-<span id="system"></span><h1><span class="section-number">3.2.3. </span>system Command<a class="headerlink" href="#system-command" title="Permalink to this headline">¶</a></h1>
+  <section id="system-command">
+<span id="system"></span><h1><span class="section-number">3.2.3. </span>system Command<a class="headerlink" href="#system-command" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct the <code class="docutils literal notranslate"><span class="pre">LinearSOE</span></code> and <code class="docutils literal notranslate"><span class="pre">LinearSolver</span></code> objects to store and solve the system of equations, <span class="math notranslate nohighlight">\(Ax=b\)</span> during each step.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -222,17 +224,17 @@
 <p>The following contain information about systemType? and the args required for each of the available system types:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="BandGeneral.html">3.2.3.1. BandGeneral System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BandSPD.html">3.2.3.2. BandSPD System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ProfileSPD.html">3.2.3.3. ProfileSPD System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SuperLU.html">3.2.3.4. SuperLU System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Umfpack.html">3.2.3.5. Umfpack System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FullGeneral.html">3.2.3.6. FullGeneral System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SparseSYM.html">3.2.3.7. SparseSYM Solver</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mumps.html">3.2.3.8. Mumps Solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/BandGeneral.html">3.2.3.1. BandGeneral System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/BandSPD.html">3.2.3.2. BandSPD System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/ProfileSPD.html">3.2.3.3. ProfileSPD System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/SuperLU.html">3.2.3.4. SuperLU System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/Umfpack.html">3.2.3.5. Umfpack System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/FullGeneral.html">3.2.3.6. FullGeneral System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/SparseSYM.html">3.2.3.7. SparseSYM Solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/Mumps.html">3.2.3.8. Mumps Solver</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

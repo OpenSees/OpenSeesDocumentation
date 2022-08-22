@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.1.3.17. RockingBC Element &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -132,7 +134,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -216,13 +218,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="rockingbc-element">
-<h1><span class="section-number">3.1.3.17. </span>RockingBC Element<a class="headerlink" href="#rockingbc-element" title="Permalink to this headline">¶</a></h1>
+  <section id="rockingbc-element">
+<h1><span class="section-number">3.1.3.17. </span>RockingBC Element<a class="headerlink" href="#rockingbc-element" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a RockingBC element. This element can be used to describe the rocking motion of 2d deformable bodies, either elastic or inelastic, under static or dynamic loading. Apart from the deformability along the length of the member, the element is able to account for deformability near the contact area, where nonlinear stress distributions develop and sections do not remain plane. Furthermore, the element is able to account for constraints along the length of the rocking member imposed by other structural members, as well as sliding and upthrow. More information about the theory and usage of the element can be found in the References below.</p>
-<div class="align-center figure" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/RockingBC.png"><img alt="../../../../_images/RockingBC.png" src="../../../../_images/RockingBC.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.17 </span><span class="caption-text">RockingBC element</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1.3.17 </span><span class="caption-text">RockingBC element</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <div class="admonition-command admonition">
 <p class="admonition-title">Command</p>
 <p><strong>element RockingBC $eleTag $iNode $jNode $Nw $E $nu $sy $B $w $mu &lt;-convlim $convlim&gt; &lt;-useshear $useshear&gt; &lt;-blevery $blevery&gt; &lt;-useUelNM $useUelNM&gt; &lt;-usecomstiff $usecomstiff&gt; &lt;-af $af&gt; &lt;-aflim $aflim&gt; &lt;-convlimmult $convlimmult&gt; &lt;-maxtries $maxtries&gt; &lt;-NlimN $NlimN&gt; &lt;-NlimT $NlimT&gt; &lt;-Dtlim $Dtlim&gt; &lt;-errorifNexceeds $errorifNexceeds&gt;</strong></p>
@@ -370,7 +374,7 @@
 </ol>
 </div>
 <p>Code Developed by: <strong>Evangelos Avgenakis</strong> and <strong>Ioannis N. Psycharis</strong>, School of Civil Engineering, National Technical University of Athens, Greece</p>
-</div>
+</section>
 
 
            </div>

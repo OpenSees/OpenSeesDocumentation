@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.3.1.2. Envelope Node Recorder &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -115,18 +117,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -200,12 +201,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="envelope-node-recorder">
-<span id="envelopenoderecorder"></span><h1><span class="section-number">3.3.1.2. </span>Envelope Node Recorder<a class="headerlink" href="#envelope-node-recorder" title="Permalink to this headline">¶</a></h1>
+  <section id="envelope-node-recorder">
+<span id="envelopenoderecorder"></span><h1><span class="section-number">3.3.1.2. </span>Envelope Node Recorder<a class="headerlink" href="#envelope-node-recorder" title="Permalink to this heading">¶</a></h1>
 <p>The EnvelopeNode recorder type records the maxima and minima response of a number of nodes over the analysis. The command to create an envelope node recorder is:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">recorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">EnvelopeNode</span></em>, <em class="sig-param"><span class="pre">&lt;-file</span> <span class="pre">$filename&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-xml</span> <span class="pre">$filename&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-binary</span> <span class="pre">$filename&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-tcp</span> <span class="pre">$inetAddress</span> <span class="pre">$port&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-precision</span>&#160; <span class="pre">$nSD&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-timeSeries</span> <span class="pre">$tsTag&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-time&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-dT</span> <span class="pre">$deltaT&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-closeOnWrite&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-node</span>&#160; <span class="pre">$nodeTags&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;</span> <span class="pre">-nodeRange</span> <span class="pre">$startNode</span> <span class="pre">$endNode&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-region</span> <span class="pre">$regionTag&gt;</span> <span class="pre">-dof</span> <span class="pre">$dofs</span> <span class="pre">$respType</span></em><span class="sig-paren">)</span></dt>
+<span class="sig-name descname"><span class="pre">recorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">EnvelopeNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-file</span> <span class="pre">$filename&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-xml</span> <span class="pre">$filename&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-binary</span> <span class="pre">$filename&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-tcp</span> <span class="pre">$inetAddress</span> <span class="pre">$port&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-precision</span>&#160; <span class="pre">$nSD&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-timeSeries</span> <span class="pre">$tsTag&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-dT</span> <span class="pre">$deltaT&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-closeOnWrite&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-node</span>&#160; <span class="pre">$nodeTags&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;</span> <span class="pre">-nodeRange</span> <span class="pre">$startNode</span> <span class="pre">$endNode&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-region</span> <span class="pre">$regionTag&gt;</span> <span class="pre">-dof</span> <span class="pre">$dofs</span> <span class="pre">$respType</span></span></em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -324,7 +325,7 @@ rayleighForces!
 </div>
 </div>
 <p>Code developed by: <strong>fmk</strong></p>
-</div>
+</section>
 
 
            </div>

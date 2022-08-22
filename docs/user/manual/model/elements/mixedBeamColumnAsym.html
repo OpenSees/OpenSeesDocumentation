@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.1.3.8. Mixed Beam Element (Asymmetric Sections) &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -116,6 +118,7 @@
 <li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.15. ASDEmbeddedNode Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.17. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
@@ -131,18 +134,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -216,8 +218,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mixed-beam-element-asymmetric-sections">
-<span id="mixedbeamcolumnasym"></span><h1><span class="section-number">3.1.3.8. </span>Mixed Beam Element (Asymmetric Sections)<a class="headerlink" href="#mixed-beam-element-asymmetric-sections" title="Permalink to this headline">¶</a></h1>
+  <section id="mixed-beam-element-asymmetric-sections">
+<span id="mixedbeamcolumnasym"></span><h1><span class="section-number">3.1.3.8. </span>Mixed Beam Element (Asymmetric Sections)<a class="headerlink" href="#mixed-beam-element-asymmetric-sections" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a <strong>MixedBeamColumnAsym3d</strong> element object, which is suitable for modeling flexural, flexural-torsionl and torsional buckling of members with asymmetric section such as angles and tees. It can also be used to model members with doublely-symmetric sections. The corotational total Lagrangian method is used to capture the axial-flexural-torsional interaction behavior, while the fiber section method is used for modeling material nonlinearity. The fibers and coordinates of the shear center should be defined with respect to the principal axes of the section. This element can represent a nonlinear curvature field within the element. Note that warping is not considered in this element.</p>
 <p>For more information about the element formulation, please refer to the references at the end of this page.</p>
 <p><strong>TCL ELEMENT COMMAND</strong></p>
@@ -301,15 +303,17 @@
 </tr>
 </tbody>
 </table>
-<div class="align-center figure" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/dispBeamColumnAsym_Fig1.jpg"><img alt="../../../../_images/dispBeamColumnAsym_Fig1.jpg" src="../../../../_images/dispBeamColumnAsym_Fig1.jpg" style="width: 408.5px; height: 319.25px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.3.5 </span><span class="caption-text">Fig. 1: Coordinate systems for members with asymmetric sections (CC’: centroidal axis, SS’: shear center axis)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1.3.5 </span><span class="caption-text">Fig. 1: Coordinate systems for members with asymmetric sections (CC’: centroidal axis, SS’: shear center axis)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p><strong>PYTHON ELEMENT COMMAND</strong></p>
 <p>For 3D problems:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="element">
-<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">'mixedBeamColumnAsym'</span></em>, <em class="sig-param"><span class="pre">$eleTag</span></em>, <em class="sig-param"><span class="pre">$iNode</span></em>, <em class="sig-param"><span class="pre">$jNode</span></em>, <em class="sig-param"><span class="pre">$transfTag</span></em>, <em class="sig-param"><span class="pre">$integrTag</span></em>, <em class="sig-param"><span class="pre">'-shearCenter'</span></em>, <em class="sig-param"><span class="pre">$y0</span></em>, <em class="sig-param"><span class="pre">$z0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">'mixedBeamColumnAsym'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$eleTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$iNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$jNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$transfTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$integrTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'-shearCenter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$z0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>The required arguments are:</p>
@@ -579,7 +583,7 @@
 <li><p>Du, X., &amp; Hajjar, J. F. (2021). Three-dimensional nonlinear mixed 6-DOF beam element for thin-walled members. Thin-Walled Structures, 164, 107817.</p></li>
 </ol>
 <p>Code developed by: <a class="reference external" href="https://github.com/dxl9838/">Xinlong Du</a> <a href="#id2"><span class="problematic" id="id3">|dxl|</span></a> (Northeastern University).</p>
-</div>
+</section>
 
 
            </div>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2. Building Application &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -97,7 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../user/install.html">2. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user/userManual.html">3. Command Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user/userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user/messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -198,17 +200,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="building-application">
-<span id="build"></span><h1><span class="section-number">2. </span>Building Application<a class="headerlink" href="#building-application" title="Permalink to this headline">¶</a></h1>
+  <section id="building-application">
+<span id="build"></span><h1><span class="section-number">2. </span>Building Application<a class="headerlink" href="#building-application" title="Permalink to this heading">¶</a></h1>
 <p>The OpenSees applications are built using <a class="reference external" href="https://cmake.org/">CMake</a>, an extensible open-source system that manages the build system. It provides a uniform build process across a range of operating systems: Windows, MacOS and different version of Linux. CMake needs to be installed on your system. For it to work, other applications such as C, C++ and Fortran compilers need to be also installed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Most code instructions below are run from a <strong>Terminal</strong> application. Type <strong>cmd</strong> in the Windows search or <strong>terminal</strong> in MacOS spotlight to start the application. If you are on a Unix machine this note may cause you some amusement!</p>
 </div>
-<div class="section" id="windows-10">
-<h2><span class="section-number">2.1. </span>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="software-requirements">
-<h3><span class="section-number">2.1.1. </span>Software Requirements<a class="headerlink" href="#software-requirements" title="Permalink to this headline">¶</a></h3>
+<section id="windows-10">
+<h2><span class="section-number">2.1. </span>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this heading">¶</a></h2>
+<section id="software-requirements">
+<h3><span class="section-number">2.1.1. </span>Software Requirements<a class="headerlink" href="#software-requirements" title="Permalink to this heading">¶</a></h3>
 <p>For Windows 10 the user must have the following applications installed on their computer: CMake, VisualStudio Basic, Intel One Basic and HPC Toolkits and Conan:</p>
 <ol class="arabic simple">
 <li><p><strong>CMake</strong>: We use <a class="reference external" href="https://cmake.org/download/">CMake</a> for managing the build process. Version 3.20 or later is recommended.</p></li>
@@ -245,9 +247,9 @@
 <span class="go">conan profile show</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="obtaining-the-source-code">
-<h3><span class="section-number">2.1.2. </span>Obtaining the Source Code<a class="headerlink" href="#obtaining-the-source-code" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="obtaining-the-source-code">
+<h3><span class="section-number">2.1.2. </span>Obtaining the Source Code<a class="headerlink" href="#obtaining-the-source-code" title="Permalink to this heading">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -269,9 +271,9 @@
 </li>
 </ol>
 </div>
-</div>
-<div class="section" id="building-the-opensees-tcl-interpreter">
-<h3><span class="section-number">2.1.3. </span>Building the OpenSees Tcl Interpreter<a class="headerlink" href="#building-the-opensees-tcl-interpreter" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="building-the-opensees-tcl-interpreter">
+<h3><span class="section-number">2.1.3. </span>Building the OpenSees Tcl Interpreter<a class="headerlink" href="#building-the-opensees-tcl-interpreter" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! From a terminal type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\Program Files (x86)\Intel\oneAPI\setVars&quot;</span> <span class="n">intel64</span> <span class="n">mod</span>
@@ -288,9 +290,9 @@
 <p class="admonition-title">Warning</p>
 <p>If OpenSees fails to run, it may prompt that this is due to a missing .dll, <strong>mkl_intel_thread.2.dll</strong>. This file can be found in your <strong>C:Program Files (x86)InteloneAPImkllatestredistintel64</strong> directory. Copy the file from there to the <a href="#id2"><span class="problematic" id="id3">**</span></a>bin**folder.</p>
 </div>
-</div>
-<div class="section" id="building-the-openseespy-library">
-<h3><span class="section-number">2.1.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#building-the-openseespy-library" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="building-the-openseespy-library">
+<h3><span class="section-number">2.1.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#building-the-openseespy-library" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
@@ -299,8 +301,8 @@
 <span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
 <span class="n">cmake</span> <span class="o">..</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSeesPy</span>
-<span class="n">cd</span> <span class="n">lib</span>
-<span class="n">copy</span> <span class="n">OpenSeesPy</span><span class="o">.</span><span class="n">dylib</span> <span class="n">opensees</span><span class="o">.</span><span class="n">pyd</span>
+<span class="n">cd</span> <span class="nb">bin</span>
+<span class="n">copy</span> <span class="n">OpenSeesPy</span><span class="o">.</span><span class="n">dll</span> <span class="n">opensees</span><span class="o">.</span><span class="n">pyd</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -324,12 +326,12 @@
 <li><p>Finally if it fails to import the the dynamic library it could be due again to the missing <strong>mkl_intel_thread.2.dll</strong> problem described above, though this time no nice warning message is given about the name of the missing dll. Follow the instructions shown above.</p></li>
 </ol>
 </div>
-</div>
-</div>
-<div class="section" id="macos">
-<h2><span class="section-number">2.2. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3><span class="section-number">2.2.1. </span>Software Requirements<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="macos">
+<h2><span class="section-number">2.2. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading">¶</a></h2>
+<section id="id4">
+<h3><span class="section-number">2.2.1. </span>Software Requirements<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <p>For MacOS the user must have the following applications installed on their computer: xcode command line tools, brew, cmake, gcc, gfortran, python, and open-mpi. All the applications are installed via the command line. Some of these you can skip as you may already have them installed.</p>
 <ol class="arabic">
 <li><p><strong>XCODE Command Line Tools</strong>: To make Apple Clang and git available, type the following in a terminal application:</p>
@@ -365,9 +367,9 @@
 </div>
 </li>
 </ol>
-</div>
-<div class="section" id="id5">
-<h3><span class="section-number">2.2.2. </span>Obtaining the Source Code<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id5">
+<h3><span class="section-number">2.2.2. </span>Obtaining the Source Code<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -389,9 +391,9 @@
 </li>
 </ol>
 </div>
-</div>
-<div class="section" id="building-the-opensees-tcl-application">
-<h3><span class="section-number">2.2.3. </span>Building the OpenSees Tcl Application<a class="headerlink" href="#building-the-opensees-tcl-application" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="building-the-opensees-tcl-application">
+<h3><span class="section-number">2.2.3. </span>Building the OpenSees Tcl Application<a class="headerlink" href="#building-the-opensees-tcl-application" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somehwat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
@@ -420,9 +422,9 @@
 <li><p>You only have to issue the first 4 commands once. The fifth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type  the last command.</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="id6">
-<h3><span class="section-number">2.2.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id6">
+<h3><span class="section-number">2.2.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
@@ -452,12 +454,12 @@
 <li><p>Finally plase note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of <strong>cmake ..</strong> for the python library used.</p></li>
 </ol>
 </div>
-</div>
-</div>
-<div class="section" id="ubuntu">
-<h2><span class="section-number">2.3. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="ubuntu">
+<h2><span class="section-number">2.3. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this heading">¶</a></h2>
+<section id="id7">
+<h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
 <li><p><strong>Applications installed with apt</strong>: For Ubuntu the user must have a number of packages installed on their system. These can all be installed using the app application using the following commands issued in a terminal window.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
@@ -481,9 +483,9 @@
 </div>
 </li>
 </ol>
-</div>
-<div class="section" id="id8">
-<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -505,9 +507,9 @@
 </li>
 </ol>
 </div>
-</div>
-<div class="section" id="id9">
-<h3><span class="section-number">2.3.3. </span>Building the OpenSees Tcl Interpreter<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h3><span class="section-number">2.3.3. </span>Building the OpenSees Tcl Interpreter<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somehwat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
@@ -526,9 +528,9 @@
 <li><p>If you have more than <strong>4</strong> cores available, you can use the exra cores by changing the <strong>4</strong> value!</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="id10">
-<h3><span class="section-number">2.3.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id10">
+<h3><span class="section-number">2.3.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
@@ -558,9 +560,9 @@
 <li><p>Finally plase note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of <strong>cmake ..</strong> for the python library used.</p></li>
 </ol>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

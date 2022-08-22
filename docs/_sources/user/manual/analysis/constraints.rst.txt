@@ -25,7 +25,7 @@ The following contain information about numbererType? and the args required for 
 
 .. toctree::
 
-    PlainConstraints
-    PenaltyMethod
-    TransformationMethod
-    lagrangeMultipliers
+    constraint/PlainConstraints
+    constraint/PenaltyMethod
+    constraint/TransformationMethod
+    constraint/lagrangeMultipliers

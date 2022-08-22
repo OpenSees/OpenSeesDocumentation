@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.4. Material Commands &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -110,7 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -190,18 +192,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="material-commands">
-<span id="materialcommands"></span><h1><span class="section-number">3.4. </span>Material Commands<a class="headerlink" href="#material-commands" title="Permalink to this headline">¶</a></h1>
+  <section id="material-commands">
+<span id="materialcommands"></span><h1><span class="section-number">3.4. </span>Material Commands<a class="headerlink" href="#material-commands" title="Permalink to this heading">¶</a></h1>
 <p>Like many finite element applications, all nonlinear elements have associated with them a material. It is the material in conjunction with the element geometry that provides the force-displacement response of the element. In OpenSees materials are divided into three general types:</p>
 <ol class="arabic simple">
 <li><p><strong>uniaxial materials</strong> which define a uniaxial (1 dimensional) stress-strain relationship.</p></li>
 <li><p><strong>nDimensional materials</strong> which define multi-dimensional (plane stress, plane strain, or 3d) stress-strain relationships.</p></li>
 <li><p><strong>sections</strong> which define coupled moment-curvature and axial-deformation relationships for beam column elements.</p></li>
 </ol>
-<div class="align-center figure" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../_images/OpenSeesMaterials.png"><img alt="../../_images/OpenSeesMaterials.png" src="../../_images/OpenSeesMaterials.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1 </span><span class="caption-text">OpenSees Materials</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.4.1 </span><span class="caption-text">OpenSees Materials</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="material/uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a></li>
@@ -215,7 +219,7 @@
 <li class="toctree-l1"><a class="reference internal" href="material/matTestCommands.html">3.4.4. Material Testing Commands</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

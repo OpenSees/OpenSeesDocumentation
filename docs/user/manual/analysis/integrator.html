@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.2.6. integrator Command &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -43,8 +45,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.2.6.1. LoadControl Command" href="LoadControl.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="Newton.html" /> 
+    <link rel="next" title="3.2.6.1. LoadControl Command" href="integrator/LoadControl.html" />
+    <link rel="prev" title="3.2.5.2. Newton Algorithm" href="algorithm/Newton.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -105,9 +107,10 @@
 <li class="toctree-l3"><a class="reference internal" href="test.html">3.2.4. test Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="algorithm.html">3.2.5. algorithm Command</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">3.2.6. integrator Command</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="LoadControl.html">3.2.6.1. LoadControl Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DisplacementControl.html">3.2.6.2. DisplacementControl Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Newmark.html">3.2.6.3. Newmark Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integrator/LoadControl.html">3.2.6.1. LoadControl Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integrator/DisplacementControl.html">3.2.6.2. DisplacementControl Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integrator/Newmark.html">3.2.6.3. Newmark Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integrator/gimmeMCK.html">3.2.6.4. GimmeMCK Command</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="analysis.html">3.2.7. analysis Command</a></li>
@@ -123,7 +126,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -205,8 +208,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="integrator-command">
-<span id="integrator"></span><h1><span class="section-number">3.2.6. </span>integrator Command<a class="headerlink" href="#integrator-command" title="Permalink to this headline">¶</a></h1>
+  <section id="integrator-command">
+<span id="integrator"></span><h1><span class="section-number">3.2.6. </span>integrator Command<a class="headerlink" href="#integrator-command" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct the Integrator object.</p>
 <dl class="simple">
 <dt>The Integrator object is used for the following:</dt><dd><ol class="arabic simple">
@@ -248,27 +251,24 @@
 <p>Static Integrators:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="LoadControl.html">3.2.6.1. LoadControl Command</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LoadControl.html#theory">3.2.6.1.1. Theory</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="DisplacementControl.html">3.2.6.2. DisplacementControl Command</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="DisplacementControl.html#theory">3.2.6.2.1. THEORY</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="integrator/LoadControl.html">3.2.6.1. LoadControl Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrator/DisplacementControl.html">3.2.6.2. DisplacementControl Command</a></li>
 </ul>
 </div>
 <p>Transient Integrators:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Newmark.html">3.2.6.3. Newmark Method</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Newmark.html#theory">3.2.6.3.1. Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrator/Newmark.html">3.2.6.3. Newmark Method</a></li>
 </ul>
-</li>
+</div>
+<p>Utility Integrators:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="integrator/gimmeMCK.html">3.2.6.4. GimmeMCK Command</a></li>
 </ul>
 </div>
 <p>Code developed by: <strong>fmk</strong></p>
-</div>
+</section>
 
 
            </div>

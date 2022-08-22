@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4.1.1. Basic Truss Example &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -98,24 +100,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../../userManual.html">3. Command Manual</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../userExamples.html">4. Examples</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../basicExamples.html">4.1. Basic Examples</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.1. Basic Truss Example</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.1. Basic Truss Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">4.1.1.1. Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#model-definition">4.1.1.2. Model Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#analysis">4.1.1.3. Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-specification">4.1.1.4. Output Specification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#perform-the-analysis">4.1.1.5. Perform The Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#print-information-to-screen">4.1.1.6. Print Information to Screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#results">4.1.1.7. Results</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../thermalExamples.html">4.2. Thermal Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -187,11 +197,150 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="basic-truss-example">
-<h1><span class="section-number">4.1.1. </span>Basic Truss Example<a class="headerlink" href="#basic-truss-example" title="Permalink to this headline">¶</a></h1>
-<p>This example is of a linear-elastic three bar truss, as shown in the figure, subject to static loads. The model has four nodes, labelled <strong>1</strong> through <strong>4</strong>, and three elements, labelled <strong>1</strong> through <strong>3</strong>. Nodes <strong>1</strong>, <strong>2</strong> ,and <strong>3</strong> are fixed and a loads of <strong>100kip</strong> and <strong>-50kip</strong> are imposed at node <strong>4</strong>. The elements all have a youngs modulus of <strong>300ksi</strong>, elements <strong>2</strong> and <strong>3</strong> have an area of <strong>5in^2</strong> and element <strong>1</strong> an area of <strong>10in^*</strong>.</p>
+  <section id="basic-truss-example">
+<h1><span class="section-number">4.1.1. </span>Basic Truss Example<a class="headerlink" href="#basic-truss-example" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2><span class="section-number">4.1.1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<figure class="align-center">
+<img alt="../../../_images/Truss.png" src="../../../_images/Truss.png" />
+</figure>
+<p>This example is of a linear-elastic three bar truss, as shown in the top figure, subject to static loads. The model has four nodes, labelled <strong>1</strong> through <strong>4</strong>, and three elements, labelled <strong>1</strong> through <strong>3</strong>. Nodes <strong>1</strong>, <strong>2</strong> ,and <strong>3</strong> are fixed and a loads of <strong>100kip</strong> and <strong>-50kip</strong> are imposed at node <strong>4</strong>. The elements all have a youngs modulus of <strong>300ksi</strong>, elements <strong>2</strong> and <strong>3</strong> have an area of <strong>5in^2</strong> and element <strong>1</strong> an area of <strong>10in^*</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Because the model is planar and is comprised of truss elements, the spatial dimension of the mesh (<code class="docutils literal notranslate"><span class="pre">ndm</span></code>) will be specified as <strong>2</strong> and the nodes will only be specified to have <strong>2</strong> degrees-of-freedom.</p>
 </div>
+</section>
+<section id="model-definition">
+<h2><span class="section-number">4.1.1.2. </span>Model Definition<a class="headerlink" href="#model-definition" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># units: kip, in</span>
+
+<span class="c"># Remove existing model</span>
+<span class="nv">wipe</span>
+
+<span class="c"># Create ModelBuilder (with two-dimensions and 2 DOF/node)</span>
+<span class="nv">model</span> BasicBuilder <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
+
+<span class="c"># Create nodes</span>
+<span class="c"># ------------</span>
+<span class="c"># Create nodes &amp; add to Domain - command: node nodeId xCrd yCrd</span>
+<span class="nv">node</span> <span class="mi">1</span>   <span class="mf">0.0</span>  <span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">2</span> <span class="mf">144.0</span>  <span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">3</span> <span class="mf">168.0</span>  <span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">4</span>  <span class="mf">72.0</span> <span class="mf">96.0</span>
+
+<span class="c"># Set the boundary conditions - command: fix nodeID xResrnt? yRestrnt?</span>
+<span class="nv">fix</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="mi">3</span> <span class="mi">1</span> <span class="mi">1</span>
+
+<span class="c"># Define materials for truss elements</span>
+<span class="c"># -----------------------------------</span>
+<span class="c"># Create Elastic material prototype - command: uniaxialMaterial Elastic matID E</span>
+<span class="nv">uniaxialMaterial</span> Elastic <span class="mi">1</span> <span class="mi">3000</span>
+
+<span class="c">#</span>
+<span class="c"># Define elements</span>
+<span class="c">#</span>
+
+<span class="c"># Create truss elements - command: element truss trussID node1 node2 A matID</span>
+<span class="nv">element</span> Truss <span class="mi">1</span> <span class="mi">1</span> <span class="mi">4</span> <span class="mf">10.0</span> <span class="mi">1</span>
+<span class="nv">element</span> Truss <span class="mi">2</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mf">5.0</span> <span class="mi">1</span>
+<span class="nv">element</span> Truss <span class="mi">3</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mf">5.0</span> <span class="mi">1</span>
+
+<span class="c"># Define loads</span>
+<span class="c"># ------------</span>
+<span class="c">#</span>
+
+<span class="c"># create a Linear TimeSeries with a tag of 1</span>
+<span class="nv">timeSeries</span> Linear <span class="mi">1</span>
+
+<span class="c"># Create a Plain load pattern associated with the TimeSeries,</span>
+<span class="c"># command: pattern Plain $patternTag $timeSeriesTag { load commands }</span>
+
+<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
+    <span class="c"># Create the nodal load - command: load nodeID xForce yForce</span>
+    <span class="nb">load</span> <span class="mi">4</span> <span class="mi">100</span> <span class="o">-</span><span class="mi">50</span>
+<span class="k">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="analysis">
+<h2><span class="section-number">4.1.1.3. </span>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">¶</a></h2>
+<p>We will now show the commands to perform a static analysis using a linear solution algorithm The model is linear, so we use a solution Algorithm of type Linear. Even though the solution is linear, we have to select a procedure for applying the load which is called an Integrator. For this problem, a LoadControl integrator advances the solution. The equations are formed using a banded system so the System is BandSPD, banded symmetric positive definite This is a good choice for most small size models. The equations have to be numbered so the widely used RCM (Reverse Cuthill-McKee) numberer is used. The constraints are most easily represented with a Plain constraint handler. Once all the components of an analysis are defined, the Analysis object itself is created. For this problem, a Static Analysis object is used.</p>
+<blockquote>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># Create the system of equation</span>
+<span class="nv">system</span> BandSPD
+
+<span class="c"># Create the DOF numberer, the reverse Cuthill-McKee algorithm</span>
+<span class="nv">numberer</span> RCM
+
+<span class="c"># Create the constraint handler, a Plain handler is used as homo constraints</span>
+<span class="nv">constraints</span> Plain
+
+<span class="c"># Create the integration scheme, the LoadControl scheme using steps of 1.0</span>
+<span class="nv">integrator</span> LoadControl <span class="mf">1.0</span>
+
+<span class="c"># Create the solution algorithm, a Linear algorithm is created</span>
+<span class="nv">algorithm</span> Linear
+
+<span class="c"># create the analysis object</span>
+<span class="nv">analysis</span> Static
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="output-specification">
+<h2><span class="section-number">4.1.1.4. </span>Output Specification<a class="headerlink" href="#output-specification" title="Permalink to this heading">¶</a></h2>
+<p>For this analysis, we will record the displacement at node 4, and all the element forces expressed both in the global coordinate system and the local system.</p>
+<blockquote>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># create a Recorder object for the nodal displacements at node 4</span>
+<span class="nv">recorder</span> Node <span class="o">-</span>file example.out <span class="o">-</span>time <span class="o">-</span>node <span class="mi">4</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> disp
+
+<span class="c"># create a Recorder for element forces, one for global system and the other for local system</span>
+<span class="nv">recorder</span> Element <span class="o">-</span>file eleGlobal.out <span class="o">-</span>time <span class="o">-</span>ele <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> forces
+<span class="nv">recorder</span> Element <span class="o">-</span>file eleLocal.out  <span class="o">-</span>time <span class="o">-</span>ele <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> basicForces
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="perform-the-analysis">
+<h2><span class="section-number">4.1.1.5. </span>Perform The Analysis<a class="headerlink" href="#perform-the-analysis" title="Permalink to this heading">¶</a></h2>
+<p>After the objects for the model, analysis and output has been defined we now perform the analysis.</p>
+<blockquote>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">analyze</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="print-information-to-screen">
+<h2><span class="section-number">4.1.1.6. </span>Print Information to Screen<a class="headerlink" href="#print-information-to-screen" title="Permalink to this heading">¶</a></h2>
+<p>In addition to using recorders, it is possible to specify output using the print and puts commands. When no file identifiers are provided, these commands will print results to the screen.</p>
+<blockquote>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nb">puts</span> <span class="s2">&quot;node 4 displacement: [nodeDisp 4]&quot;</span>
+<span class="nv">print</span> node <span class="mi">4</span>
+<span class="nv">print</span> element
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="results">
+<h2><span class="section-number">4.1.1.7. </span>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h2>
+<p>When you run this script, you should see the following printed to the screen:
+.. figure:: figures/TrussRun.png</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">align</dt>
+<dd class="field-odd"><p>center</p>
+</dd>
+<dt class="field-even">figclass</dt>
+<dd class="field-even"><p>align-center</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</section>
 
 
            </div>

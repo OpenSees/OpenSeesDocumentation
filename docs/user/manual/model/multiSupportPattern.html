@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.1.7.3. Multisupport Excitation &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -107,6 +109,7 @@
 <li class="toctree-l4"><a class="reference internal" href="plainPattern.html">3.1.7.1. Plain Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="uniformExcitationPattern.html">3.1.7.2. Uniform Excitation</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.7.3. Multisupport Excitation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="H5DRM.html">3.1.7.4. H5DRM Pattern</a></li>
 </ul>
 </li>
 </ul>
@@ -118,18 +121,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html#building-the-opensees-applications">3. Building the OpenSees Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">4. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">5. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">6. Contributing Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">7. Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
             
@@ -203,8 +205,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="multisupport-excitation">
-<span id="multisupportexcitation"></span><h1><span class="section-number">3.1.7.3. </span>Multisupport Excitation<a class="headerlink" href="#multisupport-excitation" title="Permalink to this headline">¶</a></h1>
+  <section id="multisupport-excitation">
+<span id="multisupportexcitation"></span><h1><span class="section-number">3.1.7.3. </span>Multisupport Excitation<a class="headerlink" href="#multisupport-excitation" title="Permalink to this heading">¶</a></h1>
 <p>The Multi-Support pattern allows similar or different prescribed ground motions to be input at various supports in the structure. In OpenSees, the prescribed motion is applied using single-point constraints, the single-point constraints taking their constraint value from user created ground motions.</p>
 <p>The command to generate a multi-support excitation contains in squirrelly brackets the commands to generate all the ground motions and the single-point constraints in the pattern. The command is as follows:</p>
 <table class="colwidths-given docutils align-default">
@@ -271,7 +273,7 @@
 </div>
 </div>
 <p>Code Developed by: <strong>fmk</strong></p>
-</div>
+</section>
 
 
            </div>

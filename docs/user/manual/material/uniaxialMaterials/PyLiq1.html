@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.4.1.17. PyLiq1 Material &mdash; OpenSees Documentation  documentation</title>
@@ -35,6 +36,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -133,7 +135,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -217,8 +219,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pyliq1-material">
-<span id="pyliq1"></span><h1><span class="section-number">3.4.1.17. </span>PyLiq1 Material<a class="headerlink" href="#pyliq1-material" title="Permalink to this headline">¶</a></h1>
+  <section id="pyliq1-material">
+<span id="pyliq1"></span><h1><span class="section-number">3.4.1.17. </span>PyLiq1 Material<a class="headerlink" href="#pyliq1-material" title="Permalink to this heading">¶</a></h1>
 <p>This command constructs a uniaxial p-y material that incorporates liquefaction effects. This p-y material is used with a zeroLength element to connect a pile (beam-column element) to a 2 D plane-strain FE mesh or displacement boundary condition. The p-y material obtains the average mean effective stress (which decreases with increasing excess pore pressure) either from two specified soil elements, or from a time series. Currently, the implementation requires that the specified soil elements consist of FluidSolidPorousMaterials in FourNodeQuad elements, or PressureDependMultiYield or PressureDependMultiYield02 materials in FourNodeQuadUP or NineFourQuadUP elements. There are two possible forms:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -324,9 +326,9 @@
 \[r_u=1-p'/p_c'\]</div>
 <p>where <span class="math notranslate nohighlight">\(p_c'\)</span> is obtained from the specified solid soil elements and used within PyLiq1. The constitutive response of PyLiq1 is then taken as the constitutive response of PySimple1 scaled in proportion to the mean effective stress within the specified solid soil elements. This means that the ultimate capacity (pult) and tangent modulus are scaled by a factor of (1-<span class="math notranslate nohighlight">\(r_u\)</span>).</p>
 <p>Two additional constraints are then placed on the constitutive response. The first is that the scaled ultimate capacity cannot fall below the specified residual capacity of the material (i.e., pRes). The second constraint applies to the situation where the mean effective stress in the adjacent solid soil elements is incrementally increasing [e.g., the pore pressures decrease as the soils are incrementally dilatant (phase transformation)]. In this “hardening” situation, the loading path from the p-y relation at time “<span class="math notranslate nohighlight">\(i\)</span>” to time “<span class="math notranslate nohighlight">\(i+1\)</span>” is bounded by the material’ elastic stiffness (i.e., the unload/reloading stiffness); e.g., the incremental loading path cannot be steeper than the elastic stiffness. Note that the above approach only provides a first-order approximation for the softening effects of liquefaction on p-y behavior.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/PyLiq1MaterialResponse.gif" src="../../../../_images/PyLiq1MaterialResponse.gif" />
-</div>
+</figure>
 <p>Two simple examples of PyLiq1 behavior are presented in the above figures. In these examples, there is a single FourNodeQuad element containing a FluidSolidPorousMaterial with a PressureDependMultiYield soil material. This solid element is connected to an elastic pile via a single “p-y” element (i.e., a zeroLength element containing a PyLiq1 material). The solid element is an order of magnitude stiffer than the p-y element, and is subjected to transient cyclic simple shear loading.</p>
 <div class="admonition-example-1-pyliq1-behaviour-during-liquefaction-without-lateral-spreading admonition">
 <p class="admonition-title">Example 1 : PyLiq1 behaviour during liquefaction without lateral spreading</p>
@@ -361,7 +363,7 @@
 <dd><p>Boulanger, R. W., Curras, C. J., Kutter, B. L., Wilson, D. W., and Abghari, A. (1999). “Seismic soil-pile-structure interaction experiments and analyses.” Journal of Geotechnical and Geoenvironmental Engineering, ASCE, 125(9): 750-759.</p>
 </dd>
 </dl>
-</div>
+</section>
 
 
            </div>
