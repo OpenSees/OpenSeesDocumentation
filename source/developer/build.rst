@@ -107,12 +107,14 @@ With everything installed the build process is somewhat simple! Again from a ter
 
       .. code::
 
+	 "C:\Program Files (x86)\Intel\oneAPI\setVars" intel64 mod
 	 cd OpenSees
          mkdir build
          cd build
-         conan install .. --build missing
-         cmake .. 
-         cmake --build . --config Release --target OpenSeesPy
+         conan install .. --build missing --settings compiler.runtime="MT"
+         cmake .. -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64
+         cmake .. -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64	 
+         cmake --build . --config Release --target OpenSeesPy --parallel 4
 	 cd bin
 	 copy OpenSeesPy.dll opensees.pyd
 
@@ -131,11 +133,9 @@ With everything installed the build process is somewhat simple! Again from a ter
 
       You may of course want to give the existing file a new name with the **copy** command before you overwrite it just in case!
 		
-   2. If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your **PYTHONPATH** env variables. Search for **env settings** in search bar lower left. Add a line to the PYTHONPATH variable with your location of the **bin** folder.
+   2. If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your **PYTHONPATH** env variables. Search for **env settings** in search bar lower left. Add a line to the PYTHONPATH variable with your location of the **bin** folder. If you do this, you also need to copy the python39.dll (or the python310.dll is that is what was used INTO the bin folder). This is because of a security feature with python versions above 3.8 and the dll search path they now use.
 
    3. Please note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of **cmake ..** for the python library used.
-
-   3. Finally if it fails to import the the dynamic library it could be due again to the missing **mkl_intel_thread.2.dll** problem described above, though this time no nice warning message is given about the name of the missing dll. Follow the instructions shown above.
 
    
 MacOS
