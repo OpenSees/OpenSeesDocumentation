@@ -85,14 +85,20 @@ With everything installed the build process is somewhat simple! From a terminal 
 	 cd OpenSees
          mkdir build
          cd build
-         conan install .. --build missing
-         cmake .. 
-         cmake --build . --config Release --target OpenSees
+         conan install .. --build missing --settings compiler.runtime="MT"
+         cmake .. -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64
+         cmake .. -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64	 
+         cmake --build . --config Release --target OpenSees --parallel 4
 
 .. warning::
 
-   If OpenSees fails to run, it may prompt that this is due to a missing .dll, **mkl_intel_thread.2.dll**. This file can be found in your **C:\Program Files (x86)\Intel\oneAPI\mkl\latest\redist\intel64** directory. Copy the file from there to the **bin**folder.
+   The duplicate "cmake .. ...." command is not a mistake. It fails the first time this cmake command is run, but works the second time!
 
+
+.. note::
+
+   The --parallel option is used to compile the code in parallel. Change the **4** to how many cores is at your disposal.
+   
 
 Building the OpenSeesPy Library
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,8 +113,8 @@ With everything installed the build process is somewhat simple! Again from a ter
          conan install .. --build missing
          cmake .. 
          cmake --build . --config Release --target OpenSeesPy
-	 cd lib
-	 copy OpenSeesPy.dylib opensees.pyd
+	 cd bin
+	 copy OpenSeesPy.dll opensees.pyd
 
 .. warning::
 
