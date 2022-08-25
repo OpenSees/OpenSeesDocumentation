@@ -114,17 +114,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#macos">2.2. MacOS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">2.2.1. Software Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">2.2.2. Obtaining the Source Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.2.1. Software Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.2.2. Obtaining the Source Code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-the-opensees-tcl-application">2.2.3. Building the OpenSees Tcl Application</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">2.2.4. Building the OpenSeesPy Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.2.4. Building the OpenSeesPy Library</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ubuntu">2.3. Ubuntu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id7">2.3.1. Software Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">2.3.2. Obtaining the Source Code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">2.3.3. Building the OpenSees Tcl Interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">2.3.4. Building the OpenSeesPy Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2.3.1. Software Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.3.2. Obtaining the Source Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.3.3. Building the OpenSees Tcl Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">2.3.4. Building the OpenSeesPy Library</a></li>
 </ul>
 </li>
 </ul>
@@ -221,7 +221,7 @@
 <p>The very latest release of MSVC,  2022.2, does not currently work with Intel OneAPI. INstall the version 2022.1 or the 2019 version of MSCV.</p>
 </div>
 <ol class="arabic simple" start="3">
-<li><p><strong>IntelOne Basic &amp; HPC Toolkits</strong>: Intel’s <a href="#id11"><span class="problematic" id="id12">`oneAPI &lt;https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html&quot;`_</span></a> toolkits. To install the Fortran compiler you need to install TWO toolkits, the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">base toolkit</a> and the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html">HPC toolkit</a>.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with <strong>MPI</strong> for building and running the parallel OpenSees applications.</p></li>
+<li><p><strong>IntelOne Basic &amp; HPC Toolkits</strong>: Intel’s <a href="#id9"><span class="problematic" id="id10">`oneAPI &lt;https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html&quot;`_</span></a> toolkits. To install the Fortran compiler you need to install TWO toolkits, the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">base toolkit</a> and the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html">HPC toolkit</a>.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with <strong>MPI</strong> for building and running the parallel OpenSees applications.</p></li>
 </ol>
 <blockquote>
 <div><div class="admonition note">
@@ -280,27 +280,34 @@
 <span class="n">cd</span> <span class="n">OpenSees</span>
 <span class="n">mkdir</span> <span class="n">build</span>
 <span class="n">cd</span> <span class="n">build</span>
-<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
-<span class="n">cmake</span> <span class="o">..</span>
-<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSees</span>
+<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span> <span class="o">--</span><span class="n">settings</span> <span class="n">compiler</span><span class="o">.</span><span class="n">runtime</span><span class="o">=</span><span class="s2">&quot;MT&quot;</span>
+<span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DBLA_STATIC</span><span class="o">=</span><span class="n">ON</span> <span class="o">-</span><span class="n">DMKL_LINK</span><span class="o">=</span><span class="n">static</span> <span class="o">-</span><span class="n">DMKL_INTERFACE_FULL</span><span class="o">=</span><span class="n">intel_lp64</span>
+<span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DBLA_STATIC</span><span class="o">=</span><span class="n">ON</span> <span class="o">-</span><span class="n">DMKL_LINK</span><span class="o">=</span><span class="n">static</span> <span class="o">-</span><span class="n">DMKL_INTERFACE_FULL</span><span class="o">=</span><span class="n">intel_lp64</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSees</span> <span class="o">--</span><span class="n">parallel</span> <span class="mi">4</span>
 </pre></div>
 </div>
 </div></blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If OpenSees fails to run, it may prompt that this is due to a missing .dll, <strong>mkl_intel_thread.2.dll</strong>. This file can be found in your <strong>C:Program Files (x86)InteloneAPImkllatestredistintel64</strong> directory. Copy the file from there to the <a href="#id2"><span class="problematic" id="id3">**</span></a>bin**folder.</p>
+<p>The duplicate “cmake .. ….” command is not a mistake. It fails the first time this cmake command is run, but works the second time!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The –parallel option is used to compile the code in parallel. Change the <strong>4</strong> to how many cores is at your disposal.</p>
 </div>
 </section>
 <section id="building-the-openseespy-library">
 <h3><span class="section-number">2.1.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#building-the-openseespy-library" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! Again from a terminal window:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\Program Files (x86)\Intel\oneAPI\setVars&quot;</span> <span class="n">intel64</span> <span class="n">mod</span>
+<span class="n">cd</span> <span class="n">OpenSees</span>
 <span class="n">mkdir</span> <span class="n">build</span>
 <span class="n">cd</span> <span class="n">build</span>
-<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
-<span class="n">cmake</span> <span class="o">..</span>
-<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSeesPy</span>
+<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span> <span class="o">--</span><span class="n">settings</span> <span class="n">compiler</span><span class="o">.</span><span class="n">runtime</span><span class="o">=</span><span class="s2">&quot;MT&quot;</span>
+<span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DBLA_STATIC</span><span class="o">=</span><span class="n">ON</span> <span class="o">-</span><span class="n">DMKL_LINK</span><span class="o">=</span><span class="n">static</span> <span class="o">-</span><span class="n">DMKL_INTERFACE_FULL</span><span class="o">=</span><span class="n">intel_lp64</span>
+<span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DBLA_STATIC</span><span class="o">=</span><span class="n">ON</span> <span class="o">-</span><span class="n">DMKL_LINK</span><span class="o">=</span><span class="n">static</span> <span class="o">-</span><span class="n">DMKL_INTERFACE_FULL</span><span class="o">=</span><span class="n">intel_lp64</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSeesPy</span> <span class="o">--</span><span class="n">parallel</span> <span class="mi">4</span>
 <span class="n">cd</span> <span class="nb">bin</span>
 <span class="n">copy</span> <span class="n">OpenSeesPy</span><span class="o">.</span><span class="n">dll</span> <span class="n">opensees</span><span class="o">.</span><span class="n">pyd</span>
 </pre></div>
@@ -319,19 +326,16 @@
 </div>
 <p>You may of course want to give the existing file a new name with the <strong>copy</strong> command before you overwrite it just in case!</p>
 </li>
-<li><p>If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your <strong>PYTHONPATH</strong> env variables. Search for <strong>env settings</strong> in search bar lower left. Add a line to the PYTHONPATH variable with your location of the <strong>bin</strong> folder.</p></li>
+<li><p>If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your <strong>PYTHONPATH</strong> env variables. Search for <strong>env settings</strong> in search bar lower left. Add a line to the PYTHONPATH variable with your location of the <strong>bin</strong> folder. If you do this, you also need to copy the python39.dll (or the python310.dll is that is what was used INTO the bin folder). This is because of a security feature with python versions above 3.8 and the dll search path they now use.</p></li>
 <li><p>Please note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of <strong>cmake ..</strong> for the python library used.</p></li>
-</ol>
-<ol class="arabic simple" start="3">
-<li><p>Finally if it fails to import the the dynamic library it could be due again to the missing <strong>mkl_intel_thread.2.dll</strong> problem described above, though this time no nice warning message is given about the name of the missing dll. Follow the instructions shown above.</p></li>
 </ol>
 </div>
 </section>
 </section>
 <section id="macos">
 <h2><span class="section-number">2.2. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading">¶</a></h2>
-<section id="id4">
-<h3><span class="section-number">2.2.1. </span>Software Requirements<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<section id="id2">
+<h3><span class="section-number">2.2.1. </span>Software Requirements<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <p>For MacOS the user must have the following applications installed on their computer: xcode command line tools, brew, cmake, gcc, gfortran, python, and open-mpi. All the applications are installed via the command line. Some of these you can skip as you may already have them installed.</p>
 <ol class="arabic">
 <li><p><strong>XCODE Command Line Tools</strong>: To make Apple Clang and git available, type the following in a terminal application:</p>
@@ -368,8 +372,8 @@
 </li>
 </ol>
 </section>
-<section id="id5">
-<h3><span class="section-number">2.2.2. </span>Obtaining the Source Code<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<section id="id3">
+<h3><span class="section-number">2.2.2. </span>Obtaining the Source Code<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -423,8 +427,8 @@
 </ol>
 </div>
 </section>
-<section id="id6">
-<h3><span class="section-number">2.2.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<section id="id4">
+<h3><span class="section-number">2.2.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
@@ -458,8 +462,8 @@
 </section>
 <section id="ubuntu">
 <h2><span class="section-number">2.3. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this heading">¶</a></h2>
-<section id="id7">
-<h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<section id="id5">
+<h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
 <li><p><strong>Applications installed with apt</strong>: For Ubuntu the user must have a number of packages installed on their system. These can all be installed using the app application using the following commands issued in a terminal window.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
@@ -484,8 +488,8 @@
 </li>
 </ol>
 </section>
-<section id="id8">
-<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<section id="id6">
+<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -508,8 +512,8 @@
 </ol>
 </div>
 </section>
-<section id="id9">
-<h3><span class="section-number">2.3.3. </span>Building the OpenSees Tcl Interpreter<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<section id="id7">
+<h3><span class="section-number">2.3.3. </span>Building the OpenSees Tcl Interpreter<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somehwat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
@@ -529,8 +533,8 @@
 </ol>
 </div>
 </section>
-<section id="id10">
-<h3><span class="section-number">2.3.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<section id="id8">
+<h3><span class="section-number">2.3.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
