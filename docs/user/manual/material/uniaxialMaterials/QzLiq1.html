@@ -1,78 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3.4.1.19. QzLiq1 Material &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.4.2. nDMaterial Command" href="../ndMaterial.html" />
     <link rel="prev" title="3.4.1.18. TzLiq1 Material" href="TzLiq1.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../../../index.html">
-          
-
-          
-            
             <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -146,79 +95,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
           <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
-        
           <li><a href="../uniaxialMaterial.html"><span class="section-number">3.4.1. </span>uniaxialMaterial Command</a> &raquo;</li>
-        
       <li><span class="section-number">3.4.1.19. </span>QzLiq1 Material</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/material/uniaxialMaterials/QzLiq1.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="qzliq1-material">
-<span id="qzliq1"></span><h1><span class="section-number">3.4.1.19. </span>QzLiq1 Material<a class="headerlink" href="#qzliq1-material" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="qzliq1-material">
+<span id="qzliq1"></span><h1><span class="section-number">3.4.1.19. </span>QzLiq1 Material<a class="headerlink" href="#qzliq1-material" title="Permalink to this heading"></a></h1>
 <p>The command constructs a uniaxial q-z material that incorporates liquefaction effects. This q-z material is used with a zeroLength element to connect a pile (beam-column element) to a 2 D plane-strain FE mesh. The q-z material obtains the average mean effective stress (which decreases with increasing excess pore pressure) from two specified soil elements or from the mean effective stress provided explicitly as a timeseries data. Currently, in order to compute the mean effective stress from connected elements, the implementation requires that the specified soil elements consist of FluidSolidPorousMaterials in FourNodeQuad elements.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -322,19 +227,23 @@
 <div class="math notranslate nohighlight">
 \[\alpha=\frac{3-sin\phi'}{3(1+3sin\phi')}\]</div>
 <p>The QzLiq1 material behaves identically to the QzSimple1 material if there is no excess pore water pressure (i.e., sNum = 0 or <span class="math notranslate nohighlight">\(r_u=0\)</span>). If <span class="math notranslate nohighlight">\(\alpha=1.0\)</span>, the ultimate capacity and stiffness of the QZLiq1 spring will depend linearly on the mean effective stress of the soil similar to <a class="reference internal" href="PySimple1.html#pysimple1"><span class="std std-ref">PySimple1 Material</span></a> and <a class="reference internal" href="TzSimple1.html#tzsimple1"><span class="std std-ref">TzSimple1 Material</span></a> materials. The behaviour of Qzliq1 material in presense of excess pore pressure in soil is shown in <a class="reference internal" href="#figure-qzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.13</span></a>. Another example illustrating the use of QzLiq1 material for modeling tip capacity in liquefiable soils is presented in <a class="reference internal" href="#figure-tzqzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.14</span></a>.</p>
-<div class="align-center figure" id="id1">
+<figure class="align-center" id="id1">
 <span id="figure-qzliqmaterialresponse"></span><a class="reference internal image-reference" href="../../../../_images/QZLiqMaterialResponse.gif"><img alt="../../../../_images/QZLiqMaterialResponse.gif" src="../../../../_images/QZLiqMaterialResponse.gif" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1.13 </span><span class="caption-text">QZLiq material response “with <span class="math notranslate nohighlight">\(r_u\)</span>” and “no “<span class="math notranslate nohighlight">\(r_u\)</span>” effect during cyclic loading.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.4.1.13 </span><span class="caption-text">QZLiq material response “with <span class="math notranslate nohighlight">\(r_u\)</span>” and “no “<span class="math notranslate nohighlight">\(r_u\)</span>” effect during cyclic loading.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition-example-1-qzliq-material-response-with-math-r-u-and-no-math-r-u-effect-during-cyclic-loading-download-qzliqexample-py-figures-qzliqexample-py admonition">
 <p class="admonition-title">Example 1: QZLiq material response “with <span class="math notranslate nohighlight">\(r_u\)</span>” and “no <span class="math notranslate nohighlight">\(r_u\)</span>” effect during cyclic loading| <a class="reference download internal" download="" href="../../../../_downloads/4df115ddbd69660f364fdfdaa1e1fe74/QZLiqExample.py"><code class="xref download docutils literal notranslate"><span class="pre">QZLiqExample.py</span></code></a></p>
 <p><a class="reference internal" href="#figure-qzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.13</span></a> shows the material response of QZLiq1 spring in the presence of excess pore pressure in the soil. The model consisted of a movable pile node and a fixed soil node. The excess pore pressure ratio <span class="math notranslate nohighlight">\(r_u\)</span> calculated from the mean effective stress applied to the QZLiq spring is shown in <a class="reference internal" href="#figure-qzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.13</span></a> (a). In the model, a cyclic loading [<a class="reference internal" href="#figure-qzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.13</span></a> (b)] was applied on the pile node, and the response of QZLiq spring was recorded for the case of “no <span class="math notranslate nohighlight">\(r_u\)</span> effect” and “with <span class="math notranslate nohighlight">\(r_u\)</span> effect”.</p>
 <p>In the first case, “no <span class="math notranslate nohighlight">\(r_u\)</span> effect”, the QZLiq spring behaved independently of excess pore presses in soil (i.e, sNum=0). As expected, the cyclic response of the QZLiq material was similar to QZSimple material. In the second scenario, “with <span class="math notranslate nohighlight">\(r_u\)</span> effect”, the QZLiq material response was affected by the excess pore pressure ratio <span class="math notranslate nohighlight">\(r_u\)</span> in soil. As excess pore pressure (or <span class="math notranslate nohighlight">\(r_u\)</span>) increased in soil, the capacity and stiffness of the QZLiq spring decreased nonlinearly as <span class="math notranslate nohighlight">\((1-r_u)^\alpha\)</span>. In the first cycle, at about <span class="math notranslate nohighlight">\(t \approx 2 sec\)</span>, with excess pore pressure ratio of <span class="math notranslate nohighlight">\(r_u \approx 0.1\)</span>, <span class="math notranslate nohighlight">\(z/z_{50} \approx 20\)</span>, and <span class="math notranslate nohighlight">\(\alpha = 0.55\)</span>, the ultimate capacity of the QZLiq spring decrased to about <span class="math notranslate nohighlight">\(95 \% q_{ult}\)</span>. In the second cycle, at about <span class="math notranslate nohighlight">\(t \approx 8.5 sec\)</span>, with excess pore pressure ratio of <span class="math notranslate nohighlight">\(r_u \approx 0.5\)</span> and <span class="math notranslate nohighlight">\(z/z_{50} \approx 20\)</span>, the mobilized resistance of the QZLiq spring decreased to about <span class="math notranslate nohighlight">\(70 \%\)</span> of the mobilized resistance (<span class="math notranslate nohighlight">\(q/q_{ult}\approx0.8\)</span>) for the case of “no <span class="math notranslate nohighlight">\(r_u\)</span> effect” i.e. it became equal to about <span class="math notranslate nohighlight">\(55\% q_{ult}\)</span> [<a class="reference internal" href="#figure-qzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.13</span></a> (c)]. When the soil nearly liquefied <span class="math notranslate nohighlight">\(r_u\geq0.95\)</span>, the QZLiq capacity and stiffness approached zero.</p>
 </div>
-<div class="align-center figure" id="id2">
+<figure class="align-center" id="id2">
 <span id="figure-tzqzliqmaterialresponse"></span><a class="reference internal image-reference" href="../../../../_images/QZLiq_TZLiq_Example.gif"><img alt="../../../../_images/QZLiq_TZLiq_Example.gif" src="../../../../_images/QZLiq_TZLiq_Example.gif" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1.14 </span><span class="caption-text">Response of an axially loaded pile in liquefiable soil modeled with TZLiq and QZLiq material for the case with “<span class="math notranslate nohighlight">\(r_u\)</span> effect” and “no <span class="math notranslate nohighlight">\(r_u\)</span> effect”.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.4.1.14 </span><span class="caption-text">Response of an axially loaded pile in liquefiable soil modeled with TZLiq and QZLiq material for the case with “<span class="math notranslate nohighlight">\(r_u\)</span> effect” and “no <span class="math notranslate nohighlight">\(r_u\)</span> effect”.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition-example-2-modeling-axial-load-behaviour-of-a-pile-in-liquefiable-soil-download-tzqzliqexample-py-figures-tzqzliqexample-py admonition">
 <p class="admonition-title">Example 2 : Modeling axial load behaviour of a pile in liquefiable soil | <a class="reference download internal" download="" href="../../../../_downloads/05d976828e77d17a7bcc021bd080da91/TZQZLiqExample.py"><code class="xref download docutils literal notranslate"><span class="pre">TZQZLiqExample.py</span></code></a></p>
 <p><a class="reference internal" href="#figure-tzqzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.14</span></a> shows an example on the use of TZLiq and QZLiq materials with zerolength elements to model the axial load behavior of piles in liquefiable soils. The model consisted of a TZLiq spring and QZLiq spring to model the shaft and the tip resistance and linear elastic beam elements to model the pile. A dead load “P” was applied at the head of the pile. The model consisted of two stages. The first stage applied a dead load of P = 200 kN on the pile. The results show that the load applied on the pile mobilized shaft friction of 40 kN and tip resistance of 160 kN [<a class="reference internal" href="#figure-tzqzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.14</span></a> (c)]. This resulted in about 85% mobilization of the shaft capacity (TZLiq spring capacity) and about 15% mobilization of the tip capacity (QZLiq spring) [see <a class="reference internal" href="#figure-tzqzliqmaterialresponse"><span class="std std-numref">Fig. 3.4.1.14</span></a> (c)]. During this stage, the pile settled by about 6 mm.</p>
@@ -347,7 +256,7 @@
 <div><ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> QzLiq1 <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">1000</span> <span class="mf">0.02</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.55</span> <span class="o">-</span>timeSeries <span class="mi">1</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span><span class="w"> </span>QzLiq1<span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="mi">1000</span><span class="w"> </span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.55</span><span class="w"> </span><span class="o">-</span>timeSeries<span class="w"> </span><span class="mi">1</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -363,63 +272,45 @@
 <dd><p>Sinha, S. K., Ziotopoulou, K., and Kutter, B. L. (2021). “Numerical Modeling of Liquefaction-Induced Downdrag: Validation against Centrifuge Model Tests.” in Review.</p>
 </dd>
 </dl>
-</div>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2020, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }
