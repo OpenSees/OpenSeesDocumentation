@@ -53,7 +53,7 @@ This load pattern takes input from DRM datasets formatted using the H5DRM data-f
    
    |  In this example, the free-field site response to motions input with DRM are computed. When the simulation conditions used to develop the DRM motion dataset match those of the local-site, then there are (approximately) no out-going waves in the model to be damped. This constitutes a basic check or validation to both the DRM datset and the local-scale FEM model, which is useful to perform before any other analysis with DRM. 
    |
-   | See this `video explanation <>`_.
+   | See this `video explanation <https://youtu.be/4BxzkkUzYok>`_.
    |
    |  **Model conditions**:
 
@@ -90,4 +90,4 @@ This load pattern takes input from DRM datasets formatted using the H5DRM data-f
 Code Developed by: |jaabell|. For issues, start a new issue on the `OpenSees github repo <https://github.com/OpenSees/OpenSees>`_ and tag me (@jaabell). 
 
 .. [References] 
-   [1] Jose A. Abell., Jorge G.F. Crempien, Matías Recabarren ShakerMaker: A framework that simplifies the simulation of seismic ground-motions. SoftwareX. `https://doi.org/10.1016/j.softx.2021.100911 <https://doi.org/10.1016/j.softx.2021.100911>`_
+   [1] `Jose A. Abell. <www.joseabell.com>`_, Jorge G.F. Crempien, Matías Recabarren ShakerMaker: A framework that simplifies the simulation of seismic ground-motions. SoftwareX. `https://doi.org/10.1016/j.softx.2021.100911 <https://doi.org/10.1016/j.softx.2021.100911>`_
