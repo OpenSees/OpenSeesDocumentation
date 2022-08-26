@@ -87,7 +87,7 @@ This load pattern takes input from DRM datasets formatted using the H5DRM data-f
          pattern H5DRM 3 "C:/path/jaabe/Documents/DRM-example/santiago1.h5drm" 1.0 1000.0 0.001 1   0.0 1.0 0.0 1.0 -0.0 0.0 0.0 0.0 -1.0   0.0 0.0 0.0
 
 
-Code Developed by: |jaabell|. For issues, start a new issue on the `OpenSees github repo <https://github.com/OpenSees/OpenSees>`_ and tag me (@jaabell). 
+Code Developed by: `José Antonio Abell <www.joseabell.com>`_ (UANDES). For issues, start a new issue on the `OpenSees github repo <https://github.com/OpenSees/OpenSees>`_ and tag me (@jaabell). 
 
 .. [References] 
    [1] `Jose A. Abell. <www.joseabell.com>`_, Jorge G.F. Crempien, Matías Recabarren ShakerMaker: A framework that simplifies the simulation of seismic ground-motions. SoftwareX. `https://doi.org/10.1016/j.softx.2021.100911 <https://doi.org/10.1016/j.softx.2021.100911>`_

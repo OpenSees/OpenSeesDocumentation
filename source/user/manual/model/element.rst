@@ -107,6 +107,7 @@ The following subsections contain information about **$eleType** and the number 
    :maxdepth: 1
 
    elements/FourNodeTetrahedron
+   elements/TenNodeTetrahedron
 
 
 8. Joint Elements
