@@ -88,7 +88,7 @@ Theory
 
 .. admonition:: Example 3: Complete Structural Example
    
-   .. figure:: responseSpectrum.png
+   .. figure:: figures/responseSpectrum.png
        :align: center
        :figclass: align-center
    
@@ -102,8 +102,8 @@ Theory
          *  in a second example the :ref:`responseSpectrum` is called in a for-loop mode-by-mode. Results are obtained within the for-loop usin the :ref:`eleResponse`
       *  do a CQC modal combination
    
-   |  :download:`responseSpectrumExample.tcl <responseSpectrumExample.tcl>`   **(TCL)**.
-   |  :download:`responseSpectrumExample.py <responseSpectrumExample.py>`   **(Python)**.
+   |  :download:`responseSpectrumExample.tcl <codeExample/responseSpectrumExample.tcl>`   **(TCL)**.
+   |  :download:`responseSpectrumExample.py <codeExample/responseSpectrumExample.py>`   **(Python)**.
 
 
 Code Developed by: **Massimo Petracca** at ASDEA Software, Italy
