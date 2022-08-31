@@ -107,6 +107,7 @@ The following subsections contain information about **$eleType** and the number 
    :maxdepth: 1
 
    elements/FourNodeTetrahedron
+   elements/TenNodeTetrahedron
 
 
 8. Joint Elements
@@ -147,7 +148,7 @@ The following subsections contain information about **$eleType** and the number 
 
 
 
-#.    U-P Elements (saturated soil)
+11.    U-P Elements (saturated soil)
 
 .. toctree::
    :maxdepth: 1
@@ -163,7 +164,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/SSPquadUP 
    elements/SSPbrickUP
 
-#. Contact
+12. Contact
 
 .. toctree::
    :maxdepth: 1   
@@ -175,14 +176,14 @@ The following subsections contain information about **$eleType** and the number 
    elements/BeamEndContact3D
    elements/zeroLengthImpact3D
    
-#. Cable
+13. Cable
 
 .. toctree::
    :maxdepth: 1   
 
    elements/CatenaryCableElement
 
-#. Misc.
+14. Misc.
 
 .. toctree::
    :maxdepth: 1   
