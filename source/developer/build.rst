@@ -293,6 +293,7 @@ Software Requirements
       sudo apt install -y python3-pip
       sudo apt install -y libopenmpi-dev
       sudo apt install -y libmkl-blacs-openmpi-lp64
+      sudo apt install -y libscalapack-openmpi-dev
 
 2. **conan** In a new terminal window type
    
