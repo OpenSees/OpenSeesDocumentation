@@ -530,7 +530,7 @@ To obtain the source code, from a terminal <strong>cd</strong> to the directory 
 mkdir build
 cd build
 conan install .. --build missing
-cmake .. -DMUMPS_DIR=$PWD/../../mumps/build -DCMAKE_CXX_FLAGS=&quot;-DOPENMPI&quot; -DSCALAPACK_LIBRARIES=&quot;/usr/lib/x86_64-linux-gnu/libmkl_blacs_openmpi_lp64.so;/usr/lib/x86_64-linux-gnu/libscalapack-openmpi.so.2.1&quot;
+cmake .. -DMUMPS_DIR=$PWD/../../mumps/build -DOPENMPI=TRUE -DSCALAPACK_LIBRARIES=&quot;/usr/lib/x86_64-linux-gnu/libmkl_blacs_openmpi_lp64.so;/usr/lib/x86_64-linux-gnu/libscalapack-openmpi.so.2.1&quot;
 cmake --build . --config Release --target OpenSees --parallel 4
 </pre></div>
 </div>
