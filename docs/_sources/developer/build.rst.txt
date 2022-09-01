@@ -281,7 +281,7 @@ Ubuntu
 Software Requirements
 ^^^^^^^^^^^^^^^^^^^^^
 
-1. **Applications installed with apt**: For Ubuntu the user must have a number of packages installed on their system. These can all be installed using the app application using the following commands issued in a terminal window.
+1. **Needed Applications and Libraries**: For Ubuntu, the user must have a number of packages installed on their system. These can be installed following commands issued in a terminal window.
 
    .. code::
 
@@ -292,9 +292,18 @@ Software Requirements
       sudo apt install -y liblapack-dev
       sudo apt install -y python3-pip
       sudo apt install -y libopenmpi-dev
+      sudo apt install -y libmkl-rt      
       sudo apt install -y libmkl-blacs-openmpi-lp64
-
-2. **conan** In a new terminal window type
+      sudo apt install -y libscalapack-openmpi-dev
+      git clone https://github.com/scivision/mumps.git
+      cd mumps
+      mkdir build
+      cd build
+      cmake .. -Darith=d
+      cmake --build . --config Release --parallel 4
+      cd ..
+      
+2. **Install conan** In a new terminal window type
    
    .. code::
    
@@ -302,17 +311,17 @@ Software Requirements
 
       .. warning::
 
-	 Read the output from the last command. When installing conan, the path to conan may not be added to your PATH environ variable. You will need to add it to your PATH variable, or modify the **conan install ** command below to include full path to the **conan** exe.
+      Read the output from the last command. When installing conan, the path to conan may not be added to your PATH environ variable. You will need to add it to your PATH variable, or modify the **conan install ** command below to include full path to the **conan** exe.
 
-Obtaining the Source Code       
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Obtaining the Source Code & Other setup      
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+You need to obtain both OpenSees and install MUMPS
 To obtain the source code, from a terminal **cd** to the directory you want to place OpenSees and then type the following:
 
       .. code::
 
          git clone https://github.com/OpenSees/OpenSees.git
-
 
 .. note::
 
@@ -339,13 +348,13 @@ With everything installed the build process is somehwat simple! Again from a ter
          mkdir build
          cd build
          conan install .. --build missing
-         cmake .. 
+	 cmake .. -DMUMPS_DIR=$PWD/../../mumps/build -DCMAKE_CXX_FLAGS="-DOPENMPI" -DSCALAPACK_LIBRARIES="/usr/lib/x86_64-linux-gnu/libmkl_blacs_openmpi_lp64.so;/usr/lib/x86_64-linux-gnu/libscalapack-openmpi.so.2.1"
          cmake --build . --config Release --target OpenSees --parallel 4
 
 
 .. note::
 
-   1. You only have to issue the first 4 commands once. The fifth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type the last command.
+   1. You only have to issue the first nine commands once. The tenth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type the last commands.
    2. If you have more than **4** cores available, you can use the exra cores by changing the **4** value!
       
 Building the OpenSeesPy Library

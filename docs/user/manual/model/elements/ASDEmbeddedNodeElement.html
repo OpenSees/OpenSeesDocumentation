@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.3.15. ASDEmbeddedNode Element &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.3.17. ASDEmbeddedNode Element &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -45,8 +45,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)" href="ASDAbsorbingBoundary.html" />
-    <link rel="prev" title="3.1.3.14. SSPbrick Element" href="SSPbrick.html" /> 
+    <link rel="next" title="3.1.3.18. ASDAbsorbingBoundary Element (2D and 3D)" href="ASDAbsorbingBoundary.html" />
+    <link rel="prev" title="3.1.3.16. TenNodeTetrahedron Element" href="TenNodeTetrahedron.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -117,9 +117,11 @@
 <li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.12. stdBrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.13. bbarBrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.15. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.17. RockingBC Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.3.15. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.3.16. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.17. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.18. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.19. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
@@ -200,7 +202,7 @@
         
           <li><a href="../element.html"><span class="section-number">3.1.3. </span>Element Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.3.15. </span>ASDEmbeddedNode Element</li>
+      <li><span class="section-number">3.1.3.17. </span>ASDEmbeddedNode Element</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -220,7 +222,7 @@
            <div itemprop="articleBody">
             
   <section id="asdembeddednode-element">
-<span id="asdembeddednodeelement"></span><h1><span class="section-number">3.1.3.15. </span>ASDEmbeddedNode Element<a class="headerlink" href="#asdembeddednode-element" title="Permalink to this heading">¶</a></h1>
+<span id="asdembeddednodeelement"></span><h1><span class="section-number">3.1.3.17. </span>ASDEmbeddedNode Element<a class="headerlink" href="#asdembeddednode-element" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct an ASDEmbeddedNodeElement object.</p>
 <p>The ASDEmbeddedNodeElement is a constraint between <strong>one constrained</strong> node and <strong>many retained</strong> nodes.
 Since in OpenSees a Multi-Point constraint can have only one retained node, this constraint was implemented as an Element, thus imposing the constraint using the Penalty approach.</p>
@@ -312,7 +314,7 @@ Since in OpenSees a Multi-Point constraint can have only one retained node, this
 <figure class="align-center" id="id1">
 <img alt="../../../../_images/ASDEmbeddedNodeElement_geometry.png" src="../../../../_images/ASDEmbeddedNodeElement_geometry.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3.1.3.12 </span><span class="caption-text">Embedding geometry defined by the retained nodes. (Left) triangle for 2D continuum problems or 3D shell problems. (Right) tetrahedron for 3D continuum problems.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 3.1.3.14 </span><span class="caption-text">Embedding geometry defined by the retained nodes. (Left) triangle for 2D continuum problems or 3D shell problems. (Right) tetrahedron for 3D continuum problems.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The constraint equations, imposed by this element, are the following for the 2D case. Similar equations can be easily derived for the 3D case:</p>

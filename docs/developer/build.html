@@ -122,9 +122,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ubuntu">2.3. Ubuntu</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id5">2.3.1. Software Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">2.3.2. Obtaining the Source Code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">2.3.3. Building the OpenSees Tcl Interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">2.3.4. Building the OpenSeesPy Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obtaining-the-source-code-other-setup">2.3.2. Obtaining the Source Code &amp; Other setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.3.3. Building the OpenSees Tcl Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.3.4. Building the OpenSeesPy Library</a></li>
 </ul>
 </li>
 </ul>
@@ -221,7 +221,7 @@
 <p>The very latest release of MSVC,  2022.2, does not currently work with Intel OneAPI. INstall the version 2022.1 or the 2019 version of MSCV.</p>
 </div>
 <ol class="arabic simple" start="3">
-<li><p><strong>IntelOne Basic &amp; HPC Toolkits</strong>: Intel’s <a href="#id9"><span class="problematic" id="id10">`oneAPI &lt;https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html&quot;`_</span></a> toolkits. To install the Fortran compiler you need to install TWO toolkits, the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">base toolkit</a> and the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html">HPC toolkit</a>.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with <strong>MPI</strong> for building and running the parallel OpenSees applications.</p></li>
+<li><p><strong>IntelOne Basic &amp; HPC Toolkits</strong>: Intel’s <a href="#id8"><span class="problematic" id="id9">`oneAPI &lt;https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html&quot;`_</span></a> toolkits. To install the Fortran compiler you need to install TWO toolkits, the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">base toolkit</a> and the <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html">HPC toolkit</a>.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with <strong>MPI</strong> for building and running the parallel OpenSees applications.</p></li>
 </ol>
 <blockquote>
 <div><div class="admonition note">
@@ -465,7 +465,7 @@
 <section id="id5">
 <h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
-<li><p><strong>Applications installed with apt</strong>: For Ubuntu the user must have a number of packages installed on their system. These can all be installed using the app application using the following commands issued in a terminal window.</p>
+<li><p><strong>Needed Applications and Libraries</strong>: For Ubuntu, the user must have a number of packages installed on their system. These can be installed following commands issued in a terminal window.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">cmake</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">gcc</span>
@@ -473,24 +473,34 @@
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">liblapack</span><span class="o">-</span><span class="n">dev</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libopenmpi</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libmkl</span><span class="o">-</span><span class="n">rt</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libmkl</span><span class="o">-</span><span class="n">blacs</span><span class="o">-</span><span class="n">openmpi</span><span class="o">-</span><span class="n">lp64</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libscalapack</span><span class="o">-</span><span class="n">openmpi</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">scivision</span><span class="o">/</span><span class="n">mumps</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">mumps</span>
+<span class="n">mkdir</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">Darith</span><span class="o">=</span><span class="n">d</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">parallel</span> <span class="mi">4</span>
+<span class="n">cd</span> <span class="o">..</span>
 </pre></div>
 </div>
 </li>
-<li><p><strong>conan</strong> In a new terminal window type</p>
+<li><p><strong>Install conan</strong> In a new terminal window type</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">conan</span>
 
 <span class="o">..</span> <span class="n">warning</span><span class="p">::</span>
 
-   <span class="n">Read</span> <span class="n">the</span> <span class="n">output</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">last</span> <span class="n">command</span><span class="o">.</span> <span class="n">When</span> <span class="n">installing</span> <span class="n">conan</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">conan</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">added</span> <span class="n">to</span> <span class="n">your</span> <span class="n">PATH</span> <span class="n">environ</span> <span class="n">variable</span><span class="o">.</span> <span class="n">You</span> <span class="n">will</span> <span class="n">need</span> <span class="n">to</span> <span class="n">add</span> <span class="n">it</span> <span class="n">to</span> <span class="n">your</span> <span class="n">PATH</span> <span class="n">variable</span><span class="p">,</span> <span class="ow">or</span> <span class="n">modify</span> <span class="n">the</span> <span class="o">**</span><span class="n">conan</span> <span class="n">install</span> <span class="o">**</span> <span class="n">command</span> <span class="n">below</span> <span class="n">to</span> <span class="n">include</span> <span class="n">full</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="o">**</span><span class="n">conan</span><span class="o">**</span> <span class="n">exe</span><span class="o">.</span>
+<span class="n">Read</span> <span class="n">the</span> <span class="n">output</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">last</span> <span class="n">command</span><span class="o">.</span> <span class="n">When</span> <span class="n">installing</span> <span class="n">conan</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">conan</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">added</span> <span class="n">to</span> <span class="n">your</span> <span class="n">PATH</span> <span class="n">environ</span> <span class="n">variable</span><span class="o">.</span> <span class="n">You</span> <span class="n">will</span> <span class="n">need</span> <span class="n">to</span> <span class="n">add</span> <span class="n">it</span> <span class="n">to</span> <span class="n">your</span> <span class="n">PATH</span> <span class="n">variable</span><span class="p">,</span> <span class="ow">or</span> <span class="n">modify</span> <span class="n">the</span> <span class="o">**</span><span class="n">conan</span> <span class="n">install</span> <span class="o">**</span> <span class="n">command</span> <span class="n">below</span> <span class="n">to</span> <span class="n">include</span> <span class="n">full</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="o">**</span><span class="n">conan</span><span class="o">**</span> <span class="n">exe</span><span class="o">.</span>
 </pre></div>
 </div>
 </li>
 </ol>
 </section>
-<section id="id6">
-<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
-<p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
+<section id="obtaining-the-source-code-other-setup">
+<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code &amp; Other setup<a class="headerlink" href="#obtaining-the-source-code-other-setup" title="Permalink to this heading">¶</a></h3>
+<p>You need to obtain both OpenSees and install MUMPS
+To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
@@ -512,29 +522,29 @@
 </ol>
 </div>
 </section>
-<section id="id7">
-<h3><span class="section-number">2.3.3. </span>Building the OpenSees Tcl Interpreter<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<section id="id6">
+<h3><span class="section-number">2.3.3. </span>Building the OpenSees Tcl Interpreter<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somehwat simple! Again from a terminal window:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
-<span class="n">mkdir</span> <span class="n">build</span>
-<span class="n">cd</span> <span class="n">build</span>
-<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
-<span class="n">cmake</span> <span class="o">..</span>
-<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSees</span> <span class="o">--</span><span class="n">parallel</span> <span class="mi">4</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd OpenSees
+mkdir build
+cd build
+conan install .. --build missing
+cmake .. -DMUMPS_DIR=$PWD/../../mumps/build -DCMAKE_CXX_FLAGS=&quot;-DOPENMPI&quot; -DSCALAPACK_LIBRARIES=&quot;/usr/lib/x86_64-linux-gnu/libmkl_blacs_openmpi_lp64.so;/usr/lib/x86_64-linux-gnu/libscalapack-openmpi.so.2.1&quot;
+cmake --build . --config Release --target OpenSees --parallel 4
 </pre></div>
 </div>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>You only have to issue the first 4 commands once. The fifth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type the last command.</p></li>
+<li><p>You only have to issue the first nine commands once. The tenth command is only needed if you change a CMakeFile.txt. Typically if you are just editing code you only need to type the last commands.</p></li>
 <li><p>If you have more than <strong>4</strong> cores available, you can use the exra cores by changing the <strong>4</strong> value!</p></li>
 </ol>
 </div>
 </section>
-<section id="id8">
-<h3><span class="section-number">2.3.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<section id="id7">
+<h3><span class="section-number">2.3.4. </span>Building the OpenSeesPy Library<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OpenSees</span>
