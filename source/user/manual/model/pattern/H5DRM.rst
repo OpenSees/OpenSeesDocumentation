@@ -55,6 +55,13 @@ This load pattern takes input from DRM datasets formatted using the H5DRM data-f
    |
    | See this `video explanation <https://youtu.be/4BxzkkUzYok>`_.
    |
+   .. raw:: html
+
+      <embed><center>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/4BxzkkUzYok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </embed></center>
+   |
+   |
    |  **Model conditions**:
 
    	  .. figure:: figures/drm-example-01-mesh.png

@@ -37,6 +37,7 @@ The following contain information about matType? and the args required for each 
    ndMaterials/PressureDependentMultiYield
    ndMaterials/J2CyclicBoundingSurface
    ndMaterials/SAniSandMS
+   ndMaterials/Orthotropic
 
 
 Concrete Damage Model
