@@ -14,15 +14,15 @@ This command is used to construct a material with a pinched hysteretic response 
 
    $matTag, |integer|,	    integer tag identifying material
    $Ke, |float|,  Elastic stiffness
-   $dp_pos, |float|,  Pre-capping deformation in positive loading direction
-   $dpc_pos, |float|,  Post-capping deformation in positive loading direction
-   $du_pos, |float|,  Ultimate deformation in positive loading direction
+   $Up_pos, |float|,  Pre-capping deformation in positive loading direction
+   $Upc_pos, |float|,  Post-capping deformation in positive loading direction
+   $Uu_pos, |float|,  Ultimate deformation in positive loading direction
    $Fy_pos, |float|,  Yield strength in positive loading direction
    $FmaxFy_pos, |float|,  Maximum-to-yield strength ratio in positive loading direction
    $FresFy_pos, |float|,  Residual-to-yield strength ratio in positive loading direction
-   $dp_neg, |float|,  Pre-capping deformation in negative loading direction
-   $dpc_neg, |float|,  Post-capping deformation in negative loading direction
-   $du_neg, |float|,  Ultimate deformation in negative loading direction
+   $Up_neg, |float|,  Pre-capping deformation in negative loading direction
+   $Upc_neg, |float|,  Post-capping deformation in negative loading direction
+   $Uu_neg, |float|,  Ultimate deformation in negative loading direction
    $Fy_neg, |float|,  Yield strength in negative loading direction
    $FmaxFy_neg, |float|,  Maximum-to-yield strength ratio in negative loading direction
    $FresFy_neg, |float|,  Residual-to-yield strength ratio in negative loading direction
@@ -62,7 +62,7 @@ This command is used to construct a material with a pinched hysteretic response 
 
 .. admonition:: Example 
 
-   The following is used to construct a IMKBilin material with symmetric hysteretic response.
+   The following is used to construct a IMKPinching material with symmetric hysteretic response.
 
    1. **Tcl Code**
 
@@ -73,8 +73,8 @@ This command is used to construct a material with a pinched hysteretic response 
       set Mc_My   1.15;
       set Mres_My 0.1;
       set thetap  0.010;
-      set thetau  0.2;
       set thetapc 0.1;
+      set thetau  0.2;
       set lambdaS 1;
       set lambdaC 1;
       set lambdaA 1;
@@ -82,7 +82,7 @@ This command is used to construct a material with a pinched hysteretic response 
       set kappaF 0.3;
       set kappaD 0.6;
 
-      uniaxialMaterial IMKPinching 1 $Ke $as $as $My -$My $lambda $lambda $lambda $lambda 1 1 1 1 1 1 $kappaF $kappaD;
+      uniaxialMaterial IMKPinching 1 $Ke $thetap $thetapc $thetau $My $Mc_My $Mres_My $thetap $thetapc $thetau $My $Mc_My $Mres_My $lambdaS $lambdaC $lambdaA $lambdaK 1 1 1 1 1 1 $kappaF $kappaD;
 
 
 Code Developed by: |aelkady|
