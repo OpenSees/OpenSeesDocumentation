@@ -10,7 +10,7 @@ Two ways to define URD damping are provided.
 
 **Approach 1**  Only the target loss factor distribution is used. The command will calculate the best approximation using the least-squares approach. More details are provided in `reference [1] <http://dx.doi.org/10.1016/j.engstruct.2022.113894>`_.
 
-.. function:: damping URD $dampingTag $n $freq1 $lossFactor1 … $freqn $lossFactorn <-tol $Tlrnc> <-activateTime $Ta> <-deactivateTime $Td> <-fact $tsTag> <-print>
+.. function:: damping URD $dampingTag $n $freq1 $lossFactor1 … $freqn $lossFactorn <-tol $Tlrnc> <-activateTime $Ta> <-deactivateTime $Td> <-fact $tsTagScaleFactorVsTime> <-print>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -20,10 +20,10 @@ Two ways to define URD damping are provided.
    $n, |integer|, dimension of the frequency–loss factor pairs
    $fj, |float|, frequency of the **j** th frequency–loss factor pair (in units of T^−1)
    $lossFactorj, |float|, loss factor of the **j** th frequency–loss factor pair
-   $Tlrnc, |float|, tolerance criteria (relative error) used when calculating the best approximation (optional: defalut is 0.05)
+   $Tlrnc, |float|, tolerance criteria (relative error) used when calculating the best approximation (optional: default is 0.05)
    $Ta, |float|, time when the damping is activated
    $Td, |float|, time when the damping is deactivated
-   $tsTag, |integer|, time series tag identifying the scale factor of the damping versus time
+   $tsTagScaleFactorVsTime, |integer|, time series tag identifying the scale factor of the damping versus time
    -print, |string|, argument to print the calculated optimal parameters for the URD damping
    
 
@@ -40,9 +40,9 @@ Two ways to define URD damping are provided.
       damping URD 1 2 1.0 0.10 100.0 0.10
 
 	
-**Approach 2**  Optimal parameters for URD damping are used. These parameters may be obtained using Matlab and other softwares to achieve the best approximation. More details are provided in `reference [1] <http://dx.doi.org/10.1016/j.engstruct.2022.113894>`_.
+**Approach 2**  Optimal parameters for URD damping are used. These parameters may be obtained using Matlab and other software to achieve the best approximation. More details are provided in `reference [1] <http://dx.doi.org/10.1016/j.engstruct.2022.113894>`_.
 
-.. function:: damping URDbeta $dampingTag $nc $fc_1 $beta_1 … $fc_nc $beta_nc <-activateTime $Ta> <-deactivateTime $Td> <-fact $tsTag>
+.. function:: damping URDbeta $dampingTag $nc $fc_1 $beta_1 … $fc_nc $beta_nc <-activateTime $Ta> <-deactivateTime $Td> <-fact $tsTagScaleFactorVsTime>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -52,10 +52,9 @@ Two ways to define URD damping are provided.
    $nc, |integer|, dimension of vector **beta_opt**
    $fc_j, |float|, the **j** th cutoff frequency (in units of T^−1)
    $beta_j, |float|, **j** th term of the adjustment factor **beta_opt**
-   $Tlrnc, |float|, tolerance criteria (relative error) used when calculating the best approximation (optional: defalut is 0.05)
    $Ta, |float|, time when the damping is activated
    $Td, |float|, time when the damping is deactivated
-   $tsTag, |integer|, time series tag identifying the scale factor of the damping versus time
+   $tsTagScaleFactorVsTime, |integer|, time series tag identifying the scale factor of the damping versus time
    
 .. admonition:: NOTE    
     
@@ -71,7 +70,7 @@ Two ways to define URD damping are provided.
 	
 .. admonition:: Example 
 
-   The following shows several examples to construct universal rate-dependent damping models with different target damping-frequency ralation.
+   The following shows several examples to construct universal rate-dependent damping models with different target damping-frequency relation.
 
     .. code-block:: tcl
 
