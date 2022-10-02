@@ -13,10 +13,10 @@ This command is used to construct a secant stiffness-proportional damping model.
    :widths: 10, 10, 40
 
    $dampingTag, |integer|, integer tag identifying damping
-   $dampingFactor, |float|, coeffient used in the secant stiffness-proportional damping 
+   $dampingFactor, |float|, coefficient used in the secant stiffness-proportional damping 
    $Ta, |float|, time when the damping is activated
    $Td, |float|, time when the damping is deactivated
-   $tsTag, |integer|, time series tag identifying the scale factor of the damping versus time
+   $tsTagScaleFactorVsTime, |integer|, time series tag identifying the scale factor of the damping versus time
 
 
 .. figure:: SecStifDamping.png
