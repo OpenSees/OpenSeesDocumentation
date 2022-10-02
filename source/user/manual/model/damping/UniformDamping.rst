@@ -6,7 +6,7 @@ Uniform Damping
 
 This command is used to construct a uniform damping model.
 
-.. function:: damping Uniform $dampingTag $dampingRatio $freql $freq2 <-activateTime $Ta> <-deactivateTime $Td> <-fact $tsTag>
+.. function:: damping Uniform $dampingTag $dampingRatio $freql $freq2 <-activateTime $Ta> <-deactivateTime $Td> <-fact $tsTagScaleFactorVsTime>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -18,7 +18,7 @@ This command is used to construct a uniform damping model.
    $freq2, |float|, upper bound of the frequency range (in units of T^−1)
    $Ta, |float|, time when the damping is activated
    $Td, |float|, time when the damping is deactivated
-   $tsTag, |integer|, time series tag identifying the scale factor of the damping versus time
+   $tsTagScaleFactorVsTime, |integer|, time series tag identifying the scale factor of the damping versus time
 
 
 .. figure:: UniformDamping.png
