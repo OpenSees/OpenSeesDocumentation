@@ -1,2 +1,0 @@
-Load Pattern Command
-********************

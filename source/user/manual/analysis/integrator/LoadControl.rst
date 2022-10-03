@@ -1,3 +1,5 @@
+.. _LoadControl:
+
 LoadControl Command
 -------------------
 

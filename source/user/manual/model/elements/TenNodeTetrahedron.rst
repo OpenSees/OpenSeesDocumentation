@@ -24,7 +24,7 @@ This command is used to construct an ten-node tetrahedron element object, which 
 This element is based on second-order interpolation of nodal quantities, this means that the strain and stress field inside the element are linearly interpolated. Four Gauss-points inside the element are used for integration. 
 
 
-.. figure:: TenNodeTetrahedron.png
+.. figure:: TenNodeTetrahedron/TenNodeTetrahedron.png
 	:align: center
 	:figclass: align-center
 

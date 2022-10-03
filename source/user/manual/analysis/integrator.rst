@@ -43,7 +43,6 @@ Transient Integrators:
    integrator/HHT
    integrator/GeneralizedAlpha
    integrator/TRBDF2
-   integrator/TRBDF3
    integrator/ExplicitDifference
 
 
