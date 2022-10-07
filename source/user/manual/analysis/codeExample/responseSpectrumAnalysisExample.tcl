@@ -4,29 +4,29 @@ wipe
 model basic -ndm 3 -ndf 6
 
 # the response spectrum function
-set timeSeries_list_of_times_1 {0.0 0.06 0.1 0.12 0.18 0.24 0.3 0.36 0.4 0.42 \
-								0.48 0.54 0.6 0.66 0.72 0.78 0.84 0.9 0.96 1.02 \
-								1.08 1.14 1.2 1.26 1.32 1.38 1.44 1.5 1.56 1.62 \
-								1.68 1.74 1.8 1.86 1.92 1.98 2.04 2.1 2.16 2.22 \
-								2.28 2.34 2.4 2.46 2.52 2.58 2.64 2.7 2.76 2.82 \
-								2.88 2.94 3.0 3.06 3.12 3.18 3.24 3.3 3.36 3.42 \
-								3.48 3.54 3.6 3.66 3.72 3.78 3.84 3.9 3.96 4.02 \
-								4.08 4.14 4.2 4.26 4.32 4.38 4.44 4.5 4.56 4.62 \
-								4.68 4.74 4.8 4.86 4.92 4.98 5.04 5.1 5.16 5.22 \
-								5.28 5.34 5.4 5.46 5.52 5.58 5.64 5.7 5.76 5.82 \
-								5.88 5.94 6.0}
-set timeSeries_list_of_values_1 {0.2 0.38 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.4762 \
-								0.4167 0.3704 0.3333 0.303 0.2778 0.2564 0.2381 0.2222 0.2083 0.1961 \
-								0.1852 0.1754 0.1667 0.1587 0.1515 0.1449 0.1389 0.1333 0.1282 0.1235 \
-								0.119 0.1149 0.1111 0.1075 0.1042 0.101 0.098 0.0952 0.0926 0.0901 \
-								0.0877 0.0855 0.0833 0.0813 0.0794 0.0775 0.0758 0.0741 0.0725 0.0709 \
-								0.0694 0.068 0.0667 0.0641 0.0616 0.0593 0.0572 0.0551 0.0531 0.0513 \
-								0.0495 0.0479 0.0463 0.0448 0.0434 0.042 0.0407 0.0394 0.0383 0.0371 \
-								0.036 0.035 0.034 0.0331 0.0322 0.0313 0.0304 0.0296 0.0289 0.0281 \
-								0.0274 0.0267 0.026 0.0254 0.0248 0.0242 0.0236 0.0231 0.0225 0.022 \
-								0.0215 0.021 0.0206 0.0201 0.0197 0.0193 0.0189 0.0185 0.0181 0.0177 \
-								0.0174 0.017 0.0167}
-timeSeries Path 1 -time $timeSeries_list_of_times_1 -values $timeSeries_list_of_values_1 -factor 9.806
+set Tn {0.0 0.06 0.1 0.12 0.18 0.24 0.3 0.36 0.4 0.42 \
+		0.48 0.54 0.6 0.66 0.72 0.78 0.84 0.9 0.96 1.02 \
+		1.08 1.14 1.2 1.26 1.32 1.38 1.44 1.5 1.56 1.62 \
+		1.68 1.74 1.8 1.86 1.92 1.98 2.04 2.1 2.16 2.22 \
+		2.28 2.34 2.4 2.46 2.52 2.58 2.64 2.7 2.76 2.82 \
+		2.88 2.94 3.0 3.06 3.12 3.18 3.24 3.3 3.36 3.42 \
+		3.48 3.54 3.6 3.66 3.72 3.78 3.84 3.9 3.96 4.02 \
+		4.08 4.14 4.2 4.26 4.32 4.38 4.44 4.5 4.56 4.62 \
+		4.68 4.74 4.8 4.86 4.92 4.98 5.04 5.1 5.16 5.22 \
+		5.28 5.34 5.4 5.46 5.52 5.58 5.64 5.7 5.76 5.82 \
+		5.88 5.94 6.0}
+set Sa {1.9612 3.72628 4.903 4.903 4.903 4.903 4.903 4.903 4.903 4.6696172 \
+		4.0861602 3.6321424 3.2683398 2.971218 2.7241068 2.5142584 2.3348086 2.1788932 2.0425898 1.9229566 \
+		1.8160712 1.7199724 1.6346602 1.5562122 1.485609 1.4208894 1.3620534 1.3071398 1.2571292 1.211041 \
+		1.166914 1.1267094 1.0894466 1.054145 1.0217852 0.990406 0.960988 0.9335312 0.9080356 0.8835206 \
+		0.8599862 0.838413 0.8168398 0.7972278 0.7785964 0.759965 0.7432948 0.7266246 0.710935 0.6952454 \
+		0.6805364 0.666808 0.6540602 0.6285646 0.6040496 0.5814958 0.5609032 0.5403106 0.5206986 0.5030478 \
+		0.485397 0.4697074 0.4540178 0.4393088 0.4255804 0.411852 0.3991042 0.3863564 0.3755698 0.3638026 \
+		0.353016 0.34321 0.333404 0.3245786 0.3157532 0.3069278 0.2981024 0.2902576 0.2833934 0.2755486 \
+		0.2686844 0.2618202 0.254956 0.2490724 0.2431888 0.2373052 0.2314216 0.2265186 0.220635 0.215732 \
+		0.210829 0.205926 0.2020036 0.1971006 0.1931782 0.1892558 0.1853334 0.181411 0.1774886 0.1735662 \
+		0.1706244 0.166702 0.1637602}
+timeSeries Path 1 -time $Tn -values $Sa
 
 # a uniaxial material for transverse shear
 uniaxialMaterial Elastic 2 938000000.0
@@ -162,11 +162,12 @@ proc CQC {mu lambdas dmp scalf} {
 }
 
 # ========================================================================
-# TEST 01
+# TEST 00
 # run a response spectrum analysis for each mode.
 # then do modal combination in post-processing.
+# Use Tn and Sa lists
 # ========================================================================
-responseSpectrum $tsTag $direction
+responseSpectrumAnalysis $direction -Tn $Tn -Sa $Sa
 
 # read the My values [3rd column] for each step 
 # (1 for each mode, they are section forces associated to each modal displacement)
@@ -184,7 +185,42 @@ close $f
 # post process the results doing the CQC modal combination for the My response (3rd column in section forces)
 set MyCQC [CQC $My $eigs $dmp $scalf]
 
-puts "\n\nTEST 01:\nRun a Response Spectrum Analysis for each mode.\nDo CQC combination in post processing.\n"
+puts "\n\nTEST 00:\nRun a Response Spectrum Analysis for all modes."
+puts "Do CQC combination in post processing."
+puts "Use Tn and Sa lists.\n"
+puts [format "%10s %15s" "Mode" "My"]
+for {set i 0} {$i < [llength $eigs]} {incr i} {
+	puts [format "%10g %15f" [expr $i+1] [lindex $My $i]]
+}
+puts [format "%10s %15f" "CQC" $MyCQC]
+
+# ========================================================================
+# TEST 01
+# run a response spectrum analysis for each mode.
+# then do modal combination in post-processing.
+# Use a Path timeSeries to store the Tn-Sa pairs
+# ========================================================================
+responseSpectrumAnalysis $tsTag $direction
+
+# read the My values [3rd column] for each step 
+# (1 for each mode, they are section forces associated to each modal displacement)
+set My {}
+set f [open $filename "r"]
+set lines [split [read $f] "\n"]
+foreach line $lines {
+	if {[llength $line] > 0} {
+		set tokens [split $line " "]
+		lappend My [lindex $tokens 2]
+	}
+}
+close $f
+
+# post process the results doing the CQC modal combination for the My response (3rd column in section forces)
+set MyCQC [CQC $My $eigs $dmp $scalf]
+
+puts "\n\nTEST 01:\nRun a Response Spectrum Analysis for all modes."
+puts "Do CQC combination in post processing."
+puts "Use a Path timeSeries to store Tn-Sa pairs.\n"
 puts [format "%10s %15s" "Mode" "My"]
 for {set i 0} {$i < [llength $eigs]} {incr i} {
 	puts [format "%10g %15f" [expr $i+1] [lindex $My $i]]
@@ -200,14 +236,15 @@ puts [format "%10s %15f" "CQC" $MyCQC]
 remove recorder 0
 set My {}
 for {set i 0} {$i < [llength $eigs]} {incr i} {
-	responseSpectrum $tsTag $direction -mode [expr $i+1]
+	responseSpectrumAnalysis $direction -Tn $Tn -Sa $Sa -mode [expr $i+1]
 	set force [eleResponse 1 section 1 force]
 	lappend My [lindex $force 2]
 }
 
 # post process the results doing the CQC modal combination for the My response (3rd column in section forces)
 set MyCQC [CQC $My $eigs $dmp $scalf]
-puts "\n\nTEST 01:\nRun a Response Spectrum Analysis mode-by-mode.\nGrab results during the loop.\nDo CQC combination in post processing.\n"
+puts "\n\nTEST 02:\nRun a Response Spectrum Analysis mode-by-mode."
+puts "Grab results during the loop and do CQC combination with them.\n"
 puts [format "%10s %15s" "Mode" "My"]
 for {set i 0} {$i < [llength $eigs]} {incr i} {
 	puts [format "%10g %15f" [expr $i+1] [lindex $My $i]]
