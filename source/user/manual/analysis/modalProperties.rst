@@ -30,7 +30,7 @@ modalProperties Command
 .. note::
    *  This command can be used only if a previous call to :ref:`eigen` has been performed.
    *  This command has only optional arguments, and they can be given in any order. Note, however, that the only requirement is that the **$reportFileName** must follow the **-file** option if used.
-   *  The modal properties are computed and stored in the **Domain** object, so that they can be accessed later in the :ref:`responseSpectrum`.
+   *  The modal properties are computed and stored in the **Domain** object, so that they can be accessed later in the :ref:`responseSpectrumAnalysis`.
    *  This command directly accesses the mass matrix of the model, so it accounts for both nodal masses and element's (distributed) masses. And the element mass matrix can be either lumped or consistent.
    *  The global mass matrix is then stored into a temporary sparse matrix storage, so it can be used for both small and large models.
    *  This command can be used for both 2D problems (-ndm = 2, -ndf = 2 or 3) and 3D problems (-ndm = 3, -ndf = 3, 4 or 6). In both cases the algorithm computes rotational masses. If a node has rotational DOFs, the rotational masses account for both the direct rotational masses (i.e. those input by the user at rotational DOFs) and the effect of translational masses gyrating about the center of mass. If a node has no rotational DOF, only the latter is considered.
@@ -135,7 +135,7 @@ Theory
 
       modalProperties('-print', '-file', 'ModalReport.txt', '-unorm')
    
-   For a complete example that runs an **eigenvalue analysis**, extracts the **modal properties** and runs a **response spectrum analysis**, see the documentation of the :ref:`responseSpectrum`
+   For a complete example that runs an **eigenvalue analysis**, extracts the **modal properties** and runs a **response spectrum analysis**, see the documentation of the :ref:`responseSpectrumAnalysis`
 
 .. admonition:: ReportFile
    

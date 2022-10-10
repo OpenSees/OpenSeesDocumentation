@@ -1,20 +1,31 @@
-.. _responseSpectrum:
+.. _responseSpectrumAnalysis:
 
-responseSpectrum Command
-************************
+responseSpectrumAnalysis Command
+********************************
 
 |  This command is used to perform a response spectrum analysis.
 |  The response spectrum analysis performs N linear analysis steps, where N is the number of eigenvalues requested in a previous call to :ref:`eigen`.
 |  For each analysis step, it computes the modal displacements. When the i-th analysis step is complete, all previously defined recorders will be called, so they will record all the results requested by the user, pertaining to the current modal displacements.
 |  The modal combination of these modal displacements (and derived results such as beam forces) is up to the user, and can be easily done via TCL or Python scripting.
 
-.. function:: responseSpectrum $tsTag $direction <-scale $scale> <-mode $mode>
+|  The command can be called in two different ways, depending on how you store the Tn/Sa (response spectrum function) values.
+|  They can be either stored in a timeSeries ...
+
+.. function:: responseSpectrumAnalysis $tsTag $direction <-scale $scale> <-mode $mode>
+
+|  ... or in two lists
+
+.. function:: responseSpectrumAnalysis $direction -Tn $Tn -Sa $Sa <-scale $scale> <-mode $mode>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
    
-   $tsTag, |integer|, "The tag of a previously defined :ref:`timeSeries`."
+   $tsTag, |integer|, "The tag of a previously defined :ref:`timeSeries`. This list stores the Tn and Sa values. If you want to use the timeSeries, you cannot specify the -Tn and -Sa options"
+   -Tn, |string|, "Tells the command to use the $Tn list, instead of the timeSeries, to get the periods of the response spectrum function"
+   $Tn, |floatList|, "The list of periods of the response spectrum function"
+   -Sa, |string|, "Tells the command to use the $Sa list, instead of the timeSeries, to get the accelerations of the response spectrum function"
+   $Sa, |floatList|, "The list of accelerations of the response spectrum function"
    $direction, |integer|, "The 1-based index of the excited DOF (1 to 3 for 2D problems, or 1 to 6 for 3D problems)."
    -scale, |string|, "Tells the command to use a user-defined scale factor for the computed modal displacements. Not used, placeholder for future implementation."
    $scale, |float|, "User-defined scale factor for the computed modal displacements. Not used, placeholder for future implementation."
@@ -43,27 +54,53 @@ Theory
 
 .. admonition:: Example 1: Simple call
    
-   The following example shows how to call the responseSpectrum command for all modes, using the time series 1 along the DOF 1 (Ux)
+   The following example shows how to call the responseSpectrumAnalysis command for all modes, using the time series 1 (or lists Tn and Sa) along the DOF 1 (Ux)
 
-   1. **Tcl Code**
+   1. **Tcl Code using timeSeries**
    
    .. code:: tcl
 
       set tsTag 1; # use the timeSeries 1 as response spectrum function
       set direction 1; # excited DOF = Ux
-      responseSpectrum $tsTag $direction
+      responseSpectrumAnalysis $tsTag $direction
 
-   2. **Python Code**
+   2. **Tcl Code using lists**
+   
+   .. code:: tcl
+
+      set Tn {0.0 0.1 0.4 .... }; # the periods
+      set Sa {1.9 3.7 4.9 .... }; # the accelerations
+      set direction 1; # excited DOF = Ux
+      responseSpectrumAnalysis $direction -Tn $Tn -Sa $Sa
+
+   3. **Tcl Code using expanded lists**
+   
+   .. code:: tcl
+
+      set Tn {0.0 0.1 0.4 .... }; # the periods
+      set Sa {1.9 3.7 4.9 .... }; # the accelerations
+      set direction 1; # excited DOF = Ux
+      responseSpectrumAnalysis $direction -Tn {*}$Tn -Sa {*}$Sa
+
+   4. **Python Code using timeSeries**
 
    .. code:: python
 
       tsTag = 1 # use the timeSeries 1 as response spectrum function
       direction = 1 # excited DOF = Ux
-      responseSpectrum(tsTag, direction)
+      responseSpectrumAnalysis(tsTag, direction)
+
+   5. **Python Code using lists**
+
+   .. code:: python
+
+      Tn = [0.0 0.1 0.4 .... ] # the periods
+      Sa = [1.9 3.7 4.9 .... ] # the accelerations
+      responseSpectrumAnalysis(direction, '-Tn', *Tn, '-Sa', *Sa)
 
 .. admonition:: Example 2: Iterative call
    
-   The following example shows how to call the responseSpectrum command for 1 mode at a time, using the time series 1 along the DOF 1 (Ux)
+   The following example shows how to call the responseSpectrumAnalysis command for 1 mode at a time, using the time series 1 along the DOF 1 (Ux)
 
    1. **Tcl Code**
    
@@ -72,7 +109,7 @@ Theory
       set tsTag 1; # use the timeSeries 1 as response spectrum function
       set direction 1; # excited DOF = Ux
       for {set i 0} {$i < $num_modes} {incr i} {
-         responseSpectrum $tsTag $direction -mode [expr $i+1]
+         responseSpectrumAnalysis $tsTag $direction -mode [expr $i+1]
          # grab your results here for the i-th modal displacements
       }
 
@@ -83,12 +120,12 @@ Theory
       tsTag = 1 # use the timeSeries 1 as response spectrum function
       direction = 1 # excited DOF = Ux
       for i in range(num_modes):
-         responseSpectrum(tsTag, direction, '-mode', i+1)
+         responseSpectrumAnalysis(tsTag, direction, '-mode', i+1)
          # grab your results here for the i-th modal displacements
 
 .. admonition:: Example 3: Complete Structural Example
    
-   .. figure:: figures/responseSpectrum.png
+   .. figure:: figures/responseSpectrumAnalysis.png
        :align: center
        :figclass: align-center
    
@@ -97,13 +134,13 @@ Theory
    
       *  call the :ref:`eigen` to extract 7 modes of vibration
       *  call the :ref:`modalProperties` to generate the report with modal properties
-      *  call the :ref:`responseSpectrum` to compute the modal displacements and section forces
-         *  in a first example the :ref:`responseSpectrum` is called for all modes. Results are obtained from a recorder after the analysis.
-         *  in a second example the :ref:`responseSpectrum` is called in a for-loop mode-by-mode. Results are obtained within the for-loop usin the :ref:`eleResponse`
+      *  call the :ref:`responseSpectrumAnalysis` to compute the modal displacements and section forces
+         *  in a first example the :ref:`responseSpectrumAnalysis` is called for all modes. Results are obtained from a recorder after the analysis.
+         *  in a second example the :ref:`responseSpectrumAnalysis` is called in a for-loop mode-by-mode. Results are obtained within the for-loop usin the :ref:`eleResponse`
       *  do a CQC modal combination
    
-   |  :download:`responseSpectrumExample.tcl <codeExample/responseSpectrumExample.tcl>`   **(TCL)**.
-   |  :download:`responseSpectrumExample.py <codeExample/responseSpectrumExample.py>`   **(Python)**.
+   |  :download:`responseSpectrumAnalysisExample.tcl <codeExample/responseSpectrumAnalysisExample.tcl>`   **(TCL)**.
+   |  :download:`responseSpectrumAnalysisExample.py <codeExample/responseSpectrumAnalysisExample.py>`   **(Python)**.
 
 
 Code Developed by: **Massimo Petracca** at ASDEA Software, Italy
