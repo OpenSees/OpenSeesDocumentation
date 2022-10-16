@@ -81,4 +81,6 @@ This command is used to construct a material with a peak-oriented hysteretic res
       uniaxialMaterial IMKPeakOriented 1 $Ke $thetap $thetapc $thetau $My $Mc_My $Mres_My $thetap $thetapc $thetau $My $Mc_My $Mres_My $lambdaS $lambdaC $lambdaA $lambdaK 1 1 1 1 1 1;
 
 
-Code Developed by: |aelkady|
+For code inquires or bug reporting, please contact: 
+- Kazuki Ichinohe, University of Tokyo, e-mail: z-ichinohe@g.ecc.u-tokyo.ac.jp
+- Ahmed Elkady, University of Southampton, e-mail: a.elkady@soton.ac.uk
