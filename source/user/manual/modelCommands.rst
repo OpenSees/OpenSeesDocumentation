@@ -28,6 +28,7 @@ In addition to these commands, other commands needed for modelling include comma
 .. toctree::
    :maxdepth: 1
 
+   model/damping
    model/mass
    model/region
    model/damping
