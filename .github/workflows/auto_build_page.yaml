@@ -1,0 +1,24 @@
+name: Auto Build Page
+run-name: Running Job ${{ github.job }}
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Delete Previous docs
+        run: |
+          rm -rf docs && mkdir docs
+      - name: build docs
+        run: |
+          python3 -m pip install sphinx sphinx_rtd_theme && python3 -m sphinx -b html source/ docs 
+      - name: add  .nojekyll 
+        run: |
+          touch docs/.nojekyll 
+      - name: Commit Build
+        run: |
+          git add docs/.
+          git config --global user.name 'Friendly Builder Bot'
+          git config --global user.email 'builderbot'
+          git commit -am "Automated Build"
+          git push
