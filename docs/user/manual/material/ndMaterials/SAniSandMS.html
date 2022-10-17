@@ -1,80 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3.4.2.12. SANISAND-MS Material &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.4.3. section Command" href="../section.html" />
+    <link rel="next" title="3.4.2.13. Orthotropic Material Wrapper" href="Orthotropic.html" />
     <link rel="prev" title="3.4.2.11. J2CyclicBoundingSurface Material" href="J2CyclicBoundingSurface.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../../../index.html">
-          
-
-          
-            
             <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -117,6 +65,7 @@
 <li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
 <li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.4.2.11. J2CyclicBoundingSurface Material</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.2.12. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.4.2.13. Orthotropic Material Wrapper</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
@@ -136,83 +85,39 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
           <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
-        
           <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
-        
       <li><span class="section-number">3.4.2.12. </span>SANISAND-MS Material</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/material/ndMaterials/SAniSandMS.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="sanisand-ms-material">
-<span id="sanisandms"></span><h1><span class="section-number">3.4.2.12. </span>SANISAND-MS Material<a class="headerlink" href="#sanisand-ms-material" title="Permalink to this heading">¶</a></h1>
+<span id="sanisandms"></span><h1><span class="section-number">3.4.2.12. </span>SANISAND-MS Material<a class="headerlink" href="#sanisand-ms-material" title="Permalink to this heading"></a></h1>
 <p><strong>Code Developed by</strong>: <a class="reference external" href="https://www.linkedin.com/in/haoyuan-liu-059500171/?originalSubdomain=nl">Haoyuan Liu</a> (Norwegian Geotechnical Institute (NGI), formerly TUDelft), <a class="reference external" href="http://www.joseabell.com">José A. Abell</a> (UANDES, Chile), <a class="reference external" href="https://research-information.bris.ac.uk/en/persons/andrea-diambra">Andrea Diambra</a> (University of Bristol), and <a class="reference external" href="https://www.tudelft.nl/citg/over-faculteit/afdelingen/geoscience-engineering/sections/geo-engineering/staff/academic-staff/dr-f-federico-pisano">Federico Pisanò</a> (TU Delft).</p>
 <p>This command is used to construct a multi-dimensional SANISAND-MS (<code class="docutils literal notranslate"><span class="pre">SAniSandMS</span></code>) material, which is an extension of the Manzari-Dafalias (SAniSand) model with cyclic ratcheting control using the memory-surface (MS) concept. This allows capturing the ratcheting effects in sands that occur in high-cyclic loading in the presence of a static stress field or in the case of assymetric loading.</p>
 <figure class="align-center">
@@ -224,11 +129,11 @@
 <p>Please report bugs as an issue on the main OpenSees repositoy and tag <code class="docutils literal notranslate"><span class="pre">&#64;jaabell</span></code></p>
 </div>
 <p>Where,</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 66.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -381,11 +286,11 @@ e_{\alpha} = \dfrac{\Vert \alpha^5 - \alpha^4 \Vert}{\Vert \alpha^4 \Vert}\end{s
 <li><p><code class="docutils literal notranslate"><span class="pre">MM</span></code> size of memory surface</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">estrain</span></code> elastic strain tensor</p></li>
 </ul>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> Element <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$numElem</span> <span class="o">-</span>time <span class="o">-</span>file stress.out  stress
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>eleRange<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$numElem</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>stress.out<span class="w">  </span>stress
 
 <span class="c">#. Elastic or Elastoplastic response could be enforced by</span>
-   <span class="nv">Elastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">0</span>
-   <span class="nv">Elastoplastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">1</span>
+<span class="w">   </span><span class="nv">Elastic</span><span class="o">:</span><span class="w">   </span>updateMaterialStage<span class="w"> </span><span class="o">-</span>material<span class="w"> </span><span class="nv">$matTag</span><span class="w"> </span><span class="o">-</span>stage<span class="w"> </span><span class="mi">0</span>
+<span class="w">   </span><span class="nv">Elastoplastic</span><span class="o">:</span><span class="w">   </span>updateMaterialStage<span class="w"> </span><span class="o">-</span>material<span class="w"> </span><span class="nv">$matTag</span><span class="w"> </span><span class="o">-</span>stage<span class="w"> </span><span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -649,83 +554,70 @@ wipe
 </figure>
 </div>
 <p><strong>Main references</strong></p>
-<dl class="citation">
-<dt class="label" id="sanisand-ms"><span class="brackets"><a class="fn-backref" href="#id1">SANISAND-MS</a></span></dt>
-<dd><p>Liu, H. Y., Abell, J. A., Diambra, A., &amp; Pisanò, F. (2019). <a class="reference external" href="https://www.researchgate.net/publication/328211282_Modelling_the_cyclic_ratcheting_of_sands_through_memory-enhanced_bounding_surface_plasticity">Modelling the cyclic ratcheting of sands through</a>. Géotechnique, 69(9), 783-800.</p>
-</dd>
-<dt class="label" id="phdthesis"><span class="brackets">PhDThesis</span></dt>
-<dd><p>Liu, H.Y.  (2020). <a class="reference external" href="https://repository.tudelft.nl/islandora/object/uuid%3A6e3ae33c-e95d-474f-8d6b-d8c0f8aa4788?collection=research">Constitutive modelling of cyclic sand behaviour for offshore foundations</a> (Doctoral dissertation, Delft University of Technology).</p>
-</dd>
-</dl>
+<div role="list" class="citation-list">
+<div class="citation" id="sanisand-ms" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">SANISAND-MS</a><span class="fn-bracket">]</span></span>
+<p>Liu, H. Y., Abell, J. A., Diambra, A., &amp; Pisanò, F. (2019). <a class="reference external" href="https://www.researchgate.net/publication/328211282_Modelling_the_cyclic_ratcheting_of_sands_through_memory-enhanced_bounding_surface_plasticity">Modelling the cyclic ratcheting of sands through</a>. Géotechnique, 69(9), 783-800.</p>
+</div>
+<div class="citation" id="phdthesis" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>PhDThesis<span class="fn-bracket">]</span></span>
+<p>Liu, H.Y.  (2020). <a class="reference external" href="https://repository.tudelft.nl/islandora/object/uuid%3A6e3ae33c-e95d-474f-8d6b-d8c0f8aa4788?collection=research">Constitutive modelling of cyclic sand behaviour for offshore foundations</a> (Doctoral dissertation, Delft University of Technology).</p>
+</div>
+</div>
 <p><strong>List of works using SANISAND-MS</strong></p>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets">1</span></dt>
-<dd><p>Liu, H. Y., &amp; Pisano, F. (2019). <a class="reference external" href="https://www.icevirtuallibrary.com/doi/pdf/10.1680/jgele.18.00187">Prediction of oedometer terminal densities through a memory-enhanced cyclic model for sand</a>. Géotechnique Letters, 9(2), 81-88.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets">2</span></dt>
-<dd><p>Liu, H. Y., Kementzetzidis, E., Abell, J. A., &amp; Pisanò, F. (2021). <a class="reference external" href="https://www.icevirtuallibrary.com/doi/pdf/10.1680/jgeot.20.P.029">From cyclic sand ratcheting to tilt accumulation of offshore monopiles: 3D FE modelling using SANISAND-MS</a>. Géotechnique, 1-16.</p>
-</dd>
-<dt class="label" id="id6"><span class="brackets">3</span></dt>
-<dd><p>Liu, H.Y., &amp; Kaynia, A. M. (2021). <a class="reference external" href="https://www.icevirtuallibrary.com/doi/pdf/10.1680/jgeot.21.00068">Characteristics of cyclic undrained model SANISAND-MSu and their effects on response of monopiles for offshore wind structures</a>. Géotechnique, 1-39.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Liu, H. Y., &amp; Pisano, F. (2019). <a class="reference external" href="https://www.icevirtuallibrary.com/doi/pdf/10.1680/jgele.18.00187">Prediction of oedometer terminal densities through a memory-enhanced cyclic model for sand</a>. Géotechnique Letters, 9(2), 81-88.</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Liu, H. Y., Kementzetzidis, E., Abell, J. A., &amp; Pisanò, F. (2021). <a class="reference external" href="https://www.icevirtuallibrary.com/doi/pdf/10.1680/jgeot.20.P.029">From cyclic sand ratcheting to tilt accumulation of offshore monopiles: 3D FE modelling using SANISAND-MS</a>. Géotechnique, 1-16.</p>
+</aside>
+<aside class="footnote brackets" id="id6" role="note">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Liu, H.Y., &amp; Kaynia, A. M. (2021). <a class="reference external" href="https://www.icevirtuallibrary.com/doi/pdf/10.1680/jgeot.21.00068">Characteristics of cyclic undrained model SANISAND-MSu and their effects on response of monopiles for offshore wind structures</a>. Géotechnique, 1-39.</p>
+</aside>
+</aside>
 </section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

@@ -1,79 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3.1.3.6. Gradient Inelastic (GI) Beam-Column Element &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.1.3.7. Displacement-Based Beam Element (Asymmetric Sections)" href="dispBeamColumnAsym.html" />
     <link rel="prev" title="3.1.3.5. Elastic Beam Column Element" href="elasticBeamColumn.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../../../index.html">
-          
-
-          
-            
             <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -116,15 +64,19 @@
 <li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.12. stdBrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.13. bbarBrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.15. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.17. RockingBC Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.3.15. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.3.16. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.17. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.18. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.19. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.6. Time Series Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.7. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.8. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.8. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
@@ -143,83 +95,39 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
           <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
-        
           <li><a href="../element.html"><span class="section-number">3.1.3. </span>Element Command</a> &raquo;</li>
-        
       <li><span class="section-number">3.1.3.6. </span>Gradient Inelastic (GI) Beam-Column Element</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/model/elements/gradientInelasticBeamColumn.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="gradient-inelastic-gi-beam-column-element">
-<span id="gradientinelasticbeamcolumn"></span><h1><span class="section-number">3.1.3.6. </span>Gradient Inelastic (GI) Beam-Column Element<a class="headerlink" href="#gradient-inelastic-gi-beam-column-element" title="Permalink to this heading">¶</a></h1>
+<span id="gradientinelasticbeamcolumn"></span><h1><span class="section-number">3.1.3.6. </span>Gradient Inelastic (GI) Beam-Column Element<a class="headerlink" href="#gradient-inelastic-gi-beam-column-element" title="Permalink to this heading"></a></h1>
 <p>This command is used to construct a <strong>gradientInelasticBeamColumn</strong> element object, which is based on a <strong>force/flexibility-based (FB) gradient inelastic (GI) element formulation</strong> with an iterative solution algorithm. The GI element formulation is based on the GI beam theory, which eliminates the strain localization and response objectivity problems by utilizing a set of gradient-based nonlocality relations that ensure the continuity of section strains (e.g., curvature) over the element length, upon the occurrence of softening at any section. The GI element does not necessitate any certain form of constitutive relations and permits users to use the same constitutive relations used in conventional FB element formulations. Moreover, the number of integration points in the GI element is not fixed and it could produce section strain (e.g., curvature) distributions with high resolutions.</p>
 <p>From the user’s perspective, the gradientInelasticBeamColumn element has similar input to other force-based fiber elements’ and the only additional parameter that this element requires is a characteristic length, <em>lc</em>, which controls the spread of plasticity/damage in the vicinity of a softening location. In the simulation of RC beams/columns, this parameter can be taken equal to the plastic hinge length. If <em>lc</em> equals zero, the GI beam element formulation turns into a conventional FB element formulation (i.e., as if the classical beam theory is used).</p>
 <p>For more information about the GI element formulation, please refer to this <a class="reference external" href="https://www.linkedin.com/feed/update/urn:li:activity:6712087651564044288/">post</a> and the references at the end of this page.</p>
@@ -231,11 +139,11 @@
 <dd></dd></dl>
 
 <p>The required arguments are:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 66.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -287,12 +195,12 @@
 </tbody>
 </table>
 <p>The optional arguments are:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 57%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 57.1%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -337,22 +245,22 @@
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/GI_Fig1.png"><img alt="../../../../_images/GI_Fig1.png" src="../../../../_images/GI_Fig1.png" style="width: 325.5px; height: 169.5px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3.1.3.2 </span><span class="caption-text">Fig. 1: Assignment of pre-defined sections to integration points at different parts of element</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 3.1.3.2 </span><span class="caption-text">Fig. 1: Assignment of pre-defined sections to integration points at different parts of element</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>PYTHON ELEMENT COMMAND</strong></p>
 <p>For both 2D and 3D problems:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="element">
-<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">'gradientInelasticBeamColumn'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$eleTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$iNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$jNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$transfTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$integrTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$lc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'-iter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$maxIter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$minTol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$maxTol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">'gradientInelasticBeamColumn'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$eleTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$iNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$jNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$transfTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$integrTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$lc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'-iter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$maxIter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$minTol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$maxTol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <p>The required arguments are:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 66.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -384,12 +292,12 @@
 </tbody>
 </table>
 <p>The optional arguments are:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 57%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 57.1%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -445,7 +353,7 @@
 <p class="admonition-title"><strong>TCL EXAMPLE</strong></p>
 <p>The element command for the GI element simulating the RC beam in Fig. 2, assuming L = <strong>5</strong>, λ1 = <strong>0.2</strong>, λ2 = <strong>0.3</strong>, and lc = <strong>0.5</strong>, while the tag for the predefined coordinate-transformation object is <strong>20</strong>, may take the form below:</p>
 <blockquote>
-<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span> gradientInelasticBeamColumn <span class="mi">10</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">21</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mf">0.2</span> <span class="mf">0.3</span> <span class="mf">0.5</span> <span class="mi">20</span> <span class="o">-</span>integration Simpson <span class="o">-</span>iter <span class="mi">20</span> <span class="mi">1</span>E-8 <span class="mi">1</span>E-6<span class="k">;</span>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span><span class="w"> </span>gradientInelasticBeamColumn<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">-</span>integration<span class="w"> </span>Simpson<span class="w"> </span><span class="o">-</span>iter<span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="mi">1</span>E-8<span class="w"> </span><span class="mi">1</span>E-6<span class="k">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -459,7 +367,7 @@
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../../../../_images/GI_Fig2.png"><img alt="../../../../_images/GI_Fig2.png" src="../../../../_images/GI_Fig2.png" style="width: 984.8000000000001px; height: 412.8px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3.1.3.3 </span><span class="caption-text">Fig. 2:  GI element application example</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 3.1.3.3 </span><span class="caption-text">Fig. 2:  GI element application example</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition-python-example admonition">
@@ -484,59 +392,41 @@
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

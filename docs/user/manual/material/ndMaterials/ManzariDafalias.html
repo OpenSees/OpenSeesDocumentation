@@ -1,80 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3.4.2.5. Manzari Dafalias Material &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.4.2.6. Bounding Cam Clay" href="BoundingCamClay.html" />
     <link rel="prev" title="3.4.2.4. Drucker Prager Material" href="DruckerPrager.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../../../index.html">
-          
-
-          
-            
             <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -117,6 +65,7 @@
 <li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
 <li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.4.2.11. J2CyclicBoundingSurface Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.4.2.12. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.4.2.13. Orthotropic Material Wrapper</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
@@ -136,94 +85,50 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
           <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
-        
           <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
-        
       <li><span class="section-number">3.4.2.5. </span>Manzari Dafalias Material</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/material/ndMaterials/ManzariDafalias.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="manzari-dafalias-material">
-<span id="manzaridafalias"></span><h1><span class="section-number">3.4.2.5. </span>Manzari Dafalias Material<a class="headerlink" href="#manzari-dafalias-material" title="Permalink to this heading">¶</a></h1>
+<span id="manzaridafalias"></span><h1><span class="section-number">3.4.2.5. </span>Manzari Dafalias Material<a class="headerlink" href="#manzari-dafalias-material" title="Permalink to this heading"></a></h1>
 <p>Code Developed by: <strong>Alborz Ghofrani</strong>, <a class="reference external" href="https://www.ce.washington.edu/facultyfinder/pedro-arduino">Pedro Arduino</a>, U. Washington</p>
 <p>This command is used to construct a multi-dimensional <a class="reference internal" href="#manzari-dafalias2004" id="id1"><span>[Manzari-Dafalias2004]</span></a> material.</p>
 <div class="admonition-function admonition">
 <p class="admonition-title">function</p>
 <p>nDmaterial ManzariDafalias $matTag $G0 $nu $e_init $Mc $c $lambda_c $e0 $ksi $P_atm $m $h0 $ch $nb $A0 $nd $z_max $cz $Den</p>
 </div>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 66.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -323,11 +228,11 @@ alpha (or backstressratio) for <span class="math notranslate nohighlight">\(\mat
 fabric for <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>
 alpha_in (or alphain) for <span class="math notranslate nohighlight">\(\mathbf{\alpha_{in}}\)</span></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> Element <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$numElem</span> <span class="o">-</span>time <span class="o">-</span>file stress.out  stress
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>eleRange<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$numElem</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>stress.out<span class="w">  </span>stress
 
 <span class="c">#. Elastic or Elastoplastic response could be enforced by</span>
-   <span class="nv">Elastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">0</span>
-   <span class="nv">Elastoplastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">1</span>
+<span class="w">   </span><span class="nv">Elastic</span><span class="o">:</span><span class="w">   </span>updateMaterialStage<span class="w"> </span><span class="o">-</span>material<span class="w"> </span><span class="nv">$matTag</span><span class="w"> </span><span class="o">-</span>stage<span class="w"> </span><span class="mi">0</span>
+<span class="w">   </span><span class="nv">Elastoplastic</span><span class="o">:</span><span class="w">   </span>updateMaterialStage<span class="w"> </span><span class="o">-</span>material<span class="w"> </span><span class="nv">$matTag</span><span class="w"> </span><span class="o">-</span>stage<span class="w"> </span><span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -371,7 +276,7 @@ The hardening modulus in this model is defined as</p>
 \[K_p = \frac{2}{3} p h (\mathbf{\alpha}^b_{\theta} - \mathbf{\alpha}): \mathbf{n}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> is the deviatoric part of the gradient to yield surface.</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{\alpha}^b_{\theta} = \sqrt{\frac{2}{3}} \left[g(\theta,c) M_c exp(-n^b\Psi) - m\right] \mathbf{n}
-\)</span>Psi` being the state parameter.</p>
+`, :math:\)</span>Psi` being the state parameter.</p>
 <p>the hardening parameter <span class="math notranslate nohighlight">\(h\)</span> is defined as</p>
 <div class="math notranslate nohighlight">
 \[h = \frac{b_0}{(\mathbf{\alpha}-\mathbf{\alpha_{in}}):\mathbf{n}}\]</div>
@@ -570,68 +475,51 @@ wipe
 </pre></div>
 </div>
 </div>
-<dl class="citation">
-<dt class="label" id="manzari-dafalias2004"><span class="brackets"><a class="fn-backref" href="#id1">Manzari-Dafalias2004</a></span></dt>
-<dd><p>Dafalias YF, Manzari MT. “Simple plasticity sand model accounting for fabric change effects”. Journal of Engineering Mechanics 2004</p>
-</dd>
-</dl>
+<div role="list" class="citation-list">
+<div class="citation" id="manzari-dafalias2004" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Manzari-Dafalias2004</a><span class="fn-bracket">]</span></span>
+<p>Dafalias YF, Manzari MT. “Simple plasticity sand model accounting for fabric change effects”. Journal of Engineering Mechanics 2004</p>
+</div>
+</div>
 </section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

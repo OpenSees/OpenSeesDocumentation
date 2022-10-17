@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.8. Damping Commands &mdash; OpenSees Documentation  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.8.1. Rayleigh Damping Command" href="damping/rayleigh.html" />
+    <link rel="prev" title="3.1.7.4. H5DRM Pattern" href="pattern/H5DRM.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="model.html">3.1.1. Model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="element.html">3.1.3. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timeSeries.html">3.1.6. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pattern.html">3.1.7. Pattern Command</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.8. Damping Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="damping/rayleigh.html">3.1.8.1. Rayleigh Damping Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="damping/modalDamping.html">3.1.8.2. Modal Damping Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">3.1.8.3. References</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.8. Damping Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="damping/rayleigh.html">3.1.8.1. Rayleigh Damping Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="damping/modalDamping.html">3.1.8.2. Modal Damping Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">3.1.8.3. References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenSees Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+          <li><a href="../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+      <li><span class="section-number">3.1.8. </span>Damping Commands</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/user/manual/model/damping.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="damping-commands">
+<span id="damping"></span><h1><span class="section-number">3.1.8. </span>Damping Commands<a class="headerlink" href="#damping-commands" title="Permalink to this heading"></a></h1>
+<p>OpenSees provides the user several method to construct damping in their model. List of the available method are:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="damping/rayleigh.html">3.1.8.1. Rayleigh Damping Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="damping/modalDamping.html">3.1.8.2. Modal Damping Command</a></li>
+</ul>
+</div>
+<section id="references">
+<h2><span class="section-number">3.1.8.3. </span>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+<div role="list" class="citation-list">
+<div class="citation" id="chopramckenna2015" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>ChopraMcKenna2015<span class="fn-bracket">]</span></span>
+<p>Chopra, A. K., &amp; McKenna, F. (2016). Modeling viscous damping in nonlinear response history analysis of buildings for earthquake excitation. Earthquake Engineering &amp; Structural Dynamics, 45(2), 193-211. <a class="reference external" href="https://onlinelibrary.wiley.com/doi/full/10.1002/eqe.2622">https://onlinelibrary.wiley.com/doi/full/10.1002/eqe.2622</a></p>
+</div>
+<div class="citation" id="mhscott2019" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>MHScott2019<span class="fn-bracket">]</span></span>
+<p>Scott, M. H. (2019, September 12). Be careful with modal damping. Portwood Digital. Retrieved August 27, 2022, from <a class="reference external" href="https://portwooddigital.com/2019/09/12/be-careful-with-modal-damping/">https://portwooddigital.com/2019/09/12/be-careful-with-modal-damping/</a></p>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

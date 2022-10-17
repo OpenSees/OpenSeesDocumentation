@@ -21,12 +21,12 @@ The following subsections contain information about **$type** and the number of 
 .. toctree::
    :maxdepth: 4
 
-   constantTimeSeries
-   linearTimeSeries
-   trigTimeSeries
-   triangleTimeSeries
-   rectangularTimeSeries
-   pulseTimeSeries
-   pathTimeSeries
-   peerTimeSeries
-   PeerNGA
+   timeseries/constantTimeSeries
+   timeseries/linearTimeSeries
+   timeseries/trigTimeSeries
+   timeseries/triangleTimeSeries
+   timeseries/rectangularTimeSeries
+   timeseries/pulseTimeSeries
+   timeseries/pathTimeSeries
+   timeseries/peerTimeSeries
+   timeseries/PeerNGA

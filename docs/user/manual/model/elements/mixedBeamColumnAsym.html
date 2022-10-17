@@ -1,79 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3.1.3.8. Mixed Beam Element (Asymmetric Sections) &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.1.3.9. ASDShellQ4 Element" href="ASDShellQ4.html" />
     <link rel="prev" title="3.1.3.7. Displacement-Based Beam Element (Asymmetric Sections)" href="dispBeamColumnAsym.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../../../index.html">
-          
-
-          
-            
             <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -116,15 +64,19 @@
 <li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.12. stdBrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.13. bbarBrick Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.15. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.16. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.17. RockingBC Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.3.15. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.3.16. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.17. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.3.18. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.19. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.6. Time Series Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.7. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.8. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.8. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
@@ -143,83 +95,39 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
           <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
-        
           <li><a href="../element.html"><span class="section-number">3.1.3. </span>Element Command</a> &raquo;</li>
-        
       <li><span class="section-number">3.1.3.8. </span>Mixed Beam Element (Asymmetric Sections)</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/model/elements/mixedBeamColumnAsym.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="mixed-beam-element-asymmetric-sections">
-<span id="mixedbeamcolumnasym"></span><h1><span class="section-number">3.1.3.8. </span>Mixed Beam Element (Asymmetric Sections)<a class="headerlink" href="#mixed-beam-element-asymmetric-sections" title="Permalink to this heading">¶</a></h1>
+<span id="mixedbeamcolumnasym"></span><h1><span class="section-number">3.1.3.8. </span>Mixed Beam Element (Asymmetric Sections)<a class="headerlink" href="#mixed-beam-element-asymmetric-sections" title="Permalink to this heading"></a></h1>
 <p>This command is used to construct a <strong>MixedBeamColumnAsym3d</strong> element object, which is suitable for modeling flexural, flexural-torsionl and torsional buckling of members with asymmetric section such as angles and tees. It can also be used to model members with doublely-symmetric sections. The corotational total Lagrangian method is used to capture the axial-flexural-torsional interaction behavior, while the fiber section method is used for modeling material nonlinearity. The fibers and coordinates of the shear center should be defined with respect to the principal axes of the section. This element can represent a nonlinear curvature field within the element. Note that warping is not considered in this element.</p>
 <p>For more information about the element formulation, please refer to the references at the end of this page.</p>
 <p><strong>TCL ELEMENT COMMAND</strong></p>
@@ -230,11 +138,11 @@
 <dd></dd></dl>
 
 <p>The required arguments are:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 66.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -266,12 +174,12 @@
 </tbody>
 </table>
 <p>The optional arguments are:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 57%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 57.1%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -306,22 +214,22 @@
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/dispBeamColumnAsym_Fig1.jpg"><img alt="../../../../_images/dispBeamColumnAsym_Fig1.jpg" src="../../../../_images/dispBeamColumnAsym_Fig1.jpg" style="width: 408.5px; height: 319.25px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3.1.3.5 </span><span class="caption-text">Fig. 1: Coordinate systems for members with asymmetric sections (CC’: centroidal axis, SS’: shear center axis)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 3.1.3.5 </span><span class="caption-text">Fig. 1: Coordinate systems for members with asymmetric sections (CC’: centroidal axis, SS’: shear center axis)</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>PYTHON ELEMENT COMMAND</strong></p>
 <p>For 3D problems:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="element">
-<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">'mixedBeamColumnAsym'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$eleTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$iNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$jNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$transfTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$integrTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'-shearCenter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$z0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">'mixedBeamColumnAsym'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$eleTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$iNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$jNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$transfTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$integrTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'-shearCenter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$z0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <p>The required arguments are:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 66.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -349,12 +257,12 @@
 </tbody>
 </table>
 <p>The optional arguments are:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 57%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 57.1%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -393,84 +301,84 @@
 <span class="c"># Xinlong Du, 9/25/2019</span>
 <span class="c"># Mixed beam-column element for asymmetric sections</span>
 <span class="c"># --------------------------------------------------------------------------------------------------</span>
-<span class="k">set</span> systemTime <span class="k">[</span><span class="nb">clock</span> seconds<span class="k">]</span>
-<span class="nb">puts</span> <span class="s2">&quot;Starting Analysis: [clock format $systemTime -format &quot;%d-%b-%Y %H:%M:%S&quot;]&quot;</span>
-<span class="k">set</span> startTime <span class="k">[</span><span class="nb">clock</span> clicks <span class="o">-</span>milliseconds<span class="k">];</span>
+<span class="k">set</span><span class="w"> </span>systemTime<span class="w"> </span><span class="k">[</span><span class="nb">clock</span><span class="w"> </span>seconds<span class="k">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Starting Analysis: [clock format $systemTime -format &quot;%d-%b-%Y %H:%M:%S&quot;]&quot;</span>
+<span class="k">set</span><span class="w"> </span>startTime<span class="w"> </span><span class="k">[</span><span class="nb">clock</span><span class="w"> </span>clicks<span class="w"> </span><span class="o">-</span>milliseconds<span class="k">];</span><span class="w"></span>
 <span class="c"># SET UP ----------------------------------------------------------------------------</span>
-<span class="nv">wipe</span><span class="k">;</span>                             <span class="c"># clear memory of all past model definitions</span>
-<span class="nv">model</span> BasicBuilder <span class="o">-</span>ndm <span class="mi">3</span> <span class="o">-</span>ndf <span class="mi">6</span><span class="k">;</span> <span class="c"># Define the model builder, ndm=#dimension, ndf=#dofs</span>
-<span class="k">set</span> dataDir Data<span class="k">;</span>                 <span class="c"># set up name of data directory</span>
-<span class="nb">file</span> mkdir <span class="nv">$dataDir</span><span class="k">;</span>                      <span class="c"># create data directory</span>
-<span class="nb">source</span> LibUnits.tcl<span class="k">;</span>                      <span class="c"># define units</span>
-<span class="nb">source</span> DisplayPlane.tcl<span class="k">;</span>          <span class="c"># procedure for displaying a plane in model</span>
-<span class="nb">source</span> DisplayModel3D.tcl<span class="k">;</span>                <span class="c"># procedure for displaying 3D perspectives of model</span>
+<span class="nv">wipe</span><span class="k">;</span><span class="w">                             </span><span class="c"># clear memory of all past model definitions</span>
+<span class="nv">model</span><span class="w"> </span>BasicBuilder<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">6</span><span class="k">;</span><span class="w"> </span><span class="c"># Define the model builder, ndm=#dimension, ndf=#dofs</span>
+<span class="k">set</span><span class="w"> </span>dataDir<span class="w"> </span>Data<span class="k">;</span><span class="w">                 </span><span class="c"># set up name of data directory</span>
+<span class="nb">file</span><span class="w"> </span>mkdir<span class="w"> </span><span class="nv">$dataDir</span><span class="k">;</span><span class="w">                      </span><span class="c"># create data directory</span>
+<span class="nb">source</span><span class="w"> </span>LibUnits.tcl<span class="k">;</span><span class="w">                      </span><span class="c"># define units</span>
+<span class="nb">source</span><span class="w"> </span>DisplayPlane.tcl<span class="k">;</span><span class="w">          </span><span class="c"># procedure for displaying a plane in model</span>
+<span class="nb">source</span><span class="w"> </span>DisplayModel3D.tcl<span class="k">;</span><span class="w">                </span><span class="c"># procedure for displaying 3D perspectives of model</span>
 <span class="c"># define GEOMETRY ------------------------------------------------------------------</span>
 <span class="c">#Nodes, NodeNumber, xCoord, yCoord, zCoord</span>
-<span class="k">for</span> <span class="k">{set</span> i <span class="mi">1</span><span class="k">}</span> <span class="k">{</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">8</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> i <span class="mi">1</span><span class="k">}</span> <span class="k">{</span>
-        <span class="nv">node</span> <span class="nv">$i</span> <span class="k">[expr</span> <span class="o">-</span><span class="mf">9.2</span><span class="o">+</span><span class="mf">9.2</span><span class="o">*</span><span class="nv">$i</span><span class="k">]</span> <span class="mi">0</span> <span class="mi">0</span><span class="k">;</span>
+<span class="k">for</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>i<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">8</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">incr</span><span class="w"> </span>i<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="w"></span>
+<span class="w">        </span><span class="nv">node</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="mf">9.2</span><span class="o">+</span><span class="mf">9.2</span><span class="o">*</span><span class="nv">$i</span><span class="k">]</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="k">;</span><span class="w"></span>
 <span class="k">}</span>
 <span class="c"># ------ define boundary conditions</span>
 <span class="c"># NodeID,dispX,dispY,dispZ,rotX,RotY,RotZ</span>
-<span class="nv">fix</span> <span class="mi">1</span>  <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> StartNode <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> EndNode <span class="mi">7</span><span class="k">;</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="k">;</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span>StartNode<span class="w"> </span><span class="mi">1</span><span class="k">;</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span>EndNode<span class="w"> </span><span class="mi">7</span><span class="k">;</span><span class="w"></span>
 <span class="c"># Define  SECTIONS -------------------------------------------------------------</span>
-<span class="k">set</span> ColSecTag <span class="mi">1</span>
+<span class="k">set</span><span class="w"> </span>ColSecTag<span class="w"> </span><span class="mi">1</span>
 <span class="c"># define MATERIAL properties</span>
-<span class="k">set</span> Es <span class="k">[expr</span> <span class="mf">27910.0</span><span class="o">*</span><span class="nv">$ksi</span><span class="k">];</span>               <span class="c"># Steel Young&#39;s Modulus</span>
-<span class="k">set</span> nu <span class="mf">0.3</span><span class="k">;</span>
-<span class="k">set</span> Gs <span class="k">[expr</span> <span class="nv">$Es</span><span class="o">/</span><span class="mi">2</span>.<span class="o">/</span><span class="k">[expr</span> <span class="mi">1</span><span class="o">+</span><span class="nv">$nu</span><span class="k">]];</span>  <span class="c"># Torsional stiffness Modulus</span>
-<span class="k">set</span> matID <span class="mi">1</span>
-<span class="nv">uniaxialMaterial</span> Elastic <span class="nv">$matID</span> <span class="nv">$Es</span><span class="k">;</span>
-<span class="k">set</span> J <span class="k">[expr</span>  <span class="mf">0.02473958</span><span class="o">*</span><span class="nv">$in4</span><span class="k">]</span>
-<span class="k">set</span> GJ <span class="k">[expr</span> <span class="nv">$Gs</span><span class="o">*</span><span class="nv">$J</span><span class="k">]</span>
-<span class="k">set</span> z0 <span class="k">[expr</span> <span class="mf">0.64625474</span><span class="o">*</span><span class="nv">$in</span><span class="k">];</span>
-<span class="k">set</span> y0 <span class="k">[expr</span> <span class="o">-</span><span class="mf">0.68720012</span><span class="o">*</span><span class="nv">$in</span><span class="k">];</span>
-<span class="nb">source</span> L3x2x0_25.tcl<span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>Es<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">27910.0</span><span class="o">*</span><span class="nv">$ksi</span><span class="k">];</span><span class="w">               </span><span class="c"># Steel Young&#39;s Modulus</span>
+<span class="k">set</span><span class="w"> </span>nu<span class="w"> </span><span class="mf">0.3</span><span class="k">;</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span>Gs<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$Es</span><span class="o">/</span><span class="mi">2</span>.<span class="o">/</span><span class="k">[expr</span><span class="w"> </span><span class="mi">1</span><span class="o">+</span><span class="nv">$nu</span><span class="k">]];</span><span class="w">  </span><span class="c"># Torsional stiffness Modulus</span>
+<span class="k">set</span><span class="w"> </span>matID<span class="w"> </span><span class="mi">1</span>
+<span class="nv">uniaxialMaterial</span><span class="w"> </span>Elastic<span class="w"> </span><span class="nv">$matID</span><span class="w"> </span><span class="nv">$Es</span><span class="k">;</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span>J<span class="w"> </span><span class="k">[expr</span><span class="w">  </span><span class="mf">0.02473958</span><span class="o">*</span><span class="nv">$in4</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>GJ<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$Gs</span><span class="o">*</span><span class="nv">$J</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>z0<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">0.64625474</span><span class="o">*</span><span class="nv">$in</span><span class="k">];</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span>y0<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="mf">0.68720012</span><span class="o">*</span><span class="nv">$in</span><span class="k">];</span><span class="w"></span>
+<span class="nb">source</span><span class="w"> </span>L3x2x0_25.tcl<span class="k">;</span><span class="w"></span>
 <span class="c"># define ELEMENTS-----------------------------------------------------------------------------------------------</span>
-<span class="k">set</span> IDColTransf <span class="mi">1</span><span class="k">;</span> <span class="c"># all members</span>
-<span class="k">set</span> ColTransfType Corotational<span class="k">;</span>           <span class="c"># options for columns: Linear PDelta Corotational</span>
-<span class="nv">geomTransf</span> <span class="nv">$ColTransfType</span>  <span class="nv">$IDColTransf</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span><span class="k">;</span>    <span class="c">#define geometric transformation: performs a corotational geometric transformation</span>
-<span class="k">set</span> numIntgrPts <span class="mi">2</span><span class="k">;</span>        <span class="c"># number of Gauss integration points</span>
-<span class="k">for</span> <span class="k">{set</span> i <span class="mi">1</span><span class="k">}</span> <span class="k">{</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">$EndNode</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> i <span class="mi">1</span><span class="k">}</span> <span class="k">{</span>
-<span class="k">set</span> elemID <span class="nv">$i</span>
-<span class="k">set</span> nodeI <span class="nv">$i</span>
-<span class="k">set</span> nodeJ <span class="k">[expr</span> <span class="nv">$i</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
-<span class="nv">element</span> mixedBeamColumnAsym <span class="nv">$elemID</span> <span class="nv">$nodeI</span> <span class="nv">$nodeJ</span> <span class="nv">$numIntgrPts</span> <span class="nv">$ColSecTag</span> <span class="nv">$IDColTransf</span> <span class="o">-</span>shearCenter <span class="nv">$y0</span> <span class="nv">$z0</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>IDColTransf<span class="w"> </span><span class="mi">1</span><span class="k">;</span><span class="w"> </span><span class="c"># all members</span>
+<span class="k">set</span><span class="w"> </span>ColTransfType<span class="w"> </span>Corotational<span class="k">;</span><span class="w">           </span><span class="c"># options for columns: Linear PDelta Corotational</span>
+<span class="nv">geomTransf</span><span class="w"> </span><span class="nv">$ColTransfType</span><span class="w">  </span><span class="nv">$IDColTransf</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="k">;</span><span class="w">    </span><span class="c">#define geometric transformation: performs a corotational geometric transformation</span>
+<span class="k">set</span><span class="w"> </span>numIntgrPts<span class="w"> </span><span class="mi">2</span><span class="k">;</span><span class="w">        </span><span class="c"># number of Gauss integration points</span>
+<span class="k">for</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>i<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">$EndNode</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">incr</span><span class="w"> </span>i<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span>elemID<span class="w"> </span><span class="nv">$i</span>
+<span class="k">set</span><span class="w"> </span>nodeI<span class="w"> </span><span class="nv">$i</span>
+<span class="k">set</span><span class="w"> </span>nodeJ<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$i</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
+<span class="nv">element</span><span class="w"> </span>mixedBeamColumnAsym<span class="w"> </span><span class="nv">$elemID</span><span class="w"> </span><span class="nv">$nodeI</span><span class="w"> </span><span class="nv">$nodeJ</span><span class="w"> </span><span class="nv">$numIntgrPts</span><span class="w"> </span><span class="nv">$ColSecTag</span><span class="w"> </span><span class="nv">$IDColTransf</span><span class="w"> </span><span class="o">-</span>shearCenter<span class="w"> </span><span class="nv">$y0</span><span class="w"> </span><span class="nv">$z0</span><span class="k">;</span><span class="w"></span>
 <span class="k">}</span>
 
 <span class="c"># Define RECORDERS -------------------------------------------------------------</span>
-<span class="nv">recorder</span> Node <span class="o">-</span>file <span class="nv">$dataDir</span><span class="o">/</span>DispMB6.out <span class="o">-</span>time <span class="o">-</span>node <span class="nv">$EndNode</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> disp<span class="k">;</span>                      <span class="c"># displacements of middle node</span>
-<span class="nv">recorder</span> Node <span class="o">-</span>file <span class="nv">$dataDir</span><span class="o">/</span>ReacMB6.out <span class="o">-</span>time <span class="o">-</span>node <span class="nv">$StartNode</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> reaction<span class="k">;</span>                <span class="c"># support reaction</span>
+<span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="nv">$dataDir</span><span class="o">/</span>DispMB6.out<span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="nv">$EndNode</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span>disp<span class="k">;</span><span class="w">                      </span><span class="c"># displacements of middle node</span>
+<span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="nv">$dataDir</span><span class="o">/</span>ReacMB6.out<span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="nv">$StartNode</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span>reaction<span class="k">;</span><span class="w">                </span><span class="c"># support reaction</span>
 
 <span class="c"># Define DISPLAY -------------------------------------------------------------</span>
-<span class="nv">DisplayModel3D</span> DeformedShape<span class="k">;</span>      <span class="c"># options: DeformedShape NodeNumbers ModeShape</span>
+<span class="nv">DisplayModel3D</span><span class="w"> </span>DeformedShape<span class="k">;</span><span class="w">      </span><span class="c"># options: DeformedShape NodeNumbers ModeShape</span>
 
 <span class="c"># define Load-------------------------------------------------------------</span>
-<span class="k">set</span> N <span class="mf">15.0</span><span class="k">;</span>
-<span class="nv">pattern</span> Plain <span class="mi">2</span> Linear <span class="k">{</span>
-  <span class="c"># NodeID, Fx, Fy, Fz, Mx, My, Mz</span>
-  <span class="nb">load</span> <span class="nv">$EndNode</span> <span class="o">-</span><span class="nv">$N</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>N<span class="w"> </span><span class="mf">15.0</span><span class="k">;</span><span class="w"></span>
+<span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">2</span><span class="w"> </span>Linear<span class="w"> </span><span class="k">{</span><span class="w"></span>
+<span class="w">  </span><span class="c"># NodeID, Fx, Fy, Fz, Mx, My, Mz</span>
+<span class="w">  </span><span class="nb">load</span><span class="w"> </span><span class="nv">$EndNode</span><span class="w"> </span><span class="o">-</span><span class="nv">$N</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="k">;</span><span class="w"></span>
 <span class="k">}</span>
 
 <span class="c"># define ANALYSIS PARAMETERS------------------------------------------------------------------------------------</span>
-<span class="nv">constraints</span> Plain<span class="k">;</span> <span class="c"># how it handles boundary conditions</span>
-<span class="nv">numberer</span> Plain<span class="k">;</span>      <span class="c"># renumber dof&#39;s to minimize band-width</span>
-<span class="nv">system</span> BandGeneral<span class="k">;</span><span class="c"># how to store and solve the system of equations in the analysis</span>
-<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-08 <span class="mi">1000</span><span class="k">;</span> <span class="c"># determine if convergence has been achieved at the end of an iteration step</span>
+<span class="nv">constraints</span><span class="w"> </span>Plain<span class="k">;</span><span class="w"> </span><span class="c"># how it handles boundary conditions</span>
+<span class="nv">numberer</span><span class="w"> </span>Plain<span class="k">;</span><span class="w">      </span><span class="c"># renumber dof&#39;s to minimize band-width</span>
+<span class="nv">system</span><span class="w"> </span>BandGeneral<span class="k">;</span><span class="c"># how to store and solve the system of equations in the analysis</span>
+<span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-08<span class="w"> </span><span class="mi">1000</span><span class="k">;</span><span class="w"> </span><span class="c"># determine if convergence has been achieved at the end of an iteration step</span>
 <span class="c">#algorithm NewtonLineSearch;# use Newton&#39;s solution algorithm: updates tangent stiffness at every iteration</span>
-<span class="nv">algorithm</span> Newton<span class="k">;</span>
-<span class="k">set</span> Dincr <span class="o">-</span><span class="mf">0.01</span><span class="k">;</span>
-                               <span class="c">#Node,  dof, 1st incr, Jd, min,   max</span>
-<span class="nv">integrator</span> DisplacementControl <span class="nv">$EndNode</span> <span class="mi">1</span>   <span class="nv">$Dincr</span>     <span class="mi">1</span>  <span class="nv">$Dincr</span> <span class="o">-</span><span class="mf">0.01</span><span class="k">;</span>
-<span class="nv">analysis</span> Static   <span class="k">;</span><span class="c"># define type of analysis static or transient</span>
-<span class="nv">analyze</span> <span class="mi">7000</span><span class="k">;</span>
-<span class="nb">puts</span> <span class="s2">&quot;Finished&quot;</span>
+<span class="nv">algorithm</span><span class="w"> </span>Newton<span class="k">;</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span>Dincr<span class="w"> </span><span class="o">-</span><span class="mf">0.01</span><span class="k">;</span><span class="w"></span>
+<span class="w">                               </span><span class="c">#Node,  dof, 1st incr, Jd, min,   max</span>
+<span class="nv">integrator</span><span class="w"> </span>DisplacementControl<span class="w"> </span><span class="nv">$EndNode</span><span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="nv">$Dincr</span><span class="w">     </span><span class="mi">1</span><span class="w">  </span><span class="nv">$Dincr</span><span class="w"> </span><span class="o">-</span><span class="mf">0.01</span><span class="k">;</span><span class="w"></span>
+<span class="nv">analysis</span><span class="w"> </span>Static<span class="w">   </span><span class="k">;</span><span class="c"># define type of analysis static or transient</span>
+<span class="nv">analyze</span><span class="w"> </span><span class="mi">7000</span><span class="k">;</span><span class="w"></span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Finished&quot;</span>
 <span class="c">#--------------------------------------------------------------------------------</span>
-<span class="k">set</span> finishTime <span class="k">[</span><span class="nb">clock</span> clicks <span class="o">-</span>milliseconds<span class="k">];</span>
-<span class="nb">puts</span> <span class="s2">&quot;Time taken: [expr ($finishTime-$startTime)/1000] sec&quot;</span>
-<span class="k">set</span> systemTime <span class="k">[</span><span class="nb">clock</span> seconds<span class="k">]</span>
-<span class="nb">puts</span> <span class="s2">&quot;Finished Analysis: [clock format $systemTime -format &quot;%d-%b-%Y %H:%M:%S&quot;]&quot;</span>
+<span class="k">set</span><span class="w"> </span>finishTime<span class="w"> </span><span class="k">[</span><span class="nb">clock</span><span class="w"> </span>clicks<span class="w"> </span><span class="o">-</span>milliseconds<span class="k">];</span><span class="w"></span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Time taken: [expr ($finishTime-$startTime)/1000] sec&quot;</span>
+<span class="k">set</span><span class="w"> </span>systemTime<span class="w"> </span><span class="k">[</span><span class="nb">clock</span><span class="w"> </span>seconds<span class="k">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Finished Analysis: [clock format $systemTime -format &quot;%d-%b-%Y %H:%M:%S&quot;]&quot;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -587,59 +495,41 @@
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

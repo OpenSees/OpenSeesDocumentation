@@ -1,80 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3.4.2.4. Drucker Prager Material &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.4.2.5. Manzari Dafalias Material" href="ManzariDafalias.html" />
     <link rel="prev" title="3.4.2.3. J2 Plasticity Material" href="J2Plasticity.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../../../index.html">
-          
-
-          
-            
             <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -117,6 +65,7 @@
 <li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.4.2.10. Pressure Dependent Multi Yield</a></li>
 <li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.4.2.11. J2CyclicBoundingSurface Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.4.2.12. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.4.2.13. Orthotropic Material Wrapper</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../section.html">3.4.3. section Command</a></li>
@@ -136,83 +85,39 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
           <li><a href="../../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
-        
           <li><a href="../ndMaterial.html"><span class="section-number">3.4.2. </span>nDMaterial Command</a> &raquo;</li>
-        
       <li><span class="section-number">3.4.2.4. </span>Drucker Prager Material</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/material/ndMaterials/DruckerPrager.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="drucker-prager-material">
-<span id="druckerprager"></span><h1><span class="section-number">3.4.2.4. </span>Drucker Prager Material<a class="headerlink" href="#drucker-prager-material" title="Permalink to this heading">¶</a></h1>
+<span id="druckerprager"></span><h1><span class="section-number">3.4.2.4. </span>Drucker Prager Material<a class="headerlink" href="#drucker-prager-material" title="Permalink to this heading"></a></h1>
 <p>Code Developed by: <a class="reference external" href="https://www.ce.washington.edu/facultyfinder/peter-mackenzie-helnwein">Peter Mackenzie-Helnwein</a> and <a class="reference external" href="https://www.ce.washington.edu/facultyfinder/pedro-arduino">Pedro Arduino</a> at U.Washington.</p>
 <p>This command is used to construct an multi dimensional material object that has a Drucker-Prager yield criterion.</p>
 <dl class="py function">
@@ -220,11 +125,11 @@
 <span class="sig-name descname"><span class="pre">nDMaterial</span> <span class="pre">DruckerPrager</span> <span class="pre">$matTag</span> <span class="pre">$k</span> <span class="pre">$G</span> <span class="pre">$sigmaY</span> <span class="pre">$rho</span> <span class="pre">$rhoBar</span> <span class="pre">$Kinf</span> <span class="pre">$Ko</span> <span class="pre">$delta1</span> <span class="pre">$delta2</span> <span class="pre">$H</span> <span class="pre">$theta</span> <span class="pre">$density</span> <span class="pre">&lt;$atmPressure&gt;</span></span></dt>
 <dd></dd></dl>
 
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 66.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -325,29 +230,32 @@
 <p class="admonition-title">Note</p>
 <p>The valid queries to the Drucker-Prager material when creating an ElementRecorder are ‘strain’ and ‘stress’ (as with all nDmaterial) as well as ‘state’. The query ‘state’ records a vector of state variables during a particular analysis. The columns of this vector are as follows. (Note: If the option ‘-time’ is included in the creation of the recorder, the first column will be the time variable for each recorded point and the columns below are shifted accordingly.)</p>
 <p>Column 1 - First invariant of the stress tensor, <span class="math notranslate nohighlight">\(I_1 = \mathrm{tr}(\mathbf{\sigma})\)</span>.
-Column 2 - The following tensor norm, <span class="math notranslate nohighlight">\(\left\| \mathbf{s} + \mathbf{q}^{kin} \right\| \)</span> is the deviatoric stress tensor and <span class="math notranslate nohighlight">\(\mathbf{q}^{kin}\)</span> is the back-stress tensor.
-Column 3 - First invariant of the plastic strain tensor, <span class="math notranslate nohighlight">\(\mathrm{tr}(\mathbf{\varepsilon}^p) \)</span>left| mathbf{e}^p right| <a href="#id1"><span class="problematic" id="id2">`</span></a>.</p>
-<p>The Drucker-Prager strength parameters <span class="math notranslate nohighlight">\(\rho \)</span>sigma_Y ` can be related to the Mohr-Coulomb friction angle, <span class="math notranslate nohighlight">\(\phi \)</span>, by evaluating the yield surfaces in a deviatoric plane as described by Chen and Saleeb (1994). By relating the two yield surfaces in triaxial compression, the following expressions are determined</p>
+Column 2 - The following tensor norm, <span class="math notranslate nohighlight">\(\left\| \mathbf{s} + \mathbf{q}^{kin} \right\| `, where .. math::\mathbf{s}\)</span> is the deviatoric stress tensor and <span class="math notranslate nohighlight">\(\mathbf{q}^{kin}\)</span> is the back-stress tensor.
+Column 3 - First invariant of the plastic strain tensor, <span class="math notranslate nohighlight">\(\mathrm{tr}(\mathbf{\varepsilon}^p) `.
+Column 4 - Norm of the deviatoric plastic strain tensor, :math:\)</span>left| mathbf{e}^p right| <a href="#id1"><span class="problematic" id="id2">`</span></a>.</p>
+<p>The Drucker-Prager strength parameters <span class="math notranslate nohighlight">\(\rho ` and :math:\)</span>sigma_Y ` can be related to the Mohr-Coulomb friction angle, <span class="math notranslate nohighlight">\(\phi `, and cohesive intercept, :math:`c\)</span>, by evaluating the yield surfaces in a deviatoric plane as described by Chen and Saleeb (1994). By relating the two yield surfaces in triaxial compression, the following expressions are determined</p>
 <div class="math notranslate nohighlight">
 \[\rho = \frac{2 \sqrt{2} \sin \phi}{\sqrt{3} (3 - \sin \phi)}\]</div>
 <div class="math notranslate nohighlight">
 \[\sigma_Y = \frac{6 c \cos \phi}{\sqrt{2} (3 - \sin \phi)}\]</div>
 </div>
-<dl class="citation">
-<dt class="label" id="drucker-prager1952"><span class="brackets">Drucker-Prager1952</span></dt>
-<dd><p>Drucker, D. C. and Prager, W., “Soil mechanics and plastic analysis for limit design.” Quarterly of Applied Mathematics, vol. 10, no. 2, pp. 157–165, 1952.</p>
-</dd>
-<dt class="label" id="chen-saleeb1994"><span class="brackets">Chen-Saleeb1994</span></dt>
-<dd><p>Chen, W. F. and Saleeb, A. F., Constitutive Equations for Engineering Materials Volume I: Elasticity and Modeling. Elsevier Science B.V., Amsterdam, 1994.</p>
-</dd>
-</dl>
+<div role="list" class="citation-list">
+<div class="citation" id="drucker-prager1952" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Drucker-Prager1952<span class="fn-bracket">]</span></span>
+<p>Drucker, D. C. and Prager, W., “Soil mechanics and plastic analysis for limit design.” Quarterly of Applied Mathematics, vol. 10, no. 2, pp. 157–165, 1952.</p>
+</div>
+<div class="citation" id="chen-saleeb1994" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Chen-Saleeb1994<span class="fn-bracket">]</span></span>
+<p>Chen, W. F. and Saleeb, A. F., Constitutive Equations for Engineering Materials Volume I: Elasticity and Modeling. Elsevier Science B.V., Amsterdam, 1994.</p>
+</div>
+</div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>This example provides the input file and corresponding results for a confined triaxial compression (CTC) test using a single 8-node brick element and the Drucker-Prager constitutive model. A schematic representation of this test is shown below, (a) depicts the application of hydrostatic pressure, and (b) depicts the application of the deviator stress. Also shown is the stress path resulting from this test plotted on the meridian plane. As shown, the element is loaded until failure, at which point the model can no longer converge, as this is a stress-controlled analysis.</p>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../../../_images/DruckerPrager.png"><img alt="../../../../_images/DruckerPrager.png" src="../../../../_images/DruckerPrager.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3.4.2.1 </span><span class="caption-text">Drucker Prager Example</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 3.4.2.1 </span><span class="caption-text">Drucker Prager Example</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span>#########################################################
@@ -491,59 +399,41 @@ wipe
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

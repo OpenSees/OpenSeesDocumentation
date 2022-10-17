@@ -7,8 +7,8 @@ Multi point constraints (MP_Constraints) are constraints that allow the user to 
 .. toctree::
    :maxdepth: 1
 
-   equalDOF
-   rigidDiaphragm
-   rigidLink
+   mp_constraint/equalDOF
+   mp_constraint/rigidDiaphragm
+   mp_constraint/rigidLink
 
 
