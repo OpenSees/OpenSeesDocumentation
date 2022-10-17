@@ -84,6 +84,5 @@ This command is used to construct a material with a pinched hysteretic response 
 
       uniaxialMaterial IMKPinching 1 $Ke $thetap $thetapc $thetau $My $Mc_My $Mres_My $thetap $thetapc $thetau $My $Mc_My $Mres_My $lambdaS $lambdaC $lambdaA $lambdaK 1 1 1 1 1 1 $kappaF $kappaD;
 
-For code inquires or bug reporting, please contact: 
-- Kazuki Ichinohe, University of Tokyo, e-mail: z-ichinohe@g.ecc.u-tokyo.ac.jp
-- Ahmed Elkady, University of Southampton, e-mail: a.elkady@soton.ac.uk
+
+Code Developed by: |aelkady|
