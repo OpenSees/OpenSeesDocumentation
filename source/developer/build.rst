@@ -18,7 +18,7 @@ Windows 10
 Software Requirements
 ^^^^^^^^^^^^^^^^^^^^^
 
-For Windows 10 the user must have the following applications installed on their computer: CMake, VisualStudio Basic, Intel One Basic and HPC Toolkits, and MUMPS:
+For Windows 10 the user must have the following applications installed on their computer: CMake, VisualStudio Basic, Intel One Basic and HPC Toolkits, and MUMPS, and conan:
 
 1. **CMake**: We use `CMake <https://cmake.org/download/>`_ for managing the build process. Version 3.20 or later is recommended.  
 
@@ -41,7 +41,8 @@ For Windows 10 the user must have the following applications installed on their 
          1. The install of the latest version of the base toolkit may fail due to issues installing Python. The error pops up right at the end. To overcome the problem, choose to install the selected components option and choose every package BUT Python.
          2. On windows order matters, the Intel compilers come after Visual Studio. If you reverse the order or if the install was not successfullm cmake when running below will give an error message about failing to find a fortran compiler.
 
-4. **MUMPS**: Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like OpenSees it  must be installed using **cmake**. Open a terminal window and type the following to set the intel env variables, download and then build the MUMPS library.
+4. **MUMPS & conan**: MUMPS is a parallel solver used in OpenSees. Conan is a package build manager for C/C++ applications, that is used to install Tcl and HDF5. They are both installed via the command line, i.e. a DOS terminal.
+   Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like OpenSees it  must be installed using **cmake**. Open a terminal window and type the following to set the intel env variables, download and then build the MUMPS library.
    
       .. code::
 	 
@@ -53,6 +54,8 @@ For Windows 10 the user must have the following applications installed on their 
          cmake .. -Darith=d
          cmake --build . --config Release --parallel 4
          cd ..\..
+	 pip install conan
+	 
 
 Obtaining OpenSees Source Code       
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,13 +74,6 @@ To obtain the source code, from a terminal **cd** to the directory you want to p
 
          git clone https://github.com/YOUR_USER_NAME/OpenSees.git
 
-   2. To update the code to the latest code in the repo, type the following from inside the OpenSees directory:
-
-      .. code::
-
-         git pull
-
-	 
 Building the OpenSees Applications and Python module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -87,8 +83,10 @@ With everything installed the build process is somewhat simple! From a terminal 
 	 
 	 "C:\Program Files (x86)\Intel\oneAPI\setVars" intel64 mod
 	 cd OpenSees
+	 git pull
          mkdir build
          cd build
+	 conan install .. --build missing
          cmake .. -DCMAKE_C_COMPILER=icc -DCMAKE_CXX_COMPILER=icpc -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64 -DMUMPS_DIR="..\..\mumps\build"
          cmake --build . --config Release --target OpenSees --parallel 4
          cmake --build . --config Release --target OpenSeesPy
@@ -103,7 +101,7 @@ With everything installed the build process is somewhat simple! From a terminal 
    #. The above assumes OpenSees and mumps are located in the same folder.
    #. This last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named **opensees.pyd**. To import this module in a python script you can do one of 2 things:
 
-   1. If you have used pip3 to install openseespy, you can replace the opensees.pyd file in the site_package location with the opensees.pyd above. To find the location of this module, use the following:
+   1. If you have used pip to install openseespy, you can replace the opensees.pyd file in the site_package location with the opensees.pyd above. To find the location of this module, use the following:
 
       .. code::
 
@@ -183,12 +181,6 @@ To obtain the source code, from a terminal **cd** to the directory you want to p
 
          git clone https://github.com/YOUR_USER_NAME/OpenSees.git
 
-   2. To update the code to the latest code in the repo, type the following from inside the OpenSees directory:
-
-      .. code::
-
-         git pull
-      
 Building the OpenSees Tcl Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -197,8 +189,10 @@ With everything installed the build process is somehwat simple! Again from a ter
       .. code::
 
 	 cd OpenSees
+	 git pull
          mkdir build
          cd build
+	 conan install .. --build missing
          cmake .. -DMUMPS_DIR=$PWD/../../mumps/build -DOPENMPI=TRUE -DSCALAPACK_LIBRARIES=/usr/local/Cellar/scalapack/2.2.0_1/lib/libscalapack.dylib
          cmake --build . --config Release --target OpenSees --parallel 4
          cmake --build . --config Release --target OpenSeesPy 
@@ -239,8 +233,8 @@ Software Requirements
 
       sudo apt-get update      
       sudo apt install -y cmake
-      sudo apt install -y gcc
-      sudo apt install -y gfortran
+      sudo apt install -y gcc g++ gfortran
+      sudo apt install -y tcl-dev tk-dev
       sudo apt install -y python3-pip
       sudo apt install -y liblapack-dev
       sudo apt install -y libopenmpi-dev
@@ -254,7 +248,13 @@ Software Requirements
       cmake .. -Darith=d
       cmake --build . --config Release --parallel 4
       cd ../..
-      pip3 install conan
+      git clone --depth 1 --branch hdf5-1_12_2 https://github.com/HDFGroup/hdf5.git
+      cd hdf5
+      ./configure --prefix=/usr/local/hdf5
+      make
+      sudo make install
+
+#pip3 install conan
 
 .. warning::
 
@@ -277,12 +277,6 @@ You need to obtain the OpenSees source code from github. To obtain the source co
 
          git clone https://github.com/YOUR_USER_NAME/OpenSees.git
 
-   2. To update the code to the latest code in the repo, type the following from inside the OpenSees directory:
-
-      .. code::
-
-         git pull
-      
 Building the OpenSees Applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -291,6 +285,7 @@ With everything installed the build process is somehwat simple! Again from a ter
       .. code::
 
 	 cd OpenSees
+	 git pull
          mkdir build
          cd build
 	 /home/ubuntu/.local/bin/conan install .. --build missing
