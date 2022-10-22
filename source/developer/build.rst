@@ -234,7 +234,6 @@ Software Requirements
       sudo apt-get update      
       sudo apt install -y cmake
       sudo apt install -y gcc g++ gfortran
-      sudo apt install -y tcl-dev tk-dev
       sudo apt install -y python3-pip
       sudo apt install -y liblapack-dev
       sudo apt install -y libopenmpi-dev
@@ -253,8 +252,7 @@ Software Requirements
       ./configure --prefix=/usr/local/hdf5
       make
       sudo make install
-
-#pip3 install conan
+      pip3 install conan
 
 .. warning::
 
@@ -269,14 +267,6 @@ You need to obtain the OpenSees source code from github. To obtain the source co
 
          git clone https://github.com/OpenSees/OpenSees.git
 
-.. note::
-
-   1. If you plan on contributing source code to the OpenSees effort, you should fork the OpenSees github repo and clone your own fork. To clone your own fork, replace OpenSees in above with your github username.
-
-      .. code::
-
-         git clone https://github.com/YOUR_USER_NAME/OpenSees.git
-
 Building the OpenSees Applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -288,7 +278,7 @@ With everything installed the build process is somehwat simple! Again from a ter
 	 git pull
          mkdir build
          cd build
-	 /home/ubuntu/.local/bin/conan install .. --build missing
+	 $HOME/.local/bin/conan install .. --build missing
 	 cmake .. -DMUMPS_DIR=$PWD/../../mumps/build -DOPENMPI=TRUE -DSCALAPACK_LIBRARIES="/usr/lib/x86_64-linux-gnu/libmkl_blacs_openmpi_lp64.so;/usr/lib/x86_64-linux-gnu/libscalapack-openmpi.so.2.1"
          cmake --build . --config Release --target OpenSees --parallel 4
          cmake --build . --config Release --target OpenSeesPy
@@ -312,7 +302,7 @@ With everything installed the build process is somehwat simple! Again from a ter
 	 python3
 	 import opensees
 	 import inspect
-	 inspect.getFile(opensees)
+	 inspect.getfile(opensees)
 
       You may of course want to give the existing file a new name with the **mv** command.
 		
