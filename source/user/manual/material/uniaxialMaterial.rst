@@ -102,6 +102,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/HystereticSmooth (Smooth hysteretic material)
       uniaxialMaterials/DowelType
       uniaxialMaterials/BoucWenInfill
+      uniaxialMaterials/CoulombDamper
 
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
