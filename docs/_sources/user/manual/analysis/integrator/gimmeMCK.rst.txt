@@ -1,3 +1,5 @@
+.. _gimmeMCK:
+
 GimmeMCK Command
 -------------------
 
@@ -66,7 +68,7 @@ Assembles A = m*M + c*C + kt*KT + ki*KI
       printA -file "C.txt"
 
 
-   1. **Python Code**
+   2. **Python Code**
 
    .. code-block:: python
 

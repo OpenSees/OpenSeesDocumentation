@@ -21,7 +21,7 @@ This command is used to construct an four-node tetrahedron element object, which
 This is the simplest possible continuum finite element for 3-D analysis. It's based on linear interpolation of nodal quantities, this means that the strain and stress field inside the element are constant. The single Gauss point results can be interpreted as constant within the element. Because of this, the element has a tendency to lock up when used for simulating bending. In the incompressible limit (caution for materials with :math:`\nu \rightarrow 0.5` or metal plasticity) this element will also lock up. Therefore, caution is warranted when using this element as un-careful mesh refinement might not guarantee a convergence to the mathematical solution or a fast-enough convergence rate. If possible, use a higher-order element like the :ref:`TenNodeTetrahedron`. 
 
 
-.. figure:: FourNodeTetrahedron.png
+.. figure:: FourNodeTetrahedron/FourNodeTetrahedron.png
 	:align: center
 	:figclass: align-center
 

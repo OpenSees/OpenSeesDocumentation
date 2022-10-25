@@ -29,7 +29,6 @@ integrator DisplacementControl 1 2 0.1; # displacement control algorithm seeking
 Theory
 =======
 
-
 If we write the governing finite element equation at :math:`t + \Delta t\` as:
 
 .. math::
@@ -42,7 +41,7 @@ where :math:`F(U_{t+\Delta t})\!` are the internal forces which are a function o
 
    K_{t+\Delta t}^{*i} \Delta U_{t+\Delta t}^{i+1} = \left ( \lambda^i_{t+\Delta t} + \Delta \lambda^i \right ) F^{ext} - F(U_{t+\Delta t})
 
-This equation represents n equations in <math> n+1</math> unknowns, and so an additional equation is needed to solve the equation. For displacement control, we introduce a new constraint equation in which in each analysis step we set to ensure that the displacement increment for the degree-of-freedom <math>\text{dof}</math> at the specified node is:
+This equation represents n equations in :math:`n+1`` unknowns, and so an additional equation is needed to solve the equation. For displacement control, we introduce a new constraint equation in which in each analysis step we set to ensure that the displacement increment for the degree-of-freedom <math>\text{dof}</math> at the specified node is:
 
 .. math::
 
@@ -51,7 +50,7 @@ This equation represents n equations in <math> n+1</math> unknowns, and so an ad
 MORE TO COME:
 
 
-In Displacement Control the <math>\Delta_U\text{dof}</math> set to <math>t + \lambda_{t+1}</math> where,
+In Displacement Control the :math:`\Delta_U\text{dof}` set to :math:`t + \lambda_{t+1}` where,
 
 
-<math> \Delta U_\text{dof}^{t+1} = \max \left ( \Delta U_{min}, \min \left ( \Delta U_\text{max}, \frac{\text{numIter}}{\text{lastNumIter}} \Delta U_\text{dof}^{t} \right ) \right ) </math>
+:math:`\Delta U_\text{dof}^{t+1} = \max \left ( \Delta U_{min}, \min \left ( \Delta U_\text{max}, \frac{\text{numIter}}{\text{lastNumIter}} \Delta U_\text{dof}^{t} \right ) \right )`
