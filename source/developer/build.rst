@@ -110,7 +110,7 @@ With everything installed the build process is somewhat simple! From a terminal 
 	 import inspect
 	 inspect.getfile(opensees)
 
-      You may of course want to give the existing file a new name with the **copy** command before you overwrite it just in case!
+      You may of course want to give the existing file a new name with the **copy** command before you overwrite it just in case! You can check the version of **opensees** installed by issuing :code: `opensees.version()` at the python command prompt above.
 		
    2. If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your **PYTHONPATH** env variables. Search for **env settings** in search bar lower left. Add a line to the PYTHONPATH variable with your location of the **bin** folder. If you do this, you also need to copy the python39.dll (or the python310.dll is that is what was used INTO the bin folder). This is because of a security feature with python versions above 3.8 and the dll search path they now use.
 
@@ -212,9 +212,9 @@ With everything installed the build process is somehwat simple! Again from a ter
 	 python3
 	 import opensees
 	 import inspect
-	 inspect.getFile(opensees)
+	 inspect.getfile(opensees)
 
-      You may of course want to give the existing file a new name with the **mv** command.
+      You may of course want to give the existing file a new name with the **mv** command. You can check the version of **opensees** installed by issuing :code: `opensees.version()` at the python command prompt above. 
 		
    2.2 If you have not installed openseespy or you want to load the .so you built instead of the installed one you can add the path to opensees.so to your **PYTHONPATH** env variables with export PYTHONPATH=$PWD or PYTHONPATH=$PWD:$PYTHONPATH depending on if PYTHONPATH exists when you type **env** in the terminal. NOTE: Using $PWD assumes you are in the directory containing the lib file, other put in the full path to the directory.
 
@@ -256,7 +256,7 @@ Software Requirements
 
 .. warning::
 
-   Read the output from the last command. When building **OpenSees** below you will use the conan executable just installed. If located in a different location to the path used below, you will get an error. Change the command below to path where conan was just installed.
+   Read the output from the last command. When building **OpenSees** below you will use the conan executable just installed, or find it using :code: `whereis conan` from the command line. If located in a different location to the path used below, you will get an error. Change the command below to path where conan was just installed.
 
 Obtaining the Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -284,7 +284,7 @@ With everything installed the build process is somehwat simple! Again from a ter
          cmake --build . --config Release --target OpenSeesPy
          cmake --build . --config Release --target OpenSeesMP
          cmake --build . --config Release --target OpenSeesSP
-	 mv ./OpenSeesPy.so ./opensees.so	 
+	 mv ./lib/OpenSeesPy.so ./opensees.so	 
 
 .. note::
 
@@ -304,7 +304,7 @@ With everything installed the build process is somehwat simple! Again from a ter
 	 import inspect
 	 inspect.getfile(opensees)
 
-      You may of course want to give the existing file a new name with the **mv** command.
+      You may of course want to give the existing file a new name with the **mv** command. You can check the version of **opensees** installed by issuing :code: `opensees.version()` at the python command prompt above.
 		
    2. If you have not installed openseespy or you want to load the .so you built instead of the installed one you can add the path to opensees.so to your **PYTHONPATH** env variables with export PYTHONPATH=$PWD or PYTHONPATH=$PWD:$PYTHONPATH depending on if PYTHONPATH exists when you type **env** in the terminal. NOTE: Using $PWD assumes you are in the directory containg the lib file.
 
