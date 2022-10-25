@@ -106,4 +106,4 @@ The following constructs a QzLiq material with tag **1**, soil type **2**, :math
 Code Developed by: `Sumeet Kumar Sinha <https://sumeetksinha.com/>`_, UC Davis 
 
 
-.. [SinhaEtAl2021] Sinha, S. K., Ziotopoulou, K., and Kutter, B. L. (2021). "Numerical Modeling of Liquefaction-Induced Downdrag: Validation against Centrifuge Model Tests." in Review.
+.. [SinhaEtAl2022] Sinha, S. K., Ziotopoulou, K., and Kutter, B. L. (2022). "Numerical Modeling of Liquefaction-Induced Downdrag: Validation against Centrifuge Model Tests." Journal of Geotechnical and Geoenvironmental Engineering, ASCE, 148(12): 04022111. https://doi.org/10.1061/(ASCE)GT.1943-5606.0002930
