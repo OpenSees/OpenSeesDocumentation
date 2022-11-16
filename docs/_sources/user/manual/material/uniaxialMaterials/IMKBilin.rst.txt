@@ -46,13 +46,13 @@ This command is used to construct a material with a hysteretic bilinear response
 
 	IMKBilin backbone curve
 
-.. figure:: figures/IMKBilin.jpg
+.. figure:: figures/IMK/IMKBilin.jpg
 	:align: center
 	:figclass: align-center
 
 	IMKBilin sample response
 
-.. figure:: figures/IMKBilin-sample response.jpg
+.. figure:: figures/IMK/IMKBilin_sample_response.jpg
 	:align: center
 	:figclass: align-center
 

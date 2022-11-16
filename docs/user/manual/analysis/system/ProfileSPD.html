@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.2.3.3. ProfileSPD System &mdash; OpenSees Documentation  documentation</title>
@@ -36,7 +35,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -121,7 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../analyze.html">3.2.8. analyze Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eigen.html">3.2.9. eigen Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../modalProperties.html">3.2.10. modalProperties Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../responseSpectrum.html">3.2.11. responseSpectrum Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../responseSpectrumAnalysis.html">3.2.11. responseSpectrumAnalysis Command</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
@@ -139,7 +137,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
@@ -214,8 +212,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="profilespd-system">
-<h1><span class="section-number">3.2.3.3. </span>ProfileSPD System<a class="headerlink" href="#profilespd-system" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="profilespd-system">
+<h1><span class="section-number">3.2.3.3. </span>ProfileSPD System<a class="headerlink" href="#profilespd-system" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a ProfileSPD linear system of equation object. As the name implies, this class is used for symmetric positive definite matrix systems. The matrix is stored as shown below in a 1 dimensional array with only those values below the first non-zero row in any column being stored. This is sometimes also referred to as a skyline storage scheme. The following command is used to construct such a system:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -264,7 +262,7 @@ A_{11} &amp; A_{12} &amp; A_{22} &amp; A_{23} &amp; A_{33} &amp; A_{44} &amp; A_
 </div>
 </div>
 <p>Code Developed by: <strong>fmk</strong></p>
-</section>
+</div>
 
 
            </div>
@@ -276,7 +274,7 @@ A_{11} &amp; A_{12} &amp; A_{22} &amp; A_{23} &amp; A_{33} &amp; A_{44} &amp; A_
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

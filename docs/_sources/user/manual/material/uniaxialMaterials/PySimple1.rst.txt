@@ -28,7 +28,7 @@ This command is used to construct a PySimple1 uniaxial material object:
 
    The viscous damping term (dashpot) on the far-field (elastic) component of the displacement rate (velocity). Nonzero $c values are used to represent radiation damping effects. See theory below.
 
-   In general the :ref:`hht` algorithm is preferred over a :ref:`newmark` algorithm when using this material. This is due to the numerical oscillations that can develop with viscous damping forces under transient loading with certain solution algorithms and damping ratios.
+   In general the :ref:`HilberHughesTaylorMethod` algorithm is preferred over a :ref:`newmark` algorithm when using this material. This is due to the numerical oscillations that can develop with viscous damping forces under transient loading with certain solution algorithms and damping ratios.
 
 
 The equations describing PySimple1 behavior are described in [BoulangerEtAl1999]_. Only minor changes have been made in its implementation for OpenSees.

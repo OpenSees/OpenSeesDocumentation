@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>3.2.10. modalProperties Command &mdash; OpenSees Documentation  documentation</title>
@@ -36,7 +35,6 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -45,7 +43,7 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.2.11. responseSpectrum Command" href="responseSpectrum.html" />
+    <link rel="next" title="3.2.11. responseSpectrumAnalysis Command" href="responseSpectrumAnalysis.html" />
     <link rel="prev" title="3.2.9. eigen Command" href="eigen.html" /> 
 </head>
 
@@ -114,7 +112,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#theory">3.2.10.1. Theory</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="responseSpectrum.html">3.2.11. responseSpectrum Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="responseSpectrumAnalysis.html">3.2.11. responseSpectrumAnalysis Command</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
@@ -132,7 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
@@ -205,8 +203,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="modalproperties-command">
-<span id="modalproperties"></span><h1><span class="section-number">3.2.10. </span>modalProperties Command<a class="headerlink" href="#modalproperties-command" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="modalproperties-command">
+<span id="modalproperties"></span><h1><span class="section-number">3.2.10. </span>modalProperties Command<a class="headerlink" href="#modalproperties-command" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">This command is used to compute the modal properties of a model after an <a class="reference internal" href="eigen.html#eigen"><span class="std std-ref">eigen Command</span></a>.</div>
 <div class="line">This command computes the following modal properties:</div>
@@ -265,15 +263,15 @@
 <ul class="simple">
 <li><p>This command can be used only if a previous call to <a class="reference internal" href="eigen.html#eigen"><span class="std std-ref">eigen Command</span></a> has been performed.</p></li>
 <li><p>This command has only optional arguments, and they can be given in any order. Note, however, that the only requirement is that the <strong>$reportFileName</strong> must follow the <strong>-file</strong> option if used.</p></li>
-<li><p>The modal properties are computed and stored in the <strong>Domain</strong> object, so that they can be accessed later in the <a class="reference internal" href="responseSpectrum.html#responsespectrum"><span class="std std-ref">responseSpectrum Command</span></a>.</p></li>
+<li><p>The modal properties are computed and stored in the <strong>Domain</strong> object, so that they can be accessed later in the <a class="reference internal" href="responseSpectrumAnalysis.html#responsespectrumanalysis"><span class="std std-ref">responseSpectrumAnalysis Command</span></a>.</p></li>
 <li><p>This command directly accesses the mass matrix of the model, so it accounts for both nodal masses and element’s (distributed) masses. And the element mass matrix can be either lumped or consistent.</p></li>
 <li><p>The global mass matrix is then stored into a temporary sparse matrix storage, so it can be used for both small and large models.</p></li>
 <li><p>This command can be used for both 2D problems (-ndm = 2, -ndf = 2 or 3) and 3D problems (-ndm = 3, -ndf = 3, 4 or 6). In both cases the algorithm computes rotational masses. If a node has rotational DOFs, the rotational masses account for both the direct rotational masses (i.e. those input by the user at rotational DOFs) and the effect of translational masses gyrating about the center of mass. If a node has no rotational DOF, only the latter is considered.</p></li>
 <li><p>Only the values in <span class="math notranslate nohighlight">\(gm\)</span> and <span class="math notranslate nohighlight">\(MPF\)</span> depend on the normalization of the eigenvectors. This normalization depends on the solver used in the <a class="reference internal" href="eigen.html#eigen"><span class="std std-ref">eigen Command</span></a>. The default -genBandArpack uses a mass-normalization, so that the <span class="math notranslate nohighlight">\(gm\)</span> is the identity. On the contrary, the -fullGenLapack uses a displacement-normalization, so that the largest component of the eigenvector is 1. If you use the -genBandArpack, but want a displacement-normalization of the eigenvectors, use the <strong>-unorm</strong> option.</p></li>
 </ul>
 </div>
-<section id="theory">
-<h2><span class="section-number">3.2.10.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="theory">
+<h2><span class="section-number">3.2.10.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line">The eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> and the eigenvectors <span class="math notranslate nohighlight">\(\Phi\)</span> can be obtained after solving the <em>generalized eigenvalue problem</em> for two symmetric matrices <span class="math notranslate nohighlight">\(K\)</span> (stiffness) and <span class="math notranslate nohighlight">\(M\)</span> (mass) given by:</div>
 </div>
@@ -384,7 +382,7 @@ e_6 \\
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">modalProperties</span><span class="p">(</span><span class="s1">&#39;-print&#39;</span><span class="p">,</span> <span class="s1">&#39;-file&#39;</span><span class="p">,</span> <span class="s1">&#39;ModalReport.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;-unorm&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>For a complete example that runs an <strong>eigenvalue analysis</strong>, extracts the <strong>modal properties</strong> and runs a <strong>response spectrum analysis</strong>, see the documentation of the <a class="reference internal" href="responseSpectrum.html#responsespectrum"><span class="std std-ref">responseSpectrum Command</span></a></p>
+<p>For a complete example that runs an <strong>eigenvalue analysis</strong>, extracts the <strong>modal properties</strong> and runs a <strong>response spectrum analysis</strong>, see the documentation of the <a class="reference internal" href="responseSpectrumAnalysis.html#responsespectrumanalysis"><span class="std std-ref">responseSpectrumAnalysis Command</span></a></p>
 </div>
 <div class="admonition-reportfile admonition">
 <p class="admonition-title">ReportFile</p>
@@ -500,8 +498,8 @@ e_6 \\
 </div>
 </div>
 <p>Code Developed by: <strong>Massimo Petracca</strong> at ASDEA Software, Italy</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -513,7 +511,7 @@ e_6 \\
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

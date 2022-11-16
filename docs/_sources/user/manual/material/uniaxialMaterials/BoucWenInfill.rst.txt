@@ -37,17 +37,17 @@ The model may reproduce either force-displacement or stress-strain relationships
 
 Parameters $deltak, $deltaf and $psi regulate respectively stiffness, strength degradation and the rate of stiffness degradation.
 
-.. figure:: figures/BoucWenInfill1.png
+.. figure:: figures/BoucWenInfill/BoucWenInfill1.png
 	:align: center
 	:figclass: align-center
 
 Parameters $Zs, $As and $epsp control the amount and activation of the pinching effect: 
 
-.. figure:: figures/BoucWenInfill2.png
+.. figure:: figures/BoucWenInfill/BoucWenInfill2.png
 	:align: center
 	:figclass: align-center
 
-.. figure:: figures/BoucWenInfill3.png
+.. figure:: figures/BoucWenInfill/BoucWenInfill3.png
 	:align: center
 	:figclass: align-center
 

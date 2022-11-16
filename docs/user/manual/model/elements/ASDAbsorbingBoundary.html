@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.3.18. ASDAbsorbingBoundary Element (2D and 3D) &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.8.18. ASDAbsorbingBoundary Element (2D and 3D) &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -36,7 +35,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -44,8 +42,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.3.19. RockingBC Element" href="RockingBC.html" />
-    <link rel="prev" title="3.1.3.17. ASDEmbeddedNode Element" href="ASDEmbeddedNodeElement.html" /> 
+    <link rel="next" title="3.1.8.19. RockingBC Element" href="RockingBC.html" />
+    <link rel="prev" title="3.1.8.17. ASDEmbeddedNode Element" href="ASDEmbeddedNodeElement.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,35 +96,39 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. Node Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.3. Element Command</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.3.1. ZeroLength Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.3.2. ZeroLength Section Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.3.3. ZeroLengthND Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.3.4. ZeroLengthContactASDimplex Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.3.5. Elastic Beam Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.3.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.3.7. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.3.8. Mixed Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.3.9. ASDShellQ4 Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.3.10. Quadrilateral Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.3.11. SSPquad Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.3.12. stdBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.3.13. bbarBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.3.14. SSPbrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.3.15. FourNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.3.16. TenNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.3.17. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.3.18. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.3.19. RockingBC Element</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.8. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.8.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.8.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.8.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.8.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.8.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.8.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.8.7. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.8.8. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.8.9. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.8.10. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.8.11. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.8.12. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.8.13. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.8.14. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.8.15. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.8.16. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.8.17. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.8.18. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.8.19. RockingBC Element</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.6. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.7. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.9. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.10. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.11. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
@@ -145,7 +147,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
@@ -197,11 +199,11 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-          <li><a href="../element.html"><span class="section-number">3.1.3. </span>Element Command</a> &raquo;</li>
+          <li><a href="../element.html"><span class="section-number">3.1.8. </span>Element Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.3.18. </span>ASDAbsorbingBoundary Element (2D and 3D)</li>
+      <li><span class="section-number">3.1.8.18. </span>ASDAbsorbingBoundary Element (2D and 3D)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -220,11 +222,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="asdabsorbingboundary-element-2d-and-3d">
-<span id="asdabsorbingboundary"></span><h1><span class="section-number">3.1.3.18. </span>ASDAbsorbingBoundary Element (2D and 3D)<a class="headerlink" href="#asdabsorbingboundary-element-2d-and-3d" title="Permalink to this heading">¶</a></h1>
-<figure class="align-center">
-<img alt="../../../../_images/ASDAbsorbingBoundary_Video.gif" src="../../../../_images/ASDAbsorbingBoundary_Video.gif" />
-</figure>
+  <div class="section" id="asdabsorbingboundary-element-2d-and-3d">
+<span id="asdabsorbingboundary"></span><h1><span class="section-number">3.1.8.18. </span>ASDAbsorbingBoundary Element (2D and 3D)<a class="headerlink" href="#asdabsorbingboundary-element-2d-and-3d" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure">
+<img alt="user/manual/model/elements/ASD/ASDAbsorbingBoundary_Video.gif" src="user/manual/model/elements/ASD/ASDAbsorbingBoundary_Video.gif" />
+</div>
 <div class="line-block">
 <div class="line">This command is used to construct an ASDAbsorbingBoundary2D or ASDAbsorbingBoundary3D  object.</div>
 <div class="line">The ASDAbsorbingBoundary2D is a 4-node quadrilateral element, while the ASDAbsorbingBoundary3D is a 8-node hexaedron element.</div>
@@ -307,8 +309,8 @@
 </tr>
 </tbody>
 </table>
-<section id="theory">
-<h2><span class="section-number">3.1.3.18.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="theory">
+<h2><span class="section-number">3.1.8.18.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line">When modelling a soil, only a portion of it is modelled, using artificial boundaries around it.
 Fixed conditions at these artificial boundaries are fine in static problems, but in dynamic problems they will reflect outgoing propagating waves.
@@ -325,24 +327,20 @@ For a detailed theory explanation, please refer to <a class="reference internal"
 <li><p><strong>T</strong>: The boundary tractions transferred from the Free-Field to the Soil domain, required to impose the free-field solution to the boundaries of the main model.</p></li>
 </ul>
 </div></blockquote>
-<figure class="align-center" id="id3">
-<img alt="../../../../_images/ASDAbsorbingBoundary_Theory.png" src="../../../../_images/ASDAbsorbingBoundary_Theory.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 3.1.3.15 </span><span class="caption-text">Sketch of the absorbing (macro) element in 2D problems.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="usage-notes">
-<h2><span class="section-number">3.1.3.18.2. </span>Usage Notes<a class="headerlink" href="#usage-notes" title="Permalink to this heading">¶</a></h2>
+<div class="align-center figure" id="id3">
+<img alt="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_Theory.png" src="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_Theory.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.8.15 </span><span class="caption-text">Sketch of the absorbing (macro) element in 2D problems.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="usage-notes">
+<h2><span class="section-number">3.1.8.18.2. </span>Usage Notes<a class="headerlink" href="#usage-notes" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-note-1 admonition">
 <p class="admonition-title">Note 1</p>
 <p>The element should have the standard node-numbering to ensure a proper positive jacobian.</p>
-<figure class="align-center" id="id4">
-<img alt="../../../../_images/ASDAbsorbingBoundary_Mesh.png" src="../../../../_images/ASDAbsorbingBoundary_Mesh.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 3.1.3.16 </span><span class="caption-text">Node numbering.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<div class="align-center figure" id="id4">
+<img alt="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_Mesh.png" src="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_Mesh.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.8.16 </span><span class="caption-text">Node numbering.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="admonition-note-2 admonition">
 <p class="admonition-title">Note 2</p>
@@ -361,12 +359,10 @@ It is a string made of a combination of characters. Each character describes a s
 <div class="line">For a 2D problem you can have the following valid combinations: <strong>B</strong>, <strong>L</strong>, <strong>R</strong>, <strong>BL</strong>, <strong>BR</strong></div>
 <div class="line">For a 3D problem you can have the following valid combinations: <strong>B</strong>, <strong>L</strong>, <strong>R</strong>, <strong>F</strong>, <strong>K</strong>, <strong>BL</strong>, <strong>BR</strong>, <strong>BF</strong>, <strong>BK</strong>, <strong>LF</strong>, <strong>LK</strong>, <strong>RF</strong>, <strong>RK</strong>, <strong>BLF</strong>, <strong>BLK</strong>, <strong>BRF</strong>, <strong>BRK</strong></div>
 </div>
-<figure class="align-center" id="id5">
-<img alt="../../../../_images/ASDAbsorbingBoundary_btype.png" src="../../../../_images/ASDAbsorbingBoundary_btype.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 3.1.3.17 </span><span class="caption-text">Exploded-view: Boundary Type Codes for 2D (left) and 3D (right) problems.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<div class="align-center figure" id="id5">
+<img alt="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_btype.png" src="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_btype.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.8.17 </span><span class="caption-text">Exploded-view: Boundary Type Codes for 2D (left) and 3D (right) problems.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="admonition-note-3 admonition">
 <p class="admonition-title">Note 3</p>
@@ -385,12 +381,10 @@ It is a string made of a combination of characters. Each character describes a s
 <li><p>The bottom side of the main model should have an outward normal vector that points in the negative global Z direction.</p></li>
 <li><p>In 3D models the sides L (left),R (right),F (front) and K (back) may have some natural distortion due to the topography. This is supported by the boundary element, but when the distortion along the Z direction is too large, the results can slightly deteriorate.</p></li>
 </ul>
-<figure class="align-center" id="id6">
-<img alt="../../../../_images/ASDAbsorbingBoundary_distortion.png" src="../../../../_images/ASDAbsorbingBoundary_distortion.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 3.1.3.18 </span><span class="caption-text">Exploded-view: Effects of Z-distortion in 3D problems.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<div class="align-center figure" id="id6">
+<img alt="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_distortion.png" src="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_distortion.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.8.18 </span><span class="caption-text">Exploded-view: Effects of Z-distortion in 3D problems.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
@@ -403,9 +397,9 @@ It is a string made of a combination of characters. Each character describes a s
 <div class="line">This is the expected output: The blue line is the acceleration recorded at the base of the model. Point <strong>A</strong> and <strong>B</strong> represent respectively the wave entering the domain and the same wave exiting the domain after being reflected
 by the free surface. Their peak value should be exactly 1g. The purple line is the acceleration recorded at the top of the model (on the free surface). Point <strong>C</strong> represents the wave hitting the free-surface. Its peak value should be exactly 2g.</div>
 </div>
-<figure class="align-center">
-<img alt="../../../../_images/ASDAbsorbingBoundary_result.png" src="../../../../_images/ASDAbsorbingBoundary_result.png" />
-</figure>
+<div class="align-center figure">
+<img alt="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_result.png" src="user/manual/model/elements/ASD_Absorbing/ASDAbsorbingBoundary_result.png" />
+</div>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># ===================================================</span>
 <span class="c"># User parameters</span>
 <span class="c"># ===================================================</span>
@@ -550,8 +544,8 @@ by the free surface. Their peak value should be exactly 1g. The purple line is t
 </div>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -563,7 +557,7 @@ by the free surface. Their peak value should be exactly 1g. The purple line is t
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

@@ -1,6 +1,6 @@
 .. _node:
 
-Node Command
+node Command
 ************
 
 This command is used to construct a Node object. It assigns coordinates and masses to the Node object. The assignment of mass is optional.

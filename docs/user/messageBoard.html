@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>5. Questions, Bugs &amp; Feature Requests &mdash; OpenSees Documentation  documentation</title>
@@ -36,7 +35,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -99,7 +97,10 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userManual.html">3. Command Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userExamples.html">4. Examples</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Questions, Bugs &amp; Feature Requests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#frequently-asked-question">5.1. Frequently Asked Question</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/license.html">6. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
@@ -108,7 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/issues.html">6. Issues</a></li>
 </ul>
 
@@ -177,10 +178,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="questions-bugs-feature-requests">
-<span id="messageboard"></span><h1><span class="section-number">5. </span>Questions, Bugs &amp; Feature Requests<a class="headerlink" href="#questions-bugs-feature-requests" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="questions-bugs-feature-requests">
+<span id="messageboard"></span><h1><span class="section-number">5. </span>Questions, Bugs &amp; Feature Requests<a class="headerlink" href="#questions-bugs-feature-requests" title="Permalink to this headline">¶</a></h1>
 <p>If you have any bugs, feature requests, or questions about how to install or use the application please post on the <a class="reference external" href="https://opensees.berkeley.edu/community/index.php">OpenSees Message Board</a>.</p>
-</section>
+<div class="section" id="frequently-asked-question">
+<h2><span class="section-number">5.1. </span>Frequently Asked Question<a class="headerlink" href="#frequently-asked-question" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic">
+<li><p>My Recorder does not contain after analysis is completed.</p>
+<blockquote>
+<div><p>By default, recorder will write to file after the wipe (Python: ops.wipe() ) command is called unless the default is overridden.</p>
+</div></blockquote>
+</li>
+<li><p>What is the Unit for OpenSees?</p>
+<blockquote>
+<div><p>OpenSees has no unit, please use a consistent input-units for your input.</p>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
 
 
            </div>
@@ -192,7 +210,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

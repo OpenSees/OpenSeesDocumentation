@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4.3. section Command &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.7. section Command &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -36,7 +35,6 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -44,8 +42,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.4.4. Material Testing Commands" href="matTestCommands.html" />
-    <link rel="prev" title="3.4.2.12. SANISAND-MS Material" href="ndMaterials/SAniSandMS.html" /> 
+    <link rel="next" title="3.1.7.1. ElasticSection" href="section/ElasticSection.html" />
+    <link rel="prev" title="3.1.6.13. Orthotropic Material Wrapper" href="ndMaterials/Orthotropic.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,16 +96,26 @@
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="uniaxialMaterial.html">3.4.1. uniaxialMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ndMaterial.html">3.4.2. nDMaterial Command</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.3. section Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="matTestCommands.html">3.4.4. Material Testing Commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.7. section Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="section/ElasticSection.html">3.1.7.1. ElasticSection</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../model/element.html">3.1.8. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/timeSeries.html">3.1.9. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/pattern.html">3.1.10. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/damping.html">3.1.11. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </li>
@@ -121,7 +129,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
@@ -173,9 +181,9 @@
         
           <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
+          <li><a href="../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-      <li><span class="section-number">3.4.3. </span>section Command</li>
+      <li><span class="section-number">3.1.7. </span>section Command</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -194,8 +202,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="section-command">
-<span id="section"></span><h1><span class="section-number">3.4.3. </span>section Command<a class="headerlink" href="#section-command" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="section-command">
+<span id="section"></span><h1><span class="section-number">3.1.7. </span>section Command<a class="headerlink" href="#section-command" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a SectionForceDeformation object, hereto referred to as Section, which represents force-deformation (or resultant stress-strain) relationships at beam-column and plate sample points.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -235,19 +243,12 @@
 <p>The valid queries to any section when creating an ElementRecorder are ‘force’, and ‘deformation’. Some sections have additional queries to which they will respond. These are documented in the NOTES section for those sections.</p>
 </div>
 <p>The following contain information about secType? and the args required for each of the available section types:</p>
-<p>Elastic Section
-Fiber Section
-NDFiber Section
-Wide Flange Section
-RC Section
-Parallel Section
-Section Aggregator
-Uniaxial Section
-Elastic Membrane Plate Section
-Plate Fiber Section
-Bidirectional Section
-Isolator2spring Section</p>
-</section>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="section/ElasticSection.html">3.1.7.1. ElasticSection</a></li>
+</ul>
+</div>
+</div>
 
 
            </div>
@@ -259,7 +260,7 @@ Isolator2spring Section</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

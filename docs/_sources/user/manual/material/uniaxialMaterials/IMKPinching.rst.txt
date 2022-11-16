@@ -50,13 +50,13 @@ This command is used to construct a material with a pinched hysteretic response 
 
 	IMKPinching backbone curve
 
-.. figure:: figures/IMKPinching.jpg
+.. figure:: figures/IMK/IMKPinching.jpg
 	:align: center
 	:figclass: align-center
 
 	IMKPinching sample responses and validations
 
-.. figure:: figures/IMKPinching-sample responses & validations.jpg
+.. figure:: figures/IMK/IMKPinching_sample_responses_validations.jpg
 	:align: center
 	:figclass: align-center
 
@@ -84,5 +84,7 @@ This command is used to construct a material with a pinched hysteretic response 
 
       uniaxialMaterial IMKPinching 1 $Ke $as $as $My -$My $lambda $lambda $lambda $lambda 1 1 1 1 1 1 $kappaF $kappaD;
 
+For code inquires or bug reporting, please contact: 
+- Kazuki Ichinohe, University of Tokyo, e-mail: z-ichinohe@g.ecc.u-tokyo.ac.jp
+- Ahmed Elkady, University of Southampton, e-mail: a.elkady@soton.ac.uk
 
-Code Developed by: |aelkady|

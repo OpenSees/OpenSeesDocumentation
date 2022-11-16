@@ -51,7 +51,7 @@ For Windows 10 the user must have the following applications installed on their 
 	 cd mumps
          mkdir build
          cd build
-         cmake .. -Darith=d
+         cmake .. -Darith=d -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreaded" -G Ninja
          cmake --build . --config Release --parallel 4
          cd ..\..
 	 pip install conan
@@ -77,7 +77,7 @@ To obtain the source code, from a terminal **cd** to the directory you want to p
 Building the OpenSees Applications and Python module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-With everything installed the build process is somewhat simple! From a terminal type the following:
+With everything installed the build process is somewhat simple! From a terminal window move to the folder that contains the OpenSees folder and issue the following:
 
       .. code::
 	 
@@ -86,19 +86,19 @@ With everything installed the build process is somewhat simple! From a terminal 
 	 git pull
          mkdir build
          cd build
-	 conan install .. --build missing
-         cmake .. -DCMAKE_C_COMPILER=icc -DCMAKE_CXX_COMPILER=icpc -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64 -DMUMPS_DIR="..\..\mumps\build"
+	 conan install .. --build missing --compiler.runtime="MT"
+         cmake .. -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64 -DMUMPS_DIR="..\..\mumps\build"
          cmake --build . --config Release --target OpenSees --parallel 4
          cmake --build . --config Release --target OpenSeesPy
          cmake --build . --config Release --target OpenSeesMP
          cmake --build . --config Release --target OpenSeesSP
-	 cd Release
+	 cd bin
 	 copy OpenSeesPy.dll opensees.pyd	 
 
 .. note::
 
    #. The --parallel option is used to compile the code in parallel. Change the **4** to how many cores is at your disposal.
-   #. The above assumes OpenSees and mumps are located in the same folder.
+   #. The above assumes the OpenSees and mumps folders are located in the same folder.
    #. This last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named **opensees.pyd**. To import this module in a python script you can do one of 2 things:
 
    1. If you have used pip to install openseespy, you can replace the opensees.pyd file in the site_package location with the opensees.pyd above. To find the location of this module, use the following:
@@ -116,6 +116,14 @@ With everything installed the build process is somewhat simple! From a terminal 
 
    3. Please note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of **cmake ..** for the python library used.
 
+   4. **conan install .. -build missing** may fail. If you have installed it before, you may neeed to issue the command *pip install conan --upgrade**. If not, try installing the latest using the following commands issued at a terminal
+      
+      .. code::
+
+	 git clone https://github.com/conan-io/conan.git conan-io
+	 cd conan-io
+	 pip install -e .
+      
    
 MacOS
 *****
@@ -151,7 +159,6 @@ For MacOS the user must have the following applications installed on their compu
       
       brew install cmake
       brew install gcc
-      brew install hdf5      
       brew install open-mpi
       brew install scalapack
       brew install python@3.9

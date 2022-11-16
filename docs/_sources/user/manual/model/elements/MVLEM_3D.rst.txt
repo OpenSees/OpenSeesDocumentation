@@ -16,7 +16,7 @@ The MVLEM_3D model (Figure 1a) is a three-dimensional four-node element with 24 
 
 This element shall be used in Domain defined with **-ndm 3 -ndf 6**.
 
-.. figure:: MVLEM_3D_formulation.jpg
+.. figure:: figures/MVLEM/MVLEM_3D_formulation.jpg
 	:align: center
 	:figclass: align-center
 
@@ -73,13 +73,13 @@ Example
 
 Specimen TUB (Beyer et al. 2008) is analyzed using the MVLEM_3D. Figure 2a shows the photo of the test specimen and the multidirectional displacement pattern applied at the top of the wall, while Figure 2b-c show the MVLEM_3D model of specimen TUB. Tcl Input files can be downloaded from `MVLEM-3D GitHub Page <https://github.com/kkolozvari/MVLEM-3D>`_.
 
-.. figure:: MVLEM_3D_TUB_model.jpg
+.. figure:: figures/MVLEM/MVLEM_3D_TUB_model.jpg
 	:align: center
 	:figclass: align-center
 
 	**Figure 2: MVLEM_3D Model of Specimen TUB**
 
-.. figure:: MVLEM_3D_TUB_animation.gif
+.. figure:: figures/MVLEM/MVLEM_3D_TUB_animation.gif
 	:align: center
 	:figclass: align-center
 
@@ -87,7 +87,7 @@ Specimen TUB (Beyer et al. 2008) is analyzed using the MVLEM_3D. Figure 2a shows
 
 Figure 4 compares experimentally measured and analytically predicted load deformation behavior of the specimen TUB in E-W, N-S, and diagonal loading directions. The model provides accurate predictions of the lateral load capacity and the stiffness under cyclic loading in loading directions parallel to the principal axes of the cross-section (E-W, N-S direction). Analysis results overestimate the lateral load capacity in diagonal loading directions due to plane-sections-remain-plane assumption implemented in the model formulation that cannot capture pronounced shear lag effect observed in the test specimen. 
 
-.. figure:: MVLEM_3D_TUB_results.JPG
+.. figure:: figures/MVLEM/MVLEM_3D_TUB_results.JPG
 	:align: center
 	:figclass: align-center
 
