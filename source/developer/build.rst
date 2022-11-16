@@ -92,14 +92,16 @@ With everything installed the build process is somewhat simple! From a terminal 
          cmake --build . --config Release --target OpenSeesPy
          cmake --build . --config Release --target OpenSeesMP
          cmake --build . --config Release --target OpenSeesSP
-	 cd bin
+	 cd lib
 	 copy OpenSeesPy.dll opensees.pyd	 
 
+When completed the executables (OpenSees, OpenSeesMP, and OpenSeesMP) are located in the build/bin folder and the python module (opensees.pyd) is located in the build/lib folder.
+	 
 .. note::
 
    #. The --parallel option is used to compile the code in parallel. Change the **4** to how many cores is at your disposal.
    #. The above assumes the OpenSees and mumps folders are located in the same folder.
-   #. This last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named **opensees.pyd**. To import this module in a python script you can do one of 2 things:
+   #. The last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named **opensees.pyd**. To import this module in a python script you can do one of 2 things:
 
    1. If you have used pip to install openseespy, you can replace the opensees.pyd file in the site_package location with the opensees.pyd above. To find the location of this module, use the following:
 
