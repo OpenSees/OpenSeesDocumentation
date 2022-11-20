@@ -24,7 +24,7 @@ This command is used to construct the uniaxial HystereticPoly material producing
    Determination of constitutive parameters is quite intuitive and is reported below, although, their identification can be performed by the strategy formulated in [SessaEtAl2020]_ implemented in the freeware available `here <http://bit.ly/35F5x7Q>`_.
    
    
-The equations describing HystereticPoly behavior are described in [VaianaEtAl2019]_. Only minor changes have been made in its implementation for OpenSees.
+The original formulation of HystereticPoly is reported in [VaianaEtAl2019]_. Minor changes have been made in its implementation for OpenSees and make reference to the enhanced formulation reported in [SessaEtAl2022]_ and [Sessa2022]_.
 
 The model may reproduce either force-displacement or stress-strain relationships. It is formulated by means of two asymptotic lines (blue) linked by transition curves (red):
 
@@ -77,5 +77,7 @@ Code Developed by: `Salvatore Sessa <https://www.docenti.unina.it/salvatore.sess
 
 .. [SessaEtAl2020] Sessa, S., Vaiana, N., Paradiso, M. and Rosati, L. (2020). "An inverse identification strategy for the mechanical parameters of a phenomenological hysteretic constitutive model.", Mechanical Systems and Signal Processing, 139: 106622. `DOI: https://doi.org/10.1016/j.ymssp.2020.106622 <https://doi.org/10.1016/j.ymssp.2020.106622>`_
 
+.. [SessaEtAl2022] Sessa, S., Vaiana, N., Paradiso, M. and Rosati, L. (2022). "Thermodynamic Compatibility of the HystereticPoly Uniaxial Material Implemented in OpenSees.", Advanced Structured Materials, 175: 565 - 580. `DOI: https://doi.org/10.1007/978-3-031-04548-6_27 <https://doi.org/10.1007/978-3-031-04548-6_27>`_
 
+.. [Sessa2022] Sessa, S. (2022). "Thermodynamic compatibility conditions of a new class of hysteretic materials.", Continuum Mechanics and Thermodynamics, 34(1): 61 - 79. `DOI: https://doi.org/10.1007/s00161-021-01044-w <https://doi.org/10.1007/s00161-021-01044-w>`_
 
