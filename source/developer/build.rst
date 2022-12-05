@@ -86,7 +86,7 @@ With everything installed the build process is somewhat simple! From a terminal 
 	 git pull
          mkdir build
          cd build
-	 conan install .. --build missing --compiler.runtime="MT"
+	 conan install .. --build missing --settings compiler.runtime="MT"
          cmake .. -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64 -DMUMPS_DIR="..\..\mumps\build"
          cmake --build . --config Release --target OpenSees --parallel 4
          cmake --build . --config Release --target OpenSeesPy
@@ -118,7 +118,7 @@ When completed the executables (OpenSees, OpenSeesMP, and OpenSeesMP) are locate
 
    3. Please note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of **cmake ..** for the python library used.
 
-   4. **conan install .. -build missing** may fail. If you have installed it before, you may neeed to issue the command *pip install conan --upgrade**. If not, try installing the latest using the following commands issued at a terminal
+   4. **conan install .. -build missing** may fail. If it is related to a **zlib** mismatch error see below. If something else and you had installed conan before, it may be related to the version ypu are using. First try installing the latest  by issuing  *pip install conan --upgrade**. Ty the build again. If it fails (and again it does not issue a warning about a zlib mismatch) try installing the bleeding head latest using the following commands issued at a terminal
       
       .. code::
 
@@ -126,7 +126,11 @@ When completed the executables (OpenSees, OpenSeesMP, and OpenSeesMP) are locate
 	 cd conan-io
 	 pip install -e .
       
-   
+   5. The **conan install .. --build missing** step may fail due to a **zlib mismatch**. This is due to fact that the **hdf5** and **tcl** packages used to build OpenSees both rely on **zlib** and the hdf5 group are more apt to update their package to the lastest zlib package than the tcl group. This sometimes results in the **conan** step failing. There is a fix, but it requires you do edit a file in the **tcl** package!
+
+      In your home directory there is a **.conan** folder and in that folder there are some more folders. You need to edit the file **conanfile.py** in the folder **$HOME/.conan/data/tcl/8.6.10/_/_/export**. Change line **51** to use the same zlib as the hdf5 package, currently zlib 1.2.13, i.e. line 51 should now read **self.requires("zlib/1.2.13")**. Now go back to OpenSees/build folder and try again. 
+
+
 MacOS
 *****
 
@@ -319,3 +323,6 @@ With everything installed the build process is somehwat simple! Again from a ter
 
    3. Finally please note you will get a segmentation fault if you run with a different python exe than the one you build with. Look in output of **cmake ..** for the python library used.
 
+   4. The **conan install .. --build missing** step may fail. This is due to fact that the **hdf5** and **tcl** packages used to build OpenSees both rely on **zlib** and the hdf5 group are more apt to update their package to the lastest zlib package than the tcl group. This sometimes results in the **conan** step failing. There is a fix, but it requires you do edit a file in the **tcl** package!
+
+      In your home directory there is a **.conan** folder and in that folder there are some more folders. You need to edit the file **conanfile.py** in the folder **$HOME/.conan/data/tcl/8.6.10/_/_/export**. Change line **51** to use the same zlib as the hdf5 package, currently zlib 1.2.13, i.e. self.requires("zlib/1.2.13"). Now go back to OpenSees/build folder and try again. 
