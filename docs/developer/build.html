@@ -280,23 +280,24 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 <span class="n">git</span> <span class="n">pull</span>
 <span class="n">mkdir</span> <span class="n">build</span>
 <span class="n">cd</span> <span class="n">build</span>
-<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span> <span class="o">--</span><span class="n">compiler</span><span class="o">.</span><span class="n">runtime</span><span class="o">=</span><span class="s2">&quot;MT&quot;</span>
+<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span> <span class="o">--</span><span class="n">settings</span> <span class="n">compiler</span><span class="o">.</span><span class="n">runtime</span><span class="o">=</span><span class="s2">&quot;MT&quot;</span>
 <span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DBLA_STATIC</span><span class="o">=</span><span class="n">ON</span> <span class="o">-</span><span class="n">DMKL_LINK</span><span class="o">=</span><span class="n">static</span> <span class="o">-</span><span class="n">DMKL_INTERFACE_FULL</span><span class="o">=</span><span class="n">intel_lp64</span> <span class="o">-</span><span class="n">DMUMPS_DIR</span><span class="o">=</span><span class="s2">&quot;..\..\mumps</span><span class="se">\b</span><span class="s2">uild&quot;</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSees</span> <span class="o">--</span><span class="n">parallel</span> <span class="mi">4</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSeesPy</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSeesMP</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">target</span> <span class="n">OpenSeesSP</span>
-<span class="n">cd</span> <span class="nb">bin</span>
+<span class="n">cd</span> <span class="n">lib</span>
 <span class="n">copy</span> <span class="n">OpenSeesPy</span><span class="o">.</span><span class="n">dll</span> <span class="n">opensees</span><span class="o">.</span><span class="n">pyd</span>
 </pre></div>
 </div>
 </div></blockquote>
+<p>When completed the executables (OpenSees, OpenSeesMP, and OpenSeesMP) are located in the build/bin folder and the python module (opensees.pyd) is located in the build/lib folder.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
 <li><p>The –parallel option is used to compile the code in parallel. Change the <strong>4</strong> to how many cores is at your disposal.</p></li>
 <li><p>The above assumes the OpenSees and mumps folders are located in the same folder.</p></li>
-<li><p>This last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named <strong>opensees.pyd</strong>. To import this module in a python script you can do one of 2 things:</p></li>
+<li><p>The last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named <strong>opensees.pyd</strong>. To import this module in a python script you can do one of 2 things:</p></li>
 </ol>
 <ol class="arabic">
 <li><p>If you have used pip to install openseespy, you can replace the opensees.pyd file in the site_package location with the opensees.pyd above. To find the location of this module, use the following:</p>
@@ -310,12 +311,15 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </li>
 <li><p>If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your <strong>PYTHONPATH</strong> env variables. Search for <strong>env settings</strong> in search bar lower left. Add a line to the PYTHONPATH variable with your location of the <strong>bin</strong> folder. If you do this, you also need to copy the python39.dll (or the python310.dll is that is what was used INTO the bin folder). This is because of a security feature with python versions above 3.8 and the dll search path they now use.</p></li>
 <li><p>Please note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of <strong>cmake ..</strong> for the python library used.</p></li>
-<li><p><strong>conan install .. -build missing</strong> may fail. If you have installed it before, you may neeed to issue the command <em>pip install conan –upgrade*</em>. If not, try installing the latest using the following commands issued at a terminal</p>
+<li><p><strong>conan install .. -build missing</strong> may fail. If it is related to a <strong>zlib</strong> mismatch error see below. If something else and you had installed conan before, it may be related to the version ypu are using. First try installing the latest  by issuing  <em>pip install conan –upgrade*</em>. Ty the build again. If it fails (and again it does not issue a warning about a zlib mismatch) try installing the bleeding head latest using the following commands issued at a terminal</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">-</span><span class="n">io</span><span class="o">/</span><span class="n">conan</span><span class="o">.</span><span class="n">git</span> <span class="n">conan</span><span class="o">-</span><span class="n">io</span>
 <span class="n">cd</span> <span class="n">conan</span><span class="o">-</span><span class="n">io</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
 </pre></div>
 </div>
+</li>
+<li><p>The <strong>conan install .. –build missing</strong> step may fail due to a <strong>zlib mismatch</strong>. This is due to fact that the <strong>hdf5</strong> and <strong>tcl</strong> packages used to build OpenSees both rely on <strong>zlib</strong> and the hdf5 group are more apt to update their package to the lastest zlib package than the tcl group. This sometimes results in the <strong>conan</strong> step failing. There is a fix, but it requires you do edit a file in the <strong>tcl</strong> package!</p>
+<p>In your home directory there is a <strong>.conan</strong> folder and in that folder there are some more folders. You need to edit the file <strong>conanfile.py</strong> in the folder <strong>$HOME/.conan/data/tcl/8.6.10/_/_/export</strong>. Change line <strong>51</strong> to use the same zlib as the hdf5 package, currently zlib 1.2.13, i.e. line 51 should now read <strong>self.requires(“zlib/1.2.13”)</strong>. Now go back to OpenSees/build folder and try again.</p>
 </li>
 </ol>
 </div>
@@ -509,6 +513,9 @@ mv ./lib/OpenSeesPy.so ./opensees.so
 </li>
 <li><p>If you have not installed openseespy or you want to load the .so you built instead of the installed one you can add the path to opensees.so to your <strong>PYTHONPATH</strong> env variables with export PYTHONPATH=$PWD or PYTHONPATH=$PWD:$PYTHONPATH depending on if PYTHONPATH exists when you type <strong>env</strong> in the terminal. NOTE: Using $PWD assumes you are in the directory containg the lib file.</p></li>
 <li><p>Finally please note you will get a segmentation fault if you run with a different python exe than the one you build with. Look in output of <strong>cmake ..</strong> for the python library used.</p></li>
+<li><p>The <strong>conan install .. –build missing</strong> step may fail. This is due to fact that the <strong>hdf5</strong> and <strong>tcl</strong> packages used to build OpenSees both rely on <strong>zlib</strong> and the hdf5 group are more apt to update their package to the lastest zlib package than the tcl group. This sometimes results in the <strong>conan</strong> step failing. There is a fix, but it requires you do edit a file in the <strong>tcl</strong> package!</p>
+<p>In your home directory there is a <strong>.conan</strong> folder and in that folder there are some more folders. You need to edit the file <strong>conanfile.py</strong> in the folder <strong>$HOME/.conan/data/tcl/8.6.10/_/_/export</strong>. Change line <strong>51</strong> to use the same zlib as the hdf5 package, currently zlib 1.2.13, i.e. self.requires(“zlib/1.2.13”). Now go back to OpenSees/build folder and try again.</p>
+</li>
 </ol>
 </div>
 </div>

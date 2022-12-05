@@ -97,9 +97,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a><ul class="current">
@@ -124,12 +124,13 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.18. HystereticPoly Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.19. DowelType Timber Joint Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.20. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.21. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.22. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.23. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.24. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.25. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.26. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.21. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.22. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.23. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.24. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.25. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.26. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.27. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
@@ -208,7 +209,7 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
           <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
         
@@ -286,10 +287,10 @@
 <p class="admonition-title">Note</p>
 <p>Determination of constitutive parameters is quite intuitive and is reported below, although, their identification can be performed by the strategy formulated in <a class="reference internal" href="#sessaetal2020" id="id1"><span>[SessaEtAl2020]</span></a> implemented in the freeware available <a class="reference external" href="http://bit.ly/35F5x7Q">here</a>.</p>
 </div>
-<p>The equations describing HystereticPoly behavior are described in <a class="reference internal" href="#vaianaetal2019" id="id2"><span>[VaianaEtAl2019]</span></a>. Only minor changes have been made in its implementation for OpenSees.</p>
+<p>The original formulation of HystereticPoly is reported in <a class="reference internal" href="#vaianaetal2019" id="id2"><span>[VaianaEtAl2019]</span></a>. Minor changes have been made in its implementation for OpenSees and make reference to the enhanced formulation reported in <a class="reference internal" href="#sessaetal2022" id="id3"><span>[SessaEtAl2022]</span></a> and <a class="reference internal" href="#sessa2022" id="id4"><span>[Sessa2022]</span></a>.</p>
 <p>The model may reproduce either force-displacement or stress-strain relationships. It is formulated by means of two asymptotic lines (blue) linked by transition curves (red):</p>
 <div class="align-center figure">
-<img alt="../../../../_images/HystereticPoly01.gif" src="../../../../_images/HystereticPoly01.gif" />
+<img alt="user/manual/material/uniaxialMaterials/figures/HystereticPoly01.gif" src="user/manual/material/uniaxialMaterials/figures/HystereticPoly01.gif" />
 </div>
 <p>Parameter $alpha governs the transition between such curves so that:</p>
 <p><span class="math notranslate nohighlight">\(u_0=\frac{1}{2}\left[\left(\frac{k_a-k_b}{\delta}\right)^{1/\alpha}-1\right]\)</span></p>
@@ -297,11 +298,11 @@
 <p>Where <span class="math notranslate nohighlight">\(\bar{f}\)</span> is the value at which the asymptotic line crosses the vertical axis and <span class="math notranslate nohighlight">\(2u_0\)</span> is the generalized displacement for which the transition curve reaches the asymptotic line.</p>
 <p>In general, $alpha= <span class="math notranslate nohighlight">\(\alpha\)</span> influences the amplitude of the loop:</p>
 <div class="align-center figure">
-<img alt="../../../../_images/HystereticPoly02.gif" src="../../../../_images/HystereticPoly02.gif" />
+<img alt="user/manual/material/uniaxialMaterials/figures/HystereticPoly02.gif" src="user/manual/material/uniaxialMaterials/figures/HystereticPoly02.gif" />
 </div>
 <p>while parameters $beta1 and $beta2 modify the shape of the loop:</p>
 <div class="align-center figure">
-<img alt="../../../../_images/HystereticPoly03.gif" src="../../../../_images/HystereticPoly03.gif" />
+<img alt="user/manual/material/uniaxialMaterials/figures/HystereticPoly03.gif" src="user/manual/material/uniaxialMaterials/figures/HystereticPoly03.gif" />
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
@@ -326,6 +327,12 @@
 </dd>
 <dt class="label" id="sessaetal2020"><span class="brackets"><a class="fn-backref" href="#id1">SessaEtAl2020</a></span></dt>
 <dd><p>Sessa, S., Vaiana, N., Paradiso, M. and Rosati, L. (2020). “An inverse identification strategy for the mechanical parameters of a phenomenological hysteretic constitutive model.”, Mechanical Systems and Signal Processing, 139: 106622. <a class="reference external" href="https://doi.org/10.1016/j.ymssp.2020.106622">DOI: https://doi.org/10.1016/j.ymssp.2020.106622</a></p>
+</dd>
+<dt class="label" id="sessaetal2022"><span class="brackets"><a class="fn-backref" href="#id3">SessaEtAl2022</a></span></dt>
+<dd><p>Sessa, S., Vaiana, N., Paradiso, M. and Rosati, L. (2022). “Thermodynamic Compatibility of the HystereticPoly Uniaxial Material Implemented in OpenSees.”, Advanced Structured Materials, 175: 565 - 580. <a class="reference external" href="https://doi.org/10.1007/978-3-031-04548-6_27">DOI: https://doi.org/10.1007/978-3-031-04548-6_27</a></p>
+</dd>
+<dt class="label" id="sessa2022"><span class="brackets"><a class="fn-backref" href="#id4">Sessa2022</a></span></dt>
+<dd><p>Sessa, S. (2022). “Thermodynamic compatibility conditions of a new class of hysteretic materials.”, Continuum Mechanics and Thermodynamics, 34(1): 61 - 79. <a class="reference external" href="https://doi.org/10.1007/s00161-021-01044-w">DOI: https://doi.org/10.1007/s00161-021-01044-w</a></p>
 </dd>
 </dl>
 </div>

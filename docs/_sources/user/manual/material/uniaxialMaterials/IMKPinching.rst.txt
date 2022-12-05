@@ -6,7 +6,7 @@ IMKPinching Material
 
 This command is used to construct a material with a pinched hysteretic response based on the modified Ibarra-Medina-Krawinkler deterioration model.
 
-.. function:: uniaxialMaterial IMKPinching $Mat_Tag $Ke $Up_pos $Upc_pos $Uu_pos $Fy_pos $FmaxFy_pos $FresFy_pos $Up_neg $Upc_neg $Uu_neg $Fy_neg $FmaxFy_neg $FresFy_neg $Lamda_S $Lamda_C $Lamda_A $Lamda_K $c_S $c_C $c_A $c_K $D_pos $D_neg $kappaF $kappaD
+.. function:: uniaxialMaterial IMKPinching $Mat_Tag $Ke $dp_pos $dpc_pos $du_pos $Fy_pos $FmaxFy_pos $FresFy_pos $dp_neg $dpc_neg $du_neg $Fy_neg $FmaxFy_neg $FresFy_neg $Lamda_S $Lamda_C $Lamda_A $Lamda_K $c_S $c_C $c_A $c_K $D_pos $D_neg $kappaF $kappaD
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -68,21 +68,23 @@ This command is used to construct a material with a pinched hysteretic response 
 
    .. code-block:: tcl
 
-      set Ke 		100000.0;
-      set My 		100.0;
-      set Mc_My   1.15;
-      set Mres_My 0.1;
-      set thetap  0.010;
-      set thetau  0.2;
-      set thetapc 0.1;
-      set lambdaS 1;
-      set lambdaC 1;
-      set lambdaA 1;
-      set lambdaK 1;
-      set kappaF 0.3;
-      set kappaD 0.6;
+      set Ke 		10000.;
+      set dp 	   0.01;
+      set dpc     0.05;
+      set du 	   0.08;
+      set My 		100.;
+      set Mc_My 	1.10;
+      set Mres_My 0.10;
+      set lambda 	0.50;
+      set c_S 	   1.00;
+      set c_C 	   1.00; 
+      set c_K 	   1.00; 
+      set c_A 	   1.00;
+      set D_pos   1.00;
+      set D_neg   1.00;
 
-      uniaxialMaterial IMKPinching 1 $Ke $as $as $My -$My $lambda $lambda $lambda $lambda 1 1 1 1 1 1 $kappaF $kappaD;
+      uniaxialMaterial IMKPeakOriented 	 1 $Ke $dp $dpc $du $My $Mc_My $Mres_My $dp $dpc $du $My $Mc_My $Mres_My $lambda $lambda $lambda $lambda $c_S $c_S $c_A $c_K $D_pos $D_neg $kappaF $kappaD;
+
 
 For code inquires or bug reporting, please contact: 
 - Kazuki Ichinohe, University of Tokyo, e-mail: z-ichinohe@g.ecc.u-tokyo.ac.jp

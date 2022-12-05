@@ -236,7 +236,7 @@
 <p>This command is used to construct a material with a pinched hysteretic response based on the modified Ibarra-Medina-Krawinkler deterioration model.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">IMKPinching</span> <span class="pre">$Mat_Tag</span> <span class="pre">$Ke</span> <span class="pre">$Up_pos</span> <span class="pre">$Upc_pos</span> <span class="pre">$Uu_pos</span> <span class="pre">$Fy_pos</span> <span class="pre">$FmaxFy_pos</span> <span class="pre">$FresFy_pos</span> <span class="pre">$Up_neg</span> <span class="pre">$Upc_neg</span> <span class="pre">$Uu_neg</span> <span class="pre">$Fy_neg</span> <span class="pre">$FmaxFy_neg</span> <span class="pre">$FresFy_neg</span> <span class="pre">$Lamda_S</span> <span class="pre">$Lamda_C</span> <span class="pre">$Lamda_A</span> <span class="pre">$Lamda_K</span> <span class="pre">$c_S</span> <span class="pre">$c_C</span> <span class="pre">$c_A</span> <span class="pre">$c_K</span> <span class="pre">$D_pos</span> <span class="pre">$D_neg</span> <span class="pre">$kappaF</span> <span class="pre">$kappaD</span></span></dt>
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">IMKPinching</span> <span class="pre">$Mat_Tag</span> <span class="pre">$Ke</span> <span class="pre">$dp_pos</span> <span class="pre">$dpc_pos</span> <span class="pre">$du_pos</span> <span class="pre">$Fy_pos</span> <span class="pre">$FmaxFy_pos</span> <span class="pre">$FresFy_pos</span> <span class="pre">$dp_neg</span> <span class="pre">$dpc_neg</span> <span class="pre">$du_neg</span> <span class="pre">$Fy_neg</span> <span class="pre">$FmaxFy_neg</span> <span class="pre">$FresFy_neg</span> <span class="pre">$Lamda_S</span> <span class="pre">$Lamda_C</span> <span class="pre">$Lamda_A</span> <span class="pre">$Lamda_K</span> <span class="pre">$c_S</span> <span class="pre">$c_C</span> <span class="pre">$c_A</span> <span class="pre">$c_K</span> <span class="pre">$D_pos</span> <span class="pre">$D_neg</span> <span class="pre">$kappaF</span> <span class="pre">$kappaD</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -383,21 +383,22 @@
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke            <span class="mf">100000.0</span><span class="k">;</span>
-<span class="k">set</span> My            <span class="mf">100.0</span><span class="k">;</span>
-<span class="k">set</span> Mc_My   <span class="mf">1.15</span><span class="k">;</span>
-<span class="k">set</span> Mres_My <span class="mf">0.1</span><span class="k">;</span>
-<span class="k">set</span> thetap  <span class="mf">0.010</span><span class="k">;</span>
-<span class="k">set</span> thetau  <span class="mf">0.2</span><span class="k">;</span>
-<span class="k">set</span> thetapc <span class="mf">0.1</span><span class="k">;</span>
-<span class="k">set</span> lambdaS <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaC <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaA <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaK <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> kappaF <span class="mf">0.3</span><span class="k">;</span>
-<span class="k">set</span> kappaD <span class="mf">0.6</span><span class="k">;</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke            <span class="mi">10000</span>.<span class="k">;</span>
+<span class="k">set</span> dp       <span class="mf">0.01</span><span class="k">;</span>
+<span class="k">set</span> dpc     <span class="mf">0.05</span><span class="k">;</span>
+<span class="k">set</span> du       <span class="mf">0.08</span><span class="k">;</span>
+<span class="k">set</span> My            <span class="mi">100</span>.<span class="k">;</span>
+<span class="k">set</span> Mc_My         <span class="mf">1.10</span><span class="k">;</span>
+<span class="k">set</span> Mres_My <span class="mf">0.10</span><span class="k">;</span>
+<span class="k">set</span> lambda        <span class="mf">0.50</span><span class="k">;</span>
+<span class="k">set</span> c_S      <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> c_C      <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> c_K      <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> c_A      <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> D_pos   <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> D_neg   <span class="mf">1.00</span><span class="k">;</span>
 
-<span class="nv">uniaxialMaterial</span> IMKPinching <span class="mi">1</span> <span class="nv">$Ke</span> <span class="nv">$as</span> <span class="nv">$as</span> <span class="nv">$My</span> <span class="o">-</span><span class="nv">$My</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="nv">$kappaF</span> <span class="nv">$kappaD</span><span class="k">;</span>
+<span class="nv">uniaxialMaterial</span> IMKPeakOriented   <span class="mi">1</span> <span class="nv">$Ke</span> <span class="nv">$dp</span> <span class="nv">$dpc</span> <span class="nv">$du</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$dp</span> <span class="nv">$dpc</span> <span class="nv">$du</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$c_S</span> <span class="nv">$c_S</span> <span class="nv">$c_A</span> <span class="nv">$c_K</span> <span class="nv">$D_pos</span> <span class="nv">$D_neg</span> <span class="nv">$kappaF</span> <span class="nv">$kappaD</span><span class="k">;</span>
 </pre></div>
 </div>
 </div>
