@@ -3,8 +3,6 @@
 TenNodeTetrahedron Element
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Under development, not yet released** 
-
 
 This command is used to construct an ten-node tetrahedron element object, which uses the standard isoparametric formulation.
 
@@ -24,7 +22,7 @@ This command is used to construct an ten-node tetrahedron element object, which 
 This element is based on second-order interpolation of nodal quantities, this means that the strain and stress field inside the element are linearly interpolated. Four Gauss-points inside the element are used for integration. 
 
 
-.. figure:: TenNodeTetrahedron/TenNodeTetrahedron.png
+.. figure:: figures/TenNodeTetrahedron/TenNodeTetrahedron.png
 	:align: center
 	:figclass: align-center
 
