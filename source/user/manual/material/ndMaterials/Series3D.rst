@@ -1,12 +1,12 @@
 .. _Series3D:
 
 Series3D Material Wrapper
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct a Series3D material object. It is a wrapper that imposes an iso-stress condition to an arbitrary number of previously-defined 3D nDMaterial objects
 
 Theory
-^^^^^^
+""""""
 
 This model imposes a minimal kinematic constraint on the sub-materials such that the macro-scopic strain tensor :math:`\varepsilon_{m}` (i.e. the strain tensor of the wrapper Series3D material) is equal to the volumetric average of the micro-scopic strain tensors :math:`\varepsilon_{i}` (i.e. the strain tensors of each sub-material)
 
