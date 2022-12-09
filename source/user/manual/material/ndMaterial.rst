@@ -39,7 +39,7 @@ The following contain information about matType? and the args required for each 
    ndMaterials/SAniSandMS
    ndMaterials/Orthotropic
    ndMaterials/Series3D
-   nDMaterials/ASDConcrete3D
+   ndMaterials/ASDConcrete3D
 
 
 Concrete Damage Model
