@@ -1,64 +1,21 @@
-.. _Damping:
+.. _damping:
 
-Damping Command
-************************
+Damping Commands
+**********************
 
-This command is used to construct damping for a dynamic system.
-. 
+OpenSees provides the user several method to construct damping in their model. List of the available method are:
 
-.. function:: damping $dampingType $dampingTag $dampingArgs
+.. toctree::
+   :maxdepth: 1
 
-.. csv-table:: 
-   :header: "Argument", "Type", "Description"
-   :widths: 10, 10, 40
+   damping/rayleigh
+   damping/modalDamping
+   damping/elementalDamping
 
-   $dampingType, |string|,      damping type
-   $dampingTag,  |integer|,     unique damping tag.
-   $dampingArgs, |list|,        a list of damping arguments with number dependent on damping type
+References
+--------------
 
-
-The following subsections contain information about **$dampingType** 
-
-
-   .. toctree::
-      :maxdepth: 1
-
-      damping/UniformDamping
-      damping/URDDamping
-      damping/SecStifDamping
-
-The following is used to assign the damping model to a specific element. The user should append the parameters of **“-damp $dampingTag”** to the end of the element definition.
-   
-   .. code-block:: tcl
-
-      element dispBeamColumn $eleTag $iNode $jNode $numIntgrPts $secTag $transfTag <-damp $dampingTag>
-      
-      element ASDShellQ4 $eleTag $iNode $jNode $kNode $lNode $secTag <-damp $dampingTag>
-      
-      element ShellDKGQ $eleTag $iNode $jNode $kNode $lNode $secTag <-damp $dampingTag>
-      
-      element ShellDKGT $eleTag $iNode $jNode $kNode $lNode $secTag <-damp $dampingTag>
-      
-      element ShellNLDKGQ $eleTag $iNode $jNode $kNode $lNode $secTag <-damp $dampingTag>
-      
-      element ShellNLDKGT $eleTag $iNode $jNode $kNode $lNode $secTag <-damp $dampingTag>
-      
-      element ShellMITC4 $eleTag $iNode $jNode $kNode $lNode $secTag <-damp $dampingTag>
-      
-      element zeroLength $eleTag $iNode $jNode -mat $matTag1 $matTag2 ... -dir $dir1 $dir2 ...<-doRayleigh $rFlag> <-orient $x1 $x2 $x3 $yp1 $yp2 $yp3> <-damp $dampingTag>
-      
-      element elasticBeamColumn $eleTag $iNode $jNode $A $E $G $J $Iy $Iz $transfTag <-mass $massDens> <-cMass> <-damp $dampingTag>
-      
-      element forceBeamColumn $eleTag $iNode $jNode $transfTag "IntegrationType arg1 arg2 ..." <-mass $massDens> <-iter $maxIters $tol> <-damp $dampingTag>
-      
-      element quad $eleTag $iNode $jNode $kNode $lNode $thick $type $matTag <$pressure $rho $b1 $b2> <-damp $dampingTag>
-      
-      element stdBrick $eleTag $node1 $node2 $node3 $node4 $node5 $node6 $node7 $node8 $matTag <$b1 $b2 $b3> <-damp $dampingTag>
-
-
-	  
-The following is used to assign the damping model to groups of elements. 
-   
-   .. code-block:: tcl
-      
-      region $regTag <-ele ($ele1 $ele2 ...)> <-eleOnly ($ele1 $ele2 ...)> <-eleRange $startEle $endEle> <-eleOnlyRange $startEle $endEle> <-node ($node1 $node2 ...)> <-nodeOnly ($node1 $node2 ...)> <-nodeRange $startNode $endNode> <-nodeOnlyRange $startNode $endNode> <-node all> <-rayleigh $alphaM $betaK $betaKinit $betaKcomm> <-damp $dampingTag>
+.. [ChopraMcKenna2015] Chopra, A. K., & McKenna, F. (2016). Modeling viscous damping in nonlinear response history analysis of buildings for earthquake excitation. Earthquake Engineering & Structural Dynamics, 45(2), 193-211. https://onlinelibrary.wiley.com/doi/full/10.1002/eqe.2622
+.. [MHScott2019] Scott, M. H. (2019, September 12). Be careful with modal damping. Portwood Digital. Retrieved August 27, 2022, from https://portwooddigital.com/2019/09/12/be-careful-with-modal-damping/ 
+.. [HuangEtAl2019] Huang Y, Sturt R, Willford M. 2019. `A damping model for nonlinear dynamic analysis providing uniform damping over a frequency range. Computers & Structures, 212, 101-109. https://doi.org/10.1016/j.compstruc.2018.10.016
+.. [TianEtAl2023] Tian Y, Huang Y, Qu Z, Fei Y, Lu X. 2023. `High-performance uniform damping model for response history analysis in OpenSees. Journal of Earthquake Engineering, https://dx.doi.org/10.1080/13632469.2022.2124557

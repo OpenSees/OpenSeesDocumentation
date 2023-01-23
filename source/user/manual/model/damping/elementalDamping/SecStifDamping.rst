@@ -44,5 +44,5 @@ This command is used to construct a secant stiffness-proportional damping model.
 
 **References**
 
-.. [1] Tian Y, Huang Y, Qu Z, Fei Y, Lu X. 2022. `High-performance uniform damping model for response history analysis in OpenSees <https://www.researchgate.net/publication/363845908_High-Performance_Uniform_Damping_Model_for_Response_History_Analysis_in_OpenSees>`_. `Journal of Earthquake Engineering`. `http://dx.doi.org/10.1080/13632469.2022.2124557 <http://dx.doi.org/10.1080/13632469.2022.2124557>`_
+.. [1] Tian Y, Huang Y, Qu Z, Fei Y, Lu X. 2023. `High-performance uniform damping model for response history analysis in OpenSees <https://www.researchgate.net/publication/363845908_High-Performance_Uniform_Damping_Model_for_Response_History_Analysis_in_OpenSees>`_. `Journal of Earthquake Engineering`. `http://dx.doi.org/10.1080/13632469.2022.2124557 <http://dx.doi.org/10.1080/13632469.2022.2124557>`_
 

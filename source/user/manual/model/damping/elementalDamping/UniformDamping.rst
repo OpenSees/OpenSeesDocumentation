@@ -48,7 +48,7 @@ This command is used to construct a uniform damping model.
 
 .. [1] Huang Y, Sturt R, Willford M. 2019. `A damping model for nonlinear dynamic analysis providing uniform damping over a frequency range <https://www.researchgate.net/publication/328827267_A_damping_model_for_nonlinear_dynamic_analysis_providing_uniform_damping_over_a_frequency_range>`_. `Computers and Structures`, 212:101–9. `http://dx.doi.org/10.1016/j.compstruc.2018.10.016 <http://dx.doi.org/10.1016/j.compstruc.2018.10.016>`_
 
-.. [2] Tian Y, Huang Y, Qu Z, Fei Y, Lu X. 2022. `High-performance uniform damping model for response history analysis in OpenSees <https://www.researchgate.net/publication/363845908_High-Performance_Uniform_Damping_Model_for_Response_History_Analysis_in_OpenSees>`_. `Journal of Earthquake Engineering`. `http://dx.doi.org/10.1080/13632469.2022.2124557 <http://dx.doi.org/10.1080/13632469.2022.2124557>`_
+.. [2] Tian Y, Huang Y, Qu Z, Fei Y, Lu X. 2023. `High-performance uniform damping model for response history analysis in OpenSees <https://www.researchgate.net/publication/363845908_High-Performance_Uniform_Damping_Model_for_Response_History_Analysis_in_OpenSees>`_. `Journal of Earthquake Engineering`. `http://dx.doi.org/10.1080/13632469.2022.2124557 <http://dx.doi.org/10.1080/13632469.2022.2124557>`_
 
 .. [3] Fei Y, Tian Y, Huang Y, Lu X. 2022. `Influence of damping models on dynamic analyses of a base-isolated composite structure under earthquakes and environmental vibrations <http://dx.doi.org/10.6052/j.issn.1000-4750.2021.07.0500>`_. `Engineering Mechanics`, 39(3): 201-211. `http://dx.doi.org/10.6052/j.issn.1000-4750.2021.07.0500 <http://dx.doi.org/10.6052/j.issn.1000-4750.2021.07.0500>`_
 
