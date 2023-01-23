@@ -24,17 +24,19 @@ The type of section created and the additional arguments required depends on the
 
 The following contain information about secType? and the args required for each of the available section types:
 
-Elastic Section
-Fiber Section
-NDFiber Section
-Wide Flange Section
-RC Section
-Parallel Section
-Section Aggregator
-Uniaxial Section
-Elastic Membrane Plate Section
-Plate Fiber Section
-Bidirectional Section
-Isolator2spring Section
+.. toctree::
+   :maxdepth: 1
+
+   section/ElasticSection
+   section/NDFiberSection
+   section/WideFlangeSection
+   section/RCSection
+   section/ParallelSection
+   section/SectionAggregator
+   section/UniaxialSection
+   section/ElasticMembranePlateSection
+   section/PlateFiberSection
+   section/BidirectionalSection
+   section/Isolator2springSection
 
 

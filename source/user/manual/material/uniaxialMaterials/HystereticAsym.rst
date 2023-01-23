@@ -28,7 +28,7 @@ The equations describing HystereticAsym behavior are described in [VaianaEtAl202
 
 The model works as a sort of smooth, bilinear model whose response is modulated by nonlinear functions in order to obtain hardening, softening and asymmetry. Specifically, if :math:`\beta_1 = \beta_2 = \gamma = 0` then the loop is symmetric and bilinear:
 
-.. figure:: figures/HystereticAsym01.gif
+.. figure:: figures/HystereticAsym/HystereticAsym01.gif
 	:align: center
 	:figclass: align-center
 
@@ -52,13 +52,13 @@ Parameters $beta1 and $beta2 rule the hardening-softening behavior as well as as
    d,	:math:`\beta_2 > \beta_1 > 0`
 
 
-.. figure:: figures/HystereticAsym02.gif
+.. figure:: figures/HystereticAsym/HystereticAsym02.gif
 	:align: center
 	:figclass: align-center
 	
 Parameter $gamma introduces a further asymmetric behavior by a modulating function:
 	
-.. figure:: figures/HystereticAsym03.gif
+.. figure:: figures/HystereticAsym/HystereticAsym03.gif
 	:align: center
 	:figclass: align-center
 	

@@ -6,10 +6,10 @@ Single point constraints (SP_Constraints) are constraints that define the respon
 .. toctree::
    :maxdepth: 1
 
-   fix
-   fixX
-   fixY
-   fixZ
+   sp_constraint/fix
+   sp_constraint/fixX
+   sp_constraint/fixY
+   sp_constraint/fixZ
 
-Non-homogeneous constraints are added with wither :ref:`sp` or :ref:`imposedMotion commands inside the :ref:`plainPattern` or :ref:`multisupportExcitation` commands.
+Non-homogeneous constraints are added with wither :ref:`sp_constraint/sp` or :ref:`imposedMotion commands inside the :ref:`plainPattern` or :ref:`multisupportExcitation` commands.
 

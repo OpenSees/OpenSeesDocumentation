@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>HystereticSmooth Material &mdash; OpenSees Documentation  documentation</title>
@@ -36,7 +35,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -107,7 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
@@ -176,8 +174,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="hystereticsmooth-material">
-<span id="hystereticsmooth"></span><h1>HystereticSmooth Material<a class="headerlink" href="#hystereticsmooth-material" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="hystereticsmooth-material">
+<span id="hystereticsmooth"></span><h1>HystereticSmooth Material<a class="headerlink" href="#hystereticsmooth-material" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct the uniaxial HystereticSmooth material producing smooth hysteretic loops with hardening-softening behavior. It implements the “Exponential Material” formulated by Vaiana et al. <a class="reference internal" href="#vaianaetal2018" id="id1"><span>[VaianaEtAl2018]</span></a> based on an exponential formulation of the tangent stiffness.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -230,21 +228,21 @@
 </div>
 <p>The equations describing HystereticSmooth behavior are described in <a class="reference internal" href="#vaianaetal2018" id="id2"><span>[VaianaEtAl2018]</span></a>. Only minor changes have been made in its implementation for OpenSees.</p>
 <p>The model may reproduce either force-displacement or stress-strain relationships and behaves as a sort of smoothed bilinear model:</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../_images/HystereticSmooth01.gif" src="../../../../_images/HystereticSmooth01.gif" />
-</figure>
+</div>
 <p>where $ka is the constant part of the initial tangent stiffness <span class="math notranslate nohighlight">\(k_0(u) = k_a + \beta (-2+e^{\beta u}+e^{-\beta u})\)</span> of each loop while $kb is the hysteresys force/strain at zero displacement.
 Yielding is ruled by a parameter <span class="math notranslate nohighlight">\(\alpha\)</span> determining the transition between the initial and final stiffness. This parameter is also related to the loop amplitude by means of:</p>
 <p><span class="math notranslate nohighlight">\(\bar{f}=\frac{k_a-k_b}{2\alpha}\)</span></p>
 <p>that is represented in figure. Because of the biunivocal relationship between <span class="math notranslate nohighlight">\(\bar{f}\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span>, both can be used as input parameters. The default syntax uses <span class="math notranslate nohighlight">\(\bar{f}\)</span> although it is possible to provide <span class="math notranslate nohighlight">\(\alpha\)</span> by adding the flag “-alpha”.</p>
 <p>Parameter $beta rules the hardening-softening behavior:</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../_images/HystereticSmooth02.gif" src="../../../../_images/HystereticSmooth02.gif" />
-</figure>
+</div>
 <p>so that different loop shapes can be obtained:</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../_images/HystereticSmooth03.gif" src="../../../../_images/HystereticSmooth03.gif" />
-</figure>
+</div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>The following constructs a HystereticSmooth material with tag <strong>1</strong>, parameters corresponding to line (d) of the table above and $fbar=0.45.</p>
@@ -267,7 +265,7 @@ Yielding is ruled by a parameter <span class="math notranslate nohighlight">\(\a
 <dd><p>Vaiana, N., Sessa, S., Marmo, F. and Rosati, L. (2018). “A class of uniaxial phenomenological models for simulating hysteretic phenomena in rate-independent mechanical systems and materials.” Nonlinear Dynamics, 93(3): 1647-1669. <a class="reference external" href="https://link.springer.com/article/10.1007/s11071-018-4282-2">DOI: https://doi.org/10.1007/s11071-018-4282-2</a></p>
 </dd>
 </dl>
-</section>
+</div>
 
 
            </div>
@@ -279,7 +277,7 @@ Yielding is ruled by a parameter <span class="math notranslate nohighlight">\(\a
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

@@ -28,7 +28,7 @@ The equations describing HystereticSmooth behavior are described in [VaianaEtAl2
 
 The model may reproduce either force-displacement or stress-strain relationships and behaves as a sort of smoothed bilinear model:
 
-.. figure:: figures/HystereticSmooth01.gif
+.. figure:: figures/HystereticSmooth/HystereticSmooth01.gif
 	:align: center
 	:figclass: align-center
 
@@ -41,13 +41,13 @@ that is represented in figure. Because of the biunivocal relationship between :m
 
 Parameter $beta rules the hardening-softening behavior:
 
-.. figure:: figures/HystereticSmooth02.gif
+.. figure:: figures/HystereticSmooth/HystereticSmooth02.gif
 	:align: center
 	:figclass: align-center
 
 so that different loop shapes can be obtained:
 
-.. figure:: figures/HystereticSmooth03.gif
+.. figure:: figures/HystereticSmooth/HystereticSmooth03.gif
 	:align: center
 	:figclass: align-center
 

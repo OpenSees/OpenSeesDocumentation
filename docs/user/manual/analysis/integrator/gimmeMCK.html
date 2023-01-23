@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.2.6.4. GimmeMCK Command &mdash; OpenSees Documentation  documentation</title>
+  <title>3.2.6.11. GimmeMCK Command &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -36,7 +35,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -45,7 +43,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.2.7. analysis Command" href="../analysis.html" />
-    <link rel="prev" title="3.2.6.3. Newmark Method" href="Newmark.html" /> 
+    <link rel="prev" title="3.2.6.10. Explicit Difference" href="ExplicitDifference.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,15 +106,22 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../integrator.html">3.2.6. integrator Command</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="LoadControl.html">3.2.6.1. LoadControl Command</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DisplacementControl.html">3.2.6.2. DisplacementControl Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Newmark.html">3.2.6.3. Newmark Method</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.6.4. GimmeMCK Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MinimumUnbalancedDisplacementNorm.html">3.2.6.3. MinimumUnbalancedDisplacementNorm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ArcLength.html">3.2.6.4. Arc-Length Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CentralDifference.html">3.2.6.5. Central Difference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Newmark.html">3.2.6.6. Newmark Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HHT.html">3.2.6.7. Hilber-Hughes-Taylor Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeneralizedAlpha.html">3.2.6.8. Generalized Alpha Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TRBDF2.html">3.2.6.9. TRBDF2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExplicitDifference.html">3.2.6.10. Explicit Difference</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.6.11. GimmeMCK Command</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../analysis.html">3.2.7. analysis Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../analyze.html">3.2.8. analyze Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eigen.html">3.2.9. eigen Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../modalProperties.html">3.2.10. modalProperties Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../responseSpectrum.html">3.2.11. responseSpectrum Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../responseSpectrumAnalysis.html">3.2.11. responseSpectrumAnalysis Command</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
@@ -134,7 +139,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
@@ -190,7 +195,7 @@
         
           <li><a href="../integrator.html"><span class="section-number">3.2.6. </span>integrator Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.2.6.4. </span>GimmeMCK Command</li>
+      <li><span class="section-number">3.2.6.11. </span>GimmeMCK Command</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -209,8 +214,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="gimmemck-command">
-<h1><span class="section-number">3.2.6.4. </span>GimmeMCK Command<a class="headerlink" href="#gimmemck-command" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="gimmemck-command">
+<span id="gimmemck"></span><h1><span class="section-number">3.2.6.11. </span>GimmeMCK Command<a class="headerlink" href="#gimmemck-command" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a GimmeMCK integrator object. The GimmeMCK Integrator alow the user to return the mass, damping, and stiffness matrix. Depending on the user input, it enable the user to retrieve the desired by using the printA command.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -248,8 +253,8 @@
 </tr>
 </tbody>
 </table>
-<section id="theory">
-<h2><span class="section-number">3.2.6.4.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="theory">
+<h2><span class="section-number">3.2.6.11.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 <p>Assembles A = m*M + c*C + kt*KT + ki*KI</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -289,7 +294,7 @@
 <span class="nv">printA</span> <span class="o">-</span>file <span class="s2">&quot;C.txt&quot;</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p><strong>Python Code</strong></p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ops</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;FullGeneral&#39;</span><span class="p">)</span>
@@ -328,8 +333,8 @@
 <dd><p>Scott, M. H., Gimme All Your Damping, All Your Mass and Stiffness Too (<a class="reference external" href="https://portwooddigital.com/2020/05/17/gimme-all-your-damping-all-your-mass-and-stiffness-too/">https://portwooddigital.com/2020/05/17/gimme-all-your-damping-all-your-mass-and-stiffness-too/</a>)</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -341,7 +346,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

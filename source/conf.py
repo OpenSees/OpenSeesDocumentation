@@ -19,7 +19,7 @@ numfig = True
 numfig_secnum_depth = 3
 
 project = 'OpenSees Documentation'
-copyright = '2020, The Regents of the University of California'
+copyright = '2022, The Regents of the University of California'
 author = 'Frank McKenna, Michael Scott, Pedro Arduino, Minjie Zhu'
 html_logo = 'OpenSeesLogo.png'
 

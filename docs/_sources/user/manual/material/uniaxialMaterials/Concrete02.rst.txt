@@ -25,13 +25,13 @@ This command is used to construct a uniaxial concrete material as described in [
 
 Typical Hysteretic Stress-Strain Relation for material 
 
-.. figure:: figures/Concrete02.jpg
+.. figure:: figures/Concrete02/Concrete02.jpg
   :align: center
   :figclass: align-center
 
 Comparison with Concrete01
 
-.. figure:: figures/Concrete02Hysteretic.jpg
+.. figure:: figures/Concrete02/Concrete02Hysteretic.jpg
   :align: center
   :figclass: align-center
 

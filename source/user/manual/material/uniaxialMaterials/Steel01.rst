@@ -1,4 +1,3 @@
-
 .. _steel01:
 
 Steel01 Material
@@ -28,25 +27,25 @@ This command is used to construct a uniaxial bilinear steel material object with
 
 .. _fig-mdof:
 
-.. figure:: figures/Steel01.gif
+.. figure:: figures/Steel01/Steel01.gif
 	:align: center
 	:figclass: align-center
 
 	Steel01
 
-.. figure:: figures/Steel01HystereticA.jpg
+.. figure:: figures/Steel01/Steel01HystereticA.jpg
 	:align: center
 	:figclass: align-center
 
 	Steel01 Material -- Default Hysteretic Behavior (NO isotropic hardening)
 
-.. figure:: figures/Steel01HystereticB.jpg
+.. figure:: figures/Steel01/Steel01HystereticB.jpg
 	:align: center
 	:figclass: align-center
 
 	Steel01 Material -- Hysteretic Behavior of Model with Isotropic Hardening in Compression
 
-.. figure:: figures/Steel01HystereticC.jpg
+.. figure:: figures/Steel01/Steel01HystereticC.jpg
 	:align: center
 	:figclass: align-center
 

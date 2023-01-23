@@ -83,7 +83,7 @@ The material is based on a newly developed Reinforcement Ductile Fracture Model 
    
 .. _fig-ductilefracture_mp_infl:
 
-.. figure:: figures/DuctileFracture_mp_infl.png
+.. figure:: figures/DuctileFracture/DuctileFracture_mp_infl.png
 	:align: center
 	:width: 700
 
@@ -91,7 +91,7 @@ The material is based on a newly developed Reinforcement Ductile Fracture Model 
 
 .. _fig-ductilefracture_workflow:
 
-.. figure:: figures/DuctileFracture_Workflow.png
+.. figure:: figures/DuctileFracture/DuctileFracture_Workflow.png
    :align: center
    :width: 400
 

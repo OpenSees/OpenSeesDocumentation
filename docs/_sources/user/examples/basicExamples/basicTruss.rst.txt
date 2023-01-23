@@ -2,7 +2,7 @@ Basic Truss Example
 -------------------
 
 Introduction
-**********
+*************
 
 .. figure:: figures/Truss.png
   :align: center
@@ -14,7 +14,7 @@ This example is of a linear-elastic three bar truss, as shown in the top figure,
     Because the model is planar and is comprised of truss elements, the spatial dimension of the mesh (``ndm``) will be specified as **2** and the nodes will only be specified to have **2** degrees-of-freedom.
 
 Model Definition
-****************
+*****************
 
    .. code-block:: tcl
 
@@ -95,7 +95,7 @@ We will now show the commands to perform a static analysis using a linear soluti
 
 
 Output Specification
-****************
+***********************
 For this analysis, we will record the displacement at node 4, and all the element forces expressed both in the global coordinate system and the local system. 
 
    .. code-block:: tcl
@@ -108,7 +108,7 @@ For this analysis, we will record the displacement at node 4, and all the elemen
         recorder Element -file eleLocal.out  -time -ele 1 2 3 basicForces
 
 Perform The Analysis
-*****************
+***********************
 After the objects for the model, analysis and output has been defined we now perform the analysis. 
 
     .. code-block:: tcl
@@ -116,7 +116,7 @@ After the objects for the model, analysis and output has been defined we now per
         analyze 1
 
 Print Information to Screen
-**********
+****************************
 In addition to using recorders, it is possible to specify output using the print and puts commands. When no file identifiers are provided, these commands will print results to the screen. 
 
     .. code-block:: tcl
@@ -129,5 +129,5 @@ Results
 **********
 When you run this script, you should see the following printed to the screen: 
 .. figure:: figures/TrussRun.png
-  :align: center
-  :figclass: align-center
+    :align: center
+    :figclass: align-center

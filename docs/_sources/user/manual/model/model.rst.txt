@@ -1,6 +1,6 @@
 .. _model:
 
-Model Command
+model Command
 *************
 
 This command is used to create the Basic |OPS| model builder. This model builder adds commands to the interpreter which allow the user to build the model. The command is also used to define the spatial dimension of the subsequent nodes to be added and the number of degrees-of-freedom at each node. 

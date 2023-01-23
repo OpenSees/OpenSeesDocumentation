@@ -1,7 +1,7 @@
 .. _Concrete04 :
 
 Concrete04 Material -- Popovics Concrete Material
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct a uniaxial Popovics concrete material object with degraded linear unloading/reloading stiffness according to the work of Karsan-Jirsa and tensile strength with exponential decay. 
 .. function:: uniaxialMaterial Concrete04 $matTag $fc $ec $ecu $Ec <$fct $et> <$beta>  
@@ -25,12 +25,12 @@ This command is used to construct a uniaxial Popovics concrete material object w
   * Model Characteristic: For loading in compression, the envelope to the stress-strain curve follows the model proposed by Popovics (1973) until the concrete crushing strength is achieved and also for strains beyond that corresponding to the crushing strength. For unloading and reloading in compression, the [Karsan1969]_ is used to determine the slope of the curve. For tensile loading, an exponential curve is used to define the envelope to the stress-strain curve. For unloading and reloading in tensile, the secant stiffness is used to define the path.
 
 
-.. figure:: figures/Concrete04a.jpg
+.. figure:: figures/Concrete04/Concrete04A.png
   :align: center
   :figclass: align-center
 
 
-.. figure:: figures/Concrete0B.png
+.. figure:: figures/Concrete04/Concrete04B.png
   :align: center
   :figclass: align-center
 

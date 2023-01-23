@@ -104,7 +104,7 @@ The command to create a DowelType joint model has three variations, correspondin
 
 The envelope curves are illustrated in the following figure. Only the positive part is illustrated. 
 
-.. figure:: figures/DowelTypeEnvelope.png
+.. figure:: figures/DowelType/DowelTypeEnvelope.png
    :align: center
    :figclass: align-center
 
@@ -138,7 +138,7 @@ The piecewise envelope connects all the definition points with straight lines. T
 
 The hysteretic law is illustrated in the following figure. The hysteresis is independent from the envelope curve. Basically, the hysteretic curves are defined by three guiding lines: unloading line, pinching line, and reloading line. The lines define Bezier curves as shown in the figure.
 
-.. figure:: figures/DowelTypeHyst.png
+.. figure:: figures/DowelType/DowelTypeHyst.png
    :align: center
    :figclass: align-center
 
@@ -160,7 +160,7 @@ where :math:`E_{p,i}` is the energy dissipated in a primary half-cycle, :math:`E
 .. note::
    The following figure is used to describe the same side and the opposite side:
 
-   .. figure:: figures/DowelTypeSide.jpg
+   .. figure:: figures/DowelType/DowelTypeSide.jpg
       :align: center
       :figclass: align-center
    
@@ -179,7 +179,7 @@ where :math:`K_{0,s}` and :math:`K_{0,o}` are the stiffness on the same and oppo
 
 There are also a few special scenarios, illustrated in the following figure:
 
-.. figure:: figures/DowelTypeSpecial.png
+.. figure:: figures/DowelType/DowelTypeSpecial.png
    :align: center
    :figclass: align-center
 
@@ -207,7 +207,7 @@ Special scenario 3 is the case when large damage occurs. The hysteretic curve no
 
 The results of Example 1 is shown in the following figure:
 
-.. figure:: figures/DowelTypeExample1.png
+.. figure:: figures/DowelType/DowelTypeExample1.png
    :align: center
    :figclass: align-center
 
@@ -231,7 +231,7 @@ The results of Example 1 is shown in the following figure:
 
 The results of Example 2 is shown in the following figure:
 
-.. figure:: figures/DowelTypeExample2.png
+.. figure:: figures/DowelType/DowelTypeExample2.png
    :align: center
    :figclass: align-center
 
@@ -255,7 +255,7 @@ The results of Example 2 is shown in the following figure:
 
 The results of Example 3 is shown in the following figure:
 
-.. figure:: figures/DowelTypeExample3.png
+.. figure:: figures/DowelType/DowelTypeExample3.png
    :align: center
    :figclass: align-center
 
@@ -279,7 +279,7 @@ The results of Example 3 is shown in the following figure:
 
 The results of Example 4 is shown in the following figure:
  
-.. figure:: figures/DowelTypeExample4.png
+.. figure:: figures/DowelType/DowelTypeExample4.png
    :align: center
    :figclass: align-center
 

@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.7. Pattern Command &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.10. Pattern Command &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -36,7 +35,6 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -44,8 +42,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.1.7.1. Plain Pattern" href="plainPattern.html" />
-    <link rel="prev" title="3.1.6.7. Path TimeSeries" href="pathTimeSeries.html" /> 
+    <link rel="next" title="3.1.10.1. Plain Pattern" href="pattern/plainPattern.html" />
+    <link rel="prev" title="3.1.9.7. Path TimeSeries" href="timeseries/pathTimeSeries.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,20 +96,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="node.html">3.1.2. Node Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="element.html">3.1.3. Element Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spConstraints.html">3.1.4. SP_Constraint Commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mpConstraints.html">3.1.5. MP_Constraint Commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="timeSeries.html">3.1.6. Time Series Command</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.7. Pattern Command</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="plainPattern.html">3.1.7.1. Plain Pattern</a></li>
-<li class="toctree-l4"><a class="reference internal" href="uniformExcitationPattern.html">3.1.7.2. Uniform Excitation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="multiSupportPattern.html">3.1.7.3. Multisupport Excitation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="H5DRM.html">3.1.7.4. H5DRM Pattern</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../material/section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="element.html">3.1.8. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timeSeries.html">3.1.9. Time Series Command</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.10. Pattern Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pattern/plainPattern.html">3.1.10.1. Plain Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pattern/uniformExcitationPattern.html">3.1.10.2. Uniform Excitation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pattern/multiSupportPattern.html">3.1.10.3. Multisupport Excitation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pattern/H5DRM.html">3.1.10.4. H5DRM Pattern</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="damping.html">3.1.11. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
@@ -130,7 +132,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
@@ -182,9 +184,9 @@
         
           <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.7. </span>Pattern Command</li>
+      <li><span class="section-number">3.1.10. </span>Pattern Command</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,8 +205,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="pattern-command">
-<span id="pattern"></span><h1><span class="section-number">3.1.7. </span>Pattern Command<a class="headerlink" href="#pattern-command" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="pattern-command">
+<span id="pattern"></span><h1><span class="section-number">3.1.10. </span>Pattern Command<a class="headerlink" href="#pattern-command" title="Permalink to this headline">¶</a></h1>
 <p>The pattern command is used to construct a LoadPattern and add it to the Domain. Each LoadPattern in OpenSees has a TimeSeries associated with it. In addition it may contain ElementLoads, NodalLoads and SinglePointConstraints. Some of these SinglePoint constraints may be associated with GroundMotions.</p>
 <p>The command has the following form:</p>
 <dl class="py function">
@@ -240,34 +242,29 @@
 </tbody>
 </table>
 <p>The type of pattern created and the additional arguments required depends on the patternType? provided in the command. The following contain information about patternType? and the additional args required for each of the available pattern types:</p>
-<figure class="align-center" id="id1">
+<div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../../_images/OpenSeesLoads.png"><img alt="../../../_images/OpenSeesLoads.png" src="../../../_images/OpenSeesLoads.png" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3.1.7.1 </span><span class="caption-text">OpenSees Loads</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 3.1.10.1 </span><span class="caption-text">OpenSees Loads</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="plainPattern.html">3.1.7.1. Plain Pattern</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="load.html">3.1.7.1.1. load Command</a></li>
-<li class="toctree-l2"><a class="reference internal" href="eleLoad.html">3.1.7.1.2. eleLoad Command</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sp.html">3.1.7.1.3. sp Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern/plainPattern.html">3.1.10.1. Plain Pattern</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="uniformExcitationPattern.html">3.1.7.2. Uniform Excitation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multiSupportPattern.html">3.1.7.3. Multisupport Excitation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="groundMotion.html">3.1.7.3.1. Ground Motion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="groundMotion.html#plain-ground-motion">Plain Ground Motion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="groundMotion.html#interpolated-ground-motion">Interpolated Ground Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern/uniformExcitationPattern.html">3.1.10.2. Uniform Excitation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern/multiSupportPattern.html">3.1.10.3. Multisupport Excitation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pattern/groundmotion/groundMotion.html">3.1.10.3.1. Ground Motion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pattern/groundmotion/groundMotion.html#plain-ground-motion">Plain Ground Motion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pattern/groundmotion/groundMotion.html#interpolated-ground-motion">Interpolated Ground Motion</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="imposedMotion.html">3.1.7.3.2. Imposed Motion Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pattern/groundmotion/imposedMotion.html">3.1.10.3.2. Imposed Motion Command</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="H5DRM.html">3.1.7.4. H5DRM Pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern/H5DRM.html">3.1.10.4. H5DRM Pattern</a></li>
 </ul>
 </div>
-</section>
+</div>
 
 
            </div>
@@ -279,7 +276,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

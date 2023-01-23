@@ -23,7 +23,7 @@ This command is used to construct a uniaxial Kent-Scott-Park concrete material o
 
 Typical Hysteretic Stress-Strain Relation for material 
 
-.. figure:: figures/Concrete01.gif
+.. figure:: figures/Concrete01/Concrete01.gif
   :align: center
   :figclass: align-center
 

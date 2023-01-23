@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>HystereticAsym Material &mdash; OpenSees Documentation  documentation</title>
@@ -36,7 +35,6 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -107,7 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
@@ -176,8 +174,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="hystereticasym-material">
-<span id="hystereticasym"></span><h1>HystereticAsym Material<a class="headerlink" href="#hystereticasym-material" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="hystereticasym-material">
+<span id="hystereticasym"></span><h1>HystereticAsym Material<a class="headerlink" href="#hystereticasym-material" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct the uniaxial HystereticAsym material proposed by Vaiana et al. <a class="reference internal" href="#vaianaetal2021" id="id1"><span>[VaianaEtAl2021]</span></a>. It produces smooth and asymmetric hysteretic loops with hardening-softening behavior.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -237,9 +235,9 @@
 </div>
 <p>The equations describing HystereticAsym behavior are described in <a class="reference internal" href="#vaianaetal2021" id="id2"><span>[VaianaEtAl2021]</span></a>. Only minor changes have been made in its implementation for OpenSees. The model may reproduce either force-displacement or stress-strain relationships.</p>
 <p>The model works as a sort of smooth, bilinear model whose response is modulated by nonlinear functions in order to obtain hardening, softening and asymmetry. Specifically, if <span class="math notranslate nohighlight">\(\beta_1 = \beta_2 = \gamma = 0\)</span> then the loop is symmetric and bilinear:</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../_images/HystereticAsym01.gif" src="../../../../_images/HystereticAsym01.gif" />
-</figure>
+</div>
 <p>parameter $ka is the initial stiffness of each branch (at the load inversion) while $kb is the hysteresys force/strain at zero displacement. Yielding is ruled by a parameter <span class="math notranslate nohighlight">\(\alpha\)</span> determining the transition between the initial <span class="math notranslate nohighlight">\(k_a\)</span> and final <span class="math notranslate nohighlight">\(k_b\)</span> stiffness. This parameter is also related to the loop amplitude by means of:</p>
 <p><span class="math notranslate nohighlight">\(f_0=\frac{k_a-k_b}{2\alpha}\)</span></p>
 <p>that is represented in figure. Because of the biunivocal relationship between <span class="math notranslate nohighlight">\(f_0\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span>, both can be used as input parameters. The default syntax uses <span class="math notranslate nohighlight">\(f_0\)</span> although it is possible to provide <span class="math notranslate nohighlight">\(\alpha\)</span> by adding the flag “-alpha”.</p>
@@ -275,13 +273,13 @@
 </tr>
 </tbody>
 </table>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../_images/HystereticAsym02.gif" src="../../../../_images/HystereticAsym02.gif" />
-</figure>
+</div>
 <p>Parameter $gamma introduces a further asymmetric behavior by a modulating function:</p>
-<figure class="align-center">
+<div class="align-center figure">
 <img alt="../../../../_images/HystereticAsym03.gif" src="../../../../_images/HystereticAsym03.gif" />
-</figure>
+</div>
 <p>loops have been obtained by assuming $ka = 5.0, $kb = 0.5, $fo = 0.45 and:</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -352,7 +350,7 @@
 <dd><p>Vaiana, N., Sessa, S. and Rosati, L. (2021). “A generalized class of uniaxial rate-independent models for simulating asymmetric mechanical hysteresis phenomena.” Mechanical Systems and Signal Processing, 146: 106984. <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0888327020303708?via%3Dihub">DOI: https://doi.org/10.1016/j.ymssp.2020.106984</a></p>
 </dd>
 </dl>
-</section>
+</div>
 
 
            </div>
@@ -364,7 +362,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

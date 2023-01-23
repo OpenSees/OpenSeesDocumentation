@@ -16,21 +16,165 @@ modalProperties Command
    *  :math:`MPM\left(\%\right)` : The modal participation masse ratios.
    *  :math:`MPMc\left(\%\right)` : The cumulative modal participation masse ratios.
 
-.. function:: modalProperties <-print> <-file $reportFileName> <-unorm>
+.. function:: modalProperties <-print> <-return> <-file $reportFileName> <-unorm>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
    
    -print, |string|, "Optional. If included, a report of the modal properties is printed to the console."
+   -return, |string|, "Optional. If included, a report of the modal properties will be returned as a dict object to Python."
    -file, |string|, "Optional. If included, a report of the modal properties is printed to the file $reportFileName."
    $reportFileName, |string|, "Optional, but mandatory if the -file option is included. Indicates the filename for the report. If the file does not exist, it will be created. If the file exists, it will be overwritten."
    -unorm, |string|, "Optional. If included, the computation of the modal properties will be carried out using a displacement-normalized version of the eigenvectors."
 
+.. admonition:: Return value with ``-return``
+
+   .. code:: python
+
+      {
+         # list of one int value
+         "domainSize": [ndm], 
+
+         # list of lambda values for all modes
+         "eigenLambda": [lambdas], 
+
+         # list of omega values for all modes
+         "eigenOmega": [omega], 
+
+         # list of frequency values for all modes
+         "eigenFrequency": [frequency], 
+
+         # list of period values for all modes
+         "eigenPeriod": [period], 
+
+         # list of total mass values, [MX] for 1D, [MX, MY, RMZ] for 2D,  
+         # [MX, MY, MZ, MRX, RMY, RMZ] for 3D
+         "totalMass": [mass], 
+
+         # list of total mass values for free DOFs, [MX] for 1D, 
+         # [MX, MY, RMZ] for 2D,  [MX, MY, MZ, MRX, RMY, RMZ] for 3D
+         "totalFreeMass": [mass], 
+
+         # coordinates of mass center, [X] for 1D, [X, Y] for 2D,  
+         # [X, Y, Z] for 3D
+         "centerOfMass": [center], 
+
+         #
+         # modal participation factors for all modes
+         #
+         
+         # for MX direction for 1D, 2D and 3D
+         "partiFactorMX": [factor], 
+
+         # for MY direction for 2D and 3D
+         "partiFactorMY": [factor], 
+
+         # for MZ direction for 3D
+         "partiFactorMZ": [factor], 
+
+         # for RMX direction for 3D
+         "partiFactorRMX": [factor], 
+
+         # for RMY direction for 3D
+         "partiFactorRMY": [factor], 
+
+         # for RMZ direction for 2D and 3D
+         "partiFactorRMX": [factor], 
+
+         #
+         # modal participation masses for all modes
+         #
+
+         # for MX direction for 1D, 2D and 3D
+         "partiMassMX": [mass], 
+
+         # for MY direction for 2D and 3D
+         "partiMassMY": [mass], 
+
+         # for MZ direction for 3D
+         "partiMassMZ": [mass], 
+
+         # for RMX direction for 3D
+         "partiMassRMX": [mass], 
+
+         # for RMY direction for 3D
+         "partiMassRMY": [mass], 
+
+         # for RMZ direction for 2D and 3D
+         "partiMassRMX": [mass], 
+
+         #
+         # modal participation masses (cumulative) for all modes
+         #
+
+         # for MX direction for 1D, 2D and 3D
+         "partiMassesCumuMX": [mass], 
+
+         # for MY direction for 2D and 3D
+         "partiMassesCumuMY": [mass], 
+
+         # for MZ direction for 3D
+         "partiMassesCumuMZ": [mass], 
+
+         # for RMX direction for 3D
+         "partiMassesCumuRMX": [mass], 
+
+         # for RMY direction for 3D
+         "partiMassesCumuRMY": [mass], 
+
+         # for RMZ direction for 2D and 3D
+         "partiMassesCumuRMZ": [mass], 
+
+         #
+         # modal participation mass ratios (%) for all modes
+         #
+
+         # for MX direction for 1D, 2D and 3D
+         "partiMassRatiosMX": [mass], 
+
+         # for MY direction for 2D and 3D
+         "partiMassRatiosMY": [mass], 
+
+         # for MZ direction for 3D
+         "partiMassRatiosMZ": [mass], 
+
+         # for RMX direction for 3D
+         "partiMassRatiosRMX": [mass], 
+
+         # for RMY direction for 3D
+         "partiMassRatiosRMY": [mass], 
+
+         # for RMZ direction for 2D and 3D
+         "partiMassRatiosRMX": [mass], 
+
+         #
+         # modal participation mass ratios (%) (cumulative) for all modes
+         #
+
+         # for MX direction for 1D, 2D and 3D
+         "partiMassRatiosCumuMX": [mass], 
+
+         # for MY direction for 2D and 3D
+         "partiMassRatiosCumuMY": [mass], 
+
+         # for MZ direction for 3D
+         "partiMassRatiosCumuMZ": [mass], 
+
+         # for RMX direction for 3D
+         "partiMassRatiosCumuRMX": [mass], 
+
+         # for RMY direction for 3D
+         "partiMassRatiosCumuRMY": [mass], 
+
+         # for RMZ direction for 2D and 3D
+         "partiMassRatiosCumuRMX": [mass], 
+      }
+
 .. note::
    *  This command can be used only if a previous call to :ref:`eigen` has been performed.
    *  This command has only optional arguments, and they can be given in any order. Note, however, that the only requirement is that the **$reportFileName** must follow the **-file** option if used.
-   *  The modal properties are computed and stored in the **Domain** object, so that they can be accessed later in the :ref:`responseSpectrum`.
+   *  The modal properties are computed and stored in the **Domain** object, so that they can be accessed later in the :ref:`responseSpectrumAnalysis`.
    *  This command directly accesses the mass matrix of the model, so it accounts for both nodal masses and element's (distributed) masses. And the element mass matrix can be either lumped or consistent.
    *  The global mass matrix is then stored into a temporary sparse matrix storage, so it can be used for both small and large models.
    *  This command can be used for both 2D problems (-ndm = 2, -ndf = 2 or 3) and 3D problems (-ndm = 3, -ndf = 3, 4 or 6). In both cases the algorithm computes rotational masses. If a node has rotational DOFs, the rotational masses account for both the direct rotational masses (i.e. those input by the user at rotational DOFs) and the effect of translational masses gyrating about the center of mass. If a node has no rotational DOF, only the latter is considered.
@@ -39,14 +183,20 @@ modalProperties Command
 Theory
 ^^^^^^
 |  The eigenvalues :math:`\lambda` and the eigenvectors :math:`\Phi` can be obtained after solving the *generalized eigenvalue problem* for two symmetric matrices :math:`K` (stiffness) and :math:`M` (mass) given by:
+
 .. math::
    \left (K - \lambda M \right ) \Phi = 0
+
 |  The global mass matrix :math:`M` is given by the assembly of :math:`n` elemental and nodal mass matrices :math:`m_e`:
+
 .. math::
    M = \bigwedge_{i=1}^{n}m_e
+
 |  :math:`M` is not necessarily diagonal, because some elemental matrices :math:`m_e` may be consistent. However, the computation of :math:`CoM`, :math:`m_t` and :math:`m_f` requires a lumped version of :math:`M`. The global lumped mass matrix :math:`LM` can be computed by the assembly of a diagonalized version of the elemental mass matrices :math:`m_e`:
+
 .. math::
    LM = \bigwedge_{i=1}^{n}diag\left(m_e\right)
+
 |  :math:`diag\left(m_e\right)` cannot be computed just by summing the summing the components of each row (in beams or solid with higher order interpolation, this would produces negative terms on the diagonal mass matrix that would be unphysical).
 |  Instead we use the **HRZ** algorithm [HintonEtAl1976]_, named after the authors Hinton, Rock and Zienkiewicz: *“The procedure of lumping recommended in view of the infinite possibilities offered by condition (5) is to compute the diagonal terms of the consistent mass matrix and then scale these terms so as to preserve the total mass of the element”*.
 |  The procedure is as follows:
@@ -60,20 +210,24 @@ Theory
       |  :math:`diag\left(m_e\right)_j = DC_j \cdot SM_i/SC_i`.
 
 |  The center of mass :math:`CoM` and the total masses :math:`m_t` and :math:`m_f` of the structure, for each node :math:`n` with position :math:`X_n` and each DOF :math:`i`, can now be easily computed from :math:`LM`:
+
 .. math::
    m_{t_i} &= \sum_{n=1}^{Nnodes} LM_{ni}\\
    m_{f_i} &= \sum_{n=1}^{Nnodes} LM_{ni}\quad(\text{if}\:i = free)\\
    CoM_i &= \frac{\sum_{n=1}^{Nnodes} X_{ni} \cdot LM_{ni}}{m_{f_i}} \quad(\text{if}\:i = free)
    
 |  The generalized mass matrix is
+
 .. math::
    gm = \Phi^T M \Phi
+
 |  If the default solver is used in the :ref:`eigen` (-genBandArpack), and the option **-unorm** is not used, the eigenvectors are mass-normalized and :math:`gm` will be an identity matrix, i.e. a diagonal matrix whose diagonal entries are = 1, and whose size is :math:`n_m \times n_m` (where :math:`n_m` is the number of requested eigenvalues).
 |  
 |  The modal participation factor matrix :math:`MPF` is a :math:`n_m \times ndf` matrix (where ndf = 3 in 2D and 6 in 3D), where each row contains the modal participation factors for each DOF. The modal participation factor for a certain mode :math:`i` and DOF :math:`j` indicates how strongly the motion (or rotation) associated to that DOF is represented in the eigenvector :math:`i`
 .. math::
    MPF_{ij} = \frac{\Phi_{i}^T M T_j}{gm_{ii}}
 |  where :math:`T_j` defines the magnitude of the rigid body response to imposed rigid body motion (displacement or infinitesimal rotation) in the DOF :math:`j`. Each :math:`ndf \times 1` block :math:`T_{nj}` corresponds to the node :math:`n` and it is defined as (for the 3D/6DOFs case):
+
 .. math::
    T_{nj} = 
    \begin{pmatrix}
@@ -92,11 +246,14 @@ Theory
    e_5 \\
    e_6 \\
    \end{Bmatrix}
+
 |  where :math:`e_j` is 1, and all other :math:`e_p\:(\text{with}\:p \neq j)` are 0. :math:`d_x`, :math:`d_y` and :math:`d_z` are the distances of the node :math:`n` coordinates :math:`X_n=\left(x, y, z\right)` from the center of mass :math:`CoM=\left(x_0, y_0, z_0\right)`. Therefore, the modal participation factors accounts for the masses directly input at translational and rotational DOFs, and also the rotational masses given by the translational masses gyrating about the center of mass. Note, in fact, that even if the user does not input any rotational mass, or even if the user uses 3D solid elements with no rotational DOF, the modal participation factors associated to the rotational DOFs may be :math:`\neq 0`.
 |  
 |  The modal participation mass matrix :math:`MPM` is a :math:`n_m \times ndf` matrix (where ndf = 3 in 2D and 6 in 3D), where each row contains the modal participation masses for each DOF. The modal participation mass for a certain mode :math:`i` and DOF :math:`j` is defined as
+
 .. math::
    MPM_{ij} = \frac{\left(\Phi_{i}^T M T_j\right)^2}{gm_{ii}}
+   
 |  If the modal participation masses for each mode in a particular DOF are summed, it should give the total mass of the structure for that DOF, exlcluding the masses at fixed DOFs.
 
 .. [HintonEtAl1976] Hinton, E., Rock, T. & Zienkiewicz, O. (1976). “A note on mass lumping and related processes in the Finite element method.” Earthquake Engineering and Structural Dynamics, 13, 9, p. A112.
@@ -122,7 +279,7 @@ Theory
 
       modalProperties('-print', '-file', 'ModalReport.txt', '-unorm')
    
-   For a complete example that runs an **eigenvalue analysis**, extracts the **modal properties** and runs a **response spectrum analysis**, see the documentation of the :ref:`responseSpectrum`
+   For a complete example that runs an **eigenvalue analysis**, extracts the **modal properties** and runs a **response spectrum analysis**, see the documentation of the :ref:`responseSpectrumAnalysis`
 
 .. admonition:: ReportFile
    

@@ -12,11 +12,6 @@ In OpenSees, an analysis is an object which is composed by the aggregation of co
 #. Solution Algorithm -- determines the sequence of steps taken to solve the non-linear equation at the current time step
 #. Integrator -- determines the equations to solve, the predictive step, and how to update the reponses at the nodes given the solution to :math:`Ax=b`
 
-.. figure:: figures/OpenSeesAnalysis.png
-	:align: center
-	:figclass: align-center
-
-	OpenSees Analysis
 
 .. toctree::
    :maxdepth: 1

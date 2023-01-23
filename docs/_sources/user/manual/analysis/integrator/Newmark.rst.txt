@@ -1,3 +1,5 @@
+.. _Newmark:
+
 Newmark Method
 -------------------
 
