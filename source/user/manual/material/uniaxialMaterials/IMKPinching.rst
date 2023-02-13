@@ -48,38 +48,36 @@ This command is used to construct a material with a pinched hysteretic response 
 
 .. _fig-IMKPinching:
 
-	IMKPinching backbone curve
-
 .. figure:: figures/IMK/IMKPinching.jpg
 	:align: center
 	:figclass: align-center
 
-	IMKPinching sample responses and validations
+	IMKPinching backbone curve
 
 .. figure:: figures/IMK/IMKPinching_sample_responses_validations.jpg
 	:align: center
 	:figclass: align-center
 
+	IMKPinching sample responses and validations
+
 .. admonition:: Example 
 
-   The following is used to construct a IMKBilin material with symmetric hysteretic response.
-
-   1. **Tcl Code**
+   The following is used to construct a IMKPeakOriented material with symmetric hysteretic response.
 
    .. code-block:: tcl
 
-      set Ke 		10000.;
-      set dp 	   0.01;
+      set Ke 	  10000.;
+      set dp 	  0.01;
       set dpc     0.05;
-      set du 	   0.08;
-      set My 		100.;
-      set Mc_My 	1.10;
+      set du 	  0.08;
+      set My 	  100.;
+      set Mc_My   1.10;
       set Mres_My 0.10;
-      set lambda 	0.50;
-      set c_S 	   1.00;
-      set c_C 	   1.00; 
-      set c_K 	   1.00; 
-      set c_A 	   1.00;
+      set lambda  0.50;
+      set c_S 	  1.00;
+      set c_C 	  1.00; 
+      set c_K 	  1.00; 
+      set c_A 	  1.00;
       set D_pos   1.00;
       set D_neg   1.00;
 
