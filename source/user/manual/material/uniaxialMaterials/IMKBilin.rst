@@ -46,13 +46,13 @@ This command is used to construct a material with a hysteretic bilinear response
 
 	IMKBilin backbone curve
 
-.. figure:: figures/IMKBilin.jpg
+.. figure:: figures/IMK/IMKBilin.jpg
 	:align: center
 	:figclass: align-center
 
 	IMKBilin sample response
 
-.. figure:: figures/IMKBilin-sample response.jpg
+.. figure:: figures/IMK/IMKBilin-sample response.jpg
 	:align: center
 	:figclass: align-center
 
@@ -60,22 +60,20 @@ This command is used to construct a material with a hysteretic bilinear response
 
    The following is used to construct a IMKBilin material with symmetric hysteretic response.
 
-   1. **Tcl Code**
-
    .. code-block:: tcl
 
-      set Ke 		10000.;
-      set dp 	   0.01;
+      set Ke 	  10000.;
+      set dp 	  0.01;
       set dpc     0.05;
-      set du 	   0.08;
-      set My 		100.;
-      set Mc_My 	1.10;
+      set du 	  0.08;
+      set My 	  100.;
+      set Mc_My   1.10;
       set Mres_My 0.10;
-      set lambda 	0.50;
-      set c_S 	   1.00;
-      set c_C 	   1.00; 
-      set c_K 	   1.00; 
-      set c_A 	   1.00;
+      set lambda  0.50;
+      set c_S 	  1.00;
+      set c_C 	  1.00; 
+      set c_K 	  1.00; 
+      set c_A 	  1.00;
       set D_pos   1.00;
       set D_neg   1.00;
 
