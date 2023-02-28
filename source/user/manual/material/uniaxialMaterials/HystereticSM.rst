@@ -76,10 +76,10 @@ This material also has additional DCR-type recorder output.
      - Label
      - Description
    * - defoDCR
-     - deformation Demand-Capacity Ratio on Envelope Points
+     - deformation DCR on Envelope Points
      - 7-component array with the ratio of the CURRENT strain to each of the envelope strain points (if positive: positive points, if negative: negative points)
    * - defoDCRMax
-     - Maximum-deformation Demand-Capacity Ratio on Envelope Points
+     - Maximum-deformation DCR on Envelope Points
      - 14-component array with the ratio of the MAXIMUM strain to each of the envelope strain points (emaxP/e1p,....emaxP/e7p,emaxN/e1n,...emaxN/e7n)
 
    * - defoLimitStates
@@ -90,17 +90,17 @@ This material also has additional DCR-type recorder output.
      - return array of user-defined force limit states
 
    * - defoLimitStatesDCR
-     - deformation Demand-Capacity Ratio on User-Defined Limit States
+     - deformation DCR on User-Defined Limit States
      - array with the ratio of the CURRENT strain to each of the user-defined deformation limit states
    * - defoLimitStatesDCRMax
-     - Maximum-deformation Demand-Capacity Ratio on User-Defined Limit States
+     - Maximum-deformation DCR on User-Defined Limit States
      - array with the ratio of the MAXIMUM strain to each of the user-defined deformation limit states (positive limit-state value emaxP/els, negative value emaxN/els)
    * - defoLimitStatesDCRMaxAbs
-     - MaximumAbsolute-deformation Demand-Capacity Ratio on User-Defined Limit States
+     - MaximumAbsolute-deformation DCR on User-Defined Limit States
      - array with the ratio of the MAXIMUM strain to each of the envelope strain points (max(emaxP,abs(emaxN))/els)
 
    * - forceLimitStatesDCR
-     - force Demand-Capacity Ratio on User-Defined Limit States
+     - force DCR on User-Defined Limit States
      - array with the ratio of the CURRENT stress/force to each of the user-defined force limit states
 
 
@@ -111,5 +111,4 @@ This material also has additional DCR-type recorder output.
 
 
 Modified Code Developed by: |Silvia Mazzoni (Silvia's Brainery)|
-
 Original Hysteretic-Material Code Developed by: |Michael Scott (Oregon State University) & Filip Filippou (UC Berkeley)|
