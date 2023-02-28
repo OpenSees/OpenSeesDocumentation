@@ -96,9 +96,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a><ul class="current">
@@ -123,12 +123,13 @@
 <li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.19. DowelType Timber Joint Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.20. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.21. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.22. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.23. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.24. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.25. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.26. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.21. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.22. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.23. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.24. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.25. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.26. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.27. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
@@ -207,7 +208,7 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
           <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
         
@@ -235,7 +236,7 @@
 <p>This command is used to construct a material with a hysteretic bilinear response based on the modified Ibarra-Medina-Krawinkler deterioration model.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">IMKBilin</span> <span class="pre">$matTag</span> <span class="pre">$Ke</span> <span class="pre">$Up_pos</span> <span class="pre">$Upc_pos</span> <span class="pre">$Uu_pos</span> <span class="pre">$Fy_pos</span> <span class="pre">$FmaxFy_pos</span> <span class="pre">$FresFy_pos</span> <span class="pre">$Up_neg</span> <span class="pre">$Upc_neg</span> <span class="pre">$Uu_neg</span> <span class="pre">$Fy_neg</span> <span class="pre">$FmaxFy_neg</span> <span class="pre">$FresFy_neg</span> <span class="pre">$Lamda_S</span> <span class="pre">$Lamda_C</span> <span class="pre">$Lamda_K</span> <span class="pre">$c_S</span> <span class="pre">$c_C</span> <span class="pre">$c_K</span> <span class="pre">$D_pos</span> <span class="pre">$D_neg</span></span></dt>
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">IMKBilin</span> <span class="pre">$matTag</span> <span class="pre">$Ke</span> <span class="pre">$dp_pos</span> <span class="pre">$dpc_pos</span> <span class="pre">$du_pos</span> <span class="pre">$Fy_pos</span> <span class="pre">$FmaxFy_pos</span> <span class="pre">$FresFy_pos</span> <span class="pre">$dp_neg</span> <span class="pre">$dpc_neg</span> <span class="pre">$du_neg</span> <span class="pre">$Fy_neg</span> <span class="pre">$FmaxFy_neg</span> <span class="pre">$FresFy_neg</span> <span class="pre">$Lamda_S</span> <span class="pre">$Lamda_C</span> <span class="pre">$Lamda_K</span> <span class="pre">$c_S</span> <span class="pre">$c_C</span> <span class="pre">$c_K</span> <span class="pre">$D_pos</span> <span class="pre">$D_neg</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -354,11 +355,11 @@
 <div><p>IMKBilin backbone curve</p>
 </div></blockquote>
 <div class="align-center figure" id="id1">
-<img alt="../../../../_images/IMKBilin.jpg" src="../../../../_images/IMKBilin.jpg" />
+<img alt="user/manual/material/uniaxialMaterials/figures/IMKBilin.jpg" src="user/manual/material/uniaxialMaterials/figures/IMKBilin.jpg" />
 <p class="caption"><span class="caption-number">Fig. 3.1.5.9 </span><span class="caption-text">IMKBilin sample response</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure">
-<img alt="../../../../_images/IMKBilin_sample_response.jpg" src="../../../../_images/IMKBilin_sample_response.jpg" />
+<img alt="user/manual/material/uniaxialMaterials/figures/IMKBilin-sampleresponse.jpg" src="user/manual/material/uniaxialMaterials/figures/IMKBilin-sampleresponse.jpg" />
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
@@ -366,22 +367,28 @@
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke            <span class="mf">100000.0</span><span class="k">;</span>
-<span class="k">set</span> My            <span class="mf">100.0</span><span class="k">;</span>
-<span class="k">set</span> Mc_My   <span class="mf">1.15</span><span class="k">;</span>
-<span class="k">set</span> Mres_My <span class="mf">0.1</span><span class="k">;</span>
-<span class="k">set</span> thetap  <span class="mf">0.010</span><span class="k">;</span>
-<span class="k">set</span> thetau  <span class="mf">0.2</span><span class="k">;</span>
-<span class="k">set</span> thetapc <span class="mf">0.1</span><span class="k">;</span>
-<span class="k">set</span> lambdaS <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaC <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaK <span class="mi">1</span><span class="k">;</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke            <span class="mi">10000</span>.<span class="k">;</span>
+<span class="k">set</span> dp       <span class="mf">0.01</span><span class="k">;</span>
+<span class="k">set</span> dpc     <span class="mf">0.05</span><span class="k">;</span>
+<span class="k">set</span> du       <span class="mf">0.08</span><span class="k">;</span>
+<span class="k">set</span> My            <span class="mi">100</span>.<span class="k">;</span>
+<span class="k">set</span> Mc_My         <span class="mf">1.10</span><span class="k">;</span>
+<span class="k">set</span> Mres_My <span class="mf">0.10</span><span class="k">;</span>
+<span class="k">set</span> lambda        <span class="mf">0.50</span><span class="k">;</span>
+<span class="k">set</span> c_S      <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> c_C      <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> c_K      <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> c_A      <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> D_pos   <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> D_neg   <span class="mf">1.00</span><span class="k">;</span>
 
-<span class="nv">uniaxialMaterial</span> IMKBilin <span class="mi">1</span> <span class="nv">$Ke</span> <span class="nv">$thetap</span> <span class="nv">$thetapc</span> <span class="nv">$thetau</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$thetap</span> <span class="nv">$thetapc</span> <span class="nv">$thetau</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$lambdaS</span> <span class="nv">$lambdaC</span> <span class="nv">$lambdaK</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="k">;</span>
+<span class="nv">uniaxialMaterial</span> IMKBilin  <span class="mi">1</span> <span class="nv">$Ke</span> <span class="nv">$dp</span> <span class="nv">$dpc</span> <span class="nv">$du</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$dp</span> <span class="nv">$dpc</span> <span class="nv">$du</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$c_S</span> <span class="nv">$c_S</span> <span class="nv">$c_K</span> <span class="nv">$D_pos</span> <span class="nv">$D_neg</span><span class="k">;</span>
 </pre></div>
 </div>
 </div>
-<p>Code Developed by: <a href="#id2"><span class="problematic" id="id3">|aelkady|</span></a></p>
+<p>For code inquires or bug reporting, please contact:
+- Kazuki Ichinohe, University of Tokyo, e-mail: <a class="reference external" href="mailto:z-ichinohe&#37;&#52;&#48;g&#46;ecc&#46;u-tokyo&#46;ac&#46;jp">z-ichinohe<span>&#64;</span>g<span>&#46;</span>ecc<span>&#46;</span>u-tokyo<span>&#46;</span>ac<span>&#46;</span>jp</a>
+- Ahmed Elkady, University of Southampton, e-mail: <a class="reference external" href="mailto:a&#46;elkady&#37;&#52;&#48;soton&#46;ac&#46;uk">a<span>&#46;</span>elkady<span>&#64;</span>soton<span>&#46;</span>ac<span>&#46;</span>uk</a></p>
 </div>
 
 

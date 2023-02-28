@@ -103,6 +103,10 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/DowelType
       uniaxialMaterials/BoucWenInfill
       uniaxialMaterials/CoulombDamper
+      uniaxialMaterials/HertzDamp
+      uniaxialMaterials/JankowskiImpact
+      uniaxialMaterials/ViscoelasticGap
+
 
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 

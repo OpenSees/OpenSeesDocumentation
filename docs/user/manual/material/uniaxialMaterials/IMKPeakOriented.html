@@ -236,7 +236,7 @@
 <p>This command is used to construct a material with a peak-oriented hysteretic response based on the modified Ibarra-Medina-Krawinkler deterioration model.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">IMKPeakOriented</span> <span class="pre">$Mat_Tag</span> <span class="pre">$Ke</span> <span class="pre">$Up_pos</span> <span class="pre">$Upc_pos</span> <span class="pre">$Uu_pos</span> <span class="pre">$Fy_pos</span> <span class="pre">$FmaxFy_pos</span> <span class="pre">$FresFy_pos</span> <span class="pre">$Up_neg</span> <span class="pre">$Upc_neg</span> <span class="pre">$Uu_neg</span> <span class="pre">$Fy_neg</span> <span class="pre">$FmaxFy_neg</span> <span class="pre">$FresFy_neg</span> <span class="pre">$Lamda_S</span> <span class="pre">$Lamda_C</span> <span class="pre">$Lamda_A</span> <span class="pre">$Lamda_K</span> <span class="pre">$c_S</span> <span class="pre">$c_C</span> <span class="pre">$c_A</span> <span class="pre">$c_K</span> <span class="pre">$D_pos</span> <span class="pre">$D_neg</span></span></dt>
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">IMKPeakOriented</span> <span class="pre">$Mat_Tag</span> <span class="pre">$Ke</span> <span class="pre">$dp_pos</span> <span class="pre">$dpc_pos</span> <span class="pre">$du_pos</span> <span class="pre">$Fy_pos</span> <span class="pre">$FmaxFy_pos</span> <span class="pre">$FresFy_pos</span> <span class="pre">$dp_neg</span> <span class="pre">$dpc_neg</span> <span class="pre">$du_neg</span> <span class="pre">$Fy_neg</span> <span class="pre">$FmaxFy_neg</span> <span class="pre">$FresFy_neg</span> <span class="pre">$Lamda_S</span> <span class="pre">$Lamda_C</span> <span class="pre">$Lamda_A</span> <span class="pre">$Lamda_K</span> <span class="pre">$c_S</span> <span class="pre">$c_C</span> <span class="pre">$c_A</span> <span class="pre">$c_K</span> <span class="pre">$D_pos</span> <span class="pre">$D_neg</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -375,21 +375,24 @@
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke            <span class="mf">100000.0</span><span class="k">;</span>
-<span class="k">set</span> My            <span class="mf">100.0</span><span class="k">;</span>
-<span class="k">set</span> Mc_My   <span class="mf">1.15</span><span class="k">;</span>
-<span class="k">set</span> Mres_My <span class="mf">0.1</span><span class="k">;</span>
-<span class="k">set</span> thetap  <span class="mf">0.010</span><span class="k">;</span>
-<span class="k">set</span> thetau  <span class="mf">0.2</span><span class="k">;</span>
-<span class="k">set</span> thetapc <span class="mf">0.1</span><span class="k">;</span>
-<span class="k">set</span> lambdaS <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaC <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaA <span class="mi">1</span><span class="k">;</span>
-<span class="k">set</span> lambdaK <span class="mi">1</span><span class="k">;</span>
-
-<span class="nv">uniaxialMaterial</span> ModIMKPeakOriented <span class="mi">1</span> <span class="nv">$Ke</span> <span class="nv">$as</span> <span class="nv">$as</span> <span class="nv">$My</span> <span class="o">-</span><span class="nv">$My</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="k">;</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<p>set Ke               10000.;
+set dp          0.01;
+set dpc     0.05;
+set du          0.08;
+set My               100.;
+set Mc_My    1.10;
+set Mres_My 0.10;
+set lambda   0.50;
+set c_S         1.00;
+set c_C         1.00;
+set c_K         1.00;
+set c_A         1.00;
+set D_pos   1.00;
+set D_neg   1.00;</p>
+<p>uniaxialMaterial IMKPeakOriented      1 $Ke $dp $dpc $du $My $Mc_My $Mres_My $dp $dpc $du $My $Mc_My $Mres_My $lambda $lambda $lambda $lambda $c_S $c_S $c_A $c_K $D_pos $D_neg;</p>
 </div>
 <p>For code inquires or bug reporting, please contact:
 - Kazuki Ichinohe, University of Tokyo, e-mail: <a class="reference external" href="mailto:z-ichinohe&#37;&#52;&#48;g&#46;ecc&#46;u-tokyo&#46;ac&#46;jp">z-ichinohe<span>&#64;</span>g<span>&#46;</span>ecc<span>&#46;</span>u-tokyo<span>&#46;</span>ac<span>&#46;</span>jp</a>

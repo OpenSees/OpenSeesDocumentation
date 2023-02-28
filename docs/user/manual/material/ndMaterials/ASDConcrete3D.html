@@ -1,0 +1,478 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.6.15. ASDConcrete3D Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.7. section Command" href="../section.html" />
+    <link rel="prev" title="3.1.6.14. Series3D Material Wrapper" href="Series3D.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ElasticIsotropic.html">3.1.6.1. Elastic Isotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticOrthotropic.html">3.1.6.2. Elastic Orthotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2Plasticity.html">3.1.6.3. J2 Plasticity Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DruckerPrager.html">3.1.6.4. Drucker Prager Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ManzariDafalias.html">3.1.6.5. Manzari Dafalias Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundingCamClay.html">3.1.6.6. Bounding Cam Clay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Sand.html">3.1.6.7. PM4Sand Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Silt.html">3.1.6.8. PM4Silt Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureIndependentMultiYield.html">3.1.6.9. Pressure Independent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.1.6.10. Pressure Dependent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.1.6.11. J2CyclicBoundingSurface Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.1.6.12. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.1.6.13. Orthotropic Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Series3D.html">3.1.6.14. Series3D Material Wrapper</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.6.15. ASDConcrete3D Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.8. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.9. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.10. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/damping.html">3.1.11. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../ndMaterial.html"><span class="section-number">3.1.6. </span>nDMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.6.15. </span>ASDConcrete3D Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/ndMaterials/ASDConcrete3D.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="asdconcrete3d-material">
+<span id="asdconcrete3d"></span><h1><span class="section-number">3.1.6.15. </span>ASDConcrete3D Material<a class="headerlink" href="#asdconcrete3d-material" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="../../../../_images/ASDConcrete3D.gif"><img alt="../../../../_images/ASDConcrete3D.gif" class="align-center" src="../../../../_images/ASDConcrete3D.gif" style="width: 20%;" /></a>
+<div class="line-block">
+<div class="line">This command is used to construct an ASDConcrete3D material object, a plastic-damage model for concrete and masonry like materials.</div>
+<div class="line">It is based on continuum-damage theory, were the stress tensor can be explicitly obtained from the total strain tensor, without internal iterations at the constitutive level. This makes it fast and robust, suitable for the simulation of large-scale structures. Plasticity is added in a simplified way, in order to have the overall effect of inelastic deformation, but keeping the simplicity of continuum-damage models.</div>
+<div class="line">To improve robustness and convergence of the simulation in case of strain-softening, this model optionally allows to use the IMPL-EX integration scheme (a mixed IMPLicit EXplicit integration scheme).</div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">nDMaterial</span> <span class="pre">ASDConcrete3D</span> <span class="pre">$tag</span> <span class="pre">$E</span> <span class="pre">$v</span> <span class="pre">&lt;-rho</span> <span class="pre">$rho&gt;</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-Te</span> <span class="pre">$Te</span> <span class="pre">-Ts</span> <span class="pre">$Ts</span> <span class="pre">&lt;-Td</span> <span class="pre">$Td&gt;</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-Ce</span> <span class="pre">$Ce</span> <span class="pre">-Cs</span> <span class="pre">$Cs</span> <span class="pre">&lt;-Cd</span> <span class="pre">$Cd&gt;</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">&lt;-implex&gt;</span> <span class="pre">&lt;-implexControl</span> <span class="pre">$implexErrorTolerance</span> <span class="pre">$implexTimeReductionLimit&gt;</span> <span class="pre">&lt;-implexAlpha</span> <span class="pre">$alpha&gt;</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">&lt;-crackPlanes</span> <span class="pre">$nct</span> <span class="pre">$ncc</span> <span class="pre">$smoothingAngle&gt;</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">&lt;-eta</span> <span class="pre">$eta&gt;</span> <span class="pre">&lt;-tangent&gt;</span> <span class="pre">&lt;-autoRegularization&gt;</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$tag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Unique tag identifying this material.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$E $v</p></td>
+<td><p>2 <em>float</em></p></td>
+<td><p>Mandatory. Young’s modulus and Poisson’s ratio.</p></td>
+</tr>
+<tr class="row-even"><td><p>-Te $Te</p></td>
+<td><p><em>string</em> + <em>list</em></p></td>
+<td><p>Mandatory. <strong>-Te</strong>: A keyword that preceds the list. <strong>$Te</strong>: A list of total-strain values for the tensile hardening-softening law.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-Ts $Ts</p></td>
+<td><p><em>string</em> + <em>list</em></p></td>
+<td><p>Mandatory. <strong>-Ts</strong>: A keyword that preceds the list. <strong>$Ts</strong>: A list of stress values for the tensile hardening-softening law.</p></td>
+</tr>
+<tr class="row-even"><td><p>-Td $Td</p></td>
+<td><p><em>string</em> + <em>list</em></p></td>
+<td><p>Optional. <strong>-Td</strong>: A keyword that preceds the list. <strong>$Td</strong>: A list of damage values for the tensile hardening-softening law. If not defined, no stiffness degradation will be considered.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-Ce $Ce</p></td>
+<td><p><em>string</em> + <em>list</em></p></td>
+<td><p>Mandatory. <strong>-Ce</strong>: A keyword that preceds the list. <strong>$Ce</strong>: A list of total-strain values for the compressive hardening-softening law.</p></td>
+</tr>
+<tr class="row-even"><td><p>-Cs $Cs</p></td>
+<td><p><em>string</em> + <em>list</em></p></td>
+<td><p>Mandatory. <strong>-Cs</strong>: A keyword that preceds the list. <strong>$Cs</strong>: A list of stress values for the compressive hardening-softening law.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-Cd $Cd</p></td>
+<td><p><em>string</em> + <em>list</em></p></td>
+<td><p>Optional. <strong>-Cd</strong>: A keyword that preceds the list. <strong>$Cd</strong>: A list of damage values for the compressive hardening-softening law. If not defined, no stiffness degradation will be considered.</p></td>
+</tr>
+<tr class="row-even"><td><p>-implex</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. If defined, the IMPL-EX integration will be used, otherwise the standard implicit integration will be used (default).</p></td>
+</tr>
+<tr class="row-odd"><td><p>-implexControl $implexErrorTolerance $implexTimeReductionLimit</p></td>
+<td><p><em>string</em> + 2 <em>float</em></p></td>
+<td><p>Optional. <strong>-implexControl</strong>: Activates the control of the IMPL-EX error. <strong>implexErrorTolerance</strong>: Relative error tolerance. <strong>implexTimeReductionLimit</strong>: Minimum allowed relative reduction of the time-step. If the error introduced by the IMPL-EX algorithm is larger than <strong>implexErrorTolerance</strong> , the material will fail during the computation. The user can therfore use an adaptive time-step to reduce the time-step to keep the error under control. If the reduction of the time-step is smaller than <strong>implexTimeReductionLimit</strong> , the error control will be skipped. Suggested values: -implexControl 0.05 0.01.</p></td>
+</tr>
+<tr class="row-even"><td><p>-implexAlpha $alpha</p></td>
+<td><p><em>string</em> + <em>float</em></p></td>
+<td><p>Optional. Default = 1. The <span class="math notranslate nohighlight">\(\alpha\)</span> coefficient for the explicit extrapolation of the internal variables in the IMPL-EX algorithm. It can range from 0 to 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-crackPlanes $nct $ncc $smoothingAngle</p></td>
+<td><p><em>string</em> + 2 <em>integer</em> + <em>float</em></p></td>
+<td><p>Optional. If defined, it activates the anisotropy of internal variables. Tensile internal variables are stored on crack-planes that are equally spaced every <span class="math notranslate nohighlight">\(90/nc_t\)</span> degrees. Compressive internal variables are stored on crack-planes that are equally spaced every <span class="math notranslate nohighlight">\(90/nc_c\)</span> degrees. The active crack-plane is chosen based on the current principal stress directions. <strong>smoothingAngle</strong>: Angle in degrees used to smooth the internal variables on crack-planes around the active crack-plane. Suggested values: -crackPlanes 4 4 45.0</p></td>
+</tr>
+<tr class="row-even"><td><p>-eta $eta</p></td>
+<td><p><em>string</em> + <em>float</em></p></td>
+<td><p>Optional. If defined, the rate-dependent model is used (By default the model is rate-independent). <strong>-eta</strong>: Activates the rate-dependent model. <strong>eta</strong>: The viscosity parameter <span class="math notranslate nohighlight">\(\eta\)</span>, representing the relaxation time of the viscoplastic system.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-tangent</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. If defined, the tangent constitutive matrix is used. By default, the secant stiffness is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>-autoRegularization</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. If defined, and if the tensile and/or the compressive hardening-softening law has strain-softening, the area under the hardening-softening law is assumed to be a real fracture energy (<span class="math notranslate nohighlight">\(G_f\)</span> with dimension = <span class="math notranslate nohighlight">\(F/L\)</span>), and the specific fracture energy <span class="math notranslate nohighlight">\(g_f\)</span> (with dimension = <span class="math notranslate nohighlight">\(F/L^2\)</span>) is automatically computed as <span class="math notranslate nohighlight">\(g_f=G_f/l_{ch}\)</span>, where <span class="math notranslate nohighlight">\(l_{ch}\)</span> is the characteristic length of the Finite Element.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="theory">
+<h2><span class="section-number">3.1.6.15.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">In the following description, all variables without subscripts refer to the current time-step, while those with the <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(n-1\)</span> subscripts refer to the same variables at the two previous (known) time steps.</div>
+<div class="line">The trial effective stress tensor is computed from the previous effective stress <span class="math notranslate nohighlight">\(\bar{\sigma}_{n}\)</span> and the trial elastic stress increment <span class="math notranslate nohighlight">\(C_{0}:\left (\varepsilon - \varepsilon_{n}\right )\)</span>:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\tilde{\sigma} = \bar{\sigma}_{n} + C_{0}:\left (\varepsilon - \varepsilon_{n}\right )\]</div>
+<div class="line-block">
+<div class="line">It is then split into its positive (<span class="math notranslate nohighlight">\(\tilde{\sigma}^{+}\)</span>) and negative (<span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>) parts, using the positive principal stresses (<span class="math notranslate nohighlight">\(\langle \tilde{\sigma}_{i} \rangle\)</span>) and their principal directions (<span class="math notranslate nohighlight">\(p_{i}\)</span>):</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{align} \tilde{\sigma}^{+} = \sum_{i=1}^{3} \langle \tilde{\sigma}_{i} \rangle p_{i}\otimes p_{i} &amp;&amp; \tilde{\sigma}^{-} = \tilde{\sigma} - \tilde{\sigma}^{+} \end{align}\]</div>
+<div class="line-block">
+<div class="line">Two equivalent scalar stress measures for the tensile (<span class="math notranslate nohighlight">\(\tilde{\tau}^+\)</span>) and compressive (<span class="math notranslate nohighlight">\(\tilde{\tau}^-\)</span>) behaviors are obtained from the trial effective stress tensor <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or from its negative part <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span> for the compressive behavior) using the following damage surfaces:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\tilde{\tau}^+ = f\left(\tilde{\sigma} \right) = H\left (\tilde{\sigma}_{max} \right )\left [\frac{1}{1-\alpha}\left(\alpha\tilde{I}_1+\sqrt[]{3\tilde{J}_2}+\beta\langle \tilde{\sigma}_{max} \rangle \right )\frac{1}{\phi} \right ]\]</div>
+<div class="math notranslate nohighlight">
+\[\tilde{\tau}^- = f\left(\tilde{\sigma}^{-} \right) = \left [\frac{1}{1-\alpha}\left(\alpha\tilde{I}_1+\sqrt[]{3\tilde{J}_2}+\gamma\langle -\tilde{\sigma}_{max} \rangle \right ) \right ]\]</div>
+<div class="line-block">
+<div class="line">where <span class="math notranslate nohighlight">\(\tilde{I}_1\)</span> is the first invariant of <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>), <span class="math notranslate nohighlight">\(\tilde{J}_2\)</span> is the second invariant of the deviator of <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>), <span class="math notranslate nohighlight">\(\sigma_{max}\)</span> is the maximum principal stress of <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>), <span class="math notranslate nohighlight">\(\alpha = 4/33\)</span>, <span class="math notranslate nohighlight">\(\beta = 23/3\)</span>, <span class="math notranslate nohighlight">\(\phi = 10\)</span>, <span class="math notranslate nohighlight">\(\gamma=3\)</span>.</div>
+</div>
+<div class="line-block">
+<div class="line">The equivalent stress measures <span class="math notranslate nohighlight">\(\tilde{\tau}^+\)</span> and <span class="math notranslate nohighlight">\(\tilde{\tau}^-\)</span> are converted into their trial total-strain counter-parts <span class="math notranslate nohighlight">\(\tilde{x}^+\)</span> and <span class="math notranslate nohighlight">\(\tilde{x}^-\)</span> accounting for the equivalent plastic strain from the previous step:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\tilde{x}^{\pm} = \frac{\tilde{\tau}^{\pm}}{E} + x_{pl,n}\]</div>
+<div class="line-block">
+<div class="line">To impose the irreversibity of plasticity and damage, and to account for rate-dependency (if <span class="math notranslate nohighlight">\(\eta \gt 0\)</span>), the current equivalent strain measures are updated as follows:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}x^{\pm} = \begin{cases}    \frac{\eta}{\eta +\Delta t} x^{\pm}_n + \frac{\Delta t}{\eta +\Delta t} \tilde{x}^{\pm}, &amp; \text{if } \tilde{x}^{\pm} &gt; x^{\pm}_n\\ x^{\pm}_n, &amp; \text{otherwise}           \end{cases}\end{split}\]</div>
+<div class="line-block">
+<div class="line">The equivalent total-strain measures are then plugged into the hardening-softening laws to obtain the plastic and cracking damage variables <span class="math notranslate nohighlight">\(d_{pl}^{\pm}\)</span> and <span class="math notranslate nohighlight">\(d_{cr}^{\pm}\)</span>, and the effective (<span class="math notranslate nohighlight">\(\bar{\sigma}\)</span>) and nominal (<span class="math notranslate nohighlight">\(\sigma\)</span>) stress tensors are computed as:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{align} \bar{\sigma}^+ = \left (1-d^{+}_{pl}\right ) \tilde{\sigma}^+, &amp;&amp; \bar{\sigma}^- = \left (1-d^{-}_{pl}\right ) \tilde{\sigma}^-, &amp;&amp; \bar{\sigma} = \bar{\sigma}^+ + \bar{\sigma}^- \end{align}\]</div>
+<div class="math notranslate nohighlight">
+\[\sigma = \left (1-d^{+}_{cr}\right ) \bar{\sigma}^+ + \left (1-d^{-}_{cr}\right ) \bar{\sigma}^-\]</div>
+<div class="align-center figure" id="id2">
+<img alt="../../../../_images/ASDConcrete3D_Theory_01.png" src="../../../../_images/ASDConcrete3D_Theory_01.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.6.2 </span><span class="caption-text">A schematic representation of the elastic predictor followed by the plastic and damage correctors in a representative uniaxial case.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="usage-notes">
+<h2><span class="section-number">3.1.6.15.2. </span>Usage Notes<a class="headerlink" href="#usage-notes" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-responses admonition">
+<p class="admonition-title">Responses</p>
+<ul class="simple">
+<li><p>All responses available for the nDMaterial object: <strong>stress</strong> (or <strong>stresses</strong>), <strong>strain</strong> (or <strong>strains</strong>), <strong>tangent</strong> (or <strong>Tangent</strong>), <strong>TempAndElong</strong>.</p></li>
+<li><p><strong>damage</strong> or <strong>Damage</strong>: 2 components (<span class="math notranslate nohighlight">\(d^+\)</span>, <span class="math notranslate nohighlight">\(d^-\)</span>). The cracking damage variables. If option <strong>-crackPlanes</strong> is used, it gives the maximum values among all crack-planes.</p></li>
+<li><p><strong>damage -avg</strong> or <strong>Damage -avg</strong>: 2 components (<span class="math notranslate nohighlight">\(d^+\)</span>, <span class="math notranslate nohighlight">\(d^-\)</span>). Same as above. If option <strong>-crackPlanes</strong> is used, it gives the average values of the crack-planes.</p></li>
+<li><p><strong>equivalentPlasticStrain</strong> or <strong>EquivalentPlasticStrain</strong>: 2 components (<span class="math notranslate nohighlight">\(x_{pl}^+\)</span>, <span class="math notranslate nohighlight">\(x_{pl}^-\)</span>). The equivalent plastic strains. If option <strong>-crackPlanes</strong> is used, it gives the maximum values among all crack-planes.</p></li>
+<li><p><strong>equivalentPlasticStrain -avg</strong> or <strong>EquivalentPlasticStrain -avg</strong>: 2 components (<span class="math notranslate nohighlight">\(x_{pl}^+\)</span>, <span class="math notranslate nohighlight">\(x_{pl}^-\)</span>). Same as above. If option <strong>-crackPlanes</strong> is used, it gives the average values of the crack-planes.</p></li>
+<li><p><strong>equivalentTotalStrain</strong> or <strong>EquivalentTotalStrain</strong>: 2 components (<span class="math notranslate nohighlight">\(x^+\)</span>, <span class="math notranslate nohighlight">\(x^-\)</span>). The equivalent total strains. If option <strong>-crackPlanes</strong> is used, it gives the maximum values among all crack-planes.</p></li>
+<li><p><strong>equivalentTotalStrain -avg</strong> or <strong>EquivalentTotalStrain -avg</strong>: 2 components (<span class="math notranslate nohighlight">\(x^+\)</span>, <span class="math notranslate nohighlight">\(x^-\)</span>). Same as above. If option <strong>-crackPlanes</strong> is used, it gives the average values of the crack-planes.</p></li>
+<li><p><strong>cw</strong> or <strong>crackWidth</strong> or <strong>CrackWidth</strong>: 1 component (<span class="math notranslate nohighlight">\(cw\)</span>). The equivalent tensile total strain minus the equivalent strain at the onset of crack, times the characteristic length of the parent element. If option <strong>-crackPlanes</strong> is used, it gives the maximum value among all crack-planes.</p></li>
+<li><p><strong>cw -avg</strong> or <strong>crackWidth -avg</strong> or <strong>CrackWidth -avg</strong>: 1 component (<span class="math notranslate nohighlight">\(cw\)</span>). Same as above. If option <strong>-crackPlanes</strong> is used, it gives the average value of the crack-planes.</p></li>
+<li><p><strong>crackInfo $Nx $Ny $Nz</strong> or <strong>CrackInfo $Nx $Ny $Nz</strong>: 2 components (<span class="math notranslate nohighlight">\(ID\)</span>, <span class="math notranslate nohighlight">\(X\)</span>). Gives the 0-based index (ID) and the tensile equivalent total strain (X) of the crack-plane with the normal vector closest to (Nx, Ny, Nz).</p></li>
+<li><p><strong>crushInfo $Nx $Ny $Nz</strong> or <strong>CrushInfo $Nx $Ny $Nz</strong>: 2 components (<span class="math notranslate nohighlight">\(ID\)</span>, <span class="math notranslate nohighlight">\(X\)</span>). Same as above, but for the compressive response.</p></li>
+</ul>
+</div>
+<div class="admonition-example-1-drawing-the-damage-surface admonition">
+<p class="admonition-title">Example 1 - Drawing the Damage Surface</p>
+<p>A Python example to draw the damage surface in the plane-stress case: <a class="reference download internal" download="" href="../../../../_downloads/5a70755c52099f50fed9bf3cec031801/ASDConcrete3D_Ex_Surface.py"><code class="xref download docutils literal notranslate"><span class="pre">ASDConcrete3D_Ex_Surface.py</span></code></a></p>
+<a class="reference internal image-reference" href="../../../../_images/ASDConcrete3D_Ex_Surface_Output.gif"><img alt="../../../../_images/ASDConcrete3D_Ex_Surface_Output.gif" src="../../../../_images/ASDConcrete3D_Ex_Surface_Output.gif" style="width: 30%;" /></a>
+</div>
+<div class="admonition-example-2-understanding-the-hardening-softening-laws admonition">
+<p class="admonition-title">Example 2 - Understanding the Hardening/Softening Laws</p>
+<div class="line-block">
+<div class="line">A Python module to generate typical hardening-softening laws for normal concrete: <a class="reference download internal" download="" href="../../../../_downloads/da5ea4c2de6eae800594bdb2af3629d0/ASDConcrete3D_MakeLaws.py"><code class="xref download docutils literal notranslate"><span class="pre">ASDConcrete3D_MakeLaws.py</span></code></a></div>
+<div class="line">Simple example to test it under uniaxial conditions in tension and compression: <a class="reference download internal" download="" href="../../../../_downloads/b404e91561ad07c70e6d1010ea9906b0/ASDConcrete3D_Ex_CyclicUniaxialCompression.py"><code class="xref download docutils literal notranslate"><span class="pre">ASDConcrete3D_Ex_CyclicUniaxialTension.py</span></code></a> and <a class="reference download internal" download="" href="../../../../_downloads/b404e91561ad07c70e6d1010ea9906b0/ASDConcrete3D_Ex_CyclicUniaxialCompression.py"><code class="xref download docutils literal notranslate"><span class="pre">ASDConcrete3D_Ex_CyclicUniaxialCompression.py</span></code></a></div>
+</div>
+<p><a class="reference internal" href="../../../../_images/ASDConcrete3D_Ex_CyclicUniaxialTension.gif"><img alt="asd_conc_pic_1" src="../../../../_images/ASDConcrete3D_Ex_CyclicUniaxialTension.gif" style="width: 30%;" /></a> <a class="reference internal" href="../../../../_images/ASDConcrete3D_Ex_CyclicUniaxialCompression.gif"><img alt="asd_conc_pic_2" src="../../../../_images/ASDConcrete3D_Ex_CyclicUniaxialCompression.gif" style="width: 30%;" /></a></p>
+</div>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">3.1.6.15.3. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="citation">
+<dt class="label" id="petracca2022"><span class="brackets">Petracca2022</span></dt>
+<dd><div class="line-block">
+<div class="line">Petracca, M., Camata, G., Spacone, E., &amp; Pelà, L. (2022). “Efficient Constitutive Model for Continuous Micro-Modeling of Masonry Structures” International Journal of Architectural Heritage, 1-13 (<a class="reference external" href="https://www.researchgate.net/profile/Luca-Pela/publication/363656245_Efficient_Constitutive_Model_for_Continuous_Micro-Modeling_of_Masonry_Structures/links/6332e7f1165ca22787785134/Efficient-Constitutive-Model-for-Continuous-Micro-Modeling-of-Masonry-Structures.pdf">Link to article</a>)</div>
+</div>
+</dd>
+<dt class="label" id="oliver2008"><span class="brackets">Oliver2008</span></dt>
+<dd><div class="line-block">
+<div class="line">Oliver, J., Huespe, A. E., &amp; Cante, J. C. (2008). “An implicit/explicit integration scheme to increase computability of non-linear material and contact/friction problems” Computer Methods in Applied Mechanics and Engineering, 197(21-24), 1865-1889 (<a class="reference external" href="https://core.ac.uk/download/pdf/325948712.pdf">Link to article</a>)</div>
+</div>
+</dd>
+</dl>
+<p>Code Developed by: <strong>Massimo Petracca</strong> at ASDEA Software, Italy.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

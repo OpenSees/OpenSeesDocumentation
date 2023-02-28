@@ -97,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Model Commands</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="constraints.html">3.2.1. constraints Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="numberer.html">3.2.2. numberer Command</a></li>
@@ -224,7 +224,7 @@
 </div></blockquote>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">modalProperties</span> <span class="pre">&lt;-print&gt;</span> <span class="pre">&lt;-file</span> <span class="pre">$reportFileName&gt;</span> <span class="pre">&lt;-unorm&gt;</span></span></dt>
+<span class="sig-name descname"><span class="pre">modalProperties</span> <span class="pre">&lt;-print&gt;</span> <span class="pre">&lt;-return&gt;</span> <span class="pre">&lt;-file</span> <span class="pre">$reportFileName&gt;</span> <span class="pre">&lt;-unorm&gt;</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -244,20 +244,167 @@
 <td><p><em>string</em></p></td>
 <td><p>Optional. If included, a report of the modal properties is printed to the console.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-file</p></td>
+<tr class="row-odd"><td><p>-return</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. If included, a report of the modal properties will be returned as a dict object to Python.</p></td>
+</tr>
+<tr class="row-even"><td><p>-file</p></td>
 <td><p><em>string</em></p></td>
 <td><p>Optional. If included, a report of the modal properties is printed to the file $reportFileName.</p></td>
 </tr>
-<tr class="row-even"><td><p>$reportFileName</p></td>
+<tr class="row-odd"><td><p>$reportFileName</p></td>
 <td><p><em>string</em></p></td>
 <td><p>Optional, but mandatory if the -file option is included. Indicates the filename for the report. If the file does not exist, it will be created. If the file exists, it will be overwritten.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-unorm</p></td>
+<tr class="row-even"><td><p>-unorm</p></td>
 <td><p><em>string</em></p></td>
 <td><p>Optional. If included, the computation of the modal properties will be carried out using a displacement-normalized version of the eigenvectors.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition-return-value-with-return admonition">
+<p class="admonition-title">Return value with <code class="docutils literal notranslate"><span class="pre">-return</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="c1"># list of one int value</span>
+   <span class="s2">&quot;domainSize&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">ndm</span><span class="p">],</span>
+
+   <span class="c1"># list of lambda values for all modes</span>
+   <span class="s2">&quot;eigenLambda&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">lambdas</span><span class="p">],</span>
+
+   <span class="c1"># list of omega values for all modes</span>
+   <span class="s2">&quot;eigenOmega&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">omega</span><span class="p">],</span>
+
+   <span class="c1"># list of frequency values for all modes</span>
+   <span class="s2">&quot;eigenFrequency&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">frequency</span><span class="p">],</span>
+
+   <span class="c1"># list of period values for all modes</span>
+   <span class="s2">&quot;eigenPeriod&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">period</span><span class="p">],</span>
+
+   <span class="c1"># list of total mass values, [MX] for 1D, [MX, MY, RMZ] for 2D,</span>
+   <span class="c1"># [MX, MY, MZ, MRX, RMY, RMZ] for 3D</span>
+   <span class="s2">&quot;totalMass&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># list of total mass values for free DOFs, [MX] for 1D,</span>
+   <span class="c1"># [MX, MY, RMZ] for 2D,  [MX, MY, MZ, MRX, RMY, RMZ] for 3D</span>
+   <span class="s2">&quot;totalFreeMass&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># coordinates of mass center, [X] for 1D, [X, Y] for 2D,</span>
+   <span class="c1"># [X, Y, Z] for 3D</span>
+   <span class="s2">&quot;centerOfMass&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">center</span><span class="p">],</span>
+
+   <span class="c1">#</span>
+   <span class="c1"># modal participation factors for all modes</span>
+   <span class="c1">#</span>
+
+   <span class="c1"># for MX direction for 1D, 2D and 3D</span>
+   <span class="s2">&quot;partiFactorMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">factor</span><span class="p">],</span>
+
+   <span class="c1"># for MY direction for 2D and 3D</span>
+   <span class="s2">&quot;partiFactorMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">factor</span><span class="p">],</span>
+
+   <span class="c1"># for MZ direction for 3D</span>
+   <span class="s2">&quot;partiFactorMZ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">factor</span><span class="p">],</span>
+
+   <span class="c1"># for RMX direction for 3D</span>
+   <span class="s2">&quot;partiFactorRMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">factor</span><span class="p">],</span>
+
+   <span class="c1"># for RMY direction for 3D</span>
+   <span class="s2">&quot;partiFactorRMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">factor</span><span class="p">],</span>
+
+   <span class="c1"># for RMZ direction for 2D and 3D</span>
+   <span class="s2">&quot;partiFactorRMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">factor</span><span class="p">],</span>
+
+   <span class="c1">#</span>
+   <span class="c1"># modal participation masses for all modes</span>
+   <span class="c1">#</span>
+
+   <span class="c1"># for MX direction for 1D, 2D and 3D</span>
+   <span class="s2">&quot;partiMassMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for MY direction for 2D and 3D</span>
+   <span class="s2">&quot;partiMassMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for MZ direction for 3D</span>
+   <span class="s2">&quot;partiMassMZ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMX direction for 3D</span>
+   <span class="s2">&quot;partiMassRMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMY direction for 3D</span>
+   <span class="s2">&quot;partiMassRMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMZ direction for 2D and 3D</span>
+   <span class="s2">&quot;partiMassRMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1">#</span>
+   <span class="c1"># modal participation masses (cumulative) for all modes</span>
+   <span class="c1">#</span>
+
+   <span class="c1"># for MX direction for 1D, 2D and 3D</span>
+   <span class="s2">&quot;partiMassesCumuMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for MY direction for 2D and 3D</span>
+   <span class="s2">&quot;partiMassesCumuMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for MZ direction for 3D</span>
+   <span class="s2">&quot;partiMassesCumuMZ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMX direction for 3D</span>
+   <span class="s2">&quot;partiMassesCumuRMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMY direction for 3D</span>
+   <span class="s2">&quot;partiMassesCumuRMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMZ direction for 2D and 3D</span>
+   <span class="s2">&quot;partiMassesCumuRMZ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1">#</span>
+   <span class="c1"># modal participation mass ratios (%) for all modes</span>
+   <span class="c1">#</span>
+
+   <span class="c1"># for MX direction for 1D, 2D and 3D</span>
+   <span class="s2">&quot;partiMassRatiosMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for MY direction for 2D and 3D</span>
+   <span class="s2">&quot;partiMassRatiosMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for MZ direction for 3D</span>
+   <span class="s2">&quot;partiMassRatiosMZ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMX direction for 3D</span>
+   <span class="s2">&quot;partiMassRatiosRMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMY direction for 3D</span>
+   <span class="s2">&quot;partiMassRatiosRMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMZ direction for 2D and 3D</span>
+   <span class="s2">&quot;partiMassRatiosRMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1">#</span>
+   <span class="c1"># modal participation mass ratios (%) (cumulative) for all modes</span>
+   <span class="c1">#</span>
+
+   <span class="c1"># for MX direction for 1D, 2D and 3D</span>
+   <span class="s2">&quot;partiMassRatiosCumuMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for MY direction for 2D and 3D</span>
+   <span class="s2">&quot;partiMassRatiosCumuMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for MZ direction for 3D</span>
+   <span class="s2">&quot;partiMassRatiosCumuMZ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMX direction for 3D</span>
+   <span class="s2">&quot;partiMassRatiosCumuRMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMY direction for 3D</span>
+   <span class="s2">&quot;partiMassRatiosCumuRMY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+
+   <span class="c1"># for RMZ direction for 2D and 3D</span>
+   <span class="s2">&quot;partiMassRatiosCumuRMX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mass</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
