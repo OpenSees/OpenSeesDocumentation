@@ -106,9 +106,10 @@ This material also has additional DCR-type recorder output.
 
    * - allData
      - All relevant Data
-     - all relevant data at current step (mom1p,rot1p,mom2p,rot2p,mom3p,rot3p,mom4p,rot4p,mom5p,rot5p,mom6p,rot6p,mom7p,rot7p,mom1n,rot1n,mom2n,rot2n,mom3n,rot3n,mom4n,rot4n,mom5n,rot5n,mom6n,rot6n,mom7n,rot7n,pinchX,pinchY,damfc1,damfc2,beta,CrotMax,CrotMin,CrotPu,CrotNu,CenergyD,CloadIndicator,Cstress,Cstrain,Ttangent)
+     - all relevant data at current step (mom1p, rot1p, mom2p, rot2p, mom3p, rot3p, mom4p, rot4p, mom5p, rot5p, mom6p, rot6p, mom7p, rot7p, mom1n, rot1n, mom2n, rot2n, mom3n, rot3n, mom4n, rot4n, mom5n, rot5n, mom6n, rot6n, mom7n, rot7n, pinchX, pinchY, damfc1, damfc2, beta, CrotMax, CrotMin, CrotPu, CrotNu, CenergyD, CloadIndicator, Cstress, Cstrain, Ttangent)
 
 
 
 Modified Code Developed by: |Silvia Mazzoni (Silvia's Brainery)|
+
 Original Hysteretic-Material Code Developed by: |Michael Scott (Oregon State University) & Filip Filippou (UC Berkeley)|
