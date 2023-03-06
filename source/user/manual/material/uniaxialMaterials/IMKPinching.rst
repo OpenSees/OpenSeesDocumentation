@@ -43,6 +43,8 @@ This command is used to construct a material with a pinched hysteretic response 
 
    All material model parameters (in both the positive and negative direction) shall be specified as positive values.
 
+   Lamda is used to compute the reference energy based on the following equation Ref_Energy = Lamda * Fy
+
 .. [IbarraEtAl2005] Ibarra, L. F., Medina, R. A., and Krawinkler, H. (2005). "Hysteretic models that incorporate strength and stiffness deterioration." Earthquake Engineering & Structural Dynamics, 34(12), 1489-1511, Doi: 10.1002/eqe.495.
 
 
