@@ -75,6 +75,12 @@ This material also has additional DCR-type recorder output.
    * - Argument
      - Label
      - Description
+   * - MU1
+     - Ductility Ratio
+     - ratio of current strain to first point in strain/deformation envelope (if CurrentStrain positive: CurrentStrain/e1p, if CurrentStrain negative: CurrentStrain/e1n) (MUy also works)
+   * - defoPlastic
+     - Plastic Deformation
+     - CurrentStrain/defo - ElasticStrain/defo (ElasticStrain is defined by the elastic stiffness s1p/e1p, if CurrentStrain is positive, or s2p/e2p, if negative, and the current stress/force)     
    * - defoDCR
      - deformation DCR on Envelope Points
      - 7-component array with the ratio of the CURRENT strain to each of the envelope strain points (if positive: positive points, if negative: negative points)
