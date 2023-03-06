@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.5.4. Steel Hysteretic Material &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.5.4. Hysteretic Material &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -96,16 +96,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.1.5.1. Steel01 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.1.5.2. Steel02 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel4.html">3.1.5.3. Steel4 Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.4. Steel Hysteretic Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.4. Hysteretic Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.5. Reinforcing Steel Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.6. DoddRestrepo Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.7. Ramberg Osgood Steel Material</a></li>
@@ -123,12 +123,16 @@
 <li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.19. DowelType Timber Joint Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.20. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.21. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.22. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.23. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.24. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.25. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.26. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.21. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.22. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.23. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.24. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.25. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.26. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.27. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.28. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.29. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.30. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
@@ -207,11 +211,11 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
           <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.5.4. </span>Steel Hysteretic Material</li>
+      <li><span class="section-number">3.1.5.4. </span>Hysteretic Material</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -230,9 +234,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="steel-hysteretic-material">
-<span id="steelhysteretic"></span><h1><span class="section-number">3.1.5.4. </span>Steel Hysteretic Material<a class="headerlink" href="#steel-hysteretic-material" title="Permalink to this headline">¶</a></h1>
-<p>This command is used to construct a uniaxial bilinear hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility.</p>
+  <div class="section" id="hysteretic-material">
+<span id="hysteretic"></span><h1><span class="section-number">3.1.5.4. </span>Hysteretic Material<a class="headerlink" href="#hysteretic-material" title="Permalink to this headline">¶</a></h1>
+<p>This command is used to construct a uniaxial hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. The backbone can be either bilinear or trilinear.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">Hysteretic</span> <span class="pre">$matTag</span> <span class="pre">$s1p</span> <span class="pre">$e1p</span> <span class="pre">$s2p</span> <span class="pre">$e2p</span> <span class="pre">&lt;$s3p</span> <span class="pre">$e3p&gt;</span> <span class="pre">$s1n</span> <span class="pre">$e1n</span> <span class="pre">$s2n</span> <span class="pre">$e2n</span> <span class="pre">&lt;$s3n</span> <span class="pre">$e3n&gt;</span> <span class="pre">$pinchX</span> <span class="pre">$pinchY</span> <span class="pre">$damage1</span> <span class="pre">$damage2</span> <span class="pre">&lt;$beta&gt;</span></span></dt>
@@ -275,7 +279,7 @@
 <td><p><em>float</em></p></td>
 <td><p>stress and strain (or force &amp; deformation) at second point of the envelope in the negative direction</p></td>
 </tr>
-<tr class="row-even"><td><p>$$s3n $e3n</p></td>
+<tr class="row-even"><td><p>$s3n $e3n</p></td>
 <td><p><em>float</em></p></td>
 <td><p>stress and strain (or force &amp; deformation) at third point of the envelope in the negative direction (optional)</p></td>
 </tr>

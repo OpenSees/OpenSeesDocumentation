@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.5.24. QzSimple1 Material &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.5.27. QzSimple1 Material &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.5.25. PyLiq1 Material" href="PyLiq1.html" />
-    <link rel="prev" title="3.1.5.23. TzSimple1 Material" href="TzSimple1.html" /> 
+    <link rel="next" title="3.1.5.28. PyLiq1 Material" href="PyLiq1.html" />
+    <link rel="prev" title="3.1.5.26. TzSimple1 Material" href="TzSimple1.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -106,7 +106,7 @@
 <li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.1.5.1. Steel01 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.1.5.2. Steel02 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel4.html">3.1.5.3. Steel4 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.4. Steel Hysteretic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.4. Hysteretic Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.5. Reinforcing Steel Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.6. DoddRestrepo Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.7. Ramberg Osgood Steel Material</a></li>
@@ -125,12 +125,15 @@
 <li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.19. DowelType Timber Joint Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.20. BoucWenInfill Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.21. CoulombDamper Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.22. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.23. TzSimple1 Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.24. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.25. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.26. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.27. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.22. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.23. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.24. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.25. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.26. TzSimple1 Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.27. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.28. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.29. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.30. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
@@ -213,7 +216,7 @@
         
           <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.5.24. </span>QzSimple1 Material</li>
+      <li><span class="section-number">3.1.5.27. </span>QzSimple1 Material</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -233,7 +236,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="qzsimple1-material">
-<span id="qzsimple1"></span><h1><span class="section-number">3.1.5.24. </span>QzSimple1 Material<a class="headerlink" href="#qzsimple1-material" title="Permalink to this headline">¶</a></h1>
+<span id="qzsimple1"></span><h1><span class="section-number">3.1.5.27. </span>QzSimple1 Material<a class="headerlink" href="#qzsimple1-material" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a QzSimple1 uniaxial material object:</p>
 <dl class="py function">
 <dt class="sig sig-object py">

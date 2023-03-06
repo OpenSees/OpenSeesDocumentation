@@ -105,7 +105,7 @@
 <li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.1.5.1. Steel01 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.1.5.2. Steel02 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel4.html">3.1.5.3. Steel4 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.4. Steel Hysteretic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.4. Hysteretic Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.5. Reinforcing Steel Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.6. DoddRestrepo Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.7. Ramberg Osgood Steel Material</a></li>
@@ -124,12 +124,15 @@
 <li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.19. DowelType Timber Joint Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.20. BoucWenInfill Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.21. CoulombDamper Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.22. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.23. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.24. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.25. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.26. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.27. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.22. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.23. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.24. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.25. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.26. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.27. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.28. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.29. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.30. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
@@ -367,34 +370,29 @@
 <dd><p>Ibarra, L. F., Medina, R. A., and Krawinkler, H. (2005). “Hysteretic models that incorporate strength and stiffness deterioration.” Earthquake Engineering &amp; Structural Dynamics, 34(12), 1489-1511, Doi: 10.1002/eqe.495.</p>
 </dd>
 </dl>
-<blockquote id="fig-imkpinching">
-<div><p>IMKPinching backbone curve</p>
-</div></blockquote>
 <div class="align-center figure" id="id1">
-<img alt="../../../../_images/IMKPinching.jpg" src="../../../../_images/IMKPinching.jpg" />
-<p class="caption"><span class="caption-number">Fig. 3.1.5.11 </span><span class="caption-text">IMKPinching sample responses and validations</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<span id="fig-imkpinching"></span><img alt="../../../../_images/IMKPinching.jpg" src="../../../../_images/IMKPinching.jpg" />
+<p class="caption"><span class="caption-number">Fig. 3.1.5.12 </span><span class="caption-text">IMKPinching backbone curve</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure">
+<div class="align-center figure" id="id2">
 <img alt="../../../../_images/IMKPinching_sample_responses_validations.jpg" src="../../../../_images/IMKPinching_sample_responses_validations.jpg" />
+<p class="caption"><span class="caption-number">Fig. 3.1.5.13 </span><span class="caption-text">IMKPinching sample responses and validations</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>The following is used to construct a IMKBilin material with symmetric hysteretic response.</p>
-<ol class="arabic simple">
-<li><p><strong>Tcl Code</strong></p></li>
-</ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke            <span class="mi">10000</span>.<span class="k">;</span>
-<span class="k">set</span> dp       <span class="mf">0.01</span><span class="k">;</span>
+<p>The following is used to construct a IMKPeakOriented material with symmetric hysteretic response.</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke      <span class="mi">10000</span>.<span class="k">;</span>
+<span class="k">set</span> dp      <span class="mf">0.01</span><span class="k">;</span>
 <span class="k">set</span> dpc     <span class="mf">0.05</span><span class="k">;</span>
-<span class="k">set</span> du       <span class="mf">0.08</span><span class="k">;</span>
-<span class="k">set</span> My            <span class="mi">100</span>.<span class="k">;</span>
-<span class="k">set</span> Mc_My         <span class="mf">1.10</span><span class="k">;</span>
+<span class="k">set</span> du      <span class="mf">0.08</span><span class="k">;</span>
+<span class="k">set</span> My      <span class="mi">100</span>.<span class="k">;</span>
+<span class="k">set</span> Mc_My   <span class="mf">1.10</span><span class="k">;</span>
 <span class="k">set</span> Mres_My <span class="mf">0.10</span><span class="k">;</span>
-<span class="k">set</span> lambda        <span class="mf">0.50</span><span class="k">;</span>
-<span class="k">set</span> c_S      <span class="mf">1.00</span><span class="k">;</span>
-<span class="k">set</span> c_C      <span class="mf">1.00</span><span class="k">;</span>
-<span class="k">set</span> c_K      <span class="mf">1.00</span><span class="k">;</span>
-<span class="k">set</span> c_A      <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> lambda  <span class="mf">0.50</span><span class="k">;</span>
+<span class="k">set</span> c_S     <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> c_C     <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> c_K     <span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span> c_A     <span class="mf">1.00</span><span class="k">;</span>
 <span class="k">set</span> D_pos   <span class="mf">1.00</span><span class="k">;</span>
 <span class="k">set</span> D_neg   <span class="mf">1.00</span><span class="k">;</span>
 
