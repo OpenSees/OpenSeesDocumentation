@@ -75,6 +75,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/IMKBilin
       uniaxialMaterials/IMKPeakOriented
       uniaxialMaterials/IMKPinching
+      uniaxialMaterials/Pinching4
       
 #. Wrapper Uniaxial Materials
 
@@ -103,7 +104,6 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Impact
       uniaxialMaterials/Hyperbolic Gap
       uniaxialMaterials/LimitState
-      uniaxialMaterials/Pinching4
       uniaxialMaterials/Engineered Cementitious Composites
       uniaxialMaterials/SelfCentering
       uniaxialMaterials/Viscous
