@@ -27,7 +27,6 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Steel01
       uniaxialMaterials/Steel02
       uniaxialMaterials/Steel4
-      uniaxialMaterials/Hysteretic
       uniaxialMaterials/ReinforcingSteel
       uniaxialMaterials/DoddRestrepo
       uniaxialMaterials/RambergOsgoodSteel
@@ -63,12 +62,32 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/ElasticNoTension
       uniaxialMaterials/ElasticBilin
       uniaxialMaterials/ElasticMultiLinear
+      uniaxialMaterials/Hardening
       uniaxialMaterials/MultiLinear
+      
+#. Generic Multilinear Hysteretic Materials
+
+   .. toctree::
+      :maxdepth: 1
+      
+      uniaxialMaterials/Hysteretic
+      uniaxialMaterials/HystereticSM
+      uniaxialMaterials/IMKBilin
+      uniaxialMaterials/IMKPeakOriented
+      uniaxialMaterials/IMKPinching
+      
+#. Wrapper Uniaxial Materials
+
+   .. toctree::
+      :maxdepth: 1
+      
+      uniaxialMaterials/Fatigue
       uniaxialMaterials/Parallel
       uniaxialMaterials/Series
       uniaxialMaterials/InitialStrain
       uniaxialMaterials/InitialStress
       uniaxialMaterials/MinMax
+      uniaxialMaterials/PathIndependent
 
 #. Other Uniaxial Materials
 
@@ -78,18 +97,12 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/CastFuse
       uniaxialMaterials/ViscousDamper
       uniaxialMaterials/BilinearOilDamper
-      uniaxialMaterials/IMKBilin
-      uniaxialMaterials/IMKPeakOriented
-      uniaxialMaterials/IMKPinching
       uniaxialMaterials/SAWS
       uniaxialMaterials/BARSLIP
       uniaxialMaterials/Bond_SP01 - - Strain Penetration Model for Fully Anchored Steel Reinforcing Bars
-      uniaxialMaterials/Fatigue
-      uniaxialMaterials/Hardening
       uniaxialMaterials/Impact
       uniaxialMaterials/Hyperbolic Gap
       uniaxialMaterials/LimitState
-      uniaxialMaterials/PathIndependent
       uniaxialMaterials/Pinching4
       uniaxialMaterials/Engineered Cementitious Composites
       uniaxialMaterials/SelfCentering
