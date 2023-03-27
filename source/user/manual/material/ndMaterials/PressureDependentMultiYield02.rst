@@ -11,43 +11,42 @@ Pressure Dependent Multi Yield 02
 
 The command to generate such a material
 
-.. function::
-
-   nDMaterial PressureDependMultiYield02 $tag $nd $rho $refShearModul $refBulkModul $frictionAng $peakShearStra $refPress $pressDependCoe $PTAng $contrac1 $contrac3 $dilat1 $dilat3 <$noYieldSurf=20 <$r1 $Gs1 …> $contrac2=5. $dilat2=3. $liquefac1=1. $liquefac2=0. $e=0.6 $cs1=0.9 $cs2=0.02 $cs3=0.7 $pa=101 <$c=0.1>>
+``TCL command``
+nDMaterial PressureDependMultiYield02 $tag $nd $rho $refShearModul $refBulkModul $frictionAng $peakShearStra $refPress $pressDependCoe $PTAng $contrac1 $contrac3 $dilat1 $dilat3 <$noYieldSurf=20 <$r1 $Gs1 …> $contrac2=5. $dilat2=3. $liquefac1=1. $liquefac2=0. $e=0.6 $cs1=0.9 $cs2=0.02 $cs3=0.7 $pa=101 <$c=0.1>>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
    :widths: 1, 1, 98
 
-   $tag, |integer|,"A positive integer uniquely identifying the material among all nDMaterials."
-   $nd, |integer|, "Number of dimensions, 2 for plane-strain, and 3 for 3D analysis."
-   $rho, |float|, "Saturated soil mass density."
-   $refShearModul (Gr), |float|, "Reference low-strain shear modulus, specified at a reference mean effective confining pressure refPress of p’r"
-   $refBulkModul (Br), |float|, "Reference bulk modulus, specified at a reference mean effective confining pressure refPress of p’r."
-   $frictionAng (Φ), |float|, "Friction angle at peak shear strength, in degrees."
-   $peakShearStra (γmax), |float|,"An octahedral shear strain at which the maximum shear strength is reached, specified at a reference mean effective confining pressure refPress of p’r."
-   $refPress (p’r), |float|, "Reference mean effective confining pressure at which Gr, Br, and γmax are defined."
-   $pressDependCoe (d), |float|, "A positive constant defining variations of G and B as a function of instantaneous effective confinement p’:"
-   $PTAng (ΦPT), |float|, "Phase transformation angle, in degrees."
-   $contrac1 $contrac2, |float|, "A non-negative constant defining the rate of shear-induced volume decrease (contraction) or pore pressure buildup. A larger value corresponds to faster contraction rate."
-   $contrac3, |float|, "A non-negative constant reflecting Kσ effect."
-   $dilat1 $dilat2, |float|, "Non-negative constants defining the rate of shear-induced volume increase (dilation). Larger values correspond to stronger dilation rate."
-   $dilat3, |float|, "A non-negative constant reflecting Kσ effect."
-   $noYieldSurf, |float|,  "Number of yield surfaces, optional (must be less than 40, default is 20). The surfaces are generated based on the hyperbolic relation."
-   $r $Gs, |float|, "Instead of automatic surfaces generation (Note 2), you can define yield surfaces directly based on desired shear modulus reduction curve. To do so, add a minus sign in front of noYieldSurf, then provide noYieldSurf pairs of shear strain (γ) and modulus ratio (Gs) values. For example, to define 10 surfaces: … -10γ1Gs1 … γ10Gs10 …"
-   $liquefac1, |float|, "Damage parameter to define accumulated permanent shear strain as a function of dilation history. (Redefined and different from PressureDependMultiYield material)."
-   $liquefac2, |float|, "Damage parameter to define biased accumulation of permanent shear strain as a function of load reversal history. (Redefined and different from PressureDependMultiYield material)."
-   $e, |float|, "Initial void ratio, optional (default is 0.6)."
-   $cs1 $cs2 $cs3 $pa, |float|, "Parameters defining a straight critical-state line ec in e-p’ space. (default values: cs1=0.9, cs2=0.02, cs3=0.7, pa =101 kPa)."
-   $c, |float|, "Numerical constant (default value = 0.3 kPa)"
+   tag, |integer|,"A positive integer uniquely identifying the material among all nDMaterials."
+   nd, |integer|, "Number of dimensions, 2 for plane-strain, and 3 for 3D analysis."
+   rho, |float|, "Saturated soil mass density."
+   refShearModul (Gr), |float|, "Reference low-strain shear modulus, specified at a reference mean effective confining pressure refPress of p’r"
+   refBulkModul (Br), |float|, "Reference bulk modulus, specified at a reference mean effective confining pressure refPress of p’r."
+   frictionAng (Φ), |float|, "Friction angle at peak shear strength, in degrees."
+   peakShearStra (γmax), |float|,"An octahedral shear strain at which the maximum shear strength is reached, specified at a reference mean effective confining pressure refPress of p’r."
+   refPress (p’r), |float|, "Reference mean effective confining pressure at which Gr, Br, and γmax are defined."
+   pressDependCoe (d), |float|, "A positive constant defining variations of G and B as a function of instantaneous effective confinement p’:"
+   PTAng (ΦPT), |float|, "Phase transformation angle, in degrees."
+   contrac1 $contrac2, |float|, "A non-negative constant defining the rate of shear-induced volume decrease (contraction) or pore pressure buildup. A larger value corresponds to faster contraction rate."
+   contrac3, |float|, "A non-negative constant reflecting Kσ effect."
+   dilat1 $dilat2, |float|, "Non-negative constants defining the rate of shear-induced volume increase (dilation). Larger values correspond to stronger dilation rate."
+   dilat3, |float|, "A non-negative constant reflecting Kσ effect."
+   noYieldSurf, |float|,  "Number of yield surfaces, optional (must be less than 40, default is 20). The surfaces are generated based on the hyperbolic relation."
+   r Gs, |float|, "Instead of automatic surfaces generation (Note 2), you can define yield surfaces directly based on desired shear modulus reduction curve. To do so, add a minus sign in front of noYieldSurf, then provide noYieldSurf pairs of shear strain (γ) and modulus ratio (Gs) values. For example, to define 10 surfaces: … -10γ1Gs1 … γ10Gs10 …"
+   liquefac1, |float|, "Damage parameter to define accumulated permanent shear strain as a function of dilation history. (Redefined and different from PressureDependMultiYield material)."
+   liquefac2, |float|, "Damage parameter to define biased accumulation of permanent shear strain as a function of load reversal history. (Redefined and different from PressureDependMultiYield material)."
+   e, |float|, "Initial void ratio, optional (default is 0.6)."
+   cs1 cs2 cs3 $pa, |float|, "Parameters defining a straight critical-state line ec in e-p’ space. (default values: cs1=0.9, cs2=0.02, cs3=0.7, pa =101 kPa)."
+   c, |float|, "Numerical constant (default value = 0.3 kPa)"
 
 .. note::
 
-   1. **OUTPUT** The following information may be extracted for this material at a given integration point, using the OpenSees Element Recorder facility "stress", "strain", "backbone", or "tangent".
+   1. **OUTPUT** The following information may be extracted for this material at a given integration point, using the OpenSees Element Recorder facility ``stress``, ``strain``, ``backbone``, or ``tangent``.
 
-      * For 2D problems, the stress output follows this order: :math:`\sigma_{xx}`, :math:`\sigma_{yy}`, :math:`\sigma_{zz}`, :math:`\sigma_{xy}`,:math:`\eta_r`, where :math:`\eta_r` is the ratio between the shear (deviatoric) stress and peak shear strength at the current confinement :math:`(0<=\eta_r<=1.0)`. The strain output follows this order: :math:`\epsilon_{xx}`, :math:`\epsilon_{yy}`, :math:`\epsilon_{xy}`
+      * For ``2D`` problems, the stress output follows this order: :math:`\sigma_{xx}`, :math:`\sigma_{yy}`, :math:`\sigma_{zz}`, :math:`\sigma_{xy}`,:math:`\eta_r`, where :math:`\eta_r` is the ratio between the shear (deviatoric) stress and peak shear strength at the current confinement :math:`(0<=\eta_r<=1.0)`. The strain output follows this order: :math:`\epsilon_{xx}`, :math:`\epsilon_{yy}`, :math:`\epsilon_{xy}`
    
-      * For 3D problems, the stress output follows this order: :math:`\sigma_{xx}`, :math:`\sigma_{yy}`, :math:`\sigma_{zz}`, :math:`\sigma_{xy}`,:math:`\sigma_{yz}`, :math:`\sigma_{zx}`, :math:`\eta_r` and the strain output follows this order: :math:`\epsilon_{xx}`, :math:`\epsilon_{yy}`, :math:`\epsilon_{zz}`, :math:`\gamma_{xy}`, :math:`\gamma_{yz}`, :math:`\gamma_{zx}`
+      * For ``3D`` problems, the stress output follows this order: :math:`\sigma_{xx}`, :math:`\sigma_{yy}`, :math:`\sigma_{zz}`, :math:`\sigma_{xy}`,:math:`\sigma_{yz}`, :math:`\sigma_{zx}`, :math:`\eta_r` and the strain output follows this order: :math:`\epsilon_{xx}`, :math:`\epsilon_{yy}`, :math:`\epsilon_{zz}`, :math:`\gamma_{xy}`, :math:`\gamma_{yz}`, :math:`\gamma_{zx}`
 
       *  The "backbone" option records (secant) shear modulus reduction curves at one or more given confinements. The specific recorder command is as follows:
 
