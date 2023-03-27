@@ -11,7 +11,7 @@ Pressure Dependent Multi Yield 02
 
 The command to generate such a material
 
-.. admonition:: function
+.. function::
 
    nDMaterial PressureDependMultiYield02 $tag $nd $rho $refShearModul $refBulkModul $frictionAng $peakShearStra $refPress $pressDependCoe $PTAng $contrac1 $contrac3 $dilat1 $dilat3 <$noYieldSurf=20 <$r1 $Gs1 …> $contrac2=5. $dilat2=3. $liquefac1=1. $liquefac2=0. $e=0.6 $cs1=0.9 $cs2=0.02 $cs3=0.7 $pa=101 <$c=0.1>>
 
@@ -22,10 +22,10 @@ The command to generate such a material
    $tag, |integer|,"A positive integer uniquely identifying the material among all nDMaterials."
    $nd, |integer|, "Number of dimensions, 2 for plane-strain, and 3 for 3D analysis."
    $rho, |float|, "Saturated soil mass density."
-   $refShearModul (Gr), |float|, "Reference low-strain shear modulus, specified at a reference mean effective confining pressure refPress of p’r (see below)"
-   $refBulkModul (Br), |float|, "Reference bulk modulus, specified at a reference mean effective confining pressure refPress of p’r (see below)."
+   $refShearModul (Gr), |float|, "Reference low-strain shear modulus, specified at a reference mean effective confining pressure refPress of p’r"
+   $refBulkModul (Br), |float|, "Reference bulk modulus, specified at a reference mean effective confining pressure refPress of p’r."
    $frictionAng (Φ), |float|, "Friction angle at peak shear strength, in degrees."
-   $peakShearStra (γmax), |float|,"An octahedral shear strain at which the maximum shear strength is reached, specified at a reference mean effective confining pressure refPress of p’r (see below)."
+   $peakShearStra (γmax), |float|,"An octahedral shear strain at which the maximum shear strength is reached, specified at a reference mean effective confining pressure refPress of p’r."
    $refPress (p’r), |float|, "Reference mean effective confining pressure at which Gr, Br, and γmax are defined."
    $pressDependCoe (d), |float|, "A positive constant defining variations of G and B as a function of instantaneous effective confinement p’:"
    $PTAng (ΦPT), |float|, "Phase transformation angle, in degrees."
@@ -33,12 +33,12 @@ The command to generate such a material
    $contrac3, |float|, "A non-negative constant reflecting Kσ effect."
    $dilat1 $dilat2, |float|, "Non-negative constants defining the rate of shear-induced volume increase (dilation). Larger values correspond to stronger dilation rate."
    $dilat3, |float|, "A non-negative constant reflecting Kσ effect."
-   $noYieldSurf, |float|,  "Number of yield surfaces, optional (must be less than 40, default is 20). The surfaces are generated based on the hyperbolic relation defined in Note 2 below."
-   $r $Gs, |float|, "Instead of automatic surfaces generation (Note 2), you can define yield surfaces directly based on desired shear modulus reduction curve. To do so, add a minus sign in front of noYieldSurf, then provide noYieldSurf pairs of shear strain (γ) and modulus ratio (Gs) values. For example, to define 10 surfaces: … -10γ1Gs1 … γ10Gs10 … (See Note 3 below)"
+   $noYieldSurf, |float|,  "Number of yield surfaces, optional (must be less than 40, default is 20). The surfaces are generated based on the hyperbolic relation."
+   $r $Gs, |float|, "Instead of automatic surfaces generation (Note 2), you can define yield surfaces directly based on desired shear modulus reduction curve. To do so, add a minus sign in front of noYieldSurf, then provide noYieldSurf pairs of shear strain (γ) and modulus ratio (Gs) values. For example, to define 10 surfaces: … -10γ1Gs1 … γ10Gs10 …"
    $liquefac1, |float|, "Damage parameter to define accumulated permanent shear strain as a function of dilation history. (Redefined and different from PressureDependMultiYield material)."
    $liquefac2, |float|, "Damage parameter to define biased accumulation of permanent shear strain as a function of load reversal history. (Redefined and different from PressureDependMultiYield material)."
    $e, |float|, "Initial void ratio, optional (default is 0.6)."
-   $cs1 $cs2 $cs3 $pa, |float|, "Parameters defining a straight critical-state line ec in e-p’ space. (default values: cs1=0.9, cs2=0.02, cs3=0.7, pa =101 kPa). See note 6 below."
+   $cs1 $cs2 $cs3 $pa, |float|, "Parameters defining a straight critical-state line ec in e-p’ space. (default values: cs1=0.9, cs2=0.02, cs3=0.7, pa =101 kPa)."
    $c, |float|, "Numerical constant (default value = 0.3 kPa)"
 
 .. note::
@@ -84,13 +84,9 @@ The command to generate such a material
    :header: "Description","Tcl"
    :widths: 1, 1
 
-   "Single 2D 9-4 noded element, subjected to sinusoidal base shaking (PressureDepend02 material)",
-   "Single 3D brick element, subjected to sinusoidal base shaking (PressureDepend02 material)",
-   "Single 3D 20-8 noded element, subjected to sinusoidal base shaking (PressureDepend02 material)",
+   "Single 2D 9-4 noded element, subjected to sinusoidal base shaking (PressureDepend02 material)", `Example 1 <https://opensees.berkeley.edu/wiki/index.php/PressureDependMultiYield02-Example_1>`_
+   "Single 3D brick element, subjected to sinusoidal base shaking (PressureDepend02 material)", `Example 2 <https://opensees.berkeley.edu/wiki/index.php/PressureDependMultiYield02-Example_2>`_
+   "Single 3D 20-8 noded element, subjected to sinusoidal base shaking (PressureDepend02 material)", `Example 3 <https://opensees.berkeley.edu/wiki/index.php/PressureDependMultiYield02-Example_3>`_
 
 Code Developed by: UC San Diego (**Dr. Zhaohui Yang**)
 Github Documentation collected by: `Abolfazl Najafi <https://najafice.github.io>`_
-
-`Example 1 <https://opensees.berkeley.edu/wiki/index.php/PressureDependMultiYield02-Example_1>`_
-`Example 2 <https://opensees.berkeley.edu/wiki/index.php/PressureDependMultiYield02-Example_2>`_
-`Example 3 <https://opensees.berkeley.edu/wiki/index.php/PressureDependMultiYield02-Example_3>`_
