@@ -35,6 +35,7 @@ The following contain information about matType? and the args required for each 
    ndMaterials/PM4Silt
    ndMaterials/PressureIndependentMultiYield
    ndMaterials/PressureDependentMultiYield
+   ndMaterials/PressureDependentMultiYield02
    ndMaterials/J2CyclicBoundingSurface
    ndMaterials/SAniSandMS
 
