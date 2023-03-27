@@ -73,7 +73,7 @@ The command to generate such a material
    frictionAng,  31, 32, 33.5, 35, 36.5
    PTAng,  31, 26, 25.5, 26, 26
    "peakShearStra (at p’r=101 kPa or 14.65 psi)", "0.1", "0.1", "0.1", "0.1", "0.1"
-   "refPress (p’r)", "101 kPa or 14.65 psi", "101 kPa or 14.65 psi", "101 kPa or 14.65 psi", "101 kPa or 14.65 psi", "101 kPa or 14.65 psi"
+   "refPress (p’r)", "101 kPa", "101 kPa", "101 kPa", "101 kPa", "101 kPa"
    pressDependCoe, 0.5, 0.5, 0.5, 0.5, 0.5
    contrac1, 0.087, 0.067, 0.045, 0.028, 0.013
    contrac3, 0.18, 0.23, 0.15, 0.05, 0.0
