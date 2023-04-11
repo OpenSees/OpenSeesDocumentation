@@ -22,3 +22,4 @@ The following contain information about algorithmType? and the args required for
    algorithm/SecantNewton
    algorithm/BFGS
    algorithm/Broyden
+   algorithm/ExpressNewon
