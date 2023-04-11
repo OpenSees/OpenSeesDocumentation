@@ -1,138 +1,94 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>3.1.5.5. Reinforcing Steel Material &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>3.1.5.4. Reinforcing Steel Material &mdash; OpenSees Documentation  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.5.6. DoddRestrepo Material" href="DoddRestrepo.html" />
-    <link rel="prev" title="3.1.5.4. Steel Hysteretic Material" href="Hysteretic.html" /> 
+    <link rel="next" title="3.1.5.5. DoddRestrepo Material" href="DoddRestrepo.html" />
+    <link rel="prev" title="3.1.5.3. Steel4 Material" href="Steel4.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../../index.html">
           
-
-          
+          <a href="../../../../index.html">
             
-            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
+              <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.1.5.1. Steel01 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.1.5.2. Steel02 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel4.html">3.1.5.3. Steel4 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.4. Steel Hysteretic Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.5. Reinforcing Steel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.6. DoddRestrepo Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.7. Ramberg Osgood Steel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SteelMPF.html">3.1.5.8. SteelMPF Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="UVCuniaxial.html">3.1.5.9. UVCUniaxial Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.1.5.10. SteelFractureDI Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.1.5.11. DuctileFracture Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.1.5.12. Concrete01 Material – Zero Tensile Strength</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.1.5.13. Concrete02 Material – Linear Tension Softening</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.1.5.14. Concrete04 Material – Popovics Concrete Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.1.5.15. IMKBilin Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.16. IMKPeakOriented Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.17. IMKPinching Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.19. DowelType Timber Joint Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.20. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.21. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.22. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.23. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.24. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.25. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.26. QzLiq1 Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.4. Reinforcing Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.5. DoddRestrepo Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.6. Ramberg Osgood Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelMPF.html">3.1.5.7. SteelMPF Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UVCuniaxial.html">3.1.5.8. UVCUniaxial Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.1.5.9. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.1.5.10. DuctileFracture Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.1.5.11. Concrete01 Material – Zero Tensile Strength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.1.5.12. Concrete02 Material – Linear Tension Softening</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.1.5.13. Concrete04 Material – Popovics Concrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.14. Hysteretic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticSM.html">3.1.5.15. HystereticSM Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.1.5.16. IMKBilin Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.17. IMKPeakOriented Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.18. IMKPinching Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.19. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.19. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.20. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.21. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.22. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.23. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.24. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.25. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.26. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.27. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.28. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.29. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.30. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.31. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.8. Element Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.9. Time Series Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.10. Pattern Command</a></li>
@@ -141,8 +97,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -159,136 +114,74 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
-        
-          <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
-        
-      <li><span class="section-number">3.1.5.5. </span>Reinforcing Steel Material</li>
-    
-    
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a></li>
+          <li class="breadcrumb-item"><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a></li>
+          <li class="breadcrumb-item"><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.1.5.4. </span>Reinforcing Steel Material</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/material/uniaxialMaterials/ReinforcingSteel.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="reinforcing-steel-material">
-<span id="reinforcingsteel"></span><h1><span class="section-number">3.1.5.5. </span>Reinforcing Steel Material<a class="headerlink" href="#reinforcing-steel-material" title="Permalink to this headline">¶</a></h1>
-</div>
+             
+  <section id="reinforcing-steel-material">
+<span id="reinforcingsteel"></span><h1><span class="section-number">3.1.5.4. </span>Reinforcing Steel Material<a class="headerlink" href="#reinforcing-steel-material" title="Permalink to this heading"></a></h1>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2022, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

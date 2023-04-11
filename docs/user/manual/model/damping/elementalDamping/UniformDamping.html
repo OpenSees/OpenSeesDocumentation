@@ -1,96 +1,47 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3.1.11.3.1. Uniform Damping &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-        <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
-
-    
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="3.1.11.3.2. Universal Rate-Dependent (URD) Damping" href="URDDamping.html" />
     <link rel="prev" title="3.1.11.3. Elemental Damping Command" href="../elementalDamping.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../../../index.html">
           
-
-          
+          <a href="../../../../../index.html">
             
-            <img src="../../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
+              <img src="../../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -103,7 +54,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../material/section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../section.html">3.1.7. section Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../element.html">3.1.8. Element Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../timeSeries.html">3.1.9. Time Series Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../pattern.html">3.1.10. Pattern Command</a></li>
@@ -118,8 +69,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../userExamples.html">4. Examples</a></li>
@@ -136,88 +86,43 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
-          <li><a href="../../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
-        
-          <li><a href="../../damping.html"><span class="section-number">3.1.11. </span>Damping Commands</a> &raquo;</li>
-        
-          <li><a href="../elementalDamping.html"><span class="section-number">3.1.11.3. </span>Elemental Damping Command</a> &raquo;</li>
-        
-      <li><span class="section-number">3.1.11.3.1. </span>Uniform Damping</li>
-    
-    
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../userManual.html"><span class="section-number">3. </span>Command Manual</a></li>
+          <li class="breadcrumb-item"><a href="../../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a></li>
+          <li class="breadcrumb-item"><a href="../../damping.html"><span class="section-number">3.1.11. </span>Damping Commands</a></li>
+          <li class="breadcrumb-item"><a href="../elementalDamping.html"><span class="section-number">3.1.11.3. </span>Elemental Damping Command</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.1.11.3.1. </span>Uniform Damping</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../../_sources/user/manual/model/damping/elementalDamping/UniformDamping.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="uniform-damping">
-<span id="uniformdamping"></span><h1><span class="section-number">3.1.11.3.1. </span>Uniform Damping<a class="headerlink" href="#uniform-damping" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="uniform-damping">
+<span id="uniformdamping"></span><h1><span class="section-number">3.1.11.3.1. </span>Uniform Damping<a class="headerlink" href="#uniform-damping" title="Permalink to this heading"></a></h1>
 <p>This command is used to construct a uniform damping model.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">damping</span> <span class="pre">Uniform</span> <span class="pre">$dampingTag</span> <span class="pre">$dampingRatio</span> <span class="pre">$freql</span> <span class="pre">$freq2</span> <span class="pre">&lt;-activateTime</span> <span class="pre">$Ta&gt;</span> <span class="pre">&lt;-deactivateTime</span> <span class="pre">$Td&gt;</span> <span class="pre">&lt;-fact</span> <span class="pre">$tsTagScaleFactorVsTime&gt;</span></span></dt>
 <dd></dd></dl>
 
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 17%" />
@@ -260,158 +165,145 @@
 </tr>
 </tbody>
 </table>
-<div class="align-center figure" id="id4">
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../../../../../_images/UniformDamping.png"><img alt="../../../../../_images/UniformDamping.png" src="../../../../../_images/UniformDamping.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.11.1 </span><span class="caption-text">Uniform Damping</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1.11.1 </span><span class="caption-text">Uniform Damping</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>The following is used to construct a uniform damping with damping ratio of <strong>0.05</strong> in the frequency range of <strong>1.0</strong> ~ <strong>100</strong> Hz.</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">damping</span> Uniform <span class="mi">1</span> <span class="mf">0.05</span> <span class="mf">1.0</span> <span class="mf">100.0</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">damping</span><span class="w"> </span>Uniform<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">100.0</span>
 </pre></div>
 </div>
 <p>The following is an example for an SDOF system.</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">wipe</span><span class="k">;</span> 
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">wipe</span><span class="k">;</span><span class="w"> </span>
 
 <span class="c"># Create a 2D model with 3 Degrees of Freedom</span>
-<span class="nv">model</span> BasicBuilder <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">3</span><span class="k">;</span> 
+<span class="nv">model</span><span class="w"> </span>BasicBuilder<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">3</span><span class="k">;</span><span class="w"> </span>
 
 <span class="c"># Create uniform damping</span>
 <span class="c"># Ref. [1] Huang Y, Sturt R, Willford M. 2019. A damping model for nonlinear dynamic analysis providing uniform damping over a frequency range. Computers and Structures 212:101–9. http://dx.doi.org/10.1016/j.compstruc.2018.10.016 </span>
 <span class="c"># Ref. [2] Tian Y, Huang Y, Qu Z, Fei Y, Lu X. 2022. High-performance uniform damping model for response history analysis in OpenSees. Journal of Earthquake Engineering. 2022. http://dx.doi.org/10.1080/13632469.2022.2124557 </span>
-<span class="nv">damping</span> Uniform <span class="mi">1</span> <span class="mf">0.05</span> <span class="mf">0.1</span> <span class="mi">100</span>
+<span class="nv">damping</span><span class="w"> </span>Uniform<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="mi">100</span>
 
-<span class="k">set</span> Tol <span class="mf">1.0</span>e-8<span class="k">;</span>    
-<span class="k">set</span> numStep <span class="mi">1000</span><span class="k">;</span>
-<span class="k">set</span> PI <span class="k">[expr</span> <span class="mf">4.0</span> <span class="o">*</span> atan<span class="k">(</span><span class="nv">1.0</span><span class="k">)]</span>
-<span class="k">set</span> E <span class="mf">1.0</span>
-<span class="k">set</span> A <span class="mf">1.0</span>
-<span class="k">set</span> L <span class="mf">1.0</span>
-<span class="k">set</span> I <span class="mf">0.08</span>
-<span class="k">set</span> m <span class="mi">1</span>
-<span class="k">set</span> v <span class="mi">20</span>
-<span class="k">set</span> k <span class="k">[expr</span> <span class="nv">$E</span><span class="o">*</span><span class="nv">$A</span><span class="o">/</span><span class="nv">$L</span><span class="k">]</span>
-<span class="k">set</span> d0 <span class="mf">1.0</span>
-<span class="k">set</span> wn <span class="k">[expr</span> sqrt<span class="k">(</span><span class="nv">$k</span><span class="o">/</span><span class="nv">$m</span><span class="k">)]</span>
+<span class="k">set</span><span class="w"> </span>Tol<span class="w"> </span><span class="mf">1.0</span>e-8<span class="k">;</span><span class="w">    </span>
+<span class="k">set</span><span class="w"> </span>numStep<span class="w"> </span><span class="mi">1000</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>PI<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">4.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>atan<span class="k">(</span><span class="nv">1.0</span><span class="k">)]</span>
+<span class="k">set</span><span class="w"> </span>E<span class="w"> </span><span class="mf">1.0</span>
+<span class="k">set</span><span class="w"> </span>A<span class="w"> </span><span class="mf">1.0</span>
+<span class="k">set</span><span class="w"> </span>L<span class="w"> </span><span class="mf">1.0</span>
+<span class="k">set</span><span class="w"> </span>I<span class="w"> </span><span class="mf">0.08</span>
+<span class="k">set</span><span class="w"> </span>m<span class="w"> </span><span class="mi">1</span>
+<span class="k">set</span><span class="w"> </span>v<span class="w"> </span><span class="mi">20</span>
+<span class="k">set</span><span class="w"> </span>k<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$E</span><span class="o">*</span><span class="nv">$A</span><span class="o">/</span><span class="nv">$L</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>d0<span class="w"> </span><span class="mf">1.0</span>
+<span class="k">set</span><span class="w"> </span>wn<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>sqrt<span class="k">(</span><span class="nv">$k</span><span class="o">/</span><span class="nv">$m</span><span class="k">)]</span>
 
 <span class="c"># Create nodes</span>
-<span class="nv">node</span> <span class="mi">11</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span>mass <span class="nv">$m</span> <span class="nv">$m</span> <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">12</span> <span class="nv">$L</span> <span class="mi">0</span> <span class="o">-</span>mass <span class="nv">$m</span>  <span class="nv">$m</span>  <span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span>mass<span class="w"> </span><span class="nv">$m</span><span class="w"> </span><span class="nv">$m</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="nv">$L</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span>mass<span class="w"> </span><span class="nv">$m</span><span class="w">  </span><span class="nv">$m</span><span class="w">  </span><span class="mi">0</span>
 
 <span class="c"># Create Fixities</span>
-<span class="nv">fix</span> <span class="mi">11</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
-<span class="nv">fix</span> <span class="mi">12</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
 
 <span class="c"># Create geometric transformation</span>
-<span class="nv">geomTransf</span> Linear <span class="mi">1</span>
+<span class="nv">geomTransf</span><span class="w"> </span>Linear<span class="w"> </span><span class="mi">1</span>
 
 <span class="c"># Create element</span>
-<span class="nv">element</span> elasticBeamColumn <span class="mi">1</span> <span class="mi">11</span> <span class="mi">12</span> <span class="nv">$A</span> <span class="nv">$E</span> <span class="nv">$I</span> <span class="mi">1</span> <span class="o">-</span>damp <span class="mi">1</span>
+<span class="nv">element</span><span class="w"> </span>elasticBeamColumn<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="nv">$A</span><span class="w"> </span><span class="nv">$E</span><span class="w"> </span><span class="nv">$I</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>damp<span class="w"> </span><span class="mi">1</span>
 
-<span class="k">set</span> tag <span class="mi">1</span>
-<span class="k">set</span> tStart <span class="mi">0</span>
-<span class="k">set</span> tEnd <span class="mi">100</span>
-<span class="k">set</span> period <span class="mf">1.0</span>
-<span class="k">set</span> cFactor <span class="mf">1.0</span>
+<span class="k">set</span><span class="w"> </span>tag<span class="w"> </span><span class="mi">1</span>
+<span class="k">set</span><span class="w"> </span>tStart<span class="w"> </span><span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span>tEnd<span class="w"> </span><span class="mi">100</span>
+<span class="k">set</span><span class="w"> </span>period<span class="w"> </span><span class="mf">1.0</span>
+<span class="k">set</span><span class="w"> </span>cFactor<span class="w"> </span><span class="mf">1.0</span>
 
 <span class="c"># Create time series</span>
-<span class="nv">timeSeries</span> Trig <span class="nv">$tag</span> <span class="nv">$tStart</span> <span class="nv">$tEnd</span> <span class="nv">$period</span> <span class="o">-</span>factor <span class="nv">$cFactor</span>
+<span class="nv">timeSeries</span><span class="w"> </span>Trig<span class="w"> </span><span class="nv">$tag</span><span class="w"> </span><span class="nv">$tStart</span><span class="w"> </span><span class="nv">$tEnd</span><span class="w"> </span><span class="nv">$period</span><span class="w"> </span><span class="o">-</span>factor<span class="w"> </span><span class="nv">$cFactor</span>
 
 <span class="c"># Create node recorder</span>
-<span class="nv">recorder</span> Node <span class="o">-</span>file disp1.txt <span class="o">-</span>time <span class="o">-</span>node <span class="mi">11</span> <span class="mi">12</span> <span class="o">-</span>dof <span class="mi">1</span>  disp
-<span class="nv">recorder</span> Node <span class="o">-</span>file vel1.txt <span class="o">-</span>time <span class="o">-</span>node <span class="mi">11</span> <span class="mi">12</span> <span class="o">-</span>dof <span class="mi">1</span>  vel
-<span class="nv">recorder</span> Node <span class="o">-</span>file accel1.txt <span class="o">-</span>timeSeries <span class="nv">$tag</span> <span class="o">-</span>time <span class="o">-</span>node <span class="mi">11</span> <span class="mi">12</span> <span class="o">-</span>dof <span class="mi">1</span>  accel
+<span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>disp1.txt<span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w">  </span>disp
+<span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>vel1.txt<span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w">  </span>vel
+<span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>accel1.txt<span class="w"> </span><span class="o">-</span>timeSeries<span class="w"> </span><span class="nv">$tag</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w">  </span>accel
 
-<span class="k">set</span> patternTag <span class="mi">10010</span>
-<span class="k">set</span> dir <span class="mi">1</span>
+<span class="k">set</span><span class="w"> </span>patternTag<span class="w"> </span><span class="mi">10010</span>
+<span class="k">set</span><span class="w"> </span>dir<span class="w"> </span><span class="mi">1</span>
 
 <span class="c"># Create Uniform Excitation load</span>
-<span class="nv">pattern</span> UniformExcitation <span class="nv">$patternTag</span> <span class="nv">$dir</span> <span class="o">-</span>accel <span class="nv">$tag</span>
+<span class="nv">pattern</span><span class="w"> </span>UniformExcitation<span class="w"> </span><span class="nv">$patternTag</span><span class="w"> </span><span class="nv">$dir</span><span class="w"> </span><span class="o">-</span>accel<span class="w"> </span><span class="nv">$tag</span>
 
 <span class="c"># Analyze</span>
-<span class="nv">constraints</span> Transformation<span class="k">;</span>
-<span class="nv">numberer</span> RCM<span class="k">;</span>
-<span class="nv">system</span> FullGeneral
-<span class="nv">test</span> NormDispIncr <span class="mi">1</span>e-3 <span class="mi">100</span> <span class="mi">0</span>
-<span class="nv">algorithm</span> NewtonLineSearch <span class="mf">0.75</span>
-<span class="nv">integrator</span> Newmark <span class="mf">0.5</span> <span class="mf">0.25</span>
-<span class="nv">analysis</span> Transient
-<span class="k">set</span> dt <span class="mf">0.01</span>
-<span class="k">set</span> tEQ <span class="mi">100</span>
-<span class="k">while</span> <span class="k">{[</span><span class="nv">getTime</span><span class="k">]</span> <span class="o">&lt;</span> <span class="nv">$tEQ</span><span class="k">}</span> <span class="k">{</span><span class="nv">analyze</span> <span class="mi">1</span> <span class="nv">$dt</span><span class="k">;}</span>
+<span class="nv">constraints</span><span class="w"> </span>Transformation<span class="k">;</span>
+<span class="nv">numberer</span><span class="w"> </span>RCM<span class="k">;</span>
+<span class="nv">system</span><span class="w"> </span>FullGeneral
+<span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mi">1</span>e-3<span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">algorithm</span><span class="w"> </span>NewtonLineSearch<span class="w"> </span><span class="mf">0.75</span>
+<span class="nv">integrator</span><span class="w"> </span>Newmark<span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.25</span>
+<span class="nv">analysis</span><span class="w"> </span>Transient
+<span class="k">set</span><span class="w"> </span>dt<span class="w"> </span><span class="mf">0.01</span>
+<span class="k">set</span><span class="w"> </span>tEQ<span class="w"> </span><span class="mi">100</span>
+<span class="k">while</span><span class="w"> </span><span class="k">{[</span><span class="nv">getTime</span><span class="k">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">$tEQ</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">analyze</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$dt</span><span class="k">;}</span>
 </pre></div>
 </div>
 </div>
 <p><strong>Code Developed by</strong>: Yuli Huang and <a class="reference external" href="http://www.luxinzheng.net/english.htm">Xinzheng Lu</a> (Tsinghua University).</p>
 <p><strong>References</strong></p>
-<dl class="footnote brackets">
-<dt class="label" id="id1"><span class="brackets">1</span></dt>
-<dd><p>Huang Y, Sturt R, Willford M. 2019. <a class="reference external" href="https://www.researchgate.net/publication/328827267_A_damping_model_for_nonlinear_dynamic_analysis_providing_uniform_damping_over_a_frequency_range">A damping model for nonlinear dynamic analysis providing uniform damping over a frequency range</a>. <cite>Computers and Structures</cite>, 212:101–9. <a class="reference external" href="http://dx.doi.org/10.1016/j.compstruc.2018.10.016">http://dx.doi.org/10.1016/j.compstruc.2018.10.016</a></p>
-</dd>
-<dt class="label" id="id2"><span class="brackets">2</span></dt>
-<dd><p>Tian Y, Huang Y, Qu Z, Fei Y, Lu X. 2023. <a class="reference external" href="https://www.researchgate.net/publication/363845908_High-Performance_Uniform_Damping_Model_for_Response_History_Analysis_in_OpenSees">High-performance uniform damping model for response history analysis in OpenSees</a>. <cite>Journal of Earthquake Engineering</cite>. <a class="reference external" href="http://dx.doi.org/10.1080/13632469.2022.2124557">http://dx.doi.org/10.1080/13632469.2022.2124557</a></p>
-</dd>
-<dt class="label" id="id3"><span class="brackets">3</span></dt>
-<dd><p>Fei Y, Tian Y, Huang Y, Lu X. 2022. <a class="reference external" href="http://dx.doi.org/10.6052/j.issn.1000-4750.2021.07.0500">Influence of damping models on dynamic analyses of a base-isolated composite structure under earthquakes and environmental vibrations</a>. <cite>Engineering Mechanics</cite>, 39(3): 201-211. <a class="reference external" href="http://dx.doi.org/10.6052/j.issn.1000-4750.2021.07.0500">http://dx.doi.org/10.6052/j.issn.1000-4750.2021.07.0500</a></p>
-</dd>
-</dl>
-</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Huang Y, Sturt R, Willford M. 2019. <a class="reference external" href="https://www.researchgate.net/publication/328827267_A_damping_model_for_nonlinear_dynamic_analysis_providing_uniform_damping_over_a_frequency_range">A damping model for nonlinear dynamic analysis providing uniform damping over a frequency range</a>. <cite>Computers and Structures</cite>, 212:101–9. <a class="reference external" href="http://dx.doi.org/10.1016/j.compstruc.2018.10.016">http://dx.doi.org/10.1016/j.compstruc.2018.10.016</a></p>
+</aside>
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Tian Y, Huang Y, Qu Z, Fei Y, Lu X. 2023. <a class="reference external" href="https://www.researchgate.net/publication/363845908_High-Performance_Uniform_Damping_Model_for_Response_History_Analysis_in_OpenSees">High-performance uniform damping model for response history analysis in OpenSees</a>. <cite>Journal of Earthquake Engineering</cite>. <a class="reference external" href="http://dx.doi.org/10.1080/13632469.2022.2124557">http://dx.doi.org/10.1080/13632469.2022.2124557</a></p>
+</aside>
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Fei Y, Tian Y, Huang Y, Lu X. 2022. <a class="reference external" href="http://dx.doi.org/10.6052/j.issn.1000-4750.2021.07.0500">Influence of damping models on dynamic analyses of a base-isolated composite structure under earthquakes and environmental vibrations</a>. <cite>Engineering Mechanics</cite>, 39(3): 201-211. <a class="reference external" href="http://dx.doi.org/10.6052/j.issn.1000-4750.2021.07.0500">http://dx.doi.org/10.6052/j.issn.1000-4750.2021.07.0500</a></p>
+</aside>
+</aside>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2022, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

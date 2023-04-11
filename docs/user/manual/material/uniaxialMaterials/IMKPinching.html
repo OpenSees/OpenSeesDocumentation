@@ -1,96 +1,47 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>3.1.5.17. IMKPinching Material &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>3.1.5.18. IMKPinching Material &mdash; OpenSees Documentation  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.5.18. HystereticPoly Material" href="HystereticPoly.html" />
-    <link rel="prev" title="3.1.5.16. IMKPeakOriented Material" href="IMKPeakOriented.html" /> 
+    <link rel="next" title="3.1.5.19. HystereticPoly Material" href="HystereticPoly.html" />
+    <link rel="prev" title="3.1.5.17. IMKPeakOriented Material" href="IMKPeakOriented.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../../index.html">
           
-
-          
+          <a href="../../../../index.html">
             
-            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
+              <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -105,34 +56,35 @@
 <li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.1.5.1. Steel01 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.1.5.2. Steel02 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel4.html">3.1.5.3. Steel4 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.4. Hysteretic Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.5. Reinforcing Steel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.6. DoddRestrepo Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.7. Ramberg Osgood Steel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SteelMPF.html">3.1.5.8. SteelMPF Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="UVCuniaxial.html">3.1.5.9. UVCUniaxial Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.1.5.10. SteelFractureDI Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.1.5.11. DuctileFracture Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.1.5.12. Concrete01 Material – Zero Tensile Strength</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.1.5.13. Concrete02 Material – Linear Tension Softening</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.1.5.14. Concrete04 Material – Popovics Concrete Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.1.5.15. IMKBilin Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.16. IMKPeakOriented Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.17. IMKPinching Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.19. DowelType Timber Joint Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.20. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.21. CoulombDamper Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.22. Hertz Damp Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.23. Jankowski Impact Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.24. Viscoelastic Gap Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.25. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.26. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.27. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.28. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.29. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.30. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.4. Reinforcing Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.5. DoddRestrepo Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.6. Ramberg Osgood Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelMPF.html">3.1.5.7. SteelMPF Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UVCuniaxial.html">3.1.5.8. UVCUniaxial Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.1.5.9. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.1.5.10. DuctileFracture Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.1.5.11. Concrete01 Material – Zero Tensile Strength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.1.5.12. Concrete02 Material – Linear Tension Softening</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.1.5.13. Concrete04 Material – Popovics Concrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.14. Hysteretic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticSM.html">3.1.5.15. HystereticSM Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.1.5.16. IMKBilin Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.17. IMKPeakOriented Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.18. IMKPinching Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.19. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.19. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.20. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.21. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.22. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.23. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.24. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.25. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.26. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.27. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.28. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.29. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.30. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.31. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
@@ -162,86 +114,42 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
-        
-          <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
-        
-      <li><span class="section-number">3.1.5.17. </span>IMKPinching Material</li>
-    
-    
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a></li>
+          <li class="breadcrumb-item"><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a></li>
+          <li class="breadcrumb-item"><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.1.5.18. </span>IMKPinching Material</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/material/uniaxialMaterials/IMKPinching.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="imkpinching-material">
-<h1><span class="section-number">3.1.5.17. </span>IMKPinching Material<a class="headerlink" href="#imkpinching-material" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="imkpinching-material">
+<h1><span class="section-number">3.1.5.18. </span>IMKPinching Material<a class="headerlink" href="#imkpinching-material" title="Permalink to this heading"></a></h1>
 <p>This command is used to construct a material with a pinched hysteretic response based on the modified Ibarra-Medina-Krawinkler deterioration model.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">IMKPinching</span> <span class="pre">$Mat_Tag</span> <span class="pre">$Ke</span> <span class="pre">$dp_pos</span> <span class="pre">$dpc_pos</span> <span class="pre">$du_pos</span> <span class="pre">$Fy_pos</span> <span class="pre">$FmaxFy_pos</span> <span class="pre">$FresFy_pos</span> <span class="pre">$dp_neg</span> <span class="pre">$dpc_neg</span> <span class="pre">$du_neg</span> <span class="pre">$Fy_neg</span> <span class="pre">$FmaxFy_neg</span> <span class="pre">$FresFy_neg</span> <span class="pre">$Lamda_S</span> <span class="pre">$Lamda_C</span> <span class="pre">$Lamda_A</span> <span class="pre">$Lamda_K</span> <span class="pre">$c_S</span> <span class="pre">$c_C</span> <span class="pre">$c_A</span> <span class="pre">$c_K</span> <span class="pre">$D_pos</span> <span class="pre">$D_neg</span> <span class="pre">$kappaF</span> <span class="pre">$kappaD</span></span></dt>
 <dd></dd></dl>
 
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 17%" />
@@ -365,101 +273,88 @@
 <p>All material model parameters (in both the positive and negative direction) shall be specified as positive values.</p>
 <p>Lamda is used to compute the reference energy based on the following equation Ref_Energy = Lamda * Fy</p>
 </div>
-<dl class="citation">
-<dt class="label" id="ibarraetal2005"><span class="brackets">IbarraEtAl2005</span></dt>
-<dd><p>Ibarra, L. F., Medina, R. A., and Krawinkler, H. (2005). “Hysteretic models that incorporate strength and stiffness deterioration.” Earthquake Engineering &amp; Structural Dynamics, 34(12), 1489-1511, Doi: 10.1002/eqe.495.</p>
-</dd>
-</dl>
-<div class="align-center figure" id="id1">
+<div role="list" class="citation-list">
+<div class="citation" id="ibarraetal2005" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>IbarraEtAl2005<span class="fn-bracket">]</span></span>
+<p>Ibarra, L. F., Medina, R. A., and Krawinkler, H. (2005). “Hysteretic models that incorporate strength and stiffness deterioration.” Earthquake Engineering &amp; Structural Dynamics, 34(12), 1489-1511, Doi: 10.1002/eqe.495.</p>
+</div>
+</div>
+<figure class="align-center" id="id1">
 <span id="fig-imkpinching"></span><img alt="../../../../_images/IMKPinching.jpg" src="../../../../_images/IMKPinching.jpg" />
-<p class="caption"><span class="caption-number">Fig. 3.1.5.12 </span><span class="caption-text">IMKPinching backbone curve</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="id2">
+<figcaption>
+<p><span class="caption-number">Fig. 3.1.5.12 </span><span class="caption-text">IMKPinching backbone curve</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
 <img alt="../../../../_images/IMKPinching_sample_responses_validations.jpg" src="../../../../_images/IMKPinching_sample_responses_validations.jpg" />
-<p class="caption"><span class="caption-number">Fig. 3.1.5.13 </span><span class="caption-text">IMKPinching sample responses and validations</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1.5.13 </span><span class="caption-text">IMKPinching sample responses and validations</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>The following is used to construct a IMKPeakOriented material with symmetric hysteretic response.</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> Ke      <span class="mi">10000</span>.<span class="k">;</span>
-<span class="k">set</span> dp      <span class="mf">0.01</span><span class="k">;</span>
-<span class="k">set</span> dpc     <span class="mf">0.05</span><span class="k">;</span>
-<span class="k">set</span> du      <span class="mf">0.08</span><span class="k">;</span>
-<span class="k">set</span> My      <span class="mi">100</span>.<span class="k">;</span>
-<span class="k">set</span> Mc_My   <span class="mf">1.10</span><span class="k">;</span>
-<span class="k">set</span> Mres_My <span class="mf">0.10</span><span class="k">;</span>
-<span class="k">set</span> lambda  <span class="mf">0.50</span><span class="k">;</span>
-<span class="k">set</span> c_S     <span class="mf">1.00</span><span class="k">;</span>
-<span class="k">set</span> c_C     <span class="mf">1.00</span><span class="k">;</span>
-<span class="k">set</span> c_K     <span class="mf">1.00</span><span class="k">;</span>
-<span class="k">set</span> c_A     <span class="mf">1.00</span><span class="k">;</span>
-<span class="k">set</span> D_pos   <span class="mf">1.00</span><span class="k">;</span>
-<span class="k">set</span> D_neg   <span class="mf">1.00</span><span class="k">;</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span>Ke<span class="w">      </span><span class="mi">10000</span>.<span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>dp<span class="w">      </span><span class="mf">0.01</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>dpc<span class="w">     </span><span class="mf">0.05</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>du<span class="w">      </span><span class="mf">0.08</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>My<span class="w">      </span><span class="mi">100</span>.<span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>Mc_My<span class="w">   </span><span class="mf">1.10</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>Mres_My<span class="w"> </span><span class="mf">0.10</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>lambda<span class="w">  </span><span class="mf">0.50</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>c_S<span class="w">     </span><span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>c_C<span class="w">     </span><span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>c_K<span class="w">     </span><span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>c_A<span class="w">     </span><span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>D_pos<span class="w">   </span><span class="mf">1.00</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>D_neg<span class="w">   </span><span class="mf">1.00</span><span class="k">;</span>
 
-<span class="nv">uniaxialMaterial</span> IMKPeakOriented   <span class="mi">1</span> <span class="nv">$Ke</span> <span class="nv">$dp</span> <span class="nv">$dpc</span> <span class="nv">$du</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$dp</span> <span class="nv">$dpc</span> <span class="nv">$du</span> <span class="nv">$My</span> <span class="nv">$Mc_My</span> <span class="nv">$Mres_My</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$lambda</span> <span class="nv">$c_S</span> <span class="nv">$c_S</span> <span class="nv">$c_A</span> <span class="nv">$c_K</span> <span class="nv">$D_pos</span> <span class="nv">$D_neg</span> <span class="nv">$kappaF</span> <span class="nv">$kappaD</span><span class="k">;</span>
+<span class="nv">uniaxialMaterial</span><span class="w"> </span>IMKPeakOriented<span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="nv">$Ke</span><span class="w"> </span><span class="nv">$dp</span><span class="w"> </span><span class="nv">$dpc</span><span class="w"> </span><span class="nv">$du</span><span class="w"> </span><span class="nv">$My</span><span class="w"> </span><span class="nv">$Mc_My</span><span class="w"> </span><span class="nv">$Mres_My</span><span class="w"> </span><span class="nv">$dp</span><span class="w"> </span><span class="nv">$dpc</span><span class="w"> </span><span class="nv">$du</span><span class="w"> </span><span class="nv">$My</span><span class="w"> </span><span class="nv">$Mc_My</span><span class="w"> </span><span class="nv">$Mres_My</span><span class="w"> </span><span class="nv">$lambda</span><span class="w"> </span><span class="nv">$lambda</span><span class="w"> </span><span class="nv">$lambda</span><span class="w"> </span><span class="nv">$lambda</span><span class="w"> </span><span class="nv">$c_S</span><span class="w"> </span><span class="nv">$c_S</span><span class="w"> </span><span class="nv">$c_A</span><span class="w"> </span><span class="nv">$c_K</span><span class="w"> </span><span class="nv">$D_pos</span><span class="w"> </span><span class="nv">$D_neg</span><span class="w"> </span><span class="nv">$kappaF</span><span class="w"> </span><span class="nv">$kappaD</span><span class="k">;</span>
 </pre></div>
 </div>
 </div>
 <p>For code inquires or bug reporting, please contact:
 - Kazuki Ichinohe, University of Tokyo, e-mail: <a class="reference external" href="mailto:z-ichinohe&#37;&#52;&#48;g&#46;ecc&#46;u-tokyo&#46;ac&#46;jp">z-ichinohe<span>&#64;</span>g<span>&#46;</span>ecc<span>&#46;</span>u-tokyo<span>&#46;</span>ac<span>&#46;</span>jp</a>
 - Ahmed Elkady, University of Southampton, e-mail: <a class="reference external" href="mailto:a&#46;elkady&#37;&#52;&#48;soton&#46;ac&#46;uk">a<span>&#46;</span>elkady<span>&#64;</span>soton<span>&#46;</span>ac<span>&#46;</span>uk</a></p>
-</div>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2022, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

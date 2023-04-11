@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlagShape Material &mdash; OpenSees Documentation  documentation</title>
+  <title>ExpressNewton Algorithm &mdash; OpenSees Documentation  documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
@@ -73,9 +73,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">FlagShape Material</li>
+      <li class="breadcrumb-item active">ExpressNewton Algorithm</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/FlagShape.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/user/manual/analysis/algorithm/ExpressNewton.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -83,66 +83,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="flagshape-material">
-<span id="flagshape"></span><h1>FlagShape Material<a class="headerlink" href="#flagshape-material" title="Permalink to this heading"></a></h1>
-<p>This command is used to construct the uniaxial FlagShape material</p>
+  <section id="expressnewton-algorithm">
+<span id="expressnewton"></span><h1>ExpressNewton Algorithm<a class="headerlink" href="#expressnewton-algorithm" title="Permalink to this heading"></a></h1>
+<p>This command is used to construct an ExpressNewton algorithm object for nonlinear structural dynamics. It accepts the solution after a constant number of Newton-Raphson iterations using a constant system Jacobian matrix. It is advised to be combined with transient integrators only. The command is of the following form:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">FlagShape</span> <span class="pre">$matTag</span> <span class="pre">$E</span> <span class="pre">$fy</span> <span class="pre">$Eh</span> <span class="pre">&lt;$beta&gt;</span></span></dt>
+<span class="sig-name descname"><span class="pre">algorithm</span> <span class="pre">ExpressNewton</span> <span class="pre">$iter</span> <span class="pre">$kMultiplier</span> <span class="pre">&lt;-initialTangent&gt;</span> <span class="pre">&lt;-currentTangent&gt;</span> <span class="pre">&lt;-factorOnce&gt;</span></span></dt>
 <dd></dd></dl>
 
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Argument</p></th>
-<th class="head"><p>Type</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>$matTag</p></td>
-<td><p><em>integer</em></p></td>
-<td><p>integer tag identifying material.</p></td>
-</tr>
-<tr class="row-odd"><td><p>$E</p></td>
-<td><p><em>float</em></p></td>
-<td><p>initial stiffness.</p></td>
-</tr>
-<tr class="row-even"><td><p>$fy</p></td>
-<td><p><em>float</em></p></td>
-<td><p>yield force.</p></td>
-</tr>
-<tr class="row-odd"><td><p>$Eh</p></td>
-<td><p><em>float</em></p></td>
-<td><p>plastic stiffness.</p></td>
-</tr>
-<tr class="row-even"><td><p>$beta</p></td>
-<td><p><em>float</em></p></td>
-<td><p>parameter controlling flag behavior (optional with default value of: 0.0).</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The value of $beta should range from 0 to 1. Bilinear elastic response is obtained with beta=0 while beta=1 gives bilinear hysteretic response. Values between 0 and 1 will give flag-shape response.</p>
+<p>The strategy of the ExpressNewton algorithm is to adopt a typical transient integrator and accept the solution after a constant number of iterations using a constant system Jacobian matrix. The algorithm inherits the advantages of the host transient integrators, such as the unconditional stability, the order of accuracy, and the numerical dissipation that helps suppress the spurious high-frequency oscillation. Using a constant Jacobian matrix is vital to minimizing the computational expense associated with matrix operations. The algorithm helps achieve an exponential efficiency improvement in a response history analysis with any transient integrator.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There is no check on the convergence of the model in this algorithm. It iterates a constant number of iterations and then proceeds to the next time step.</p>
 </div>
-<p>Response of FlagShape material for E=100, fy=100, and Eh=10 showing variation in beta parameter:</p>
-<blockquote>
-<div><figure class="align-center">
-<img alt="../../../../_images/FlagShape.png" src="../../../../_images/FlagShape.png" />
-</figure>
-</div></blockquote>
-<p>Code Developed by: Chin-Long Lee (Univ. of Canterbury) and Lei Zhang</p>
-<div role="list" class="citation-list">
-<div class="citation" id="lee2020" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>Lee2020<span class="fn-bracket">]</span></span>
-<p>Lee CL (2020) Sparse proportional viscous damping model for structures with large number of degrees of freedom. Journal of Sound and Vibration; 478.  DOI: 10.1016/j.jsv.2020.115312.</p>
-</div>
-</div>
+<p>Code Developed by: Yuli Huang</p>
+<p><strong>References</strong></p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Xu J, Huang Y, Qu Z. 2020. <a class="reference external" href="https://www.researchgate.net/publication/342098037_An_efficient_and_unconditionally_stable_numerical_algorithm_for_nonlinear_structural_dynamics">An efficient and unconditionally stable numerical algorithm for nonlinear structural dynamics</a>. <cite>International Journal for Numerical Methods in Engineering</cite>, 121(20):4614-29. <a class="reference external" href="https://doi.org/10.1002/nme.6456">https://doi.org/10.1002/nme.6456</a></p>
+</aside>
+</aside>
 </section>
 
 

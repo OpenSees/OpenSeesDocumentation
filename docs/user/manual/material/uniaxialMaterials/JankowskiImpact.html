@@ -1,97 +1,48 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>3.1.5.23. Jankowski Impact Material &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>3.1.5.24. Jankowski Impact Material &mdash; OpenSees Documentation  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.5.24. Viscoelastic Gap Material" href="ViscoelasticGap.html" />
-    <link rel="prev" title="3.1.5.22. Hertz Damp Material" href="HertzDamp.html" /> 
+    <link rel="next" title="3.1.5.25. Viscoelastic Gap Material" href="ViscoelasticGap.html" />
+    <link rel="prev" title="3.1.5.23. Hertz Damp Material" href="HertzDamp.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../../index.html">
           
-
-          
+          <a href="../../../../index.html">
             
-            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
+              <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -106,38 +57,39 @@
 <li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.1.5.1. Steel01 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.1.5.2. Steel02 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel4.html">3.1.5.3. Steel4 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.4. Hysteretic Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.5. Reinforcing Steel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.6. DoddRestrepo Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.7. Ramberg Osgood Steel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SteelMPF.html">3.1.5.8. SteelMPF Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="UVCuniaxial.html">3.1.5.9. UVCUniaxial Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.1.5.10. SteelFractureDI Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.1.5.11. DuctileFracture Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.1.5.12. Concrete01 Material – Zero Tensile Strength</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.1.5.13. Concrete02 Material – Linear Tension Softening</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.1.5.14. Concrete04 Material – Popovics Concrete Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.1.5.15. IMKBilin Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.16. IMKPeakOriented Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.17. IMKPinching Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.19. DowelType Timber Joint Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.20. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.21. CoulombDamper Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.22. Hertz Damp Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.23. Jankowski Impact Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.24. Viscoelastic Gap Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.25. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.26. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.27. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.28. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.29. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.30. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.4. Reinforcing Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.5. DoddRestrepo Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.6. Ramberg Osgood Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelMPF.html">3.1.5.7. SteelMPF Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UVCuniaxial.html">3.1.5.8. UVCUniaxial Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.1.5.9. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.1.5.10. DuctileFracture Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.1.5.11. Concrete01 Material – Zero Tensile Strength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.1.5.12. Concrete02 Material – Linear Tension Softening</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.1.5.13. Concrete04 Material – Popovics Concrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.14. Hysteretic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticSM.html">3.1.5.15. HystereticSM Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.1.5.16. IMKBilin Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.17. IMKPeakOriented Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.18. IMKPinching Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.19. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.19. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.20. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.21. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.22. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.23. Hertz Damp Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.24. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.25. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.26. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.27. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.28. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.29. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.30. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.31. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.8. Element Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.9. Time Series Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.10. Pattern Command</a></li>
@@ -146,8 +98,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -164,86 +115,42 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
-        
-          <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
-        
-      <li><span class="section-number">3.1.5.23. </span>Jankowski Impact Material</li>
-    
-    
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a></li>
+          <li class="breadcrumb-item"><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a></li>
+          <li class="breadcrumb-item"><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.1.5.24. </span>Jankowski Impact Material</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/material/uniaxialMaterials/JankowskiImpact.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="jankowski-impact-material">
-<span id="jankowskiimpact"></span><h1><span class="section-number">3.1.5.23. </span>Jankowski Impact Material<a class="headerlink" href="#jankowski-impact-material" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="jankowski-impact-material">
+<span id="jankowskiimpact"></span><h1><span class="section-number">3.1.5.24. </span>Jankowski Impact Material<a class="headerlink" href="#jankowski-impact-material" title="Permalink to this heading"></a></h1>
 <p>This command is used to construct the uniaxial Jankowski Impact Material</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">JankowskiImpact</span>&#160; <span class="pre">$matTag</span> <span class="pre">$Kh</span> <span class="pre">$xi</span> <span class="pre">$Meff</span> <span class="pre">$gap</span> <span class="pre">&lt;$n&gt;</span></span></dt>
 <dd></dd></dl>
 
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 17%" />
@@ -291,7 +198,7 @@
 <div><div class="math notranslate nohighlight">
 \[\begin{split}f_c(t) = \left\{ \begin{array}{ }k_h (\delta(t)-g)^n + c_J(t) \dot{\delta}(t) &amp; \quad \dot{\delta}(t) &gt; 0 \\ k_h (\delta(t)-g)^n                 &amp; \quad {\dot{\delta(t)} \leq 0} \end{array}\right.\end{split}\]</div>
 </div></blockquote>
-<p>where t is time, <span class="math notranslate nohighlight">\(f_c (t)\)</span>  is the contact force, <span class="math notranslate nohighlight">\(k_h\)</span> is the nonlinear Hertz contact stiffness ($Kh), <span class="math notranslate nohighlight">\(\delta(t)\)</span> is the indentation, g is the initial gap ($gap), n is the indentation exponent ($n), and <span class="math notranslate nohighlight">\(\dot{\delta}(t)\)</span> is the indentation velocity. Damping is only applied during the approach phase, when <span class="math notranslate nohighlight">\(\delta (t) &gt; 0\)</span>. The damping coefficient <span class="math notranslate nohighlight">\(c_J\)</span> is computed as</p>
+<p>where t is time, <span class="math notranslate nohighlight">\(f_c (t)\)</span>  is the contact force, <span class="math notranslate nohighlight">\(k_h\)</span> is the nonlinear Hertz contact stiffness ($Kh), <span class="math notranslate nohighlight">\(\delta(t)\)</span> is the indentation, g is the initial gap ($gap), n is the indentation exponent ($n), and <span class="math notranslate nohighlight">\(\dot{\delta}(t)\)</span> is the indentation velocity. Damping is only applied during the approach phase, when <span class="math notranslate nohighlight">\(\delta (t) &gt; 0\)</span>. The damping coefficient <span class="math notranslate nohighlight">\(c_J`\)</span> is computed as</p>
 <blockquote>
 <div><div class="math notranslate nohighlight">
 \[c_h = 2 \xi_j \sqrt{ m_{\textrm{eff}} k_h (\delta(t) -g)^{n-1}}\]</div>
@@ -308,83 +215,69 @@
 </div></blockquote>
 <p>Response of the JankowskiImpact  material during impact:</p>
 <blockquote>
-<div><div class="align-center figure">
+<div><figure class="align-center">
 <img alt="../../../../_images/JankowskiImpact_responses.png" src="../../../../_images/JankowskiImpact_responses.png" />
-</div>
+</figure>
 </div></blockquote>
 <p>Note that the flat displacement from 0 to roughly minus 0.01 inch displacement is caused by the gap parameter.</p>
 <p>Code Developed by: Patrick J. Hughes, UC San Diego</p>
-<dl class="citation">
-<dt class="label" id="jankowski2005"><span class="brackets">Jankowski2005</span></dt>
-<dd><p>Non-linear viscoelastic modelling of earthquake-induced structural pounding. Earthquake Engineering and Structural Dynamics 2005; 34(6): 595–611. DOI: 10.1002/eqe.434.</p>
-</dd>
-<dt class="label" id="jankowski2006"><span class="brackets">Jankowski2006</span></dt>
-<dd><p>Analytical expression between the impact damping ratio and the coefficient of restitution in the non-linear viscoelastic model of structural pounding. Earthquake Engineering and Structural Dynamics 2006; 35(4): 517–524. DOI: 10.1002/eqe.537.</p>
-</dd>
-<dt class="label" id="jankowski2007"><span class="brackets">Jankowski2007</span></dt>
-<dd><p>Jankowski R. Theoretical and experimental assessment of parameters for the non-linear viscoelastic model of structural pounding. Journal of Theoretical and Applied Mechanics (Poland) 2007.</p>
-</dd>
-<dt class="label" id="hughes2020"><span class="brackets">Hughes2020</span></dt>
-<dd><p>Hughes PJ, Mosqueda G. Evaluation of uniaxial contact models for moat wall pounding simulations. Earthquake Engineering and Structural Dynamics 2020(March): 12–14. DOI: 10.1002/eqe.3285.</p>
-</dd>
-</dl>
+<div role="list" class="citation-list">
+<div class="citation" id="jankowski2005" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Jankowski2005<span class="fn-bracket">]</span></span>
+<p>Non-linear viscoelastic modelling of earthquake-induced structural pounding. Earthquake Engineering and Structural Dynamics 2005; 34(6): 595–611. DOI: 10.1002/eqe.434.</p>
 </div>
+<div class="citation" id="jankowski2006" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Jankowski2006<span class="fn-bracket">]</span></span>
+<p>Analytical expression between the impact damping ratio and the coefficient of restitution in the non-linear viscoelastic model of structural pounding. Earthquake Engineering and Structural Dynamics 2006; 35(4): 517–524. DOI: 10.1002/eqe.537.</p>
+</div>
+<div class="citation" id="jankowski2007" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Jankowski2007<span class="fn-bracket">]</span></span>
+<p>Jankowski R. Theoretical and experimental assessment of parameters for the non-linear viscoelastic model of structural pounding. Journal of Theoretical and Applied Mechanics (Poland) 2007.</p>
+</div>
+<div class="citation" id="hughes2020" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Hughes2020<span class="fn-bracket">]</span></span>
+<p>Hughes PJ, Mosqueda G. Evaluation of uniaxial contact models for moat wall pounding simulations. Earthquake Engineering and Structural Dynamics 2020(March): 12–14. DOI: 10.1002/eqe.3285.</p>
+</div>
+</div>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2022, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

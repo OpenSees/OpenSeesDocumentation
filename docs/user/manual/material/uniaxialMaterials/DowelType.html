@@ -1,139 +1,95 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>3.1.5.19. DowelType Timber Joint Material &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>3.1.5.20. DowelType Timber Joint Material &mdash; OpenSees Documentation  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.5.20. BoucWenInfill Material" href="BoucWenInfill.html" />
-    <link rel="prev" title="3.1.5.18. HystereticPoly Material" href="HystereticPoly.html" /> 
+    <link rel="next" title="3.1.5.21. BoucWenInfill Material" href="BoucWenInfill.html" />
+    <link rel="prev" title="3.1.5.19. HystereticPoly Material" href="HystereticPoly.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../../index.html">
           
-
-          
+          <a href="../../../../index.html">
             
-            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
+              <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.1.5.1. Steel01 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.1.5.2. Steel02 Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Steel4.html">3.1.5.3. Steel4 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.4. Steel Hysteretic Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.5. Reinforcing Steel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.6. DoddRestrepo Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.7. Ramberg Osgood Steel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SteelMPF.html">3.1.5.8. SteelMPF Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="UVCuniaxial.html">3.1.5.9. UVCUniaxial Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.1.5.10. SteelFractureDI Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.1.5.11. DuctileFracture Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.1.5.12. Concrete01 Material – Zero Tensile Strength</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.1.5.13. Concrete02 Material – Linear Tension Softening</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.1.5.14. Concrete04 Material – Popovics Concrete Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.1.5.15. IMKBilin Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.16. IMKPeakOriented Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.17. IMKPinching Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.18. HystereticPoly Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.19. DowelType Timber Joint Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.20. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.21. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.22. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.23. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.24. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.25. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.26. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.4. Reinforcing Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.5. DoddRestrepo Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.6. Ramberg Osgood Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelMPF.html">3.1.5.7. SteelMPF Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UVCuniaxial.html">3.1.5.8. UVCUniaxial Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.1.5.9. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.1.5.10. DuctileFracture Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.1.5.11. Concrete01 Material – Zero Tensile Strength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.1.5.12. Concrete02 Material – Linear Tension Softening</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.1.5.13. Concrete04 Material – Popovics Concrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.14. Hysteretic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticSM.html">3.1.5.15. HystereticSM Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.1.5.16. IMKBilin Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.17. IMKPeakOriented Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.18. IMKPinching Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.19. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.19. HystereticPoly Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.20. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.21. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.22. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.23. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.24. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.25. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.26. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.27. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.28. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.29. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.30. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.31. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.8. Element Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.9. Time Series Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.10. Pattern Command</a></li>
@@ -142,8 +98,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -160,79 +115,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
-        
-          <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
-        
-      <li><span class="section-number">3.1.5.19. </span>DowelType Timber Joint Material</li>
-    
-    
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a></li>
+          <li class="breadcrumb-item"><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a></li>
+          <li class="breadcrumb-item"><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.1.5.20. </span>DowelType Timber Joint Material</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/user/manual/material/uniaxialMaterials/DowelType.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="doweltype-timber-joint-material">
-<span id="doweltype"></span><h1><span class="section-number">3.1.5.19. </span>DowelType Timber Joint Material<a class="headerlink" href="#doweltype-timber-joint-material" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="doweltype-timber-joint-material">
+<span id="doweltype"></span><h1><span class="section-number">3.1.5.20. </span>DowelType Timber Joint Material<a class="headerlink" href="#doweltype-timber-joint-material" title="Permalink to this heading"></a></h1>
 <p>This command is used to construct a uniaxial force-displacement or moment-rotation model which simulates the hysteresis of a dowel-type timber joint, including nails, screws, and bolts, etc. The model has the following features:</p>
 <ol class="arabic simple">
 <li><p>The envelope can be specified with any of the following models: (1) exponential, (2) cubic Bezier, and (3) piece-wise linear, by providing a flag before the defining parameters.</p></li>
@@ -264,7 +175,7 @@
 <dd></dd></dl>
 
 <p><strong>Universal parameters</strong></p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -328,7 +239,7 @@
 </tbody>
 </table>
 <p><strong>Exponential envelope parameters</strong></p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -368,7 +279,7 @@
 </tbody>
 </table>
 <p><strong>Bezier envelope parameters</strong></p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -416,7 +327,7 @@
 </tbody>
 </table>
 <p><strong>Piecewise envelope parameters</strong></p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -465,9 +376,9 @@ The origin point (0, 0) should not be included in the definition.</p>
 </div>
 <p><strong>Envelope curves</strong></p>
 <p>The envelope curves are illustrated in the following figure. Only the positive part is illustrated.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/DowelTypeEnvelope.png" src="../../../../_images/DowelTypeEnvelope.png" />
-</div>
+</figure>
 <p>The expression of the exponential envelope curve is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}F_{env}(D) = \begin{cases}(F_0+R_1 K_0 D)\left[ 1-\exp\left(\frac{-K_0 D}{F_0}\right) \right], &amp; 0\leq D \leq D_c \\ F_c - K_d (D-D_c), &amp; D_c &lt; D \leq D_u \\ 0, &amp; D &gt; D_u \end{cases}\end{split}\]</div>
@@ -491,9 +402,9 @@ The origin point (0, 0) should not be included in the definition.</p>
 <p>The piecewise envelope connects all the definition points with straight lines. The ultimate displacement is the maximum (minimum for the negative part) displacement defined.</p>
 <p><strong>Hysteretic law</strong></p>
 <p>The hysteretic law is illustrated in the following figure. The hysteresis is independent from the envelope curve. Basically, the hysteretic curves are defined by three guiding lines: unloading line, pinching line, and reloading line. The lines define Bezier curves as shown in the figure.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/DowelTypeHyst.png" src="../../../../_images/DowelTypeHyst.png" />
-</div>
+</figure>
 <p>The pinching line passes a defined force intercept, expressed as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}F_{\mathrm{int}} = \begin{cases} \left(\frac{\left\lvert D_{m,s} \right\rvert}{D_y}\right) F_{I},  &amp; \lvert D_{m,s} \rvert \leq D_y \\ F_{I},  &amp;  \lvert D_{m,s} \rvert &gt; D_y \ \mathrm{and} \ \lvert F_{env}(D_{m,s}) \rvert \leq \lvert F_{env}(D_{y,s}) \rvert  \\ F_{I} - \eta\left(F_{env}(D_{m,s})-F_{env}(D_{y,s})\right), &amp; \lvert D_{m,s} \rvert &gt; D_y \ \mathrm{and} \ \lvert F_{env}(D_{m,s}) \rvert &gt; \lvert F_{env}(D_{y,s}) \rvert \end{cases}\end{split}\]</div>
@@ -508,9 +419,9 @@ The origin point (0, 0) should not be included in the definition.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The following figure is used to describe the same side and the opposite side:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/DowelTypeSide.jpg" src="../../../../_images/DowelTypeSide.jpg" />
-</div>
+</figure>
 <p>If unloading goes from large displacement to small displacement (i.e., right to left), <span class="math notranslate nohighlight">\(D_{m,s}\)</span> equals <span class="math notranslate nohighlight">\(D_{max}\)</span>, and <span class="math notranslate nohighlight">\(D_{m,o}\)</span> equals <span class="math notranslate nohighlight">\(D_{min}\)</span>. Otherwise, <span class="math notranslate nohighlight">\(D_{m,s}\)</span> equals <span class="math notranslate nohighlight">\(D_{min}\)</span>, and <span class="math notranslate nohighlight">\(D_{m,o}\)</span> equals <span class="math notranslate nohighlight">\(D_{max}\)</span>.</p>
 </div>
 <p>The stiffness of the three guiding lines are defined. In the definitions, degradation models are included. Two kinds of degradation models can be selected by specifying the sign of the related parameters. The stiffnesses are expressed as:</p>
@@ -522,9 +433,9 @@ The origin point (0, 0) should not be included in the definition.</p>
 \[\begin{split}K_{\mathrm{reloading}} = \begin{cases} K_{0,o}, &amp; \alpha_r \geq 0 \ \mathrm{and} \ \lvert D_{m,o}\rvert \leq D_y \\ K_{0,o} \left(\frac{D_y}{\lvert D_{m,o}\rvert}\right)^{\alpha_r}, &amp; \alpha_r \geq 0 \ \mathrm{and} \ \lvert D_{m,o}\rvert &gt; D_y \\ K_{0,o} \left(\frac{F_{env}(D_{m,s})}{D_{m,s}K_{0,s}}\right)^{\lvert\alpha_r\rvert}, &amp; \alpha_r &lt; 0 \end{cases}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(K_{0,s}\)</span> and <span class="math notranslate nohighlight">\(K_{0,o}\)</span> are the stiffness on the same and opposite side of the unloading point, respectively. <span class="math notranslate nohighlight">\(D_{m,s}\)</span> is the maximum or minimum displacement on the same side of the unloading point. <span class="math notranslate nohighlight">\(D_{m,o}\)</span> is the maximum or minimum displacement on the opposite side of the unloading point.</p>
 <p>There are also a few special scenarios, illustrated in the following figure:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/DowelTypeSpecial.png" src="../../../../_images/DowelTypeSpecial.png" />
-</div>
+</figure>
 <p>Special scenario 1 is the smooth transition from the pinching curve to the unloaded envelope curve.</p>
 <p>Special scenario 2 is the case when reloading starts without reaching the pinching line.</p>
 <p>Special scenario 3 is the case when large damage occurs. The hysteretic curve no longer reaches the pinching line.</p>
@@ -534,7 +445,7 @@ The origin point (0, 0) should not be included in the definition.</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> DowelType <span class="mi">1</span> <span class="mi">90</span> <span class="mf">98.9</span> <span class="mf">4.3</span> <span class="mf">1.2</span> <span class="mf">1.09</span> <span class="mf">1.01</span> <span class="mf">0.21</span> <span class="mf">1.6</span> <span class="mf">1.32</span> <span class="mi">0</span> <span class="mf">0.66</span> <span class="o">-</span>exponential <span class="mi">823</span> <span class="mf">0.02</span> <span class="mi">955</span> <span class="mf">10.7</span> <span class="mi">123</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span><span class="w"> </span>DowelType<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">90</span><span class="w"> </span><span class="mf">98.9</span><span class="w"> </span><span class="mf">4.3</span><span class="w"> </span><span class="mf">1.2</span><span class="w"> </span><span class="mf">1.09</span><span class="w"> </span><span class="mf">1.01</span><span class="w"> </span><span class="mf">0.21</span><span class="w"> </span><span class="mf">1.6</span><span class="w"> </span><span class="mf">1.32</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mf">0.66</span><span class="w"> </span><span class="o">-</span>exponential<span class="w"> </span><span class="mi">823</span><span class="w"> </span><span class="mf">0.02</span><span class="w"> </span><span class="mi">955</span><span class="w"> </span><span class="mf">10.7</span><span class="w"> </span><span class="mi">123</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -545,9 +456,9 @@ The origin point (0, 0) should not be included in the definition.</p>
 </div>
 </div>
 <p>The results of Example 1 is shown in the following figure:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/DowelTypeExample1.png" src="../../../../_images/DowelTypeExample1.png" />
-</div>
+</figure>
 <div class="admonition-example-2 admonition">
 <p class="admonition-title">Example 2</p>
 <p>The following command constructs a DowelType hysteretic model with tag <strong>2</strong>.
@@ -556,7 +467,7 @@ This example uses asymmetric Bezier curve as the envelope curve.</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> DowelType <span class="mi">2</span> <span class="mi">445</span> <span class="mi">170</span> <span class="mf">3.8</span> <span class="mf">1.3</span> <span class="mf">1.03</span> <span class="mi">1</span> <span class="mf">0.34</span> <span class="mf">3.2</span> <span class="mf">0.92</span> <span class="mf">0.03</span> <span class="o">-</span><span class="mf">0.25</span> <span class="o">-</span>bezier <span class="mf">3.2</span> <span class="mi">19100</span> <span class="mi">15</span> <span class="mi">30500</span> <span class="mi">34</span> <span class="mi">40000</span> <span class="mi">520</span> <span class="o">-</span><span class="mf">5.3</span> <span class="o">-</span><span class="mi">12800</span> <span class="o">-</span><span class="mf">15.2</span> <span class="o">-</span><span class="mi">25200</span> <span class="o">-</span><span class="mf">43.1</span> <span class="o">-</span><span class="mi">30400</span> <span class="mi">510</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span><span class="w"> </span>DowelType<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">445</span><span class="w"> </span><span class="mi">170</span><span class="w"> </span><span class="mf">3.8</span><span class="w"> </span><span class="mf">1.3</span><span class="w"> </span><span class="mf">1.03</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.34</span><span class="w"> </span><span class="mf">3.2</span><span class="w"> </span><span class="mf">0.92</span><span class="w"> </span><span class="mf">0.03</span><span class="w"> </span><span class="o">-</span><span class="mf">0.25</span><span class="w"> </span><span class="o">-</span>bezier<span class="w"> </span><span class="mf">3.2</span><span class="w"> </span><span class="mi">19100</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="mi">30500</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">40000</span><span class="w"> </span><span class="mi">520</span><span class="w"> </span><span class="o">-</span><span class="mf">5.3</span><span class="w"> </span><span class="o">-</span><span class="mi">12800</span><span class="w"> </span><span class="o">-</span><span class="mf">15.2</span><span class="w"> </span><span class="o">-</span><span class="mi">25200</span><span class="w"> </span><span class="o">-</span><span class="mf">43.1</span><span class="w"> </span><span class="o">-</span><span class="mi">30400</span><span class="w"> </span><span class="mi">510</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -567,9 +478,9 @@ This example uses asymmetric Bezier curve as the envelope curve.</p>
 </div>
 </div>
 <p>The results of Example 2 is shown in the following figure:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/DowelTypeExample2.png" src="../../../../_images/DowelTypeExample2.png" />
-</div>
+</figure>
 <div class="admonition-example-3 admonition">
 <p class="admonition-title">Example 3</p>
 <p>The following command constructs a DowelType hysteretic model with tag <strong>3</strong>.
@@ -578,7 +489,7 @@ It uses an asymmetric piecewise envelope curve.</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> DowelType <span class="mi">3</span> <span class="mi">60</span> <span class="mf">114.9</span> <span class="mf">4.9</span> <span class="mf">1.3</span> <span class="mf">1.09</span> <span class="mi">1</span> <span class="mf">0.06</span> <span class="mf">0.9</span> <span class="mf">1.69</span> <span class="mf">0.26</span> <span class="mf">0.53</span> <span class="o">-</span>piecewise <span class="mf">0.5</span> <span class="mi">340</span> <span class="mf">0.9</span> <span class="mi">700</span> <span class="mf">2.5</span> <span class="mi">1030</span> <span class="mi">10</span> <span class="mi">300</span> <span class="o">-</span><span class="mf">0.9</span> <span class="o">-</span><span class="mi">600</span> <span class="o">-</span><span class="mf">1.8</span> <span class="o">-</span><span class="mi">800</span> <span class="o">-</span><span class="mf">4.2</span> <span class="o">-</span><span class="mi">1020</span> <span class="o">-</span><span class="mi">10</span> <span class="o">-</span><span class="mi">790</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span><span class="w"> </span>DowelType<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="mf">114.9</span><span class="w"> </span><span class="mf">4.9</span><span class="w"> </span><span class="mf">1.3</span><span class="w"> </span><span class="mf">1.09</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.06</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span><span class="mf">1.69</span><span class="w"> </span><span class="mf">0.26</span><span class="w"> </span><span class="mf">0.53</span><span class="w"> </span><span class="o">-</span>piecewise<span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mi">340</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span><span class="mi">700</span><span class="w"> </span><span class="mf">2.5</span><span class="w"> </span><span class="mi">1030</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="o">-</span><span class="mf">0.9</span><span class="w"> </span><span class="o">-</span><span class="mi">600</span><span class="w"> </span><span class="o">-</span><span class="mf">1.8</span><span class="w"> </span><span class="o">-</span><span class="mi">800</span><span class="w"> </span><span class="o">-</span><span class="mf">4.2</span><span class="w"> </span><span class="o">-</span><span class="mi">1020</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="w"> </span><span class="o">-</span><span class="mi">790</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -589,9 +500,9 @@ It uses an asymmetric piecewise envelope curve.</p>
 </div>
 </div>
 <p>The results of Example 3 is shown in the following figure:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/DowelTypeExample3.png" src="../../../../_images/DowelTypeExample3.png" />
-</div>
+</figure>
 <div class="admonition-example-4 admonition">
 <p class="admonition-title">Example 4</p>
 <p>The following command constructs a DowelType hysteretic model with tag <strong>4</strong>.
@@ -600,7 +511,7 @@ It uses an asymmetric piecewise envelope curve.</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span> DowelType <span class="mi">4</span> <span class="mi">305</span> <span class="mf">621.2</span> <span class="mf">3.7</span> <span class="mf">1.2</span> <span class="mf">1.02</span> <span class="mi">1</span> <span class="mf">0.06</span> <span class="mf">2.7</span> <span class="mf">0.76</span> <span class="mf">0.2</span> <span class="mi">0</span> <span class="o">-</span>piecewise <span class="mf">0.01</span> <span class="mi">580</span> <span class="mf">2.5</span> <span class="mi">4200</span> <span class="mf">4.4</span> <span class="mi">17300</span> <span class="mi">7</span> <span class="mi">23700</span> <span class="mi">10</span> <span class="mi">16000</span> <span class="o">-</span><span class="mf">0.1</span> <span class="o">-</span><span class="mi">790</span> <span class="o">-</span><span class="mf">2.2</span> <span class="o">-</span><span class="mi">3900</span> <span class="o">-</span><span class="mi">5</span> <span class="o">-</span><span class="mi">14100</span> <span class="o">-</span><span class="mf">5.2</span> <span class="o">-</span><span class="mi">16500</span> <span class="o">-</span><span class="mi">10</span> <span class="o">-</span><span class="mi">7000</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">uniaxialMaterial</span><span class="w"> </span>DowelType<span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">305</span><span class="w"> </span><span class="mf">621.2</span><span class="w"> </span><span class="mf">3.7</span><span class="w"> </span><span class="mf">1.2</span><span class="w"> </span><span class="mf">1.02</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.06</span><span class="w"> </span><span class="mf">2.7</span><span class="w"> </span><span class="mf">0.76</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span>piecewise<span class="w"> </span><span class="mf">0.01</span><span class="w"> </span><span class="mi">580</span><span class="w"> </span><span class="mf">2.5</span><span class="w"> </span><span class="mi">4200</span><span class="w"> </span><span class="mf">4.4</span><span class="w"> </span><span class="mi">17300</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">23700</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">16000</span><span class="w"> </span><span class="o">-</span><span class="mf">0.1</span><span class="w"> </span><span class="o">-</span><span class="mi">790</span><span class="w"> </span><span class="o">-</span><span class="mf">2.2</span><span class="w"> </span><span class="o">-</span><span class="mi">3900</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="w"> </span><span class="o">-</span><span class="mi">14100</span><span class="w"> </span><span class="o">-</span><span class="mf">5.2</span><span class="w"> </span><span class="o">-</span><span class="mi">16500</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="w"> </span><span class="o">-</span><span class="mi">7000</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -611,72 +522,55 @@ It uses an asymmetric piecewise envelope curve.</p>
 </div>
 </div>
 <p>The results of Example 4 is shown in the following figure:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <img alt="../../../../_images/DowelTypeExample4.png" src="../../../../_images/DowelTypeExample4.png" />
-</div>
+</figure>
 <p>Code Developed by: <a class="reference external" href="http://www.hanlindong.com/en/">Hanlin Dong</a> (<a class="reference external" href="mailto:self&#37;&#52;&#48;hanlindong&#46;com">self<span>&#64;</span>hanlindong<span>&#46;</span>com</a>) and Xijun Wang, Tongji University, China.</p>
-<dl class="citation">
-<dt class="label" id="dongetal2021"><span class="brackets">DongEtAl2021</span></dt>
-<dd><p>Dong, H., He, M., Wang, X.*, Christopoulos, C., Li, Z., Shu, Z. (2021). “Development of a uniaxial hysteretic model for dowel-type timber joints in OpenSees.”, Construction and Building Materials, 288: 123112. <a class="reference external" href="https://doi.org/10.1016/j.conbuildmat.2021.123112">DOI: https://doi.org/10.1016/j.conbuildmat.2021.123112</a></p>
-</dd>
-</dl>
+<div role="list" class="citation-list">
+<div class="citation" id="dongetal2021" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>DongEtAl2021<span class="fn-bracket">]</span></span>
+<p>Dong, H., He, M., Wang, X.*, Christopoulos, C., Li, Z., Shu, Z. (2021). “Development of a uniaxial hysteretic model for dowel-type timber joints in OpenSees.”, Construction and Building Materials, 288: 123112. <a class="reference external" href="https://doi.org/10.1016/j.conbuildmat.2021.123112">DOI: https://doi.org/10.1016/j.conbuildmat.2021.123112</a></p>
 </div>
+</div>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2022, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }

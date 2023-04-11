@@ -1,97 +1,48 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3.2.10. modalProperties Command &mdash; OpenSees Documentation  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
-    
+    <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="3.2.11. responseSpectrumAnalysis Command" href="responseSpectrumAnalysis.html" />
     <link rel="prev" title="3.2.9. eigen Command" href="eigen.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../index.html">
           
-
-          
+          <a href="../../../index.html">
             
-            <img src="../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
-          
+              <img src="../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
@@ -116,8 +67,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
@@ -134,77 +84,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../index.html">OpenSees Documentation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
-          <li><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a> &raquo;</li>
-        
-      <li><span class="section-number">3.2.10. </span>modalProperties Command</li>
-    
-    
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a></li>
+          <li class="breadcrumb-item"><a href="../analysisCommands.html"><span class="section-number">3.2. </span>Analysis Commands</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.2.10. </span>modalProperties Command</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../_sources/user/manual/analysis/modalProperties.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="modalproperties-command">
-<span id="modalproperties"></span><h1><span class="section-number">3.2.10. </span>modalProperties Command<a class="headerlink" href="#modalproperties-command" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="modalproperties-command">
+<span id="modalproperties"></span><h1><span class="section-number">3.2.10. </span>modalProperties Command<a class="headerlink" href="#modalproperties-command" title="Permalink to this heading"></a></h1>
 <div class="line-block">
 <div class="line">This command is used to compute the modal properties of a model after an <a class="reference internal" href="eigen.html#eigen"><span class="std std-ref">eigen Command</span></a>.</div>
 <div class="line">This command computes the following modal properties:</div>
@@ -227,7 +134,7 @@
 <span class="sig-name descname"><span class="pre">modalProperties</span> <span class="pre">&lt;-print&gt;</span> <span class="pre">&lt;-return&gt;</span> <span class="pre">&lt;-file</span> <span class="pre">$reportFileName&gt;</span> <span class="pre">&lt;-unorm&gt;</span></span></dt>
 <dd></dd></dl>
 
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 17%" />
@@ -417,8 +324,8 @@
 <li><p>Only the values in <span class="math notranslate nohighlight">\(gm\)</span> and <span class="math notranslate nohighlight">\(MPF\)</span> depend on the normalization of the eigenvectors. This normalization depends on the solver used in the <a class="reference internal" href="eigen.html#eigen"><span class="std std-ref">eigen Command</span></a>. The default -genBandArpack uses a mass-normalization, so that the <span class="math notranslate nohighlight">\(gm\)</span> is the identity. On the contrary, the -fullGenLapack uses a displacement-normalization, so that the largest component of the eigenvector is 1. If you use the -genBandArpack, but want a displacement-normalization of the eigenvectors, use the <strong>-unorm</strong> option.</p></li>
 </ul>
 </div>
-<div class="section" id="theory">
-<h2><span class="section-number">3.2.10.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<section id="theory">
+<h2><span class="section-number">3.2.10.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line">The eigenvalues <span class="math notranslate nohighlight">\(\lambda\)</span> and the eigenvectors <span class="math notranslate nohighlight">\(\Phi\)</span> can be obtained after solving the <em>generalized eigenvalue problem</em> for two symmetric matrices <span class="math notranslate nohighlight">\(K\)</span> (stiffness) and <span class="math notranslate nohighlight">\(M\)</span> (mass) given by:</div>
 </div>
@@ -503,11 +410,12 @@ e_6 \\
 <div class="line-block">
 <div class="line">If the modal participation masses for each mode in a particular DOF are summed, it should give the total mass of the structure for that DOF, exlcluding the masses at fixed DOFs.</div>
 </div>
-<dl class="citation">
-<dt class="label" id="hintonetal1976"><span class="brackets"><a class="fn-backref" href="#id1">HintonEtAl1976</a></span></dt>
-<dd><p>Hinton, E., Rock, T. &amp; Zienkiewicz, O. (1976). “A note on mass lumping and related processes in the Finite element method.” Earthquake Engineering and Structural Dynamics, 13, 9, p. A112.</p>
-</dd>
-</dl>
+<div role="list" class="citation-list">
+<div class="citation" id="hintonetal1976" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">HintonEtAl1976</a><span class="fn-bracket">]</span></span>
+<p>Hinton, E., Rock, T. &amp; Zienkiewicz, O. (1976). “A note on mass lumping and related processes in the Finite element method.” Earthquake Engineering and Structural Dynamics, 13, 9, p. A112.</p>
+</div>
+</div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>The following example shows how to:</p>
@@ -520,7 +428,7 @@ e_6 \\
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">modalProperties</span> <span class="o">-</span>print <span class="o">-</span>file <span class="s2">&quot;ModalReport.txt&quot;</span> <span class="o">-</span>unorm
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">modalProperties</span><span class="w"> </span><span class="o">-</span>print<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="s2">&quot;ModalReport.txt&quot;</span><span class="w"> </span><span class="o">-</span>unorm
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -645,64 +553,46 @@ e_6 \\
 </div>
 </div>
 <p>Code Developed by: <strong>Massimo Petracca</strong> at ASDEA Software, Italy</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2022, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-2431545-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-2431545-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }
