@@ -1,7 +1,7 @@
 Transformation Method
 ^^^^^^^^^^^^^^^^^^^^^
 
-This command is used to construct a ``PenaltyMethod`` constraint handler, which enforces the constraints by using the penalty method. The following is the command to construct such a constraint handler:
+This command is used to construct a ``TransformationMethod`` constraint handler, which enforces the constraints by using the transformation method,  also known as static condensation method. The following is the command to construct such a constraint handler:
 
 .. function:: constraints Transformation
 
@@ -15,7 +15,7 @@ Great care must be taken when multiple constraints are being enforced as the tra
 
 .. admonition:: Example 
 
-   The following example shows how to construct a Lagrange constraint handler
+   The following example shows how to construct a transformation constraint handler
 
    1. **Tcl Code**
 
