@@ -23,3 +23,4 @@ The following contain information about algorithmType? and the args required for
    algorithm/BFGS
    algorithm/Broyden
    algorithm/ExpressNewton
+
