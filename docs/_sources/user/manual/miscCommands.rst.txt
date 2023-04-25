@@ -13,6 +13,7 @@ These are commands added to the interpreter which don't fit into one of the othe
    misc/nodeAccel
    misc/eleResponse
    misc/getCrdTransfTags
+   misc/nodeCoord   
 
 .. toctree::
    :caption: 2. Commands that don't return values
@@ -22,5 +23,5 @@ These are commands added to the interpreter which don't fit into one of the othe
    misc/wipe
    misc/wipeAnalysis
    misc/exit
-
-
+   
+   

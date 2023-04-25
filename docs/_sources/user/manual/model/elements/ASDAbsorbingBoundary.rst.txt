@@ -3,7 +3,7 @@
 ASDAbsorbingBoundary Element (2D and 3D)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: ASD/ASDAbsorbingBoundary_Video.gif
+.. figure:: figures/ASD_Absorbing/ASDAbsorbingBoundary_Video.gif
    :align: center
    :figclass: align-center
 
