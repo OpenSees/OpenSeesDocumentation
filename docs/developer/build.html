@@ -1,47 +1,96 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>2. Building Application &mdash; OpenSees Documentation  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. References" href="references.html" />
     <link rel="prev" title="1. Source Code" href="sourceCode.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
+
+          
             
-              <img src="../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+            <img src="../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../user/interpreters.html">1. OpenSees Interpreters</a></li>
@@ -81,41 +130,82 @@
 <li class="toctree-l1"><a class="reference internal" href="issues.html">6. Issues</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">OpenSees Documentation</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2. </span>Building Application</li>
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>Building Application</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../_sources/developer/build.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="building-application">
-<span id="build"></span><h1><span class="section-number">2. </span>Building Application<a class="headerlink" href="#building-application" title="Permalink to this heading"></a></h1>
+            
+  <div class="section" id="building-application">
+<span id="build"></span><h1><span class="section-number">2. </span>Building Application<a class="headerlink" href="#building-application" title="Permalink to this headline">¶</a></h1>
 <p>The OpenSees applications are built using <a class="reference external" href="https://cmake.org/">CMake</a>, an extensible open-source system that manages the build system. It provides a uniform build process across a range of operating systems: Windows, MacOS and different version of Linux. CMake needs to be installed on your system. For it to work, other applications such as C, C++ and Fortran compilers need to be also installed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Most code instructions below are run from a <strong>Terminal</strong> application. Type <strong>cmd</strong> in the Windows search or <strong>terminal</strong> in MacOS spotlight to start the application. If you are on a Unix machine this note may cause you some amusement!</p>
 </div>
-<section id="windows-10">
-<h2><span class="section-number">2.1. </span>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this heading"></a></h2>
-<section id="software-requirements">
-<h3><span class="section-number">2.1.1. </span>Software Requirements<a class="headerlink" href="#software-requirements" title="Permalink to this heading"></a></h3>
+<div class="section" id="windows-10">
+<h2><span class="section-number">2.1. </span>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="software-requirements">
+<h3><span class="section-number">2.1.1. </span>Software Requirements<a class="headerlink" href="#software-requirements" title="Permalink to this headline">¶</a></h3>
 <p>For Windows 10 the user must have the following applications installed on their computer: CMake, VisualStudio Basic, Intel One Basic and HPC Toolkits, and MUMPS, and conan:</p>
 <ol class="arabic simple">
 <li><p><strong>CMake</strong>: We use <a class="reference external" href="https://cmake.org/download/">CMake</a> for managing the build process. Version 3.20 or later is recommended.</p></li>
@@ -161,9 +251,9 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </div></blockquote>
 </li>
 </ol>
-</section>
-<section id="obtaining-opensees-source-code">
-<h3><span class="section-number">2.1.2. </span>Obtaining OpenSees Source Code<a class="headerlink" href="#obtaining-opensees-source-code" title="Permalink to this heading"></a></h3>
+</div>
+<div class="section" id="obtaining-opensees-source-code">
+<h3><span class="section-number">2.1.2. </span>Obtaining OpenSees Source Code<a class="headerlink" href="#obtaining-opensees-source-code" title="Permalink to this headline">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -180,9 +270,9 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </li>
 </ol>
 </div>
-</section>
-<section id="building-the-opensees-applications-and-python-module">
-<h3><span class="section-number">2.1.3. </span>Building the OpenSees Applications and Python module<a class="headerlink" href="#building-the-opensees-applications-and-python-module" title="Permalink to this heading"></a></h3>
+</div>
+<div class="section" id="building-the-opensees-applications-and-python-module">
+<h3><span class="section-number">2.1.3. </span>Building the OpenSees Applications and Python module<a class="headerlink" href="#building-the-opensees-applications-and-python-module" title="Permalink to this headline">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! From a terminal window move to the folder that contains the OpenSees folder and issue the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\Program Files (x86)\Intel\oneAPI\setVars&quot;</span> <span class="n">intel64</span> <span class="n">mod</span>
@@ -233,12 +323,12 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </li>
 </ol>
 </div>
-</section>
-</section>
-<section id="macos">
-<h2><span class="section-number">2.2. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading"></a></h2>
-<section id="id2">
-<h3><span class="section-number">2.2.1. </span>Software Requirements<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+</div>
+</div>
+<div class="section" id="macos">
+<h2><span class="section-number">2.2. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3><span class="section-number">2.2.1. </span>Software Requirements<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>For MacOS the user must have the following applications installed on their computer: xcode command line tools, brew, cmake, gcc, gfortran, python, and open-mpi. All the applications are installed via the command line. Some of these you can skip as you may already have them installed.</p>
 <ol class="arabic">
 <li><p><strong>XCODE Command Line Tools</strong>: To make Apple Clang and git available, type the following in a terminal application:</p>
@@ -277,9 +367,9 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </div>
 </li>
 </ol>
-</section>
-<section id="obtaining-the-source-code">
-<h3><span class="section-number">2.2.2. </span>Obtaining the Source Code<a class="headerlink" href="#obtaining-the-source-code" title="Permalink to this heading"></a></h3>
+</div>
+<div class="section" id="obtaining-the-source-code">
+<h3><span class="section-number">2.2.2. </span>Obtaining the Source Code<a class="headerlink" href="#obtaining-the-source-code" title="Permalink to this headline">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -296,9 +386,9 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </li>
 </ol>
 </div>
-</section>
-<section id="building-the-opensees-tcl-application">
-<h3><span class="section-number">2.2.3. </span>Building the OpenSees Tcl Application<a class="headerlink" href="#building-the-opensees-tcl-application" title="Permalink to this heading"></a></h3>
+</div>
+<div class="section" id="building-the-opensees-tcl-application">
+<h3><span class="section-number">2.2.3. </span>Building the OpenSees Tcl Application<a class="headerlink" href="#building-the-opensees-tcl-application" title="Permalink to this headline">¶</a></h3>
 <p>With everything installed the build process is somehwat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd OpenSees
@@ -336,12 +426,12 @@ mv ./lib/OpenSeesPy.dylib ./lib/opensees.so
 <li><p>Finally plase note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of <strong>cmake ..</strong> for the python library used.</p></li>
 </ol>
 </div>
-</section>
-</section>
-<section id="ubuntu">
-<h2><span class="section-number">2.3. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this heading"></a></h2>
-<section id="id3">
-<h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+</div>
+</div>
+<div class="section" id="ubuntu">
+<h2><span class="section-number">2.3. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p><strong>Needed Applications and Libraries</strong>: For Ubuntu, the user must have a number of packages installed on their system. These can be installed following commands issued in a terminal window.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
@@ -374,18 +464,18 @@ mv ./lib/OpenSeesPy.dylib ./lib/opensees.so
 <p class="admonition-title">Warning</p>
 <p>Read the output from the last command. When building <strong>OpenSees</strong> below you will use the conan executable just installed, or find it using :code: <cite>whereis conan</cite> from the command line. If located in a different location to the path used below, you will get an error. Change the command below to path where conan was just installed.</p>
 </div>
-</section>
-<section id="id4">
-<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>You need to obtain the OpenSees source code from github. To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </div></blockquote>
-</section>
-<section id="building-the-opensees-applications">
-<h3><span class="section-number">2.3.3. </span>Building the OpenSees Applications<a class="headerlink" href="#building-the-opensees-applications" title="Permalink to this heading"></a></h3>
+</div>
+<div class="section" id="building-the-opensees-applications">
+<h3><span class="section-number">2.3.3. </span>Building the OpenSees Applications<a class="headerlink" href="#building-the-opensees-applications" title="Permalink to this headline">¶</a></h3>
 <p>With everything installed the build process is somehwat simple! Again from a terminal window enter the following commands:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd OpenSees
@@ -428,47 +518,65 @@ mv ./lib/OpenSeesPy.so ./opensees.so
 </li>
 </ol>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The Regents of the University of California.</p>
-  </div>
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2431545-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-2431545-1', {
-          'anonymize_ip': false,
-      });
-    </script>  
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
 
   <style>
          .wy-nav-content { max-width: none; }
