@@ -23,7 +23,7 @@ Like many finite element applications, all nonlinear elements have associated wi
 
    material/uniaxialMaterial
    material/ndMaterial
-   material/section
+..   material/section
    
 For simple investigation of material/section behavior, try the built-in material testing commands.
 
