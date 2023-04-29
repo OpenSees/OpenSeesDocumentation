@@ -3,7 +3,7 @@
 Jankowski Impact Material
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This command is used to construct the uniaxial Jankowski Impact Material. References: [Jankowski2005]_, [Jankowski2006]_, [Jankowski2007]_, [Hughes2020]_
+This command is used to construct the uniaxial Jankowski Impact Material. References: [Jankowski2005]_, [Jankowski2006]_, [Jankowski2007]_, [Hughes2020]__
 
 .. function:: uniaxialMaterial JankowskiImpact  $matTag $Kh $xi $Meff $gap <$n>
 
