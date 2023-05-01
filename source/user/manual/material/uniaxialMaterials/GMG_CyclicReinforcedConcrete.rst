@@ -103,8 +103,6 @@ The material is based on a newly developed Cyclic Reinforced Concrete model ([Gh
    material model utilizes energy-based damage functions to further adjust reloading branch (see Fig. 5a) and post-capping 
    degrading branches (see Fig. 5b). Shifting the post-capping degrading branch while the column is cycling in the hardening 
    range enables the model to adjust its envelope backbone response due to cyclic damage occurring in that range.
-   
-.. _fig-ductilefracture_mp_infl:
 
 .. figure:: figures/GMG_CyclicReinforcedConcrete/GMG_CyclicReinforcedConcrete_ForceDeformation.png
 	:align: center
