@@ -111,19 +111,20 @@
 <li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.8.4. ZeroLengthContactASDimplex Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.8.5. Elastic Beam Column Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.8.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.8.7. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.8.8. Mixed Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.8.9. ASDShellQ4 Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.8.10. Quadrilateral Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.8.11. SSPquad Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.8.12. stdBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.8.13. bbarBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.8.14. SSPbrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.8.15. FourNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.8.16. TenNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.8.17. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.8.18. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.8.19. RockingBC Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.8.7. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.8.8. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.8.9. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.8.10. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.8.11. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.8.12. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.8.13. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.8.14. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.8.15. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.8.16. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.8.17. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.8.18. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.8.19. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.8.20. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.9. Time Series Command</a></li>
@@ -224,6 +225,11 @@
   <div class="section" id="zerolength-element">
 <span id="zerolength"></span><h1><span class="section-number">3.1.8.1. </span>ZeroLength Element<a class="headerlink" href="#zerolength-element" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a zeroLength element object, which is defined by two nodes at the same location. A zeroLength element is similar to a set of springs placed between two nodes, each spring providing the force displacement relationship for a specified degree-of-freedom. The nodes are connected by multiple UniaxialMaterial objects, which provide the force-deformation relationship for the element in that degree-of-freedom direction.</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">zeroLength</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">-mat</span> <span class="pre">$matTag</span> <span class="pre">-dir</span> <span class="pre">$dir</span> <span class="pre">&lt;-doRayleigh</span> <span class="pre">$rFlag&gt;</span> <span class="pre">&lt;-orient</span> <span class="pre">$x</span> <span class="pre">$yp&gt;</span></span></dt>
+<dd></dd></dl>
+
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 17%" />

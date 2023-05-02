@@ -285,9 +285,9 @@
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span><span class="w"> </span>SSPquad<span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="s2">&quot;PlaneStrain&quot;</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="o">-</span><span class="mf">10.0</span>
-<span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>eleRange<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$numElem</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>stress.out<span class="w">  </span>stress
-<span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>eleRange<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$numElem</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>strain.out<span class="w">  </span>strain
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span> SSPquad <span class="mi">1</span>  <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>  <span class="mi">1</span> <span class="s2">&quot;PlaneStrain&quot;</span> <span class="mf">1.0</span> <span class="mf">0.0</span> <span class="o">-</span><span class="mf">10.0</span>
+<span class="nv">recorder</span> Element <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$numElem</span> <span class="o">-</span>time <span class="o">-</span>file stress.out  stress
+<span class="nv">recorder</span> Element <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$numElem</span> <span class="o">-</span>time <span class="o">-</span>file strain.out  strain
 </pre></div>
 </div>
 <ol class="arabic simple">
@@ -318,95 +318,95 @@
 
 <span class="nv">wipe</span>
 
-<span class="nv">model</span><span class="w"> </span>BasicBuilder<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">2</span>
+<span class="nv">model</span> BasicBuilder <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
 
 <span class="c"># beam dimensions</span>
-<span class="k">set</span><span class="w"> </span>L<span class="w"> </span><span class="mf">24.0</span>
-<span class="k">set</span><span class="w"> </span>D<span class="w"> </span><span class="mf">3.0</span>
+<span class="k">set</span> L <span class="mf">24.0</span>
+<span class="k">set</span> D <span class="mf">3.0</span>
 
 <span class="c"># define number and size of elements </span>
-<span class="k">set</span><span class="w"> </span>nElemX<span class="w"> </span><span class="mi">4</span>
-<span class="k">set</span><span class="w"> </span>nElemY<span class="w"> </span><span class="mi">1</span>
-<span class="k">set</span><span class="w"> </span>nElemT<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$nElemX</span><span class="o">*</span><span class="nv">$nElemY</span><span class="k">]</span>
-<span class="k">set</span><span class="w"> </span>sElemX<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$L</span><span class="o">/</span><span class="nv">$nElemX</span><span class="k">]</span>
-<span class="k">set</span><span class="w"> </span>sElemY<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$D</span><span class="o">/</span><span class="nv">$nElemY</span><span class="k">]</span>
+<span class="k">set</span> nElemX <span class="mi">4</span>
+<span class="k">set</span> nElemY <span class="mi">1</span>
+<span class="k">set</span> nElemT <span class="k">[expr</span> <span class="nv">$nElemX</span><span class="o">*</span><span class="nv">$nElemY</span><span class="k">]</span>
+<span class="k">set</span> sElemX <span class="k">[expr</span> <span class="nv">$L</span><span class="o">/</span><span class="nv">$nElemX</span><span class="k">]</span>
+<span class="k">set</span> sElemY <span class="k">[expr</span> <span class="nv">$D</span><span class="o">/</span><span class="nv">$nElemY</span><span class="k">]</span>
 
-<span class="k">set</span><span class="w"> </span>nNodeX<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$nElemX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
-<span class="k">set</span><span class="w"> </span>nNodeY<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$nElemY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
-<span class="k">set</span><span class="w"> </span>nNodeT<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$nNodeX</span><span class="o">*</span><span class="nv">$nNodeY</span><span class="k">]</span>
+<span class="k">set</span> nNodeX <span class="k">[expr</span> <span class="nv">$nElemX</span> <span class="o">+</span> <span class="mi">1</span><span class="k">]</span>
+<span class="k">set</span> nNodeY <span class="k">[expr</span> <span class="nv">$nElemY</span> <span class="o">+</span> <span class="mi">1</span><span class="k">]</span>
+<span class="k">set</span> nNodeT <span class="k">[expr</span> <span class="nv">$nNodeX</span><span class="o">*</span><span class="nv">$nNodeY</span><span class="k">]</span>
 
 <span class="c"># create the nodes</span>
-<span class="k">set</span><span class="w"> </span>nid<span class="w">   </span><span class="mi">1</span>
-<span class="k">set</span><span class="w"> </span>count<span class="w"> </span><span class="mf">0.0</span>
-<span class="k">for</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>j<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">$j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nv">$nNodeY</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">incr</span><span class="w"> </span>j<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>i<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">$i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nv">$nNodeX</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">incr</span><span class="w"> </span>i<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">	</span><span class="nv">node</span><span class="w"> </span><span class="nv">$nid</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">$count</span><span class="o">*</span><span class="nv">$sElemX</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">(</span><span class="nv">$j-1</span><span class="k">)</span><span class="o">*</span><span class="nv">$sElemY</span><span class="k">]</span>
-<span class="w">	</span><span class="k">set</span><span class="w"> </span>nid<span class="w">   </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$nid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
-<span class="w">	</span><span class="k">set</span><span class="w"> </span>count<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
-<span class="w">    </span><span class="k">}</span>
-<span class="w">    </span><span class="k">set</span><span class="w"> </span>count<span class="w"> </span><span class="mf">0.0</span>
+<span class="k">set</span> nid   <span class="mi">1</span>
+<span class="k">set</span> count <span class="mf">0.0</span>
+<span class="k">for</span> <span class="k">{set</span> j <span class="mi">1</span><span class="k">}</span> <span class="k">{</span><span class="nv">$j</span> <span class="o">&lt;=</span> <span class="nv">$nNodeY</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> j <span class="mi">1</span><span class="k">}</span> <span class="k">{</span>
+    <span class="k">for</span> <span class="k">{set</span> i <span class="mi">1</span><span class="k">}</span> <span class="k">{</span><span class="nv">$i</span> <span class="o">&lt;=</span> <span class="nv">$nNodeX</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> i <span class="mi">1</span><span class="k">}</span> <span class="k">{</span>
+	<span class="nv">node</span> <span class="nv">$nid</span> <span class="k">[expr</span> <span class="mf">0.0</span> <span class="o">+</span> <span class="nv">$count</span><span class="o">*</span><span class="nv">$sElemX</span><span class="k">]</span> <span class="k">[expr</span> <span class="k">(</span><span class="nv">$j-1</span><span class="k">)</span><span class="o">*</span><span class="nv">$sElemY</span><span class="k">]</span>
+	<span class="k">set</span> nid   <span class="k">[expr</span> <span class="nv">$nid</span> <span class="o">+</span> <span class="mi">1</span><span class="k">]</span>
+	<span class="k">set</span> count <span class="k">[expr</span> <span class="nv">$count</span> <span class="o">+</span> <span class="mi">1</span><span class="k">]</span>
+    <span class="k">}</span>
+    <span class="k">set</span> count <span class="mf">0.0</span>
 <span class="k">}</span>
 
 <span class="c"># boundary conditions</span>
-<span class="nv">fix</span><span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
-<span class="nv">fix</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$nElemY</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
-<span class="k">for</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>k<span class="w"> </span><span class="mi">2</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">$k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nv">$nNodeX</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">incr</span><span class="w"> </span>k<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="nv">fix</span><span class="w"> </span><span class="nv">$k</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">fix</span> <span class="mi">1</span>   <span class="mi">1</span> <span class="mi">1</span>
+<span class="nv">fix</span> <span class="k">[expr</span> <span class="nv">$nElemY</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>   <span class="mi">1</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="k">{set</span> k <span class="mi">2</span><span class="k">}</span> <span class="k">{</span><span class="nv">$k</span> <span class="o">&lt;=</span> <span class="nv">$nNodeX</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> k <span class="mi">1</span><span class="k">}</span> <span class="k">{</span>
+    <span class="nv">fix</span> <span class="nv">$k</span> <span class="mi">1</span> <span class="mi">0</span>
 <span class="k">}</span>
 
 <span class="c"># define material</span>
-<span class="k">set</span><span class="w"> </span>matID<span class="w"> </span><span class="mi">1</span>
-<span class="k">set</span><span class="w"> </span>E<span class="w">     </span><span class="mi">20000</span>
-<span class="k">set</span><span class="w"> </span>nu<span class="w">    </span><span class="mf">0.25</span>
-<span class="nv">nDMaterial</span><span class="w"> </span>ElasticIsotropic<span class="w"> </span><span class="nv">$matID</span><span class="w"> </span><span class="nv">$E</span><span class="w"> </span><span class="nv">$nu</span>
+<span class="k">set</span> matID <span class="mi">1</span>
+<span class="k">set</span> E     <span class="mi">20000</span>
+<span class="k">set</span> nu    <span class="mf">0.25</span>
+<span class="nv">nDMaterial</span> ElasticIsotropic <span class="nv">$matID</span> <span class="nv">$E</span> <span class="nv">$nu</span>
 
 <span class="c"># create elements</span>
-<span class="k">set</span><span class="w"> </span>thick<span class="w"> </span><span class="mf">1.0</span>
-<span class="k">set</span><span class="w"> </span>b1<span class="w"> </span><span class="mf">0.0</span>
-<span class="k">set</span><span class="w"> </span>b2<span class="w"> </span><span class="mf">0.0</span>
-<span class="k">set</span><span class="w"> </span>count<span class="w"> </span><span class="mi">1</span>
-<span class="k">for</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>j<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">$j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nv">$nNodeY</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">incr</span><span class="w"> </span>j<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>i<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">$i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nv">$nNodeX</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">incr</span><span class="w"> </span>i<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="k">{(</span><span class="nv">$i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">$nNodeX</span><span class="k">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">(</span><span class="nv">$j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">$nNodeY</span><span class="k">)}</span><span class="w"> </span><span class="k">{</span>
-<span class="w">	    </span><span class="k">set</span><span class="w"> </span>nI<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$i</span><span class="o">+</span><span class="k">(</span><span class="nv">$j-1</span><span class="k">)</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="k">]</span>
-<span class="w">	    </span><span class="k">set</span><span class="w"> </span>nJ<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$i</span><span class="o">+</span><span class="k">(</span><span class="nv">$j-1</span><span class="k">)</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
-<span class="w">	    </span><span class="k">set</span><span class="w"> </span>nK<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$i</span><span class="o">+</span><span class="nv">$j</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
-<span class="w">	    </span><span class="k">set</span><span class="w"> </span>nL<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$i</span><span class="o">+</span><span class="nv">$j</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="k">]</span>
-<span class="w">	    </span><span class="nv">element</span><span class="w"> </span>SSPquad<span class="w"> </span><span class="nv">$count</span><span class="w">  </span><span class="nv">$nI</span><span class="w"> </span><span class="nv">$nJ</span><span class="w"> </span><span class="nv">$nK</span><span class="w"> </span><span class="nv">$nL</span><span class="w"> </span><span class="nv">$matID</span><span class="w"> </span><span class="s2">&quot;PlaneStrain&quot;</span><span class="w"> </span><span class="nv">$thick</span><span class="w"> </span><span class="nv">$b1</span><span class="w"> </span><span class="nv">$b2</span>
+<span class="k">set</span> thick <span class="mf">1.0</span>
+<span class="k">set</span> b1 <span class="mf">0.0</span>
+<span class="k">set</span> b2 <span class="mf">0.0</span>
+<span class="k">set</span> count <span class="mi">1</span>
+<span class="k">for</span> <span class="k">{set</span> j <span class="mi">1</span><span class="k">}</span> <span class="k">{</span><span class="nv">$j</span> <span class="o">&lt;=</span> <span class="nv">$nNodeY</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> j <span class="mi">1</span><span class="k">}</span> <span class="k">{</span>
+    <span class="k">for</span> <span class="k">{set</span> i <span class="mi">1</span><span class="k">}</span> <span class="k">{</span><span class="nv">$i</span> <span class="o">&lt;=</span> <span class="nv">$nNodeX</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> i <span class="mi">1</span><span class="k">}</span> <span class="k">{</span>
+	<span class="k">if</span> <span class="k">{(</span><span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$nNodeX</span><span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="k">(</span><span class="nv">$j</span> <span class="o">&lt;</span> <span class="nv">$nNodeY</span><span class="k">)}</span> <span class="k">{</span>
+	    <span class="k">set</span> nI <span class="k">[expr</span> <span class="nv">$i</span><span class="o">+</span><span class="k">(</span><span class="nv">$j-1</span><span class="k">)</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="k">]</span>
+	    <span class="k">set</span> nJ <span class="k">[expr</span> <span class="nv">$i</span><span class="o">+</span><span class="k">(</span><span class="nv">$j-1</span><span class="k">)</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
+	    <span class="k">set</span> nK <span class="k">[expr</span> <span class="nv">$i</span><span class="o">+</span><span class="nv">$j</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
+	    <span class="k">set</span> nL <span class="k">[expr</span> <span class="nv">$i</span><span class="o">+</span><span class="nv">$j</span><span class="o">*</span><span class="nv">$nNodeX</span><span class="k">]</span>
+	    <span class="nv">element</span> SSPquad <span class="nv">$count</span>  <span class="nv">$nI</span> <span class="nv">$nJ</span> <span class="nv">$nK</span> <span class="nv">$nL</span> <span class="nv">$matID</span> <span class="s2">&quot;PlaneStrain&quot;</span> <span class="nv">$thick</span> <span class="nv">$b1</span> <span class="nv">$b2</span>
 
-<span class="w">	    </span><span class="k">set</span><span class="w"> </span>count<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$count</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
-<span class="w">	</span><span class="k">}</span>
-<span class="w">    </span><span class="k">}</span>
+	    <span class="k">set</span> count <span class="k">[expr</span> <span class="nv">$count</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
+	<span class="k">}</span>
+    <span class="k">}</span>
 <span class="k">}</span>
 
 <span class="c"># create recorders</span>
-<span class="k">set</span><span class="w"> </span>step<span class="w"> </span><span class="mf">0.1</span>
+<span class="k">set</span> step <span class="mf">0.1</span>
 
-<span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>results<span class="o">/</span>d1p1m1.out<span class="w"> </span><span class="o">-</span>dT<span class="w"> </span><span class="nv">$step</span><span class="w"> </span><span class="o">-</span>nodeRange<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$nNodeT</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>disp
-<span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>eleRange<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$nElemT</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>results<span class="o">/</span>s1p1m1.out<span class="w">  </span><span class="o">-</span>dT<span class="w"> </span><span class="nv">$step</span><span class="w">  </span>stress
-<span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>eleRange<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$nElemT</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>results<span class="o">/</span>e1p1m1.out<span class="w">  </span><span class="o">-</span>dT<span class="w"> </span><span class="nv">$step</span><span class="w">  </span>strain
+<span class="nv">recorder</span> Node <span class="o">-</span>time <span class="o">-</span>file results<span class="o">/</span>d1p1m1.out <span class="o">-</span>dT <span class="nv">$step</span> <span class="o">-</span>nodeRange <span class="mi">1</span> <span class="nv">$nNodeT</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> disp
+<span class="nv">recorder</span> Element <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$nElemT</span> <span class="o">-</span>time <span class="o">-</span>file results<span class="o">/</span>s1p1m1.out  <span class="o">-</span>dT <span class="nv">$step</span>  stress
+<span class="nv">recorder</span> Element <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$nElemT</span> <span class="o">-</span>time <span class="o">-</span>file results<span class="o">/</span>e1p1m1.out  <span class="o">-</span>dT <span class="nv">$step</span>  strain
 
 <span class="c"># create loading</span>
-<span class="k">set</span><span class="w"> </span>P<span class="w"> </span><span class="o">-</span><span class="mf">300.0</span><span class="k">;</span>
+<span class="k">set</span> P <span class="o">-</span><span class="mf">300.0</span><span class="k">;</span>
 
-<span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">{</span><span class="nv">Series</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="k">{</span><span class="nv">0</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">15</span><span class="k">}</span><span class="w"> </span><span class="o">-</span>values<span class="w"> </span><span class="k">{</span><span class="nv">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="o">-</span>factor<span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="w"> </span>
-<span class="w">    </span><span class="nb">load</span><span class="w"> </span><span class="nv">$nNodeT</span><span class="w">   </span><span class="mf">0.0</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">0.1875</span><span class="o">*</span><span class="nv">$P</span><span class="k">]</span>
-<span class="w">    </span><span class="nb">load</span><span class="w"> </span><span class="nv">$nNodeX</span><span class="w">   </span><span class="mf">0.0</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">0.3125</span><span class="o">*</span><span class="nv">$P</span><span class="k">]</span>
+<span class="nv">pattern</span> Plain <span class="mi">3</span> <span class="k">{</span><span class="nv">Series</span> <span class="o">-</span>time <span class="k">{</span><span class="nv">0</span> <span class="mi">10</span> <span class="mi">15</span><span class="k">}</span> <span class="o">-</span>values <span class="k">{</span><span class="nv">0</span> <span class="mi">1</span> <span class="mi">1</span><span class="k">}</span> <span class="o">-</span>factor <span class="mi">1</span><span class="k">}</span> <span class="k">{</span> 
+    <span class="nb">load</span> <span class="nv">$nNodeT</span>   <span class="mf">0.0</span> <span class="k">[expr</span> <span class="mf">0.1875</span><span class="o">*</span><span class="nv">$P</span><span class="k">]</span>
+    <span class="nb">load</span> <span class="nv">$nNodeX</span>   <span class="mf">0.0</span> <span class="k">[expr</span> <span class="mf">0.3125</span><span class="o">*</span><span class="nv">$P</span><span class="k">]</span>
 
-<span class="w">    </span><span class="nb">load</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$nNodeX</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span><span class="w">   </span><span class="mf">0.0</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="mf">0.1875</span><span class="o">*</span><span class="nv">$P</span><span class="k">]</span>
+    <span class="nb">load</span> <span class="k">[expr</span> <span class="nv">$nNodeX</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>   <span class="mf">0.0</span> <span class="k">[expr</span> <span class="o">-</span><span class="mf">0.1875</span><span class="o">*</span><span class="nv">$P</span><span class="k">]</span>
 <span class="k">}</span>
 
 <span class="c"># create analysis</span>
 
-<span class="nv">integrator</span><span class="w"> </span>LoadControl<span class="w"> </span><span class="mf">0.1</span>
-<span class="nv">numberer</span><span class="w"> </span>RCM
-<span class="nv">system</span><span class="w"> </span>SparseGeneral
-<span class="nv">constraints</span><span class="w"> </span>Transformation
-<span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mi">1</span>e-5<span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="mi">1</span>
-<span class="nv">algorithm</span><span class="w"> </span>Newton
-<span class="nv">analysis</span><span class="w"> </span>Static
+<span class="nv">integrator</span> LoadControl <span class="mf">0.1</span>
+<span class="nv">numberer</span> RCM
+<span class="nv">system</span> SparseGeneral
+<span class="nv">constraints</span> Transformation
+<span class="nv">test</span> NormDispIncr <span class="mi">1</span>e-5 <span class="mi">40</span> <span class="mi">1</span>
+<span class="nv">algorithm</span> Newton
+<span class="nv">analysis</span> Static
 
-<span class="nv">analyze</span><span class="w"> </span><span class="mi">105</span>
+<span class="nv">analyze</span> <span class="mi">105</span>
 
 <span class="nv">wipe</span>
 </pre></div>

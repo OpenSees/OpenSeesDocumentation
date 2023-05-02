@@ -96,14 +96,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. Model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. Node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/section.html">3.1.7. section Command</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.8. Element Command</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.8.1. ZeroLength Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.8.2. ZeroLength Section Element</a></li>
@@ -133,7 +133,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -198,7 +199,7 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
         
           <li><a href="../element.html"><span class="section-number">3.1.8. </span>Element Command</a> &raquo;</li>
         
@@ -446,7 +447,7 @@
 <p class="admonition-title"><strong>TCL EXAMPLE</strong></p>
 <p>The element command for the GI element simulating the RC beam in Fig. 2, assuming L = <strong>5</strong>, λ1 = <strong>0.2</strong>, λ2 = <strong>0.3</strong>, and lc = <strong>0.5</strong>, while the tag for the predefined coordinate-transformation object is <strong>20</strong>, may take the form below:</p>
 <blockquote>
-<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span><span class="w"> </span>gradientInelasticBeamColumn<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">-</span>integration<span class="w"> </span>Simpson<span class="w"> </span><span class="o">-</span>iter<span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="mi">1</span>E-8<span class="w"> </span><span class="mi">1</span>E-6<span class="k">;</span>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span> gradientInelasticBeamColumn <span class="mi">10</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">21</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mf">0.2</span> <span class="mf">0.3</span> <span class="mf">0.5</span> <span class="mi">20</span> <span class="o">-</span>integration Simpson <span class="o">-</span>iter <span class="mi">20</span> <span class="mi">1</span>E-8 <span class="mi">1</span>E-6<span class="k">;</span>
 </pre></div>
 </div>
 </div></blockquote>

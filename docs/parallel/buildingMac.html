@@ -183,17 +183,17 @@
 <ol class="arabic simple">
 <li><p>Download latest stable release from <a class="reference external" href="https://www.open-mpi.org/">OpenMPI</a>, which at time of writing was openmpi-4.0.2. We downloaded into Downloads: openmpi-4.0.2.tar.gz</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Downloads
-tar<span class="w"> </span>zxBf<span class="w"> </span>openmpi-4.0.2.tar.gz
-<span class="nb">cd</span><span class="w"> </span>openmpi-4.0.2/
-./configure<span class="w"> </span>--prefix<span class="o">=</span>/usr/local/openmpi
-make<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span>
-sudo<span class="w"> </span>make<span class="w"> </span>install
-usr/local/openmpi/bin/mpirun<span class="w"> </span>--version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Downloads
+tar zxBf openmpi-4.0.2.tar.gz
+<span class="nb">cd</span> openmpi-4.0.2/
+./configure --prefix<span class="o">=</span>/usr/local/openmpi
+make -j <span class="m">4</span>
+sudo make install
+usr/local/openmpi/bin/mpirun --version
 
-<span class="w">     </span>mpirun<span class="w"> </span><span class="o">(</span>Open<span class="w"> </span>MPI<span class="o">)</span><span class="w"> </span><span class="m">4</span>.0.2
+     mpirun <span class="o">(</span>Open MPI<span class="o">)</span> <span class="m">4</span>.0.2
 
-<span class="w">     </span>Report<span class="w"> </span>bugs<span class="w"> </span>to<span class="w"> </span>http://www.open-mpi.org/community/help/
+     Report bugs to http://www.open-mpi.org/community/help/
 </pre></div>
 </div>
 <div class="admonition note">
