@@ -50,6 +50,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/ConcreteD
       uniaxialMaterials/FRPConfinedConcrete
       uniaxialMaterials/ConcreteCM
+      uniaxialMaterials/GMG_CyclicReinforcedConcrete
 
 #. Some Standard Uniaxial Materials
 

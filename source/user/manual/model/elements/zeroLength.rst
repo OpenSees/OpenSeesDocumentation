@@ -5,9 +5,7 @@ ZeroLength Element
 
 This command is used to construct a zeroLength element object, which is defined by two nodes at the same location. A zeroLength element is similar to a set of springs placed between two nodes, each spring providing the force displacement relationship for a specified degree-of-freedom. The nodes are connected by multiple UniaxialMaterial objects, which provide the force-deformation relationship for the element in that degree-of-freedom direction. 
 
-.. admonition::
-
-   element zeroLength $eleTag $iNode $jNode -mat $matTag -dir $dir <-doRayleigh $rFlag> <-orient $x $yp>
+.. function:: element zeroLength $eleTag $iNode $jNode -mat $matTag -dir $dir <-doRayleigh $rFlag> <-orient $x $yp>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"

@@ -389,11 +389,11 @@ e_{\alpha} = \dfrac{\Vert \alpha^5 - \alpha^4 \Vert}{\Vert \alpha^4 \Vert}\end{s
 <li><p><code class="docutils literal notranslate"><span class="pre">MM</span></code> size of memory surface</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">estrain</span></code> elastic strain tensor</p></li>
 </ul>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>eleRange<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$numElem</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>stress.out<span class="w">  </span>stress
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> Element <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$numElem</span> <span class="o">-</span>time <span class="o">-</span>file stress.out  stress
 
 <span class="c">#. Elastic or Elastoplastic response could be enforced by</span>
-<span class="w">   </span><span class="nv">Elastic</span><span class="o">:</span><span class="w">   </span>updateMaterialStage<span class="w"> </span><span class="o">-</span>material<span class="w"> </span><span class="nv">$matTag</span><span class="w"> </span><span class="o">-</span>stage<span class="w"> </span><span class="mi">0</span>
-<span class="w">   </span><span class="nv">Elastoplastic</span><span class="o">:</span><span class="w">   </span>updateMaterialStage<span class="w"> </span><span class="o">-</span>material<span class="w"> </span><span class="nv">$matTag</span><span class="w"> </span><span class="o">-</span>stage<span class="w"> </span><span class="mi">1</span>
+   <span class="nv">Elastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">0</span>
+   <span class="nv">Elastoplastic</span><span class="o">:</span>   updateMaterialStage <span class="o">-</span>material <span class="nv">$matTag</span> <span class="o">-</span>stage <span class="mi">1</span>
 </pre></div>
 </div>
 </div>

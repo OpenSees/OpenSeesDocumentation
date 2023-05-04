@@ -303,30 +303,30 @@
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># set up a 3D-6DOFs model</span>
-<span class="nv">model</span><span class="w"> </span>Basic<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">6</span>
-<span class="nv">node</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="mf">0.0</span><span class="w">  </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span>
-<span class="nv">node</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="mf">1.0</span><span class="w">  </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span>
-<span class="nv">node</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="mf">1.0</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">0.0</span>
-<span class="nv">node</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span><span class="mf">0.0</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="nv">model</span> Basic <span class="o">-</span>ndm <span class="mi">3</span> <span class="o">-</span>ndf <span class="mi">6</span>
+<span class="nv">node</span> <span class="mi">1</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">2</span>  <span class="mf">1.0</span>  <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">3</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span> <span class="mf">0.0</span>
+<span class="nv">node</span> <span class="mi">4</span>  <span class="mf">0.0</span>  <span class="mf">1.0</span> <span class="mf">0.0</span>
 
 <span class="c"># create a fiber shell section with 4 layers of material 1</span>
 <span class="c"># each layer has a thickness = 0.025</span>
-<span class="nv">nDMaterial</span><span class="w"> </span>ElasticIsotropic<span class="w">  </span><span class="mi">1</span><span class="w">  </span><span class="mf">1000.0</span><span class="w">  </span><span class="mf">0.2</span>
-<span class="nv">section</span><span class="w"> </span>LayeredShell<span class="w">  </span><span class="mi">11</span><span class="w">  </span><span class="mi">4</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.025</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.025</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.025</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.025</span>
+<span class="nv">nDMaterial</span> ElasticIsotropic  <span class="mi">1</span>  <span class="mf">1000.0</span>  <span class="mf">0.2</span>
+<span class="nv">section</span> LayeredShell  <span class="mi">11</span>  <span class="mi">4</span>   <span class="mi">1</span> <span class="mf">0.025</span>   <span class="mi">1</span> <span class="mf">0.025</span>   <span class="mi">1</span> <span class="mf">0.025</span>   <span class="mi">1</span> <span class="mf">0.025</span>
 
 <span class="c"># create the shell element using the small displacements/rotations assumption</span>
-<span class="nv">element</span><span class="w"> </span>ASDShellQ4<span class="w">  </span><span class="mi">1</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span><span class="mi">11</span>
+<span class="nv">element</span> ASDShellQ4  <span class="mi">1</span>  <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>  <span class="mi">11</span>
 <span class="c"># or you can use the corotational flag for large displacements/rotations (geometric nonlinearity)</span>
-<span class="nv">element</span><span class="w"> </span>ASDShellQ4<span class="w">  </span><span class="mi">1</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span><span class="mi">11</span><span class="w"> </span><span class="o">-</span>corotational
+<span class="nv">element</span> ASDShellQ4  <span class="mi">1</span>  <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>  <span class="mi">11</span> <span class="o">-</span>corotational
 
 <span class="c"># record global forces at element nodes (24 columns, 6 for each node)</span>
-<span class="nv">recorder</span><span class="w"> </span>Element<span class="w">  </span><span class="o">-</span>xml<span class="w">  </span>force_out.xml<span class="w">  </span><span class="o">-</span>ele<span class="w">  </span><span class="mi">1</span><span class="w">  </span>force
+<span class="nv">recorder</span> Element  <span class="o">-</span>xml  force_out.xml  <span class="o">-</span>ele  <span class="mi">1</span>  force
 <span class="c"># record local section forces at gauss point 1 (8 columns: | 3 membrane | 3 bending | 2 transverse shear |)</span>
 <span class="c"># note: gauss point index is 1-based</span>
-<span class="nv">recorder</span><span class="w"> </span>Element<span class="w">  </span><span class="o">-</span>xml<span class="w">  </span>force_gp1_out.xml<span class="w">  </span><span class="o">-</span>ele<span class="w">  </span><span class="mi">1</span><span class="w">  </span>material<span class="w">  </span><span class="mi">1</span><span class="w">  </span>force
+<span class="nv">recorder</span> Element  <span class="o">-</span>xml  force_gp1_out.xml  <span class="o">-</span>ele  <span class="mi">1</span>  material  <span class="mi">1</span>  force
 <span class="c"># record local stresses at fiber 1 of gauss point 1 (5 columns: Szz is neglected (0) )</span>
 <span class="c"># note: fiber index is 1-based (while in beams it is 0-based!)</span>
-<span class="nv">recorder</span><span class="w"> </span>Element<span class="w">  </span><span class="o">-</span>xml<span class="w">  </span>stress_gp1_fib0_out.xml<span class="w">  </span><span class="o">-</span>ele<span class="w">  </span><span class="mi">1</span><span class="w">  </span>material<span class="w">  </span><span class="mi">1</span><span class="w">  </span>fiber<span class="w"> </span><span class="mi">1</span><span class="w"> </span>stress
+<span class="nv">recorder</span> Element  <span class="o">-</span>xml  stress_gp1_fib0_out.xml  <span class="o">-</span>ele  <span class="mi">1</span>  material  <span class="mi">1</span>  fiber <span class="mi">1</span> stress
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">

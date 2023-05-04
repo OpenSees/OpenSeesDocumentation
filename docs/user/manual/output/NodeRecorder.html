@@ -96,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Model Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="recorder.html">3.3.1. recorder Command</a><ul class="current">
@@ -110,7 +110,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.4. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
@@ -315,9 +316,9 @@ rayleighForces!
 <li><p>The first recorder will output to a file <code class="docutils literal notranslate"><span class="pre">nodesD.out</span></code> the displacements in <strong>x</strong> and <strong>y</strong> (<strong>1</strong> and <strong>2</strong>) directions at nodes <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, and <strong>4</strong>. The output file will contain <strong>9</strong> columns (time, displacement in x and y at node 1, disp. in x and y at node 2, … , disp. x and y at node 4))</p></li>
 <li><p>The second recorder will output to a file <code class="docutils literal notranslate"><span class="pre">nodesA.out</span></code> the total accelerations in <strong>x</strong> and <strong>y</strong> (<strong>1</strong> and <strong>2</strong>) directions at nodes <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, and <strong>4</strong>. The output file will contain <strong>9</strong> columns (time, accel. in x and y at node 1, accel. in x and y at node 2, … , accel. in x and y at node 4)). The accelerations output will be the accelerations stored at the nodes added to the values obtained from the time series. The <strong>x</strong> values are the accelerations in <strong>x</strong> direction at node plus values from timeSeries <strong>1</strong>, the <strong>y</strong> values are the accelerations in <strong>y</strong> direction at nodes plus the values from timeSries <strong>2</strong>.</p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>nodesD.out<span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>disp<span class="k">;</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> Node <span class="o">-</span>file nodesD.out <span class="o">-</span>time <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> disp<span class="k">;</span>
 
-<span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>nodesA.out<span class="w"> </span><span class="o">-</span>timeSeries<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>accel<span class="k">;</span>
+<span class="nv">recorder</span> Node <span class="o">-</span>file nodesA.out <span class="o">-</span>timeSeries <span class="mi">1</span> <span class="mi">2</span> <span class="o">-</span>time <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">-</span>dof <span class="mi">1</span> <span class="mi">2</span> accel<span class="k">;</span>
 </pre></div>
 </div>
 </div>
