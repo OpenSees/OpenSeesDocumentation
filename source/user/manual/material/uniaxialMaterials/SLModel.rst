@@ -89,4 +89,6 @@ This command is used to construct a material based on the Suzuki and Lignos mode
 For code inquires or bug reporting, please contact: 
 - Diego Heredia, Ecole Polytechnique Federale Lausanne (EPFL), e-mail: diego.herediarosa@epfl.ch
 
+For more information visit: https://www.epfl.ch/labs/resslab/ 
+
 
