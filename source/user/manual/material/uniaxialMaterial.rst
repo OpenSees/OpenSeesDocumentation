@@ -76,6 +76,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/IMKPeakOriented
       uniaxialMaterials/IMKPinching
       uniaxialMaterials/Pinching4
+      uniaxialMaterials/SLModel
       
 #. Wrapper Uniaxial Materials
 
