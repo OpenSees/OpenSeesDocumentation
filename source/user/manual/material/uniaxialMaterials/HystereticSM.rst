@@ -174,7 +174,7 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 .. figure:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg
 .. figure:: figures/HystereticSM/HystereticSM_pinch_symmCycles.jpg
 .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPush.jpg
-.. figure:: figures/HystereticSM/HystereticSM_pinch_OneSidedPus.jpg
+.. figure:: figures/HystereticSM/HystereticSM_pinch_OneSidedPush.jpg
 
 
 ------------
@@ -199,7 +199,7 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 .. figure:: figures/HystereticSM/HystereticSM_damage1_strainDip.jpg
 .. figure:: figures/HystereticSM/HystereticSM_damage1_symmCycles.jpg
 .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg
-.. figure:: figures/HystereticSM/HystereticSM_damage1_OneSidedPus.jpg
+.. figure:: figures/HystereticSM/HystereticSM_damage1_OneSidedPush.jpg
 
 ------------
 
@@ -223,7 +223,7 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 .. figure:: figures/HystereticSM/HystereticSM_damage2_strainDip.jpg
 .. figure:: figures/HystereticSM/HystereticSM_damage2_symmCycles.jpg
 .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPush.jpg
-.. figure:: figures/HystereticSM/HystereticSM_damage2_OneSidedPus.jpg
+.. figure:: figures/HystereticSM/HystereticSM_damage2_OneSidedPush.jpg
 
 ------------
 
@@ -247,7 +247,7 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 .. figure:: figures/HystereticSM/HystereticSM_beta_strainDip.jpg
 .. figure:: figures/HystereticSM/HystereticSM_beta_symmCycles.jpg
 .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPush.jpg
-.. figure:: figures/HystereticSM/HystereticSM_beta_OneSidedPus.jpg
+.. figure:: figures/HystereticSM/HystereticSM_beta_OneSidedPush.jpg
 
 
 
