@@ -252,5 +252,5 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 
 
 
-| Modified Code Developed by: |slv|
+| Modified Code Developed by: |silvia|
 | Original Hysteretic-Material Code Developed by: |mhs| & Filip Filippou (UC Berkeley)
