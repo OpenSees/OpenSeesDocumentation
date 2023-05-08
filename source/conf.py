@@ -55,6 +55,8 @@ rst_prolog = """
 .. |chris| replace:: `Chris McGann`_
 .. _Chris McGann: https://www.canterbury.ac.nz/engineering/contact-us/people/chris-mcgann.html
 .. |andreas| replace:: **Andreas Schellenberg**
+.. |silvia| replace:: `Silvia Mazzoni`_
+.. _`Silvia Mazzoni`: https://www.silviasbrainery.com/
 """	
 
 # Add any Sphinx extension module names here, as strings. They can be
