@@ -1,9 +1,9 @@
 .. _JankowskiImpact :
 
 Jankowski Impact Material
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
-This command is used to construct the uniaxial Jankowski Impact Material. References: [Jankowski2005]_, [Jankowski2006]_, [Jankowski2007]_, [Hughes2020]__
+This command is used to construct the uniaxial Jankowski Impact Material 
 
 .. function:: uniaxialMaterial JankowskiImpact  $matTag $Kh $xi $Meff $gap <$n>
 
@@ -22,9 +22,7 @@ This command is used to construct the uniaxial Jankowski Impact Material. Refere
 
    This material is implemented as a compression-only gap material, so $gap should be input as a negative value.
 
-Description:
-------------
-
+.. Description::
 This material model follows the constitutive law
 
   .. math:: f_c(t) = \left\{ \begin{array}{ }k_h (\delta(t)-g)^n + c_J(t) \dot{\delta}(t) & \quad \dot{\delta}(t) > 0 \\ k_h (\delta(t)-g)^n                 & \quad {\dot{\delta(t)} \leq 0} \end{array}\right.
@@ -58,4 +56,4 @@ Code Developed by: Patrick J. Hughes, UC San Diego
 
 .. [Jankowski2007] Jankowski R. Theoretical and experimental assessment of parameters for the non-linear viscoelastic model of structural pounding. Journal of Theoretical and Applied Mechanics (Poland) 2007.
 
-.. [Hughes2020] Hughes PJ, Mosqueda G. Evaluation of uniaxial contact models for moat wall pounding simulations. Earthquake Engineering and Structural Dynamics 2020(March): 12–14. DOI: 10.1002/eqe.3285.
+.. [Hughes2020]  Hughes PJ, Mosqueda G. Evaluation of uniaxial contact models for moat wall pounding simulations. Earthquake Engineering and Structural Dynamics 2020(March): 12–14. DOI: 10.1002/eqe.3285.

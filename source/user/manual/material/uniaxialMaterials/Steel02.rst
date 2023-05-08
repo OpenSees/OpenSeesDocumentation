@@ -50,11 +50,11 @@ This command is used to construct a uniaxial Giuffre-Menegotto-Pinto steel mater
 
 .. _fig-steel02:
 
-.. figure:: figures/Steel02/Steel02Monotonic.jpg
+.. figure:: figures/Steel02/Steel02.gif
 	:align: center
 	:figclass: align-center
 
-	Steel02 Material -- Material Parameters of Monotonic Envelope
+	Steel02
 
 .. figure:: figures/Steel02/Steel02HystereticA.jpg
 	:align: center

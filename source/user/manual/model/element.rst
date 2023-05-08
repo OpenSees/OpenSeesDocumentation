@@ -32,20 +32,19 @@ The following subsections contain information about **$eleType** and the number 
    elements/zeroLength
    elements/zeroLengthSection
    elements/zeroLengthND
-   elements/zeroLengthContactASDimplex
-..   elements/CoupledZeroLength
+   elements/CoupledZeroLength
    elements/zeroLengthContact
    elements/zeroLengthContactNTS2D
    elements/zeroLengthInterface2D
    elements/zeroLengthImpact3D 
+   elements/zeroLengthContactASDimplex
 
 2. Trusss Elements
 
 .. toctree::
    :maxdepth: 1
 
-   elements/InertiaTruss
-..   elements/Truss
+   elements/Truss
    elements/CorotationalTruss
 
 
@@ -55,21 +54,17 @@ The following subsections contain information about **$eleType** and the number 
    :maxdepth: 1
 
    elements/elasticBeamColumn
-   elements/gradientInelasticBeamColumn  
-   elements/MVLEM_3D
-   elements/SFI_MVLEM_3D
-   elements/dispBeamColumnAsym
-   elements/mixedBeamColumnAsym
-   elements/ConcentratedCurvatureBeamIntegration
-   elements/ConcentratedPlasticityBeamIntegration
-..   elements/ElasticBeamColumnElementWithStiffnessModifiers
+   elements/ElasticBeamColumnElementWithStiffnessModifiers
    elements/ElasticTimoshenkoBeamColumnElement
    elements/BeamWithHingesElement
    elements/DisplacementBasedBeamColumnElement
    elements/ForceBasedBeamColumnElement
+   elements/gradientInelasticBeamColumn   
    elements/FlexureShearInteractionDisplacementBasedBeamColumnElement
    elements/MVLEM
-   elements/ElasticTimoshenkoBeamColumnElement
+   elements/SFI_MVLEM_3D
+   elements/dispBeamColumnAsym
+   elements/mixedBeamColumnAsym
 
 
 4. Quadrilateral & Shell Elements
@@ -80,11 +75,11 @@ The following subsections contain information about **$eleType** and the number 
    elements/ASDShellQ4
    elements/Quad
    elements/SSPquad
-   elements/bbarQuad
-..   elements/Shell
+   elements/Shell
    elements/ShellDKGQ
    elements/ShellNLDKGQ
    elements/ShellNL
+   elements/BbarPlaneStrainQuadrilateral
    elements/EnhancedStrainQuadrilateral
 
    
@@ -93,7 +88,7 @@ The following subsections contain information about **$eleType** and the number 
 .. toctree::
    :maxdepth: 1
 
-..   elements/Tri31
+   elements/Tri31
    elements/ShellDKGT
    elements/ShellNLDKGT
 
@@ -120,7 +115,7 @@ The following subsections contain information about **$eleType** and the number 
 .. toctree::
    :maxdepth: 1
 
-..   elements/BeamColumnJoint
+   elements/BeamColumnJoint
    elements/ElasticTubularJoint
    elements/Joint2D
 
@@ -129,14 +124,14 @@ The following subsections contain information about **$eleType** and the number 
 .. toctree::
    :maxdepth: 1
 
-..   elements/TwoNodeLink
+   elements/TwoNodeLink
 
 10. Bearing Elements
 
 .. toctree::
    :maxdepth: 1
 
-..   elements/ElastomericBearingPlasticity
+   elements/ElastomericBearingPlasticity
    elements/ElastomericBearingBouc-Wen
    elements/FlatSliderBearingElement
    elements/SingleFrictionPendulumBearing
@@ -158,7 +153,7 @@ The following subsections contain information about **$eleType** and the number 
 .. toctree::
    :maxdepth: 1
 
-..   elements/FourNodeQuadUP
+   elements/FourNodeQuadUP
    elements/BrickUP
    elements/bbarQuadUP
    elements/bbarBrickUP
@@ -174,7 +169,7 @@ The following subsections contain information about **$eleType** and the number 
 .. toctree::
    :maxdepth: 1   
 
-..   elements/SimpleContact2D
+   elements/SimpleContact2D
    elements/SimpleContact3D
    elements/BeamContact2D
    elements/BeamContact3D
@@ -186,20 +181,20 @@ The following subsections contain information about **$eleType** and the number 
 .. toctree::
    :maxdepth: 1   
 
-..   elements/CatenaryCableElement
+   elements/CatenaryCableElement
 
 14. Misc.
 
 .. toctree::
    :maxdepth: 1   
 
-   elements/ASDEmbeddedNodeElement
-   elements/ASDAbsorbingBoundary
-   elements/RockingBC
-..   elements/ShallowFoundationGen
+   elements/ShallowFoundationGen
    elements/SurfaceLoad
    elements/VS3D4
    elements/AC3D8
    elements/ASI3D8
    elements/AV3D4
+   elements/ASDEmbeddedNodeElement
+   elements/ASDAbsorbingBoundary
+   elements/RockingBC
 

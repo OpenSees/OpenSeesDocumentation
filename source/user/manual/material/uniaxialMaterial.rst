@@ -44,7 +44,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Concrete01
       uniaxialMaterials/Concrete02
       uniaxialMaterials/Concrete04
-   ..   uniaxialMaterials/Concrete06
+      uniaxialMaterials/Concrete06
       uniaxialMaterials/Concrete07
       uniaxialMaterials/ConfinedConcrete01
       uniaxialMaterials/ConcreteD
@@ -57,7 +57,7 @@ The following subsections contain information about **$matType**
    .. toctree::
       :maxdepth: 1
 		 
-   ..   uniaxialMaterials/Elastic
+      uniaxialMaterials/Elastic
       uniaxialMaterials/ElasticPP
       uniaxialMaterials/ElasticPP_Gap
       uniaxialMaterials/ElasticNoTension
@@ -76,14 +76,14 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/IMKBilin
       uniaxialMaterials/IMKPeakOriented
       uniaxialMaterials/IMKPinching
-   ..   uniaxialMaterials/Pinching4
+      uniaxialMaterials/Pinching4
       
 #. Wrapper Uniaxial Materials
 
    .. toctree::
       :maxdepth: 1
       
-   ..   uniaxialMaterials/Fatigue
+      uniaxialMaterials/Fatigue
       uniaxialMaterials/Parallel
       uniaxialMaterials/Series
       uniaxialMaterials/InitialStrain
@@ -96,16 +96,7 @@ The following subsections contain information about **$matType**
    .. toctree::
       :maxdepth: 1
 
-      uniaxialMaterials/HystereticPoly
-      uniaxialMaterials/HystereticAsym
-      uniaxialMaterials/HystereticSmooth
-      uniaxialMaterials/DowelType
-      uniaxialMaterials/BoucWenInfill
-      uniaxialMaterials/CoulombDamper
-      uniaxialMaterials/HertzDamp
-      uniaxialMaterials/JankowskiImpact
-      uniaxialMaterials/ViscoelasticGap
-   ..   uniaxialMaterials/CastFuse
+      uniaxialMaterials/CastFuse
       uniaxialMaterials/ViscousDamper
       uniaxialMaterials/BilinearOilDamper
       uniaxialMaterials/SAWS
@@ -119,30 +110,40 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Viscous
       uniaxialMaterials/BoucWen
       uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
+      uniaxialMaterials/HystereticPoly
+      uniaxialMaterials/HystereticAsym (Smooth asymmetric hysteresis)
+      uniaxialMaterials/HystereticPoly
+      uniaxialMaterials/HystereticSmooth (Smooth hysteretic material)
+      uniaxialMaterials/DowelType
+      uniaxialMaterials/BoucWenInfill
+      uniaxialMaterials/CoulombDamper
+      uniaxialMaterials/HertzDamp
+      uniaxialMaterials/JankowskiImpact
+      uniaxialMaterials/ViscoelasticGap
 
 
 
 #. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
 
-   .. toctree::
-	  :maxdepth: 1
+.. toctree::
+   :maxdepth: 1
 
-	  uniaxialMaterials/PySimple1
-	  uniaxialMaterials/TzSimple1
-	  uniaxialMaterials/QzSimple1
-	  uniaxialMaterials/PyLiq1
-	  uniaxialMaterials/TzLiq1
-	  uniaxialMaterials/QzLiq1
-   .. uniaxialMaterials/PySimple1Gen
-	  uniaxialMaterials/TzSimple1Gen
+   uniaxialMaterials/PySimple1
+   uniaxialMaterials/TzSimple1
+   uniaxialMaterials/QzSimple1
+   uniaxialMaterials/PyLiq1
+   uniaxialMaterials/TzLiq1
+   uniaxialMaterials/QzLiq1
+   uniaxialMaterials/PySimple1Gen
+   uniaxialMaterials/TzSimple1Gen
 
 
-	  uniaxialMaterials/KikuchiAikenHDR
-	  uniaxialMaterials/KikuchiAikenLRB
-	  uniaxialMaterials/AxialSp
-	  uniaxialMaterials/AxialSpHD
-	  uniaxialMaterials/PinchingLimitState
-	  uniaxialMaterials/CFSWSWP
-	  uniaxialMaterials/CFSSSWP
+   uniaxialMaterials/KikuchiAikenHDR
+   uniaxialMaterials/KikuchiAikenLRB
+   uniaxialMaterials/AxialSp
+   uniaxialMaterials/AxialSpHD
+   uniaxialMaterials/PinchingLimitState
+   uniaxialMaterials/CFSWSWP
+   uniaxialMaterials/CFSSSWP
 
 

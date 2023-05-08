@@ -1,9 +1,9 @@
 .. _HertzDamp:
 
 Hertz Damp Material
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
-This command is used to construct the uniaxial Hertz Damp Material. References: [Lankarani1990]_, [Muthukumar2006]_, [YeK2009]_, [Hughes2020]_
+This command is used to construct the uniaxial Hertz Damp Material 
 
 .. function:: uniaxialMaterial Hertzdamp $matTag $Kh $xiNorm $gap <$n>
 
@@ -21,9 +21,7 @@ This command is used to construct the uniaxial Hertz Damp Material. References: 
 
    This material is implemented as a compression-only gap material, so $gap should be input as a negative value.
    
-Description:
-------------
-
+.. Description::
 This material model follows the constitutive law
 
   .. math:: f_c (t) = k_h (\delta(t) -g)^n + c_h \dot{\delta}(t)
