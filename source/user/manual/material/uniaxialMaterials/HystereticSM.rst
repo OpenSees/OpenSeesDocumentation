@@ -13,7 +13,6 @@ to be compatible with Hysteretic material:
 .. function:: uniaxialMaterial Hysteretic $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> $pinchX $pinchY $damage1 $damage2 <$beta> <-defoLimitStates lsD1? <lsD2?>...> <-forceLimitStates lsF1? <lsF2?>...>
 
 NOTE: If you would like to enter strain-stress pairs us -posEnvXY instead of -posEnv
-
 NOTE: For symmetric response, do not enter -negEnv data
 
 .. list-table:: 
@@ -37,7 +36,7 @@ NOTE: For symmetric response, do not enter -negEnv data
      - stress and strain (or force & deformation) at third point of the envelope in the positive direction (optional) 
    * - ($s4p $e4p .... $s7p $e7p)
      - |float| 
-     - stress and strain (or force & deformation) at 4th-7th points of the envelope in the positive direction (optional)
+     - stress and strain (or force & deformation) at 4th-7th points of the envelope in the positive direction (optional). NOTE: sress/force values can only be constant or decrease in absolute value (same or less positive) from one point to the next. You can only define 2,3,5, or 7 points.
    * - $s1n $e1n 
      - |float|
      - stress and strain (or force & deformation) at first point of the envelope in the negative direction 
@@ -49,7 +48,7 @@ NOTE: For symmetric response, do not enter -negEnv data
      - stress and strain (or force & deformation) at third point of the envelope in the negative direction (optional) 
    * - ($s4n $e4n .... $s7n $e7n)
      - |float| 
-     - stress and strain (or force & deformation) at 4th-7th points of the envelope in the negative direction (optional)
+     - stress and strain (or force & deformation) at 4th-7th points of the envelope in the negative direction (optional). NOTE: sress/force values can only be constant or decrease in absolute value (same or less negative) from one point to the next. 
    * - $pinchx
      - |float|
      - pinching factor for strain (or deformation) during reloading 
