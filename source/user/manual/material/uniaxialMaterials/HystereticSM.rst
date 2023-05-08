@@ -85,6 +85,7 @@ The following input format is compatible with Hysteretic material. Note that in 
 
 
 Recorder Options:
+-----------------
 
 .. list-table:: 
    :widths: 10 10 40
@@ -127,32 +128,34 @@ Recorder Options:
      - All relevant Data
      - all relevant data at current step (mom1p, rot1p, mom2p, rot2p, mom3p, rot3p, mom4p, rot4p, mom5p, rot5p, mom6p, rot6p, mom7p, rot7p, mom1n, rot1n, mom2n, rot2n, mom3n, rot3n, mom4n, rot4n, mom5n, rot5n, mom6n, rot6n, mom7n, rot7n, pinchX, pinchY, damfc1, damfc2, beta, CrotMax, CrotMin, CrotPu, CrotNu, CenergyD, CloadIndicator, Cstress, Cstrain, Ttangent)
 
-------------
 
-**Example Input:**
+Example Input:
+--------------
 
 ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, '-pinch', 1, 1,'-damage', 0.1, 0.01, '-beta', 0,'-defoLimitStates', 0.01, -0.01, 0.02, -0.02, '-forceLimitStates', 2772.0, -2772.0, 3104.6, -3104.6,'printInput')
 
 uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  1  1 -damage  0.1  0.01 -beta 0 -defoLimitStates 0.01 -0.01 0.02 -0.02 -forceLimitStates 2772.0 -2772.0 3104.6 -3104.6 -printInput
 
 Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `here: <https://github.com/silviamazzoni/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialTest.ipynb>`_
-------------
 
-**Backbone Curve for material (7 points in each direction)**
+
+Backbone Curve for material (7 points in each direction)
+--------------------------------------------------------
 
 .. figure:: figures/HystereticSM/HystereticSM_backbone_Symm.jpg
   :align: center
   :figclass: align-center
 
-**Backbone Curve for material (non-symmetric behavior)**
+Backbone Curve for material (non-symmetric behavior)
+----------------------------------------------------
 
 .. figure:: figures/HystereticSM/HystereticSM_backbone_nonSymm.jpg
   :align: center
   :figclass: align-center
 
-------------
 
-**Parameter Study: Pinching**
+Parameter Study: Pinching
+-------------------------
 
 *HystereticSM_pinch=[1, 1]*
 
@@ -178,9 +181,8 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPull.jpg
 
 
-------------
-
-**Parameter Study: Damage1**
+Parameter Study: Damage1
+------------------------
 
 *HystereticSM_damage1=0*
 ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, '-damage', 0, 0)
@@ -202,9 +204,9 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg
 .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPull.jpg
 
-------------
 
-**Parameter Study: Damage2**
+Parameter Study: Damage2
+------------------------
 
 *HystereticSM_damage2=0*
 ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, '-damage', 0, 0)
@@ -226,9 +228,9 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPush.jpg
 .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPull.jpg
 
-------------
 
-**Parameter Study: beta**
+Parameter Study: beta
+---------------------
 
 *HystereticSM_beta=0*
 ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, '-beta', 0)
