@@ -19,7 +19,7 @@ ASDConcrete3D Material
    -Ce $Ce -Cs $Cs <-Cd $Cd>
    <-implex> <-implexControl $implexErrorTolerance $implexTimeReductionLimit> <-implexAlpha $alpha>
    <-crackPlanes $nct $ncc $smoothingAngle>
-   <-eta $eta> <-tangent> <-autoRegularization>
+   <-eta $eta> <-tangent> <-autoRegularization $lch_ref>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -39,7 +39,7 @@ ASDConcrete3D Material
    -crackPlanes $nct $ncc $smoothingAngle, |string| + 2 |integer| + |float|, "Optional. If defined, it activates the anisotropy of internal variables. Tensile internal variables are stored on crack-planes that are equally spaced every :math:`90/nc_t` degrees. Compressive internal variables are stored on crack-planes that are equally spaced every :math:`90/nc_c` degrees. The active crack-plane is chosen based on the current principal stress directions. **smoothingAngle**: Angle in degrees used to smooth the internal variables on crack-planes around the active crack-plane. Suggested values: -crackPlanes 4 4 45.0"
    -eta $eta, |string| + |float|, "Optional. If defined, the rate-dependent model is used (By default the model is rate-independent). **-eta**: Activates the rate-dependent model. **eta**: The viscosity parameter :math:`\eta`, representing the relaxation time of the viscoplastic system."
    -tangent, |string|, "Optional. If defined, the tangent constitutive matrix is used. By default, the secant stiffness is used."
-   -autoRegularization, |string|, "Optional. If defined, and if the tensile and/or the compressive hardening-softening law has strain-softening, the area under the hardening-softening law is assumed to be a real fracture energy (:math:`G_f` with dimension = :math:`F/L`), and the specific fracture energy :math:`g_f` (with dimension = :math:`F/L^2`) is automatically computed as :math:`g_f=G_f/l_{ch}`, where :math:`l_{ch}` is the characteristic length of the Finite Element."
+   -autoRegularization $lch_ref, |string| + |float|, "Optional. If defined, and if the tensile and/or the compressive hardening-softening law has strain-softening, the area under the hardening-softening law is assumed to be a real fracture energy (:math:`G_f` with dimension = :math:`F/L`), and the specific fracture energy :math:`g_f` (with dimension = :math:`F/L^2`) is automatically computed as :math:`g_f=G_f/l_{ch}`, where :math:`l_{ch}` is the characteristic length of the Finite Element. In this case $lch_ref is 1. If, instead, the area is a specific fracture energy (:math:`g_{f,ref}` with dimension = :math:`F/L^2`), $lch_ref should be set equal to the experimental size used to obtain the strain from the displacement jump. In this case, the regularization will be performed as :math:`g_f=G_f/l_{ch} = g_{f,ref}*l_{ch,ref}/l_{ch}`"
 
 Theory
 """"""
