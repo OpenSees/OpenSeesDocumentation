@@ -4,19 +4,9 @@ HystereticSM Material
 ^^^^^^^^^^^^^^^^
 
 This command is used to construct a uniaxial multilinear hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. This material is an extension of the Hysteretic Material -- the envelope can be defined 2,3, 5, or 7 points, while the original one only had 2 or 3.
-The positive and negative backbone of this material do not need to have the same number of segments. This material also has additional DCR-type recorder output. 
+This material also has additional DCR-type recorder output.
 
-.. function:: uniaxialMaterial Hysteretic $matTag -posEnv $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> <-negEnv $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n>> <-pinch $pinchX $pinchY> <-damage $damage1 $damage2> <-beta $beta> <-defoLimitStates $lsD1 <$lsD2>...> <-forceLimitStates $lsF1 <$lsF2>...> <printInput> <XYorder>
-
-NOTE: If you would like to enter strain-stress pairs us -posEnvXY (and optional -negEnvXY) instead of -posEnv (-negEnv) OR the flag XYorder.
-
-NOTE: For symmetric response: do not enter -negEnv data.
-
-The following input format is compatible with Hysteretic material. Note that in this case you must have the same number of positive and negative segments:
-
-.. function:: uniaxialMaterial Hysteretic $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> $pinchX $pinchY $damage1 $damage2 <$beta> <-defoLimitStates lsD1? <lsD2?>...> <-forceLimitStates lsF1? <lsF2?>...> <printInput> <XYorder>
-
-
+.. function:: uniaxialMaterial Hysteretic $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> $pinchX $pinchY $damage1 $damage2 <$beta> <-defoLimitStates lsD1? <lsD2?>...> <-forceLimitStates lsF1? <lsF2?>...>
 
 .. list-table:: 
    :widths: 10 10 40
@@ -39,7 +29,7 @@ The following input format is compatible with Hysteretic material. Note that in 
      - stress and strain (or force & deformation) at third point of the envelope in the positive direction (optional) 
    * - ($s4p $e4p .... $s7p $e7p)
      - |float| 
-     - stress and strain (or force & deformation) at 4th-7th points of the envelope in the positive direction (optional)
+     - stress and strain (or force & deformation) at 4th-7th points of the envelope in the positive direction (optional). NOTE: sress/force values can only be constant or decrease in absolute value (same or less positive) from one point to the next. You can only define 2,3,5, or 7 points.
    * - $s1n $e1n 
      - |float|
      - stress and strain (or force & deformation) at first point of the envelope in the negative direction 
@@ -51,7 +41,7 @@ The following input format is compatible with Hysteretic material. Note that in 
      - stress and strain (or force & deformation) at third point of the envelope in the negative direction (optional) 
    * - ($s4n $e4n .... $s7n $e7n)
      - |float| 
-     - stress and strain (or force & deformation) at 4th-7th points of the envelope in the negative direction (optional)
+     - stress and strain (or force & deformation) at 4th-7th points of the envelope in the negative direction (optional). NOTE: sress/force values can only be constant or decrease in absolute value (same or less negative) from one point to the next. 
    * - $pinchx
      - |float|
      - pinching factor for strain (or deformation) during reloading 
@@ -73,12 +63,6 @@ The following input format is compatible with Hysteretic material. Note that in 
    * - ($lsF1,$lsF2..)
      - |float|
      - list of user-defined stress/force limits for computing force DCRs (optional) 
-   * - printInput
-     - |string|
-     - program will output input-parameter values (optional) 
-   * - XYorder
-     - |string|
-     - invert backbone-envelope points to be strain-stress instead of stress-strain (optional). This flag has the same effect as using -posEnvXY and the optional -negEnvXY, so it should be used with the -posEnv and -negEnv flags.
 
 .. Additional Recorder Options:
 
