@@ -135,7 +135,7 @@ ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 
 
 uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  1  1 -damage  0.1  0.01 -beta 0 -defoLimitStates 0.01 -0.01 0.02 -0.02 -forceLimitStates 2772.0 -2772.0 3104.6 -3104.6 -printInput
 
-`Open or download Jupyter notebook with example of HystereticSM material, used generate the figures here:  https://github.com/silviamazzoni/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialTest.ipynb`_
+Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `here: <https://github.com/silviamazzoni/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialTest.ipynb>`_
 ------------
 
 **Backbone Curve for material (7 points in each direction)**
@@ -252,5 +252,5 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 
 
 
-Modified Code Developed by: |Silvia Mazzoni (Silvia's Brainery)|
-Original Hysteretic-Material Code Developed by: |Michael Scott (Oregon State University) & Filip Filippou (UC Berkeley)|
+| Modified Code Developed by: |slv|
+| Original Hysteretic-Material Code Developed by: |mhs| & Filip Filippou (UC Berkeley)
