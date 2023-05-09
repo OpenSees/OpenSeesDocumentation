@@ -134,6 +134,8 @@ ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 
 
 uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  1  1 -damage  0.1  0.01 -beta 0 -defoLimitStates 0.01 -0.01 0.02 -0.02 -forceLimitStates 2772.0 -2772.0 3104.6 -3104.6 -printInput
 
+Jupyter Notebook:
+-----------------
 Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `here: <https://github.com/silviamazzoni/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialTest.ipynb>`_
 
 
@@ -174,11 +176,8 @@ ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 
 uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  0.8  0.2
 
 .. figure:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_pinch_symmCycles.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPush.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPull.jpg
 
 
@@ -201,11 +200,8 @@ ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 
 uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.1  0
 
 .. figure:: figures/HystereticSM/HystereticSM_damage1_strainDip.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_damage1_symmCycles.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPull.jpg
 
 
@@ -228,11 +224,8 @@ ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 
 uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0.1
 
 .. figure:: figures/HystereticSM/HystereticSM_damage2_strainDip.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_damage2_symmCycles.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPush.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPull.jpg
 
 
@@ -255,11 +248,8 @@ ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 
 uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  1
 
 .. figure:: figures/HystereticSM/HystereticSM_beta_strainDip.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_beta_symmCycles.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPush.jpg
---------------
 .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPull.jpg
 
 
