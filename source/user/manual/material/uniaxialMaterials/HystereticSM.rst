@@ -146,7 +146,7 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 
 Jupyter Notebook:
 -----------------
-Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `HERE! <https://github.com/silviamazzoni/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb>`_
+Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `HERE! <https://github.com/OpenSees/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb>`_
 
 
 Backbone Curve for material (7 points in each direction)
