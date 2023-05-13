@@ -5,7 +5,7 @@ HystereticSM Material
 
 This command is used to construct a uniaxial multilinear hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. This material is an extension of the Hysteretic Material -- the envelope can be defined 2,3, 4,5,6 or 7 points, while the original one only had 2 or 3.
 *The positive and negative backbone of this material do not need to have the same number of segments. 
-*This material also has the option to degrade the envelope using the degEnv parameters
+*This material also has the option to degrade the envelope using the degEnv parameters. -- this option will be available soon
 *This material also has additional DCR-type recorder output.
 
 
@@ -66,10 +66,10 @@ The following input format is compatible with Hysteretic material. Note that in 
      - power used to determine the degraded unloading stiffness based on ductility, mu-beta (optional, default=0.0)
    * - $degEnvP
      - |float|
-     - envelope-degredation factor. This factor works with the damage parameters to degrade the POSITIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=0.0)
+     - envelope-degredation factor. This factor works with the damage parameters to degrade the POSITIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=0.0)-- this option will be available soon
    * - $degEnvN
      - |float|
-     - envelope-degredation factor. This factor works with the damage parameters to degrade the NEGATIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=degEnvP, if defined, =0. otherwise)
+     - envelope-degredation factor. This factor works with the damage parameters to degrade the NEGATIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=degEnvP, if defined, =0. otherwise)-- this option will be available soon
    * - ($lsD1,$lsD2..)
      - |float|
      - list of user-defined strain/deformation limits for computing deformation DCRs (optional) 
