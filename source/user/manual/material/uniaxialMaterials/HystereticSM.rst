@@ -262,6 +262,29 @@ uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  
 .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPush.jpg
 .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPull.jpg
 
+Parameter Study: degEng
+-----------------------
+
+*HystereticSM_degEnv=0*
+ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, '-damage', 0.005, 0.002, '-degEnv', 0, 0)
+
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  0  0
+--------------------------------------------
+*HystereticSM_degEnv=1*
+ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, '-damage', 0.005, 0.002, '-degEnv', 1, -1)
+
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  1  -1
+--------------------------------------------
+*HystereticSM_degEnv=5*
+ops.uniaxialMaterial('HystereticSM', 99, '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, '-damage', 0.005, 0.002, '-degEnv', 5, -5)
+
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  5  -5
+
+.. figure:: figures/HystereticSM/HystereticSM_degEnv_strainDip.jpg
+.. figure:: figures/HystereticSM/HystereticSM_degEnv_symmCycles.jpg
+.. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPush.jpg
+.. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPull.jpg
+
 
 
 | Modified Code Developed by: |silvia|
