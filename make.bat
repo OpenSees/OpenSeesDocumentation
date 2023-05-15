@@ -33,3 +33,7 @@ goto end
 
 :end
 popd
+
+make html
+
+pause
