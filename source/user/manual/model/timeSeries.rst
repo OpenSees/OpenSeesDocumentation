@@ -28,5 +28,5 @@ The following subsections contain information about **$type** and the number of 
    timeseries/rectangularTimeSeries
    timeseries/pulseTimeSeries
    timeseries/pathTimeSeries
-   timeseries/peerTimeSeries
-   timeseries/PeerNGA
+   timeseries/peerMotion
+   timeseries/PeerNGAMotion
