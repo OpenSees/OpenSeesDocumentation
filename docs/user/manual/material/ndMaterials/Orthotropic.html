@@ -432,127 +432,127 @@
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">proc</span> analyze_dir <span class="k">{</span><span class="nv">dX</span> dY type<span class="k">}</span> <span class="k">{</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">proc</span><span class="w"> </span>analyze_dir<span class="w"> </span><span class="k">{</span><span class="nv">dX</span><span class="w"> </span>dY<span class="w"> </span>type<span class="k">}</span><span class="w"> </span><span class="k">{</span>
 
-    <span class="c"># info</span>
-    <span class="nb">puts</span> <span class="s2">&quot;Analyze direction ($dX, $dY)&quot;</span>
+<span class="w">    </span><span class="c"># info</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Analyze direction ($dX, $dY)&quot;</span>
 
-    <span class="c"># the 2D model</span>
-    <span class="nv">wipe</span>
-    <span class="nv">model</span> basic <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
+<span class="w">    </span><span class="c"># the 2D model</span>
+<span class="w">    </span><span class="nv">wipe</span>
+<span class="w">    </span><span class="nv">model</span><span class="w"> </span>basic<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">2</span>
 
-    <span class="c"># the isotropic material</span>
-    <span class="k">set</span> E <span class="mf">200000.0</span>
-    <span class="k">set</span> v <span class="mf">0.3</span>
-    <span class="k">set</span> G <span class="k">[expr</span> <span class="nv">$E</span><span class="o">/</span><span class="k">(</span><span class="nv">2.0</span><span class="o">*</span><span class="k">(</span><span class="nv">1.0</span><span class="o">+</span><span class="nv">$v</span><span class="k">))]</span>
-    <span class="k">set</span> K <span class="k">[expr</span> <span class="nv">$E</span><span class="o">/</span><span class="k">(</span><span class="nv">3.0</span><span class="o">*</span><span class="k">(</span><span class="nv">1.0-2.0</span><span class="o">*</span><span class="nv">$v</span><span class="k">))]</span>
-    <span class="k">set</span> sig0 <span class="mf">400.0</span>
-    <span class="nv">nDMaterial</span> J2Plasticity <span class="mi">1</span> <span class="nv">$K</span> <span class="nv">$G</span> <span class="nv">$sig0</span> <span class="nv">$sig0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="w">    </span><span class="c"># the isotropic material</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>E<span class="w"> </span><span class="mf">200000.0</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>v<span class="w"> </span><span class="mf">0.3</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>G<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$E</span><span class="o">/</span><span class="k">(</span><span class="nv">2.0</span><span class="o">*</span><span class="k">(</span><span class="nv">1.0</span><span class="o">+</span><span class="nv">$v</span><span class="k">))]</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>K<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$E</span><span class="o">/</span><span class="k">(</span><span class="nv">3.0</span><span class="o">*</span><span class="k">(</span><span class="nv">1.0-2.0</span><span class="o">*</span><span class="nv">$v</span><span class="k">))]</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>sig0<span class="w"> </span><span class="mf">400.0</span>
+<span class="w">    </span><span class="nv">nDMaterial</span><span class="w"> </span>J2Plasticity<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$K</span><span class="w"> </span><span class="nv">$G</span><span class="w"> </span><span class="nv">$sig0</span><span class="w"> </span><span class="nv">$sig0</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span>
 
-    <span class="c"># the orthotropic wrapper</span>
-    <span class="k">if</span> <span class="k">{</span><span class="nv">$type</span> <span class="o">==</span> <span class="s2">&quot;ortho&quot;</span><span class="k">}</span> <span class="k">{</span>
-        <span class="k">set</span> Ex <span class="k">[expr</span> <span class="nv">$E</span><span class="o">*</span><span class="mf">1.5</span><span class="k">]</span>
-        <span class="k">set</span> Ey <span class="nv">$E</span>
-        <span class="k">set</span> Ez <span class="nv">$E</span>
-        <span class="k">set</span> Gxy <span class="nv">$G</span>
-        <span class="k">set</span> Gyz <span class="nv">$G</span>
-        <span class="k">set</span> Gzx <span class="nv">$G</span>
-        <span class="k">set</span> vxy <span class="nv">$v</span>
-        <span class="k">set</span> vyz <span class="nv">$v</span>
-        <span class="k">set</span> vzx <span class="nv">$v</span>
-        <span class="k">set</span> Asigmaxx <span class="k">[expr</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">1.5</span><span class="k">];</span> <span class="c"># fx_iso/fx_ortho</span>
-        <span class="c"># nDMaterial Orthotropic $tag $theIsoMat $Ex $Ey $Ez $Gxy $Gyz $Gzx $vxy $vyz $vzx $Asigmaxx $Asigmayy $Asigmazz $Asigmaxyxy $Asigmayzyz $Asigmaxzxz.</span>
-        <span class="nv">nDMaterial</span> Orthotropic <span class="mi">2</span> <span class="mi">1</span> <span class="nv">$Ex</span> <span class="nv">$Ey</span> <span class="nv">$Ez</span> <span class="nv">$Gxy</span> <span class="nv">$Gyz</span> <span class="nv">$Gzx</span> <span class="nv">$vxy</span> <span class="nv">$vyz</span> <span class="nv">$vzx</span> <span class="nv">$Asigmaxx</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span> <span class="mf">1.0</span>
-        <span class="nv">nDMaterial</span> PlaneStress <span class="mi">3</span> <span class="mi">2</span>
-    <span class="k">}</span>
+<span class="w">    </span><span class="c"># the orthotropic wrapper</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;ortho&quot;</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>Ex<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$E</span><span class="o">*</span><span class="mf">1.5</span><span class="k">]</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>Ey<span class="w"> </span><span class="nv">$E</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>Ez<span class="w"> </span><span class="nv">$E</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>Gxy<span class="w"> </span><span class="nv">$G</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>Gyz<span class="w"> </span><span class="nv">$G</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>Gzx<span class="w"> </span><span class="nv">$G</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>vxy<span class="w"> </span><span class="nv">$v</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>vyz<span class="w"> </span><span class="nv">$v</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>vzx<span class="w"> </span><span class="nv">$v</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>Asigmaxx<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">1.0</span><span class="o">/</span><span class="mf">1.5</span><span class="k">];</span><span class="w"> </span><span class="c"># fx_iso/fx_ortho</span>
+<span class="w">        </span><span class="c"># nDMaterial Orthotropic $tag $theIsoMat $Ex $Ey $Ez $Gxy $Gyz $Gzx $vxy $vyz $vzx $Asigmaxx $Asigmayy $Asigmazz $Asigmaxyxy $Asigmayzyz $Asigmaxzxz.</span>
+<span class="w">        </span><span class="nv">nDMaterial</span><span class="w"> </span>Orthotropic<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$Ex</span><span class="w"> </span><span class="nv">$Ey</span><span class="w"> </span><span class="nv">$Ez</span><span class="w"> </span><span class="nv">$Gxy</span><span class="w"> </span><span class="nv">$Gyz</span><span class="w"> </span><span class="nv">$Gzx</span><span class="w"> </span><span class="nv">$vxy</span><span class="w"> </span><span class="nv">$vyz</span><span class="w"> </span><span class="nv">$vzx</span><span class="w"> </span><span class="nv">$Asigmaxx</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">1.0</span>
+<span class="w">        </span><span class="nv">nDMaterial</span><span class="w"> </span>PlaneStress<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="k">}</span>
 
-    <span class="c"># a triangle</span>
-    <span class="nv">node</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
-    <span class="nv">node</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">0</span>
-    <span class="nv">node</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">1</span>
-    <span class="k">if</span> <span class="k">{</span><span class="nv">$type</span> <span class="o">==</span> <span class="s2">&quot;ortho&quot;</span><span class="k">}</span> <span class="k">{</span>
-        <span class="k">set</span> mat_tag <span class="mi">3</span>
-    <span class="k">}</span> <span class="k">else</span> <span class="k">{</span>
-        <span class="k">set</span> mat_tag <span class="mi">1</span>
-    <span class="k">}</span>
-    <span class="nv">element</span> tri31 <span class="mi">1</span>   <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>   <span class="mf">1.0</span> <span class="s2">&quot;PlaneStress&quot;</span> <span class="nv">$mat_tag</span>
+<span class="w">    </span><span class="c"># a triangle</span>
+<span class="w">    </span><span class="nv">node</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="nv">node</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="nv">node</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;ortho&quot;</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>mat_tag<span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>mat_tag<span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">}</span>
+<span class="w">    </span><span class="nv">element</span><span class="w"> </span>tri31<span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w">   </span><span class="mf">1.0</span><span class="w"> </span><span class="s2">&quot;PlaneStress&quot;</span><span class="w"> </span><span class="nv">$mat_tag</span>
 
-    <span class="c"># fixity</span>
-    <span class="nv">fix</span> <span class="mi">1</span>   <span class="mi">1</span> <span class="mi">1</span>
-    <span class="nv">fix</span> <span class="mi">2</span>   <span class="mi">0</span> <span class="mi">1</span>
-    <span class="nv">fix</span> <span class="mi">3</span>   <span class="mi">1</span> <span class="mi">0</span>
+<span class="w">    </span><span class="c"># fixity</span>
+<span class="w">    </span><span class="nv">fix</span><span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="nv">fix</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="nv">fix</span><span class="w"> </span><span class="mi">3</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
 
-    <span class="c"># a simple ramp</span>
-    <span class="nv">timeSeries</span> Linear <span class="mi">1</span> <span class="o">-</span>factor <span class="k">[expr</span> <span class="mf">2.0</span><span class="o">*</span><span class="nv">$sig0</span><span class="k">]</span>
+<span class="w">    </span><span class="c"># a simple ramp</span>
+<span class="w">    </span><span class="nv">timeSeries</span><span class="w"> </span>Linear<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>factor<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">2.0</span><span class="o">*</span><span class="nv">$sig0</span><span class="k">]</span>
 
-    <span class="c"># imposed stresses</span>
-    <span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
-        <span class="nb">load</span> <span class="mi">2</span> <span class="nv">$dX</span> <span class="mf">0.0</span>
-        <span class="nb">load</span> <span class="mi">3</span> <span class="mf">0.0</span> <span class="nv">$dY</span>
-    <span class="k">}</span>
+<span class="w">    </span><span class="c"># imposed stresses</span>
+<span class="w">    </span><span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="nb">load</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nv">$dX</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">        </span><span class="nb">load</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="nv">$dY</span>
+<span class="w">    </span><span class="k">}</span>
 
-    <span class="c"># analyze</span>
-    <span class="nv">constraints</span> Transformation
-    <span class="nv">numberer</span> Plain
-    <span class="nv">system</span> FullGeneral
-    <span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-6 <span class="mi">3</span> <span class="mi">0</span>
-    <span class="nv">algorithm</span> Newton
+<span class="w">    </span><span class="c"># analyze</span>
+<span class="w">    </span><span class="nv">constraints</span><span class="w"> </span>Transformation
+<span class="w">    </span><span class="nv">numberer</span><span class="w"> </span>Plain
+<span class="w">    </span><span class="nv">system</span><span class="w"> </span>FullGeneral
+<span class="w">    </span><span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-6<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="nv">algorithm</span><span class="w"> </span>Newton
 
-    <span class="k">set</span> dLambda <span class="mf">0.1</span>
-    <span class="k">set</span> dLambdaMin <span class="mf">0.001</span>
-    <span class="k">set</span> Lambda <span class="mf">0.0</span>
-    <span class="k">set</span> sX <span class="mf">0.0</span>
-    <span class="k">set</span> sY <span class="mf">0.0</span>
-    <span class="k">while</span> <span class="mi">1</span> <span class="k">{</span>
-        <span class="nv">integrator</span> LoadControl <span class="nv">$dLambda</span>
-        <span class="nv">analysis</span> Static
-        <span class="k">set</span> ok <span class="k">[</span><span class="nv">analyze</span> <span class="mi">1</span><span class="k">]</span>
-        <span class="k">if</span> <span class="k">{</span><span class="nv">$ok</span> <span class="o">==</span> <span class="nv">0</span><span class="k">}</span> <span class="k">{</span>
-            <span class="k">set</span> stress <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> <span class="s2">&quot;material&quot;</span> <span class="mi">1</span> <span class="s2">&quot;stress&quot;</span><span class="k">]</span>
-            <span class="k">set</span> sX <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$stress</span> <span class="mi">0</span><span class="k">]]</span>
-            <span class="k">set</span> sY <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$stress</span> <span class="mi">1</span><span class="k">]]</span>
-            <span class="k">set</span> Lambda <span class="k">[expr</span> <span class="nv">$Lambda</span> <span class="o">+</span> <span class="nv">$dLambda</span><span class="k">]</span>
-            <span class="k">if</span> <span class="k">{</span><span class="nv">$Lambda</span> <span class="o">&gt;</span> <span class="nv">0.9999</span><span class="k">}</span> <span class="k">{</span>
-                <span class="k">break</span>
-            <span class="k">}</span>
-        <span class="k">}</span> <span class="k">else</span> <span class="k">{</span>
-            <span class="k">set</span> dLambda <span class="k">[expr</span> <span class="nv">$dLambda</span><span class="o">/</span><span class="mf">2.0</span><span class="k">]</span>
-            <span class="k">if</span> <span class="k">{</span><span class="nv">$dLambda</span> <span class="o">&lt;</span> <span class="nv">$dLambdaMin</span><span class="k">}</span> <span class="k">{</span>
-                <span class="k">break</span>
-            <span class="k">}</span>
-        <span class="k">}</span>
-    <span class="k">}</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>dLambda<span class="w"> </span><span class="mf">0.1</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>dLambdaMin<span class="w"> </span><span class="mf">0.001</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>Lambda<span class="w"> </span><span class="mf">0.0</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>sX<span class="w"> </span><span class="mf">0.0</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>sY<span class="w"> </span><span class="mf">0.0</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="nv">integrator</span><span class="w"> </span>LoadControl<span class="w"> </span><span class="nv">$dLambda</span>
+<span class="w">        </span><span class="nv">analysis</span><span class="w"> </span>Static
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>ok<span class="w"> </span><span class="k">[</span><span class="nv">analyze</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$ok</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">0</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">            </span><span class="k">set</span><span class="w"> </span>stress<span class="w"> </span><span class="k">[</span><span class="nv">eleResponse</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s2">&quot;material&quot;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s2">&quot;stress&quot;</span><span class="k">]</span>
+<span class="w">            </span><span class="k">set</span><span class="w"> </span>sX<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$stress</span><span class="w"> </span><span class="mi">0</span><span class="k">]]</span>
+<span class="w">            </span><span class="k">set</span><span class="w"> </span>sY<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$stress</span><span class="w"> </span><span class="mi">1</span><span class="k">]]</span>
+<span class="w">            </span><span class="k">set</span><span class="w"> </span>Lambda<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$Lambda</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">$dLambda</span><span class="k">]</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$Lambda</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">0.9999</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">                </span><span class="k">break</span>
+<span class="w">            </span><span class="k">}</span>
+<span class="w">        </span><span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
+<span class="w">            </span><span class="k">set</span><span class="w"> </span>dLambda<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$dLambda</span><span class="o">/</span><span class="mf">2.0</span><span class="k">]</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$dLambda</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">$dLambdaMin</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">                </span><span class="k">break</span>
+<span class="w">            </span><span class="k">}</span>
+<span class="w">        </span><span class="k">}</span>
+<span class="w">    </span><span class="k">}</span>
 
-    <span class="c"># done</span>
-    <span class="k">return</span> <span class="k">[</span><span class="nb">list</span> <span class="nv">$sX</span> <span class="nv">$sY</span><span class="k">]</span>
+<span class="w">    </span><span class="c"># done</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">[</span><span class="nb">list</span><span class="w"> </span><span class="nv">$sX</span><span class="w"> </span><span class="nv">$sY</span><span class="k">]</span>
 <span class="k">}</span>
 
-<span class="k">set</span> NDiv <span class="mi">48</span>
-<span class="k">set</span> NP <span class="k">[expr</span> <span class="nv">$NDiv</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
-<span class="k">set</span> pi <span class="k">[expr</span> acos<span class="k">(</span><span class="nv">-1</span><span class="k">)]</span>
-<span class="k">set</span> dAngle <span class="k">[expr</span> <span class="mf">2.0</span><span class="o">*</span><span class="nv">$pi</span><span class="o">/</span><span class="nv">$NDiv</span><span class="k">]</span>
-<span class="k">set</span> SX <span class="k">{}</span>
-<span class="k">set</span> SY <span class="k">{}</span>
-<span class="k">set</span> SXortho <span class="k">{}</span>
-<span class="k">set</span> SYortho <span class="k">{}</span>
-<span class="k">for</span> <span class="k">{set</span> i <span class="mi">0</span><span class="k">}</span> <span class="k">{</span><span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$NDiv</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> i<span class="k">}</span> <span class="k">{</span>
-    <span class="k">set</span> angle <span class="k">[expr</span> <span class="nv">$i.0</span><span class="o">*</span><span class="nv">$dAngle</span><span class="k">]</span>
-    <span class="k">set</span> dX <span class="k">[expr</span> cos<span class="k">(</span><span class="nv">$angle</span><span class="k">)]</span>
-    <span class="k">set</span> dY <span class="k">[expr</span> sin<span class="k">(</span><span class="nv">$angle</span><span class="k">)]</span>
-    <span class="k">set</span> iso <span class="k">[</span><span class="nv">analyze_dir</span> <span class="nv">$dX</span> <span class="nv">$dY</span> <span class="s2">&quot;iso&quot;</span><span class="k">]</span>
-    <span class="k">set</span> ortho <span class="k">[</span><span class="nv">analyze_dir</span> <span class="nv">$dX</span> <span class="nv">$dY</span> <span class="s2">&quot;ortho&quot;</span><span class="k">]</span>
-    <span class="nb">lappend</span> SX <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$iso</span> <span class="mi">0</span><span class="k">]</span>
-    <span class="nb">lappend</span> SY <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$iso</span> <span class="mi">1</span><span class="k">]</span>
-    <span class="nb">lappend</span> SXortho <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$ortho</span> <span class="mi">0</span><span class="k">]</span>
-    <span class="nb">lappend</span> SYortho <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$ortho</span> <span class="mi">1</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>NDiv<span class="w"> </span><span class="mi">48</span>
+<span class="k">set</span><span class="w"> </span>NP<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$NDiv</span><span class="o">+</span><span class="mi">1</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>pi<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>acos<span class="k">(</span><span class="nv">-1</span><span class="k">)]</span>
+<span class="k">set</span><span class="w"> </span>dAngle<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">2.0</span><span class="o">*</span><span class="nv">$pi</span><span class="o">/</span><span class="nv">$NDiv</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>SX<span class="w"> </span><span class="k">{}</span>
+<span class="k">set</span><span class="w"> </span>SY<span class="w"> </span><span class="k">{}</span>
+<span class="k">set</span><span class="w"> </span>SXortho<span class="w"> </span><span class="k">{}</span>
+<span class="k">set</span><span class="w"> </span>SYortho<span class="w"> </span><span class="k">{}</span>
+<span class="k">for</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>i<span class="w"> </span><span class="mi">0</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">$i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">$NDiv</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">incr</span><span class="w"> </span>i<span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>angle<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$i.0</span><span class="o">*</span><span class="nv">$dAngle</span><span class="k">]</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>dX<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>cos<span class="k">(</span><span class="nv">$angle</span><span class="k">)]</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>dY<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>sin<span class="k">(</span><span class="nv">$angle</span><span class="k">)]</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>iso<span class="w"> </span><span class="k">[</span><span class="nv">analyze_dir</span><span class="w"> </span><span class="nv">$dX</span><span class="w"> </span><span class="nv">$dY</span><span class="w"> </span><span class="s2">&quot;iso&quot;</span><span class="k">]</span>
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>ortho<span class="w"> </span><span class="k">[</span><span class="nv">analyze_dir</span><span class="w"> </span><span class="nv">$dX</span><span class="w"> </span><span class="nv">$dY</span><span class="w"> </span><span class="s2">&quot;ortho&quot;</span><span class="k">]</span>
+<span class="w">    </span><span class="nb">lappend</span><span class="w"> </span>SX<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$iso</span><span class="w"> </span><span class="mi">0</span><span class="k">]</span>
+<span class="w">    </span><span class="nb">lappend</span><span class="w"> </span>SY<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$iso</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
+<span class="w">    </span><span class="nb">lappend</span><span class="w"> </span>SXortho<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$ortho</span><span class="w"> </span><span class="mi">0</span><span class="k">]</span>
+<span class="w">    </span><span class="nb">lappend</span><span class="w"> </span>SYortho<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$ortho</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
 <span class="k">}</span>
-<span class="nb">lappend</span> SX <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$SX</span> <span class="mi">0</span><span class="k">]</span>
-<span class="nb">lappend</span> SY <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$SY</span> <span class="mi">0</span><span class="k">]</span>
-<span class="nb">lappend</span> SXortho <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$SXortho</span> <span class="mi">0</span><span class="k">]</span>
-<span class="nb">lappend</span> SYortho <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$SYortho</span> <span class="mi">0</span><span class="k">]</span>
-<span class="nb">puts</span> <span class="k">[</span><span class="nb">format</span> <span class="s2">&quot;%12s %12s %12s %12s&quot;</span> <span class="s2">&quot;Sx(iso)&quot;</span> <span class="s2">&quot;Sy(iso)&quot;</span> <span class="s2">&quot;Sx(ortho)&quot;</span> <span class="s2">&quot;Sy(ortho)&quot;</span><span class="k">]</span>
-<span class="k">for</span> <span class="k">{set</span> i <span class="mi">0</span><span class="k">}</span> <span class="k">{</span><span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$NP</span><span class="k">}</span> <span class="k">{</span><span class="nb">incr</span> i<span class="k">}</span> <span class="k">{</span>
-    <span class="nb">puts</span> <span class="k">[</span><span class="nb">format</span> <span class="s2">&quot;%12.3f %12.3f %12.3f %12.3f&quot;</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$SX</span> <span class="nv">$i</span><span class="k">]</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$SY</span> <span class="nv">$i</span><span class="k">]</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$SXortho</span> <span class="nv">$i</span><span class="k">]</span> <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$SYortho</span> <span class="nv">$i</span><span class="k">]]</span>
+<span class="nb">lappend</span><span class="w"> </span>SX<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$SX</span><span class="w"> </span><span class="mi">0</span><span class="k">]</span>
+<span class="nb">lappend</span><span class="w"> </span>SY<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$SY</span><span class="w"> </span><span class="mi">0</span><span class="k">]</span>
+<span class="nb">lappend</span><span class="w"> </span>SXortho<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$SXortho</span><span class="w"> </span><span class="mi">0</span><span class="k">]</span>
+<span class="nb">lappend</span><span class="w"> </span>SYortho<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$SYortho</span><span class="w"> </span><span class="mi">0</span><span class="k">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="k">[</span><span class="nb">format</span><span class="w"> </span><span class="s2">&quot;%12s %12s %12s %12s&quot;</span><span class="w"> </span><span class="s2">&quot;Sx(iso)&quot;</span><span class="w"> </span><span class="s2">&quot;Sy(iso)&quot;</span><span class="w"> </span><span class="s2">&quot;Sx(ortho)&quot;</span><span class="w"> </span><span class="s2">&quot;Sy(ortho)&quot;</span><span class="k">]</span>
+<span class="k">for</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>i<span class="w"> </span><span class="mi">0</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">$i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">$NP</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">incr</span><span class="w"> </span>i<span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span><span class="k">[</span><span class="nb">format</span><span class="w"> </span><span class="s2">&quot;%12.3f %12.3f %12.3f %12.3f&quot;</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$SX</span><span class="w"> </span><span class="nv">$i</span><span class="k">]</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$SY</span><span class="w"> </span><span class="nv">$i</span><span class="k">]</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$SXortho</span><span class="w"> </span><span class="nv">$i</span><span class="k">]</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$SYortho</span><span class="w"> </span><span class="nv">$i</span><span class="k">]]</span>
 <span class="k">}</span>
 </pre></div>
 </div>

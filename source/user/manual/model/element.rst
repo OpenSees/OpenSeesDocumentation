@@ -65,6 +65,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/SFI_MVLEM_3D
    elements/dispBeamColumnAsym
    elements/mixedBeamColumnAsym
+   elements/E_SFI
 
 
 4. Quadrilateral & Shell Elements

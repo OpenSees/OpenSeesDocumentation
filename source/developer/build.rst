@@ -54,7 +54,7 @@ For Windows 10 the user must have the following applications installed on their 
          cmake .. -Darith=d -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreaded" -G Ninja
          cmake --build . --config Release --parallel 4
          cd ..\..
-	 pip install conan
+	 pip install conan==1.59.0
 	 
 
 Obtaining OpenSees Source Code       
@@ -265,7 +265,7 @@ Software Requirements
       ./configure --prefix=/usr/local/hdf5
       make
       sudo make install
-      pip3 install conan
+      pip3 install conan==1.59.0
 
 .. warning::
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.11.3. Elemental Damping Command &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.12.3. Elemental Damping Command &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -42,8 +42,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.11.3.1. Uniform Damping" href="elementalDamping/UniformDamping.html" />
-    <link rel="prev" title="3.1.11.2. Modal Damping Command" href="modalDamping.html" /> 
+    <link rel="next" title="3.1.12.3.1. Uniform Damping" href="elementalDamping/UniformDamping.html" />
+    <link rel="prev" title="3.1.12.2. Modal Damping Command" href="modalDamping.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,23 +103,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../material/section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../element.html">3.1.8. Element Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.9. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.10. Pattern Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../damping.html">3.1.11. Damping Commands</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="rayleigh.html">3.1.11.1. Rayleigh Damping Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modalDamping.html">3.1.11.2. Modal Damping Command</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.11.3. Elemental Damping Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../damping.html#references">3.1.11.4. References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="rayleigh.html">3.1.12.1. Rayleigh Damping Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modalDamping.html">3.1.12.2. Modal Damping Command</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.12.3. Elemental Damping Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../damping.html#references">3.1.12.4. References</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -186,9 +186,9 @@
         
           <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-          <li><a href="../damping.html"><span class="section-number">3.1.11. </span>Damping Commands</a> &raquo;</li>
+          <li><a href="../damping.html"><span class="section-number">3.1.12. </span>Damping Commands</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.11.3. </span>Elemental Damping Command</li>
+      <li><span class="section-number">3.1.12.3. </span>Elemental Damping Command</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -208,7 +208,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="elemental-damping-command">
-<span id="elementaldamping"></span><h1><span class="section-number">3.1.11.3. </span>Elemental Damping Command<a class="headerlink" href="#elemental-damping-command" title="Permalink to this headline">¶</a></h1>
+<span id="elementaldamping"></span><h1><span class="section-number">3.1.12.3. </span>Elemental Damping Command<a class="headerlink" href="#elemental-damping-command" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">damping</span> <span class="pre">$dampingType</span> <span class="pre">$dampingTag</span> <span class="pre">$dampingArgs</span></span></dt>
@@ -245,43 +245,43 @@
 <blockquote>
 <div><div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="elementalDamping/UniformDamping.html">3.1.11.3.1. Uniform Damping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="elementalDamping/URDDamping.html">3.1.11.3.2. Universal Rate-Dependent (URD) Damping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="elementalDamping/SecStifDamping.html">3.1.11.3.3. Secant Stiffness-Proportional Damping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elementalDamping/UniformDamping.html">3.1.12.3.1. Uniform Damping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elementalDamping/URDDamping.html">3.1.12.3.2. Universal Rate-Dependent (URD) Damping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elementalDamping/SecStifDamping.html">3.1.12.3.3. Secant Stiffness-Proportional Damping</a></li>
 </ul>
 </div>
 </div></blockquote>
 <p>The following is used to assign the damping model to a specific element. The user should append the parameters of <strong>“-damp $dampingTag”</strong> to the end of the element definition.</p>
 <blockquote>
-<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span> dispBeamColumn <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$numIntgrPts</span> <span class="nv">$secTag</span> <span class="nv">$transfTag</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span><span class="w"> </span>dispBeamColumn<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$numIntgrPts</span><span class="w"> </span><span class="nv">$secTag</span><span class="w"> </span><span class="nv">$transfTag</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> ASDShellQ4 <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$kNode</span> <span class="nv">$lNode</span> <span class="nv">$secTag</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>ASDShellQ4<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$kNode</span><span class="w"> </span><span class="nv">$lNode</span><span class="w"> </span><span class="nv">$secTag</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> ShellDKGQ <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$kNode</span> <span class="nv">$lNode</span> <span class="nv">$secTag</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>ShellDKGQ<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$kNode</span><span class="w"> </span><span class="nv">$lNode</span><span class="w"> </span><span class="nv">$secTag</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> ShellDKGT <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$kNode</span> <span class="nv">$lNode</span> <span class="nv">$secTag</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>ShellDKGT<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$kNode</span><span class="w"> </span><span class="nv">$lNode</span><span class="w"> </span><span class="nv">$secTag</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> ShellNLDKGQ <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$kNode</span> <span class="nv">$lNode</span> <span class="nv">$secTag</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>ShellNLDKGQ<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$kNode</span><span class="w"> </span><span class="nv">$lNode</span><span class="w"> </span><span class="nv">$secTag</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> ShellNLDKGT <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$kNode</span> <span class="nv">$lNode</span> <span class="nv">$secTag</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>ShellNLDKGT<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$kNode</span><span class="w"> </span><span class="nv">$lNode</span><span class="w"> </span><span class="nv">$secTag</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> ShellMITC4 <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$kNode</span> <span class="nv">$lNode</span> <span class="nv">$secTag</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>ShellMITC4<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$kNode</span><span class="w"> </span><span class="nv">$lNode</span><span class="w"> </span><span class="nv">$secTag</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> zeroLength <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="o">-</span>mat <span class="nv">$matTag1</span> <span class="nv">$matTag2</span> ... <span class="o">-</span>dir <span class="nv">$dir1</span> <span class="nv">$dir2</span> ...<span class="o">&lt;-</span>doRayleigh <span class="nv">$rFlag</span><span class="o">&gt;</span> <span class="o">&lt;-</span>orient <span class="nv">$x1</span> <span class="nv">$x2</span> <span class="nv">$x3</span> <span class="nv">$yp1</span> <span class="nv">$yp2</span> <span class="nv">$yp3</span><span class="o">&gt;</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>zeroLength<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="o">-</span>mat<span class="w"> </span><span class="nv">$matTag1</span><span class="w"> </span><span class="nv">$matTag2</span><span class="w"> </span>...<span class="w"> </span><span class="o">-</span>dir<span class="w"> </span><span class="nv">$dir1</span><span class="w"> </span><span class="nv">$dir2</span><span class="w"> </span>...<span class="o">&lt;-</span>doRayleigh<span class="w"> </span><span class="nv">$rFlag</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>orient<span class="w"> </span><span class="nv">$x1</span><span class="w"> </span><span class="nv">$x2</span><span class="w"> </span><span class="nv">$x3</span><span class="w"> </span><span class="nv">$yp1</span><span class="w"> </span><span class="nv">$yp2</span><span class="w"> </span><span class="nv">$yp3</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> elasticBeamColumn <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$A</span> <span class="nv">$E</span> <span class="nv">$G</span> <span class="nv">$J</span> <span class="nv">$Iy</span> <span class="nv">$Iz</span> <span class="nv">$transfTag</span> <span class="o">&lt;-</span>mass <span class="nv">$massDens</span><span class="o">&gt;</span> <span class="o">&lt;-</span>cMass<span class="o">&gt;</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>elasticBeamColumn<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$A</span><span class="w"> </span><span class="nv">$E</span><span class="w"> </span><span class="nv">$G</span><span class="w"> </span><span class="nv">$J</span><span class="w"> </span><span class="nv">$Iy</span><span class="w"> </span><span class="nv">$Iz</span><span class="w"> </span><span class="nv">$transfTag</span><span class="w"> </span><span class="o">&lt;-</span>mass<span class="w"> </span><span class="nv">$massDens</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>cMass<span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> forceBeamColumn <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$transfTag</span> <span class="s2">&quot;IntegrationType arg1 arg2 ...&quot;</span> <span class="o">&lt;-</span>mass <span class="nv">$massDens</span><span class="o">&gt;</span> <span class="o">&lt;-</span>iter <span class="nv">$maxIters</span> <span class="nv">$tol</span><span class="o">&gt;</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>forceBeamColumn<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$transfTag</span><span class="w"> </span><span class="s2">&quot;IntegrationType arg1 arg2 ...&quot;</span><span class="w"> </span><span class="o">&lt;-</span>mass<span class="w"> </span><span class="nv">$massDens</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>iter<span class="w"> </span><span class="nv">$maxIters</span><span class="w"> </span><span class="nv">$tol</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> quad <span class="nv">$eleTag</span> <span class="nv">$iNode</span> <span class="nv">$jNode</span> <span class="nv">$kNode</span> <span class="nv">$lNode</span> <span class="nv">$thick</span> <span class="nv">$type</span> <span class="nv">$matTag</span> <span class="o">&lt;</span><span class="nv">$pressure</span> <span class="nv">$rho</span> <span class="nv">$b1</span> <span class="nv">$b2</span><span class="o">&gt;</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>quad<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$iNode</span><span class="w"> </span><span class="nv">$jNode</span><span class="w"> </span><span class="nv">$kNode</span><span class="w"> </span><span class="nv">$lNode</span><span class="w"> </span><span class="nv">$thick</span><span class="w"> </span><span class="nv">$type</span><span class="w"> </span><span class="nv">$matTag</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">$pressure</span><span class="w"> </span><span class="nv">$rho</span><span class="w"> </span><span class="nv">$b1</span><span class="w"> </span><span class="nv">$b2</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 
-<span class="nv">element</span> stdBrick <span class="nv">$eleTag</span> <span class="nv">$node1</span> <span class="nv">$node2</span> <span class="nv">$node3</span> <span class="nv">$node4</span> <span class="nv">$node5</span> <span class="nv">$node6</span> <span class="nv">$node7</span> <span class="nv">$node8</span> <span class="nv">$matTag</span> <span class="o">&lt;</span><span class="nv">$b1</span> <span class="nv">$b2</span> <span class="nv">$b3</span><span class="o">&gt;</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<span class="nv">element</span><span class="w"> </span>stdBrick<span class="w"> </span><span class="nv">$eleTag</span><span class="w"> </span><span class="nv">$node1</span><span class="w"> </span><span class="nv">$node2</span><span class="w"> </span><span class="nv">$node3</span><span class="w"> </span><span class="nv">$node4</span><span class="w"> </span><span class="nv">$node5</span><span class="w"> </span><span class="nv">$node6</span><span class="w"> </span><span class="nv">$node7</span><span class="w"> </span><span class="nv">$node8</span><span class="w"> </span><span class="nv">$matTag</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">$b1</span><span class="w"> </span><span class="nv">$b2</span><span class="w"> </span><span class="nv">$b3</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>The following is used to assign the damping model to groups of elements.</p>
 <blockquote>
-<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">region</span> <span class="nv">$regTag</span> <span class="o">&lt;-</span>ele <span class="k">(</span><span class="nv">$ele1</span> <span class="nv">$ele2</span> <span class="nv">...</span><span class="k">)</span><span class="o">&gt;</span> <span class="o">&lt;-</span>eleOnly <span class="k">(</span><span class="nv">$ele1</span> <span class="nv">$ele2</span> <span class="nv">...</span><span class="k">)</span><span class="o">&gt;</span> <span class="o">&lt;-</span>eleRange <span class="nv">$startEle</span> <span class="nv">$endEle</span><span class="o">&gt;</span> <span class="o">&lt;-</span>eleOnlyRange <span class="nv">$startEle</span> <span class="nv">$endEle</span><span class="o">&gt;</span> <span class="o">&lt;-</span>node <span class="k">(</span><span class="nv">$node1</span> <span class="nv">$node2</span> <span class="nv">...</span><span class="k">)</span><span class="o">&gt;</span> <span class="o">&lt;-</span>nodeOnly <span class="k">(</span><span class="nv">$node1</span> <span class="nv">$node2</span> <span class="nv">...</span><span class="k">)</span><span class="o">&gt;</span> <span class="o">&lt;-</span>nodeRange <span class="nv">$startNode</span> <span class="nv">$endNode</span><span class="o">&gt;</span> <span class="o">&lt;-</span>nodeOnlyRange <span class="nv">$startNode</span> <span class="nv">$endNode</span><span class="o">&gt;</span> <span class="o">&lt;-</span>node all<span class="o">&gt;</span> <span class="o">&lt;-</span>rayleigh <span class="nv">$alphaM</span> <span class="nv">$betaK</span> <span class="nv">$betaKinit</span> <span class="nv">$betaKcomm</span><span class="o">&gt;</span> <span class="o">&lt;-</span>damp <span class="nv">$dampingTag</span><span class="o">&gt;</span>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">region</span><span class="w"> </span><span class="nv">$regTag</span><span class="w"> </span><span class="o">&lt;-</span>ele<span class="w"> </span><span class="k">(</span><span class="nv">$ele1</span><span class="w"> </span><span class="nv">$ele2</span><span class="w"> </span><span class="nv">...</span><span class="k">)</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>eleOnly<span class="w"> </span><span class="k">(</span><span class="nv">$ele1</span><span class="w"> </span><span class="nv">$ele2</span><span class="w"> </span><span class="nv">...</span><span class="k">)</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>eleRange<span class="w"> </span><span class="nv">$startEle</span><span class="w"> </span><span class="nv">$endEle</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>eleOnlyRange<span class="w"> </span><span class="nv">$startEle</span><span class="w"> </span><span class="nv">$endEle</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>node<span class="w"> </span><span class="k">(</span><span class="nv">$node1</span><span class="w"> </span><span class="nv">$node2</span><span class="w"> </span><span class="nv">...</span><span class="k">)</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>nodeOnly<span class="w"> </span><span class="k">(</span><span class="nv">$node1</span><span class="w"> </span><span class="nv">$node2</span><span class="w"> </span><span class="nv">...</span><span class="k">)</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>nodeRange<span class="w"> </span><span class="nv">$startNode</span><span class="w"> </span><span class="nv">$endNode</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>nodeOnlyRange<span class="w"> </span><span class="nv">$startNode</span><span class="w"> </span><span class="nv">$endNode</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>node<span class="w"> </span>all<span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>rayleigh<span class="w"> </span><span class="nv">$alphaM</span><span class="w"> </span><span class="nv">$betaK</span><span class="w"> </span><span class="nv">$betaKinit</span><span class="w"> </span><span class="nv">$betaKcomm</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;-</span>damp<span class="w"> </span><span class="nv">$dampingTag</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div></blockquote>
