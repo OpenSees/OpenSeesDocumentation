@@ -96,9 +96,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
@@ -113,12 +113,15 @@
 <li class="toctree-l4"><a class="reference internal" href="PM4Silt.html">3.1.6.8. PM4Silt Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PressureIndependentMultiYield.html">3.1.6.9. Pressure Independent Multi Yield</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.1.6.10. Pressure Dependent Multi Yield</a></li>
-<li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.1.6.11. J2CyclicBoundingSurface Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.1.6.12. SANISAND-MS Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.1.6.13. Orthotropic Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield02.html">3.1.6.11. Pressure Dependent Multi Yield 02</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.1.6.12. J2CyclicBoundingSurface Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.1.6.13. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.1.6.14. Orthotropic Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Series3D.html">3.1.6.15. Series3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDConcrete3D.html">3.1.6.16. ASDConcrete3D Material</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.8. Element Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.9. Time Series Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.10. Pattern Command</a></li>
@@ -127,8 +130,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -193,7 +195,7 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
           <li><a href="../ndMaterial.html"><span class="section-number">3.1.6. </span>nDMaterial Command</a> &raquo;</li>
         
@@ -298,16 +300,16 @@
 <p class="admonition-title">Example</p>
 <p>The following usage example provides the input parameters used in the single element examples of Borja et al. (2001). The initial bulk modulus is determined from the initial mean stress desired in the test (in this case p = 100 kPa) divided by the recompressibilty index kappa = 0.018. The units of this analysis are kN and m, thus the prescribed initial shear modulus of 5.4 MPa is input as 5400 kPa. The hardening parameter $h has the same units as the moduli.</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># define parameters for the model</span>
-<span class="k">set</span> rho    <span class="mf">1.8</span>
-<span class="k">set</span> c      <span class="mf">1.0</span>
-<span class="k">set</span> bulk   <span class="mf">5555.56</span>
-<span class="k">set</span> OCR    <span class="mf">1.5</span>
-<span class="k">set</span> mu_o   <span class="mf">5.4</span>e3
-<span class="k">set</span> alpha  <span class="mf">0.0</span>
-<span class="k">set</span> lambda <span class="mf">0.13</span>
-<span class="k">set</span> h      <span class="mf">5.0</span>e3
-<span class="k">set</span> m      <span class="mf">1.5</span>
-<span class="nv">nDMaterial</span> BoundingCamClay <span class="mi">1</span>  <span class="nv">$rho</span> <span class="nv">$c</span> <span class="nv">$bulk</span> <span class="nv">$OCR</span> <span class="nv">$mu_o</span> <span class="nv">$alpha</span> <span class="nv">$lambda</span> <span class="nv">$h</span> <span class="nv">$m</span>
+<span class="k">set</span><span class="w"> </span>rho<span class="w">    </span><span class="mf">1.8</span>
+<span class="k">set</span><span class="w"> </span>c<span class="w">      </span><span class="mf">1.0</span>
+<span class="k">set</span><span class="w"> </span>bulk<span class="w">   </span><span class="mf">5555.56</span>
+<span class="k">set</span><span class="w"> </span>OCR<span class="w">    </span><span class="mf">1.5</span>
+<span class="k">set</span><span class="w"> </span>mu_o<span class="w">   </span><span class="mf">5.4</span>e3
+<span class="k">set</span><span class="w"> </span>alpha<span class="w">  </span><span class="mf">0.0</span>
+<span class="k">set</span><span class="w"> </span>lambda<span class="w"> </span><span class="mf">0.13</span>
+<span class="k">set</span><span class="w"> </span>h<span class="w">      </span><span class="mf">5.0</span>e3
+<span class="k">set</span><span class="w"> </span>m<span class="w">      </span><span class="mf">1.5</span>
+<span class="nv">nDMaterial</span><span class="w"> </span>BoundingCamClay<span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="nv">$rho</span><span class="w"> </span><span class="nv">$c</span><span class="w"> </span><span class="nv">$bulk</span><span class="w"> </span><span class="nv">$OCR</span><span class="w"> </span><span class="nv">$mu_o</span><span class="w"> </span><span class="nv">$alpha</span><span class="w"> </span><span class="nv">$lambda</span><span class="w"> </span><span class="nv">$h</span><span class="w"> </span><span class="nv">$m</span>
 </pre></div>
 </div>
 </div>

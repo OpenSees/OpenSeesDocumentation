@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.8.6. Gradient Inelastic (GI) Beam-Column Element &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.9.6. Gradient Inelastic (GI) Beam-Column Element &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -42,8 +42,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.8.7. Displacement-Based Beam Element (Asymmetric Sections)" href="dispBeamColumnAsym.html" />
-    <link rel="prev" title="3.1.8.5. Elastic Beam Column Element" href="elasticBeamColumn.html" /> 
+    <link rel="next" title="3.1.9.7. SFI-MVLEM-3D Element" href="SFI_MVLEM_3D.html" />
+    <link rel="prev" title="3.1.9.5. Elastic Beam Column Element" href="elasticBeamColumn.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,45 +96,47 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../material/section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.8. Element Command</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.8.1. ZeroLength Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.8.2. ZeroLength Section Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.8.3. ZeroLengthND Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.8.4. ZeroLengthContactASDimplex Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.8.5. Elastic Beam Column Element</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.8.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.8.7. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.8.8. Mixed Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.8.9. ASDShellQ4 Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.8.10. Quadrilateral Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.8.11. SSPquad Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.8.12. stdBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.8.13. bbarBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.8.14. SSPbrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.8.15. FourNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.8.16. TenNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.8.17. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.8.18. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.8.19. RockingBC Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.9. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.9.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.9.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.9.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.9.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.9.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.9.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.9.7. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.9.8. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.9.9. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.9.10. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.9.11. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.9.12. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.9.13. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.9.14. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.9.15. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.9.16. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.9.17. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.9.18. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.9.19. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.9.20. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.9.21. RockingBC Element</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.9. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.10. Pattern Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.11. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -199,11 +201,11 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-          <li><a href="../element.html"><span class="section-number">3.1.8. </span>Element Command</a> &raquo;</li>
+          <li><a href="../element.html"><span class="section-number">3.1.9. </span>Element Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.8.6. </span>Gradient Inelastic (GI) Beam-Column Element</li>
+      <li><span class="section-number">3.1.9.6. </span>Gradient Inelastic (GI) Beam-Column Element</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,7 +225,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gradient-inelastic-gi-beam-column-element">
-<span id="gradientinelasticbeamcolumn"></span><h1><span class="section-number">3.1.8.6. </span>Gradient Inelastic (GI) Beam-Column Element<a class="headerlink" href="#gradient-inelastic-gi-beam-column-element" title="Permalink to this headline">¶</a></h1>
+<span id="gradientinelasticbeamcolumn"></span><h1><span class="section-number">3.1.9.6. </span>Gradient Inelastic (GI) Beam-Column Element<a class="headerlink" href="#gradient-inelastic-gi-beam-column-element" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a <strong>gradientInelasticBeamColumn</strong> element object, which is based on a <strong>force/flexibility-based (FB) gradient inelastic (GI) element formulation</strong> with an iterative solution algorithm. The GI element formulation is based on the GI beam theory, which eliminates the strain localization and response objectivity problems by utilizing a set of gradient-based nonlocality relations that ensure the continuity of section strains (e.g., curvature) over the element length, upon the occurrence of softening at any section. The GI element does not necessitate any certain form of constitutive relations and permits users to use the same constitutive relations used in conventional FB element formulations. Moreover, the number of integration points in the GI element is not fixed and it could produce section strain (e.g., curvature) distributions with high resolutions.</p>
 <p>From the user’s perspective, the gradientInelasticBeamColumn element has similar input to other force-based fiber elements’ and the only additional parameter that this element requires is a characteristic length, <em>lc</em>, which controls the spread of plasticity/damage in the vicinity of a softening location. In the simulation of RC beams/columns, this parameter can be taken equal to the plastic hinge length. If <em>lc</em> equals zero, the GI beam element formulation turns into a conventional FB element formulation (i.e., as if the classical beam theory is used).</p>
 <p>For more information about the GI element formulation, please refer to this <a class="reference external" href="https://www.linkedin.com/feed/update/urn:li:activity:6712087651564044288/">post</a> and the references at the end of this page.</p>
@@ -340,7 +342,7 @@
 </table>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/GI_Fig1.png"><img alt="../../../../_images/GI_Fig1.png" src="../../../../_images/GI_Fig1.png" style="width: 325.5px; height: 169.5px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.8.2 </span><span class="caption-text">Fig. 1: Assignment of pre-defined sections to integration points at different parts of element</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.2 </span><span class="caption-text">Fig. 1: Assignment of pre-defined sections to integration points at different parts of element</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>PYTHON ELEMENT COMMAND</strong></p>
 <p>For both 2D and 3D problems:</p>
@@ -447,7 +449,7 @@
 <p class="admonition-title"><strong>TCL EXAMPLE</strong></p>
 <p>The element command for the GI element simulating the RC beam in Fig. 2, assuming L = <strong>5</strong>, λ1 = <strong>0.2</strong>, λ2 = <strong>0.3</strong>, and lc = <strong>0.5</strong>, while the tag for the predefined coordinate-transformation object is <strong>20</strong>, may take the form below:</p>
 <blockquote>
-<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span> gradientInelasticBeamColumn <span class="mi">10</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">21</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mf">0.2</span> <span class="mf">0.3</span> <span class="mf">0.5</span> <span class="mi">20</span> <span class="o">-</span>integration Simpson <span class="o">-</span>iter <span class="mi">20</span> <span class="mi">1</span>E-8 <span class="mi">1</span>E-6<span class="k">;</span>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span><span class="w"> </span>gradientInelasticBeamColumn<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">-</span>integration<span class="w"> </span>Simpson<span class="w"> </span><span class="o">-</span>iter<span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="mi">1</span>E-8<span class="w"> </span><span class="mi">1</span>E-6<span class="k">;</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -460,7 +462,7 @@
 </ul>
 <div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../../../../_images/GI_Fig2.png"><img alt="../../../../_images/GI_Fig2.png" src="../../../../_images/GI_Fig2.png" style="width: 984.8000000000001px; height: 412.8px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.8.3 </span><span class="caption-text">Fig. 2:  GI element application example</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.3 </span><span class="caption-text">Fig. 2:  GI element application example</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-python-example admonition">
 <p class="admonition-title"><strong>PYTHON EXAMPLE</strong></p>

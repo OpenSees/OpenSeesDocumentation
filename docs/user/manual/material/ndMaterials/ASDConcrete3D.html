@@ -239,7 +239,7 @@
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">&lt;-crackPlanes</span> <span class="pre">$nct</span> <span class="pre">$ncc</span> <span class="pre">$smoothingAngle&gt;</span></span></dt>
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">&lt;-eta</span> <span class="pre">$eta&gt;</span> <span class="pre">&lt;-tangent&gt;</span> <span class="pre">&lt;-autoRegularization&gt;</span></span></dt>
+<span class="sig-name descname"><span class="pre">&lt;-eta</span> <span class="pre">$eta&gt;</span> <span class="pre">&lt;-tangent&gt;</span> <span class="pre">&lt;-autoRegularization</span> <span class="pre">$lch_ref&gt;</span> <span class="pre">&lt;-Kc</span> <span class="pre">$Kc&gt;</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -263,57 +263,72 @@
 <td><p>2 <em>float</em></p></td>
 <td><p>Mandatory. Young’s modulus and Poisson’s ratio.</p></td>
 </tr>
-<tr class="row-even"><td><p>-Te $Te</p></td>
-<td><p><em>string</em> + <em>list</em></p></td>
-<td><p>Mandatory. <strong>-Te</strong>: A keyword that preceds the list. <strong>$Te</strong>: A list of total-strain values for the tensile hardening-softening law.</p></td>
+<tr class="row-even"><td><p>-rho $rho</p></td>
+<td><p><em>string</em> + <em>float</em></p></td>
+<td><p>Optional. <strong>-rho</strong>: A keyword that precedes the float. <strong>$rho</strong>: The mass density.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-Ts $Ts</p></td>
+<tr class="row-odd"><td><p>-Te $Te</p></td>
 <td><p><em>string</em> + <em>list</em></p></td>
-<td><p>Mandatory. <strong>-Ts</strong>: A keyword that preceds the list. <strong>$Ts</strong>: A list of stress values for the tensile hardening-softening law.</p></td>
+<td><p>Mandatory. <strong>-Te</strong>: A keyword that precedes the list. <strong>$Te</strong>: A list of total-strain values for the tensile hardening-softening law.</p></td>
 </tr>
-<tr class="row-even"><td><p>-Td $Td</p></td>
+<tr class="row-even"><td><p>-Ts $Ts</p></td>
 <td><p><em>string</em> + <em>list</em></p></td>
-<td><p>Optional. <strong>-Td</strong>: A keyword that preceds the list. <strong>$Td</strong>: A list of damage values for the tensile hardening-softening law. If not defined, no stiffness degradation will be considered.</p></td>
+<td><p>Mandatory. <strong>-Ts</strong>: A keyword that precedes the list. <strong>$Ts</strong>: A list of stress values for the tensile hardening-softening law.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-Ce $Ce</p></td>
+<tr class="row-odd"><td><p>-Td $Td</p></td>
 <td><p><em>string</em> + <em>list</em></p></td>
-<td><p>Mandatory. <strong>-Ce</strong>: A keyword that preceds the list. <strong>$Ce</strong>: A list of total-strain values for the compressive hardening-softening law.</p></td>
+<td><p>Optional. <strong>-Td</strong>: A keyword that precedes the list. <strong>$Td</strong>: A list of damage values for the tensile hardening-softening law. If not defined, no stiffness degradation will be considered.</p></td>
 </tr>
-<tr class="row-even"><td><p>-Cs $Cs</p></td>
+<tr class="row-even"><td><p>-Ce $Ce</p></td>
 <td><p><em>string</em> + <em>list</em></p></td>
-<td><p>Mandatory. <strong>-Cs</strong>: A keyword that preceds the list. <strong>$Cs</strong>: A list of stress values for the compressive hardening-softening law.</p></td>
+<td><p>Mandatory. <strong>-Ce</strong>: A keyword that precedes the list. <strong>$Ce</strong>: A list of total-strain values for the compressive hardening-softening law.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-Cd $Cd</p></td>
+<tr class="row-odd"><td><p>-Cs $Cs</p></td>
 <td><p><em>string</em> + <em>list</em></p></td>
-<td><p>Optional. <strong>-Cd</strong>: A keyword that preceds the list. <strong>$Cd</strong>: A list of damage values for the compressive hardening-softening law. If not defined, no stiffness degradation will be considered.</p></td>
+<td><p>Mandatory. <strong>-Cs</strong>: A keyword that precedes the list. <strong>$Cs</strong>: A list of stress values for the compressive hardening-softening law.</p></td>
 </tr>
-<tr class="row-even"><td><p>-implex</p></td>
+<tr class="row-even"><td><p>-Cd $Cd</p></td>
+<td><p><em>string</em> + <em>list</em></p></td>
+<td><p>Optional. <strong>-Cd</strong>: A keyword that precedes the list. <strong>$Cd</strong>: A list of damage values for the compressive hardening-softening law. If not defined, no stiffness degradation will be considered.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-implex</p></td>
 <td><p><em>string</em></p></td>
 <td><p>Optional. If defined, the IMPL-EX integration will be used, otherwise the standard implicit integration will be used (default).</p></td>
 </tr>
-<tr class="row-odd"><td><p>-implexControl $implexErrorTolerance $implexTimeReductionLimit</p></td>
+<tr class="row-even"><td><p>-implexControl $implexErrorTolerance $implexTimeReductionLimit</p></td>
 <td><p><em>string</em> + 2 <em>float</em></p></td>
 <td><p>Optional. <strong>-implexControl</strong>: Activates the control of the IMPL-EX error. <strong>implexErrorTolerance</strong>: Relative error tolerance. <strong>implexTimeReductionLimit</strong>: Minimum allowed relative reduction of the time-step. If the error introduced by the IMPL-EX algorithm is larger than <strong>implexErrorTolerance</strong> , the material will fail during the computation. The user can therfore use an adaptive time-step to reduce the time-step to keep the error under control. If the reduction of the time-step is smaller than <strong>implexTimeReductionLimit</strong> , the error control will be skipped. Suggested values: -implexControl 0.05 0.01.</p></td>
 </tr>
-<tr class="row-even"><td><p>-implexAlpha $alpha</p></td>
+<tr class="row-odd"><td><p>-implexAlpha $alpha</p></td>
 <td><p><em>string</em> + <em>float</em></p></td>
 <td><p>Optional. Default = 1. The <span class="math notranslate nohighlight">\(\alpha\)</span> coefficient for the explicit extrapolation of the internal variables in the IMPL-EX algorithm. It can range from 0 to 1.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-crackPlanes $nct $ncc $smoothingAngle</p></td>
+<tr class="row-even"><td><p>-crackPlanes $nct $ncc $smoothingAngle</p></td>
 <td><p><em>string</em> + 2 <em>integer</em> + <em>float</em></p></td>
 <td><p>Optional. If defined, it activates the anisotropy of internal variables. Tensile internal variables are stored on crack-planes that are equally spaced every <span class="math notranslate nohighlight">\(90/nc_t\)</span> degrees. Compressive internal variables are stored on crack-planes that are equally spaced every <span class="math notranslate nohighlight">\(90/nc_c\)</span> degrees. The active crack-plane is chosen based on the current principal stress directions. <strong>smoothingAngle</strong>: Angle in degrees used to smooth the internal variables on crack-planes around the active crack-plane. Suggested values: -crackPlanes 4 4 45.0</p></td>
 </tr>
-<tr class="row-even"><td><p>-eta $eta</p></td>
+<tr class="row-odd"><td><p>-eta $eta</p></td>
 <td><p><em>string</em> + <em>float</em></p></td>
 <td><p>Optional. If defined, the rate-dependent model is used (By default the model is rate-independent). <strong>-eta</strong>: Activates the rate-dependent model. <strong>eta</strong>: The viscosity parameter <span class="math notranslate nohighlight">\(\eta\)</span>, representing the relaxation time of the viscoplastic system.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-tangent</p></td>
+<tr class="row-even"><td><p>-tangent</p></td>
 <td><p><em>string</em></p></td>
 <td><p>Optional. If defined, the tangent constitutive matrix is used. By default, the secant stiffness is used.</p></td>
 </tr>
-<tr class="row-even"><td><p>-autoRegularization</p></td>
-<td><p><em>string</em></p></td>
-<td><p>Optional. If defined, and if the tensile and/or the compressive hardening-softening law has strain-softening, the area under the hardening-softening law is assumed to be a real fracture energy (<span class="math notranslate nohighlight">\(G_f\)</span> with dimension = <span class="math notranslate nohighlight">\(F/L\)</span>), and the specific fracture energy <span class="math notranslate nohighlight">\(g_f\)</span> (with dimension = <span class="math notranslate nohighlight">\(F/L^2\)</span>) is automatically computed as <span class="math notranslate nohighlight">\(g_f=G_f/l_{ch}\)</span>, where <span class="math notranslate nohighlight">\(l_{ch}\)</span> is the characteristic length of the Finite Element.</p></td>
+<tr class="row-odd"><td><p>-autoRegularization $lch_ref</p></td>
+<td><p><em>string</em> + <em>float</em></p></td>
+<td><p>Optional. If defined, and if the tensile and/or the compressive hardening-softening law has strain-softening, the area under the hardening-softening law is assumed to be a real fracture energy (<span class="math notranslate nohighlight">\(G_f\)</span> with dimension = <span class="math notranslate nohighlight">\(F/L\)</span>), and the specific fracture energy <span class="math notranslate nohighlight">\(g_f\)</span> (with dimension = <span class="math notranslate nohighlight">\(F/L^2\)</span>) is automatically computed as <span class="math notranslate nohighlight">\(g_f=G_f/l_{ch}\)</span>, where <span class="math notranslate nohighlight">\(l_{ch}\)</span> is the characteristic length of the Finite Element. In this case $lch_ref is 1. If, instead, the area is a specific fracture energy (<span class="math notranslate nohighlight">\(g_{f,ref}\)</span> with dimension = <span class="math notranslate nohighlight">\(F/L^2\)</span>), $lch_ref should be set equal to the experimental size used to obtain the strain from the displacement jump. In this case, the regularization will be performed as <span class="math notranslate nohighlight">\(g_f=G_f/l_{ch} = g_{f,ref}*l_{ch,ref}/l_{ch}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>-Kc $Kc</p></td>
+<td><p><em>string</em> + <em>float</em></p></td>
+<td><div class="line-block">
+<div class="line">Optional. <strong>-Kc</strong>: A keyword that precedes the float. <strong>$Kc</strong>: A coefficient that defines the shape of the failure surface in triaxial compression. It must be <span class="math notranslate nohighlight">\(1/2 &lt; K_c &lt;= 1\)</span>, default = <span class="math notranslate nohighlight">\(2/3\)</span>. The lower <span class="math notranslate nohighlight">\(K_c\)</span>, the stronger is the material in triaxial compression:</div>
+</div>
+<div class="align-center figure" id="id2">
+<img alt="../../../../_images/ASDConcrete3D_Kc.png" src="../../../../_images/ASDConcrete3D_Kc.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.6.2 </span><span class="caption-text">Effect of <span class="math notranslate nohighlight">\(K_c\)</span> on the triaxial-compression part of the failure surface.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -338,7 +353,7 @@
 <div class="math notranslate nohighlight">
 \[\tilde{\tau}^- = f\left(\tilde{\sigma}^{-} \right) = \left [\frac{1}{1-\alpha}\left(\alpha\tilde{I}_1+\sqrt[]{3\tilde{J}_2}+\gamma\langle -\tilde{\sigma}_{max} \rangle \right ) \right ]\]</div>
 <div class="line-block">
-<div class="line">where <span class="math notranslate nohighlight">\(\tilde{I}_1\)</span> is the first invariant of <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>), <span class="math notranslate nohighlight">\(\tilde{J}_2\)</span> is the second invariant of the deviator of <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>), <span class="math notranslate nohighlight">\(\sigma_{max}\)</span> is the maximum principal stress of <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>), <span class="math notranslate nohighlight">\(\alpha = 4/33\)</span>, <span class="math notranslate nohighlight">\(\beta = 23/3\)</span>, <span class="math notranslate nohighlight">\(\phi = 10\)</span>, <span class="math notranslate nohighlight">\(\gamma=3\)</span>.</div>
+<div class="line">where <span class="math notranslate nohighlight">\(\tilde{I}_1\)</span> is the first invariant of <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>), <span class="math notranslate nohighlight">\(\tilde{J}_2\)</span> is the second invariant of the deviator of <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>), <span class="math notranslate nohighlight">\(\sigma_{max}\)</span> is the maximum principal stress of <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> (or <span class="math notranslate nohighlight">\(\tilde{\sigma}^{-}\)</span>), <span class="math notranslate nohighlight">\(\alpha = 4/33\)</span>, <span class="math notranslate nohighlight">\(\beta = 23/3\)</span>, <span class="math notranslate nohighlight">\(\phi = 10\)</span>, <span class="math notranslate nohighlight">\(\gamma= 3(1 - K_c) / (2 K_c - 1)\)</span>.</div>
 </div>
 <div class="line-block">
 <div class="line">The equivalent stress measures <span class="math notranslate nohighlight">\(\tilde{\tau}^+\)</span> and <span class="math notranslate nohighlight">\(\tilde{\tau}^-\)</span> are converted into their trial total-strain counter-parts <span class="math notranslate nohighlight">\(\tilde{x}^+\)</span> and <span class="math notranslate nohighlight">\(\tilde{x}^-\)</span> accounting for the equivalent plastic strain from the previous step:</div>
@@ -357,9 +372,9 @@
 \[\begin{align} \bar{\sigma}^+ = \left (1-d^{+}_{pl}\right ) \tilde{\sigma}^+, &amp;&amp; \bar{\sigma}^- = \left (1-d^{-}_{pl}\right ) \tilde{\sigma}^-, &amp;&amp; \bar{\sigma} = \bar{\sigma}^+ + \bar{\sigma}^- \end{align}\]</div>
 <div class="math notranslate nohighlight">
 \[\sigma = \left (1-d^{+}_{cr}\right ) \bar{\sigma}^+ + \left (1-d^{-}_{cr}\right ) \bar{\sigma}^-\]</div>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id3">
 <img alt="../../../../_images/ASDConcrete3D_Theory_01.png" src="../../../../_images/ASDConcrete3D_Theory_01.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.6.2 </span><span class="caption-text">A schematic representation of the elastic predictor followed by the plastic and damage correctors in a representative uniaxial case.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.6.3 </span><span class="caption-text">A schematic representation of the elastic predictor followed by the plastic and damage correctors in a representative uniaxial case.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="usage-notes">

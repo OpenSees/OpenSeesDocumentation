@@ -250,11 +250,11 @@
 <p class="admonition-title">Warning</p>
 <p>At the moment, eleLoads do not work with 3D beam-column elements if Corotational geometric transformation is used.</p>
 </div>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> width <span class="mf">20.0</span>
-<span class="k">set</span> W <span class="mf">4000.0</span><span class="k">;</span>
-<span class="nv">timeSeries</span> Linear <span class="mi">1</span>
-<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
-    <span class="nv">eleLoad</span> <span class="o">-</span>ele <span class="mi">3</span> <span class="o">-</span>type <span class="o">-</span>beamUniform <span class="k">[expr</span> <span class="o">-</span><span class="nv">$W</span><span class="o">/</span><span class="nv">$width</span><span class="k">]</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span>width<span class="w"> </span><span class="mf">20.0</span>
+<span class="k">set</span><span class="w"> </span>W<span class="w"> </span><span class="mf">4000.0</span><span class="k">;</span>
+<span class="nv">timeSeries</span><span class="w"> </span>Linear<span class="w"> </span><span class="mi">1</span>
+<span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">{</span>
+<span class="w">    </span><span class="nv">eleLoad</span><span class="w"> </span><span class="o">-</span>ele<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>type<span class="w"> </span><span class="o">-</span>beamUniform<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$W</span><span class="o">/</span><span class="nv">$width</span><span class="k">]</span>
 <span class="k">}</span>
 </pre></div>
 </div>

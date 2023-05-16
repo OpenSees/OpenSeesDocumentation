@@ -337,61 +337,61 @@ Imposing the constraint in <a class="reference internal" href="#equation-eq-2">(
 </ol>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># the 2D model</span>
 <span class="nv">wipe</span>
-<span class="nv">model</span> basic <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
+<span class="nv">model</span><span class="w"> </span>basic<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">2</span>
 
 <span class="c"># 2 young&#39;s moduli</span>
-<span class="k">set</span> E1 <span class="mf">30000.0</span>
-<span class="k">set</span> E2 <span class="k">[expr</span> <span class="nv">$E1</span><span class="o">*</span><span class="mf">0.5</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>E1<span class="w"> </span><span class="mf">30000.0</span>
+<span class="k">set</span><span class="w"> </span>E2<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$E1</span><span class="o">*</span><span class="mf">0.5</span><span class="k">]</span>
 
 <span class="c"># 2 elastic materials</span>
-<span class="nv">nDMaterial</span> ElasticIsotropic <span class="mi">1</span> <span class="nv">$E1</span> <span class="mf">0.2</span>
-<span class="nv">nDMaterial</span> ElasticIsotropic <span class="mi">2</span> <span class="nv">$E2</span> <span class="mf">0.2</span>
+<span class="nv">nDMaterial</span><span class="w"> </span>ElasticIsotropic<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$E1</span><span class="w"> </span><span class="mf">0.2</span>
+<span class="nv">nDMaterial</span><span class="w"> </span>ElasticIsotropic<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nv">$E2</span><span class="w"> </span><span class="mf">0.2</span>
 
 <span class="c"># the Series3D wrapper using all weights = 1</span>
-<span class="nv">nDMaterial</span> Series3D <span class="mi">3</span>   <span class="mi">1</span> <span class="mi">2</span>
+<span class="nv">nDMaterial</span><span class="w"> </span>Series3D<span class="w"> </span><span class="mi">3</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span>
 
 <span class="c"># a triangle</span>
-<span class="nv">node</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">1</span>
-<span class="nv">nDMaterial</span> PlaneStress <span class="mi">100</span> <span class="mi">3</span>
-<span class="nv">element</span> tri31 <span class="mi">1</span>   <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>   <span class="mf">1.0</span> <span class="s2">&quot;PlaneStress&quot;</span> <span class="mi">100</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">nDMaterial</span><span class="w"> </span>PlaneStress<span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="mi">3</span>
+<span class="nv">element</span><span class="w"> </span>tri31<span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w">   </span><span class="mf">1.0</span><span class="w"> </span><span class="s2">&quot;PlaneStress&quot;</span><span class="w"> </span><span class="mi">100</span>
 
 <span class="c"># fixity</span>
-<span class="nv">fix</span> <span class="mi">1</span>   <span class="mi">1</span> <span class="mi">1</span>
-<span class="nv">fix</span> <span class="mi">2</span>   <span class="mi">0</span> <span class="mi">1</span>
-<span class="nv">fix</span> <span class="mi">3</span>   <span class="mi">1</span> <span class="mi">0</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">3</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
 
 <span class="c"># a simple ramp</span>
-<span class="nv">timeSeries</span> Linear <span class="mi">1</span>
+<span class="nv">timeSeries</span><span class="w"> </span>Linear<span class="w"> </span><span class="mi">1</span>
 
 <span class="c"># imposed macroscopic strain in XX component</span>
-<span class="k">set</span> em <span class="mf">0.01</span>
-<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
-  <span class="nv">sp</span> <span class="mi">2</span> <span class="mi">1</span>   <span class="nv">$em</span>
+<span class="k">set</span><span class="w"> </span>em<span class="w"> </span><span class="mf">0.01</span>
+<span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">{</span>
+<span class="w">  </span><span class="nv">sp</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="nv">$em</span>
 <span class="k">}</span>
 
 <span class="c"># solve</span>
-<span class="nv">constraints</span> Transformation
-<span class="nv">numberer</span> Plain
-<span class="nv">system</span> FullGeneral
-<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-6 <span class="mi">10</span> <span class="mi">0</span>
-<span class="nv">algorithm</span> Newton
-<span class="nv">integrator</span> LoadControl <span class="mf">1.0</span>
-<span class="nv">analysis</span> Static
-<span class="nv">analyze</span> <span class="mi">1</span>
+<span class="nv">constraints</span><span class="w"> </span>Transformation
+<span class="nv">numberer</span><span class="w"> </span>Plain
+<span class="nv">system</span><span class="w"> </span>FullGeneral
+<span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-6<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">algorithm</span><span class="w"> </span>Newton
+<span class="nv">integrator</span><span class="w"> </span>LoadControl<span class="w"> </span><span class="mf">1.0</span>
+<span class="nv">analysis</span><span class="w"> </span>Static
+<span class="nv">analyze</span><span class="w"> </span><span class="mi">1</span>
 
 <span class="c"># check responses</span>
-<span class="nb">puts</span> <span class="s2">&quot;Checking responses&quot;</span>
-<span class="k">set</span> Sm <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> material <span class="mi">1</span> stress<span class="k">]</span> <span class="mi">0</span><span class="k">]]</span>
-<span class="k">set</span> S1 <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> material <span class="mi">1</span> material <span class="mi">1</span> stress<span class="k">]</span> <span class="mi">0</span><span class="k">]]</span>
-<span class="k">set</span> S2 <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> material <span class="mi">1</span> material <span class="mi">2</span> stress<span class="k">]</span> <span class="mi">0</span><span class="k">]]</span>
-<span class="k">set</span> SmHom <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> material <span class="mi">1</span> homogenized stress<span class="k">]</span> <span class="mi">0</span><span class="k">]]</span>
-<span class="nb">puts</span> <span class="s2">&quot;Sm = S1 = S2 = SmHom -&gt; [format {%6.3f = %6.3f = %6.3f = %6.3f} $Sm $S1 $S2 $SmHom] (stresses are equal)&quot;</span>
-<span class="k">set</span> Em <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> material <span class="mi">1</span> strain<span class="k">]</span> <span class="mi">0</span><span class="k">]]</span>
-<span class="k">set</span> E1 <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> material <span class="mi">1</span> material <span class="mi">1</span> strain<span class="k">]</span> <span class="mi">0</span><span class="k">]]</span>
-<span class="k">set</span> E2 <span class="k">[expr</span> <span class="k">[</span><span class="nb">lindex</span> <span class="k">[</span><span class="nv">eleResponse</span> <span class="mi">1</span> material <span class="mi">1</span> material <span class="mi">2</span> strain<span class="k">]</span> <span class="mi">0</span><span class="k">]]</span>
-<span class="nb">puts</span> <span class="s2">&quot;Em = E1 + E2 -&gt; [format {%6.5f = %6.5f + %6.5f} $Em $E1 $E2] (strains are additive since w1=w2=1)&quot;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Checking responses&quot;</span>
+<span class="k">set</span><span class="w"> </span>Sm<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="k">[</span><span class="nv">eleResponse</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">1</span><span class="w"> </span>stress<span class="k">]</span><span class="w"> </span><span class="mi">0</span><span class="k">]]</span>
+<span class="k">set</span><span class="w"> </span>S1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="k">[</span><span class="nv">eleResponse</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">1</span><span class="w"> </span>stress<span class="k">]</span><span class="w"> </span><span class="mi">0</span><span class="k">]]</span>
+<span class="k">set</span><span class="w"> </span>S2<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="k">[</span><span class="nv">eleResponse</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">2</span><span class="w"> </span>stress<span class="k">]</span><span class="w"> </span><span class="mi">0</span><span class="k">]]</span>
+<span class="k">set</span><span class="w"> </span>SmHom<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="k">[</span><span class="nv">eleResponse</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">1</span><span class="w"> </span>homogenized<span class="w"> </span>stress<span class="k">]</span><span class="w"> </span><span class="mi">0</span><span class="k">]]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Sm = S1 = S2 = SmHom -&gt; [format {%6.3f = %6.3f = %6.3f = %6.3f} $Sm $S1 $S2 $SmHom] (stresses are equal)&quot;</span>
+<span class="k">set</span><span class="w"> </span>Em<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="k">[</span><span class="nv">eleResponse</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">1</span><span class="w"> </span>strain<span class="k">]</span><span class="w"> </span><span class="mi">0</span><span class="k">]]</span>
+<span class="k">set</span><span class="w"> </span>E1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="k">[</span><span class="nv">eleResponse</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">1</span><span class="w"> </span>strain<span class="k">]</span><span class="w"> </span><span class="mi">0</span><span class="k">]]</span>
+<span class="k">set</span><span class="w"> </span>E2<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="k">[</span><span class="nv">eleResponse</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">1</span><span class="w"> </span>material<span class="w"> </span><span class="mi">2</span><span class="w"> </span>strain<span class="k">]</span><span class="w"> </span><span class="mi">0</span><span class="k">]]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Em = E1 + E2 -&gt; [format {%6.5f = %6.5f + %6.5f} $Em $E1 $E2] (strains are additive since w1=w2=1)&quot;</span>
 </pre></div>
 </div>
 </div>

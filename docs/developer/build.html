@@ -245,7 +245,7 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 <span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">Darith</span><span class="o">=</span><span class="n">d</span> <span class="o">-</span><span class="n">DCMAKE_MSVC_RUNTIME_LIBRARY</span><span class="o">=</span><span class="s2">&quot;MultiThreaded&quot;</span> <span class="o">-</span><span class="n">G</span> <span class="n">Ninja</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span> <span class="o">--</span><span class="n">parallel</span> <span class="mi">4</span>
 <span class="n">cd</span> <span class="o">..</span>\<span class="o">..</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">conan</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">conan</span><span class="o">==</span><span class="mf">1.59.0</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -455,7 +455,7 @@ mv ./lib/OpenSeesPy.dylib ./lib/opensees.so
 <span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">hdf5</span>
 <span class="n">make</span>
 <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
-<span class="n">pip3</span> <span class="n">install</span> <span class="n">conan</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">conan</span><span class="o">==</span><span class="mf">1.59.0</span>
 </pre></div>
 </div>
 </li>

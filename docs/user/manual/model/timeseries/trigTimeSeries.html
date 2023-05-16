@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.9.3. Trig TimeSeries &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.10.3. Trig TimeSeries &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.9.4. Triangular TimeSeries" href="triangleTimeSeries.html" />
-    <link rel="prev" title="3.1.9.2. Linear TimeSeries" href="linearTimeSeries.html" /> 
+    <link rel="next" title="3.1.10.4. Triangular TimeSeries" href="triangleTimeSeries.html" />
+    <link rel="prev" title="3.1.10.2. Linear TimeSeries" href="linearTimeSeries.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -105,19 +105,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../element.html">3.1.8. Element Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../timeSeries.html">3.1.9. Time Series Command</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="constantTimeSeries.html">3.1.9.1. Constant TimeSeries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="linearTimeSeries.html">3.1.9.2. Linear TimeSeries</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.9.3. Trig TimeSeries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="triangleTimeSeries.html">3.1.9.4. Triangular TimeSeries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rectangularTimeSeries.html">3.1.9.5. Rectangular Time Series</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pulseTimeSeries.html">3.1.9.6. Pulse TimeSeries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pathTimeSeries.html">3.1.9.7. Path TimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="constantTimeSeries.html">3.1.10.1. Constant TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="linearTimeSeries.html">3.1.10.2. Linear TimeSeries</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.10.3. Trig TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="triangleTimeSeries.html">3.1.10.4. Triangular TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rectangularTimeSeries.html">3.1.10.5. Rectangular Time Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pulseTimeSeries.html">3.1.10.6. Pulse TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathTimeSeries.html">3.1.10.7. Path TimeSeries</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.10. Pattern Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.11. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
@@ -189,9 +190,9 @@
         
           <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-          <li><a href="../timeSeries.html"><span class="section-number">3.1.9. </span>Time Series Command</a> &raquo;</li>
+          <li><a href="../timeSeries.html"><span class="section-number">3.1.10. </span>Time Series Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.9.3. </span>Trig TimeSeries</li>
+      <li><span class="section-number">3.1.10.3. </span>Trig TimeSeries</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,14 +212,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="trig-timeseries">
-<h1><span class="section-number">3.1.9.3. </span>Trig TimeSeries<a class="headerlink" href="#trig-timeseries" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1.10.3. </span>Trig TimeSeries<a class="headerlink" href="#trig-timeseries" title="Permalink to this headline">¶</a></h1>
 <p>This command is used to construct a TimeSeries object in which the load factor is some trigonometric function of the time in the domain <span class="math notranslate nohighlight">\(\lambda = f(t) = \begin{cases}
 \text{cFactor} * sin (\frac{2.0 \Pi (t-tStart)}{\text{period}} + \text{shift}), &amp;\text{tStart} &lt;= t &lt;= \text{tFinish}\\
 \text{0.0}, &amp;\text{otherwise}\\
 \end{cases}\)</span></p>
 <div class="align-center figure" id="id1">
 <img alt="user/manual/model/timeseries/figures/TrigTimeSeries.gif" src="user/manual/model/timeseries/figures/TrigTimeSeries.gif" />
-<p class="caption"><span class="caption-number">Fig. 3.1.9.3 </span><span class="caption-text">Trigonometric Time Series</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.10.3 </span><span class="caption-text">Trigonometric Time Series</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="py function">
 <dt class="sig sig-object py">
