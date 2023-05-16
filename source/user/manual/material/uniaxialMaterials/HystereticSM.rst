@@ -66,10 +66,10 @@ The following input format is compatible with Hysteretic material. Note that in 
      - power used to determine the degraded unloading stiffness based on ductility, mu-beta (optional, default=0.0)
    * - $degEnvP
      - |float|
-     - envelope-degredation factor. This factor works with the damage parameters to degrade the POSITIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=0.0)-- this option will be available soon
+     - envelope-degredation factor. This factor works with the damage parameters to degrade the POSITIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=0.0)
    * - $degEnvN
      - |float|
-     - envelope-degredation factor. This factor works with the damage parameters to degrade the NEGATIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=degEnvP, if defined, =0. otherwise)-- this option will be available soon
+     - envelope-degredation factor. This factor works with the damage parameters to degrade the NEGATIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=degEnvP, if defined, =0. otherwise)
    * - ($lsD1,$lsD2..)
      - |float|
      - list of user-defined strain/deformation limits for computing deformation DCRs (optional) 
