@@ -47,7 +47,7 @@ Theory
     * **D**: The Lysmer-Kuhlemeyer dashpots, required to absorb outgoing waves.
     * **T**: The boundary tractions transferred from the Free-Field to the Soil domain, required to impose the free-field solution to the boundaries of the main model.
 
-.. figure:: ASD_Absorbing/ASDAbsorbingBoundary_Theory.png
+.. figure:: figures/ASD_Absorbing/ASDAbsorbingBoundary_Theory.png
    :align: center
    :figclass: align-center
 
@@ -60,7 +60,7 @@ Usage Notes
 
    The element should have the standard node-numbering to ensure a proper positive jacobian.
    
-   .. figure:: ASD_Absorbing/ASDAbsorbingBoundary_Mesh.png
+   .. figure:: figures/ASD_Absorbing/ASDAbsorbingBoundary_Mesh.png
       :align: center
       :figclass: align-center
       
@@ -80,7 +80,7 @@ Usage Notes
    | For a 2D problem you can have the following valid combinations: **B**, **L**, **R**, **BL**, **BR**
    | For a 3D problem you can have the following valid combinations: **B**, **L**, **R**, **F**, **K**, **BL**, **BR**, **BF**, **BK**, **LF**, **LK**, **RF**, **RK**, **BLF**, **BLK**, **BRF**, **BRK**
 
-   .. figure:: ASD_Absorbing/ASDAbsorbingBoundary_btype.png
+   .. figure:: figures/ASD_Absorbing/ASDAbsorbingBoundary_btype.png
       :align: center
       :figclass: align-center
       
@@ -100,7 +100,7 @@ Usage Notes
    * The bottom side of the main model should have an outward normal vector that points in the negative global Z direction.
    * In 3D models the sides L (left),R (right),F (front) and K (back) may have some natural distortion due to the topography. This is supported by the boundary element, but when the distortion along the Z direction is too large, the results can slightly deteriorate.
    
-   .. figure:: ASD_Absorbing/ASDAbsorbingBoundary_distortion.png
+   .. figure:: figures/ASD_Absorbing/ASDAbsorbingBoundary_distortion.png
       :align: center
       :figclass: align-center
       
@@ -115,7 +115,7 @@ Usage Notes
    | This is the expected output: The blue line is the acceleration recorded at the base of the model. Point **A** and **B** represent respectively the wave entering the domain and the same wave exiting the domain after being reflected
      by the free surface. Their peak value should be exactly 1g. The purple line is the acceleration recorded at the top of the model (on the free surface). Point **C** represents the wave hitting the free-surface. Its peak value should be exactly 2g.
 
-   .. figure:: ASD_Absorbing/ASDAbsorbingBoundary_result.png
+   .. figure:: figures/ASD_Absorbing/ASDAbsorbingBoundary_result.png
       :align: center
       :figclass: align-center
 

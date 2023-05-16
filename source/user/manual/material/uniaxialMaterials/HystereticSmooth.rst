@@ -1,7 +1,7 @@
 .. _HystereticSmooth:
 
-HystereticSmooth Material
-^^^^^^^^^^^^^^^^^^
+HystereticSmooth Material (Smooth hysteretic material)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct the uniaxial HystereticSmooth material producing smooth hysteretic loops with hardening-softening behavior. It implements the "Exponential Material" formulated by Vaiana et al. [VaianaEtAl2018]_ based on an exponential formulation of the tangent stiffness.
 
