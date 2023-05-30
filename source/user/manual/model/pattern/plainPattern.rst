@@ -18,10 +18,11 @@ This command allows the user to construct a LoadPattern object. Each plain load 
 
 .. toctree::
    :maxdepth: 1
+   :caption: load commands:
 
-   load
-   eleLoad
-   sp
+   PlainPatternloadcommands/load
+   PlainPatternloadcommands/eleLoad
+   PlainPatternloadcommands/sp
 
 
 .. note::

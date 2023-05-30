@@ -1,7 +1,7 @@
 .. _HystereticAsym:
 
-HystereticAsym Material
-^^^^^^^^^^^^^^^^^^
+HystereticAsym Material (Smooth asymmetric hysteresis)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct the uniaxial HystereticAsym material proposed by Vaiana et al. [VaianaEtAl2021]_. It produces smooth and asymmetric hysteretic loops with hardening-softening behavior.
 
