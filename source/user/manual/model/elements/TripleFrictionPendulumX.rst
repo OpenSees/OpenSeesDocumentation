@@ -31,7 +31,7 @@ In the TripleFrictionPendulumX element, the temperature-dependency of the fricti
    :figclass: align-center
    :width: 700
 
-   Figure 1. Friction Coefficient-Temperature Relationships in TripleFrictionPendulumX element
+   **Figure 1. Friction Coefficient-Temperature Relationships in TripleFrictionPendulumX element**
 
 For more information about the element formulation, please refer to the references at the end of this page.
 
@@ -40,7 +40,7 @@ For more information about the element formulation, please refer to the referenc
    :figclass: align-center
    :width: 700
 
-   Figure 2. Geometry of Triple FP bearing in accordance with OpenSees Commands
+   **Figure 2. Geometry of Triple FP bearing in accordance with OpenSees Commands**
   
 .. admonition:: Command
 
@@ -362,21 +362,21 @@ For more information about the element formulation, please refer to the referenc
    :figclass: align-center
    :width: 700
 
-   Figure 3. Force-displacement loop in Example 3
+   **Figure 3. Force-displacement loop in Example 3**
 
 .. figure:: figures/TripleFrictionPendulumX/FIGURE4.jpg
    :align: center
    :figclass: align-center
    :width: 700
 
-   Figure 4. Displacement histories at sliding surfaces in Example 3
+   **Figure 4. Displacement histories at sliding surfaces in Example 3**
    
 .. figure:: figures/TripleFrictionPendulumX/FIGURE5.jpg
    :align: center
    :figclass: align-center
    :width: 700
 
-   Figure 5. Temperature histories at sliding surfaces in Example 3
+   **Figure 5. Temperature histories at sliding surfaces in Example 3**
 
    
 .. admonition:: Reference
