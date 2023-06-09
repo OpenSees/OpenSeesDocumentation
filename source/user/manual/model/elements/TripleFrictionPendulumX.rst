@@ -1,3 +1,4 @@
+.. _TripleFrictionPendulumX::
 
 TripleFrictionPendulumX Element
 ^^^^^^^^^^^^^^^^
@@ -25,7 +26,7 @@ In the TripleFrictionPendulumX element, the temperature-dependency of the fricti
       k_{T}=0.97((0.7)^{0.029T}+0.22) 　　　　　(6)
 
 
-.. figure:: FIGURE1.jpg
+.. figure:: figures/TripleFrictionPendulumX/FIGURE1.jpg
    :align: center
    :figclass: align-center
    :width: 700
@@ -34,7 +35,7 @@ In the TripleFrictionPendulumX element, the temperature-dependency of the fricti
 
 For more information about the element formulation, please refer to the references at the end of this page.
 
-.. figure:: FIGURE2.jpg
+.. figure:: figures/TripleFrictionPendulumX/FIGURE2.jpg
    :align: center
    :figclass: align-center
    :width: 700
@@ -356,21 +357,21 @@ For more information about the element formulation, please refer to the referenc
       }
 
 
-.. figure:: FIGURE3.jpg
+.. figure:: figures/TripleFrictionPendulumX/FIGURE3.jpg
    :align: center
    :figclass: align-center
    :width: 700
 
    Figure 3. Force-displacement loop in Example 3
 
-.. figure:: FIGURE4.jpg
+.. figure:: figures/TripleFrictionPendulumX/FIGURE4.jpg
    :align: center
    :figclass: align-center
    :width: 700
 
    Figure 4. Displacement histories at sliding surfaces in Example 3
    
-.. figure:: FIGURE5.jpg
+.. figure:: figures/TripleFrictionPendulumX/FIGURE5.jpg
    :align: center
    :figclass: align-center
    :width: 700
