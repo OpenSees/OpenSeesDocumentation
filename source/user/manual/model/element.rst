@@ -146,7 +146,6 @@ The following subsections contain information about **$eleType** and the number 
    elements/HDR
    elements/RJ-Watson EQS Bearing
    elements/FPBearingPTV
-   elements/TripleFrictionPendulumX
 
 
 
