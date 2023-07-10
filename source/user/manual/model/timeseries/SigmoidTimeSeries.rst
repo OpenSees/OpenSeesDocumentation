@@ -1,3 +1,5 @@
+.. _SigSeries:
+
 Sigmoid TimeSeries
 ^^^^^^^^^^^^^^^^^^
 
@@ -6,7 +8,7 @@ This command is used to construct a TimeSeries object in which the load factor i
 \text{cFactor} *\text{1.0}, &\text{otherwise}\\
 \end{cases}`
 
-.. figure:: figures/SigTimeSeries.png
+.. figure:: figures/SigmoidTimeSeries.png
 	:align: center
 	:figclass: align-center
 
@@ -16,18 +18,20 @@ This command is used to construct a TimeSeries object in which the load factor i
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
-   :widths: 10, 10, 62
+   :widths: 10, 10, 40
 
-      $tag, |integer|, unique tag among TimeSeries objects.
-      $tStart, |float|, starting time of non-zero load factor
-      $tEnd, |float|, ending time of non-zero load factor
-      $a, |float|, rate parameter ($a > 0)
-      $b, |float|, shape parameter ($b > 0, ideally $b > 1.0)
-      $cFactor, |float|, the load factor amplification factor (optional: default=1.0)
+      $tag, |integer|,    unique tag among TimeSeries objects.
+      $tStart, |float|,   starting time of non-zero load factor
+      $tEnd, |float|,     ending time of non-zero load factor
+      $a, |float|,        rate parameter ($a > 0)
+      $b, |float|,        shape parameter ($b > 0)
+      $cFactor, |float|,  the load factor amplification factor (optional: default=1.0)
 
 .. admonition:: Example:
 
-   The following code demonstrates how user would create a sigmoid time series with a tag of **1**, has a start time of $tStart = **0.0**, an end time of $tEnd = **10.0**, a value of $a = **0.01**, and a value of $b = **2.5**.
+   The following code demonstrates how user would create a sigmoid time series with a tag of **1**, has a start time of $tStart = **0.0**, an end time of $tEnd = **10.0**, a value of $a = **0.01**, and a value of $b = **2.5**. 
+   
+   * **It is recommended to externally plot your desired ramp function prior to utilizing it in an analysis to ensure the function saturates while t < tEnd** 
 
    1. **Tcl Code**
 
@@ -43,7 +47,7 @@ This command is used to construct a TimeSeries object in which the load factor i
       timSeries('Sigmoid', 1, 0.0, 10.0, 0.01, 2.5)
 
 
-Code Developed by: |cdm|
+Code Developed by: `Codi McKee <mailto:cmckee@tamu.edu/>`_ |mckee107| (Texas A&M University)
 
 
 
