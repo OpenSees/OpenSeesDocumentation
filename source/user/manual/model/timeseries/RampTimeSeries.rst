@@ -35,7 +35,7 @@ The default behavior provides a linear ramp from 0 to 1.0. By providing a smooth
      '-factor', |string|, optional flag to provide scale factor
       $cFactor, |float|,  the load factor scale factor (optional: default = 1.0)
 
-.. admonition:: Example:
+.. admonition:: Example 1:
 
    The following code demonstrates how user would create a ramp time series with a tag of **1**, has a start time of $tStart = **5.0**, an ramp time of $tRamp = **30.0**, a $smoothness value of **0.25**, an $offset of **-1.0**, and a scale factor of $cFactor = **2.0**. 
    
@@ -52,7 +52,34 @@ The default behavior provides a linear ramp from 0 to 1.0. By providing a smooth
 
       timSeries('Ramp', 1, 5.0, 30.0, '-smooth', 0.25, '-offset', -1.0, '-factor', 2.0)
     
-Results in a time series 
+Results in a time series:
+
+.. figure:: figures/RampTimeSeries_2.png
+	:align: center
+	:figclass: align-center
+
+.. admonition:: Example 2:
+
+   The following code demonstrates how user would create a ramp time series with a tag of **2**, has a start time of $tStart = **10.0**, an ramp time of $tRamp = **30.0**, a $smoothness value of **0.1**, an $offset of **2.0**, and a scale factor of $cFactor = **-2.0**. 
+   
+   1. **Tcl Code**
+
+   .. code-block:: none
+
+      timeSeries Ramp 2 10.0 30.0 -smooth 0.1 -offset 2.0 -factor -2.0 
+
+
+   2. **Python Code**
+
+   .. code-block:: python
+
+      timSeries('Ramp', 2, 10.0, 30.0, '-smooth', 0.1, '-offset', 2.0, '-factor', -2.0)
+    
+Results in a time series:
+
+.. figure:: figures/RampTimeSeries_3.png
+	:align: center
+	:figclass: align-center
 
 Code Developed by: `Codi McKee <mailto:cmckee@tamu.edu/>`_ |mckee107| (Texas A&M University)
 
