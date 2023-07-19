@@ -24,7 +24,7 @@ The following subsections contain information about **$type** and the number of 
    timeseries/constantTimeSeries
    timeseries/linearTimeSeries
    timeseries/trigTimeSeries
-   timeseries/SigmoidTimeSeries
+   timeseries/RampTimeSeries
    timeseries/triangleTimeSeries
    timeseries/rectangularTimeSeries
    timeseries/pulseTimeSeries
