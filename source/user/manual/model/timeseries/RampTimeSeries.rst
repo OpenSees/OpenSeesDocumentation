@@ -50,7 +50,7 @@ The default behavior provides a linear ramp from 0 to 1.0. By providing a smooth
 
    .. code-block:: python
 
-      timSeries('Ramp', 1, 5.0, 30.0, '-smooth', 0.25, '-offset', -1.0, '-factor', 2.0)
+      timeSeries('Ramp', 1, 5.0, 30.0, '-smooth', 0.25, '-offset', -1.0, '-factor', 2.0)
     
 Results in a time series:
 
@@ -73,7 +73,7 @@ Results in a time series:
 
    .. code-block:: python
 
-      timSeries('Ramp', 2, 10.0, 30.0, '-smooth', 0.1, '-offset', 2.0, '-factor', -2.0)
+      timeSeries('Ramp', 2, 10.0, 30.0, '-smooth', 0.1, '-offset', 2.0, '-factor', -2.0)
     
 Results in a time series:
 
