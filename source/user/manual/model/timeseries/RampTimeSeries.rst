@@ -37,7 +37,7 @@ The default behavior provides a linear ramp from 0 to 1.0. By providing a smooth
 
 .. admonition:: Example 1:
 
-   The following code demonstrates how user would create a ramp time series with a tag of **1**, has a start time of $tStart = **5.0**, an ramp time of $tRamp = **30.0**, a $smoothness value of **0.25**, an $offset of **-1.0**, and a scale factor of $cFactor = **2.0**. 
+   The following code demonstrates how a user would create a ramp time series with a tag of **1**, has a start time of $tStart = **5.0**, a ramp time of $tRamp = **30.0**, a $smoothness value of **0.25**, an $offset of **-1.0**, and a scale factor of $cFactor = **2.0**. 
    
    1. **Tcl Code**
 
@@ -60,7 +60,7 @@ Results in a time series:
 
 .. admonition:: Example 2:
 
-   The following code demonstrates how user would create a ramp time series with a tag of **2**, has a start time of $tStart = **10.0**, an ramp time of $tRamp = **30.0**, a $smoothness value of **0.1**, an $offset of **2.0**, and a scale factor of $cFactor = **-2.0**. 
+   The following code demonstrates how a user would create a ramp time series with a tag of **2**, has a start time of $tStart = **10.0**, a ramp time of $tRamp = **30.0**, a $smoothness value of **0.1**, an $offset of **2.0**, and a scale factor of $cFactor = **-2.0**. 
    
    1. **Tcl Code**
 
