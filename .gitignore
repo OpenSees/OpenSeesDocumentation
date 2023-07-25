@@ -278,3 +278,4 @@ build/
 __pycache__
 #*#
 build
+*.fig
