@@ -109,6 +109,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/HertzDamp
       uniaxialMaterials/JankowskiImpact
       uniaxialMaterials/ViscoelasticGap
+      uniaxialMaterials/Ratchet
 
 ..    uniaxialMaterials/CastFuse
       uniaxialMaterials/ViscousDamper
