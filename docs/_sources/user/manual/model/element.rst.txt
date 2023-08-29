@@ -62,7 +62,10 @@ The following subsections contain information about **$eleType** and the number 
    elements/gradientInelasticBeamColumn   
    elements/FlexureShearInteractionDisplacementBasedBeamColumnElement
    elements/MVLEM
+   elements/MVLEM_3D
+   elements/SFI_MVLEM
    elements/SFI_MVLEM_3D
+   elements/E_SFI_MVLEM_3D
    elements/dispBeamColumnAsym
    elements/mixedBeamColumnAsym
    elements/E_SFI
