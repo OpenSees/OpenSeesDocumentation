@@ -1,6 +1,6 @@
-.. _SFI_MVLEM_3D::
+.. _E_SFI_MVLEM_3D::
 
-SFI-MVLEM-3D Element
+E-SFI-MVLEM-3D Element
 ^^^^^^^^^^^^^^^^^^^^
 
 | Developed and implemented by: 
@@ -13,7 +13,7 @@ Description
 
 The E-SFI-MVLEM-3D model (Kolozvari et al, 2023) is a three-dimensional four-node element with 24 DOFs that incorporates axial-flexural-shear interaction and can be used for nonlinear analysis of non-rectangular reinforced concrete walls subjected to multidirectional loading. The E-SFI-MVLEM-3D model is derived by combining two previously available models, a two-dimensional `E-SFI <https://github.com/carloslopezolea/E-SFI_Documentation>`_ model, and a three-dimensional `SFI-MVLEM-3D <https://kkolozvari.github.io/SFI-MVLEM-3D/>`_ model. The major enhancement in the model formulation compared to its parent SFI-MVLEM-3D comes from implementing a closed-form solution for calculating horizontal axial strains at fibers of the wall element. This significantly reduced the number of element degrees of freedom, which resulted in analysis run-time that is reduced to approximately 25% and a convergence rate that is increased roughly two times.
 
-For additional information please visit `SFI-MVLEM-3D GitHub Page <https://kkolozvari.github.io/E-SFI-MVLEM-3D/>`_.
+For additional information please visit `E-SFI-MVLEM-3D GitHub Page <https://kkolozvari.github.io/E-SFI-MVLEM-3D/>`_.
 
 This element shall be used in Domain defined with **-ndm 3 -ndf 6**.
 
@@ -42,7 +42,7 @@ Input Parameters
 Recorders
 #########
 
-The following recorders are available with the SFI-MVLEM-3D element.
+The following recorders are available with the E-SFI-MVLEM-3D element.
 
 .. csv-table:: 
    :header: "Recorder", "Description"
