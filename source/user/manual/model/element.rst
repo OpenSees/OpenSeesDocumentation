@@ -185,7 +185,14 @@ The following subsections contain information about **$eleType** and the number 
 
    elements/CatenaryCableElement
 
-14. Misc.
+14. Absorbing Elements
+
+.. toctree::
+   :maxdepth: 1   
+
+   elements/PML
+
+15. Misc.
 
 .. toctree::
    :maxdepth: 1   
