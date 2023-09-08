@@ -9,7 +9,7 @@ Implementation details for these elements can be found in:
 
 W. Zhang, E. Esmaeilzadeh Seylabi, E. Taciroglu,(2019), An ABAQUS toolbox for soil-structure interaction analysis, Computers and Geotechnics, Volume 114, 2019, https://doi.org/10.1016/j.compgeo.2019.103143.
 
-..A. Trono, (2023) Interaccion dinamica suelo-estructura considerando ondas sismicas inclinadas y superficiales, PhD Dissertation, 2023, Universidad Nacional de Cordoba, Cordoba, Argentina..
+.. A. Trono, (2023) Interaccion dinamica suelo-estructura considerando ondas sismicas inclinadas y superficiales, PhD Dissertation, 2023, Universidad Nacional de Cordoba, Cordoba, Argentina..
 
 
 .. admonition:: Command
@@ -84,6 +84,7 @@ W. Zhang, E. Esmaeilzadeh Seylabi, E. Taciroglu,(2019), An ABAQUS toolbox for so
 .. admonition:: Example 
 
    The following example constructs a PML3D element with tag **1** between nodes **1, 2, 3, 4, 5, 6, 7, 8** with the properties **E=1e6, nu=0.3, rho=1.0, EleType=1, Thickness=1.0, m=2, R=1e-8, RD_half_width_x=10.0, RD_half_width_y=10.0, Depth=5.0, alpha=0.0, beta=0.0**.
+   
    1. **Tcl Code**
 
    .. code-block:: tcl
@@ -96,4 +97,4 @@ W. Zhang, E. Esmaeilzadeh Seylabi, E. Taciroglu,(2019), An ABAQUS toolbox for so
 
       element('PML', 1, 1, 2, 3, 4, 5, 6, 7, 8, 1, 0.5, 0.25, 0.0833333333333333, 1e6, 0.3, 1.0, 1, 1.0, 2, 1e-8, 10.0, 10.0, 5.0, 0.0, 0.0)
 
-Code Developed by: W. Zhang, E. Taciroglu, A. Pakzad, P. Arduino (UCLA, UCLA, UW, UW)
+Code Developed by: W. Zhang, E. Taciroglu, A. Pakzad, P. Arduino (UCLA, UW)
