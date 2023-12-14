@@ -19,8 +19,8 @@ This command is uesd to represents near-field strong ground motion and can simul
 	    $tStart, |float|, starting time of non-zero load factor
 	    $tEnd, |float|,	ending time of non-zero load factor
 	    $period, |float|, characteristic period of M&P pulse
-       $gammaMP,|float|, γ factor in M&P pulse model (optional: default = 0.0)
-	    $nuMP, |float|,   v in degree in M&P pulse model (optional: default = 0.0)
+       $gammaMP,|float|, γ factor in M&P pulse model (optional: default = 1.0)
+	    $nuMP, |float|,   v in degree in M&P pulse model (optional: default = 90.0)
 	    $AFactor, |float|, the M&P velocity amplification factor (optional: default = 1.0)
 
 .. admonition:: Example:
