@@ -1,7 +1,7 @@
 MPAcc TimeSeries
 ^^^^^^^^^^^^^^^^^^^^^
 
-This command is uesd to represents near-field strong ground motion and can simulate the entire set of available near-fault displacement, velocity, and (in many cases) acceleration time histories, as well as the corresponding deformation, velocity, and acceleration response spectra.
+This command is used to represent near-field strong ground motion and can simulate the entire set of available near-fault displacement, velocity, and (in many cases) acceleration time histories, as well as the corresponding deformation, velocity, and acceleration response spectra.
 
 .. figure:: figures/MPAccTimeSeries.png
 	:align: center
