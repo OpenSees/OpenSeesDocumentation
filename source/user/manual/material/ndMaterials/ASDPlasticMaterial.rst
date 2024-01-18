@@ -3,7 +3,6 @@
 ASDPlasticMaterial
 ^^^^^^^^^^^^^^^^^^
 
-
 | This command is used to construct an ASDPlasticMaterial material object, a elastoplastic model for [!!!!! qué tipo de materiales ? materiales en general o enfocado a suelo ?] materials.
 | !!!! It is based on continuum-damage theory, were the stress tensor can be explicitly obtained from the total strain tensor, without internal iterations at the constitutive level. This makes it fast and robust, suitable for the simulation of large-scale structures. Plasticity is added in a simplified way, in order to have the overall effect of inelastic deformation, but keeping the simplicity of continuum-damage models.
 | !!!! To improve robustness and convergence of the simulation in case of strain-softening, this model optionally allows to use the IMPL-EX integration scheme (a mixed IMPLicit EXplicit integration scheme).
@@ -105,47 +104,7 @@ Descripcion de la funcion
 Model Parameters
 """"""""""""""""
 
-Theory
-""""""
 
-| In the following description, all variables without subscripts refer to the current time-step, while those with the :math:`n` and :math:`n-1` subscripts refer to the same variables at the two previous (known) time steps.
-| The trial effective stress tensor is computed from the previous effective stress :math:`\bar{\sigma}_{n}` and the trial elastic stress increment :math:`C_{0}:\left (\varepsilon - \varepsilon_{n}\right )`:
-
-.. math::
-   \tilde{\sigma} = \bar{\sigma}_{n} + C_{0}:\left (\varepsilon - \varepsilon_{n}\right )
-
-| It is then split into its positive (:math:`\tilde{\sigma}^{+}`) and negative (:math:`\tilde{\sigma}^{-}`) parts, using the positive principal stresses (:math:`\langle \tilde{\sigma}_{i} \rangle`) and their principal directions (:math:`p_{i}`):
-
-.. math::
-   \begin{align} \tilde{\sigma}^{+} = \sum_{i=1}^{3} \langle \tilde{\sigma}_{i} \rangle p_{i}\otimes p_{i} && \tilde{\sigma}^{-} = \tilde{\sigma} - \tilde{\sigma}^{+} \end{align}
-
-| Two equivalent scalar stress measures for the tensile (:math:`\tilde{\tau}^+`) and compressive (:math:`\tilde{\tau}^-`) behaviors are obtained from the trial effective stress tensor :math:`\tilde{\sigma}` (or from its negative part :math:`\tilde{\sigma}^{-}` for the compressive behavior) using the following damage surfaces:
-
-.. math::
-   \tilde{\tau}^+ = f\left(\tilde{\sigma} \right) = H\left (\tilde{\sigma}_{max} \right )\left [\frac{1}{1-\alpha}\left(\alpha\tilde{I}_1+\sqrt[]{3\tilde{J}_2}+\beta\langle \tilde{\sigma}_{max} \rangle \right )\frac{1}{\phi} \right ]
-
-.. math::
-   \tilde{\tau}^- = f\left(\tilde{\sigma}^{-} \right) = \left [\frac{1}{1-\alpha}\left(\alpha\tilde{I}_1+\sqrt[]{3\tilde{J}_2}+\gamma\langle -\tilde{\sigma}_{max} \rangle \right ) \right ]
-
-| where :math:`\tilde{I}_1` is the first invariant of :math:`\tilde{\sigma}` (or :math:`\tilde{\sigma}^{-}`), :math:`\tilde{J}_2` is the second invariant of the deviator of :math:`\tilde{\sigma}` (or :math:`\tilde{\sigma}^{-}`), :math:`\sigma_{max}` is the maximum principal stress of :math:`\tilde{\sigma}` (or :math:`\tilde{\sigma}^{-}`), :math:`\alpha = 4/33`, :math:`\beta = 23/3`, :math:`\phi = 10`, :math:`\gamma= 3(1 - K_c) / (2 K_c - 1)`.
-
-| The equivalent stress measures :math:`\tilde{\tau}^+` and :math:`\tilde{\tau}^-` are converted into their trial total-strain counter-parts :math:`\tilde{x}^+` and :math:`\tilde{x}^-` accounting for the equivalent plastic strain from the previous step:
-
-.. math::
-   \tilde{x}^{\pm} = \frac{\tilde{\tau}^{\pm}}{E} + x_{pl,n}
-
-| To impose the irreversibity of plasticity and damage, and to account for rate-dependency (if :math:`\eta \gt 0`), the current equivalent strain measures are updated as follows:
-
-.. math::
-   x^{\pm} = \begin{cases}    \frac{\eta}{\eta +\Delta t} x^{\pm}_n + \frac{\Delta t}{\eta +\Delta t} \tilde{x}^{\pm}, & \text{if } \tilde{x}^{\pm} > x^{\pm}_n\\ x^{\pm}_n, & \text{otherwise}           \end{cases}
-
-| The equivalent total-strain measures are then plugged into the hardening-softening laws to obtain the plastic and cracking damage variables :math:`d_{pl}^{\pm}` and :math:`d_{cr}^{\pm}`, and the effective (:math:`\bar{\sigma}`) and nominal (:math:`\sigma`) stress tensors are computed as:
-
-.. math::
-   \begin{align} \bar{\sigma}^+ = \left (1-d^{+}_{pl}\right ) \tilde{\sigma}^+, && \bar{\sigma}^- = \left (1-d^{-}_{pl}\right ) \tilde{\sigma}^-, && \bar{\sigma} = \bar{\sigma}^+ + \bar{\sigma}^- \end{align}
-
-.. math::
-   \sigma = \left (1-d^{+}_{cr}\right ) \bar{\sigma}^+ + \left (1-d^{-}_{cr}\right ) \bar{\sigma}^-
 
 Usage Notes
 """""""""""
