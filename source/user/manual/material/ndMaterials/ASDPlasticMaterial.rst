@@ -9,12 +9,9 @@ ASDPlasticMaterial
 
 
 .. function::
-   nDMaterial ASDPlasticMaterial $tag
-   $YieldFunctionType
-   $PlasticFlowType
-   $ElasticityType
-   $InternalVariables
-   $ModelParameters
+   nDMaterial ASDPlasticMaterial $tag $YieldFunctionType $PlasticFlowType $ElasticityType
+   Begin_Internal_Variables $InternalVariables End_Internal_Variables
+   Begin_Model_Parameters $ModelParameters End_Model_Parameters
    
 
 .. csv-table:: 
@@ -25,80 +22,27 @@ ASDPlasticMaterial
    $YieldFunctionType, |string|, "Mandatory. Yield function to be used -> :ref:`YieldFunctionType`"
    $PlasticFlowType, |string|, "Mandatory. Plastic flow direction to be used -> :ref:`PlasticFlowType`"
    $ElasticityType, |string|, "Mandatory. Elastic model to be used -> :ref:`ElasticityType`"
-   $InternalVariables, |string|, "Mandatory. Variables to be used for the functions -> :ref:`FunctionVariables`"
-   $ModelParameters, |string|, "Mandatory. Parameters of the models to be used -> :ref:`ModelParameters`"
+   Begin_Internal_Variables, |string|, "Mandatory. String prefix to set all the function variables"
+   $InternalVariables, |list|, "Mandatory. Variables to be used for the functions -> :ref:`FunctionVariables`"
+   End_Internal_Variables, |string|, "Mandatory. String sufix to set all the function variables"
+   Begin_Model_Parameters, |string|, "Mandatory. String prefix to set all the model parameters"
+   $ModelParameters, |list|, "Mandatory. Parameters of the models to be used -> :ref:`ModelParameters`"
+   End_Model_Parameters, |string|, "Mandatory. String sufix to set all the model parameters"
+
+|  The :ref:`YieldFunctionType`, :ref:`PlasticFlowType` and the :ref:`ElasticityType` have different variables and parameters to be setted.
+
+
+.. toctree::
+   :caption: Arguments detailed description
+   :maxdepth: 2
+
+   ASDPlasticMaterial/YieldFunctions
+   ASDPlasticMaterial/PlasticFlowType
+   ASDPlasticMaterial/ElasticityType
 
 .. _`FunctionVariables`:
 Functions Variables
 """""""""""""""""""
-.. _`YieldFunctionType`:
-YieldFunctionType
-'''''''''''''''''
-| Aquí va una descripcion del efecto que tiene el YieldFunction
-| Options to use:
-.. csv-table:: 
-   :header: "Argument", "Description"
-   :widths: 10, 40
-
-   VonMises_YF, "DESCRIPCION !"
-   DruckerPrager_YF, "DESCRIPCION !"
-   RoundedMohrCoulomb_YF, "DESCRIPCION !"
-VonMises_YF
-===========
-Descripcion de la funcion
-
-DruckerPrager_YF
-================
-Descripcion de la funcion
-
-RoundedMohrCoulomb_YF
-=====================
-Descripcion de la funcion
-
-.. _`PlasticFlowType`:
-PlasticFlowType
-'''''''''''''''
-| Aquí va una descripcion del efecto que tiene el PlasticFlowType
-| Options to use:
-.. csv-table:: 
-   :header: "Argument", "Description"
-   :widths: 10, 40
-
-   VonMises_PF, "DESCRIPCION !"
-   DruckerPrager_PF, "DESCRIPCION !"
-   ConstantDilatancy_PF, "DESCRIPCION !"
-
-VonMises_PF
-===========
-Descripcion de la funcion
-
-DruckerPrager_PF
-================
-Descripcion de la funcion
-
-ConstantDilatancy_PF
-====================
-Descripcion de la funcion
-
-.. _`ElasticityType`:
-ElasticityType
-''''''''''''''
-| Aquí va una descripcion del efecto que tiene el Elasticity
-| Options to use:
-.. csv-table:: 
-   :header: "Argument", "Description"
-   :widths: 10, 40
-
-   LinearIsotropic3D_EL, "DESCRIPCION !"
-   DuncanChang_EL, "DESCRIPCION !"
-
-LinearIsotropic3D_EL
-====================
-Descripcion de la funcion
-
-DuncanChang_EL
-==============
-Descripcion de la funcion
 
 .. _`ModelParameters`:
 Model Parameters
