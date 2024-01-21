@@ -139,6 +139,7 @@ The following subsections contain information about **$matType**
    uniaxialMaterials/PyLiq1
    uniaxialMaterials/TzLiq1
    uniaxialMaterials/QzLiq1
+   uniaxialMaterials/TzSandCPT
 
 .. uniaxialMaterials/KikuchiAikenHDR
    uniaxialMaterials/KikuchiAikenLRB
