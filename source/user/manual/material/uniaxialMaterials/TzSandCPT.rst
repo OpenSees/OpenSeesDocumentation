@@ -5,7 +5,7 @@ TzSandCPT Material
 
 This command is used to construct a ``TzSandCPT`` uniaxial material object:
 
-.. function:: uniaxialMaterial TzSandCPT $matTag $qc $Sv_eff $D $t $h $dz <$dcpt $pa>
+.. function:: uniaxialMaterial TzSandCPT $matTag $qc $Sv_eff $D $t $h $dz $dcpt $pa <$delta_f>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -18,14 +18,15 @@ This command is used to construct a ``TzSandCPT`` uniaxial material object:
    $t, |float|, pile wall thickness
    $h, |float|, distance to the pile tip
    $dz, |float|, local pile height
-   $dcpt, |float|, diameter of the standard CPT probe (optional: default = 0.0357m) see note
-   $pa, |float|, atmospheric pressure (optional: default = 100kPa) see note
+   $dcpt, |float|, diameter of the standard CPT probe (see note)
+   $pa, |float|, atmospheric pressure 
+   $delta_f, |float|, ultimate interface friction angle (optional: default = 29 :math:`^\circ`, see note) 
 
 .. note::
-   By default, the material assumes (KN) and (m) as units similar to the original 
-   formulation. The user may work with a different unit system by modifying 
-   the variables $dcpt and $pa according to the assumed unit system.
-
+   The nominal value of the diameter of the standard CPT probe is 35.7mm.
+   For the ultimate sand-pile interface friction angle, in the absence of site-specific measurements, 
+   the recommended value of 29 :math:`^\circ` is assummed as suggested in the litterature.  
+   
 The ``TzSandCPT`` function implements the shaft-load transfer function, commonly referred to as 
 the :math:`t_z` curve or spring, according to the new Unified CPT-based method for driven piles in 
 sands. The material calculates the maximum skin friction and end-bearing CPT-based formulation as 
@@ -56,35 +57,19 @@ in [LehaneLiBittar2020b]_.
 
 .. admonition:: Example using default unit system
 
-   The following constructs a TzSandCPT material with a tag of **1**, :math:`q_c` of **39928 kPa**, :math:`\sigma'_v` of **203.8 kPa**, :math:`D` of **2.44 m**, :math:`t` of **0.0445 m**, :math:`h` of **40 m** and :math:`\Delta z` of **1 m**.
+   The following constructs a TzSandCPT material with a tag of **1**, :math:`q_c` of **39928 kPa**, :math:`\sigma'_v` of **203.8 kPa**, :math:`D` of **2.44 m**, :math:`t` of **0.0445 m**, :math:`h` of **40 m**, :math:`\Delta_z` of **1 m**, :math:`\d_{CPT}` of **35.7 mm** and :math:`\p_{a}` of **100 kPa**.
 
    1. **Tcl Code**
 
    .. code-block:: tcl
 
-      uniaxialMaterial TzSandCPT 1 39928. 203.8 2.44 0.0445 40. 1.
+      uniaxialMaterial TzSandCPT 1 39928. 203.8 2.44 0.0445 40. 1. 35.7e-3  100.
 
    2. **Python Code** 
 
    .. code-block:: python
 
-      uniaxialMaterial('TzSandCPT', 1, 39928., 203.8, 2.44, 0.0445, 40., 1.)
-
-.. admonition:: Example using any given unit system
-
-    The following constructs a TzSandCPT material with a tag of **1**, :math:`q_c` of **5.791 ksi**, :math:`\sigma'_v` of **0.030 ksi**, :math:`D` of **96.063 in**, :math:`t` of **1.752 in**, :math:`h` of **1574.803 in**, :math:`\Delta z` of **39.370 in**, :math:`d_{CPT}` of **1.406 in** and :math:`p_a` of **0.015 ksi**.
-
-   1. **Tcl Code**
-
-   .. code-block:: tcl
-
-      uniaxialMaterial TzSandCPT 1 5.791 0.030 96.063 1.752 1574.803 39.370 1.406 0.015
-
-   2. **Python Code** 
-
-   .. code-block:: python
-
-      uniaxialMaterial('TzSandCPT', 1, 5.791, 0.030, 96.063, 1.752, 1574.803., 39.370, 1.406, 0.015.)
+      uniaxialMaterial('TzSandCPT', 1, 39928., 203.8, 2.44, 0.0445, 40., 1., 35.7e-3 , 100.)
 
 Code Developed by: |csasj|
 
