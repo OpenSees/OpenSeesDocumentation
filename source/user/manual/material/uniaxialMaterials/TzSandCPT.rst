@@ -18,12 +18,14 @@ This command is used to construct a ``TzSandCPT`` uniaxial material object:
    $t, |float|, pile wall thickness
    $h, |float|, distance to the pile tip
    $dz, |float|, local pile height
-   $dcpt, |float|, diameter of the standard CPT probe (see note)
+   $dcpt, |float|, diameter of the standard CPT probe (see note 1)
    $pa, |float|, atmospheric pressure 
-   $delta_f, |float|, ultimate interface friction angle (optional: default = 29 :math:`^\circ`, see note) 
+   $delta_f, |float|, ultimate interface friction angle (optional: default = 29 :math:`^\circ`, see note 2) 
 
 .. note::
    The nominal value of the diameter of the standard CPT probe is 35.7mm.
+
+.. note::
    For the ultimate sand-pile interface friction angle, in the absence of site-specific measurements, 
    the recommended value of 29 :math:`^\circ` is assummed as suggested in the litterature.  
    
