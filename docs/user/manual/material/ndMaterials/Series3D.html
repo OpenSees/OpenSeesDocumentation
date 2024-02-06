@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,8 +36,11 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -123,10 +127,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.8. Element Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.9. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.10. Pattern Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/damping.html">3.1.11. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/damping.html">3.1.12. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
@@ -220,10 +225,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="series3d-material-wrapper">
-<span id="series3d"></span><h1><span class="section-number">3.1.6.15. </span>Series3D Material Wrapper<a class="headerlink" href="#series3d-material-wrapper" title="Permalink to this headline">¶</a></h1>
+<span id="series3d"></span><h1><span class="section-number">3.1.6.15. </span>Series3D Material Wrapper<a class="headerlink" href="#series3d-material-wrapper" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a Series3D material object. It is a wrapper that imposes an iso-stress condition to an arbitrary number of previously-defined 3D nDMaterial objects</p>
 <div class="section" id="theory">
-<h2><span class="section-number">3.1.6.15.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.6.15.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">¶</a></h2>
 <p>This model imposes a minimal kinematic constraint on the sub-materials such that the macro-scopic strain tensor <span class="math notranslate nohighlight">\(\varepsilon_{m}\)</span> (i.e. the strain tensor of the wrapper Series3D material) is equal to the volumetric average of the micro-scopic strain tensors <span class="math notranslate nohighlight">\(\varepsilon_{i}\)</span> (i.e. the strain tensors of each sub-material)</p>
 <div class="math notranslate nohighlight" id="equation-eq-1">
 <span class="eqno">(3.1.6.1)<a class="headerlink" href="#equation-eq-1" title="Permalink to this equation">¶</a></span>\[\varepsilon_{m} = \frac{1}{V} \int_{V} \varepsilon_{i} \,dV\]</div>
@@ -305,7 +310,7 @@ Imposing the constraint in <a class="reference internal" href="#equation-eq-2">(
 </table>
 </div>
 <div class="section" id="usage-notes">
-<h2><span class="section-number">3.1.6.15.2. </span>Usage Notes<a class="headerlink" href="#usage-notes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.6.15.2. </span>Usage Notes<a class="headerlink" href="#usage-notes" title="Permalink to this heading">¶</a></h2>
 <div class="admonition-limitations admonition">
 <p class="admonition-title">Limitations</p>
 <ul class="simple">

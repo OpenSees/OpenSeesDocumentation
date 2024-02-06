@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -111,7 +114,8 @@
 <li class="toctree-l4"><a class="reference internal" href="plainPattern.html">3.1.11.1. Plain Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="uniformExcitationPattern.html">3.1.11.2. Uniform Excitation</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.11.3. Multisupport Excitation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="H5DRM.html">3.1.11.4. H5DRM Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DRM.html">3.1.11.4. DRM Load Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="H5DRM.html">3.1.11.5. H5DRM Pattern</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
@@ -208,7 +212,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="multisupport-excitation">
-<span id="multisupportexcitation"></span><h1><span class="section-number">3.1.11.3. </span>Multisupport Excitation<a class="headerlink" href="#multisupport-excitation" title="Permalink to this headline">¶</a></h1>
+<span id="multisupportexcitation"></span><h1><span class="section-number">3.1.11.3. </span>Multisupport Excitation<a class="headerlink" href="#multisupport-excitation" title="Permalink to this heading">¶</a></h1>
 <p>The Multi-Support pattern allows similar or different prescribed ground motions to be input at various supports in the structure. In OpenSees, the prescribed motion is applied using single-point constraints, the single-point constraints taking their constraint value from user created ground motions.</p>
 <p>The command to generate a multi-support excitation contains in squirrelly brackets the commands to generate all the ground motions and the single-point constraints in the pattern. The command is as follows:</p>
 <table class="colwidths-given docutils align-default">

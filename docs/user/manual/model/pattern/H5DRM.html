@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.11.4. H5DRM Pattern &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.11.5. H5DRM Pattern &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,8 +36,11 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -44,7 +48,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.1.12. Damping Commands" href="../damping.html" />
-    <link rel="prev" title="3.1.11.3.2. Imposed Motion Command" href="groundmotion/imposedMotion.html" /> 
+    <link rel="prev" title="3.1.11.4. DRM Load Pattern" href="DRM.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -112,7 +116,8 @@
 <li class="toctree-l4"><a class="reference internal" href="plainPattern.html">3.1.11.1. Plain Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="uniformExcitationPattern.html">3.1.11.2. Uniform Excitation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="multiSupportPattern.html">3.1.11.3. Multisupport Excitation</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.11.4. H5DRM Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DRM.html">3.1.11.4. DRM Load Pattern</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.11.5. H5DRM Pattern</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
@@ -189,7 +194,7 @@
         
           <li><a href="../pattern.html"><span class="section-number">3.1.11. </span>Pattern Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.11.4. </span>H5DRM Pattern</li>
+      <li><span class="section-number">3.1.11.5. </span>H5DRM Pattern</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -209,7 +214,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="h5drm-pattern">
-<span id="multisupportexcitation"></span><h1><span class="section-number">3.1.11.4. </span>H5DRM Pattern<a class="headerlink" href="#h5drm-pattern" title="Permalink to this headline">¶</a></h1>
+<span id="multisupportexcitation"></span><h1><span class="section-number">3.1.11.5. </span>H5DRM Pattern<a class="headerlink" href="#h5drm-pattern" title="Permalink to this heading">¶</a></h1>
 <p>Perform earthquake time-history analysis using the domain reduction method (DRM).</p>
 <p>The H5DRM pattern implements the DRM using the H5DRM data format. It directly reads the dataset, performs node matching, identifies the connecting elements, and applies the loads and (linear) interpolation of displacements and accelerations in time.</p>
 <dl class="py function">

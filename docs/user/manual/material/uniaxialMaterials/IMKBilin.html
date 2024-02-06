@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -43,7 +46,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="3.1.5.18. IMKPeakOriented Material" href="IMKPeakOriented.html" />
-    <link rel="prev" title="3.1.5.16. HystereticSM Material" href="HystereticSM.html" /> 
+    <link rel="prev" title="Opensees uniaxialMaterial Demo: HystereticSM" href="examples/HystereticSM_materialDemo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -122,20 +125,22 @@
 <li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.18. IMKPeakOriented Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.19. IMKPinching Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SLModel.html">3.1.5.20. SLModel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.21. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.21. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.22. DowelType Timber Joint Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.23. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.24. CoulombDamper Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.25. Hertz Damp Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.26. Jankowski Impact Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.27. Viscoelastic Gap Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.28. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.29. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.30. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.31. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.32. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.33. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.21. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.22. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticAsym.html">3.1.5.23. HystereticAsym Material (Smooth asymmetric hysteresis)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticSmooth.html">3.1.5.24. HystereticSmooth Material (Smooth hysteretic material)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.25. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.26. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.27. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.28. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.29. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Ratchet.html">3.1.5.30. Ratchet Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.31. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.32. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.33. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.34. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.35. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.36. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
@@ -238,7 +243,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="imkbilin-material">
-<h1><span class="section-number">3.1.5.17. </span>IMKBilin Material<a class="headerlink" href="#imkbilin-material" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1.5.17. </span>IMKBilin Material<a class="headerlink" href="#imkbilin-material" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a material with a hysteretic bilinear response based on the modified Ibarra-Medina-Krawinkler deterioration model.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -384,7 +389,7 @@
 </div>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">3.1.5.17.1. </span>References:<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.17.1. </span>References:<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Model rules:</p></li>
 </ul>
@@ -399,7 +404,7 @@
 <p>Lignos, D. G., Hartloper, A., Elkady, A., Deierlein, G. G., and Hamburger, R. (2019). “<em>Proposed updates to the asce 41 nonlinear modeling parameters for wide-flange steel columns in support of performance-based seismic engineering.</em>” Journal of Structural Engineering, 145(9), 04019083, DOI: <a class="reference external" href="https://doi.org/10.1061/(ASCE)ST.1943-541X.0002353">https://doi.org/10.1061/(ASCE)ST.1943-541X.0002353</a>.</p>
 </div>
 <div class="section" id="code-inquiry-or-bug-reporting">
-<h2><span class="section-number">3.1.5.17.2. </span>Code inquiry or bug reporting<a class="headerlink" href="#code-inquiry-or-bug-reporting" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.17.2. </span>Code inquiry or bug reporting<a class="headerlink" href="#code-inquiry-or-bug-reporting" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Kazuki Ichinohe, University of Tokyo, e-mail: <a class="reference external" href="mailto:z-ichinohe&#37;&#52;&#48;g&#46;ecc&#46;u-tokyo&#46;ac&#46;jp">z-ichinohe<span>&#64;</span>g<span>&#46;</span>ecc<span>&#46;</span>u-tokyo<span>&#46;</span>ac<span>&#46;</span>jp</a></p></li>
 <li><p>Ahmed Elkady, University of Southampton, e-mail: <a class="reference external" href="mailto:a&#46;elkady&#37;&#52;&#48;soton&#46;ac&#46;uk">a<span>&#46;</span>elkady<span>&#64;</span>soton<span>&#46;</span>ac<span>&#46;</span>uk</a></p></li>

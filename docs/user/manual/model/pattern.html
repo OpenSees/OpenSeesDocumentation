@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -43,7 +46,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="3.1.11.1. Plain Pattern" href="pattern/plainPattern.html" />
-    <link rel="prev" title="3.1.10.7. Path TimeSeries" href="timeseries/pathTimeSeries.html" /> 
+    <link rel="prev" title="3.1.10.10. PeerNGAMotion TimeSeries" href="timeseries/PeerNGAMotion.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,7 +114,8 @@
 <li class="toctree-l4"><a class="reference internal" href="pattern/plainPattern.html">3.1.11.1. Plain Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pattern/uniformExcitationPattern.html">3.1.11.2. Uniform Excitation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pattern/multiSupportPattern.html">3.1.11.3. Multisupport Excitation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pattern/H5DRM.html">3.1.11.4. H5DRM Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pattern/DRM.html">3.1.11.4. DRM Load Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pattern/H5DRM.html">3.1.11.5. H5DRM Pattern</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="damping.html">3.1.12. Damping Commands</a></li>
@@ -206,7 +210,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pattern-command">
-<span id="pattern"></span><h1><span class="section-number">3.1.11. </span>Pattern Command<a class="headerlink" href="#pattern-command" title="Permalink to this headline">¶</a></h1>
+<span id="pattern"></span><h1><span class="section-number">3.1.11. </span>Pattern Command<a class="headerlink" href="#pattern-command" title="Permalink to this heading">¶</a></h1>
 <p>The pattern command is used to construct a LoadPattern and add it to the Domain. Each LoadPattern in OpenSees has a TimeSeries associated with it. In addition it may contain ElementLoads, NodalLoads and SinglePointConstraints. Some of these SinglePoint constraints may be associated with GroundMotions.</p>
 <p>The command has the following form:</p>
 <dl class="py function">
@@ -248,7 +252,10 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="pattern/plainPattern.html">3.1.11.1. Plain Pattern</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="pattern/plainPattern.html">3.1.11.1. Plain Pattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pattern/PlainPatternloadcommands/load.html">3.1.11.1.1. load Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pattern/PlainPatternloadcommands/eleLoad.html">3.1.11.1.2. eleLoad Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pattern/PlainPatternloadcommands/sp.html">3.1.11.1.3. Sp Command</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pattern/uniformExcitationPattern.html">3.1.11.2. Uniform Excitation</a></li>
@@ -261,7 +268,8 @@
 <li class="toctree-l2"><a class="reference internal" href="pattern/groundmotion/imposedMotion.html">3.1.11.3.2. Imposed Motion Command</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pattern/H5DRM.html">3.1.11.4. H5DRM Pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern/DRM.html">3.1.11.4. DRM Load Pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern/H5DRM.html">3.1.11.5. H5DRM Pattern</a></li>
 </ul>
 </div>
 </div>

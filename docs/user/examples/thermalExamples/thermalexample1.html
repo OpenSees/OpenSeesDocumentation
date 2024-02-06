@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -199,9 +202,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="example-1">
-<h1><span class="section-number">4.2.1. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.2.1. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="thermal-expansion-of-a-beam">
-<h2><span class="section-number">4.2.1.1. </span>Thermal expansion of a beam<a class="headerlink" href="#thermal-expansion-of-a-beam" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.1.1. </span>Thermal expansion of a beam<a class="headerlink" href="#thermal-expansion-of-a-beam" title="Permalink to this heading">¶</a></h2>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../_images/Example1_fig1.png"><img alt="../../../_images/Example1_fig1.png" src="../../../_images/Example1_fig1.png" style="width: 500px;" /></a>
 </div>
@@ -211,7 +214,7 @@
 <p><a class="reference download internal" download="" href="../../../_downloads/60e13a81fefae2884973aae2313bd0cf/Example1.tcl"><code class="xref download docutils literal notranslate"><span class="pre">Example1.tcl</span></code></a>.</p>
 <p><a class="reference download internal" download="" href="../../../_downloads/198189532a9b91d14cec34c00037c45b/Example1_OUTPUT.zip"><code class="xref download docutils literal notranslate"><span class="pre">Example</span> <span class="pre">1</span> <span class="pre">Outputs</span></code></a>.</p>
 <div class="section" id="material-properties">
-<h3><span class="section-number">4.2.1.1.1. </span>Material Properties<a class="headerlink" href="#material-properties" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1.1. </span>Material Properties<a class="headerlink" href="#material-properties" title="Permalink to this heading">¶</a></h3>
 <p>The uniaxialMaterial Steel01Thermal includes temperature-dependent steel
 thermal and mechanical properties per Eurocode 3 [1]. More details of
 Steel01 can be found at: <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel01_Material">Steel01 Material</a></p>
@@ -225,7 +228,7 @@ Steel01 can be found at: <a class="reference external" href="https://opensees.be
 <p>b = 0.001 (Strain-Hardening Ratio)</p>
 </div>
 <div class="section" id="transformation">
-<h3><span class="section-number">4.2.1.1.2. </span>Transformation<a class="headerlink" href="#transformation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1.2. </span>Transformation<a class="headerlink" href="#transformation" title="Permalink to this heading">¶</a></h3>
 <p>The beam is expanding in one direction, therefore, 2nd order bending
 effects do not need to be considered.</p>
 <dl class="py function">
@@ -237,7 +240,7 @@ effects do not need to be considered.</p>
 Transformation</a></p>
 </div>
 <div class="section" id="section">
-<h3><span class="section-number">4.2.1.1.3. </span>Section<a class="headerlink" href="#section" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1.3. </span>Section<a class="headerlink" href="#section" title="Permalink to this heading">¶</a></h3>
 <p>The discretization of the steel section into four fibers is shown using the code below:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -308,7 +311,7 @@ Transformation</a></p>
 <p><strong>Cross section of rectangular beam showing fiber discretization</strong></p>
 </div>
 <div class="section" id="elements">
-<h3><span class="section-number">4.2.1.1.4. </span>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1.4. </span>Elements<a class="headerlink" href="#elements" title="Permalink to this heading">¶</a></h3>
 <p>dispBeamColumnThermal elements are used because temperature-dependent thermal and mechanical steel properties can be applied to these elements. Any portion of the structure that is being heated must use elements that are compatible with uniaxialMaterial Steel01Thermal. At the time this model was developed, dispBeamColumnThermal was the only element type that could have tempurature-dependent thermal and mechanical properties applied to them.</p>
 <p>The beam is made of one element with 5 iteration points and connects nodes 1 &amp; 2. OpenSees is sensitive to the number of iteration points in each element and this could change the result of the recorded displacement. For this reason, it is important to perform these benchmarking examples to establish how many iteration points allows for convergence to the expected recorded displacement. To code the number of iteration points, we use the following syntax:</p>
 <p>dispBeamColumnThermal eleTag iNode jNode numIntgrPts secTag TransfTag;</p>
@@ -319,7 +322,7 @@ Transformation</a></p>
 
 </div>
 <div class="section" id="output-recorders">
-<h3><span class="section-number">4.2.1.1.5. </span>Output Recorders<a class="headerlink" href="#output-recorders" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1.5. </span>Output Recorders<a class="headerlink" href="#output-recorders" title="Permalink to this heading">¶</a></h3>
 <p>Displacement of the end node (2) in DOF 1 (Horizontal Displacement) is what we want to record. To do so, a folder within your working directory must be created. $dataDir is the command to create that folder and should be defined at the beginning of the model. This is where your output files will be saved.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -339,7 +342,7 @@ Transformation</a></p>
 <p>Learn more about the Recorder Command: ` Recorder Command &lt;<a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Recorder_Command">http://opensees.berkeley.edu/wiki/index.php/Recorder_Command</a>&gt;` __</p>
 </div>
 <div class="section" id="thermal-loading">
-<h3><span class="section-number">4.2.1.1.6. </span>Thermal Loading<a class="headerlink" href="#thermal-loading" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1.6. </span>Thermal Loading<a class="headerlink" href="#thermal-loading" title="Permalink to this heading">¶</a></h3>
 <p>This particular model is heating a beam to a set temperature over the time period of the model. We are not asking OpenSees to use a specific time-temperature curve, rather linearly ramp up the temperature from ambient to 1180 <sup>o</sup> C.</p>
 <p>Therefore, we set the maximum temperature as follows:</p>
 <p>T = Max Tempurature [deg celcius]</p>
@@ -374,7 +377,7 @@ Transformation</a></p>
 
 </div>
 <div class="section" id="thermal-analysis">
-<h3><span class="section-number">4.2.1.1.7. </span>Thermal Analysis<a class="headerlink" href="#thermal-analysis" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1.7. </span>Thermal Analysis<a class="headerlink" href="#thermal-analysis" title="Permalink to this heading">¶</a></h3>
 <p>Thermal loading is applied in 1000 steps, with a load factor of 0.001.
 Each step is a 0.001 increment of the maximum temperature specified in
 the thermal loading step: $T. The analysis is a static analysis and the
@@ -410,7 +413,7 @@ fire engineering analyses.</p>
 </div></blockquote>
 </div>
 <div class="section" id="output-plots">
-<h3><span class="section-number">4.2.1.1.8. </span>Output Plots<a class="headerlink" href="#output-plots" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1.8. </span>Output Plots<a class="headerlink" href="#output-plots" title="Permalink to this heading">¶</a></h3>
 <p>After the model has completed running, the results will be a horizontal displacement of the right end of the beam. Since the temperature was linearly ramped up from ambient to 1180 <sup>o</sup> C, the user can develop a temperature history that matches every increment of the model.</p>
 <p>Thermal expansion is the change is length divided by the original length. This could also be called thermal strain. The thermal expansion of the beam is plotted below and compared to the Eurocode 3 [1]temperature-dependent thermal expansion. We can see that the modeled thermal expansion matches the material properties. This is important to check that the temperatures and material properties are assigned propertly in the model.</p>
 <div class="align-center figure">
@@ -419,7 +422,7 @@ fire engineering analyses.</p>
 <p><strong>Thermal expansion of the beam recorded at node 2</strong></p>
 </div>
 <div class="section" id="sources">
-<h3><span class="section-number">4.2.1.1.9. </span>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1.9. </span>Sources<a class="headerlink" href="#sources" title="Permalink to this heading">¶</a></h3>
 <p>[1] European Committee for Standardization (CEN). (2005). Eurocode 3:
 Design of Steel Structures, Part 1.2: General Rules - Structural Fire
 Design.</p>

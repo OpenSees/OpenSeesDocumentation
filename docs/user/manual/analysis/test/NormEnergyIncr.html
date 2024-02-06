@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,8 +36,11 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -211,7 +215,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="energy-increment">
-<span id="energyincr"></span><h1><span class="section-number">3.2.4.3. </span>Energy Increment<a class="headerlink" href="#energy-increment" title="Permalink to this headline">¶</a></h1>
+<span id="energyincr"></span><h1><span class="section-number">3.2.4.3. </span>Energy Increment<a class="headerlink" href="#energy-increment" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a convergence test which uses the energy increment, <span class="math notranslate nohighlight">\(0.5 (x^T b)\)</span>, where the two vector come from the matrix equation <span class="math notranslate nohighlight">\(Ax=b\)</span>, to determine if convergence has been reached. What the right-hand-side of the matrix equation is depends on integrator and constraint handler chosen. Usually, though not always, <span class="math notranslate nohighlight">\(x\)</span> is equal to the incremental displacement and <span class="math notranslate nohighlight">\(b\)</span> the unbalanced force. The command to create a NormEnergyIncr test is the following:</p>
 <dl class="py function">
 <dt class="sig sig-object py">

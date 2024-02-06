@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,8 +36,11 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -215,7 +219,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="generalized-alpha-method">
-<span id="generalizedalphamethod"></span><h1><span class="section-number">3.2.6.8. </span>Generalized Alpha Method<a class="headerlink" href="#generalized-alpha-method" title="Permalink to this headline">¶</a></h1>
+<span id="generalizedalphamethod"></span><h1><span class="section-number">3.2.6.8. </span>Generalized Alpha Method<a class="headerlink" href="#generalized-alpha-method" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">integrator</span> <span class="pre">GeneralizedAlpha</span> <span class="pre">$alphaM</span> <span class="pre">$alphaF</span> <span class="pre">&lt;$gamma</span> <span class="pre">$beta&gt;</span></span></dt>
@@ -256,7 +260,7 @@
 <div class="math notranslate nohighlight">
 \[\beta = \tfrac{1}{4}(1 + \gamma_M - \gamma_F)^2\]</div>
 <div class="section" id="theory">
-<h2><span class="section-number">3.2.6.8.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.6.8.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">¶</a></h2>
 <p>The Generalized <span class="math notranslate nohighlight">\(\alpha\)</span> method (sometimes called the <span class="math notranslate nohighlight">\(\alpha\)</span> method) is a one step implicit method for solving the transient problem which attempts to increase the amount of numerical damping present without degrading the order of accuracy. In the HHT method, the same Newmark approximations are used:</p>
 <div class="math notranslate nohighlight">
 \[U_{t+\Delta t} = U_t + \Delta t \dot U_t + [(0.5 - \beta) \Delta t^2] \ddot U_t + [\beta \Delta t^2] \ddot U_{t+\Delta t}\]</div>

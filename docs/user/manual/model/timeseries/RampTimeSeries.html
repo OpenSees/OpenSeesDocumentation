@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.10.4. Ramp TimeSeries &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.10.5. Triangular TimeSeries" href="triangleTimeSeries.html" />
+    <link rel="prev" title="3.1.10.3. Trig TimeSeries" href="trigTimeSeries.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="constantTimeSeries.html">3.1.10.1. Constant TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="linearTimeSeries.html">3.1.10.2. Linear TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trigTimeSeries.html">3.1.10.3. Trig TimeSeries</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.10.4. Ramp TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="triangleTimeSeries.html">3.1.10.5. Triangular TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rectangularTimeSeries.html">3.1.10.6. Rectangular Time Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pulseTimeSeries.html">3.1.10.7. Pulse TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathTimeSeries.html">3.1.10.8. Path TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peerMotion.html">3.1.10.9. PeerMotion TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PeerNGAMotion.html">3.1.10.10. PeerNGAMotion TimeSeries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../timeSeries.html"><span class="section-number">3.1.10. </span>Time Series Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.10.4. </span>Ramp TimeSeries</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/model/timeseries/RampTimeSeries.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ramp-timeseries">
+<span id="rampseries"></span><h1><span class="section-number">3.1.10.4. </span>Ramp TimeSeries<a class="headerlink" href="#ramp-timeseries" title="Permalink to this heading">¶</a></h1>
+<p>This command is used to construct a TimeSeries object in which the load factor is a linear Ramp function. An optional <strong>-smooth</strong> flag provides an adjustable smoothness, allowing for a smooth transition at the start and end of the ramp.
+The default behavior provides a linear ramp from 0 to 1.0. By providing a smoothness &gt; 0, the time series has a continuous derivative. The smoothing interval is equal to the smoothness factor times half the ramp time.</p>
+<p>The load factor is determined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\lambda = f(t) = offset + cFactor * \begin{cases} 0.0 &amp; t &lt; T_{Start}\\
+\left( \frac{\left(t -T_{Start} \right )}{T_{Ramp}}\right)^2\left( \frac{2}{S(2-S))}\right) &amp;t &lt;= T_{Start}+S\left(\frac{T_{Ramp}}{2}\right)\\
+\frac{1}{2}+\left(\frac{t-T_{Start}-\frac{T_{Ramp}}{2}}{T_{Ramp}} \right)\left (\frac{2}{2-S} \right ) &amp;t &lt;= T_{Start}+T_{Ramp}-S\left(\frac{T_{Ramp}}{2}\right )\\
+1-\left(\frac{t-T_{Start}-T_{Ramp}}{T_{Ramp}} \right)^2\left (\frac{2}{S(2-S)} \right ) &amp;t&lt;= T_{Start}+T_{Ramp} \\
+1.0 &amp; \text{otherwise} \end{cases} \\\end{split}\]</div>
+<p>With: <span class="math notranslate nohighlight">\(S = smoothness \rightarrow 0&lt;=S&lt;=1.0\)</span></p>
+<div class="align-center figure">
+<img alt="../../../../_images/RampTimeSeries.png" src="../../../../_images/RampTimeSeries.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">timeSeries</span> <span class="pre">Ramp</span> <span class="pre">$tag?</span> <span class="pre">$tStart?</span> <span class="pre">$tRamp?</span> <span class="pre">&lt;-smooth</span> <span class="pre">$smoothness?&gt;</span> <span class="pre">&lt;-offset</span> <span class="pre">$offset?&gt;</span> <span class="pre">&lt;-factor</span> <span class="pre">$cFactor?&gt;</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$tag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>unique tag among TimeSeries objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$tStart</p></td>
+<td><p><em>float</em></p></td>
+<td><p>starting time of non-zero load factor</p></td>
+</tr>
+<tr class="row-even"><td><p>$tRamp</p></td>
+<td><p><em>float</em></p></td>
+<td><p>length of time to perform the ramp</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘-smooth’</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag to enable smooth ramp</p></td>
+</tr>
+<tr class="row-even"><td><p>$smoothness</p></td>
+<td><p><em>float</em></p></td>
+<td><p>smoothness parameter (optional: 0 ≤ $smoothness ≤ 1   default = 0.0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘-offset’</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag to provide vertical offset</p></td>
+</tr>
+<tr class="row-even"><td><p>$offset</p></td>
+<td><p><em>float</em></p></td>
+<td><p>vertical offset amount (optional: default = 0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘-factor’</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag to provide scale factor</p></td>
+</tr>
+<tr class="row-even"><td><p>$cFactor</p></td>
+<td><p><em>float</em></p></td>
+<td><p>the load factor scale factor (optional: default = 1.0)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition-example-1 admonition">
+<p class="admonition-title">Example 1:</p>
+<div class="align-right figure">
+<img alt="../../../../_images/RampTimeSeries_2.png" src="../../../../_images/RampTimeSeries_2.png" />
+</div>
+<p>The following code demonstrates how a user would create a ramp time series with a tag of <strong>1</strong>, has a start time of $tStart = <strong>5.0</strong>, a ramp time of $tRamp = <strong>30.0</strong>, a $smoothness value of <strong>0.25</strong>, an $offset of <strong>-1.0</strong>, and a scale factor of $cFactor = <strong>2.0</strong>.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>timeSeries Ramp 1 5.0 30.0 -smooth 0.25 -offset -1.0 -factor 2.0
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timeSeries</span><span class="p">(</span><span class="s1">&#39;Ramp&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="s1">&#39;-smooth&#39;</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="s1">&#39;-offset&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;-factor&#39;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="admonition-example-2 admonition">
+<p class="admonition-title">Example 2:</p>
+<div class="align-right figure">
+<img alt="../../../../_images/RampTimeSeries_3.png" src="../../../../_images/RampTimeSeries_3.png" />
+</div>
+<p>The following code demonstrates how a user would create a ramp time series with a tag of <strong>2</strong>, has a start time of $tStart = <strong>10.0</strong>, a ramp time of $tRamp = <strong>30.0</strong>, a $smoothness value of <strong>0.1</strong>, an $offset of <strong>2.0</strong>, and a scale factor of $cFactor = <strong>-2.0</strong>.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>timeSeries Ramp 2 10.0 30.0 -smooth 0.1 -offset 2.0 -factor -2.0
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timeSeries</span><span class="p">(</span><span class="s1">&#39;Ramp&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="s1">&#39;-smooth&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;-offset&#39;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s1">&#39;-factor&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<p>Code Developed by: <a class="reference external" href="mailto:cmckee&#37;&#52;&#48;tamu&#46;edu/">Codi McKee</a> (Texas A&amp;M University)</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.9.22. PML Element &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.9.23. ASDEmbeddedNode Element" href="ASDEmbeddedNodeElement.html" />
+    <link rel="prev" title="3.1.9.21. TripleFrictionPendulumX Element" href="TripleFrictionPendulumX.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.9. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.9.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.9.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.9.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.9.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.9.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.9.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.9.7. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.9.8. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.9.9. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.9.10. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.9.11. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.9.12. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.9.13. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.9.14. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.9.15. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.9.16. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.9.17. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.9.18. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.9.19. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.9.20. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.9.21. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.9.22. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.9.23. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.9.24. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.9.25. RockingBC Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../element.html"><span class="section-number">3.1.9. </span>Element Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.9.22. </span>PML Element</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/model/elements/PML.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pml-element">
+<h1><span class="section-number">3.1.9.22. </span>PML Element<a class="headerlink" href="#pml-element" title="Permalink to this heading">¶</a></h1>
+<p>This command is used to construct four-node and and eight-node PML elements. Perfectly Matched Layer (PML) elements are a numerical technique used in simulations to manage boundary conditions and minimize reflections at the edges of a computational domain. PMLs are often implemented as layers or regions at the edges of a computational domain, where the properties of the material in the PML are carefully designed to gradually absorb and attenuate outgoing waves. This absorption process is designed to be as efficient as possible, reducing the reflection of waves back into the domain. The choice of PML parameters, such as the profile of the absorbing material and its thickness, depends on the specific simulation and the desired level of accuracy.</p>
+<p>Implementation details for these elements can be found in:</p>
+<ol class="upperalpha simple" start="23">
+<li><p>Zhang, E. Esmaeilzadeh Seylabi, E. Taciroglu,(2019), An ABAQUS toolbox for soil-structure interaction analysis, Computers and Geotechnics, Volume 114, 2019, <a class="reference external" href="https://doi.org/10.1016/j.compgeo.2019.103143">https://doi.org/10.1016/j.compgeo.2019.103143</a>.</p></li>
+</ol>
+<div class="admonition-command admonition">
+<p class="admonition-title">Command</p>
+<ol class="arabic">
+<li><p>PML2D</p>
+<blockquote>
+<div><p>element PML $eleTag $node1 $node2 $node3 $node4 $E $nu $rho $EleType $Thickness $m $R $RD_half_width_x $Depth $alpha $beta</p>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>PML3D</dt><dd><p>element PML $eleTag $node1 $node2 $node3 $node4 $node5 $node6 $node7 $node8 $gamma $beta $eta $E $nu $rho $EleType $Thickness $m $R $RD_half_width_x $RD_half_width_y $Depth $alpha $beta</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<ol class="arabic simple">
+<li><p><strong>PML2D</strong></p></li>
+</ol>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>eleTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>unique integer tag identifying element object</p></td>
+</tr>
+<tr class="row-odd"><td><p>node1 $node2 node3 node4</p></td>
+<td><p>4 <em>integer</em></p></td>
+<td><p>the four nodes defining the element input in counterclockwise order (-ndm 2 -ndf 5)</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Young’s modulus</p></td>
+</tr>
+<tr class="row-odd"><td><p>nu</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Poisson’s Ratio</p></td>
+</tr>
+<tr class="row-even"><td><p>rho</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Density</p></td>
+</tr>
+<tr class="row-odd"><td><p>EleType</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Element type based on the region of the PML it can be 1 2 3 4 5 (you can choose any number the code automaticlly )</p></td>
+</tr>
+<tr class="row-even"><td><p>Thickness</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Thickness of the PML around regular domain</p></td>
+</tr>
+<tr class="row-odd"><td><p>m</p></td>
+<td><p><em>float</em></p></td>
+<td><p>PML parameter (m=2 is recommended)</p></td>
+</tr>
+<tr class="row-even"><td><p>R</p></td>
+<td><p><em>float</em></p></td>
+<td><p>PML parameter (R=1e-8 is recommended)</p></td>
+</tr>
+<tr class="row-odd"><td><p>RD_half_width_x</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Distance of the border of the PML and regular domain to the center of the domain at origin</p></td>
+</tr>
+<tr class="row-even"><td><p>Depth</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Depth of the PML from the surface of the regular domain in the negative y direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>alpha</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Rayleigh damping parameter for PML (alpha will be 0 even if you input a value)</p></td>
+</tr>
+<tr class="row-even"><td><p>beta</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Rayleigh damping parameter for PML (beta will be 0 even if you input a value)</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="2">
+<li><p><strong>PML3D</strong></p></li>
+</ol>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>eleTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>unique integer tag identifying element object</p></td>
+</tr>
+<tr class="row-odd"><td><p>node1 node2 node3 node4 node5 node6 node7 $node8</p></td>
+<td><p>8 <em>integer</em></p></td>
+<td><p>the eight nodes defining the element input in counterclockwise order (-ndm 2 -ndf 5)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\({\gamma}\)</span></p></td>
+<td><p><em>float</em></p></td>
+<td><p>Newmark integration parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\({\beta}\)</span></p></td>
+<td><p><em>float</em></p></td>
+<td><p>Newmark integration parameter</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\({\eta}\)</span></p></td>
+<td><p><em>float</em></p></td>
+<td><p>Newmark integration parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>E</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Young’s modulus</p></td>
+</tr>
+<tr class="row-even"><td><p>nu</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Poisson’s Ratio</p></td>
+</tr>
+<tr class="row-odd"><td><p>rho</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Density</p></td>
+</tr>
+<tr class="row-even"><td><p>EleType</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Element type based on the region of the PML it can be 1 2 3 4 5 (you can choose any number the code automaticlly )</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thickness</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Thickness of the PML around regular domain</p></td>
+</tr>
+<tr class="row-even"><td><p>m</p></td>
+<td><p><em>float</em></p></td>
+<td><p>PML parameter (m=2 is recommended)</p></td>
+</tr>
+<tr class="row-odd"><td><p>R</p></td>
+<td><p><em>float</em></p></td>
+<td><p>PML parameter (R=1e-8 is recommended)</p></td>
+</tr>
+<tr class="row-even"><td><p>RD_half_width_x</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Distance of the border of the PML and regular domain to the center of the domain at origin</p></td>
+</tr>
+<tr class="row-odd"><td><p>Depth</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Depth of the PML from the surface of the regular domain in the negative y direction</p></td>
+</tr>
+<tr class="row-even"><td><p>alpha</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Rayleigh damping parameter for PML (alpha will be 0 even if you input a value)</p></td>
+</tr>
+<tr class="row-odd"><td><p>beta</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Rayleigh damping parameter for PML (beta will be 0 even if you input a value)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>For 2D PML each node has 5 DOFs (2 translations and Sx, Sy, Sxy)</p></li>
+<li><p>For 3D PML each node has 9 DOFs (3 translations and Sx, Sy, Sz, Sxy, Sxz, Syz)</p></li>
+<li><p>There is no recorder for PML elements. The stresses can be obtained from the node recorders.</p></li>
+<li><p>When using PML 3D only newmark integration method can be used and the parameters using for the integration should be passed to the element(Example: <span class="math notranslate nohighlight">\({\gamma} = 1/2, {\beta} = 1/4, {\eta} =1/12\)</span>)</p></li>
+<li><p>The center of the regular domian should be at the origin of the global coordinate system (0,0,0)</p></li>
+<li><p>It is highly recommended to use the same mesh for the PML and the regular domain</p></li>
+<li><p>It is highly recommended to use the same material for the PML and the regular domain</p></li>
+<li><p>It is highly recommended to use uniform and square mesh for the PML elements.</p></li>
+</ol>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>The following example constructs a PML3D element with tag <strong>1</strong> between nodes <strong>1, 2, 3, 4, 5, 6, 7, 8</strong> with the properties <strong>E=1e6, nu=0.3, rho=1.0, EleType=1, Thickness=1.0, m=2, R=1e-8, RD_half_width_x=10.0, RD_half_width_y=10.0, Depth=5.0, alpha=0.0, beta=0.0</strong>.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span><span class="w"> </span>PML<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.25</span><span class="w"> </span><span class="mf">0.0833333333333333</span><span class="w"> </span><span class="mi">1</span>e6<span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span>e-8<span class="w"> </span><span class="mf">10.0</span><span class="w"> </span><span class="mf">10.0</span><span class="w"> </span><span class="mf">5.0</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;PML&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0833333333333333</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Code Developed by: W. Zhang, E. Taciroglu, A. Pakzad, P. Arduino (UCLA, UW)</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

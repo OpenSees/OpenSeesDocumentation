@@ -148,6 +148,8 @@ Jupyter Notebook:
 -----------------
 Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `HERE! <https://github.com/OpenSees/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb>`_
 
+.. nbgallery::
+   examples/HystereticSM_materialDemo
 
 Backbone Curve for material (7 points in each direction)
 --------------------------------------------------------

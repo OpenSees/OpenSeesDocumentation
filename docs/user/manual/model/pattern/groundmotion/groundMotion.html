@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -111,7 +114,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../plainPattern.html">3.1.11.1. Plain Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../uniformExcitationPattern.html">3.1.11.2. Uniform Excitation</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../multiSupportPattern.html">3.1.11.3. Multisupport Excitation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../H5DRM.html">3.1.11.4. H5DRM Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../DRM.html">3.1.11.4. DRM Load Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../H5DRM.html">3.1.11.5. H5DRM Pattern</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../damping.html">3.1.12. Damping Commands</a></li>
@@ -210,7 +214,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ground-motion">
-<span id="groundmotion"></span><h1><span class="section-number">3.1.11.3.1. </span>Ground Motion<a class="headerlink" href="#ground-motion" title="Permalink to this headline">¶</a></h1>
+<span id="groundmotion"></span><h1><span class="section-number">3.1.11.3.1. </span>Ground Motion<a class="headerlink" href="#ground-motion" title="Permalink to this heading">¶</a></h1>
 <p>The groundMotion command is used to construct a GroundMotion object used by the ImposedMotionSP constraints in a MultipleSupportExcitation object. This command is of the following form:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -247,7 +251,7 @@
 </table>
 <p>There are presently two type of groundMotions that can be created: 1) <a class="reference internal" href="#plaingroundmotion"><span class="std std-ref">Plain Ground Motion</span></a> and 2) <span class="xref std std-ref">interpolaatedGroundMotion</span></p>
 <div class="section" id="plain-ground-motion">
-<span id="plaingroundmotion"></span><h2>Plain Ground Motion<a class="headerlink" href="#plain-ground-motion" title="Permalink to this headline">¶</a></h2>
+<span id="plaingroundmotion"></span><h2>Plain Ground Motion<a class="headerlink" href="#plain-ground-motion" title="Permalink to this heading">¶</a></h2>
 <p>Each GroundMotion object is associated with a number of TimeSeries objects, which define the acceleration, velocity and displacement records for that ground motion. The particular form of the command is as follows:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -264,7 +268,7 @@
 </div>
 </div>
 <div class="section" id="interpolated-ground-motion">
-<span id="interpolatedgroundmotion"></span><h2>Interpolated Ground Motion<a class="headerlink" href="#interpolated-ground-motion" title="Permalink to this headline">¶</a></h2>
+<span id="interpolatedgroundmotion"></span><h2>Interpolated Ground Motion<a class="headerlink" href="#interpolated-ground-motion" title="Permalink to this heading">¶</a></h2>
 <p>This command is used to construct an interpolated GroundMotion object, where the motion is determined by combining several previously defined ground motions in the load pattern. The command is as follows:</p>
 <dl class="py function">
 <dt class="sig sig-object py">

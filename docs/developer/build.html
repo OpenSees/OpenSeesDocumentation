@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -196,16 +199,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="building-application">
-<span id="build"></span><h1><span class="section-number">2. </span>Building Application<a class="headerlink" href="#building-application" title="Permalink to this headline">¶</a></h1>
+<span id="build"></span><h1><span class="section-number">2. </span>Building Application<a class="headerlink" href="#building-application" title="Permalink to this heading">¶</a></h1>
 <p>The OpenSees applications are built using <a class="reference external" href="https://cmake.org/">CMake</a>, an extensible open-source system that manages the build system. It provides a uniform build process across a range of operating systems: Windows, MacOS and different version of Linux. CMake needs to be installed on your system. For it to work, other applications such as C, C++ and Fortran compilers need to be also installed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Most code instructions below are run from a <strong>Terminal</strong> application. Type <strong>cmd</strong> in the Windows search or <strong>terminal</strong> in MacOS spotlight to start the application. If you are on a Unix machine this note may cause you some amusement!</p>
 </div>
 <div class="section" id="windows-10">
-<h2><span class="section-number">2.1. </span>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="software-requirements">
-<h3><span class="section-number">2.1.1. </span>Software Requirements<a class="headerlink" href="#software-requirements" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.1. </span>Software Requirements<a class="headerlink" href="#software-requirements" title="Permalink to this heading">¶</a></h3>
 <p>For Windows 10 the user must have the following applications installed on their computer: CMake, VisualStudio Basic, Intel One Basic and HPC Toolkits, and MUMPS, and conan:</p>
 <ol class="arabic simple">
 <li><p><strong>CMake</strong>: We use <a class="reference external" href="https://cmake.org/download/">CMake</a> for managing the build process. Version 3.20 or later is recommended.</p></li>
@@ -253,7 +256,7 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </ol>
 </div>
 <div class="section" id="obtaining-opensees-source-code">
-<h3><span class="section-number">2.1.2. </span>Obtaining OpenSees Source Code<a class="headerlink" href="#obtaining-opensees-source-code" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.2. </span>Obtaining OpenSees Source Code<a class="headerlink" href="#obtaining-opensees-source-code" title="Permalink to this heading">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -272,7 +275,7 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </div>
 </div>
 <div class="section" id="building-the-opensees-applications-and-python-module">
-<h3><span class="section-number">2.1.3. </span>Building the OpenSees Applications and Python module<a class="headerlink" href="#building-the-opensees-applications-and-python-module" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3. </span>Building the OpenSees Applications and Python module<a class="headerlink" href="#building-the-opensees-applications-and-python-module" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somewhat simple! From a terminal window move to the folder that contains the OpenSees folder and issue the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\Program Files (x86)\Intel\oneAPI\setVars&quot;</span> <span class="n">intel64</span> <span class="n">mod</span>
@@ -326,9 +329,9 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </div>
 </div>
 <div class="section" id="macos">
-<h2><span class="section-number">2.2. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="id2">
-<h3><span class="section-number">2.2.1. </span>Software Requirements<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.1. </span>Software Requirements<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <p>For MacOS the user must have the following applications installed on their computer: xcode command line tools, brew, cmake, gcc, gfortran, python, and open-mpi. All the applications are installed via the command line. Some of these you can skip as you may already have them installed.</p>
 <ol class="arabic">
 <li><p><strong>XCODE Command Line Tools</strong>: To make Apple Clang and git available, type the following in a terminal application:</p>
@@ -369,7 +372,7 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </ol>
 </div>
 <div class="section" id="obtaining-the-source-code">
-<h3><span class="section-number">2.2.2. </span>Obtaining the Source Code<a class="headerlink" href="#obtaining-the-source-code" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.2. </span>Obtaining the Source Code<a class="headerlink" href="#obtaining-the-source-code" title="Permalink to this heading">¶</a></h3>
 <p>To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -388,7 +391,7 @@ Mumps is one of the defaults solvers used in OpenSessMP and OpenSeesMP. Like Ope
 </div>
 </div>
 <div class="section" id="building-the-opensees-tcl-application">
-<h3><span class="section-number">2.2.3. </span>Building the OpenSees Tcl Application<a class="headerlink" href="#building-the-opensees-tcl-application" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.3. </span>Building the OpenSees Tcl Application<a class="headerlink" href="#building-the-opensees-tcl-application" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somehwat simple! Again from a terminal window:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd OpenSees
@@ -429,9 +432,9 @@ mv ./lib/OpenSeesPy.dylib ./lib/opensees.so
 </div>
 </div>
 <div class="section" id="ubuntu">
-<h2><span class="section-number">2.3. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="id3">
-<h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.1. </span>Software Requirements<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
 <li><p><strong>Needed Applications and Libraries</strong>: For Ubuntu, the user must have a number of packages installed on their system. These can be installed following commands issued in a terminal window.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
@@ -466,7 +469,7 @@ mv ./lib/OpenSeesPy.dylib ./lib/opensees.so
 </div>
 </div>
 <div class="section" id="id4">
-<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.2. </span>Obtaining the Source Code<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <p>You need to obtain the OpenSees source code from github. To obtain the source code, from a terminal <strong>cd</strong> to the directory you want to place OpenSees and then type the following:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">/</span><span class="n">OpenSees</span><span class="o">.</span><span class="n">git</span>
@@ -475,7 +478,7 @@ mv ./lib/OpenSeesPy.dylib ./lib/opensees.so
 </div></blockquote>
 </div>
 <div class="section" id="building-the-opensees-applications">
-<h3><span class="section-number">2.3.3. </span>Building the OpenSees Applications<a class="headerlink" href="#building-the-opensees-applications" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.3. </span>Building the OpenSees Applications<a class="headerlink" href="#building-the-opensees-applications" title="Permalink to this heading">¶</a></h3>
 <p>With everything installed the build process is somehwat simple! Again from a terminal window enter the following commands:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd OpenSees

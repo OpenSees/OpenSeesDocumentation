@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -194,7 +197,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="thermal-examples">
-<span id="lblthermalexamples"></span><h1><span class="section-number">4.2. </span>Thermal Examples<a class="headerlink" href="#thermal-examples" title="Permalink to this headline">¶</a></h1>
+<span id="lblthermalexamples"></span><h1><span class="section-number">4.2. </span>Thermal Examples<a class="headerlink" href="#thermal-examples" title="Permalink to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="thermalExamples/thermalexample1.html">4.2.1. Example 1</a></li>
@@ -207,28 +210,28 @@
 <p><strong>Structural Fire Engineering</strong></p>
 <p>The following types of fire analyses are represented in these examples. The fire analysis is performed is a stress-based analysis where the temperature of the elements is set within the code. Heat transfer analysis between the gas temperatures and the structural member should be performed using lump mass heat transfer analysis techniques or appropriate finite element programs.</p>
 <div class="section" id="target-temperature">
-<h2><span class="section-number">4.2.6. </span>Target temperature<a class="headerlink" href="#target-temperature" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.6. </span>Target temperature<a class="headerlink" href="#target-temperature" title="Permalink to this heading">¶</a></h2>
 <p>The temperature of the elements are set and a linear time-temperature curve is assumed for each element to reach the set temperature over the time period of the step.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../_images/WelcomePage_fig1.png"><img alt="../../_images/WelcomePage_fig1.png" src="../../_images/WelcomePage_fig1.png" style="width: 500px;" /></a>
 </div>
 </div>
 <div class="section" id="standard-fire-curve">
-<h2><span class="section-number">4.2.7. </span>Standard fire curve<a class="headerlink" href="#standard-fire-curve" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.7. </span>Standard fire curve<a class="headerlink" href="#standard-fire-curve" title="Permalink to this heading">¶</a></h2>
 <p>The standard fire curve is defined by ASTM E119 and ISO 834. These two curves are essentially the same and are used for standardized fire testing. These time-temperature curves increase rapidly at the beginning and then steadily increase over a time period of eight hours.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../_images/WelcomePage_fig2.png"><img alt="../../_images/WelcomePage_fig2.png" src="../../_images/WelcomePage_fig2.png" style="width: 500px;" /></a>
 </div>
 </div>
 <div class="section" id="parametric-time-temperature-fire-curve">
-<h2><span class="section-number">4.2.8. </span>Parametric time-temperature fire curve<a class="headerlink" href="#parametric-time-temperature-fire-curve" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.8. </span>Parametric time-temperature fire curve<a class="headerlink" href="#parametric-time-temperature-fire-curve" title="Permalink to this heading">¶</a></h2>
 <p>When the research involves structural fire engineering, a parametric time-temperature curve that is based on Eurocode 1 may be required. This time-temperature curve is dependent upon the ventilation (openings) in the compartment, the material of the compartment, the fuel load density, and the size of the compartment. These factors combined will produce a time-temperature curve that characterizes the fire in the compartment under consideration. The shape of this curve and the maximum temperature is highly dependent upon all of the factors previously listed. This type of fire curve will also include a cooling portion of the fire, when all of the fuel has been consumed. This type of fire time-temperature curve is used when a complete burn out fire scenario is being investigated.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../_images/WelcomePage_fig3.png"><img alt="../../_images/WelcomePage_fig3.png" src="../../_images/WelcomePage_fig3.png" style="width: 500px;" /></a>
 </div>
 </div>
 <div class="section" id="simulation-process">
-<h2><span class="section-number">4.2.9. </span>Simulation process<a class="headerlink" href="#simulation-process" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.9. </span>Simulation process<a class="headerlink" href="#simulation-process" title="Permalink to this heading">¶</a></h2>
 <p>Each example script does the following:</p>
 <p><strong>Build the model</strong></p>
 <ol class="arabic simple">
@@ -256,7 +259,7 @@
 </ol>
 </div>
 <div class="section" id="author-info">
-<h2><span class="section-number">4.2.10. </span>Author Info<a class="headerlink" href="#author-info" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.10. </span>Author Info<a class="headerlink" href="#author-info" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ericafischer.org/">Dr. Erica Fischer</a></p></li>
 <li><p>Walker Maddalozzo</p></li>

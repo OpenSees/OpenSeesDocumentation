@@ -45,7 +45,7 @@ This command is used to construct a FourNodeQuad element object which uses a bil
 
    .. code-block:: tcl
 
-      element stdBrick 1 1 2 3 4 "PlaneStress" 1 
+      element quad 1 1 2 3 4 "PlaneStress" 1 
 
    2. **Python Code**
 

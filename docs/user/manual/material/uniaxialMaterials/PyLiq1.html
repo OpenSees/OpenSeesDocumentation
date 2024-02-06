@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.5.31. PyLiq1 Material &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.5.34. PyLiq1 Material &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,16 +36,19 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.5.32. TzLiq1 Material" href="TzLiq1.html" />
-    <link rel="prev" title="3.1.5.30. QzSimple1 Material" href="QzSimple1.html" /> 
+    <link rel="next" title="3.1.5.35. TzLiq1 Material" href="TzLiq1.html" />
+    <link rel="prev" title="3.1.5.33. QzSimple1 Material" href="QzSimple1.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -123,20 +127,22 @@
 <li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.18. IMKPeakOriented Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.19. IMKPinching Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SLModel.html">3.1.5.20. SLModel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.21. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.21. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.22. DowelType Timber Joint Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.23. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.24. CoulombDamper Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.25. Hertz Damp Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.26. Jankowski Impact Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.27. Viscoelastic Gap Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.28. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.29. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.30. QzSimple1 Material</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.31. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.32. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.33. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.21. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.22. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticAsym.html">3.1.5.23. HystereticAsym Material (Smooth asymmetric hysteresis)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticSmooth.html">3.1.5.24. HystereticSmooth Material (Smooth hysteretic material)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.25. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.26. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.27. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.28. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.29. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Ratchet.html">3.1.5.30. Ratchet Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.31. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.32. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.33. QzSimple1 Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.34. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.35. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.36. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
@@ -219,7 +225,7 @@
         
           <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.5.31. </span>PyLiq1 Material</li>
+      <li><span class="section-number">3.1.5.34. </span>PyLiq1 Material</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -239,7 +245,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pyliq1-material">
-<span id="pyliq1"></span><h1><span class="section-number">3.1.5.31. </span>PyLiq1 Material<a class="headerlink" href="#pyliq1-material" title="Permalink to this headline">¶</a></h1>
+<span id="pyliq1"></span><h1><span class="section-number">3.1.5.34. </span>PyLiq1 Material<a class="headerlink" href="#pyliq1-material" title="Permalink to this heading">¶</a></h1>
 <p>This command constructs a uniaxial p-y material that incorporates liquefaction effects. This p-y material is used with a zeroLength element to connect a pile (beam-column element) to a 2 D plane-strain FE mesh or displacement boundary condition. The p-y material obtains the average mean effective stress (which decreases with increasing excess pore pressure) either from two specified soil elements, or from a time series. Currently, the implementation requires that the specified soil elements consist of FluidSolidPorousMaterials in FourNodeQuad elements, or PressureDependMultiYield or PressureDependMultiYield02 materials in FourNodeQuadUP or NineFourQuadUP elements. There are two possible forms:</p>
 <dl class="py function">
 <dt class="sig sig-object py">

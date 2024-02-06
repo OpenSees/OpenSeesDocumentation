@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,8 +36,11 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -44,7 +48,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3.2.1. constraints Command" href="analysis/constraints.html" />
-    <link rel="prev" title="3.1.11.3.3. Secant Stiffness-Proportional Damping" href="model/damping/elementalDamping/SecStifDamping.html" /> 
+    <link rel="prev" title="3.1.12.3.3. Secant Stiffness-Proportional Damping" href="model/damping/elementalDamping/SecStifDamping.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -198,7 +202,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="analysis-commands">
-<span id="lblanalysiscommands"></span><h1><span class="section-number">3.2. </span>Analysis Commands<a class="headerlink" href="#analysis-commands" title="Permalink to this headline">¶</a></h1>
+<span id="lblanalysiscommands"></span><h1><span class="section-number">3.2. </span>Analysis Commands<a class="headerlink" href="#analysis-commands" title="Permalink to this heading">¶</a></h1>
 <p>In OpenSees, an analysis is an object which is composed by the aggregation of component objects. It is the component objects which define the type of analysis that is performed on the model. The component classes, as shown in the figure below, consist of the following:</p>
 <ol class="arabic simple">
 <li><p>Constraint Handler – determines how the constraint equations are enforced in the analysis – how it handles the boundary conditions/imposed displacements</p></li>

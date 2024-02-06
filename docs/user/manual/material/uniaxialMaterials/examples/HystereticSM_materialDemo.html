@@ -1,0 +1,1280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Opensees uniaxialMaterial Demo: HystereticSM &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/nbsphinx-code-cells.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.1.5.17. IMKBilin Material" href="../IMKBilin.html" />
+    <link rel="prev" title="3.1.5.16. HystereticSM Material" href="../HystereticSM.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../Steel01.html">3.1.5.1. Steel01 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Steel02.html">3.1.5.2. Steel02 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Steel4.html">3.1.5.3. Steel4 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ReinforcingSteel.html">3.1.5.4. Reinforcing Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../DoddRestrepo.html">3.1.5.5. DoddRestrepo Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../RambergOsgoodSteel.html">3.1.5.6. Ramberg Osgood Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SteelMPF.html">3.1.5.7. SteelMPF Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UVCuniaxial.html">3.1.5.8. UVCUniaxial Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SteelFractureDI.html">3.1.5.9. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../DuctileFracture.html">3.1.5.10. DuctileFracture Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Concrete01.html">3.1.5.11. Concrete01 Material – Zero Tensile Strength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Concrete02.html">3.1.5.12. Concrete02 Material – Linear Tension Softening</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Concrete04.html">3.1.5.13. Concrete04 Material – Popovics Concrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GMG_CyclicReinforcedConcrete.html">3.1.5.14. GMG_CyclicReinforcedConcrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Hysteretic.html">3.1.5.15. Hysteretic Material</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../HystereticSM.html">3.1.5.16. HystereticSM Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../IMKBilin.html">3.1.5.17. IMKBilin Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../IMKPeakOriented.html">3.1.5.18. IMKPeakOriented Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../IMKPinching.html">3.1.5.19. IMKPinching Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SLModel.html">3.1.5.20. SLModel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BoucWenInfill.html">3.1.5.21. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HystereticPoly.html">3.1.5.22. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HystereticAsym.html">3.1.5.23. HystereticAsym Material (Smooth asymmetric hysteresis)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HystereticSmooth.html">3.1.5.24. HystereticSmooth Material (Smooth hysteretic material)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../DowelType.html">3.1.5.25. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CoulombDamper.html">3.1.5.26. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HertzDamp.html">3.1.5.27. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../JankowskiImpact.html">3.1.5.28. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ViscoelasticGap.html">3.1.5.29. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Ratchet.html">3.1.5.30. Ratchet Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PySimple1.html">3.1.5.31. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../TzSimple1.html">3.1.5.32. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QzSimple1.html">3.1.5.33. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PyLiq1.html">3.1.5.34. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../TzLiq1.html">3.1.5.35. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QzLiq1.html">3.1.5.36. QzLiq1 Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
+        
+          <li><a href="../HystereticSM.html"><span class="section-number">3.1.5.16. </span>HystereticSM Material</a> &raquo;</li>
+        
+      <li>Opensees uniaxialMaterial Demo: HystereticSM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="Opensees-uniaxialMaterial-Demo:-HystereticSM">
+<h1>Opensees uniaxialMaterial Demo: HystereticSM<a class="headerlink" href="#Opensees-uniaxialMaterial-Demo:-HystereticSM" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="Silvia-Mazzoni,-2023">
+<h2>Silvia Mazzoni, 2023<a class="headerlink" href="#Silvia-Mazzoni,-2023" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="silviamazzoni&#64;yahoo.com">
+<h3><a class="reference external" href="mailto:silviamazzoni&#37;&#52;&#48;yahoo&#46;com">silviamazzoni<span>&#64;</span>yahoo<span>&#46;</span>com</a><a class="headerlink" href="#silviamazzoni@yahoo.com" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="Initialize-Notebook">
+<h2>Initialize Notebook<a class="headerlink" href="#Initialize-Notebook" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import sys
+
+OpenSeesPyPath = r&#39;D:\Projects\OpenSees\Development\OpenSeesFork\Win64\bin&#39;
+sys.path.append(OpenSeesPyPath)
+import opensees as ops
+
+# import openseespy.opensees as ops
+# ------------------
+#  initialize
+# ------------------
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+# https://github.com/jupyter-widgets/ipywidgets/issues/1853
+from ipywidgets.widgets.interaction import show_inline_matplotlib_plots
+#%matplotlib notebook
+
+import glob
+import urllib
+import webbrowser
+from ipywidgets import widgets, Output
+from ipywidgets import interact, interactive, fixed, interact_manual, Layout
+from IPython.display import display
+from IPython.display import clear_output
+from IPython.display import HTML
+from IPython.display import Image
+from IPython.display import Javascript
+from urllib.parse import urljoin
+from urllib.request import pathname2url
+from pathlib import Path
+from datetime import date
+import os
+from os.path import expanduser
+#http://ipywidgets.readthedocs.io/en/stable/examples/Widget%20List.html
+#https://stackoverflow.com/questions/22487231/how-to-start-a-batch-file-from-within-a-python-script-and-detach-from-it
+import subprocess
+
+#from ipysheet import sheet, cell, row, column, cell_range,from_dataframe,to_dataframe
+pd.set_option(&quot;display.max_rows&quot;, None)
+np.set_printoptions(threshold=np.inf)
+plt.interactive(True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Define-Strain-Histories">
+<h2>Define Strain Histories<a class="headerlink" href="#Define-Strain-Histories" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>strainMap = {}
+def defineStrainHistory(peaksArray,scaleFactor,nSteps,nCycles):
+    strain = []
+    for thisPeak in peaksArray:
+        for i in range(nCycles):
+            strain = np.append(strain,np.linspace(0,thisPeak*scaleFactor,nSteps))
+            strain = np.append(strain,np.linspace(thisPeak*scaleFactor,-thisPeak*scaleFactor,nSteps))
+            strain = np.append(strain,np.linspace(-thisPeak*scaleFactor,0,nSteps))
+
+    return strain
+
+def defineStrainHistoryOneSided(peaksArray,scaleFactor,nSteps,nCycles):
+    strain = []
+    for thisPeak in peaksArray:
+        for i in range(nCycles):
+            strain = np.append(strain,np.linspace(0,thisPeak*scaleFactor,nSteps))
+            strain = np.append(strain,np.linspace(thisPeak*scaleFactor,0,nSteps))
+
+    return strain
+
+def defineStrainHistoryUnsymm(peaksArray,scaleFactor,nSteps,nCycles):
+    strain = []
+    for thisPeak in peaksArray:
+        for i in range(nCycles):
+            strain = np.append(strain,np.linspace(0,thisPeak*scaleFactor,nSteps))
+            strain = np.append(strain,np.linspace(thisPeak*scaleFactor,-thisPeak*scaleFactor/2,nSteps))
+            strain = np.append(strain,np.linspace(-thisPeak*scaleFactor/2,0,nSteps))
+
+    return strain
+
+def defineStrainHistoryDip(peaksArray,scaleFactor,nSteps,nCycles):
+    strain = []
+    for thisPeak in peaksArray:
+        for i in range(nCycles):
+            strain = np.append(strain,np.linspace(0,thisPeak/2*scaleFactor,nSteps))
+            strain = np.append(strain,np.linspace(thisPeak/2*scaleFactor,-thisPeak/2*scaleFactor,nSteps))
+            strain = np.append(strain,np.linspace(-thisPeak/2*scaleFactor,thisPeak/2*scaleFactor,nSteps))
+            strain = np.append(strain,np.linspace(thisPeak/2*scaleFactor,thisPeak*scaleFactor,nSteps))
+    return strain
+
+peaksArray=np.array([.5,1,1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10])/10
+# peaksArray=[1,10]
+scaleFactor = .1
+# scaleFactor = 0.01
+nSteps = 100
+nCycles = 3
+strain=defineStrainHistory(peaksArray,scaleFactor,nSteps,nCycles)
+plt.plot(strain)
+strainMap[&#39;symmCycles&#39;] = strain
+
+strainUnsymm=defineStrainHistoryUnsymm(peaksArray,scaleFactor,nSteps,nCycles)
+plt.plot(strainUnsymm)
+strainMap[&#39;strainUnsymm&#39;] = strainUnsymm
+
+strainOneSidedPush=defineStrainHistoryOneSided(peaksArray,scaleFactor,nSteps,nCycles)
+plt.plot(strainOneSidedPush)
+strainMap[&#39;strainOneSidedPush&#39;] = strainOneSidedPush
+
+strainOneSidedPull=defineStrainHistoryOneSided(peaksArray,-scaleFactor,nSteps,nCycles)
+plt.plot(strainOneSidedPull)
+strainMap[&#39;strainOneSidedPull&#39;] = strainOneSidedPull
+
+peaksArray=np.array([10])/10
+scaleFactor = .1
+nSteps = 100
+nCycles = 1
+strainOneCycle=defineStrainHistory(peaksArray,scaleFactor,nSteps,nCycles)
+plt.plot(strainOneCycle)
+strainMap[&#39;strainOneCycle&#39;] = strainOneCycle
+
+peaksArray=np.array([10])/10
+scaleFactor = .1
+nSteps = 100
+nCycles = 1
+strainDip=defineStrainHistoryDip(peaksArray,scaleFactor,nSteps,nCycles)
+plt.plot(strainOneCycle)
+strainMap[&#39;strainDip&#39;] = strainDip
+
+thisPeak = 10
+scaleFactor = 0.02
+strainPush = np.linspace(0,thisPeak*scaleFactor,nSteps)
+strainMap[&#39;strainPush&#39;] = strainPush
+
+thisPeak = -10
+scaleFactor = 0.02
+strainPull = np.linspace(0,thisPeak*scaleFactor,nSteps)
+strainMap[&#39;strainPull&#39;] = strainPull
+
+plt.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_4_0.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_4_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Utilities">
+<h2>Utilities<a class="headerlink" href="#Utilities" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def formatAx(axModel,Title,xLabel,yLabel,titleFontSize = 12, otherFontSize = 12,legendLocation = &#39;best&#39;,backgroundColor = &#39;&#39;,legendFontSize=0,ncol = 1):
+## Copyright Silvia Mazzoni, silviamazzoni@yahoo.com 2021
+    import matplotlib.pyplot as plt
+    plt.rc(&#39;font&#39;,size=3)
+    plt.rc(&#39;font&#39;,size=3)
+    if legendFontSize == 0:
+        legendFontSize = otherFontSize
+    axModel.grid(True,color=&#39;grey&#39;,linewidth=0.25)
+    handles, labels = axModel.get_legend_handles_labels()
+    if len(handles)&gt;0:
+        axModel.legend(fontsize=legendFontSize,loc=legendLocation,ncol=ncol)
+    axModel.set_title(Title, fontsize=titleFontSize)
+    axModel.set_xlabel(xLabel, fontsize=otherFontSize)
+    axModel.set_ylabel(yLabel, fontsize=otherFontSize)
+    axModel.tick_params(&#39;x&#39;, labelsize=otherFontSize, rotation=0)
+    axModel.tick_params(&#39;y&#39;, labelsize=otherFontSize, rotation=0)
+    axModel.yaxis.set_ticks_position(&#39;left&#39;)
+    axModel.xaxis.set_ticks_position(&#39;bottom&#39;)
+
+    if not backgroundColor == &#39;&#39;:
+        axModel.set_facecolor(backgroundColor)
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>## Material Properties
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>OpenSeesMaterialBaseValues = {}
+OpenSeesMaterialDefaultValues = {}
+M1 = 2772.
+M2 = round(1.12*M1,1)
+M3 = round(0.6*M1,1)
+M4 = M3
+M5 = round(0.1*M1,1)
+M6 = M5
+M7 = 0.01*M1
+eps1 = 0.01
+eps2 = 2.*eps1
+eps3 = 4.*eps1
+eps4 = 6.*eps1
+eps5 = 8.*eps1
+eps6 = 10.*eps1
+eps7 = 12.*eps1
+
+
+
+limitStateInput = [&#39;-defoLimitStates&#39;,eps1,-eps1,eps2,-eps2,&#39;-forceLimitStates&#39;,M1,-M1,M2,-M2]
+positiveEnvelope = [M1, eps1, M2, eps2, M3, eps3, M4, eps4, M5, eps5, 200., eps6, 0, eps7]
+negativeEnvelope = [-M1, -eps1, -M2, -eps2, -M3, -eps3]
+
+OpenSeesMaterialBaseValues[f&#39;HystereticSM&#39;]=    [&#39;HystereticSM&#39;,&#39;-posEnv&#39;,*positiveEnvelope, &#39;-negEnv&#39;,*negativeEnvelope]
+OpenSeesMaterialBaseValues[f&#39;HystereticSMsymm&#39;]=    [&#39;HystereticSM&#39;,&#39;-posEnv&#39;,*positiveEnvelope]
+
+for thisPinch in [[1,1],[.2,.8],[.8,.2]]:
+    OpenSeesMaterialDefaultValues[f&#39;HystereticSM_pinch={thisPinch}&#39;]=    [&#39;HystereticSM&#39;,&#39;-posEnv&#39;,*positiveEnvelope, &#39;-negEnv&#39;,*negativeEnvelope, &#39;-pinch&#39;,*thisPinch]
+for thisDamage1 in [0,0.01,0.1]:
+    OpenSeesMaterialDefaultValues[f&#39;HystereticSM_damage1={thisDamage1}&#39;]=    [&#39;HystereticSM&#39;,&#39;-posEnv&#39;,*positiveEnvelope, &#39;-negEnv&#39;,*negativeEnvelope, &#39;-damage&#39;,thisDamage1,0]
+for thisDamage2 in [0,0.01,0.1]:
+    OpenSeesMaterialDefaultValues[f&#39;HystereticSM_damage2={thisDamage2}&#39;]=    [&#39;HystereticSM&#39;,&#39;-posEnv&#39;,*positiveEnvelope, &#39;-negEnv&#39;,*negativeEnvelope, &#39;-damage&#39;,0,thisDamage2]
+for thisBeta in [0,0.5,1]:
+    OpenSeesMaterialDefaultValues[f&#39;HystereticSM_beta={thisBeta}&#39;]=    [&#39;HystereticSM&#39;,&#39;-posEnv&#39;,*positiveEnvelope, &#39;-negEnv&#39;,*negativeEnvelope, &#39;-beta&#39;,thisBeta]
+dmg1a = 0.005
+dmg2a = 0.002
+for thisDegEnv in [0,1,5]:
+    OpenSeesMaterialDefaultValues[f&#39;HystereticSM_degEnv={thisDegEnv}&#39;]=    [&#39;HystereticSM&#39;,&#39;-posEnv&#39;,*positiveEnvelope, &#39;-negEnv&#39;,*negativeEnvelope,&#39;-damage&#39;,dmg1a,dmg2a,&#39;-degEnv&#39;,thisDegEnv,-thisDegEnv]
+<br/></pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Analysis-Set-1:-Pushover">
+<h2>Analysis Set 1: Pushover<a class="headerlink" href="#Analysis-Set-1:-Pushover" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>AllStressStrain = {}
+allStrainArrayPush = [&#39;strainPush&#39;,&#39;strainPull&#39;]
+figSizeH = 4
+figSizeV = 4
+DPI = 200
+
+for thisMaterial in OpenSeesMaterialBaseValues.keys():
+    print(&#39;--------------------------------------------&#39;)
+    print(thisMaterial)
+    figEach = plt.figure(f&#39;Material Response Each {thisMaterial}&#39;,figsize=(figSizeH,figSizeV), dpi=DPI, facecolor=&#39;w&#39;, edgecolor=&#39;k&#39; )
+    axEach = figEach.add_subplot(1,1,1)
+
+    istrain = 0
+    for thisStrainLabel in allStrainArrayPush:
+        thisStrain = strainMap[thisStrainLabel]
+        ops.wipe()
+        materialTag = 99
+        istrain +=1
+
+        inputArray = OpenSeesMaterialBaseValues[thisMaterial]
+
+        MaterialInput = inputArray[0],materialTag,*inputArray[1:]
+        print(f&#39;ops.uniaxialMaterial{MaterialInput}&#39;)
+        MaterialInputTcl = str(MaterialInput).replace(&#39;,&#39;,&#39; &#39;).replace(&#39;(&#39;,&#39;&#39;).replace(&#39;)&#39;,&#39;&#39;).replace(&quot;&#39;&quot;,&#39;&#39;)
+        print(f&#39;uniaxialMaterial {MaterialInputTcl}&#39;)
+
+        ops.uniaxialMaterial(*MaterialInput)
+
+        ops.testUniaxialMaterial(materialTag)
+        stress = []
+        MUy = []
+        for eps in thisStrain:
+            ops.setStrain(eps)
+            stress.append(ops.getStress())
+            tangent = ops.getTangent() # Not used
+
+
+        thisCount = len(list(AllStressStrain.keys()))
+        thisKey = &#39;Run&#39; + str(thisCount+1) + &#39; &#39; + thisMaterial
+        AllStressStrain[thisKey] = {}
+        AllStressStrain[thisKey][&#39;strain&#39;] = thisStrain
+        AllStressStrain[thisKey][&#39;stress&#39;] = stress
+
+        MaterialInputStr = str(MaterialInput).replace(&#39;,&#39;,&#39;,\n&#39;)
+
+
+        zeros = np.zeros(len(AllStressStrain[thisKey][&#39;strain&#39;]))
+        line, = axEach.plot(zeros,AllStressStrain[thisKey][&#39;stress&#39;],&#39;k-&#39;,linewidth=&#39;1.0&#39;,marker = &#39;&#39;)
+        line, = axEach.plot(AllStressStrain[thisKey][&#39;strain&#39;], zeros,&#39;k-&#39;,linewidth=&#39;1.0&#39;,marker = &#39;&#39;)
+        line, = axEach.plot(AllStressStrain[thisKey][&#39;strain&#39;], AllStressStrain[thisKey][&#39;stress&#39;],&#39;b&#39;,linewidth=&#39;1.5&#39;,marker = &#39;&#39;)
+    formatAx(axEach,thisMaterial,&#39;Strain,Rotation,Curvature, or Deformation&#39;,&#39;Stress,Moment,Moment, or Force&#39;,8,8,&#39;best&#39;,&#39;lightgrey&#39;,4)
+    plt.xticks([])
+    plt.yticks([])
+    figEach.tight_layout()
+    plt.show()
+    figFilename = f&#39;D:\\Projects\\OpenSees\\Development\\_JupyterNotebooks\\HystereticSM\\{thisMaterial}_{thisStrainLabel}.jpg&#39;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+HystereticSM: multi-point envelope + DCR recorders  - Code by Silvia Mazzoni, 2023 (silviamazzoni@yahoo.com)
+
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_10_2.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_10_2.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSMsymm
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_10_4.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_10_4.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Analysis-Set-2:-Cyclic">
+<h2>Analysis Set 2: Cyclic<a class="headerlink" href="#Analysis-Set-2:-Cyclic" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>AllStressStrain = {}
+
+Nmaterials = len(OpenSeesMaterialDefaultValues.keys())
+Ncols = 2
+Nrows = int(Nmaterials/Ncols)
+Nrows = 2
+
+figSizeH = 2*Ncols
+figSizeV = 2*Nrows
+DPI = 200
+
+thisCount = 0
+allStrainArray = [&#39;symmCycles&#39;,  &#39;strainOneSidedPush&#39;, &#39;strainOneSidedPull&#39;,&#39;strainDip&#39;]
+iStrain = 0
+for thisStrainLabel in allStrainArray:
+    thisStrain = strainMap[thisStrainLabel]
+    iStrain += 1
+    iplt = 1
+    for thisMaterial in OpenSeesMaterialDefaultValues.keys():
+        print(&#39;--------------------------------------------&#39;)
+        print(thisMaterial)
+        if iplt == 1:
+            figEach = plt.figure(f&#39;Material Response Each {thisMaterial} {thisStrainLabel}&#39;,figsize=(figSizeH,figSizeV), dpi=DPI, facecolor=&#39;w&#39;, edgecolor=&#39;k&#39; )
+            axAll = figEach.add_subplot(Nrows,Ncols,1)
+        iplt += 1
+        axEach = figEach.add_subplot(Nrows,Ncols,iplt)
+
+        counter = thisCount + 1
+        ops.wipe()
+        materialTag = 99
+
+        inputArray = OpenSeesMaterialDefaultValues[thisMaterial]
+
+        MaterialInput = inputArray[0],materialTag,*inputArray[1:]
+        print(f&#39;ops.uniaxialMaterial{MaterialInput}&#39;)
+        MaterialInputTcl = str(MaterialInput).replace(&#39;,&#39;,&#39; &#39;).replace(&#39;(&#39;,&#39;&#39;).replace(&#39;)&#39;,&#39;&#39;).replace(&quot;&#39;&quot;,&#39;&#39;)
+        print(f&#39;uniaxialMaterial {MaterialInputTcl}&#39;)
+        ops.uniaxialMaterial(*MaterialInput)
+
+        ops.testUniaxialMaterial(materialTag)
+        stress = []
+        MUy = []
+        for eps in thisStrain:
+            ops.setStrain(eps)
+            stress.append(ops.getStress())
+            tangent = ops.getTangent() # Not used
+
+
+        thisCount = len(list(AllStressStrain.keys()))
+        thisKey = &#39;Run&#39; + str(thisCount+1) + &#39; &#39; + thisMaterial
+        AllStressStrain[thisKey] = {}
+        AllStressStrain[thisKey][&#39;strain&#39;] = thisStrain
+        AllStressStrain[thisKey][&#39;stress&#39;] = stress
+
+        MaterialInputStr = str(MaterialInput).replace(&#39;,&#39;,&#39;,\n&#39;)
+        line, = axAll.plot(AllStressStrain[thisKey][&#39;strain&#39;], AllStressStrain[thisKey][&#39;stress&#39;],linewidth=&#39;1&#39;,label=thisMaterial,marker = &#39;&#39;)
+        line, = axEach.plot(AllStressStrain[thisKey][&#39;strain&#39;], AllStressStrain[thisKey][&#39;stress&#39;],linewidth=&#39;1&#39;,label=MaterialInputStr,marker = &#39;&#39;)
+        formatAx(axEach,thisMaterial,&#39;Strain,Rotation,Curvature, or Deformation&#39;,&#39;Stress,Moment,Moment, or Force&#39;,4,4,&#39;best&#39;,&#39;lightgrey&#39;,2)
+        if iplt == 4:
+            figEach.tight_layout()
+            formatAx(axAll,&quot;Compare All&quot;,&#39;Strain,Rotation,Curvature, or Deformation&#39;,&#39;Stress,Moment,Moment, or Force&#39;,4, 4,&#39;best&#39;,&#39;lightblue&#39;,2)
+            plt.show()
+            iplt = 1
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_pinch=[1, 1]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 1, 1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  1  1
+--------------------------------------------
+HystereticSM_pinch=[0.2, 0.8]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 0.2, 0.8)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  0.2  0.8
+--------------------------------------------
+HystereticSM_pinch=[0.8, 0.2]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 0.8, 0.2)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  0.8  0.2
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_1.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_damage1=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0
+--------------------------------------------
+HystereticSM_damage1=0.01
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.01, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.01  0
+--------------------------------------------
+HystereticSM_damage1=0.1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.1, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.1  0
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_3.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_3.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_damage2=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0
+--------------------------------------------
+HystereticSM_damage2=0.01
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0.01)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0.01
+--------------------------------------------
+HystereticSM_damage2=0.1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0.1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0.1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_5.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_5.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_beta=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  0
+--------------------------------------------
+HystereticSM_beta=0.5
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 0.5)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  0.5
+--------------------------------------------
+HystereticSM_beta=1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_7.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_7.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_degEnv=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  0  0
+--------------------------------------------
+HystereticSM_degEnv=1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 1, -1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  1  -1
+--------------------------------------------
+HystereticSM_degEnv=5
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 5, -5)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  5  -5
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_9.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_9.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_pinch=[1, 1]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 1, 1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  1  1
+--------------------------------------------
+HystereticSM_pinch=[0.2, 0.8]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 0.2, 0.8)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  0.2  0.8
+--------------------------------------------
+HystereticSM_pinch=[0.8, 0.2]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 0.8, 0.2)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  0.8  0.2
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_11.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_11.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_damage1=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0
+--------------------------------------------
+HystereticSM_damage1=0.01
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.01, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.01  0
+--------------------------------------------
+HystereticSM_damage1=0.1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.1, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.1  0
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_13.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_13.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_damage2=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0
+--------------------------------------------
+HystereticSM_damage2=0.01
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0.01)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0.01
+--------------------------------------------
+HystereticSM_damage2=0.1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0.1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0.1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_15.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_15.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_beta=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  0
+--------------------------------------------
+HystereticSM_beta=0.5
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 0.5)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  0.5
+--------------------------------------------
+HystereticSM_beta=1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_17.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_17.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_degEnv=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  0  0
+--------------------------------------------
+HystereticSM_degEnv=1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 1, -1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  1  -1
+--------------------------------------------
+HystereticSM_degEnv=5
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 5, -5)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  5  -5
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_19.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_19.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_pinch=[1, 1]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 1, 1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  1  1
+--------------------------------------------
+HystereticSM_pinch=[0.2, 0.8]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 0.2, 0.8)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  0.2  0.8
+--------------------------------------------
+HystereticSM_pinch=[0.8, 0.2]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 0.8, 0.2)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  0.8  0.2
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_21.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_21.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_damage1=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0
+--------------------------------------------
+HystereticSM_damage1=0.01
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.01, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.01  0
+--------------------------------------------
+HystereticSM_damage1=0.1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.1, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.1  0
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_23.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_23.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_damage2=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0
+--------------------------------------------
+HystereticSM_damage2=0.01
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0.01)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0.01
+--------------------------------------------
+HystereticSM_damage2=0.1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0.1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0.1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_25.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_25.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_beta=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  0
+--------------------------------------------
+HystereticSM_beta=0.5
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 0.5)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  0.5
+--------------------------------------------
+HystereticSM_beta=1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_27.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_27.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_degEnv=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  0  0
+--------------------------------------------
+HystereticSM_degEnv=1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 1, -1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  1  -1
+--------------------------------------------
+HystereticSM_degEnv=5
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 5, -5)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  5  -5
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_29.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_29.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_pinch=[1, 1]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 1, 1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  1  1
+--------------------------------------------
+HystereticSM_pinch=[0.2, 0.8]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 0.2, 0.8)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  0.2  0.8
+--------------------------------------------
+HystereticSM_pinch=[0.8, 0.2]
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-pinch&#39;, 0.8, 0.2)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  0.8  0.2
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_31.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_31.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_damage1=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0
+--------------------------------------------
+HystereticSM_damage1=0.01
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.01, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.01  0
+--------------------------------------------
+HystereticSM_damage1=0.1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.1, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.1  0
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_33.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_33.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_damage2=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0
+--------------------------------------------
+HystereticSM_damage2=0.01
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0.01)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0.01
+--------------------------------------------
+HystereticSM_damage2=0.1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0, 0.1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0.1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_35.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_35.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_beta=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  0
+--------------------------------------------
+HystereticSM_beta=0.5
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 0.5)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  0.5
+--------------------------------------------
+HystereticSM_beta=1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-beta&#39;, 1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_37.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_37.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--------------------------------------------
+HystereticSM_degEnv=0
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 0, 0)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  0  0
+--------------------------------------------
+HystereticSM_degEnv=1
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 1, -1)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  1  -1
+--------------------------------------------
+HystereticSM_degEnv=5
+ops.uniaxialMaterial(&#39;HystereticSM&#39;, 99, &#39;-posEnv&#39;, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, &#39;-negEnv&#39;, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, &#39;-damage&#39;, 0.005, 0.002, &#39;-degEnv&#39;, 5, -5)
+uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  5  -5
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_39.png" src="../../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_39.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

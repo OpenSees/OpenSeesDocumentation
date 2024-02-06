@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -199,11 +202,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="envelope-node-recorder">
-<span id="envelopenoderecorder"></span><h1><span class="section-number">3.3.1.2. </span>Envelope Node Recorder<a class="headerlink" href="#envelope-node-recorder" title="Permalink to this headline">¶</a></h1>
+<span id="envelopenoderecorder"></span><h1><span class="section-number">3.3.1.2. </span>Envelope Node Recorder<a class="headerlink" href="#envelope-node-recorder" title="Permalink to this heading">¶</a></h1>
 <p>The EnvelopeNode recorder type records the maxima and minima response of a number of nodes over the analysis. The command to create an envelope node recorder is:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">recorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">EnvelopeNode</span></em>, <em class="sig-param"><span class="pre">&lt;-file</span> <span class="pre">$filename&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-xml</span> <span class="pre">$filename&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-binary</span> <span class="pre">$filename&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-tcp</span> <span class="pre">$inetAddress</span> <span class="pre">$port&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-precision</span>&#160; <span class="pre">$nSD&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-timeSeries</span> <span class="pre">$tsTag&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-time&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-dT</span> <span class="pre">$deltaT&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-closeOnWrite&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-node</span>&#160; <span class="pre">$nodeTags&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;</span> <span class="pre">-nodeRange</span> <span class="pre">$startNode</span> <span class="pre">$endNode&gt;</span></em>, <em class="sig-param"><span class="pre">&lt;-region</span> <span class="pre">$regionTag&gt;</span> <span class="pre">-dof</span> <span class="pre">$dofs</span> <span class="pre">$respType</span></em><span class="sig-paren">)</span></dt>
+<span class="sig-name descname"><span class="pre">recorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">EnvelopeNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-file</span> <span class="pre">$filename&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-xml</span> <span class="pre">$filename&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-binary</span> <span class="pre">$filename&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-tcp</span> <span class="pre">$inetAddress</span> <span class="pre">$port&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-precision</span>&#160; <span class="pre">$nSD&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-timeSeries</span> <span class="pre">$tsTag&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-dT</span> <span class="pre">$deltaT&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-closeOnWrite&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-node</span>&#160; <span class="pre">$nodeTags&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;</span> <span class="pre">-nodeRange</span> <span class="pre">$startNode</span> <span class="pre">$endNode&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;-region</span> <span class="pre">$regionTag&gt;</span> <span class="pre">-dof</span> <span class="pre">$dofs</span> <span class="pre">$respType</span></span></em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -318,6 +321,9 @@ rayleighForces!
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>nodesD.out<span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>disp<span class="k">;</span>
 
 <span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>nodesA.out<span class="w"> </span><span class="o">-</span>timeSeries<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>accel<span class="k">;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

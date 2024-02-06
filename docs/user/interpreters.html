@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -176,7 +179,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="opensees-interpreters">
-<h1><span class="section-number">1. </span>OpenSees Interpreters<a class="headerlink" href="#opensees-interpreters" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>OpenSees Interpreters<a class="headerlink" href="#opensees-interpreters" title="Permalink to this heading">¶</a></h1>
 <p>In computer science, an interpreter is a computer program that directly executes instructions written in a programming or scripting language, without requiring them previously to have been compiled into a machine language program. Matlab is a great example of an interpreter. The scripts that the user provides, e.g. a .m file if the user is using Matlab, contains a sequence of instructions written in some high level scripting language. For performing finite element analysis using OpenSees two popular scripting languages, <strong>Tcl</strong> and <strong>Python</strong> have been extended, by extended we mean additional commands have been added to the languages.</p>
 <p>The extensions introduce <strong>IDENTICAL</strong> new commands with the same arguments into the interpreter languages read by the interpreters. How the command is expressed in the language is the only difference. The languages to add a node number 3 at location (168.0, 0.0):</p>
 <ol class="arabic simple">

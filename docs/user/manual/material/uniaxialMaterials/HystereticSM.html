@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/nbsphinx-gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,14 +37,16 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.5.17. IMKBilin Material" href="IMKBilin.html" />
+    <link rel="next" title="Opensees uniaxialMaterial Demo: HystereticSM" href="examples/HystereticSM_materialDemo.html" />
     <link rel="prev" title="3.1.5.15. Hysteretic Material" href="Hysteretic.html" /> 
 </head>
 
@@ -122,20 +126,22 @@
 <li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.18. IMKPeakOriented Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.19. IMKPinching Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SLModel.html">3.1.5.20. SLModel Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.21. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.21. HystereticPoly Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.22. DowelType Timber Joint Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.23. BoucWenInfill Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.24. CoulombDamper Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.25. Hertz Damp Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.26. Jankowski Impact Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.27. Viscoelastic Gap Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.28. PySimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.29. TzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.30. QzSimple1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.31. PyLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.32. TzLiq1 Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.33. QzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.21. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.22. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticAsym.html">3.1.5.23. HystereticAsym Material (Smooth asymmetric hysteresis)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticSmooth.html">3.1.5.24. HystereticSmooth Material (Smooth hysteretic material)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.25. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.26. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.27. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.28. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.29. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Ratchet.html">3.1.5.30. Ratchet Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.31. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.32. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.33. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.34. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.35. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.36. QzLiq1 Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
@@ -238,7 +244,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hystereticsm-material">
-<span id="hystereticsm"></span><h1><span class="section-number">3.1.5.16. </span>HystereticSM Material<a class="headerlink" href="#hystereticsm-material" title="Permalink to this headline">¶</a></h1>
+<span id="hystereticsm"></span><h1><span class="section-number">3.1.5.16. </span>HystereticSM Material<a class="headerlink" href="#hystereticsm-material" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a uniaxial multilinear hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. This material is an extension of the Hysteretic Material – the envelope can be defined 2,3, 4,5,6 or 7 points, while the original one only had 2 or 3.
 <a href="#id1"><span class="problematic" id="id2">*</span></a>The positive and negative backbone of this material do not need to have the same number of segments.
 <a href="#id3"><span class="problematic" id="id4">*</span></a>This material also has the option to degrade the envelope using the degEnv parameters. – this option will be available soon
@@ -361,7 +367,7 @@
 </ul>
 </div>
 <div class="section" id="recorder-options">
-<h2><span class="section-number">3.1.5.16.1. </span>Recorder Options:<a class="headerlink" href="#recorder-options" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.1. </span>Recorder Options:<a class="headerlink" href="#recorder-options" title="Permalink to this heading">¶</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -423,28 +429,36 @@
 </table>
 </div>
 <div class="section" id="example-input">
-<h2><span class="section-number">3.1.5.16.2. </span>Example Input:<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.2. </span>Example Input:<a class="headerlink" href="#example-input" title="Permalink to this heading">¶</a></h2>
 <p>ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, ‘-negEnv’, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, ‘-pinch’, 1, 1,’-damage’, 0.1, 0.01, ‘-beta’, 0,’-defoLimitStates’, 0.01, -0.01, 0.02, -0.02, ‘-forceLimitStates’, 2772.0, -2772.0, 3104.6, -3104.6,’printInput’)</p>
 <p>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  1  1 -damage  0.1  0.01 -beta 0 -defoLimitStates 0.01 -0.01 0.02 -0.02 -forceLimitStates 2772.0 -2772.0 3104.6 -3104.6 -printInput</p>
 </div>
 <div class="section" id="jupyter-notebook">
-<h2><span class="section-number">3.1.5.16.3. </span>Jupyter Notebook:<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.3. </span>Jupyter Notebook:<a class="headerlink" href="#jupyter-notebook" title="Permalink to this heading">¶</a></h2>
 <p>Open or download Jupyter notebook with example of HystereticSM material, used generate the figures <a class="reference external" href="https://github.com/OpenSees/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb">HERE!</a></p>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/HystereticSM_materialDemo.html">
+  <div><img alt="" src="../../../../_images/user_manual_material_uniaxialMaterials_examples_HystereticSM_materialDemo_12_39.png"></div>
+  <div>Opensees uniaxialMaterial Demo: HystereticSM</div>
+</a>
+</div>
+</div>
 </div>
 <div class="section" id="backbone-curve-for-material-7-points-in-each-direction">
-<h2><span class="section-number">3.1.5.16.4. </span>Backbone Curve for material (7 points in each direction)<a class="headerlink" href="#backbone-curve-for-material-7-points-in-each-direction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.4. </span>Backbone Curve for material (7 points in each direction)<a class="headerlink" href="#backbone-curve-for-material-7-points-in-each-direction" title="Permalink to this heading">¶</a></h2>
 <div class="align-center figure">
 <img alt="../../../../_images/HystereticSM_backbone_Symm.jpg" src="../../../../_images/HystereticSM_backbone_Symm.jpg" />
 </div>
 </div>
 <div class="section" id="backbone-curve-for-material-non-symmetric-behavior">
-<h2><span class="section-number">3.1.5.16.5. </span>Backbone Curve for material (non-symmetric behavior)<a class="headerlink" href="#backbone-curve-for-material-non-symmetric-behavior" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.5. </span>Backbone Curve for material (non-symmetric behavior)<a class="headerlink" href="#backbone-curve-for-material-non-symmetric-behavior" title="Permalink to this heading">¶</a></h2>
 <div class="align-center figure">
 <img alt="../../../../_images/HystereticSM_backbone_nonSymm.jpg" src="../../../../_images/HystereticSM_backbone_nonSymm.jpg" />
 </div>
 </div>
 <div class="section" id="parameter-study-pinching">
-<h2><span class="section-number">3.1.5.16.6. </span>Parameter Study: Pinching<a class="headerlink" href="#parameter-study-pinching" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.6. </span>Parameter Study: Pinching<a class="headerlink" href="#parameter-study-pinching" title="Permalink to this heading">¶</a></h2>
 <p><em>HystereticSM_pinch=[1, 1]</em></p>
 <p>ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, ‘-negEnv’, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, ‘-pinch’, 1, 1)</p>
 <p>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -pinch  1  1</p>
@@ -468,7 +482,7 @@
 </div>
 </div>
 <div class="section" id="parameter-study-damage1">
-<h2><span class="section-number">3.1.5.16.7. </span>Parameter Study: Damage1<a class="headerlink" href="#parameter-study-damage1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.7. </span>Parameter Study: Damage1<a class="headerlink" href="#parameter-study-damage1" title="Permalink to this heading">¶</a></h2>
 <p><em>HystereticSM_damage1=0</em>
 ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, ‘-negEnv’, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, ‘-damage’, 0, 0)</p>
 <p>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0</p>
@@ -492,7 +506,7 @@ ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6
 </div>
 </div>
 <div class="section" id="parameter-study-damage2">
-<h2><span class="section-number">3.1.5.16.8. </span>Parameter Study: Damage2<a class="headerlink" href="#parameter-study-damage2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.8. </span>Parameter Study: Damage2<a class="headerlink" href="#parameter-study-damage2" title="Permalink to this heading">¶</a></h2>
 <p><em>HystereticSM_damage2=0</em>
 ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, ‘-negEnv’, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, ‘-damage’, 0, 0)</p>
 <p>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0  0</p>
@@ -516,7 +530,7 @@ ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6
 </div>
 </div>
 <div class="section" id="parameter-study-beta">
-<h2><span class="section-number">3.1.5.16.9. </span>Parameter Study: beta<a class="headerlink" href="#parameter-study-beta" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.9. </span>Parameter Study: beta<a class="headerlink" href="#parameter-study-beta" title="Permalink to this heading">¶</a></h2>
 <p><em>HystereticSM_beta=0</em>
 ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, ‘-negEnv’, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, ‘-beta’, 0)</p>
 <p>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -beta  0</p>
@@ -540,17 +554,17 @@ ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6
 </div>
 </div>
 <div class="section" id="parameter-study-degeng">
-<h2><span class="section-number">3.1.5.16.10. </span>Parameter Study: degEng<a class="headerlink" href="#parameter-study-degeng" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.10. </span>Parameter Study: degEng<a class="headerlink" href="#parameter-study-degeng" title="Permalink to this heading">¶</a></h2>
 <p><em>HystereticSM_degEnv=0</em>
 ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, ‘-negEnv’, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, ‘-damage’, 0.005, 0.002, ‘-degEnv’, 0, 0)</p>
 </div>
 <div class="section" id="uniaxialmaterial-hystereticsm-99-posenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-1663-2-0-06-277-2-0-08-200-0-0-1-0-0-12-negenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-damage-0-005-0-002-degenv-0-0">
-<h2><span class="section-number">3.1.5.16.11. </span>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  0  0<a class="headerlink" href="#uniaxialmaterial-hystereticsm-99-posenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-1663-2-0-06-277-2-0-08-200-0-0-1-0-0-12-negenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-damage-0-005-0-002-degenv-0-0" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.11. </span>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  0  0<a class="headerlink" href="#uniaxialmaterial-hystereticsm-99-posenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-1663-2-0-06-277-2-0-08-200-0-0-1-0-0-12-negenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-damage-0-005-0-002-degenv-0-0" title="Permalink to this heading">¶</a></h2>
 <p><em>HystereticSM_degEnv=1</em>
 ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, ‘-negEnv’, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, ‘-damage’, 0.005, 0.002, ‘-degEnv’, 1, -1)</p>
 </div>
 <div class="section" id="uniaxialmaterial-hystereticsm-99-posenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-1663-2-0-06-277-2-0-08-200-0-0-1-0-0-12-negenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-damage-0-005-0-002-degenv-1-1">
-<h2><span class="section-number">3.1.5.16.12. </span>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  1  -1<a class="headerlink" href="#uniaxialmaterial-hystereticsm-99-posenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-1663-2-0-06-277-2-0-08-200-0-0-1-0-0-12-negenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-damage-0-005-0-002-degenv-1-1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5.16.12. </span>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  1  -1<a class="headerlink" href="#uniaxialmaterial-hystereticsm-99-posenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-1663-2-0-06-277-2-0-08-200-0-0-1-0-0-12-negenv-2772-0-0-01-3104-6-0-02-1663-2-0-04-damage-0-005-0-002-degenv-1-1" title="Permalink to this heading">¶</a></h2>
 <p><em>HystereticSM_degEnv=5</em>
 ops.uniaxialMaterial(‘HystereticSM’, 99, ‘-posEnv’, 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, ‘-negEnv’, -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, ‘-damage’, 0.005, 0.002, ‘-degEnv’, 5, -5)</p>
 <p>uniaxialMaterial HystereticSM  99  -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  -damage  0.005  0.002  -degEnv  5  -5</p>

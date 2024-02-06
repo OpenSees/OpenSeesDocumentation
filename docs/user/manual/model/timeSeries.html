@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,8 +36,11 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -44,7 +48,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="3.1.10.1. Constant TimeSeries" href="timeseries/constantTimeSeries.html" />
-    <link rel="prev" title="3.1.9.21. RockingBC Element" href="elements/RockingBC.html" /> 
+    <link rel="prev" title="3.1.9.25. RockingBC Element" href="elements/RockingBC.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,10 +115,13 @@
 <li class="toctree-l4"><a class="reference internal" href="timeseries/constantTimeSeries.html">3.1.10.1. Constant TimeSeries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="timeseries/linearTimeSeries.html">3.1.10.2. Linear TimeSeries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="timeseries/trigTimeSeries.html">3.1.10.3. Trig TimeSeries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="timeseries/triangleTimeSeries.html">3.1.10.4. Triangular TimeSeries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="timeseries/rectangularTimeSeries.html">3.1.10.5. Rectangular Time Series</a></li>
-<li class="toctree-l4"><a class="reference internal" href="timeseries/pulseTimeSeries.html">3.1.10.6. Pulse TimeSeries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="timeseries/pathTimeSeries.html">3.1.10.7. Path TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeseries/RampTimeSeries.html">3.1.10.4. Ramp TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeseries/triangleTimeSeries.html">3.1.10.5. Triangular TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeseries/rectangularTimeSeries.html">3.1.10.6. Rectangular Time Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeseries/pulseTimeSeries.html">3.1.10.7. Pulse TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeseries/pathTimeSeries.html">3.1.10.8. Path TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeseries/peerMotion.html">3.1.10.9. PeerMotion TimeSeries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeseries/PeerNGAMotion.html">3.1.10.10. PeerNGAMotion TimeSeries</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pattern.html">3.1.11. Pattern Command</a></li>
@@ -210,7 +217,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="time-series-command">
-<span id="timeseries"></span><h1><span class="section-number">3.1.10. </span>Time Series Command<a class="headerlink" href="#time-series-command" title="Permalink to this headline">¶</a></h1>
+<span id="timeseries"></span><h1><span class="section-number">3.1.10. </span>Time Series Command<a class="headerlink" href="#time-series-command" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a TimeSeries object which represents the relationship between the time in the domain, <span class="math notranslate nohighlight">\(t\)</span>, and the load factor applied to the loads, <span class="math notranslate nohighlight">\(\lambda\)</span>, in the load pattern with which the TimeSeries object is associated, i.e. <span class="math notranslate nohighlight">\(\lambda = F(t)\)</span>.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -250,10 +257,13 @@
 <li class="toctree-l1"><a class="reference internal" href="timeseries/constantTimeSeries.html">3.1.10.1. Constant TimeSeries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="timeseries/linearTimeSeries.html">3.1.10.2. Linear TimeSeries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="timeseries/trigTimeSeries.html">3.1.10.3. Trig TimeSeries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="timeseries/triangleTimeSeries.html">3.1.10.4. Triangular TimeSeries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="timeseries/rectangularTimeSeries.html">3.1.10.5. Rectangular Time Series</a></li>
-<li class="toctree-l1"><a class="reference internal" href="timeseries/pulseTimeSeries.html">3.1.10.6. Pulse TimeSeries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="timeseries/pathTimeSeries.html">3.1.10.7. Path TimeSeries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries/RampTimeSeries.html">3.1.10.4. Ramp TimeSeries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries/triangleTimeSeries.html">3.1.10.5. Triangular TimeSeries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries/rectangularTimeSeries.html">3.1.10.6. Rectangular Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries/pulseTimeSeries.html">3.1.10.7. Pulse TimeSeries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries/pathTimeSeries.html">3.1.10.8. Path TimeSeries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries/peerMotion.html">3.1.10.9. PeerMotion TimeSeries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries/PeerNGAMotion.html">3.1.10.10. PeerNGAMotion TimeSeries</a></li>
 </ul>
 </div>
 </div>

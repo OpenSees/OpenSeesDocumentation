@@ -15,8 +15,9 @@ ASDConcrete3D Material
 
 .. function::
    nDMaterial ASDConcrete3D $tag $E $v <-rho $rho>
-   -Te $Te -Ts $Ts <-Td $Td>
-   -Ce $Ce -Cs $Cs <-Cd $Cd>
+   <-fc $fc> <-ft $ft>
+   <-Te $Te -Ts $Ts <-Td $Td>>
+   <-Ce $Ce -Cs $Cs <-Cd $Cd>>
    <-implex> <-implexControl $implexErrorTolerance $implexTimeReductionLimit> <-implexAlpha $alpha>
    <-crackPlanes $nct $ncc $smoothingAngle>
    <-eta $eta> <-tangent> <-autoRegularization $lch_ref> <-Kc $Kc>
@@ -28,12 +29,14 @@ ASDConcrete3D Material
    $tag, |integer|, "Unique tag identifying this material."
    $E $v, 2 |float|, "Mandatory. Young's modulus and Poisson's ratio."
    -rho $rho, |string| + |float|, "Optional. **-rho**: A keyword that precedes the float. **$rho**: The mass density."
-   -Te $Te, |string| + |list|, "Mandatory. **-Te**: A keyword that precedes the list. **$Te**: A list of total-strain values for the tensile hardening-softening law."
-   -Ts $Ts, |string| + |list|, "Mandatory. **-Ts**: A keyword that precedes the list. **$Ts**: A list of stress values for the tensile hardening-softening law."
-   -Td $Td, |string| + |list|, "Optional. **-Td**: A keyword that precedes the list. **$Td**: A list of damage values for the tensile hardening-softening law. If not defined, no stiffness degradation will be considered."
-   -Ce $Ce, |string| + |list|, "Mandatory. **-Ce**: A keyword that precedes the list. **$Ce**: A list of total-strain values for the compressive hardening-softening law."
-   -Cs $Cs, |string| + |list|, "Mandatory. **-Cs**: A keyword that precedes the list. **$Cs**: A list of stress values for the compressive hardening-softening law."
-   -Cd $Cd, |string| + |list|, "Optional. **-Cd**: A keyword that precedes the list. **$Cd**: A list of damage values for the compressive hardening-softening law. If not defined, no stiffness degradation will be considered."
+   -fc $fc, |string| + |float|, "Optional. **-fc**: A keyword that precedes the float. **$fc**: The concrete compressive strength."
+   -ft $ft, |string| + |float|, "Optional. **-ft**: A keyword that precedes the float. **$ft**: The concrete tension (rupture) strength."
+   -Te $Te, |string| + |list|, "Optional. **-Te**: A keyword that precedes the list. **$Te**: A list of total-strain values for the tensile hardening-softening law. If not specified, $Te will be computed automatically from $fc and $ft. If specified, $Te will override $fc and $ft."
+   -Ts $Ts, |string| + |list|, "Optional. **-Ts**: A keyword that precedes the list. **$Ts**: A list of stress values for the tensile hardening-softening law. If not specified, $Ts will be computed automatically from $fc and $ft. If specified, $Ts will override $fc and $ft."
+   -Td $Td, |string| + |list|, "Optional. **-Td**: A keyword that precedes the list. **$Td**: A list of damage values for the tensile hardening-softening law. If not defined, no stiffness degradation will be considered.  If not specified, $Td will be computed automatically from $fc and $ft. If specified, $Td will override $fc and $ft."
+   -Ce $Ce, |string| + |list|, "Optional. **-Ce**: A keyword that precedes the list. **$Ce**: A list of total-strain values for the compressive hardening-softening law.  If not specified, $Ce will be computed automatically from $fc and $ft. If specified, $Ce will override $fc and $ft."
+   -Cs $Cs, |string| + |list|, "Optional. **-Cs**: A keyword that precedes the list. **$Cs**: A list of stress values for the compressive hardening-softening law.  If not specified, $Cs will be computed automatically from $fc and $ft. If specified, $Cs will override $fc and $ft."
+   -Cd $Cd, |string| + |list|, "Optional. **-Cd**: A keyword that precedes the list. **$Cd**: A list of damage values for the compressive hardening-softening law. If not defined, no stiffness degradation will be considered. If not specified, $Cd will be computed automatically from $fc and $ft. If specified, $Cd will override $fc and $ft."
    -implex, |string|, "Optional. If defined, the IMPL-EX integration will be used, otherwise the standard implicit integration will be used (default)."
    -implexControl $implexErrorTolerance $implexTimeReductionLimit, |string| + 2 |float|, "Optional. **-implexControl**: Activates the control of the IMPL-EX error. **implexErrorTolerance**: Relative error tolerance. **implexTimeReductionLimit**: Minimum allowed relative reduction of the time-step. If the error introduced by the IMPL-EX algorithm is larger than **implexErrorTolerance** , the material will fail during the computation. The user can therfore use an adaptive time-step to reduce the time-step to keep the error under control. If the reduction of the time-step is smaller than **implexTimeReductionLimit** , the error control will be skipped. Suggested values: -implexControl 0.05 0.01."
    -implexAlpha $alpha, |string| + |float|, "Optional. Default = 1. The :math:`\alpha` coefficient for the explicit extrapolation of the internal variables in the IMPL-EX algorithm. It can range from 0 to 1."

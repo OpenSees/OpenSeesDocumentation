@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,14 +36,16 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.9.7. SFI-MVLEM-3D Element" href="SFI_MVLEM_3D.html" />
+    <link rel="next" title="3.1.9.7. MVLEM_3D Element" href="MVLEM_3D.html" />
     <link rel="prev" title="3.1.9.5. Elastic Beam Column Element" href="elasticBeamColumn.html" /> 
 </head>
 
@@ -112,21 +115,25 @@
 <li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.9.4. ZeroLengthContactASDimplex Element</a></li>
 <li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.9.5. Elastic Beam Column Element</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.9.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.9.7. SFI-MVLEM-3D Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.9.8. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.9.9. Mixed Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.9.10. E-SFI Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.9.11. ASDShellQ4 Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.9.12. Quadrilateral Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.9.13. SSPquad Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.9.14. stdBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.9.15. bbarBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.9.16. SSPbrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.9.17. FourNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.9.18. TenNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.9.19. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.9.20. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.9.21. RockingBC Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.9.7. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.9.8. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.9.9. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.9.10. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.9.11. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.9.12. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.9.13. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.9.14. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.9.15. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.9.16. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.9.17. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.9.18. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.9.19. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.9.20. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.9.21. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.9.22. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.9.23. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.9.24. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.9.25. RockingBC Element</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
@@ -225,7 +232,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gradient-inelastic-gi-beam-column-element">
-<span id="gradientinelasticbeamcolumn"></span><h1><span class="section-number">3.1.9.6. </span>Gradient Inelastic (GI) Beam-Column Element<a class="headerlink" href="#gradient-inelastic-gi-beam-column-element" title="Permalink to this headline">¶</a></h1>
+<span id="gradientinelasticbeamcolumn"></span><h1><span class="section-number">3.1.9.6. </span>Gradient Inelastic (GI) Beam-Column Element<a class="headerlink" href="#gradient-inelastic-gi-beam-column-element" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a <strong>gradientInelasticBeamColumn</strong> element object, which is based on a <strong>force/flexibility-based (FB) gradient inelastic (GI) element formulation</strong> with an iterative solution algorithm. The GI element formulation is based on the GI beam theory, which eliminates the strain localization and response objectivity problems by utilizing a set of gradient-based nonlocality relations that ensure the continuity of section strains (e.g., curvature) over the element length, upon the occurrence of softening at any section. The GI element does not necessitate any certain form of constitutive relations and permits users to use the same constitutive relations used in conventional FB element formulations. Moreover, the number of integration points in the GI element is not fixed and it could produce section strain (e.g., curvature) distributions with high resolutions.</p>
 <p>From the user’s perspective, the gradientInelasticBeamColumn element has similar input to other force-based fiber elements’ and the only additional parameter that this element requires is a characteristic length, <em>lc</em>, which controls the spread of plasticity/damage in the vicinity of a softening location. In the simulation of RC beams/columns, this parameter can be taken equal to the plastic hinge length. If <em>lc</em> equals zero, the GI beam element formulation turns into a conventional FB element formulation (i.e., as if the classical beam theory is used).</p>
 <p>For more information about the GI element formulation, please refer to this <a class="reference external" href="https://www.linkedin.com/feed/update/urn:li:activity:6712087651564044288/">post</a> and the references at the end of this page.</p>
@@ -348,7 +355,7 @@
 <p>For both 2D and 3D problems:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="element">
-<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">'gradientInelasticBeamColumn'</span></em>, <em class="sig-param"><span class="pre">$eleTag</span></em>, <em class="sig-param"><span class="pre">$iNode</span></em>, <em class="sig-param"><span class="pre">$jNode</span></em>, <em class="sig-param"><span class="pre">$transfTag</span></em>, <em class="sig-param"><span class="pre">$integrTag</span></em>, <em class="sig-param"><span class="pre">$lc</span></em>, <em class="sig-param"><span class="pre">'-iter'</span></em>, <em class="sig-param"><span class="pre">$maxIter</span></em>, <em class="sig-param"><span class="pre">$minTol</span></em>, <em class="sig-param"><span class="pre">$maxTol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">'gradientInelasticBeamColumn'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$eleTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$iNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$jNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$transfTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$integrTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$lc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'-iter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$maxIter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$minTol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">$maxTol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>The required arguments are:</p>
