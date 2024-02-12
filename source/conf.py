@@ -57,6 +57,7 @@ rst_prolog = """
 .. |andreas| replace:: **Andreas Schellenberg**
 .. |silvia| replace:: `Silvia Mazzoni`_
 .. _`Silvia Mazzoni`: https://www.silviasbrainery.com/
+.. |csasj| replace:: **csasj**
 """	
 
 # Add any Sphinx extension module names here, as strings. They can be
