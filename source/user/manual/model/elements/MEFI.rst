@@ -29,8 +29,8 @@ This command is used to construct a MEFI element object.
    $eleTag, integer, unique element object tag
    $iNode $jNode $kNode $lNode, 4 integer, tags of element nodes defined in counterclockwise direction
    $numFib, integer, number of element macro-fibers
-   $widths, list float, a list of *m* macro-fiber widths
-   $secTags,  list int, a list of *m* macro-fiber section tags
+   $widths, list float, a list of *numFib* macro-fiber widths
+   $secTags,  list int, a list of *numFib* macro-fiber section tags
    
    
    
@@ -135,8 +135,8 @@ The following recorders are available with the MEFI element.
 	  nDMaterial SmearedSteelDoubleLayer 9 1 3 0.0082 0.0323 0.0; # steel boundary
 
 	  # Build reinforced concrete sections
-	  section RCLMS01 10 1 1 -reinfSteel 8  -conc 6   -concThick 152.4       -epscr 0.00008 -epsc -0.00232; # wall web
-	  section RCLMS01 11 1 2 -reinfSteel 9  -conc 6 7 -concThick 50.8  101.6 -epscr 0.00008 -epsc -0.00397; # wall wboundary
+	  section RCLMS 10 1 1 -reinfSteel 8  -conc 6   -concThick 152.4       -epscr 0.00008 -epsc -0.00232; # wall web
+	  section RCLMS 11 1 2 -reinfSteel 9  -conc 6 7 -concThick 50.8  101.6 -epscr 0.00008 -epsc -0.00397; # wall boundary
 
 	  # ------------------------------------------------------------------------------------------------------------------------------------------------------
 	  # Define and build elements
@@ -176,7 +176,7 @@ The following recorders are available with the MEFI element.
 	  constraints Transformation
 	  numberer RCM
 	  test NormUnbalance 100.0 100 0
-	  algorithm Newton -initial
+	  algorithm Newton
 	  integrator LoadControl 0.05
 	  analysis Static
 	  set ok [analyze 20]
@@ -224,7 +224,7 @@ The following recorders are available with the MEFI element.
 	  set BS [expr abs([nodeReaction 1 1] + [nodeReaction 2 1])]; # computed value for base shear
 	  set BSerr [expr abs($BS-$BSref)/$BSref];                    # compute relative error
 	  puts "Relative base shear error is abs(BS-BSref)/BSref: $BSerr"
-	  if {$BSerr <= 0.01} {
+	  if {$BSerr <= 0.0001} {
 	     puts "Base shear test completed successfully";
 	  } else {
 	     error "Base shear test failed";    
