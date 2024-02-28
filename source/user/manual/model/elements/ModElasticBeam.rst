@@ -73,7 +73,7 @@ The rotational stiffness at the ends of the original beam element is :math:`K_e=
 * The elastic element in between the two springs should have an elastic moment of inertia equal to :math:`I_mod=(n+1)/n \cdot I`.
 * The "n" times stiff rotational springs should have an elastic stiffness of :math:`K_s=6n \cdot EI_{mod}/L`.
 * The elastic element should have an elastic stiffness coefficient :math:`K_{44}=6n/(1+3n)`.
-* The elastic element should have an elastic stiffness coefficient :math:`K_{11}=(1+2*n)/(1+n) \cdot K_{44}`.
+* The elastic element should have an elastic stiffness coefficient :math:`K_{11}=(1+2 \cdot n)/(1+n) \cdot K_{44}`.
 * The elastic element should have an elastic stiffness coefficient :math:`K_{33} = 2K_{44}`.
 * The modified stiffness coefficient bmod for stiffness proportional damping of the elastic element is :math:`b_{mod}=1+(1/2n) \cdot b`.
    
