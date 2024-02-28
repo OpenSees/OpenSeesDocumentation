@@ -80,5 +80,5 @@ The rotational stiffness at the ends of the original beam element is :math:`K_e=
 **References:**
 
 .. [1] Zareian, F. and Medina, R. A. (2010). “A practical method for proper modeling of structural damping in inelastic plane structural systems,” Computers & Structures, Vol. 88, 1-2, pp. 45-53.
-.. [2] Zareian, F. and Krawinkler, H. (2009). "Simplified performance-based earthquake engineering" Technical Report 169, The John A. Blume Earthquake Engineering Research Center, Department of Civil Engineering, Stanford University, Stanford, CA. `Link to electronic version <https://blume.stanford.edu/tech_reports>`_.
+.. [2] Zareian, F. and Krawinkler, H. (2009). "Simplified performance-based earthquake engineering" Technical Report 169, The John A. Blume Earthquake Engineering Research Center, Department of Civil Engineering, Stanford University, Stanford, CA.
 .. [3] `OpenSees Wiki page for ModElasticBeam2d <https://opensees.berkeley.edu/wiki/index.php/Elastic_Beam_Column_Element_with_Stiffness_Modifiers>`_
