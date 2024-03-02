@@ -135,8 +135,8 @@ The following recorders are available with the MEFI element.
 	  nDMaterial SmearedSteelDoubleLayer 9 1 3 0.0082 0.0323 0.0; # steel boundary
 
 	  # Build reinforced concrete sections
-	  section RCLMS 10 1 1 -reinfSteel 8  -conc 6   -concThick 152.4       -epscr 0.00008 -epsc -0.00232; # wall web
-	  section RCLMS 11 1 2 -reinfSteel 9  -conc 6 7 -concThick 50.8  101.6 -epscr 0.00008 -epsc -0.00397; # wall boundary
+	  section RCLMS 10 1 1 -reinfSteel 8  -conc 6   -concThick 152.4;       # wall web
+	  section RCLMS 11 1 2 -reinfSteel 9  -conc 6 7 -concThick 50.8  101.6; # wall boundary
 
 	  # ------------------------------------------------------------------------------------------------------------------------------------------------------
 	  # Define and build elements
