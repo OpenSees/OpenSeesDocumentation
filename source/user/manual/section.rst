@@ -38,6 +38,6 @@ The following contain information about secType? and the args required for each 
    section/PlateFiberSection
    section/BidirectionalSection
    section/Isolator2springSection
-   section/ReinforcedConcreteLayerMembraneSection01
-   section/ReinforcedConcreteLayerMembraneSection02
+   section/ReinforcedConcreteLayeredMembraneSection
+   section/LayeredMembraneSection
 

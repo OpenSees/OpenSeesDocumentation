@@ -6,13 +6,13 @@ SmearedSteelDoubleLayer Material
 This command is used to construct a SmearedSteelDoubleLayer material object. It is the abstract representation of a double perpendicular smeared steel layer (plane stress) 2D material with a tangent formulation. Each layer works only in the direction of the bars, so a uniaxial constitutive model is used to represent the behavior of reinforcing steel bars in each direction. The angle that defines the orientation
 of the steel layers with respect to the local coordinate system **x-y** is denoted as :math:`\theta_{s}`, represented by the argument ``$OrientationEmbeddedSteel`` (based on the work of Rojas et al., 2016).
 
-.. figure:: SmearedSteelDoubleLayer_figure.jpg
+.. figure:: SmearedSteelDoubleLayer_figure.png
 	:align: center
 	:figclass: align-center
 	:width: 1000px
 	:name: SmearedSteel_FIG
 	
-	SmearedSteelDoubleLayer Material: (a) Distributed reinforcement; (b) Rebar layers and steel layers orientation.
+	SmearedSteelDoubleLayer Material: (a) Distributed reinforcement; (b) Rebar layers; (c) Steel layers orientation; (d) Steel behavior in the local coordinate system; (e) Uniaxial steel behavior.
 
 .. admonition:: Command
    
@@ -29,10 +29,21 @@ of the steel layers with respect to the local coordinate system **x-y** is denot
    $ratioSteelLayer2, float, reinforcing ratio in vertical direction of smeared steel
    $OrientationEmbeddedSteel, float, orientation of the smeared steel layers
 
+
+The following recorders are available with the SmearedSteelDoubleLayer material.
+
+.. csv-table:: 
+   :header: "Recorder", "Description"
+   :widths: 20, 40
+
+   steel_layer_stress, "in-plane panel steel stresses :math:`\sigma^{s}_{xx}`, :math:`\sigma^{s}_{yy}`, :math:`\tau^{s}_{xy}`"
+   strain_stress_steel1, "Uniaxial strain and stress of steel 1 :math:`\varepsilon_{s1}`, :math:`\sigma_{s1}`"
+   strain_stress_steel2, "Uniaxial strain and stress of steel 2 :math:`\varepsilon_{s2}`, :math:`\sigma_{s2}`"
+
+
 .. admonition:: Notes
 
    | 1. The implementation of this material does not include the reductions in yield strength and strain-hardening ratio for embedded steel bars in concrete (Belarbi and Hsu, 1995).
-   | 2.	The valid queries to the SmearedSteelDoubleLayer material when creating an ElementRecorder are **strain**, **stress** and **tangent** (as with all nDmaterial).
 
 .. admonition:: Examples
 

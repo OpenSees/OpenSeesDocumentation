@@ -1,17 +1,17 @@
 .. _OrthotropicRAConcrete:
 
-OrthotropicRotatingAngleConcrete Material
+OrthotropicRAConcrete Material
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This command is used to construct an OrthotropicRotatingAngleConcrete material object. It is the abstract representation of an orthotropic concrete layer (plane stress) 2D material with the rotating angle and tangent formulation for cycling or reversed loading with damage. In this formulation, the constitutive model of concrete in each of the principal strain directions (:math:`\theta_{pd}`) can be represented by a uniaxial concrete model (based on the work of Rojas et al., 2016).
+This command is used to construct an OrthotropicRotatingAngleConcrete material object. It is the abstract representation of an orthotropic concrete layer (plane stress) 2D material with a rotating angle and tangent formulation for cycling or reversed loading with damage. In this formulation, the constitutive model of concrete in each of the principal strain directions (:math:`\theta_{pd}`) can be represented by a uniaxial concrete model (based on the work of Rojas et al., 2016).
 
-.. figure:: OrthotropicRAConcrete_figure.jpg
+.. figure:: OrthotropicRAConcrete_figure.png
 	:align: center
 	:figclass: align-center
-	:width: 40%
+	:width: 60%
 	:name: ORAC_FIG
 	
-	OrthotropicRotatingAngleConcrete Material: (a) Local coordinate system of a concrete layer; (b) Principal strain directions.
+	OrthotropicRAConcrete Material: (a) Local coordinate system of a concrete layer; (b) Concrete behavior in the local coordinate system; (c) Uniaxial concrete behavior along principal strain directions.
 
 .. admonition:: Command
    
@@ -28,6 +28,18 @@ This command is used to construct an OrthotropicRotatingAngleConcrete material o
    $rho, float, density
    $DamageCte1, float, damage constant (optional: default = 0.14)
    $DamageCte2, float, damage constant (optional: default = 0.6)
+
+
+The following recorders are available with the OrthotropicRAConcrete material.
+
+.. csv-table:: 
+   :header: "Recorder", "Description"
+   :widths: 20, 40
+
+   concrete_layer_stress, "in-plane panel concrete stresses :math:`\sigma^{c}_{xx}`, :math:`\sigma^{c}_{yy}`, :math:`\tau^{c}_{xy}`"
+   strain_stress_concrete1, "Uniaxial strain and stress of concrete strut 1 :math:`\bar{\varepsilon}_{11}`, :math:`\sigma^{c}_{11}`"
+   strain_stress_concrete2, "Uniaxial strain and stress of concrete strut 2 :math:`\bar{\varepsilon}_{22}`, :math:`\sigma^{c}_{22}`"
+
 
 .. admonition:: Notes
    
@@ -46,7 +58,6 @@ This command is used to construct an OrthotropicRotatingAngleConcrete material o
    where :math:`\epsilon_{max}` is the maximum strain recorded during cyclic loading and :math:`\epsilon_{min}` is the minimum strain.
    
    | 2. If this effect is not to be considered, damage constants can be set equal to **0.0**.
-   | 3. The valid queries to the OrthotropicRotatingAngleConcrete material when creating an ElementRecorder are **strain**, **stress** and **tangent** (as with all nDmaterial).
 
 .. admonition:: Examples
 

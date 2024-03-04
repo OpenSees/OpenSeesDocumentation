@@ -1,43 +1,74 @@
-.. _ReinforcedConcreteLayerMembraneSection02:
+.. _ReinforcedConcreteLayeredMembraneSection:
 
-ReinforcedConcreteLayerMembraneSection02 
+ReinforcedConcreteLayeredMembraneSection
 ^^^^^^^^^^^^^^^^
 
-This command is used to construct a ReinforcedConcreteLayerMembraneSection02 object. It is the abstract representation for the stress-strain behavior for a reinforced concrete layered membrane element (based on the work of Rojas et al., 2016).
+This command is used to construct a ReinforcedConcreteLayeredMembraneSection object. It is the abstract representation for the stress-strain behavior for a reinforced concrete layered membrane element (based on the work of Rojas et al., 2016).
+
+.. figure:: ReinforcedConcreteLayerMembraneSection_figure1.png
+	:align: center
+	:figclass: align-center
+	:width: 60%
+	:name: RCLMS_FIG1
+	
+	ReinforcedConcreteLayeredMembraneSection: (a) Reinforced concrete wall; (b) Layer discretization.
 
 .. admonition:: Command
    
-   section ReinforcedConcreteLayerMembraneSection02 $secTag $matTag $Thickness
+   section ReinforcedConcreteLayeredMembraneSection $secTag $nSteelLayers $nConcLayers -reinfSteel{$RSteelAtEachLayer} –conc{$concAtEachLayer} -concThick{$Thicknesses}
 
 .. csv-table:: 
    :header: "Parameter", "Type", "Description"
    :widths: 10, 10, 40
 
    $secTag, integer, unique section tag
-   $matTag, integer, nDMaterial (`FSAM <https://opensees.berkeley.edu/wiki/index.php/FSAM_-_2D_RC_Panel_Constitutive_Behavior>`_) tag
-   $Thickness, float, section thickness
-
-
-
-
-The following recorders are available with the ReinforcedConcreteLayerMembraneSection02.
+   $nSteelLayers, integer, number of reinforced steel layers
+   $nConcLayers, integer, number of concrete layers
+   $RSteelAtEachLayer, list int, a list of *nSteelLayers* nDMaterial reinforced steel tags to be assigned to each layer
+   $concAtEachLayer, list int, a list of *nConcLayers* nDMaterial concrete tags to be assigned to each layer
+   $Thicknesses, list float, a list of *nConcLayers* concrete layers thicknesses 
    
+   
+   
+The following recorders are available with the ReinforcedConcreteLayeredMembraneSection.
+
 .. csv-table:: 
    :header: "Recorder", "Description"
-   :widths: 20, 40
+   :widths: 15, 40
 
-   panel_strain, "strains :math:`\epsilon_{xx}`, :math:`\epsilon_{yy}`, :math:`\gamma_{xy}`"
-   panel_stress, "resulting panel stresses :math:`\sigma_{xx}`, :math:`\sigma_{yy}`, :math:`\tau_{xy}`"
+   panel_strain, "strains :math:`\varepsilon_{xx}`, :math:`\varepsilon_{yy}`, :math:`\gamma_{xy}`"
+   panel_avg_stress, "resulting panel stresses :math:`\sigma_{xx}`, :math:`\sigma_{yy}`, :math:`\tau_{xy}`"
+   panel_force, "membrane forces at panel level :math:`N_{x}`, :math:`N_{y}`, :math:`N_{xy}`"
+   thetaPD, "principal strain direction :math:`\theta_{pd}`"
+   CLayer $iClayer $Response, "returns material $Response for a iClayer-th concrete layer. For available $Response(s) refer to **OrthotropicRAConcrete** material"
+   RSLayer $iRSlayer $Response, "returns material $Response for a iRSlayer-th reinforcing steel layer. For available $Response(s) refer to **SmearedSteelDoubleLayer** material"
 
+.. figure:: ReinforcedConcreteLayerMembraneSection_figure2.png
+	:align: center
+	:figclass: align-center
+	:width: 1000px
+	:name: RCLMS_FIG2
+	
+	ReinforcedConcreteLayeredMembraneSection: (a) Strain field; (b.1) Resultant stress field; (b.2) Concrete stresses; (b.3) Steel stresses.	
+	
 .. admonition:: Notes
 
-   | 1. The **ReinforcedConcreteLayerMembraneSection02** should be used in conjunction with ``FSAM`` material. It can also be used in a ``MEFI`` element. 
-   | 2. In Tcl, the section can also be referred to as **RCLayerMembraneSection02** or **RCLMS02**.
-
+   | 1. The **ReinforcedConcreteLayeredMembraneSection** should be used in conjunction with ``OrthotropicRAConcrete`` and ``SmearedSteelDoubleLayer`` NDMaterials. It can also be used in a ``MEFI`` element. 
+   | 2. The section can also be referred to as **RCLayeredMembraneSection** or **RCLMS**.
+   
 .. admonition:: Examples
    
-   For the development of this example, the RW-A20-P10-S38 wall specimen was employed (Tran, 2012). Uniaxial concrete and steel materials are defined, along with FSAM nDMaterials used within RLMS02 sections to represent sections of types **a** and **b**, as illustrated in Fig. 3.1.7.1(a) for the ReinforcedConcreteLayerMembraneSection01 example.
+   For the development of this example, the RW-A20-P10-S38 wall specimen was used (Tran, 2012). Uniaxial concrete and steel materials are defined, along with orthotropic layers for confined/unconfined concrete and distributed steel for the core and boundaries. Sections of types **a** and **b** are defined, composed of the layers created earlier.
 
+   .. figure:: ReinforcedConcreteLayerMembraneSection_figure3.png
+	   :align: center
+	   :figclass: align-center
+	   :width: 90%
+	   :name: RCLMS01_FIG
+	
+	   RW-A20-P10-S38 wall specimen: (a) Cross-sectional view ; (b) Layered view of the model.
+   
+   
    1. **Tcl Code**
 
    .. code-block:: tcl
@@ -82,16 +113,16 @@ The following recorders are available with the ReinforcedConcreteLayerMembraneSe
       set ec0 -0.00232;                                    # strain at peak compressive stress
       set ft 2.13;                                         # peak tensile stress
       set et 0.00008;                                      # concrete strain at tension cracking
-      set Ec 34766.59;                                     # Young's modulus
-
+      set Ec 34766.59;                                     # Young's modulus       
+	  
       # confined
       set fpcc -53.78;                                     # peak compressive stress
       set ec0c -0.00397;                                   # strain at peak compressive stress
       set Ecc 36542.37;                                    # Young's modulus
-
+	  
       # build concrete materials
-      uniaxialMaterial ConcreteCM 4 $fpc  $ec0  $Ec  7.16 1.016 $ft $et 1.2 10000;      # unconfined concrete
-      uniaxialMaterial ConcreteCM 5 $fpcc $ec0c $Ecc 8.44 1.023 $ft $et 1.2 10000;      # confined concrete
+      uniaxialMaterial Concrete02 4 $fpc $ec0 0.0 -0.037 0.1 $ft 1738.33;    	# unconfined concrete
+      uniaxialMaterial Concrete02 5 $fpcc $ec0c -9.42 -0.047 0.1 $ft 1827.12; 	# confined concrete
 
       # define reinforcing ratios  
       set rouXw 0.0027;   # X web 
@@ -99,26 +130,31 @@ The following recorders are available with the ReinforcedConcreteLayerMembraneSe
       set rouYw 0.0027;   # Y web
       set rouYb 0.0323;   # Y boundary
 
-      # shear resisting mechanism parameters
+      # ----------------------------------------------------------------------------------------
+      # Create orthotropic concrete layers to represent unconfined and confined concrete
+      # ----------------------------------------------------------------------------------------
 
-      set nu 0.35;                # friction coefficient
-      set alfadow 0.005;          # dowel action stiffness parameter
-      
-      # ----------------------------------------------------------------------------------------
-      # Create FSAM nDMaterial
-      # ----------------------------------------------------------------------------------------
-	  
-      nDMaterial FSAM 6  0.0  1   2   4  $rouXw $rouYw  $nu  $alfadow;   # Web (unconfined concrete)
-      nDMaterial FSAM 7  0.0  1   3   5  $rouXb $rouYb  $nu  $alfadow;   # Boundary (confined concrete)
+      nDMaterial OrthotropicRAConcrete 6 4 $et $ec0  0.0 -damageCte1 0.175 -damageCte2 0.5;   # unconfined concrete
+      nDMaterial OrthotropicRAConcrete 7 5 $et $ec0c 0.0 -damageCte1 0.175 -damageCte2 0.5;   # confined concrete
 
       # ----------------------------------------------------------------------------------------
-      # Create ReinforcedConcreteLayerMembraneSection02 section
+      # Create smeared steel layers to represent boundary and web reinforment
       # ----------------------------------------------------------------------------------------
-      
-      set tw 152.4;                 # Wall thickness
 
-      section RCLMS02 10 6 $tw;     # Section type b (wall web)
-      section RCLMS02 11 7 $tw;     # Section type a (wall boundary)
+      nDMaterial SmearedSteelDoubleLayer 8 1 2 $rouXw $rouYw 0.0;    # steel web
+      nDMaterial SmearedSteelDoubleLayer 9 1 3 $rouXb $rouYb 0.0;    # steel boundary
+
+      # ----------------------------------------------------------------------------------------
+      # Create ReinforcedConcreteLayeredMembraneSection sections composed of concrete and steel layers
+      # ----------------------------------------------------------------------------------------
+
+      set tw   152.4;    # Wall thickness
+      set tnc  50.8;     # unconfined concrete wall layer thickness
+      set tc   101.6;     # confined concrete wall layer thickness   
+
+      section RCLMS 10 1 1 -reinfSteel 8   -conc 6   -concThick $tw;             # Section type b (wall web)
+      section RCLMS 11 1 2 -reinfSteel 9   -conc 6 7 -concThick $tnc $tc;        # Section type a (wall boundary)
+
 		
    2. **Python Code**
 
@@ -128,10 +164,7 @@ The following recorders are available with the ReinforcedConcreteLayerMembraneSe
       # RW-A20-P10-S38 (Tran, 2012) - Definition of properties and creation of materials
       # Basic units: N, mm
       # ========================================================================================
-
-      # Import OpenSeesPy
-      import openseespy.opensees as ops
-
+	  
       # ----------------------------------------------------------------------------------------
       # Create uniaxial steel materials
       # ----------------------------------------------------------------------------------------
@@ -174,8 +207,8 @@ The following recorders are available with the ReinforcedConcreteLayerMembraneSe
       Ecc = 36542.37           # Young's modulus
 
       # build concrete materials
-      ops.uniaxialMaterial('ConcreteCM', 4, fpc,  ec0, Ec, 7.16, 1.016, ft, et, 1.2, 10000)      # unconfined concrete
-      ops.uniaxialMaterial('ConcreteCM', 5, fpcc, ec0c, Ecc, 8.44, 1.023, ft, et, 1.2, 10000)    # confined concrete
+      ops.uniaxialMaterial('Concrete02', 4, fpc,  ec0,  0.0, -0.037, 0.1, ft, 1738.33)    # unconfined concrete
+      ops.uniaxialMaterial('Concrete02', 5, fpcc, ec0c, -9.42, -0.047, 0.1, ft, 1827.12)  # confined concrete
 
       # define reinforcing ratios   
       rouXw = 0.0027         # X web 
@@ -183,28 +216,31 @@ The following recorders are available with the ReinforcedConcreteLayerMembraneSe
       rouYw = 0.0027         # Y web
       rouYb = 0.0323         # Y boundary
 
-      # shear resisting mechanism parameters 
-      nu = 0.35                           # friction coefficient
-      alfadow = 0.005                     # dowel action stiffness parameter
-      
       # ----------------------------------------------------------------------------------------
-      # Create FSAM nDMaterial
-      # ----------------------------------------------------------------------------------------
-      
-      ops.nDMaterial('FSAM', 6, 0.0, 1, 2, 4, rouXw, rouYw, nu, alfadow)           # Web (unconfined concrete)
-      ops.nDMaterial('FSAM', 7, 0.0, 1, 3, 5, rouXb, rouYb, nu, alfadow)           # Boundary (confined concrete)
-
-      # ----------------------------------------------------------------------------------------
-      # Create ReinforcedConcreteLayerMembraneSection02 section
+      # Create orthotropic concrete layers to represent unconfined and confined concrete
       # ----------------------------------------------------------------------------------------
 
-      tw = 152.4    # Wall thickness
+      ops.nDMaterial('OrthotropicRAConcrete', 6, 4, et, ec0,  0.0, '-damageCte1', 0.175, '-damageCte2', 0.5)   # unconfined concrete
+      ops.nDMaterial('OrthotropicRAConcrete', 7, 5, et, ec0c, 0.0, '-damageCte1', 0.175, '-damageCte2', 0.5)   # confined concrete
 
-      ops.section('ReinforcedConcreteLayerMembraneSection02', 10, 6, tw)    # Section type b (wall web)
-      ops.section('ReinforcedConcreteLayerMembraneSection02', 11, 7, tw)    # Section type a (wall boundary)
+      # ----------------------------------------------------------------------------------------
+      # Create smeared steel layers to represent boundary and web reinforment
+      # ----------------------------------------------------------------------------------------
 
+      ops.nDMaterial('SmearedSteelDoubleLayer', 8, 1, 2, rouXw, rouYw, 0.0)       # steel web
+      ops.nDMaterial('SmearedSteelDoubleLayer', 9, 1, 3, rouXb, rouYb, 0.0)       # steel boundary
 
+      # ----------------------------------------------------------------------------------------  
+      # Create ReinforcedConcreteLayeredMembraneSection sections composed of concrete and steel layers
+      # ----------------------------------------------------------------------------------------
+      tw  = 152.4     # wall thickness
+      tnc = 50.8      # unconfined concrete wall layer thickness
+      tc  = 101.6     # confined concrete wall layer thickness   
 
+      ops.section('RCLMS', 10, 1, 1, '-reinfSteel', 8, '-conc', 6,    '-concThick', tw)      # Section type b (wall web)
+      ops.section('RCLMS', 11, 1, 2, '-reinfSteel', 9, '-conc', 6, 7, '-concThick', tnc, tc)      # Section type a (wall boundary)   
+
+   
 **REFERENCES:**
 
 #. Rojas, F., Anderson, J. C., Massone, L. M. (2016). A nonlinear quadrilateral layered membrane element with drilling degrees of freedom for the modeling of reinforced concrete walls. Engineering Structures, 124, 521-538. (`link <https://www.sciencedirect.com/science/article/pii/S0141029616302954>`_).
