@@ -85,6 +85,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/ShellNL
    elements/BbarPlaneStrainQuadrilateral
    elements/EnhancedStrainQuadrilateral
+   elements/MEFI
 
    
 5. Triangles
