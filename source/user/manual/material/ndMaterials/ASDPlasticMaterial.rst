@@ -50,7 +50,7 @@ Explanation
    $InternalVariable2, |list|, "Mandatory. Initial value of internal variable2.  -> :ref:`InternalVariables`"
    End_Internal_Variables, |string|, "Mandatory if block started. Marks the end of the code block to set the internal variables"
    Begin_Model_Parameters, |string|, "Optional. Marks the beginning of the code block to set the model parameters"
-   $ModelParameters, |list|, "Mandatory. Parameters of the models to be used. This depends on the particular choices of |YieldFunctionType|, |PlasticFlowType|, |ElasticityType|, and |IV_type|. "
+   $ModelParameters, |list|, "Values for parameters of the models to be used. This depends on the particular choices of |YieldFunctionType|, |PlasticFlowType|, |ElasticityType|, and |IV_type|. "
    End_Model_Parameters, |string|, "Mandatory if block started. Marks the beginning of the code block to set the model parameters"
    Begin_Integration_Options, |string|, "Optional. Marks the beginning of the code block to set the integration options. You can set any ammount "
    End_Integration_Options, |string|, "Mandatory if block started. Marks the beginning of the code block to set the model parameters"
@@ -62,47 +62,50 @@ Explanation
    :caption: Arguments detailed description
    :maxdepth: 2
 
-   ASDPlasticMaterial/YieldFunctions
-   ASDPlasticMaterial/PlasticFlowType
-   ASDPlasticMaterial/ElasticityType
+   ./ASDPlasticMaterial/YieldFunctions
+   ./ASDPlasticMaterial/PlasticFlowType
+   ./ASDPlasticMaterial/ElasticityType
 
 .. _`FunctionVariables`:
 Functions Variables
 """""""""""""""""""
 
 .. _`ModelParameters`:
-Model Parameters
-""""""""""""""""
+Integration Options
+"""""""""""""""""""
+
+.. csv-table:: 
+   :header: "Parameter", "Type", "Description"
+   :widths: 10, 10, 40
+
+   $f_relative_tol, |double|, "Relative tolerance to evaluate the yield function crossing."
+   $stress_relative_tol, |double|, "Tolerance for the convergece of the integration algorithm."
+   $n_max_iterations, |int|, "Maximum number of iterations for constitutive integration."
+   $return_to_yield_surface, |0 or 1|, "Whether to apply a return to yield surface algorithm after integration convergence."
+   $method, |string|, "Constitutive integration method. Options: Forward_Euler, Runge_Kutta_45_Error_Control"
+
+The default integration method is **Runge_Kutta_45_Error_Control** that uses the classical RK45 ODE integration algorithm employing a 4-th order prediction of the stress increment together with a 5-order prediction to estimate the integration error. In this scheme the strain increment provided by the element to the Gauss point is sub-divided into sub-increments, a process which is automated such that the provided **$stress_relative_tol** is met. This method is provided as a robust standard method which is applicable across all possible combinations of components, although there are possibly better approaches for specific cases which might become available in the future. 
+
+The different parameters are activated depending on the integration algorithm selected. The *Forward_Euler* algorithm only uses the **$return_to_yield_surface** parameter, while **Runge_Kutta_45_Error_Control** uses the rest. 
+
+The **$f_relative_tol** parameter comes into play when the yield surface is being crossed, that is, when the previous (committed) stress is within the yield surface and the elastic prediction of the stress increment brings the stress state beyond the yield surface. In that case, an elastic increment occurs until the yield surface is touched which requires iterations with the Brent root finding algorithm. This is used by both currently available integration methods. 
 
 
 
-Usage Notes
-"""""""""""
 
-.. admonition:: Responses
 
-   * All responses available for the nDMaterial object: **stress** (or **stresses**), **strain** (or **strains**), **tangent** (or **Tangent**), **TempAndElong**.
-   * **damage** or **Damage**: 2 components (:math:`d^+`, :math:`d^-`). The cracking damage variables. If option **-crackPlanes** is used, it gives the maximum values among all crack-planes.
-   * **damage -avg** or **Damage -avg**: 2 components (:math:`d^+`, :math:`d^-`). Same as above. If option **-crackPlanes** is used, it gives the average values of the crack-planes.
-   * **equivalentPlasticStrain** or **EquivalentPlasticStrain**: 2 components (:math:`x_{pl}^+`, :math:`x_{pl}^-`). The equivalent plastic strains. If option **-crackPlanes** is used, it gives the maximum values among all crack-planes.
-   * **equivalentPlasticStrain -avg** or **EquivalentPlasticStrain -avg**: 2 components (:math:`x_{pl}^+`, :math:`x_{pl}^-`). Same as above. If option **-crackPlanes** is used, it gives the average values of the crack-planes.
-   * **equivalentTotalStrain** or **EquivalentTotalStrain**: 2 components (:math:`x^+`, :math:`x^-`). The equivalent total strains. If option **-crackPlanes** is used, it gives the maximum values among all crack-planes.
-   * **equivalentTotalStrain -avg** or **EquivalentTotalStrain -avg**: 2 components (:math:`x^+`, :math:`x^-`). Same as above. If option **-crackPlanes** is used, it gives the average values of the crack-planes.
-   * **cw** or **crackWidth** or **CrackWidth**: 1 component (:math:`cw`). The equivalent tensile total strain minus the equivalent strain at the onset of crack, times the characteristic length of the parent element. If option **-crackPlanes** is used, it gives the maximum value among all crack-planes.
-   * **cw -avg** or **crackWidth -avg** or **CrackWidth -avg**: 1 component (:math:`cw`). Same as above. If option **-crackPlanes** is used, it gives the average value of the crack-planes.
-   * **crackInfo $Nx $Ny $Nz** or **CrackInfo $Nx $Ny $Nz**: 2 components (:math:`ID`, :math:`X`). Gives the 0-based index (ID) and the tensile equivalent total strain (X) of the crack-plane with the normal vector closest to (Nx, Ny, Nz).
-   * **crushInfo $Nx $Ny $Nz** or **CrushInfo $Nx $Ny $Nz**: 2 components (:math:`ID`, :math:`X`). Same as above, but for the compressive response.
 
-.. admonition:: Example 1 - Drawing the Damage Surface
+.. admonition:: Responses 
 
-   A Python example to draw the damage surface in the plane-stress case:
-   
+   * You can request any and all internal variables by their specific name as an output. 
 
-References
-""""""""""
+.. admonition:: setParameter 
 
-.. [Petracca2022] | Petracca, M., Camata, G., Spacone, E., & Pelà, L. (2022). "Efficient Constitutive Model for Continuous Micro-Modeling of Masonry Structures" International Journal of Architectural Heritage, 1-13 (`Link to article <https://www.researchgate.net/profile/Luca-Pela/publication/363656245_Efficient_Constitutive_Model_for_Continuous_Micro-Modeling_of_Masonry_Structures/links/6332e7f1165ca22787785134/Efficient-Constitutive-Model-for-Continuous-Micro-Modeling-of-Masonry-Structures.pdf>`_)
+   * You can set the value of all parameters with their variable name at any point. 
 
-.. [Oliver2008] | Oliver, J., Huespe, A. E., & Cante, J. C. (2008). "An implicit/explicit integration scheme to increase computability of non-linear material and contact/friction problems" Computer Methods in Applied Mechanics and Engineering, 197(21-24), 1865-1889 (`Link to article <https://core.ac.uk/download/pdf/325948712.pdf>`_)
+Example
+"""""""
 
-Code Developed by: **Massimo Petracca** at ASDEA Software, Italy.
+
+
+Code Developed by: **José A. Abell** at UANDES, Chile and ASDEA and **Massimo Petracca** at ASDEA Software, Italy.
