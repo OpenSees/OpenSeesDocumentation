@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,8 +36,11 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -97,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../constraints.html">3.2.1. constraints Command</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="PlainConstraints.html">3.2.1.1. Plain Constraint Handler</a></li>
@@ -119,8 +123,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -209,7 +212,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="lagrange-multipliers">
-<h1><span class="section-number">3.2.1.4. </span>Lagrange Multipliers<a class="headerlink" href="#lagrange-multipliers" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2.1.4. </span>Lagrange Multipliers<a class="headerlink" href="#lagrange-multipliers" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a LagrangeMultiplier constraint handler, which enforces the constraints by introducing Lagrange multipliers to the system of equation. The following is the command to construct a plain constraint handler:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -249,7 +252,7 @@
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">numberer</span> Lagrange
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">numberer</span><span class="w"> </span>Lagrange
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">

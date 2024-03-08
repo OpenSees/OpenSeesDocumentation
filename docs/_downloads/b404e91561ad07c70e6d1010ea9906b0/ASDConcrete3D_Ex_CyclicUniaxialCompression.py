@@ -15,12 +15,12 @@ ft = fc/10.0
 ec = 2.0*fc/E
 Gt = 0.073*fc**0.18
 Gc = 2.0*Gt*(fc/ft)**2
-Te, Ts, Td, Ce, Cs, Cd = make_concrete(E, ft, fc, ec, Gt, Gc)
+Te, Ts, Td, Ce, Cs, Cd, lch_ref = make_concrete(E, ft, fc, ec, Gt, Gc)
 ops.nDMaterial('ASDConcrete3D', 1,
 	E, v, # elasticity
 	'-Te', *Te, '-Ts', *Ts, '-Td', *Td, # tensile law
 	'-Ce', *Ce, '-Cs', *Cs, '-Cd', *Cd, # compressive law
-	'-autoRegularization' # use auto regularization: the input Gt and Gc are NOT specific fracture energies
+	'-autoRegularization', lch_ref # use auto regularization: the input Gt and Gc are NOT specific fracture energies
 	)
 
 # the plane stress
@@ -91,8 +91,8 @@ for icycle in range(1, len(cycles)):
 			SY.append(stress[0])
 			the_line.set_xdata(SX)
 			the_line.set_ydata(SY)
-			PX = SX[-1]
-			PY = SY[-1]
+			PX = [SX[-1]]
+			PY = [SY[-1]]
 			the_tip.set_xdata(PX)
 			the_tip.set_ydata(PY)
 			fig.canvas.draw()
@@ -114,8 +114,8 @@ for icycle in range(1, len(cycles)):
 	SY.append(stress[0])
 	the_line.set_xdata(SX)
 	the_line.set_ydata(SY)
-	PX = SX[-1]
-	PY = SY[-1]
+	PX = [SX[-1]]
+	PY = [SY[-1]]
 	the_tip.set_xdata(PX)
 	the_tip.set_ydata(PY)
 	fig.canvas.draw()

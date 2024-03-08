@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,8 +36,11 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -97,9 +101,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
@@ -114,22 +118,25 @@
 <li class="toctree-l4"><a class="reference internal" href="PM4Silt.html">3.1.6.8. PM4Silt Material</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.6.9. Pressure Independent Multi Yield</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.1.6.10. Pressure Dependent Multi Yield</a></li>
-<li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.1.6.11. J2CyclicBoundingSurface Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.1.6.12. SANISAND-MS Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.1.6.13. Orthotropic Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield02.html">3.1.6.11. Pressure Dependent Multi Yield 02</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.1.6.12. J2CyclicBoundingSurface Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.1.6.13. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.1.6.14. Orthotropic Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Series3D.html">3.1.6.15. Series3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDConcrete3D.html">3.1.6.16. ASDConcrete3D Material</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.8. Element Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.9. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.10. Pattern Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../model/damping.html">3.1.11. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/damping.html">3.1.12. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -194,7 +201,7 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
           <li><a href="../ndMaterial.html"><span class="section-number">3.1.6. </span>nDMaterial Command</a> &raquo;</li>
         
@@ -218,7 +225,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pressure-independent-multi-yield">
-<span id="pressureindependentmultiyield"></span><h1><span class="section-number">3.1.6.9. </span>Pressure Independent Multi Yield<a class="headerlink" href="#pressure-independent-multi-yield" title="Permalink to this headline">¶</a></h1>
+<span id="pressureindependentmultiyield"></span><h1><span class="section-number">3.1.6.9. </span>Pressure Independent Multi Yield<a class="headerlink" href="#pressure-independent-multi-yield" title="Permalink to this heading">¶</a></h1>
 <p>Code Developed by: UC San Diego (<strong>Dr. Zhaohui Yang</strong>):</p>
 <p><strong>PressureIndependMultiYield</strong> material is an elastic-plastic material in which plasticity exhibits only in the deviatoric stress-strain response. The volumetric stress-strain response is linear-elastic and is independent of the deviatoric response. This material is implemented to simulate monotonic or cyclic response of materials whose shear behavior is insensitive to the confinement change. Such materials include, for example, organic soils or clay under fast (undrained) loading conditions.</p>
 <p>During the application of gravity load (and static loads if any), material behavior is linear elastic. In the subsequent dynamic (fast) loading phase(s), the stress-strain response is elastic-plastic (see MATERIAL STAGE UPDATE below). Plasticity is formulated based on the multi-surface (nested surfaces) concept, with an associative flow rule. The yield surfaces are of the Von Mises type.</p>

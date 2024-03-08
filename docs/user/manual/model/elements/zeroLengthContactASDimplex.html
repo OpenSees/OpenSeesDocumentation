@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.8.4. ZeroLengthContactASDimplex Element &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.9.4. ZeroLengthContactASDimplex Element &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,15 +36,17 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.8.5. Elastic Beam Column Element" href="elasticBeamColumn.html" />
-    <link rel="prev" title="3.1.8.3. ZeroLengthND Element" href="zeroLengthND.html" /> 
+    <link rel="next" title="3.1.9.5. Elastic Beam Column Element" href="elasticBeamColumn.html" />
+    <link rel="prev" title="3.1.9.3. ZeroLengthND Element" href="zeroLengthND.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,45 +99,51 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../material/section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.8. Element Command</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.8.1. ZeroLength Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.8.2. ZeroLength Section Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.8.3. ZeroLengthND Element</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.8.4. ZeroLengthContactASDimplex Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.8.5. Elastic Beam Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.8.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.8.7. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.8.8. Mixed Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.8.9. ASDShellQ4 Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.8.10. Quadrilateral Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.8.11. SSPquad Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.8.12. stdBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.8.13. bbarBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.8.14. SSPbrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.8.15. FourNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.8.16. TenNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.8.17. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.8.18. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.8.19. RockingBC Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.9. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.9.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.9.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.9.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.9.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.9.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.9.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.9.7. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.9.8. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.9.9. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.9.10. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.9.11. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.9.12. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.9.13. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.9.14. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.9.15. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.9.16. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.9.17. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.9.18. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.9.19. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.9.20. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.9.21. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.9.22. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.9.23. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.9.24. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.9.25. RockingBC Element</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.9. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.10. Pattern Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.11. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -199,11 +208,11 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-          <li><a href="../element.html"><span class="section-number">3.1.8. </span>Element Command</a> &raquo;</li>
+          <li><a href="../element.html"><span class="section-number">3.1.9. </span>Element Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.8.4. </span>ZeroLengthContactASDimplex Element</li>
+      <li><span class="section-number">3.1.9.4. </span>ZeroLengthContactASDimplex Element</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,7 +232,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="zerolengthcontactasdimplex-element">
-<span id="zerolengthcontactasdimplex"></span><h1><span class="section-number">3.1.8.4. </span>ZeroLengthContactASDimplex Element<a class="headerlink" href="#zerolengthcontactasdimplex-element" title="Permalink to this headline">¶</a></h1>
+<span id="zerolengthcontactasdimplex"></span><h1><span class="section-number">3.1.9.4. </span>ZeroLengthContactASDimplex Element<a class="headerlink" href="#zerolengthcontactasdimplex-element" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct zeroLengthContactASDimplex element object. The zeroLengthContactASDimplex element is a 2-node zeroLength contact element with the following features:</p>
 <ol class="arabic simple">
 <li><p>It is a penalty-based frictional contact element following the Mohr-Coulomb criterion.</p></li>
@@ -235,7 +244,7 @@
 </ol>
 <div class="align-center figure" id="id2">
 <img alt="../../../../_images/ZeroLengthContactASDimplex.png" src="../../../../_images/ZeroLengthContactASDimplex.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.8.1 </span><span class="caption-text">Nodes and contact direction</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.1 </span><span class="caption-text">Nodes and contact direction</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -297,64 +306,64 @@
 <p class="admonition-title">Example</p>
 <p><strong>Tcl Code</strong></p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c">## model</span>
-<span class="nv">model</span> basic <span class="o">-</span>ndm <span class="mi">2</span> <span class="o">-</span>ndf <span class="mi">2</span>
+<span class="nv">model</span><span class="w"> </span>basic<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">2</span>
 
 <span class="c"># nodes</span>
-<span class="nv">node</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
-<span class="nv">node</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span>
 
 <span class="c"># a linear time series</span>
-<span class="nv">timeSeries</span> Linear <span class="mi">1</span>
+<span class="nv">timeSeries</span><span class="w"> </span>Linear<span class="w"> </span><span class="mi">1</span>
 
 <span class="c"># contact element</span>
-<span class="k">set</span> Kn <span class="mf">1.0</span>e10
-<span class="k">set</span> Kt <span class="mf">100.0</span>
-<span class="k">set</span> mu <span class="mf">0.5</span>
-<span class="nv">element</span> zeroLengthContactASDimplex <span class="mi">1</span>   <span class="mi">1</span> <span class="mi">2</span>   <span class="nv">$Kn</span> <span class="nv">$Kt</span> <span class="nv">$mu</span> <span class="o">-</span>orient <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span>Kn<span class="w"> </span><span class="mf">1.0</span>e10
+<span class="k">set</span><span class="w"> </span>Kt<span class="w"> </span><span class="mf">100.0</span>
+<span class="k">set</span><span class="w"> </span>mu<span class="w"> </span><span class="mf">0.5</span>
+<span class="nv">element</span><span class="w"> </span>zeroLengthContactASDimplex<span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="nv">$Kn</span><span class="w"> </span><span class="nv">$Kt</span><span class="w"> </span><span class="nv">$mu</span><span class="w"> </span><span class="o">-</span>orient<span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
 
 <span class="c"># initial fixities</span>
-<span class="nv">fix</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
-<span class="nv">fix</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
 
 <span class="c"># set normal force = -10</span>
-<span class="k">set</span> N <span class="o">-</span><span class="mf">10.0</span>
-<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">1</span> <span class="k">{</span>
-  <span class="nb">load</span> <span class="mi">2</span> <span class="mf">0.0</span> <span class="nv">$N</span>
+<span class="k">set</span><span class="w"> </span>N<span class="w"> </span><span class="o">-</span><span class="mf">10.0</span>
+<span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">{</span>
+<span class="w">  </span><span class="nb">load</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="nv">$N</span>
 <span class="k">}</span>
-<span class="nv">constraints</span> Transformation
-<span class="nv">numberer</span> Plain
-<span class="nv">system</span> FullGeneral
-<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-6 <span class="mi">10</span> <span class="mi">0</span>
-<span class="nv">algorithm</span> Newton
-<span class="nv">integrator</span> LoadControl <span class="mf">1.0</span>
-<span class="nv">analysis</span> Static
-<span class="nv">analyze</span> <span class="mi">1</span>
-<span class="nv">loadConst</span> <span class="o">-</span>time <span class="mf">0.0</span>
+<span class="nv">constraints</span><span class="w"> </span>Transformation
+<span class="nv">numberer</span><span class="w"> </span>Plain
+<span class="nv">system</span><span class="w"> </span>FullGeneral
+<span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-6<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">algorithm</span><span class="w"> </span>Newton
+<span class="nv">integrator</span><span class="w"> </span>LoadControl<span class="w"> </span><span class="mf">1.0</span>
+<span class="nv">analysis</span><span class="w"> </span>Static
+<span class="nv">analyze</span><span class="w"> </span><span class="mi">1</span>
+<span class="nv">loadConst</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="mf">0.0</span>
 
 <span class="c"># remove horizontal constraint</span>
-<span class="nv">remove</span> sp <span class="mi">2</span> <span class="mi">1</span>
+<span class="nv">remove</span><span class="w"> </span>sp<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span>
 
 <span class="c"># apply an horizontal imposed displacement = 1</span>
-<span class="nv">pattern</span> Plain <span class="mi">2</span> <span class="mi">1</span> <span class="k">{</span>
-  <span class="nv">sp</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mf">1.0</span>
+<span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">{</span>
+<span class="w">  </span><span class="nv">sp</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">1.0</span>
 <span class="k">}</span>
-<span class="nv">constraints</span> Transformation
-<span class="nv">numberer</span> Plain
-<span class="nv">system</span> FullGeneral
-<span class="nv">test</span> NormDispIncr <span class="mf">1.0</span>e-6 <span class="mi">10</span> <span class="mi">0</span>
-<span class="nv">algorithm</span> Newton
-<span class="nv">integrator</span> LoadControl <span class="mf">0.01</span>
-<span class="nv">analysis</span> Static
-<span class="nv">analyze</span> <span class="mi">100</span>
+<span class="nv">constraints</span><span class="w"> </span>Transformation
+<span class="nv">numberer</span><span class="w"> </span>Plain
+<span class="nv">system</span><span class="w"> </span>FullGeneral
+<span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-6<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">algorithm</span><span class="w"> </span>Newton
+<span class="nv">integrator</span><span class="w"> </span>LoadControl<span class="w"> </span><span class="mf">0.01</span>
+<span class="nv">analysis</span><span class="w"> </span>Static
+<span class="nv">analyze</span><span class="w"> </span><span class="mi">100</span>
 
 <span class="c"># check results</span>
 <span class="nv">reactions</span>
-<span class="k">set</span> reference <span class="k">[expr</span> abs<span class="k">(</span><span class="nv">$N</span><span class="o">*</span><span class="nv">$mu</span><span class="k">)]</span>
-<span class="k">set</span> RFx <span class="k">[expr</span> abs<span class="k">([</span><span class="nv">nodeReaction</span> <span class="mi">2</span> <span class="mi">1</span><span class="k">])]</span>
-<span class="k">set</span> err <span class="k">[expr</span> abs<span class="k">(</span><span class="nv">$RFx-$reference</span><span class="k">)</span><span class="o">/</span><span class="nv">$reference</span><span class="k">]</span>
-<span class="nb">puts</span> <span class="s2">&quot;Expected X force: $reference&quot;</span>
-<span class="nb">puts</span> <span class="s2">&quot;Obtained X force: $RFx&quot;</span>
-<span class="nb">puts</span> <span class="s2">&quot;Relative Error: [expr $err*100.0] %&quot;</span>
+<span class="k">set</span><span class="w"> </span>reference<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>abs<span class="k">(</span><span class="nv">$N</span><span class="o">*</span><span class="nv">$mu</span><span class="k">)]</span>
+<span class="k">set</span><span class="w"> </span>RFx<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>abs<span class="k">([</span><span class="nv">nodeReaction</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="k">])]</span>
+<span class="k">set</span><span class="w"> </span>err<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>abs<span class="k">(</span><span class="nv">$RFx-$reference</span><span class="k">)</span><span class="o">/</span><span class="nv">$reference</span><span class="k">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Expected X force: $reference&quot;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Obtained X force: $RFx&quot;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Relative Error: [expr $err*100.0] %&quot;</span>
 </pre></div>
 </div>
 </div>

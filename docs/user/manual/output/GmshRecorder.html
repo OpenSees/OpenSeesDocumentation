@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,14 +36,16 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.4. Material Commands" href="../materialCommands.html" />
+    <link rel="next" title="3.4. Misc. Commands" href="../miscCommands.html" />
     <link rel="prev" title="3.3.1.5. MPCO Recorder" href="MPCORecorder.html" /> 
 </head>
 
@@ -96,7 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Model Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="recorder.html">3.3.1. recorder Command</a><ul class="current">
@@ -110,8 +113,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
@@ -200,7 +202,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmsh-recorder">
-<span id="gmshrecorder"></span><h1><span class="section-number">3.3.1.6. </span>GMSH Recorder<a class="headerlink" href="#gmsh-recorder" title="Permalink to this headline">¶</a></h1>
+<span id="gmshrecorder"></span><h1><span class="section-number">3.3.1.6. </span>GMSH Recorder<a class="headerlink" href="#gmsh-recorder" title="Permalink to this heading">¶</a></h1>
 <p>The GMSH recorder type is a <em>whole model</em> recorder, that is it is meant to record all the model geometry and metadata along with selecetd response quantities. The output of this recorder is in the <code class="docutils literal notranslate"><span class="pre">.msh</span></code> file format (legacy version 2) which can be visualized with the <a class="reference external" href="https://gmsh.info/">gmsh</a> program. This recorder is enabled for use in parallel model (both OpenSeesMP and OpenSeesSP works).</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -260,7 +262,7 @@ eleResponse
 <div class="admonition-example admonition">
 <p class="admonition-title">Example:</p>
 <p>The following examples demonstrate the use of the gmsh recorder command to store displacement results</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> gmsh results disp
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span><span class="w"> </span>gmsh<span class="w"> </span>results<span class="w"> </span>disp
 </pre></div>
 </div>
 <p>Execution results in the files <code class="docutils literal notranslate"><span class="pre">results.mesh.0.msh</span></code> (where mesh info is stored) and <code class="docutils literal notranslate"><span class="pre">results.disp.0.msh</span></code> (where displacement response at each node are stored). In gmsh, open first the <cite>mesh</cite> file and then merge the <cite>disp</cite> file into the current model to generate a post-processing view.</p>

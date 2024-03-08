@@ -41,47 +41,47 @@ This command is used to construct a material with a peak-oriented hysteretic res
 
    All material model parameters (in both the positive and negative direction) shall be specified as positive values.
 
+   Lamda is used to compute the reference energy based on the following equation Ref_Energy = Lamda * Fy
+
 .. [IbarraEtAl2005] Ibarra, L. F., Medina, R. A., and Krawinkler, H. (2005). "Hysteretic models that incorporate strength and stiffness deterioration." Earthquake Engineering & Structural Dynamics, 34(12), 1489-1511, Doi: 10.1002/eqe.495.
 
 
 .. _fig-IMKPeakOriented:
 
-	IMKPeakOriented backbone curve
-
 .. figure:: figures/IMK/IMKPeakOriented.jpg
 	:align: center
 	:figclass: align-center
 
-	IMKPeakOriented sample responses and validations
+	IMKPeakOriented backbone curve
 
 .. figure:: figures/IMK/IMKPeakOriented_sample_responses_validations.jpg
 	:align: center
 	:figclass: align-center
 
+	IMKPeakOriented sample responses and validations
+
 .. admonition:: Example 
 
-   The following is used to construct a IMKBilin material with symmetric hysteretic response.
-
-   1. **Tcl Code**
+   The following is used to construct a IMKPeakOriented material with symmetric hysteretic response.
 
    .. code-block:: tcl
 
-   set Ke 		10000.;
-   set dp 	   0.01;
-   set dpc     0.05;
-   set du 	   0.08;
-   set My 		100.;
-   set Mc_My 	1.10;
-   set Mres_My 0.10;
-   set lambda 	0.50;
-   set c_S 	   1.00;
-   set c_C 	   1.00; 
-   set c_K 	   1.00; 
-   set c_A 	   1.00;
-   set D_pos   1.00;
-   set D_neg   1.00;
+	set Ke 	    10000.;
+	set dp 	    0.01;
+	set dpc     0.05;
+	set du 	    0.08;
+	set My 	    100.;
+	set Mc_My   1.10;
+	set Mres_My 0.10;
+	set lambda  0.50;
+	set c_S     1.00;
+	set c_C     1.00; 
+	set c_K     1.00; 
+	set c_A     1.00;
+	set D_pos   1.00;
+	set D_neg   1.00;
 
-   uniaxialMaterial IMKPeakOriented 	 1 $Ke $dp $dpc $du $My $Mc_My $Mres_My $dp $dpc $du $My $Mc_My $Mres_My $lambda $lambda $lambda $lambda $c_S $c_S $c_A $c_K $D_pos $D_neg;
+   	uniaxialMaterial IMKPeakOriented 1 $Ke $dp $dpc $du $My $Mc_My $Mres_My $dp $dpc $du $My $Mc_My $Mres_My $lambda $lambda $lambda $lambda $c_S $c_S $c_A $c_K $D_pos $D_neg;
 
 
 For code inquires or bug reporting, please contact: 

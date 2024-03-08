@@ -21,7 +21,7 @@ In OpenSees there are commands to add each of these types of objects to a domain
    model/mpConstraints
    material/uniaxialMaterial
    material/ndMaterial
-   material/section
+   section
    model/geomTransf      
    model/element
    model/timeSeries

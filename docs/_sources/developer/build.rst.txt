@@ -29,7 +29,7 @@ For Windows 10 the user must have the following applications installed on their 
    The very latest release of MSVC,  2022.2, does not currently work with Intel OneAPI. Install the version 2022.1 or the 2019 version of MSCV.
    
 
-3. **IntelOne Basic & HPC Toolkits**: Intel's `oneAPI <https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html"`_ toolkits. To install the Fortran compiler you need to install TWO toolkits, the `base toolkit <https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html>`_ and the `HPC toolkit <https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html>`_.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with **MPI** for building and running the parallel OpenSees applications.
+3. **IntelOne Basic & HPC Toolkits**: Intel's `oneAPI <https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html>`_ toolkits. To install the Fortran compiler you need to install TWO toolkits, the `base toolkit <https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html>`_ and the `HPC toolkit <https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html>`_.  One advantage of installing the HPC one to obtain the Fortran compiler is that it comes with **MPI** for building and running the parallel OpenSees applications.
 
    
   .. note::
@@ -54,7 +54,7 @@ For Windows 10 the user must have the following applications installed on their 
          cmake .. -Darith=d -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreaded" -G Ninja
          cmake --build . --config Release --parallel 4
          cd ..\..
-	 pip install conan
+	 pip install conan==1.59.0
 	 
 
 Obtaining OpenSees Source Code       
@@ -265,7 +265,7 @@ Software Requirements
       ./configure --prefix=/usr/local/hdf5
       make
       sudo make install
-      pip3 install conan
+      pip3 install conan==1.59.0
 
 .. warning::
 

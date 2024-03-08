@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -103,17 +106,17 @@
 <li class="toctree-l3"><a class="reference internal" href="model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="material/section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="model/element.html">3.1.8. Element Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="model/timeSeries.html">3.1.9. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="model/pattern.html">3.1.10. Pattern Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="model/damping.html">3.1.11. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model/damping.html">3.1.12. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../userExamples.html">4. Examples</a></li>
@@ -198,7 +201,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="model-commands">
-<h1><span class="section-number">3.1. </span>Model Commands<a class="headerlink" href="#model-commands" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1. </span>Model Commands<a class="headerlink" href="#model-commands" title="Permalink to this heading">¶</a></h1>
 <p>These are the commands added to the interpreter to create the finite element model. A finite element model consists of <strong>Nodes</strong>, <strong>Elements</strong>, <strong>Constraints</strong>, and <strong>Loads</strong>. In OpenSees the Constraints are divided into two types: single-point constraints (<strong>SP_Constraints)</strong> for specifying the boundary condition for a specific degree-of-freedom at a node and multiple-point constraints (<strong>MP_Constraints</strong>) for specifying the relationship between the responses between the degrees-of-freedom at two separate nodes. The loads in OpenSees are assigned to <strong>LoadPatterns</strong>. Also associated with load patterns are <strong>TimeSeries</strong> objects ans sometime <strong>SP_Constraints</strong> when the user wants to specify time-varying <strong>SP_Constraints</strong>.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../_images/OpenSeesDomain.png"><img alt="../../_images/OpenSeesDomain.png" src="../../_images/OpenSeesDomain.png" style="width: 800px;" /></a>
@@ -213,11 +216,12 @@
 <li class="toctree-l1"><a class="reference internal" href="model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l1"><a class="reference internal" href="material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="material/section.html">3.1.7. section Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/element.html">3.1.8. Element Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/timeSeries.html">3.1.9. Time Series Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/pattern.html">3.1.10. Pattern Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/damping.html">3.1.11. Damping Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section.html">3.1.7. section Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model/damping.html">3.1.12. Damping Commands</a></li>
 </ul>
 </div>
 </div>

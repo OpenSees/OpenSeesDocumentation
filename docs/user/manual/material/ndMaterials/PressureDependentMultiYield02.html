@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.6.11. Pressure Dependent Multi Yield 02 &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.6.12. J2CyclicBoundingSurface Material" href="J2CyclicBoundingSurface.html" />
+    <link rel="prev" title="3.1.6.10. Pressure Dependent Multi Yield" href="PressureDependentMultiYield.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ElasticIsotropic.html">3.1.6.1. Elastic Isotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticOrthotropic.html">3.1.6.2. Elastic Orthotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2Plasticity.html">3.1.6.3. J2 Plasticity Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DruckerPrager.html">3.1.6.4. Drucker Prager Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ManzariDafalias.html">3.1.6.5. Manzari Dafalias Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundingCamClay.html">3.1.6.6. Bounding Cam Clay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Sand.html">3.1.6.7. PM4Sand Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Silt.html">3.1.6.8. PM4Silt Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureIndependentMultiYield.html">3.1.6.9. Pressure Independent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.1.6.10. Pressure Dependent Multi Yield</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.6.11. Pressure Dependent Multi Yield 02</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.1.6.12. J2CyclicBoundingSurface Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.1.6.13. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.1.6.14. Orthotropic Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Series3D.html">3.1.6.15. Series3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDConcrete3D.html">3.1.6.16. ASDConcrete3D Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../ndMaterial.html"><span class="section-number">3.1.6. </span>nDMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.6.11. </span>Pressure Dependent Multi Yield 02</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/ndMaterials/PressureDependentMultiYield02.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pressure-dependent-multi-yield-02">
+<span id="pressuredependentmultiyield02"></span><h1><span class="section-number">3.1.6.11. </span>Pressure Dependent Multi Yield 02<a class="headerlink" href="#pressure-dependent-multi-yield-02" title="Permalink to this heading">¶</a></h1>
+<p><strong>PressureDependMultiYield02</strong> material is modified from <code class="docutils literal notranslate"><span class="pre">PressureDependMultiYield</span></code> material, with:</p>
+<ol class="arabic simple">
+<li><p>Additional parameters ($contrac3 and $dilat3) to account for Kσ effect,</p></li>
+<li><p>a parameter to account for the influence of previous dilation history on subsequent contraction phase ($contrac2), and</p></li>
+<li><p>modified logic related to permanent shear strain accumulation ($liquefac1 and $liquefac2).</p></li>
+</ol>
+<p>The command to generate such a material</p>
+<div class="admonition-tcl-command admonition">
+<p class="admonition-title">TCL command:</p>
+<p>nDMaterial PressureDependMultiYield02 $tag $nd $rho $refShearModul $refBulkModul $frictionAng $peakShearStra $refPress $pressDependCoe $PTAng $contrac1 $contrac3 $dilat1 $dilat3 &lt;$noYieldSurf=20 &lt;$r1 $Gs1 …&gt; $contrac2=5. $dilat2=3. $liquefac1=1. $liquefac2=0. $e=0.6 $cs1=0.9 $cs2=0.02 $cs3=0.7 $pa=101 &lt;$c=0.1&gt;&gt;</p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 1%" />
+<col style="width: 1%" />
+<col style="width: 98%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>A positive integer uniquely identifying the material among all nDMaterials.</p></td>
+</tr>
+<tr class="row-odd"><td><p>nd</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Number of dimensions, 2 for plane-strain, and 3 for 3D analysis.</p></td>
+</tr>
+<tr class="row-even"><td><p>rho</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Saturated soil mass density.</p></td>
+</tr>
+<tr class="row-odd"><td><p>refShearModul (Gr)</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Reference low-strain shear modulus, specified at a reference mean effective confining pressure refPress of p’r.</p></td>
+</tr>
+<tr class="row-even"><td><p>refBulkModul (Br)</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Reference bulk modulus, specified at a reference mean effective confining pressure refPress of p’r.</p></td>
+</tr>
+<tr class="row-odd"><td><p>frictionAng (Φ)</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Friction angle at peak shear strength, in degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p>peakShearStra (γmax)</p></td>
+<td><p><em>float</em></p></td>
+<td><p>An octahedral shear strain at which the maximum shear strength is reached, specified at a reference mean effective confining pressure refPress of p’r.</p></td>
+</tr>
+<tr class="row-odd"><td><p>refPress (p’r)</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Reference mean effective confining pressure at which Gr, Br, and γmax are defined.</p></td>
+</tr>
+<tr class="row-even"><td><p>pressDependCoe (d)</p></td>
+<td><p><em>float</em></p></td>
+<td><p>A positive constant defining variations of G and B as a function of instantaneous effective confinement p’</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTAng (ΦPT)</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Phase transformation angle, in degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p>contrac1 $contrac2</p></td>
+<td><p><em>float</em></p></td>
+<td><p>A non-negative constant defining the rate of shear-induced volume decrease (contraction) or pore pressure buildup. A larger value corresponds to faster contraction rate.</p></td>
+</tr>
+<tr class="row-odd"><td><p>contrac3</p></td>
+<td><p><em>float</em></p></td>
+<td><p>A non-negative constant reflecting Kσ effect.</p></td>
+</tr>
+<tr class="row-even"><td><p>dilat1 $dilat2</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Non-negative constants defining the rate of shear-induced volume increase (dilation). Larger values correspond to stronger dilation rate.</p></td>
+</tr>
+<tr class="row-odd"><td><p>dilat3</p></td>
+<td><p><em>float</em></p></td>
+<td><p>A non-negative constant reflecting Kσ effect.</p></td>
+</tr>
+<tr class="row-even"><td><p>noYieldSurf</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Number of yield surfaces, optional (must be less than 40, default is 20). The surfaces are generated based on the hyperbolic relation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>r Gs</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Instead of automatic surfaces generation (Note 2), you can define yield surfaces directly based on desired shear modulus reduction curve. To do so, add a minus sign in front of noYieldSurf, then provide noYieldSurf pairs of shear strain (γ) and modulus ratio (Gs) values. For example, to define 10 surfaces: … -10γ1Gs1 … γ10Gs10 …</p></td>
+</tr>
+<tr class="row-even"><td><p>liquefac1</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Damage parameter to define accumulated permanent shear strain as a function of dilation history. (Redefined and different from PressureDependMultiYield material).</p></td>
+</tr>
+<tr class="row-odd"><td><p>liquefac2</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Damage parameter to define biased accumulation of permanent shear strain as a function of load reversal history. (Redefined and different from PressureDependMultiYield material).</p></td>
+</tr>
+<tr class="row-even"><td><p>e</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Initial void ratio, optional (default is 0.6).</p></td>
+</tr>
+<tr class="row-odd"><td><p>cs1 cs2 cs3 $pa</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Parameters defining a straight critical-state line ec in e-p’ space. (default values: cs1=0.9, cs2=0.02, cs3=0.7, pa =101 kPa).</p></td>
+</tr>
+<tr class="row-even"><td><p>c</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Numerical constant (default value = 0.3 kPa)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-recorder-queries-and-outputs-the-following-information-may-be-extracted-for-this-material-at-a-given-integration-point-using-the-opensees-element-recorder-facility-stress-strain-backbone-or-tangent admonition">
+<p class="admonition-title">Recorder queries and Outputs
+The following information may be extracted for this material at a given integration point, using the OpenSees Element Recorder facility <code class="docutils literal notranslate"><span class="pre">stress</span></code>, <code class="docutils literal notranslate"><span class="pre">strain</span></code>, <code class="docutils literal notranslate"><span class="pre">backbone</span></code>, or <code class="docutils literal notranslate"><span class="pre">tangent</span></code>.</p>
+<ul class="simple">
+<li><p>For 2D problems, the stress output follows this order: <span class="math notranslate nohighlight">\(\sigma_{xx}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{yy}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{zz}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{xy}\)</span>, <span class="math notranslate nohighlight">\(\eta_r\)</span>, where <span class="math notranslate nohighlight">\(\eta_r\)</span> is the ratio between the shear (deviatoric) stress and peak shear strength at the current confinement <span class="math notranslate nohighlight">\((0&lt;=\eta_r&lt;=1.0)\)</span>. The strain output follows this order: <span class="math notranslate nohighlight">\(\epsilon_{xx}\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{yy}\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{xy}\)</span></p></li>
+<li><p>For 3D problems, the stress output follows this order: <span class="math notranslate nohighlight">\(\sigma_{xx}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{yy}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{zz}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{xy}\)</span>,:math:<cite>sigma_{yz}</cite>, <span class="math notranslate nohighlight">\(\sigma_{zx}\)</span>, <span class="math notranslate nohighlight">\(\eta_r\)</span> and the strain output follows this order: <span class="math notranslate nohighlight">\(\epsilon_{xx}\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{yy}\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{zz}\)</span>, <span class="math notranslate nohighlight">\(\gamma_{xy}\)</span>, <span class="math notranslate nohighlight">\(\gamma_{yz}\)</span>, <span class="math notranslate nohighlight">\(\gamma_{zx}\)</span></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">backbone&quot;</span></code> option records (secant) shear modulus reduction curves at one or more given confinements. The specific recorder command is as follows:</p></li>
+</ul>
+<p>where p1, p2, … are the confinements at which modulus reduction curves are recorded. In the output file, corresponding to each given confinement there are two columns: shear strain γ and secant modulus Gs. The number of rows equals the number of yield surfaces.</p>
+<ul class="simple">
+<li><p>Elastic or Elastoplastic response could be enforced by:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Elastic:   updateMaterialStage -material $tag -stage 0
+Elastoplastic:    updateMaterialStage -material $tag -stage 1
+</pre></div>
+</div>
+</div>
+<p><strong>SUGGESTED PARAMETER VALUES</strong></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameters</p></th>
+<th class="head"><p>Dr=30%</p></th>
+<th class="head"><p>Dr=40%</p></th>
+<th class="head"><p>Dr=50%</p></th>
+<th class="head"><p>Dr=60%</p></th>
+<th class="head"><p>Dr=75%</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>rho</p></td>
+<td><p>1.7 ton/m3</p></td>
+<td><p>1.8 ton/m3</p></td>
+<td><p>1.9 ton/m3</p></td>
+<td><p>2.0 ton/m3</p></td>
+<td><p>2.1 ton/m3</p></td>
+</tr>
+<tr class="row-odd"><td><p>refShearModul (at p’r=80 kPa)</p></td>
+<td><p>6.0x104 kPa</p></td>
+<td><p>9.0x104 kPa</p></td>
+<td><p>10.0x104 kPa</p></td>
+<td><p>11.0x104 kPa</p></td>
+<td><p>13.0x104 kPa</p></td>
+</tr>
+<tr class="row-even"><td><p>refBulkModu (at p’r=80 kPa)</p></td>
+<td><p>16.0x104 kPa (Ko=0.5)</p></td>
+<td><p>22.0x104 kPa (Ko=0.47)</p></td>
+<td><p>23.3x104 kPa (Ko=0.45)</p></td>
+<td><p>24.0x104 kPa (Ko=0.43)</p></td>
+<td><p>26.0x104 kPa (Ko=0.4)</p></td>
+</tr>
+<tr class="row-odd"><td><p>frictionAng</p></td>
+<td><p>31</p></td>
+<td><p>32</p></td>
+<td><p>33.5</p></td>
+<td><p>35</p></td>
+<td><p>36.5</p></td>
+</tr>
+<tr class="row-even"><td><p>PTAng</p></td>
+<td><p>31</p></td>
+<td><p>26</p></td>
+<td><p>25.5</p></td>
+<td><p>26</p></td>
+<td><p>26</p></td>
+</tr>
+<tr class="row-odd"><td><p>peakShearStra (at p’r=101 kPa or 14.65 psi)</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>refPress (p’r)</p></td>
+<td><p>101 kPa</p></td>
+<td><p>101 kPa</p></td>
+<td><p>101 kPa</p></td>
+<td><p>101 kPa</p></td>
+<td><p>101 kPa</p></td>
+</tr>
+<tr class="row-odd"><td><p>pressDependCoe</p></td>
+<td><p>0.5</p></td>
+<td><p>0.5</p></td>
+<td><p>0.5</p></td>
+<td><p>0.5</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-even"><td><p>contrac1</p></td>
+<td><p>0.087</p></td>
+<td><p>0.067</p></td>
+<td><p>0.045</p></td>
+<td><p>0.028</p></td>
+<td><p>0.013</p></td>
+</tr>
+<tr class="row-odd"><td><p>contrac3</p></td>
+<td><p>0.18</p></td>
+<td><p>0.23</p></td>
+<td><p>0.15</p></td>
+<td><p>0.05</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>dilat1</p></td>
+<td><p>0.0</p></td>
+<td><p>0.06</p></td>
+<td><p>0.06</p></td>
+<td><p>0.1</p></td>
+<td><p>0.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>dilat3</p></td>
+<td><p>0.0</p></td>
+<td><p>0.27</p></td>
+<td><p>0.15</p></td>
+<td><p>0.05</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>e</p></td>
+<td><p>0.85</p></td>
+<td><p>0.77</p></td>
+<td><p>0.7</p></td>
+<td><p>0.65</p></td>
+<td><p>0.55</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pressure Dependent Multi Yield 02 Examples</strong></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Tcl</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Single 2D 9-4 noded element, subjected to sinusoidal base shaking (PressureDepend02 material)</p></td>
+<td><p><a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/PressureDependMultiYield02-Example_1">Example 1</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Single 3D brick element, subjected to sinusoidal base shaking (PressureDepend02 material)</p></td>
+<td><p><a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/PressureDependMultiYield02-Example_2">Example 2</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Single 3D 20-8 noded element, subjected to sinusoidal base shaking (PressureDepend02 material)</p></td>
+<td><p><a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/PressureDependMultiYield02-Example_3">Example 3</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>Code Developed by: UC San Diego (<strong>Dr. Zhaohui Yang</strong>), Github Documentation collected by: <a class="reference external" href="https://najafice.github.io">A. Najafi</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

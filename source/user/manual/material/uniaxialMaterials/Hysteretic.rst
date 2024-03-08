@@ -1,9 +1,9 @@
-.. _SteelHysteretic:
+.. _Hysteretic:
 
-Steel Hysteretic Material
+Hysteretic Material
 ^^^^^^^^^^^^^^^^
 
-This command is used to construct a uniaxial bilinear hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. 
+This command is used to construct a uniaxial hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. The backbone can be either bilinear or trilinear.
 
 .. function:: uniaxialMaterial Hysteretic $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> $s1n $e1n $s2n $e2n <$s3n $e3n> $pinchX $pinchY $damage1 $damage2 <$beta> 
 
@@ -32,7 +32,7 @@ This command is used to construct a uniaxial bilinear hysteretic material object
    * - $s2n $e2n
      - |float|
      - stress and strain (or force & deformation) at second point of the envelope in the negative direction
-   * - $$s3n $e3n 
+   * - $s3n $e3n 
      - |float|
      - stress and strain (or force & deformation) at third point of the envelope in the negative direction (optional) 
    * - $pinchx

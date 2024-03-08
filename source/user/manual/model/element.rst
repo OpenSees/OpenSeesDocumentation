@@ -54,6 +54,7 @@ The following subsections contain information about **$eleType** and the number 
    :maxdepth: 1
 
    elements/elasticBeamColumn
+   elements/ModElasticBeam
    elements/ElasticBeamColumnElementWithStiffnessModifiers
    elements/ElasticTimoshenkoBeamColumnElement
    elements/BeamWithHingesElement
@@ -62,9 +63,12 @@ The following subsections contain information about **$eleType** and the number 
    elements/gradientInelasticBeamColumn   
    elements/FlexureShearInteractionDisplacementBasedBeamColumnElement
    elements/MVLEM
-   elements/SFI_MVLEM
+   elements/MVLEM_3D
+   elements/SFI_MVLEM_3D
+   elements/E_SFI_MVLEM_3D
    elements/dispBeamColumnAsym
    elements/mixedBeamColumnAsym
+   elements/E_SFI
 
 
 4. Quadrilateral & Shell Elements
@@ -145,6 +149,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/HDR
    elements/RJ-Watson EQS Bearing
    elements/FPBearingPTV
+   elements/TripleFrictionPendulumX
 
 
 
@@ -183,7 +188,14 @@ The following subsections contain information about **$eleType** and the number 
 
    elements/CatenaryCableElement
 
-14. Misc.
+14. Absorbing Elements
+
+.. toctree::
+   :maxdepth: 1   
+
+   elements/PML
+
+15. Misc.
 
 .. toctree::
    :maxdepth: 1   

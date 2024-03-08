@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.8.1. ZeroLength Element &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.9.1. ZeroLength Element &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,15 +36,17 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.8.2. ZeroLength Section Element" href="zeroLengthSection.html" />
-    <link rel="prev" title="3.1.8. Element Command" href="../element.html" /> 
+    <link rel="next" title="3.1.9.2. ZeroLength Section Element" href="zeroLengthSection.html" />
+    <link rel="prev" title="3.1.9. Element Command" href="../element.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,45 +99,51 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Modelling Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. Model Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. Node Command</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../material/section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.8. Element Command</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.8.1. ZeroLength Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.8.2. ZeroLength Section Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.8.3. ZeroLengthND Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.8.4. ZeroLengthContactASDimplex Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.8.5. Elastic Beam Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.8.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.8.7. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.8.8. Mixed Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.8.9. ASDShellQ4 Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.8.10. Quadrilateral Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.8.11. SSPquad Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.8.12. stdBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.8.13. bbarBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.8.14. SSPbrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.8.15. FourNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.8.16. TenNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.8.17. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.8.18. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.8.19. RockingBC Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.9. Element Command</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.9.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.9.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.9.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.9.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.9.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.9.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.9.7. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.9.8. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.9.9. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.9.10. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.9.11. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.9.12. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.9.13. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.9.14. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.9.15. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.9.16. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.9.17. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.9.18. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.9.19. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.9.20. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.9.21. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.9.22. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.9.23. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.9.24. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.9.25. RockingBC Element</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.9. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.10. Pattern Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.11. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -199,11 +208,11 @@
         
           <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
         
-          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Modelling Commands</a> &raquo;</li>
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-          <li><a href="../element.html"><span class="section-number">3.1.8. </span>Element Command</a> &raquo;</li>
+          <li><a href="../element.html"><span class="section-number">3.1.9. </span>Element Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.8.1. </span>ZeroLength Element</li>
+      <li><span class="section-number">3.1.9.1. </span>ZeroLength Element</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,8 +232,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="zerolength-element">
-<span id="zerolength"></span><h1><span class="section-number">3.1.8.1. </span>ZeroLength Element<a class="headerlink" href="#zerolength-element" title="Permalink to this headline">¶</a></h1>
+<span id="zerolength"></span><h1><span class="section-number">3.1.9.1. </span>ZeroLength Element<a class="headerlink" href="#zerolength-element" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct a zeroLength element object, which is defined by two nodes at the same location. A zeroLength element is similar to a set of springs placed between two nodes, each spring providing the force displacement relationship for a specified degree-of-freedom. The nodes are connected by multiple UniaxialMaterial objects, which provide the force-deformation relationship for the element in that degree-of-freedom direction.</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">zeroLength</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">-mat</span> <span class="pre">$matTag</span> <span class="pre">-dir</span> <span class="pre">$dir</span> <span class="pre">&lt;-doRayleigh</span> <span class="pre">$rFlag&gt;</span> <span class="pre">&lt;-orient</span> <span class="pre">$x</span> <span class="pre">$yp&gt;</span></span></dt>
+<dd></dd></dl>
+
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 17%" />

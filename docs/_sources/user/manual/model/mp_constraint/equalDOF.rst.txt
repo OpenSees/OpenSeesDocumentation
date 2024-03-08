@@ -10,18 +10,20 @@ This command is used to construct a multi-point constraint between nodes where t
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
 
-   $rNodeTag, |integer|,	   integer tag identifying the retained - the master node (rNode)
-   $cNodeTag, |integer|,	   integer tag identifying the constrained - slave node (cNode)
-   $dof1 $dof2 ..., |integerList|, "| list of nodal degrees-of-freedom that are constrained at the cNode 
+   $rNodeTag, |integer|,	   integer tag identifying the retained node (rNode)
+   $cNodeTag, |integer|,	   integer tag identifying the constrained node (cNode)
+   $dof1 $dof2 ..., |integerList|, "| list of nodal degrees-of-freedom that are constrained at the cNode (optional)
 
 
 .. note::
 
-   retained node also known as the **master** node.
+   retained (primary) node 
 
-   constarined node alsoe node as the **slave** node.
+   constrained (secondary) node
 
-   valid range of $dof is 1 through **ndf** of the **slave** node
+   valid range of $dof is 1 through **ndf** of the **constrained** node
+   
+   if no dofs are specified, *all* dofs of the constrained node are used
 
 .. admonition:: Example:
 
@@ -33,7 +35,7 @@ This command is used to construct a multi-point constraint between nodes where t
 
       equalDOF 2 33 1 3 5;
 
-   1. **Tcl Code**
+   1. **Python Code**
 
    .. code-block:: python
 

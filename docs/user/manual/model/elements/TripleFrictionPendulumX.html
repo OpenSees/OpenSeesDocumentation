@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.9.21. TripleFrictionPendulumX Element &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.9.22. PML Element" href="PML.html" />
+    <link rel="prev" title="3.1.9.20. TenNodeTetrahedron Element" href="TenNodeTetrahedron.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.9. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.9.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.9.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.9.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.9.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.9.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.9.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.9.7. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.9.8. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.9.9. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.9.10. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.9.11. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.9.12. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.9.13. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.9.14. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.9.15. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.9.16. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.9.17. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.9.18. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.9.19. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.9.20. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.9.21. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.9.22. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.9.23. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.9.24. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.9.25. RockingBC Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../element.html"><span class="section-number">3.1.9. </span>Element Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.9.21. </span>TripleFrictionPendulumX Element</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/model/elements/TripleFrictionPendulumX.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="triplefrictionpendulumx-element">
+<h1><span class="section-number">3.1.9.21. </span>TripleFrictionPendulumX Element<a class="headerlink" href="#triplefrictionpendulumx-element" title="Permalink to this heading">¶</a></h1>
+<p>This command is used to construct the TripleFrictionPendulumX element <a class="reference internal" href="#kimconstantinou2022" id="id1"><span>[KimConstantinou2022]</span></a> <a class="reference internal" href="#kimconstantinou2023" id="id2"><span>[KimConstantinou2023]</span></a> object, which is an extension of the TripleFrictionPendulum element <a class="reference internal" href="#daoetal2013" id="id3"><span>[DaoEtAl2013]</span></a> capable of accounting for heating effects on the frictional behavior of triple friction pendulum isolators. The horizontal behavior of the element is achieved by the series model, which consists of properly combined hysteretic/frictional and multidirectional gap elements.</p>
+<p>Three main modifications in the TripleFrictionPendulumX element include: 1) computation of the displacement and velocity histories at each of the four sliding interfaces of the isolator, 2) computation of the temperature history at each sliding interface, and 3) accounting for the dependency of the coefficient of friction on the instantaneous temperature at each sliding interface.  The factorized friction model used in OpenSees element FPBearingPTV <a class="reference internal" href="#kumaretal2015" id="id4"><span>[KumarEtAl2015]</span></a> is used to account for the effects of pressure, velocity, and temperature on the friction coefficients at each sliding surfaces, with the latter effect expanded to include more possible friction-temperature laws. In OpenSees element FPBearingPTV, the friction coefficient is given by equations (1) to (4) in which <span class="math notranslate nohighlight">\(\mu_{ref}\)</span> is the reference high speed coefficient of friction at the initial time <span class="math notranslate nohighlight">\(t = 0\)</span>, initial temperature <span class="math notranslate nohighlight">\(T_{0} = 20℃\)</span> and initial pressure <span class="math notranslate nohighlight">\(p_{0}\)</span>, <span class="math notranslate nohighlight">\(a\)</span> is velocity rate parameter <span class="math notranslate nohighlight">\((= 100sec/m)\)</span>, <span class="math notranslate nohighlight">\(p\)</span> is the apparent pressure, and <span class="math notranslate nohighlight">\(v\)</span> is the amplitude of the velocity.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\mu(p,v,T)=\mu_{ref} k_{p} k_{v} k_{T} 　　　　　　(1)\\k_{p}=(0.7)^{0.02(p-p_{0})} 　　　　　　(2)\\k_{v}=(1-0.5e^{-av}) 　　　　　　(3)\\k_{T}=0.79((0.7)^{0.02T}+0.40) 　　　　　　(4)\end{aligned}\end{align} \]</div>
+<p>In the TripleFrictionPendulumX element, the temperature-dependency of the friction coefficient was expanded beyond the single case described by equation (4).  Specifically, two additional cases were added, described by equations (5) and (6).  Figure 1 depicts the coefficient <span class="math notranslate nohighlight">\(k_T\)</span> as function of temperature for the three cases.  In the three cases, the value of coefficient <span class="math notranslate nohighlight">\(k_T\)</span> drops from the unity at the normal temperature to 1/3, 1/2 or 2/3 at approximately the temperature of <span class="math notranslate nohighlight">\(200℃\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}k_{T}=0.84((0.7)^{0.0085T}+0.25) 　　　　　(5)\\k_{T}=0.97((0.7)^{0.029T}+0.22) 　　　　　(6)\end{aligned}\end{align} \]</div>
+<div class="align-center figure" id="id7">
+<a class="reference internal image-reference" href="../../../../_images/FIGURE1.jpg"><img alt="../../../../_images/FIGURE1.jpg" src="../../../../_images/FIGURE1.jpg" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.23 </span><span class="caption-text"><strong>Figure 1. Friction Coefficient-Temperature Relationships in TripleFrictionPendulumX element</strong></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>For more information about the element formulation, please refer to the references at the end of this page.</p>
+<div class="align-center figure" id="id8">
+<a class="reference internal image-reference" href="../../../../_images/FIGURE2.jpg"><img alt="../../../../_images/FIGURE2.jpg" src="../../../../_images/FIGURE2.jpg" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.24 </span><span class="caption-text"><strong>Figure 2. Geometry of Triple FP bearing in accordance with OpenSees Commands</strong></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-command admonition">
+<p class="admonition-title">Command</p>
+<p><strong>element TripleFrictionPendulumX $eleTag $iNode $jNode $Tag $vertMatTag $rotZMatTag $rotXMatTag $rotYMatTag $kpFactor $kTFactor $kvFactor $Mu1 $Mu2 $Mu3 $L1 $L2 $L3 $d1_star $d2_star $d3_star $b1 $b2 $b3 $W $uy $kvt $minFv $Tol $refPressure1 $refPressure2 $refPressure3 $Diffusivity $Conductivity $Temperature0 $rateParameter $kTmodels $unit</strong></p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$eleTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Unique element object tag.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$iNode $jNode</p></td>
+<td><p><em>integer</em> <em>integer</em></p></td>
+<td><p>End nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p>$Tag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span>: for Approach 1 (suitable for all types of analysis)</p>
+<p><span class="math notranslate nohighlight">\(0\)</span>: for Approach 2 (1D displacement control analysis only)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$vertMatTag</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Pre-defined material tag for compression behavior of the bearing.</p></td>
+</tr>
+<tr class="row-even"><td><p>$rotZMatTag $rotXMatTag $rotYMatTag</p></td>
+<td><p><em>integer</em> <em>integer</em> <em>integer</em></p></td>
+<td><p>Pre-defined material tags for rotational behavior about 3-axis, 1-axis and 2-axis, respectively.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$kpFactor</p></td>
+<td><p><em>integer</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span>: if the coefficient of friction is a function of instantaneous axial pressure.</p>
+<p><span class="math notranslate nohighlight">\(k_{p}=0.7^{0.02(p-p_{0})}\)</span></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>$kTFactor</p></td>
+<td><p><em>integer</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span>: if the coefficient of friction is a function of instantaneous temperature at the sliding surface.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$kvFactor</p></td>
+<td><p><em>integer</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span>: if the coefficient of friction is a function of instantaneous velocity at the sliding surface.</p>
+<p><span class="math notranslate nohighlight">\(k_{v}=(1-0.5e^{-av})\)</span></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>$Mu1 $Mu2 $Mu3</p></td>
+<td><p><em>float</em> <em>float</em> <em>float</em></p></td>
+<td><p>Reference friction coefficients, <span class="math notranslate nohighlight">\(\mu_i\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>$L1 $L2 $L3</p></td>
+<td><p><em>float</em> <em>float</em> <em>float</em></p></td>
+<td><p>Effective radii, <span class="math notranslate nohighlight">\(L_i = R_i – h_i\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>$d1_star $d2_star $d3_star</p></td>
+<td><p><em>float</em> <em>float</em> <em>float</em></p></td>
+<td><p>Actual displacement capacity of sliding interfaces. <span class="math notranslate nohighlight">\(d_i^* = L_i/R_i·d_i\)</span>, <span class="math notranslate nohighlight">\(d_i\)</span> = Nominal displacement capacity of each sliding interface.</p>
+<p>Displacement limit of the bearing is <span class="math notranslate nohighlight">\(u_{limit} = 2d_1^* + d_2^* + d_3^* + b_2^*/2\)</span>, where <span class="math notranslate nohighlight">\(b_2\)</span> is a diameter of rigid slider.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$b1 $b2 $b3</p></td>
+<td><p><em>float</em> <em>float</em> <em>float</em></p></td>
+<td><p>Diameters of the rigid slider and the two inner slide plates</p></td>
+</tr>
+<tr class="row-even"><td><p>$W</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Axial force used for the first trial of the first analysis step.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$uy</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Lateral displacement where sliding of the bearing starts.</p>
+<p>Recommended value = <span class="math notranslate nohighlight">\(0.025\)</span> to <span class="math notranslate nohighlight">\(1 mm\)</span>. Smaller values may cause convergence problem or may slow the program execution.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>$kvt</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Tension stiffness <span class="math notranslate nohighlight">\(k_{vt}\)</span> of the bearing. Use a small, non-zero value to avoid numerical problems.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$minFv (≥ 0)</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Minimum vertical compression force in the bearing used for computing the horizontal tangent stiffness matrix from the normalized tangent stiffness matrix of the element.</p></td>
+</tr>
+<tr class="row-even"><td><p>$Tol</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Relative tolerance for checking the convergence of the element.</p>
+<p>Recommended value = <span class="math notranslate nohighlight">\(10^{-10}\)</span> to <span class="math notranslate nohighlight">\(10^{-3}\)</span></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$refPressure1 $refPressure2 $refPressure3</p></td>
+<td><p><em>float</em> <em>float</em> <em>float</em></p></td>
+<td><p>Reference axial pressures (the bearing pressure under static loads)</p></td>
+</tr>
+<tr class="row-even"><td><p>$Diffusivity</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Thermal diffusivity of steel (unit: <span class="math notranslate nohighlight">\(m^2/sec\)</span>).</p>
+<p>(<span class="math notranslate nohighlight">\(= 0.444*10^{-5}\)</span> for stainless steel)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$Conductivity</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Thermal conductivity of steel (unit: <span class="math notranslate nohighlight">\(W/m℃\)</span>).</p>
+<p>(<span class="math notranslate nohighlight">\(= 18\)</span> for stainless steel)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>$Temperature0</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Initial temperature (<span class="math notranslate nohighlight">\(℃\)</span>).</p>
+<p>Use <span class="math notranslate nohighlight">\(20℃\)</span> as model of friction-temperature is based on <span class="math notranslate nohighlight">\(20℃\)</span>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$rateparameter</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Parameter in relationship of coefficient of friction and sliding velocity.</p>
+<p>(unit: <span class="math notranslate nohighlight">\(sec/m\)</span>, <span class="math notranslate nohighlight">\(100sec/m\)</span> is used normally)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>$kTmodel</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Temperature-dependent friction models (3)</p>
+<p><span class="math notranslate nohighlight">\(1\)</span>: <span class="math notranslate nohighlight">\(k_{T}=0.79(0.7^{0.02T}+0.40)\)</span> (<span class="math notranslate nohighlight">\(k_{T} = 1/2\)</span> at <span class="math notranslate nohighlight">\(200℃\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(2\)</span>: <span class="math notranslate nohighlight">\(k_{T}=0.97(0.7^{0.029T}+0.22)\)</span> (<span class="math notranslate nohighlight">\(k_{T} = 1/3\)</span> at <span class="math notranslate nohighlight">\(200℃\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(3\)</span>: <span class="math notranslate nohighlight">\(k_{T}=0.84(0.7^{0.0085T}+0.25)\)</span> (<span class="math notranslate nohighlight">\(k_{T} = 2/3\)</span> at <span class="math notranslate nohighlight">\(200℃\)</span>)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$unit</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Tag to identify the unit from the list below.</p>
+<p><span class="math notranslate nohighlight">\(1\)</span>: <span class="math notranslate nohighlight">\(N, m, sec, ℃\)</span></p>
+<p><span class="math notranslate nohighlight">\(2\)</span>: <span class="math notranslate nohighlight">\(kN, m, sec, ℃\)</span></p>
+<p><span class="math notranslate nohighlight">\(3\)</span>: <span class="math notranslate nohighlight">\(N, mm, sec, ℃\)</span></p>
+<p><span class="math notranslate nohighlight">\(4\)</span>: <span class="math notranslate nohighlight">\(kN, mm, sec, ℃\)</span></p>
+<p><span class="math notranslate nohighlight">\(5\)</span>: <span class="math notranslate nohighlight">\(lb, in, sec, ℃\)</span></p>
+<p><span class="math notranslate nohighlight">\(6\)</span>: <span class="math notranslate nohighlight">\(kip, in, sec, ℃\)</span></p>
+<p><span class="math notranslate nohighlight">\(7\)</span>: <span class="math notranslate nohighlight">\(lb, ft, sec, ℃\)</span></p>
+<p><span class="math notranslate nohighlight">\(8\)</span>: <span class="math notranslate nohighlight">\(kip, ft, sec, ℃\)</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-recorders admonition">
+<p class="admonition-title">Recorders</p>
+<p><strong>Typical Element Recorders</strong></p>
+<p>Typical recorders for two-node element are available in the TripleFrictionPendulumX element.</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Recorder</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>globalForce</p></td>
+<td><p>global forces</p></td>
+</tr>
+<tr class="row-odd"><td><p>localForce</p></td>
+<td><p>local forces</p></td>
+</tr>
+<tr class="row-even"><td><p>basicForce</p></td>
+<td><p>basic forces</p></td>
+</tr>
+<tr class="row-odd"><td><p>basicDisplacement</p></td>
+<td><p>basic displacements</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>TripleFrictionPendulumX Element Recorders</strong></p>
+<p>Subscript “i” of the response quantities in the following recorders refer to the numbering of the sliding interfaces, starting from bottom to top sliding interfaces.</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Recorder</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>compDisplacement</p></td>
+<td><p>Displacements (<span class="math notranslate nohighlight">\(u_i\)</span>) and velocities (<span class="math notranslate nohighlight">\(v_i\)</span>) at each sliding surface in the x and y directions <span class="math notranslate nohighlight">\((u_{2x}+u_{3x})/2\)</span>, <span class="math notranslate nohighlight">\(u_{1x},u_{4x}\)</span>,  <span class="math notranslate nohighlight">\((u_{2y}+u_{3y})/2\)</span>, <span class="math notranslate nohighlight">\(u_{1y}\)</span>, <span class="math notranslate nohighlight">\(u_{4y}\)</span>, <span class="math notranslate nohighlight">\((v_{2x}+v_{3x})/2\)</span>, <span class="math notranslate nohighlight">\(v_{1x}\)</span>, <span class="math notranslate nohighlight">\(v_{4x}\)</span>,  <span class="math notranslate nohighlight">\((v_{2y}+v_{3y})/2\)</span>, <span class="math notranslate nohighlight">\(v_{1y}\)</span>, <span class="math notranslate nohighlight">\(v_{4y}\)</span> in accordance with Approach 1 (See Section 3 in <a class="reference internal" href="#kimconstantinou2022" id="id5"><span>[KimConstantinou2022]</span></a>.</p>
+<p><em>Example: recorder Element&lt;-file $fileName&gt; -time&lt;-ele ($ele1 $ele2…)&gt;compDisplacement</em></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>Temperatures (<span class="math notranslate nohighlight">\(T_{2,3}\)</span>, <span class="math notranslate nohighlight">\(T_1\)</span>, <span class="math notranslate nohighlight">\(T_4\)</span>), coefficients of friction (<span class="math notranslate nohighlight">\(\mu_{2,3}\)</span>, <span class="math notranslate nohighlight">\(\mu_1\)</span>, <span class="math notranslate nohighlight">\(\mu_4\)</span>), heat fluxes (<span class="math notranslate nohighlight">\(HeatFlux_{2,3}\)</span>, <span class="math notranslate nohighlight">\(HeatFlux_{1}\)</span>, <span class="math notranslate nohighlight">\(HeatFlux_4\)</span>), pressure dependency factors (<span class="math notranslate nohighlight">\(k_{p2,3}\)</span>, <span class="math notranslate nohighlight">\(k_{p1}\)</span>, <span class="math notranslate nohighlight">\(k_{p4}\)</span>), temperature dependency factors (<span class="math notranslate nohighlight">\(k_{T2,3}\)</span>, <span class="math notranslate nohighlight">\(k_{T1}\)</span>, <span class="math notranslate nohighlight">\(k_{T4}\)</span>), and velocity dependency factors (<span class="math notranslate nohighlight">\(k_{v2,3}\)</span>, <span class="math notranslate nohighlight">\(k_{v1}\)</span>, <span class="math notranslate nohighlight">\(k_{v4}\)</span>).</p>
+<p><em>Example: recorder Element&lt;-file $fileName&gt; -time&lt;-ele ($ele1 $ele2…)&gt;Parameters</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>The following code constructs Example 3 in <a class="reference internal" href="#kimconstantinou2023" id="id6"><span>[KimConstantinou2023]</span></a>.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c">#############################################################################</span>
+<span class="c">#-------Department of Civil, Structural and Environmental Engineering-------#</span>
+<span class="c">#---------------------------University at Buffalo---------------------------#</span>
+<span class="c"># Modeling of Triple FP isolator                                            #</span>
+<span class="c"># Written By: Hyun-myung Kim (hkim59@buffalo.edu)                           #</span>
+<span class="c"># Date: May, 2023                                                           #</span>
+<span class="c">#############################################################################</span>
+
+<span class="c"># Units: N, m, sec</span>
+<span class="c"># Remove existing model</span>
+<span class="nv">wipe</span>
+
+<span class="c"># EXAMPLE 3 (Kim and Constantinou, 2023 https://doi.org/10.1002/eqe.3797)</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+<span class="c"># User Defined Parameters</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+
+<span class="c"># TFP Geomoetry of Configuration A</span>
+<span class="k">set</span><span class="w"> </span>L1<span class="w"> </span><span class="mf">0.3937</span><span class="k">;</span><span class="w">                    </span><span class="c"># Effective radii (m)</span>
+<span class="k">set</span><span class="w"> </span>L2<span class="w"> </span><span class="mf">3.7465</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>L3<span class="w"> </span><span class="mf">3.7465</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>d1<span class="w"> </span><span class="mf">0.0716</span><span class="k">;</span><span class="w">                    </span><span class="c"># Actual displacement capacity (m)</span>
+<span class="k">set</span><span class="w"> </span>d2<span class="w"> </span><span class="mf">0.5043</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>d3<span class="w"> </span><span class="mf">0.5043</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>b1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">0.508</span><span class="k">];</span><span class="w">              </span><span class="c"># Diameter of the rigid slider and the two inner slide plate (m)</span>
+<span class="k">set</span><span class="w"> </span>b2<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">0.711</span><span class="k">];</span>
+<span class="k">set</span><span class="w"> </span>b3<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">0.711</span><span class="k">];</span>
+<span class="k">set</span><span class="w"> </span>r1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$b1</span><span class="o">/</span><span class="mi">2</span><span class="k">];</span><span class="w">              </span><span class="c"># Radius of of the rigid slider and the two inner slide plate (m)</span>
+<span class="k">set</span><span class="w"> </span>r2<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$b2</span><span class="o">/</span><span class="mi">2</span><span class="k">];</span>
+<span class="k">set</span><span class="w"> </span>r3<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$b3</span><span class="o">/</span><span class="mi">2</span><span class="k">];</span>
+
+<span class="k">set</span><span class="w"> </span>uy<span class="w"> </span><span class="mf">0.001</span><span class="k">;</span><span class="w">                     </span><span class="c"># Yield displacement (m)</span>
+<span class="k">set</span><span class="w"> </span>kvc<span class="w"> </span><span class="mi">8000000000</span>.<span class="k">;</span><span class="w">              </span><span class="c"># Vertical compression stiffness (N/m)</span>
+<span class="k">set</span><span class="w"> </span>kvt<span class="w"> </span><span class="mi">1</span>.<span class="k">;</span><span class="w">                       </span><span class="c"># Vertical tension stiffness (N/m)</span>
+<span class="k">set</span><span class="w"> </span>minFv<span class="w"> </span><span class="mf">0.1</span><span class="k">;</span><span class="w">                    </span><span class="c"># Minimum compression force in the bearing (N)</span>
+
+<span class="k">set</span><span class="w"> </span>g<span class="w">     </span><span class="mf">9.81</span><span class="k">;</span><span class="w">                   </span><span class="c"># Gravity acceleration (m/s^2)</span>
+<span class="k">set</span><span class="w"> </span>P<span class="w">     </span><span class="mi">13345</span>e<span class="o">+</span><span class="mo">03</span><span class="k">;</span><span class="w">              </span><span class="c"># Load on top of TFP</span>
+<span class="k">set</span><span class="w"> </span>Mass<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$P</span><span class="o">/</span><span class="nv">$g</span><span class="k">];</span><span class="w">            </span><span class="c"># Mass on top of TFP</span>
+<span class="k">set</span><span class="w"> </span>tol<span class="w"> </span><span class="mi">1</span>.e-5<span class="k">;</span><span class="w">                    </span><span class="c"># Relative tolerance for checking convergence</span>
+
+<span class="c"># Heat parameters</span>
+<span class="k">set</span><span class="w"> </span>Diffu<span class="w"> </span><span class="mf">0.444</span>e-5<span class="k">;</span><span class="w">               </span><span class="c"># Thermal diffusivity (m^2/sec)</span>
+<span class="k">set</span><span class="w"> </span>Conduct<span class="w"> </span><span class="mi">18</span><span class="k">;</span><span class="w">                   </span><span class="c"># Thermal conductivity (W/m*Celsius)</span>
+<span class="k">set</span><span class="w"> </span>Temperature0<span class="w"> </span><span class="mi">20</span><span class="k">;</span><span class="w">              </span><span class="c"># Initial temperature (Celsius)</span>
+
+<span class="c"># Friction coefficients (reference)</span>
+<span class="k">set</span><span class="w"> </span>mu1<span class="w"> </span><span class="mf">0.01</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>mu2<span class="w"> </span><span class="mf">0.04</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>mu3<span class="w"> </span><span class="mf">0.08</span><span class="k">;</span>
+
+<span class="c"># Reference Pressure</span>
+<span class="k">set</span><span class="w"> </span>Pref1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$P</span><span class="o">/</span><span class="k">(</span><span class="nv">$r1</span><span class="o">*</span><span class="nv">$r1</span><span class="o">*</span><span class="nv">3.141592</span><span class="k">)];</span>
+<span class="k">set</span><span class="w"> </span>Pref2<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$P</span><span class="o">/</span><span class="k">(</span><span class="nv">$r2</span><span class="o">*</span><span class="nv">$r2</span><span class="o">*</span><span class="nv">3.141592</span><span class="k">)];</span>
+<span class="k">set</span><span class="w"> </span>Pref3<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$P</span><span class="o">/</span><span class="k">(</span><span class="nv">$r3</span><span class="o">*</span><span class="nv">$r3</span><span class="o">*</span><span class="nv">3.141592</span><span class="k">)];</span>
+
+<span class="c">#----------------------------------------------------------------------------</span>
+<span class="c"># Start of model generation</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+
+<span class="c">#Create Model Builder</span>
+<span class="nv">model</span><span class="w"> </span>basic<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">6</span>
+
+<span class="c"># Create nodes</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="k">;</span><span class="w"> </span><span class="c"># End i</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="k">;</span><span class="w"> </span><span class="c"># End j</span>
+
+<span class="c"># Define single point constraints</span>
+<span class="nv">fix</span><span class="w"> </span><span class="mi">1</span><span class="w">     </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="k">;</span>
+
+<span class="c"># Define friction models</span>
+<span class="k">set</span><span class="w"> </span>tagTemp<span class="w"> </span><span class="mi">1</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>tagVel<span class="w"> </span><span class="mi">0</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>tagPres<span class="w"> </span><span class="mi">0</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>velRate<span class="w"> </span><span class="mi">100</span><span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>kTmodel<span class="w"> </span><span class="mi">1</span><span class="k">;</span><span class="w">                     </span><span class="c"># kT = 1/2 at 200 degree celsius</span>
+
+<span class="c">#----------------------------------------------------------------------------</span>
+<span class="c"># Bring material models and define element</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+
+<span class="c"># Creating material for compression and rotation behaviors</span>
+<span class="nv">uniaxialMaterial</span><span class="w"> </span>Elastic<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$kvc</span><span class="k">;</span>
+<span class="nv">uniaxialMaterial</span><span class="w"> </span>Elastic<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">10</span>.<span class="k">;</span>
+
+<span class="k">set</span><span class="w"> </span>tagT<span class="w"> </span><span class="mi">1</span><span class="k">;</span>
+
+<span class="c"># Define TripleFrictionPendulumX element</span>
+<span class="c"># element TripleFrictionPendulumX $eleTag $iNode $jNode $tagT $vertMatTag $rotZMatTag $rotXMatTag $rotYMatTag $tagPres $tagTemp $tagVel $mu1 $mu2 $mu3 $L1 $L2 $L3 $d1 $d2 $d3 $b1 $b2 $b3 $W $uy $kvt $minFv $tol $Pref1 $Pref2 $Pref3 $Diffu $Conduct $Temperature0 $velRate $kTmodel $unit</span>
+<span class="nv">element</span><span class="w"> </span>TripleFrictionPendulumX<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="nv">$tagT</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nv">$tagPres</span><span class="w"> </span><span class="nv">$tagTemp</span><span class="w"> </span><span class="nv">$tagVel</span><span class="w"> </span><span class="nv">$mu1</span><span class="w"> </span><span class="nv">$mu2</span><span class="w"> </span><span class="nv">$mu3</span><span class="w"> </span><span class="nv">$L1</span><span class="w"> </span><span class="nv">$L2</span><span class="w"> </span><span class="nv">$L3</span><span class="w"> </span><span class="nv">$d1</span><span class="w"> </span><span class="nv">$d2</span><span class="w"> </span><span class="nv">$d3</span><span class="w"> </span><span class="nv">$b1</span><span class="w"> </span><span class="nv">$b2</span><span class="w"> </span><span class="nv">$b3</span><span class="w"> </span><span class="nv">$P</span><span class="w"> </span><span class="nv">$uy</span><span class="w"> </span><span class="nv">$kvt</span><span class="w"> </span><span class="nv">$minFv</span><span class="w"> </span><span class="nv">$tol</span><span class="w"> </span><span class="nv">$Pref1</span><span class="w"> </span><span class="nv">$Pref2</span><span class="w"> </span><span class="nv">$Pref3</span><span class="w"> </span><span class="nv">$Diffu</span><span class="w"> </span><span class="nv">$Conduct</span><span class="w"> </span><span class="nv">$Temperature0</span><span class="w"> </span><span class="nv">$velRate</span><span class="w"> </span><span class="nv">$kTmodel</span><span class="w"> </span><span class="mi">1</span><span class="k">;</span>
+
+<span class="c">#----------------------------------------------------------------------------</span>
+<span class="c"># Apply gravity load</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+
+<span class="c">#Create a plain load pattern with linear timeseries</span>
+<span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s2">&quot;Linear&quot;</span><span class="w"> </span><span class="k">{</span>
+
+<span class="w">        </span><span class="nb">load</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">0</span>.<span class="w"> </span><span class="mi">0</span>.<span class="w"> </span><span class="o">-</span><span class="k">[expr</span><span class="w"> </span><span class="nv">$P</span><span class="k">]</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="k">}</span>
+
+<span class="c">#----------------------------------------------------------------------------</span>
+<span class="c"># Start of analysis generation (Gravity)</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+
+<span class="nv">system</span><span class="w"> </span>BandSPD
+<span class="nv">constraints</span><span class="w"> </span>Transformation
+<span class="nv">numberer</span><span class="w"> </span>RCM
+<span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-15<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">3</span>
+<span class="nv">algorithm</span><span class="w"> </span>Newton
+<span class="nv">integrator</span><span class="w"> </span>LoadControl<span class="w"> </span><span class="mi">1</span>
+<span class="nv">analysis</span><span class="w"> </span>Static
+
+<span class="c">#----------------------------------------------------------------------------</span>
+<span class="c"># Analysis (Gravity)</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+
+<span class="nv">analyze</span><span class="w"> </span><span class="mi">1</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Gravity analysis completed SUCCESSFULLY&quot;</span><span class="k">;</span>
+
+<span class="c">#----------------------------------------------------------------------------</span>
+<span class="c"># Start of analysis generation</span>
+<span class="c"># (Sinusoidal; Two cycles of 5s period and 508mm amplitude)</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+
+<span class="nv">loadConst</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="mf">0.0</span>
+
+<span class="c"># analysis time step</span>
+<span class="k">set</span><span class="w"> </span>dt<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">0.008</span><span class="k">]</span>
+
+<span class="c"># excitation time step</span>
+<span class="k">set</span><span class="w"> </span>dt1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mf">0.001</span><span class="k">]</span>
+
+<span class="nv">timeSeries</span><span class="w"> </span>Trig<span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="nv">$dt</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">-</span>factor<span class="w"> </span><span class="mf">0.508</span><span class="w"> </span><span class="o">-</span>shift<span class="w"> </span><span class="mi">0</span>
+
+<span class="nv">pattern</span><span class="w"> </span>MultiSupport<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">{</span>
+<span class="nv">groundMotion</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>Plain<span class="w"> </span><span class="o">-</span>disp<span class="w"> </span><span class="mi">11</span>
+<span class="c"># Node, direction, GMtag</span>
+<span class="nv">imposedMotion</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">}</span>
+
+<span class="c">#----------------------------------------------------------------------------</span>
+<span class="c"># Start of recorder generation (Sinusoidal)</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+
+<span class="c"># Set up recorder</span>
+<span class="k">set</span><span class="w"> </span>OutDir<span class="w">                </span>EXAMPLE3<span class="k">;</span><span class="w">                       </span><span class="c"># Output folder</span>
+<span class="k">set</span><span class="w"> </span>OutFile1<span class="w">      </span>TEMPERATURE.txt<span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>OutFile2<span class="w">      </span>DISP.txt<span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>OutFile3<span class="w">      </span>FORCE.txt<span class="k">;</span>
+<span class="k">set</span><span class="w"> </span>OutFile4<span class="w">      </span>COMPDISP.txt<span class="k">;</span>
+
+<span class="nb">file</span><span class="w"> </span>mkdir<span class="w"> </span><span class="nv">$OutDir</span><span class="k">;</span>
+<span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="nv">$OutDir</span><span class="o">/</span><span class="nv">$OutFile1</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>ele<span class="w"> </span><span class="mi">1</span><span class="w"> </span>Parameters<span class="k">;</span>
+<span class="nv">recorder</span><span class="w"> </span>Node<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="nv">$OutDir</span><span class="o">/</span><span class="nv">$OutFile2</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>nodes<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>disp<span class="k">;</span>
+<span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="nv">$OutDir</span><span class="o">/</span><span class="nv">$OutFile3</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>ele<span class="w"> </span><span class="mi">1</span><span class="w"> </span>basicForce<span class="k">;</span>
+<span class="nv">recorder</span><span class="w"> </span>Element<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="nv">$OutDir</span><span class="o">/</span><span class="nv">$OutFile4</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="o">-</span>ele<span class="w"> </span><span class="mi">1</span><span class="w"> </span>compDisplacement<span class="k">;</span>
+
+<span class="c">#----------------------------------------------------------------------------</span>
+<span class="c"># Analysis (Sinusoidal)</span>
+<span class="c">#----------------------------------------------------------------------------</span>
+
+<span class="nv">system</span><span class="w"> </span>SparseGeneral
+<span class="nv">constraints</span><span class="w"> </span>Transformation
+<span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-5<span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">algorithm</span><span class="w"> </span>Newton
+<span class="nv">numberer</span><span class="w"> </span>Plain
+<span class="nv">integrator</span><span class="w"> </span>Newmark<span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.25</span>
+<span class="nv">analysis</span><span class="w"> </span>Transient
+
+<span class="c"># set some variables</span>
+<span class="k">set</span><span class="w"> </span>tFinal<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mi">10</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>tCurrent<span class="w"> </span><span class="k">[</span><span class="nv">getTime</span><span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>ok<span class="w"> </span><span class="mi">0</span>
+
+<span class="c"># Perform the transient analysis</span>
+<span class="k">while</span><span class="w"> </span><span class="k">{</span><span class="nv">$ok</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">$tCurrent</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">$tFinal</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>ok<span class="w"> </span><span class="k">[</span><span class="nv">analyze</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$dt</span><span class="k">]</span>
+
+<span class="c"># if the analysis fails try initial tangent iteration</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$ok</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nv">0</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;regular newton failed .. lets try an initail stiffness for this step&quot;</span>
+<span class="w">  </span><span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-12<span class="w">  </span><span class="mi">100</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="nv">algorithm</span><span class="w"> </span>ModifiedNewton<span class="w"> </span><span class="o">-</span>initial
+<span class="w">  </span><span class="k">set</span><span class="w"> </span>ok<span class="w"> </span><span class="k">[</span><span class="nv">analyze</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">$dt</span><span class="k">]</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$ok</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">0</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;that worked .. back to regular newton&quot;</span><span class="k">}</span>
+<span class="w">  </span><span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-12<span class="w">  </span><span class="mi">10</span>
+<span class="w">  </span><span class="nv">algorithm</span><span class="w"> </span>Newton
+<span class="w">  </span><span class="k">}</span>
+
+<span class="w">    </span><span class="k">set</span><span class="w"> </span>tCurrent<span class="w"> </span><span class="k">[</span><span class="nv">getTime</span><span class="k">]</span>
+<span class="k">}</span>
+
+<span class="c"># Print a message to indicate if analysis succesfull or not</span>
+<span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$ok</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">0</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">   </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Transient analysis completed SUCCESSFULLY&quot;</span><span class="k">;</span>
+<span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
+<span class="w">   </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Transient analysis completed FAILED&quot;</span><span class="k">;</span>
+<span class="k">}</span>
+</pre></div>
+</div>
+</div>
+<div class="align-center figure" id="id9">
+<a class="reference internal image-reference" href="../../../../_images/FIGURE3.jpg"><img alt="../../../../_images/FIGURE3.jpg" src="../../../../_images/FIGURE3.jpg" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.25 </span><span class="caption-text"><strong>Figure 3. Force-displacement loop in Example 3</strong></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id10">
+<a class="reference internal image-reference" href="../../../../_images/FIGURE4.jpg"><img alt="../../../../_images/FIGURE4.jpg" src="../../../../_images/FIGURE4.jpg" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.26 </span><span class="caption-text"><strong>Figure 4. Displacement histories at sliding surfaces in Example 3</strong></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id11">
+<a class="reference internal image-reference" href="../../../../_images/FIGURE5.jpg"><img alt="../../../../_images/FIGURE5.jpg" src="../../../../_images/FIGURE5.jpg" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.27 </span><span class="caption-text"><strong>Figure 5. Temperature histories at sliding surfaces in Example 3</strong></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-reference admonition">
+<p class="admonition-title">Reference</p>
+<dl class="citation">
+<dt class="label" id="daoetal2013"><span class="brackets"><a class="fn-backref" href="#id3">DaoEtAl2013</a></span></dt>
+<dd><p>Dao, N. D., Ryan, K. L., Sato, E. and Sasaki, T. (2013). “Predicting the displacement of triple pendulum bearings in a full-scale shaking experiment using a three-dimensional element”, Earthquake engineering and structural dynamics, 42(11), 1677-1695. <a class="reference external" href="https://doi.org/10.1002/eqe.2293">https://doi.org/10.1002/eqe.2293</a>.</p>
+</dd>
+<dt class="label" id="kimconstantinou2022"><span class="brackets">KimConstantinou2022</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id5">2</a>)</span></dt>
+<dd><p>“Modeling triple friction pendulum bearings in program OpenSees including frictional heating effects”, Report No. MCEER-22-0001, Multidisciplinary Center for Earthquake Engineering Research, Buffalo, NY.</p>
+</dd>
+<dt class="label" id="kimconstantinou2023"><span class="brackets">KimConstantinou2023</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id6">2</a>)</span></dt>
+<dd><p>“Modeling frictional heating effects in triple friction pendulum isolators”, Earthquake Engineering &amp; Structural Dynamics, 52(4), 979–997. <a class="reference external" href="https://doi.org/10.1002/eqe.3797">https://doi.org/10.1002/eqe.3797</a>.</p>
+</dd>
+<dt class="label" id="kumaretal2015"><span class="brackets"><a class="fn-backref" href="#id4">KumarEtAl2015</a></span></dt>
+<dd><p>“Characterizing friction in sliding isolation bearings”, Earthquake Engineering &amp; Structural Dynamics, 44(9), 1409-1425. <a class="reference external" href="https://doi.org/10.1002/eqe.2524">https://doi.org/10.1002/eqe.2524</a>.</p>
+</dd>
+</dl>
+</div>
+<p>Code Developed by: <strong>Hyun-myung Kim</strong> and <strong>Michael C. Constantinou</strong>, University at Buffalo</p>
+<p>For bug reporting, please contact: Hyun-myung Kim (<a class="reference external" href="mailto:hkim59&#37;&#52;&#48;buffalo&#46;edu">hkim59<span>&#64;</span>buffalo<span>&#46;</span>edu</a>)</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

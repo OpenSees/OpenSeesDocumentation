@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>MVLEM_3D Element &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.9.7. MVLEM_3D Element &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,13 +36,17 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.9.8. SFI-MVLEM-3D Element" href="SFI_MVLEM_3D.html" />
+    <link rel="prev" title="3.1.9.6. Gradient Inelastic (GI) Beam-Column Element" href="gradientInelasticBeamColumn.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,10 +95,57 @@
             
             
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.9. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.9.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.9.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.9.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.9.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.9.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.9.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.9.7. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.9.8. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.9.9. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.9.10. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.9.11. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.9.12. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.9.13. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.9.14. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.9.15. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.9.16. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.9.17. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.9.18. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.9.19. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.9.20. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.9.21. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.9.22. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.9.23. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.9.24. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.9.25. RockingBC Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
@@ -154,7 +206,13 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>MVLEM_3D Element</li>
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../element.html"><span class="section-number">3.1.9. </span>Element Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.9.7. </span>MVLEM_3D Element</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,7 +232,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mvlem-3d-element">
-<h1>MVLEM_3D Element<a class="headerlink" href="#mvlem-3d-element" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1.9.7. </span>MVLEM_3D Element<a class="headerlink" href="#mvlem-3d-element" title="Permalink to this heading">¶</a></h1>
 <div class="line-block">
 <div class="line">Developed and implemented by:</div>
 <div class="line"><a class="reference external" href="mailto:kkolozvari&#37;&#52;&#48;fullerton&#46;edu">Kristijan Kolozvari</a> (CSU Fullerton)</div>
@@ -183,16 +241,16 @@
 <div class="line">John Wallace (UCLA)</div>
 </div>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.9.7.1. </span>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p>The MVLEM_3D model (Figure 1a) is a three-dimensional four-node element with 24 DOFs for nonlinear analysis of flexure-controlled non-rectangular reinforced concrete walls subjected to multidirectional loading. The model is an extension of the two-dimensional, two-node Multiple-Vertical-Line-Element-Model (<a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/MVLEM_-_Multiple-Vertical-Line-Element-Model_for_RC_Walls">MVLEM</a>). The baseline MVLEM, which is essentially a line element for rectangular walls subjected to in-plane loading, is extended to a three-dimensional model formulation by: 1) applying geometric transformation of the element in-plane degrees of freedom that convert it into a four-node element formulation (Figure 1b), as well as by incorporating linear elastic out-of-plane behavior based on the Kirchhoff plate theory (Figure 1c). The in-plane and the out-of-plane element behaviors are uncoupled in the present model.</p>
 <p>This element shall be used in Domain defined with <strong>-ndm 3 -ndf 6</strong>.</p>
 <div class="align-center figure" id="id1">
 <img alt="../../../../_images/MVLEM_3D_formulation.jpg" src="../../../../_images/MVLEM_3D_formulation.jpg" />
-<p class="caption"><span class="caption-text"><strong>Figure 1: MVLEM_3D Element Formulation</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.4 </span><span class="caption-text"><strong>Figure 1: MVLEM_3D Element Formulation</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="input-parameters">
-<h2>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.9.7.2. </span>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this heading">¶</a></h2>
 <div class="admonition-command admonition">
 <p class="admonition-title">Command</p>
 <p>element MVLEM_3D eleTag iNode jNode kNode lNode m -thick {Thicknesses} -width {Widths} -rho {Reinforcing_ratios} -matConcrete {Concrete_tags} -matSteel {Steel_tags} -matShear {Shear_tag} &lt;-CoR c&gt; &lt;-ThickMod tMod&gt; &lt;-Poisson Nu&gt; &lt;-Density Dens&gt;</p>
@@ -266,7 +324,7 @@
 </table>
 </div>
 <div class="section" id="recorders">
-<h2>Recorders<a class="headerlink" href="#recorders" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.9.7.3. </span>Recorders<a class="headerlink" href="#recorders" title="Permalink to this heading">¶</a></h2>
 <p>The following recorders are available with the MVLEM_3D element.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -301,28 +359,28 @@
 </table>
 </div>
 <div class="section" id="openseespy-documentation">
-<h2>OpenSeesPy Documentation<a class="headerlink" href="#openseespy-documentation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.9.7.4. </span>OpenSeesPy Documentation<a class="headerlink" href="#openseespy-documentation" title="Permalink to this heading">¶</a></h2>
 <p>OpenSeesPy user documetation for the MVLEM_3D element can be accessed from <a class="reference external" href="https://openseespydoc.readthedocs.io/en/latest/src/MVLEM_3D.html">HERE</a>.</p>
 </div>
 <div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.9.7.5. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h2>
 <p>Specimen TUB (Beyer et al. 2008) is analyzed using the MVLEM_3D. Figure 2a shows the photo of the test specimen and the multidirectional displacement pattern applied at the top of the wall, while Figure 2b-c show the MVLEM_3D model of specimen TUB. Tcl Input files can be downloaded from <a class="reference external" href="https://github.com/kkolozvari/MVLEM-3D">MVLEM-3D GitHub Page</a>.</p>
 <div class="align-center figure" id="id2">
 <img alt="../../../../_images/MVLEM_3D_TUB_model.jpg" src="../../../../_images/MVLEM_3D_TUB_model.jpg" />
-<p class="caption"><span class="caption-text"><strong>Figure 2: MVLEM_3D Model of Specimen TUB</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.5 </span><span class="caption-text"><strong>Figure 2: MVLEM_3D Model of Specimen TUB</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id3">
 <img alt="../../../../_images/MVLEM_3D_TUB_animation.gif" src="../../../../_images/MVLEM_3D_TUB_animation.gif" />
-<p class="caption"><span class="caption-text"><strong>Figure 3: Animation of MVLEM_3D Analysis of Specimen TUB (displacement scale factor = 3.0)</strong></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.6 </span><span class="caption-text"><strong>Figure 3: Animation of MVLEM_3D Analysis of Specimen TUB (displacement scale factor = 3.0)</strong></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Figure 4 compares experimentally measured and analytically predicted load deformation behavior of the specimen TUB in E-W, N-S, and diagonal loading directions. The model provides accurate predictions of the lateral load capacity and the stiffness under cyclic loading in loading directions parallel to the principal axes of the cross-section (E-W, N-S direction). Analysis results overestimate the lateral load capacity in diagonal loading directions due to plane-sections-remain-plane assumption implemented in the model formulation that cannot capture pronounced shear lag effect observed in the test specimen.</p>
 <div class="align-center figure" id="id4">
 <img alt="../../../../_images/MVLEM_3D_TUB_results.JPG" src="../../../../_images/MVLEM_3D_TUB_results.JPG" />
-<p class="caption"><span class="caption-text"><strong>Figure 4: Experimental vs. MVLEM_3D Load-Deformation Response of Specimen TUB</strong></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.9.7 </span><span class="caption-text"><strong>Figure 4: Experimental vs. MVLEM_3D Load-Deformation Response of Specimen TUB</strong></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.9.7.6. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <ol class="upperalpha simple" start="11">
 <li><p>Kolozvari, K. Kalbasi, K. Orakcal &amp; J. W. Wallace, “Three-Dimensional Model for Nonlinear Analysis of Slender Flanged Reinforced Concrete Walls”, Engineering Structures, <a class="reference external" href="https://doi.org/10.1016/j.engstruct.2021.112105">Volume 236, 1 June 2021, 112105</a>.</p></li>
 </ol>

@@ -7,15 +7,15 @@ This command is used to construct an elasticBeamColumn element object. The argum
 
 For a two-dimensional problem:
 
-.. function:: element elasticBeamColumn $eleTag $iNode $jNode $A $E $Iz $transfTag <-mass $massDens> <-cMass>
+.. function:: element elasticBeamColumn $eleTag $iNode $jNode $A $E $Iz $transfTag <-release $relcode> <-mass $massDens> <-cMass>
 
-.. function:: element elasticBeamColumn $eleTag $iNode $jNode $secTag $transfTag <-mass $massDens> <-cMass>
+.. function:: element elasticBeamColumn $eleTag $iNode $jNode $secTag $transfTag <-release $relcode> <-mass $massDens> <-cMass>
 
 For a three-dimensional problem:
 
-.. function:: element elasticBeamColumn $eleTag $iNode $jNode $A $E $G $J $Iy $Iz $transfTag <-mass $massDens> <-cMass>
+.. function:: element elasticBeamColumn $eleTag $iNode $jNode $A $E $G $J $Iy $Iz $transfTag <-releasez $relcode> <-releasey $relcode> <-mass $massDens> <-cMass>
 
-.. function:: element elasticBeamColumn $eleTag $iNode $jNode $secTag $transfTag <-mass $massDens> <-cMass>
+.. function:: element elasticBeamColumn $eleTag $iNode $jNode $secTag $transfTag <-releasez $relcode> <-releasey $relcode> <-mass $massDens> <-cMass>
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
@@ -30,6 +30,7 @@ For a three-dimensional problem:
    $Iy, |float|,    second moment of area about the local y-axis
    $secTag, |integer|, identifer for previously-defined section object
    $transfTag, |integer|,    identifier for previously-defined coordinate-transformation object
+   $relcode, |integer|, code for moment releases (0=no release, 1=release at end I, 2=release at end J, 3=release at both ends (optional, default = 0)
    $massDens, |float|, element mass per unit length (optional: default = 0.0)
    -cMass, |string|, to form consistent mass matrix (optional)
 

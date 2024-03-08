@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,7 +36,9 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -199,9 +202,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="example-4">
-<h1><span class="section-number">4.2.4. </span>Example 4<a class="headerlink" href="#example-4" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.2.4. </span>Example 4<a class="headerlink" href="#example-4" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="a-6-m-x-3-5-m-single-bay-frame-with-a-2-kn-m-distributed-load-is-subjected-to-a-non-linear-fire-curve">
-<h2><span class="section-number">4.2.4.1. </span>A 6 m x 3.5 m single bay frame with a 2 kN/m distributed load is subjected to a non-linear fire curve.<a class="headerlink" href="#a-6-m-x-3-5-m-single-bay-frame-with-a-2-kn-m-distributed-load-is-subjected-to-a-non-linear-fire-curve" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.4.1. </span>A 6 m x 3.5 m single bay frame with a 2 kN/m distributed load is subjected to a non-linear fire curve.<a class="headerlink" href="#a-6-m-x-3-5-m-single-bay-frame-with-a-2-kn-m-distributed-load-is-subjected-to-a-non-linear-fire-curve" title="Permalink to this heading">¶</a></h2>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../_images/Example4_fig1.png"><img alt="../../../_images/Example4_fig1.png" src="../../../_images/Example4_fig1.png" style="width: 500px;" /></a>
 </div>
@@ -221,14 +224,14 @@ analysis.</p>
 <p><a class="reference download internal" download="" href="../../../_downloads/b23970432b115f627957b86bda3caac6/Ex4_NodalTemperatureFiles.zip"><code class="xref download docutils literal notranslate"><span class="pre">Nodal</span> <span class="pre">Temperature</span> <span class="pre">Files</span></code></a>.</p>
 <p><a class="reference download internal" download="" href="../../../_downloads/d9f595fb6b64092de38f6dec3a1e1a05/Example4_OUTPUT.zip"><code class="xref download docutils literal notranslate"><span class="pre">Example</span> <span class="pre">4</span> <span class="pre">Outputs</span></code></a>.</p>
 <div class="section" id="objectives">
-<h3><span class="section-number">4.2.4.1.1. </span>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.1. </span>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">¶</a></h3>
 <p>Example 4 Objectives: 1. Develop a portal frame in OpenSees using
 displacement-based elements with tempurature-dependent material
 properties, and 2. Implementing user-defined time-tempurature histories
 for the elements calculated through heat transfer analysis.</p>
 </div>
 <div class="section" id="material">
-<h3><span class="section-number">4.2.4.1.2. </span>Material<a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.2. </span>Material<a class="headerlink" href="#material" title="Permalink to this heading">¶</a></h3>
 <p>The uniaxialMaterial Steel01Thermal includes temperature-dependent steel thermal and mechanical properties according to Eurocode 3 carbon steel. More details of Steel01 can be found at: <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Steel01_Material">Steel01 Material</a></p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -240,7 +243,7 @@ for the elements calculated through heat transfer analysis.</p>
 <p>b = 0.01 (Strain-Hardening Ratio)</p>
 </div>
 <div class="section" id="transformation">
-<h3><span class="section-number">4.2.4.1.3. </span>Transformation<a class="headerlink" href="#transformation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.3. </span>Transformation<a class="headerlink" href="#transformation" title="Permalink to this heading">¶</a></h3>
 <p>Because the beams in this example experience large deflections, 2nd
 order bending effects were considered using the Corotational geometric
 transformation.</p>
@@ -253,7 +256,7 @@ transformation.</p>
 Transformation</a></p>
 </div>
 <div class="section" id="section">
-<h3><span class="section-number">4.2.4.1.4. </span>section<a class="headerlink" href="#section" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.4. </span>section<a class="headerlink" href="#section" title="Permalink to this heading">¶</a></h3>
 <p>This example uses a W-shape beam, therefore an external .tcl script is used to define the fiber sections. This script uses fibersecThermal to procure a fibered W-shape section with a section tag to be used while defining elements. Eight fibers are used throughout the web and four fibers within each flange.</p>
 <p>In previous versions of OpenSees, a default value for torsional stiffness was used (GJ). In versions 3.1.0 and newer fiber sections require a value for torsional stiffness. This is a 2D example with negligible torsion, however a value is required. The Young’s Modulus is used for convenience.</p>
 <p>Wsection dimensions:</p>
@@ -329,7 +332,7 @@ Transformation</a></p>
 <p><strong>Cross section of W-shape showing fibers in the flanges and the web</strong></p>
 </div>
 <div class="section" id="element">
-<h3><span class="section-number">4.2.4.1.5. </span>Element<a class="headerlink" href="#element" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.5. </span>Element<a class="headerlink" href="#element" title="Permalink to this heading">¶</a></h3>
 <p>dispBeamColumnThermal elements are used because temperature-dependent
 thermal and mechanical steel properties can be applied to these
 elements. Any portion of the structure that is being heated must use
@@ -346,7 +349,7 @@ mechanical properties applied to them.</p>
 <p>Each column and beam element is created using ten displacement-based elements with 3 iteration points in each element.</p>
 </div>
 <div class="section" id="output-recorders">
-<h3><span class="section-number">4.2.4.1.6. </span>Output Recorders<a class="headerlink" href="#output-recorders" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.6. </span>Output Recorders<a class="headerlink" href="#output-recorders" title="Permalink to this heading">¶</a></h3>
 <p>$dataDir is defined at the beginning of the model, this creates a folder
 within your working directory where output files will be saved. &gt;set
 dataDir Examples/EXAMPLE4_OUTPUT;</p>
@@ -371,7 +374,7 @@ dataDir Examples/EXAMPLE4_OUTPUT;</p>
 Command</a></p>
 </div>
 <div class="section" id="thermal-loading">
-<h3><span class="section-number">4.2.4.1.7. </span>Thermal Loading<a class="headerlink" href="#thermal-loading" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.7. </span>Thermal Loading<a class="headerlink" href="#thermal-loading" title="Permalink to this heading">¶</a></h3>
 <p>This particular model is heated using a fire time tempurature curve shown below. The fiber temperatures, or the temperature distribution through the cross section was calculated by performing a heat transfer analysis.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../_images/Example4_fireCurve.png"><img alt="../../../_images/Example4_fireCurve.png" src="../../../_images/Example4_fireCurve.png" style="width: 500px;" /></a>
@@ -415,7 +418,7 @@ set Y9 [expr $d/2];
 
 </div>
 <div class="section" id="thermal-analysis">
-<h3><span class="section-number">4.2.4.1.8. </span>Thermal Analysis<a class="headerlink" href="#thermal-analysis" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.8. </span>Thermal Analysis<a class="headerlink" href="#thermal-analysis" title="Permalink to this heading">¶</a></h3>
 <p>Thermal loading is applied in 1000 steps, with a load factor of 0.001.
 Each step is a 0.001 increment of the maximum temperature specified in
 the thermal loading step: $T. The analysis is a static analysis and the
@@ -449,7 +452,7 @@ fire engineering analyses.</p>
 
 </div>
 <div class="section" id="output-plots">
-<h3><span class="section-number">4.2.4.1.9. </span>Output Plots<a class="headerlink" href="#output-plots" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.9. </span>Output Plots<a class="headerlink" href="#output-plots" title="Permalink to this heading">¶</a></h3>
 <p>After the model has completed running, the results will be the vertical midspan displacement of the beam. This displacement can be plotted against the time of the fire. It is suggested that if the user would like to develop a temperature history that matches every increment of the model, the same number of tempurature inputs as time steps is used.</p>
 <p><strong>Beam midspan displacement versus time for the heated one-bay frame:</strong></p>
 <div class="align-center figure">
@@ -457,7 +460,7 @@ fire engineering analyses.</p>
 </div>
 </div>
 <div class="section" id="sources">
-<h3><span class="section-number">4.2.4.1.10. </span>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1.10. </span>Sources<a class="headerlink" href="#sources" title="Permalink to this heading">¶</a></h3>
 <p>[1] European Committee for Standardization (CEN). (2005). Eurocode 3: Design of Steel Structures, Part 1.2: General Rules - Structural Fire Design.</p>
 <p>[2] W. Maddalozzo and E.C. Fischer, “Post-earthquake fire performance of steel buildings,” World Conference on Earthquake Engineering, 17WCEE,
 Sendai, Japan - September 13-18, 2020.</p>

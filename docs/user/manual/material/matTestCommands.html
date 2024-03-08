@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4.1. Material Testing Commands &mdash; OpenSees Documentation  documentation</title>
+  <title>Material Testing Commands &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,15 +36,15 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.5. Misc. Commands" href="../miscCommands.html" />
-    <link rel="prev" title="3.4. Material Commands" href="../materialCommands.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,23 +93,10 @@
             
             
               <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modelCommands.html">3.1. Modelling Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../materialCommands.html">3.4. Material Commands</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.1. Material Testing Commands</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.5. Misc. Commands</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../userManual.html">3. Command Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
@@ -169,11 +157,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
-        
-          <li><a href="../materialCommands.html"><span class="section-number">3.4. </span>Material Commands</a> &raquo;</li>
-        
-      <li><span class="section-number">3.4.1. </span>Material Testing Commands</li>
+      <li>Material Testing Commands</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -193,7 +177,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="material-testing-commands">
-<span id="mattestcommands"></span><h1><span class="section-number">3.4.1. </span>Material Testing Commands<a class="headerlink" href="#material-testing-commands" title="Permalink to this headline">¶</a></h1>
+<span id="mattestcommands"></span><h1>Material Testing Commands<a class="headerlink" href="#material-testing-commands" title="Permalink to this heading">¶</a></h1>
 <p>The material testing environment is separate from the OpenSees domain, and allows for simple tests to be performed on OpenSees materials, including uniaxial materials, n-dimensional materials, and section force-deformation relationships.
 In order to use the material testing commands, the test material/section must first be specified with testUniaxialMaterial, testNDMaterial, or testSection.</p>
 <dl class="py function">

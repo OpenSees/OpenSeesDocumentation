@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.5.30. Ratchet Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.5.31. PySimple1 Material" href="PySimple1.html" />
+    <link rel="prev" title="3.1.5.29. Viscoelastic Gap Material" href="ViscoelasticGap.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Steel01.html">3.1.5.1. Steel01 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Steel02.html">3.1.5.2. Steel02 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Steel4.html">3.1.5.3. Steel4 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReinforcingSteel.html">3.1.5.4. Reinforcing Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DoddRestrepo.html">3.1.5.5. DoddRestrepo Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RambergOsgoodSteel.html">3.1.5.6. Ramberg Osgood Steel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelMPF.html">3.1.5.7. SteelMPF Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UVCuniaxial.html">3.1.5.8. UVCUniaxial Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SteelFractureDI.html">3.1.5.9. SteelFractureDI Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DuctileFracture.html">3.1.5.10. DuctileFracture Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete01.html">3.1.5.11. Concrete01 Material – Zero Tensile Strength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete02.html">3.1.5.12. Concrete02 Material – Linear Tension Softening</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Concrete04.html">3.1.5.13. Concrete04 Material – Popovics Concrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GMG_CyclicReinforcedConcrete.html">3.1.5.14. GMG_CyclicReinforcedConcrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Hysteretic.html">3.1.5.15. Hysteretic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticSM.html">3.1.5.16. HystereticSM Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKBilin.html">3.1.5.17. IMKBilin Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPeakOriented.html">3.1.5.18. IMKPeakOriented Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMKPinching.html">3.1.5.19. IMKPinching Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SLModel.html">3.1.5.20. SLModel Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoucWenInfill.html">3.1.5.21. BoucWenInfill Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticPoly.html">3.1.5.22. HystereticPoly Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticAsym.html">3.1.5.23. HystereticAsym Material (Smooth asymmetric hysteresis)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HystereticSmooth.html">3.1.5.24. HystereticSmooth Material (Smooth hysteretic material)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DowelType.html">3.1.5.25. DowelType Timber Joint Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CoulombDamper.html">3.1.5.26. CoulombDamper Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HertzDamp.html">3.1.5.27. Hertz Damp Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JankowskiImpact.html">3.1.5.28. Jankowski Impact Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ViscoelasticGap.html">3.1.5.29. Viscoelastic Gap Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.5.30. Ratchet Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PySimple1.html">3.1.5.31. PySimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzSimple1.html">3.1.5.32. TzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzSimple1.html">3.1.5.33. QzSimple1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyLiq1.html">3.1.5.34. PyLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TzLiq1.html">3.1.5.35. TzLiq1 Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QzLiq1.html">3.1.5.36. QzLiq1 Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../uniaxialMaterial.html"><span class="section-number">3.1.5. </span>uniaxialMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.5.30. </span>Ratchet Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/Ratchet.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ratchet-material">
+<h1><span class="section-number">3.1.5.30. </span>Ratchet Material<a class="headerlink" href="#ratchet-material" title="Permalink to this heading">¶</a></h1>
+<p>This command is used to construct a Ratchet uniaxial material object,
+which was developed to model a ratcheting, i.e., tension-only (in terms
+of motion) behaviour. In other words, the material engaged in tension
+motion but generates no forces under compressive motion. Usage of the
+command is outlined below and the required input parameters are provided
+in Table 1. All fields are required.</p>
+<p>uniaxialMaterial Ratchet $matTag $E fTravel_pSize $InitialfTravel
+$RatType</p>
+<p>Table 1 Ratchet material command input parameters.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Command</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$matTag</p></td>
+<td><p>Integer tag identifying material</p></td>
+</tr>
+<tr class="row-odd"><td><p>$E</p></td>
+<td><p>Elastic modulus</p></td>
+</tr>
+<tr class="row-even"><td><p>$fTravel_pSize</p></td>
+<td><p>Free travel or pitch size (strain) before engaged
+in tension.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$InifTravel</p></td>
+<td><p>Free travel at the initial stage. A value of 0
+indicates the ratchet is initially engaged</p></td>
+</tr>
+<tr class="row-even"><td><p>$RatType</p></td>
+<td><p>Types of Ratchet.</p>
+<p>A value of 1 indicates the Ratchet is pitch-based,
+in which $fTravel_pSize indicates pitch size.</p>
+<p>A value of 2 indicates the Ratchet is
+friction-based, in which $fTravel_pSize indicates
+free travel.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Case 1</strong>: the Ratchet is pitch-based, i.e., $RatType is 1. Figure 1
+shows its schematic drawing and stress-strain responses.</p>
+<a class="reference internal image-reference" href="../../../../_images/image1.png"><img alt="../../../../_images/image1.png" src="../../../../_images/image1.png" style="width: 2.90152in; height: 2.7109in;" /></a>
+<p>Figure 1 Pitch-based Ratchet material hysteresis</p>
+<p>The response progresses via the sequential letters labelled in Figure 1:</p>
+<ol class="upperalpha simple">
+<li><p>The system is initially at rest, before tensile motion begins.</p></li>
+<li><p>The Initial free travel is reached and the ratchet is engaged. If the
+ratchet is initially engaged as shown in the schematic drawing, Point
+B and Point A would coincide.</p></li>
+<li><p>The applied load is reversed.</p></li>
+<li><p>The ratchet starts compressive motion with no forces modelled in the
+system.</p></li>
+<li><p>The applied load is reversed, and tensile motion begins. Initial
+tensile motion is not resisted until the ratchet engages at the last
+pitch-bite point.</p></li>
+<li><p>Engagement of the ratcheting mechanism occurs at the last pitch-bite
+point.</p></li>
+<li><p>Engages under tensile motion.</p></li>
+</ol>
+<p><strong>Case 2</strong>: the Ratchet is friction-based, i.e., $RatType is 2. Figure 2
+shows its schematic drawing and stress-strain responses.</p>
+<a class="reference internal image-reference" href="../../../../_images/image2.png"><img alt="../../../../_images/image2.png" src="../../../../_images/image2.png" style="width: 2.87094in; height: 3.13403in;" /></a>
+<p>Figure 2 Friction-based Ratchet material hysteresis</p>
+<p>The response progresses via the sequential letters labelled in Figure 2:</p>
+<p>A~D Identical with those in pitch-based Ratchet.</p>
+<ol class="upperalpha simple" start="5">
+<li><p>The applied load is reversed, and tensile motion begins. Initial
+tensile motion is not resisted until the extrusion in the friction
+interface is sufficient to engage the system. This distance is
+denoted as Free travel. Differs from the pitch-based Ratchet, in
+friction-based Ratchets the free travel before engagement is
+identical at each load-reverse point and does not depend on the pitch
+position.</p></li>
+<li><p>Engagement of the ratcheting mechanism occurs.</p></li>
+<li><p>Engages under tensile motion.</p></li>
+</ol>
+<p>A comparison of the Ratchet material simulated behaviour with
+experimental behaviour is available in the paper below:</p>
+<p>Xiao, Y., Eberhard, M. O., Zhou, Y., Stanton, J. F., Shen, J. (2022).
+Low-prestressing, self-centering energy dissipative brace. Earthquake
+Engineering &amp; Structural Dynamics, 51(12), 2837-2857.</p>
+<p>Code Developed by: Yi Xiao, Tongji University, China</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

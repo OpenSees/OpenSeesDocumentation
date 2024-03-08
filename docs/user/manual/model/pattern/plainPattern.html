@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.10.1. Plain Pattern &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.11.1. Plain Pattern &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -35,15 +36,17 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.10.2. Uniform Excitation" href="uniformExcitationPattern.html" />
-    <link rel="prev" title="3.1.10. Pattern Command" href="../pattern.html" /> 
+    <link rel="next" title="3.1.11.1.1. load Command" href="PlainPatternloadcommands/load.html" />
+    <link rel="prev" title="3.1.11. Pattern Command" href="../pattern.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,23 +106,24 @@
 <li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../material/section.html">3.1.7. section Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../element.html">3.1.8. Element Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.9. Time Series Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../pattern.html">3.1.10. Pattern Command</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.10.1. Plain Pattern</a></li>
-<li class="toctree-l4"><a class="reference internal" href="uniformExcitationPattern.html">3.1.10.2. Uniform Excitation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="multiSupportPattern.html">3.1.10.3. Multisupport Excitation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="H5DRM.html">3.1.10.4. H5DRM Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.11.1. Plain Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uniformExcitationPattern.html">3.1.11.2. Uniform Excitation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiSupportPattern.html">3.1.11.3. Multisupport Excitation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DRM.html">3.1.11.4. DRM Load Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="H5DRM.html">3.1.11.5. H5DRM Pattern</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.11. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../materialCommands.html">3.4. Material Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.5. Misc. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
@@ -186,9 +190,9 @@
         
           <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-          <li><a href="../pattern.html"><span class="section-number">3.1.10. </span>Pattern Command</a> &raquo;</li>
+          <li><a href="../pattern.html"><span class="section-number">3.1.11. </span>Pattern Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.10.1. </span>Plain Pattern</li>
+      <li><span class="section-number">3.1.11.1. </span>Plain Pattern</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -208,7 +212,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="plain-pattern">
-<span id="plainpattern"></span><h1><span class="section-number">3.1.10.1. </span>Plain Pattern<a class="headerlink" href="#plain-pattern" title="Permalink to this headline">¶</a></h1>
+<span id="plainpattern"></span><h1><span class="section-number">3.1.11.1. </span>Plain Pattern<a class="headerlink" href="#plain-pattern" title="Permalink to this heading">¶</a></h1>
 <p>This command allows the user to construct a LoadPattern object. Each plain load pattern is associated with a TimeSeries object and can contain multiple NodalLoads, ElementalLoads and SP_Constraint objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -243,6 +247,12 @@
 </tbody>
 </table>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">load commands:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="PlainPatternloadcommands/load.html">3.1.11.1.1. load Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlainPatternloadcommands/eleLoad.html">3.1.11.1.2. eleLoad Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlainPatternloadcommands/sp.html">3.1.11.1.3. Sp Command</a></li>
+</ul>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -258,10 +268,10 @@
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">timeSeries</span> Linear <span class="mi">2</span>
-<span class="nv">pattern</span> Plain <span class="mi">1</span> <span class="mi">2</span> <span class="k">{</span>
-        <span class="nb">load</span>  <span class="mi">3</span>   <span class="mf">0.0</span>  <span class="o">-</span><span class="mf">50.0</span>  <span class="mf">0.0</span>
-        <span class="nb">load</span>  <span class="mi">4</span>   <span class="mf">50.0</span>  <span class="o">-</span><span class="mf">100.0</span> <span class="mf">0.0</span>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">timeSeries</span><span class="w"> </span>Linear<span class="w"> </span><span class="mi">2</span>
+<span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="nb">load</span><span class="w">  </span><span class="mi">3</span><span class="w">   </span><span class="mf">0.0</span><span class="w">  </span><span class="o">-</span><span class="mf">50.0</span><span class="w">  </span><span class="mf">0.0</span>
+<span class="w">        </span><span class="nb">load</span><span class="w">  </span><span class="mi">4</span><span class="w">   </span><span class="mf">50.0</span><span class="w">  </span><span class="o">-</span><span class="mf">100.0</span><span class="w"> </span><span class="mf">0.0</span>
 <span class="k">}</span>
 </pre></div>
 </div>
