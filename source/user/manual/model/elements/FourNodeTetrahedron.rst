@@ -7,7 +7,7 @@ This command is used to construct an four-node tetrahedron element object, which
 
 .. admonition:: Command
 
-   **element FourNodeTetrahedron $eleTag $node1 $node2 $node3 $node4 $matTag <$b1 $b2 $b3>**
+   **element FourNodeTetrahedron $eleTag $node1 $node2 $node3 $node4 $matTag <$b1 $b2 $b3> <doInitDisp?>**
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -17,6 +17,7 @@ This command is used to construct an four-node tetrahedron element object, which
    $node1 .. $node4, 4 |integer|, nodes of tet (ordered as shown in fig below)
    $matTag, |integer|, tag of nDMaterial
    $b1 $b2 $b3, |listFloat|, optional: body forces in global x y z directions
+   <doInitDisp?>, |bool|, optional: consider initial displacements
 
 This is the simplest possible continuum finite element for 3-D analysis. It's based on linear interpolation of nodal quantities, this means that the strain and stress field inside the element are constant. The single Gauss point results can be interpreted as constant within the element. Because of this, the element has a tendency to lock up when used for simulating bending. In the incompressible limit (caution for materials with :math:`\nu \rightarrow 0.5` or metal plasticity) this element will also lock up. Therefore, caution is warranted when using this element as un-careful mesh refinement might not guarantee a convergence to the mathematical solution or a fast-enough convergence rate. If possible, use a higher-order element like the :ref:`TenNodeTetrahedron`. 
 
