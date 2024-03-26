@@ -122,6 +122,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/BeamColumnJoint
    elements/ElasticTubularJoint
    elements/Joint2D
+   elements/Inno3DPnPJoint
 
 9. Link Elements
 
