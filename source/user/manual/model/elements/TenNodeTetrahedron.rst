@@ -8,7 +8,7 @@ This command is used to construct an ten-node tetrahedron element object, which 
 
 .. admonition:: Command
 
-   **element TenNodeTetrahedron $eleTag $node1 $node2 $node3 $node4 $node5 $node6 $node7 $node8 $node9 $node10 $matTag <$b1 $b2 $b3>**
+   **element TenNodeTetrahedron $eleTag $node1 $node2 $node3 $node4 $node5 $node6 $node7 $node8 $node9 $node10 $matTag <$b1 $b2 $b3> <doInitDisp?> **
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -18,6 +18,7 @@ This command is used to construct an ten-node tetrahedron element object, which 
    $node1 .. $node10, 10 |integer|, nodes of tet (ordered as shown in fig below)
    $matTag, |integer|, tag of nDMaterial
    $b1 $b2 $b3, |listFloat|, optional: body forces in global x y z directions
+   <doInitDisp?>, |bool|, optional: consider initial displacements
 
 This element is based on second-order interpolation of nodal quantities, this means that the strain and stress field inside the element are linearly interpolated. Four Gauss-points inside the element are used for integration. 
 
