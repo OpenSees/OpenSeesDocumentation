@@ -1,12 +1,12 @@
 Python Install
 ==============
 
-There are a number of steps to getting an OpenSees python script up and running. These work whther you are running on Windos, Mac, or a Linux operating system/
+There are a number of steps to getting an OpenSees python script up and running. These work whether you are running on Windows, Mac, or a Linux operating system.
 
 Install Python
 --------------
 
-* Install  Python from python.org
+* Install  Python from `<https://python.org>`_
 
 
 Install OpenSeesPy
