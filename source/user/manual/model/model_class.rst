@@ -57,6 +57,7 @@ These additional commands are described in the subsequent sections.
       model = ops.Model(ndm=2, ndf=3)
 
       model.node(1, 2.0, 3.0)
+      ...
 
    Note that ``opensees`` must come before ``openseespy`` in the ``import`` statement.
 
