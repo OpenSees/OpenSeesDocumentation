@@ -23,7 +23,7 @@ exposed as methods.
 
 .. note:: 
 
-   The ``Model`` class is currently only available in the new experimental 
+   The ``Model`` class is currently only available in the experimental 
    `opensees <http://pypi.org/project/opensees>`_ Python package, but may
    eventually be added to ``openseespy``.
    To install ``opensees``, just run:
