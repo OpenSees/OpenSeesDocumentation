@@ -58,5 +58,7 @@ These additional commands are described in the subsequent sections.
 
       model.node(1, 2.0, 3.0)
 
+   Note that ``opensees`` must come before ``openseespy`` in the ``import`` statement.
+
 
 Code Developed by: *cmp*
