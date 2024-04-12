@@ -24,14 +24,17 @@ exposed as methods.
 .. note:: 
 
    The ``Model`` class is currently only available in the new experimental 
-   `opensees <http://pypi.org/project/opensees>`_ Python package.
-   To install, just run:
+   `opensees <http://pypi.org/project/opensees>`_ Python package, but may
+   eventually be added to ``openseespy``.
+   To install ``opensees``, just run:
 
    .. code-block:: bash
 
       pip install opensees
    
-   For more information, visit `GitHub <https://github.com/STAIRLab/opensees>`.
+   This experimental package exposes an identical interface to ``openseespy``, but must
+   be imported as ``opensees.openseespy`` as opposed to ``openseespy.opensees``. 
+   For more information, visit `GitHub <https://github.com/STAIRLab/opensees>`_.
 
 
 The ``Model`` class prevents inadvertent corruption of global state that may be caused when using
