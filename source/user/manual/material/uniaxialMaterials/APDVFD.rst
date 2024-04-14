@@ -41,9 +41,9 @@ This command is used to construct a uniaxialMaterial model that simulates the hy
 
 .. note::
 Example:
-   In order to verify the reliability of the asynchronous parallel double-stage viscous fluid damper, two sets of test and simulation results are selected for verification. Material parameters are shown in the following table (Units can be arbitrarily converted, but must be unified):
+   In order to verify the reliability of the asynchronous parallel double-stage viscous fluid damper, four sets of test and simulation results are selected for verification. Material parameters are shown in the following table (Units can be arbitrarily converted, but must be unified):
 
-.. figure:: figures/APDVFD/APDVFD4.png
+.. figure:: figures/APDVFD/APDVFD2.png
 	:align: center
 	:figclass: align-center
    The input parameters for the material should be as follows: 
@@ -52,11 +52,14 @@ Example:
    .. code-block:: tcl
 
       uniaxialMaterial  APDVFD   1  300  0.0023   0.0023  0.3716  170  25  179.8 90  6  6  4.5  5  180 20  0.1 0.5
+      uniaxialMaterial  APDVFD   1  300  0.0043   0.0043  0.2994  170  25  179.8 90  6  6  4.5  5  180 20  0.1 0.5
+      uniaxialMaterial  APDVFD   1  300  0.009   0.009  0.2238  170  25  179.8 90  6  6  4.5  5  180 20  0.1 0.5
       uniaxialMaterial  APDVFD   1  300  0.013   0.013  0.1986  170  25  179.8 90  6  6  4.5  5  180 20  0.1 0.5
-Using these parameters, comparison between the experimental and simulated load-deformation curves of APDVFD1 for sinusoidal displacement increment of 20mm and a frequency f = 0.02Hz is shown in Fig. 2. The comparison between the experimental and simulated load-deformation curves of APDVFD2 for sinusoidal displacement increment of 120mm and a frequency f = 0.02Hz is shown in Fig. 3.
+Using these parameters, comparison between the experimental and simulated load-deformation curves of APDVFD1 for sinusoidal displacement increment of 20mm and a frequency f = 0.02Hz is shown in Fig. 2. The comparison between the experimental and simulated load-deformation curves of APDVFD2 for sinusoidal displacement increment of 60mm and a frequency f = 0.02Hz is shown in Fig. 3.
+Comparison between the experimental and simulated load-deformation curves of APDVFD3 for sinusoidal displacement increment of 80mm and a frequency f = 0.02Hz is shown in Fig. 4. The comparison between the experimental and simulated load-deformation curves of APDVFD4 for sinusoidal displacement increment of 120mm and a frequency f = 0.02Hz is shown in Fig. 5.
 
 
-.. figure:: figures/APDVFD/APDVFD5.png
+.. figure:: figures/APDVFD/APDVFD3.png
 	:align: center
 	:figclass: align-center
 
