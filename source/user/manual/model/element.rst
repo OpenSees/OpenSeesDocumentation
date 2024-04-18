@@ -96,6 +96,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/Tri31
    elements/ShellDKGT
    elements/ShellNLDKGT
+   elements/ASDShellT3
 
 6. Bricks
 
