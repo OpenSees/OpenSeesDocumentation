@@ -23,7 +23,7 @@ This command is used to construct an ASDShellT3 element object. The ASDShellT3 e
    -reducedIntegration, |string|, "optional flag, if provided, the element uses 1-point integration rule."
    -drillingNL, |string|, "optional flag, if provided, the Hughes-Brezzi drilling DOF formulation considers the non-linear behavior of the section. Used only when -reducedIntegration is used."
    -damp $dampTag, |string| + |integer|, "optional, to activate elemental damping as per _elementalDamping"
-   -local $x1 $x2 $x3, |string| + 3 |integer|, "optional, if provided it will be used as the local-x axis of the element (otherwise the default local X will be the direction of the 1-2 side). Note: it will be automatically normalized and projected onto the element plane. It must not be zero or parallel to the shell's normal vector."
+   -local $x1 $x2 $x3, |string| + 3 |float|, "optional, if provided it will be used as the local-x axis of the element (otherwise the default local X will be the direction of the 1-2 side). Note: it will be automatically normalized and projected onto the element plane. It must not be zero or parallel to the shell's normal vector."
 
 
 .. figure:: figures/ASDShellT3/ASDShellT3_geometry.png
