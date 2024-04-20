@@ -25,7 +25,7 @@ A typical asynchronous parallel double-stage metallic damper is composed of two 
    $a2, |float|, Parameters to control the nonlinear behavior of the second sub-damper 
    $n2, |float|, Parameters to control the transition from elastic to plastic branches of the second sub-damper
   
-Noting:	Recommended values of $a1 $n1 $a2 $n2 for simulating three types of APDMDs are provided in the examples.
+Recommended values of $a1 $n1 $a2 $n2 for simulating three types of APDMDs are provided in the examples.
 
 .. figure:: figures/APDMD/APDMD1.png
 	:align: center
@@ -41,14 +41,14 @@ Parameters of the APDMD uniaxialMaterial examples for modeling two tests of each
 	:figclass: align-center
 
   (1) When simulating parallel double-stage yielding buckling restrained brace (PDYBRB) using APDMD uniaxialMaterial, $a1, $n1, $a2 and $n2 are recommended to be 1, 10, 2 and 4, respectively. 
-The corresponding tcl code should be as follows: 
 
+The input parameters for the material should be as follows:
     **Tcl Code**
 
    .. code-block:: tcl
 
 
-      uniaxialMaterial APDMD  1   371  180    12   742  406   0.045  0.041  1  10   2  4
+      uniaxialMaterial APDMD  1   371  180  12    742  406   0.045  0.041  1  10   2  4
       uniaxialMaterial APDMD  1   479  230  15.8  659  355   0.033  0.043  1  10   2  4
 
 Using these parameters, comparison between the experimental and simulated load-deformation curves of PDYBRB is shown in Fig. 2. 
@@ -61,15 +61,15 @@ Using these parameters, comparison between the experimental and simulated load-d
 
 
  (2) When simulating parallel double-stage crawler-track-shaped shear damper (PDCSD) using APDMD uniaxialMaterial, $a1, $n1, $a2 and $n2 are recommended to be 0.5, 10, 1 and 15, respectively.
-The corresponding tcl code should be as follows: 
 
+The input parameters for the material should be as follows:
     **Tcl Code**
 
    .. code-block:: tcl
 
 
-      uniaxialMaterial APDMD  1   18    2    27    10.55   1.21   0.083   0.033   0.5  10  1  15
-      uniaxialMaterial APDMD  1   23  3.24   20    17.48   3.57   0.095   -0.050  0.5  10   1 15
+      uniaxialMaterial APDMD  1   18  2     27    10.55   1.21   0.083   0.033   0.5  10  1  15
+      uniaxialMaterial APDMD  1   23  3.24  20    17.48   3.57   0.095  -0.050   0.5  10  1  15
 
 
 Using these parameters, comparison between the experimental and simulated load-deformation curves of PDCSD is shown in Fig. 3. 
@@ -81,15 +81,15 @@ Using these parameters, comparison between the experimental and simulated load-d
 	:figclass: align-center
 
  (3) When simulating parallel double-stage shear panel damper (PDSPD) using APDMD uniaxialMaterial, $a1, $n1, $a2 and $n2 are recommended to be 1, 15, 0.5 and 10, respectively.
-The corresponding tcl code should be as follows: 
 
+The input parameters for the material should be as follows:
     **Tcl Code**
 
    .. code-block:: tcl
 
 
-     uniaxialMaterial  APDMD  1  200  281.69  4.5  87.05  29.02  0.019   -0.031   1  15  0.5  10
-     uniaxialMaterial  APDMD  1  175   97.22  3.6  58.18  13.82  0.046   0.133   1  15   0.5  10
+     uniaxialMaterial  APDMD  1  200  281.69  4.5  87.05  29.02  0.019  -0.031   1  15  0.5  10
+     uniaxialMaterial  APDMD  1  175   97.22  3.6  58.18  13.82  0.046   0.133   1  15  0.5  10
 
 
 
