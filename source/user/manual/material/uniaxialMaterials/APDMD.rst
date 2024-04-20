@@ -49,7 +49,7 @@ The corresponding tcl code should be as follows:
 
 
       uniaxialMaterial APDMD  1   371  180    12   742  406   0.045  0.041  1  10   2  4
-      uniaxialMaterial APDMD  1   479   230  15.8  659  355   0.033  0.043  1  10   2  4
+      uniaxialMaterial APDMD  1   479  230  15.8  659  355   0.033  0.043  1  10   2  4
 
 Using these parameters, comparison between the experimental and simulated load-deformation curves of PDYBRB is shown in Fig. 2. 
 
@@ -69,7 +69,7 @@ The corresponding tcl code should be as follows:
 
 
       uniaxialMaterial APDMD  1   18    2    27    10.55   1.21   0.083   0.033   0.5  10  1  15
-      uniaxialMaterial APDMD  1  23  3.24   20  17.48   3.57   0.095   -0.050  0.5  10   1 15
+      uniaxialMaterial APDMD  1   23  3.24   20    17.48   3.57   0.095   -0.050  0.5  10   1 15
 
 
 Using these parameters, comparison between the experimental and simulated load-deformation curves of PDCSD is shown in Fig. 3. 
