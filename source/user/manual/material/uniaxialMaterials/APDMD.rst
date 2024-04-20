@@ -110,3 +110,5 @@ References:
 [1] Yang C, Xie L, An N, Li A, Liu Q, Wang X. Development of a novel parallel double-stage yielding buckling restrained brace: Theoretical, experimental, and numerical investigations. Journal of Building Engineering 2023; 68: 106089. DOI: 10.1016/j.jobe.2023.106089.
 
 [2] Yang C, Xie L, Liu Q, Li A, Wang X, Liu Q. Experimental and numerical investigations of a novel parallel double-stage crawler-track-shaped shear damper. Thin-Walled Structures 2024; 195: 111428. DOI: 10.1016/j.tws.2023.111428.
+
+[3] Fred Segal, and Dimitri V, Val. Energy evaluation for Ramberg Osgood hysteretic model. Journal of engineering mechanics 2006; 132(9): 907-913. DOI: 10.1061/(ASCE)0733-9399(2006)132:9(907)
