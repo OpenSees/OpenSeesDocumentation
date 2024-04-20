@@ -103,7 +103,7 @@ Using these parameters, comparison between the experimental and simulated load-d
 
 
 
-Code Developed by: Linlin Xie, Cantian Yang, BingYan Liu, Aiqun Li, Beijing University of Civil Engineering and Architecture.
+Code Developed by: Linlin Xie, Cantian Yang, Bingyan Liu, Aiqun Li, Beijing University of Civil Engineering and Architecture.
 
 References:
 
