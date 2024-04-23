@@ -23,7 +23,7 @@ This command is used to construct an NDMaterial object which represents the stre
 The following contain information about matType? and the args required for each of the available material types:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    ndMaterials/ElasticIsotropic
    ndMaterials/ElasticOrthotropic
@@ -41,6 +41,7 @@ The following contain information about matType? and the args required for each 
    ndMaterials/Orthotropic
    ndMaterials/Series3D
    ndMaterials/ASDConcrete3D
+   ndMaterials/ASDPlasticMaterial
    ndMaterials/OrthotropicRAConcrete
    ndMaterials/SmearedSteelDoubleLayer
 
