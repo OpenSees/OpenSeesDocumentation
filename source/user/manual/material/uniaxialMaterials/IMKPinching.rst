@@ -64,7 +64,7 @@ This command is used to construct a material with a pinched hysteretic response 
 
 .. admonition:: Example 
 
-   The following is used to construct a IMKPeakOriented material with symmetric hysteretic response.
+   The following is used to construct a IMKPinching material with symmetric hysteretic response.
 
    .. code-block:: tcl
 
@@ -82,8 +82,10 @@ This command is used to construct a material with a pinched hysteretic response 
       set c_A 	  1.00;
       set D_pos   1.00;
       set D_neg   1.00;
+      set kappaF  0.50;
+      set kappaD  0.50;
 
-      uniaxialMaterial IMKPeakOriented 	 1 $Ke $dp $dpc $du $My $Mc_My $Mres_My $dp $dpc $du $My $Mc_My $Mres_My $lambda $lambda $lambda $lambda $c_S $c_S $c_A $c_K $D_pos $D_neg $kappaF $kappaD;
+      uniaxialMaterial IMKPinching 	 1 $Ke $dp $dpc $du $My $Mc_My $Mres_My $dp $dpc $du $My $Mc_My $Mres_My $lambda $lambda $lambda $lambda $c_S $c_S $c_A $c_K $D_pos $D_neg $kappaF $kappaD;
 
 
 For code inquires or bug reporting, please contact: 
