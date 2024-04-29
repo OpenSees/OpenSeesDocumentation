@@ -60,19 +60,19 @@ SteelFractureDI is equipped with a stress-based fracture criterion that explicit
 
 .. admonition:: Example 
 
-   The following is used to construct a SteelFractureDI material with a tag of **1**, a yield strength of **60.0**, an initial tangent stiffness, E, of **30000,0**, a strain-hardening ratio of **0.02**, a sigma critical of **120**, an asymmetry factor of **0.8**, a minimum stress for damage accumulation of **20.0**, and a fracture index limit for fracture of **1.00**. 
+   The following is used to construct a SteelFractureDI material with a tag of **1**, a yield strength of **60.0**, an initial tangent stiffness, E, of **30000.0**, a strain-hardening ratio of **0.02**, a sigma critical of **120**, an asymmetry factor of **0.8**, a minimum stress for damage accumulation of **20.0**, and a fracture index limit of **1.0**. 
 
    1. **Tcl Code**
 
    .. code-block:: tcl
 
-      uniaxialMaterial SteelFractureDI 60.0 60.0 30000.0 0.02 20.0 .925 .15 0.08 1.00 0.08 1.00 120 0.8 20 1.0
+      uniaxialMaterial SteelFractureDI 1 60.0 60.0 30000.0 0.02 20.0 .925 .15 0.08 1.00 0.08 1.00 120 0.8 20 1.0
 
    2. **Python Code**
 
    .. code-block:: python
 
-      uniaxialMaterial('SteelFractureDI',60.0, 60.0, 30000.0, 0.02, 20.0, .925, .15, 0.08, 1.00, 0.08, 1.00, 120, 0.8, 20, 1.0)
+      uniaxialMaterial('SteelFractureDI', 1, 60.0, 60.0, 30000.0, 0.02, 20.0, .925, .15, 0.08, 1.00, 0.08, 1.00, 120, 0.8, 20, 1.0)
 
 .. [GalvisEtAl12022] Galvis, F. A., Deierlein, G. G., Yen, W. Y., Molina Hutt, C. (2022). "Fracture-Mechanics Based Material Model for Fiber Simulation of Flange Fractures in Steel Moment Frame Connections". Journal of Structural Engineering, ASCE [in review].
 

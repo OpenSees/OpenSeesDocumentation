@@ -39,8 +39,21 @@ where:
 Output Recorders
 """""""""""""""""""""""
 
-The simulation results of the Inno3DPnP beam-to-column joint finite element can be analyzed by defining output records at both the element and component levels.
+The simulation results of the Inno3DPnPJoint beam-to-column joint finite element can be analyzed by defining output records at both the element and component levels.
 
+At the element level, valid inquiries include:
+
+- `extDisp (or extdisp)`: Returns the displacement for the external DOFs, comprising 30 values.
+- `intDisp (or intdisp)`: Returns the displacement for the internal DOFs, comprising 4 values.
+- `Disp (or disp)`: Returns the displacement for the external and internal DOFs, comprising 34 values.
+- `Reaction (or reaction)`: Returns the global residual forces for all DOFs, comprising 34 values.
+- `matStress (or matstress or Stress or stress)`: Returns the stress values from the joint components, comprising 32 values.
+- `matStrain (or matstrain or Strain or strain)`: Returns the strain values from the joint components, comprising 32 values.
+- `matStressStrain (or matstressstrain or StressStrain or stressStrain)`: Returns the stress and strain values from the joint components, comprising 64 values.
+
+At the component level, valid inquiries include:
+
+- `spring (or -spring or material or -material)`: Returns a pair of stress-strain for each time step, comprising 2 values.
 
 
 Examples
