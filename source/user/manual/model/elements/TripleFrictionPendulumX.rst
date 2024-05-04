@@ -77,7 +77,7 @@ For more information about the element formulation, please refer to the referenc
    $kTFactor, |integer|, ":math:`1`: if the coefficient of friction is a function of instantaneous temperature at the sliding surface."
    $kvFactor, |integer|, ":math:`1`: if the coefficient of friction is a function of instantaneous velocity at the sliding surface. 
    
-   :math:`k_{v}=(1-0.5e^{-av})`"
+   :math:`k_{v}=1-0.5e^{-av}`"
    $Mu1 $Mu2 $Mu3, |float| |float| |float|, "Reference friction coefficients, :math:`\mu_i`"
    $L1 $L2 $L3, |float| |float| |float|, "Effective radii, :math:`L_i = R_i – h_i`"
    $d1_star $d2_star $d3_star, |float| |float| |float|, "Actual displacement capacity of sliding interfaces. :math:`d_i^* = L_i/R_i·d_i`, :math:`d_i` = Nominal displacement capacity of each sliding interface. 
