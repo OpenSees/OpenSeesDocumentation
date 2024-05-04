@@ -84,7 +84,7 @@ For more information about the element formulation, please refer to the referenc
    
    Displacement limit of the bearing is :math:`u_{limit} = 2d_1^* + d_2^* + d_3^* + b_2^*/2`, where :math:`b_2` is a diameter of rigid slider."
    $b1 $b2 $b3, |float| |float| |float|, "Diameters of the rigid slider and the two inner slide plates."
-   $t2 $t3, |float| |float|, "Diameters of the rigid slider and the two inner slide plates."
+   $t2 $t3, |float| |float|, "Thicknesses of concave plates. (Typical values are 50mm or larger)."
    $W, |float|, "Axial force used for the first trial of the first analysis step."
    $uy, |float|, "Lateral displacement where sliding of the bearing starts. 
    
