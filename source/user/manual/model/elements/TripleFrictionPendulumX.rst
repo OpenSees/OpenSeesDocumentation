@@ -21,9 +21,9 @@ In the TripleFrictionPendulumX element, the temperature-dependency of the fricti
 
 .. math::
 
-      k_{T}=0.84((0.7)^{0.0085T}+0.25) 　　　　　(5)
+      k_{T}=0.84(0.7^{0.0085T}+0.25) 　　　　　(5)
 
-      k_{T}=0.97((0.7)^{0.029T}+0.22) 　　　　　(6)
+      k_{T}=0.97(0.7^{0.029T}+0.22) 　　　　　(6)
 
 
 .. figure:: figures/TripleFrictionPendulumX/FIGURE1.jpg
