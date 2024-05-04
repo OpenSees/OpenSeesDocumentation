@@ -86,7 +86,7 @@ For more information about the element formulation, please refer to the referenc
    $b1 $b2 $b3, |float| |float| |float|, "Diameters of the rigid slider and the two inner slide plates."
    $t2 $t3, |float| |float|, "Thicknesses of concave plates. (Typical values are 50mm or larger)."
    $W, |float|, "Axial force used for the first trial of the first analysis step."
-   $uy, |float|, "Lateral displacement where sliding of the bearing starts. 
+   $uy, |float|, "Lateral displacement at which sliding initiates at a sliding interface (effective “yield displacement”). 
    
    Recommended value = :math:`0.025` to :math:`1 mm`. Smaller values may cause convergence problem or may slow the program execution."
    $kvt, |float|, "Tension stiffness :math:`k_{vt}` of the bearing. Use a small, non-zero value to avoid numerical problems."
