@@ -97,7 +97,7 @@ For more information about the element formulation, please refer to the referenc
    $refPressure1 $refPressure2 $refPressure3, |float| |float| |float|, "Reference axial pressures (the bearing pressure under static loads)"
    $Diffusivity, |float|, "Thermal diffusivity of steel (unit: :math:`m^2/sec`). 
    
-   (:math:`= 0.444*10^{-5}` for stainless steel)"
+   (:math:`= 0.444·10^{-5}` for stainless steel)"
    $Conductivity, |float|, "Thermal conductivity of steel (unit: :math:`W/m℃`). 
    
    (:math:`= 18` for stainless steel)"
