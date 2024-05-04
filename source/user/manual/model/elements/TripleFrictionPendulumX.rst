@@ -174,7 +174,7 @@ For more information about the element formulation, please refer to the referenc
       #-------Department of Civil, Structural and Environmental Engineering-------#
       #---------------------------University at Buffalo---------------------------#
       # Modeling of Triple FP isolator (TripleFrictionPendulumX)                  #
-      # Written By: Hyun-myung Kim (hkim59@buffalo.edu)                           #
+      # Written By: Hyun-Myung Kim (hkim59@buffalo.edu)                           #
       # Date: May, 2024                                                           #
       #############################################################################
 
@@ -388,7 +388,7 @@ For more information about the element formulation, please refer to the referenc
    
 .. admonition:: Reference
 
-   .. [DaoEtAl2013] Dao, N. D., Ryan, K. L., Sato, E. and Sasaki, T. (2013). “Predicting the displacement of triple pendulum bearings in a full-scale shaking experiment using a three-dimensional element”, Earthquake engineering and structural dynamics, 42(11), 1677-1695. https://doi.org/10.1002/eqe.2293.
+   .. [DaoEtAl2013] Dao, N. D., Ryan, K. L., Sato, E. and Sasaki, T. (2013). “Predicting the displacement of triple pendulum bearings in a full-scale shaking experiment using a three-dimensional element”, Earthquake Engineering & Structural Dynamics, 42(11), 1677-1695. https://doi.org/10.1002/eqe.2293.
 
    .. [KimConstantinou2022] “Modeling triple friction pendulum bearings in program OpenSees including frictional heating effects”, Report No. MCEER-22-0001, Multidisciplinary Center for Earthquake Engineering Research, Buffalo, NY. 
 
