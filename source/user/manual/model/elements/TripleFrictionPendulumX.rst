@@ -217,7 +217,7 @@ For more information about the element formulation, please refer to the referenc
       set Diffu 0.444e-5;               # Thermal diffusivity (m^2/sec)
       set Conduct 18;                   # Thermal conductivity (W/m*Celsius)
       set Temperature0 20;              # Initial temperature (Celsius)
-      set tagT2 2; 					  # 1 = indefinite plate thickness / 2 = finite plate thickness
+      set tagT2 2; 					            # 1 = indefinite plate thickness / 2 = finite plate thickness
       
       # Friction coefficients (reference)
       set mu1 0.01;
