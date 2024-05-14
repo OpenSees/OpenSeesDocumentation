@@ -46,5 +46,13 @@ ASDCoupledHinge3D
    
    * In the current implementation this section works only for the Tcl interpreter. The Python counterpart will be available soon.
 
+.. admonition:: Example 1 - Link to the live webinar
+
+   | Webinar page: https://asdea.eu/software/webinars/
+   | Link to youtube video: https://www.youtube.com/live/C1iwsf7-mbU
+
+.. admonition:: Example 2 - Simple Tcl example
+
+   :download:`ASDCoupledHinge3D_Example.tcl <ASDCoupledHinge3D_Example.tcl>`
 
 Code Developed by: **Diego A. Talledo** at IUAV, Italy. **Massimo Petracca** at ASDEA Software, Italy.

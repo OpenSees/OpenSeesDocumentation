@@ -56,7 +56,7 @@ pattern Plain 11 1 {
 
 # analysis
 set time 1.0
-set nsteps 100
+set nsteps 10
 set dt [expr $time / $nsteps]
 constraints Transformation
 numberer Plain
@@ -65,5 +65,29 @@ test NormDispIncr 1e-10 40 1
 algorithm NewtonLineSearch
 integrator LoadControl $dt
 analysis Static
-set ok [analyze $nsteps]
+analyze $nsteps
+loadConst -time 0.0
 
+pattern Plain 22 1 {
+	sp 2 1 100.0
+}
+
+set time 1.0
+set nsteps 20
+set dt [expr $time / $nsteps]
+constraints Transformation
+numberer Plain
+system FullGeneral
+test NormDispIncr 1e-10 40 0
+algorithm NewtonLineSearch
+integrator LoadControl $dt
+analysis Static
+puts [format "%10s %10s" N M]
+for {set i 0} {$i < $nsteps} {incr i} {
+	analyze 1
+	reactions
+	set R [nodeReaction 1]
+	set N [expr -([lindex $R 2])]
+	set M [expr -([lindex $R 4])]
+	puts [format "%10.3e %10.3e" $N $M]
+}
