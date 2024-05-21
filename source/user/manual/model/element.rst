@@ -213,4 +213,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/ASDEmbeddedNodeElement
    elements/ASDAbsorbingBoundary
    elements/RockingBC
+   elements/FSIFluidBoundaryElement2D
+   elements/FSIFluidElement2D
+   elements/FSIInterfaceElement2D
 
