@@ -248,7 +248,14 @@ XCode Command Line Tools
 
    .. note::
 
-      If `xcode-select: error: command line tools are already installed, use "Software Update" to install updates` appears, skip because it's already installed.
+      #. If `xcode-select: error: command line tools are already installed, use "Software Update" to install updates` appears, skip because it's already installed.
+
+      #. After update of OS, XCode Command Line Tools version may have a problem. To reinstall, type:
+
+         .. code::
+
+            sudo rm -rf /Library/Developer/CommandLineTools
+            sudo xcode-select --install
 
 Install other dependencies via Homebrew
 =======================================
