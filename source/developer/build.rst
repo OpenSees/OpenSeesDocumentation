@@ -24,10 +24,10 @@ The OpenSees applications are built using `CMake <https://cmake.org/>`_, an exte
    * It's necessary to OpenSeesPy and also required to install conan with PyPI.
 * Package Manager
 
-   * Conan 1.59.0 (for Windows, Linux)
+   * Conan 1.x (for Windows, Linux)
 
       * A package build manager for C/C++ applications.
-      * Conan 2.0 and beyond have been already released but currently we don't catch up with that. Thus, you should install Conan **1.59.0**.
+      * Conan 2.0 and beyond have been already released but currently we don't catch up with that. Thus, you should install Conan **1.64.1**, which is the last version of Conan 1.x
 
    * Homebrew (for Mac)
 
@@ -89,7 +89,7 @@ For Windows 10 the user must have the following applications installed on their 
 * Microsoft VisualStudio
 * Intel oneAPI Basic and HPC Toolkits
 * Python 3.11
-* conan 1.59.0
+* conan 1.64.1
 * MUMPS
 
 Other applications will be installed by conan in the building section.
@@ -131,14 +131,14 @@ Python 3.11
 
    Install from `<https://www.python.org/downloads/windows/>`_. Python **3.12** or newer is not supported by OpenSeesPy currently. Python 3.10 or older version may work. Of course you can install from other channels, i.e. Anaconda, Microsoft Stores.
 
-conan 1.59.0
-============
+conan 1.x
+=========
 
    Conan is used to install Eigen, HDF5, Tcl and Zlib. Type the following to install:
 
    .. code::
 
-      pip install conan==1.59.0
+      pip install conan<2.0
 
 MUMPS
 =====
@@ -182,7 +182,7 @@ When completed the executables (OpenSees, OpenSeesMP, and OpenSeesMP) and the py
 
    #. Environment variables set by ``"C:\Program Files (x86)\Intel\oneAPI\setVars"`` are only available in Command Prompt just after the batch file is called. That means you should call the batch file from Command Prompt and should not from Powershell.
 
-   #. The --parallel option is used to compile the code in parallel. Change the **4** to how many cores is at your disposal.
+   #. The -j option is used to compile the code in parallel. Change the **4** to how many cores is at your disposal.
 
    #. The last copy is needed as the OpenSeesPy.dll module at present actually needs to load from a file named **opensees.pyd**. To import this module in a python script you can do one of 2 things:
 
@@ -199,7 +199,7 @@ When completed the executables (OpenSees, OpenSeesMP, and OpenSeesMP) and the py
 
       #. If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your **PYTHONPATH** env variables. Search for **env settings** in search bar lower left. Add a line to the PYTHONPATH variable with your location of the **bin** folder. If you do this, you also need to copy the python39.dll (or the python310.dll is that is what was used INTO the bin folder). This is because of a security feature with python versions above 3.8 and the dll search path they now use.
 
-   #. ``libiomp5md.dll`` should be located in a same folder as ``opensees.pyd`` or you'll get DLL load failed error when importing opensees on Python.
+   #. ``libiomp5md.dll`` should be located in a same folder as ``opensees.pyd`` or you'll get ``ImportError: DLL load failed while importing opensees: The specified module could not be found.`` when importing opensees on Python.
 
    #. Please note you will get a segmentation fault if you run with a different python exe than the one you build for. Look in output of **cmake ..** for the python library used.
 
@@ -354,14 +354,14 @@ Needed Applications and Libraries
       sudo apt install -y libmkl-blacs-openmpi-lp64
       sudo apt install -y libscalapack-openmpi-dev
 
-conan 1.59.0
-============
+Conan 1.x
+=========
 
    Conan is used to install Eigen, HDF5, Tcl and Zlib. Type the following to install:
 
    .. code::
 
-      pip install conan==1.59.0
+      pip install conan<2.0
 
 Building the OpenSees Applications and Python module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
