@@ -70,12 +70,12 @@ This command is used to construct a uniaxial Giuffre-Menegotto-Pinto steel mater
 
    .. code-block:: tcl
 
-      uniaxialMaterial Steel02 60.0 30000.0 0.1 20.0 .925 .15
+      uniaxialMaterial Steel02 1 60.0 30000.0 0.1 20.0 .925 .15
 
    2. **Python Code**
 
    .. code-block:: python
 
-      uniaxialMaterial('Steel02',60.0,30000.0, 0.1, 20.0, .925, .15)
+      uniaxialMaterial('Steel02',1,60.0,30000.0, 0.1, 20.0, .925, .15)
 
 Code Developed by: |mhs|
