@@ -151,9 +151,8 @@ in [LehaneLiBittar2020b]_.
 
       uniaxialMaterial('TzSandCPT', 1, 39928., 203.8, 2.44, 0.0445, 40., 1., 35.7e-3 , 100.)
 
-In addition, a conference paper has been submitted to ISC'7, discussing the implementation and presenting a 
-numerical benchmark of the implemented unified method against the pile load test results from the 
-well-known EURIPIDES project. 
+More details on the implementation, validation and benchmark of the ``TzSandCPT`` material are published
+in a `conference paper in the ISC'7 Proceedings <https://www.scipedia.com/public/Sastre_Jurado_Stuyts*_2024a>`_.
 
 Code Developed by: |csasj|
 
