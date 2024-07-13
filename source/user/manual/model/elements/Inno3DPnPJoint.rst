@@ -39,9 +39,21 @@ where:
 Output Recorders
 """""""""""""""""""""""
 
-The simulation results of the Inno3DPnP beam-to-column joint finite element can be analyzed by defining output records at both the element and component levels.
+The simulation results of the Inno3DPnPJoint beam-to-column joint finite element can be analyzed by defining output records at both the element and component levels.
 
+At the element level, valid inquiries include:
 
+- `extDisp (or extdisp)`: Returns the displacement for the external DOFs, comprising 30 values.
+- `intDisp (or intdisp)`: Returns the displacement for the internal DOFs, comprising 4 values.
+- `Disp (or disp)`: Returns the displacement for the external and internal DOFs, comprising 34 values.
+- `Reaction (or reaction)`: Returns the global residual forces for all DOFs, comprising 34 values.
+- `matStress (or matstress or Stress or stress)`: Returns the stress values from the joint components, comprising 32 values.
+- `matStrain (or matstrain or Strain or strain)`: Returns the strain values from the joint components, comprising 32 values.
+- `matStressStrain (or matstressstrain or StressStrain or stressStrain)`: Returns the stress and strain values from the joint components, comprising 64 values.
+
+At the component level, valid inquiries include:
+
+- `spring (or -spring or material or -material)`: Returns a pair of stress-strain for each time step, comprising 2 values.
 
 Examples
 """""""""""""""""""""""
@@ -62,8 +74,19 @@ Examples
 
       element('Inno3DPnPJoint', 99, 101, 102, 103, 104, 105, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32)
 	  
+Advanced Tool for Calculating Initial Stiffness of Tube Components
+"""""""""""""""""""""""
+The calculation of initial stiffness for tube components, encompassing face (components no. 25, 26, 27, and 28) and interaction components (components no. 29, 30, 31, and 32), within the Inno3DPnPJoint beam-to-column finite element, is facilitated through a specialized Jupyter notebook. This notebook allows dynamic execution via Binder, offering users an interactive platform for computational analysis.
 
-	
+The notebook is publicly accessible on GitHub: https://github.com/cvmiculas/Inno3DPnPJoint_component_calc.
+
+Additionally, a comprehensive video tutorial titled "Inno3DPnPJoint Element: Tube Components Initial Stiffness Calculator with Jupyter Notebook & Binder" is available on YouTube: https://youtu.be/bsL44rdOQvc.
+
+When citing this notebook, please use the following format: "Cristian V. Miculaș. (2023). Tube Components Initial Stiffness Calculator for Inno3DPnPJoint Element from OpenSees (Version 0.1.0) [Interactive Notebook]. Zenodo. https://doi.org/10.5281/zenodo.7869445."
+
+
+References
+"""""""""""""""""""""""	
 .. seealso::
 
 	More information available in the following reference:
@@ -71,12 +94,14 @@ Examples
 	#. C.V. Miculaş, Innovative plug and play joints for hybrid tubular constructions (Ph.D. thesis), University of Coimbra, Portugal, 2023, https://estudogeral.uc.pt/handle/10316/110990
 
 
-	#. C. V. Miculaş, R. J. Costa, L. S. da Silva, R. Simões, H. Craveiro, T. Tankova, 3D macro-element for innovative plug-and-play joints, J. Constructional Steel Research 214 (2024), https://doi.org/10.1016/j.jcsr.2023.108436
+	#. C.V. Miculaş, R. J. Costa, L. S. da Silva, R. Simões, H. Craveiro, T. Tankova, 3D macro-element for innovative plug-and-play joints, J. Constructional Steel Research 214 (2024), https://doi.org/10.1016/j.jcsr.2023.108436
 
 
 	#. C.V. Miculaş, R.J. Costa, L. Simões da Silva, R. Simões, H. Craveiro, T. Tankova, Macro-modelling of the three-dimensional interaction between the faces of a steel tubular column joint, in: F. Di Trapani, C. Demartino, G.C. Marano, G. Monti (Eds.), Proceedings of the 2022 Eurasian OpenSees Days, Springer Nature Switzerland, Cham, 2023, pp. 408–422, http://dx.doi.org/10.1007/978-3-031-30125-4_37
+
 	
-	
+Other info
+"""""""""""""""""""""""	
 .. note::
 	
 	Code development: Cristian V. Miculaș  (github user name: cvmiculas)
