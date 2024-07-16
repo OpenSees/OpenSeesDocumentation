@@ -58,32 +58,42 @@ ASDConcrete1D Material
    | **Case 1: Mixed plastic-damage behavior in both tension and compression without any rate effect.**
    | Compressive strength :math:`f_c = 30 MPa` and tensile strength :math:`f_t = 3 MPa`.
    | On the left-side the stress-strain response, while on the right-side the evolution of damage variables and equivalent plastic strains.
-   .. image:: examples/Mixed-Plastic-Damage(rate-independent).gif
+   .. |asd_conc1d_pic_1_a| image:: examples/Mixed-Plastic-Damage(rate-independent).gif
+   .. |asd_conc1d_pic_1_b| image:: examples/Mixed-Plastic-Damage(rate-independent)-still.png
+   |asd_conc1d_pic_1_a| |asd_conc1d_pic_1_b|
    
    |
    | **Case 2: Mixed plastic-damage behavior in both tension and compression with rate effects.**
    | Same as Case 1, but with the viscosity parameter :math:`\eta = 0.001`. If :math:`\eta > 0` the material is allowed to violate the yield/damage domain at high strain rates.
-   .. image:: examples/Mixed-Plastic-Damage(rate-dependent).gif
+   .. |asd_conc1d_pic_2_a| image:: examples/Mixed-Plastic-Damage(rate-dependent).gif
+   .. |asd_conc1d_pic_2_b| image:: examples/Mixed-Plastic-Damage(rate-dependent)-still.png
+   |asd_conc1d_pic_2_a| |asd_conc1d_pic_2_b|
    
    |
    | **Case 3: Pure-damage behavior in both tension and compression.**
    | Same as Case 1, but without any plastic strain. All nonlinearity comes from cracking, and upon unloading the stress always go to zero at zero strain following the secant stiffness :math:`Ed = (1-d)E`.
    | Note that on the right-side there is no evolution of equivalent plastic strain.
    | To achieve this, all damage variables are set to the maximum value of 1.
-   .. image:: examples/Pure-Damage.gif
+   .. |asd_conc1d_pic_3_a| image:: examples/Pure-Damage.gif
+   .. |asd_conc1d_pic_3_b| image:: examples/Pure-Damage-still.png
+   |asd_conc1d_pic_3_a| |asd_conc1d_pic_3_b|
    
    |
    | **Case 4: Pure-plastic behavior in both tension and compression.**
    | Same as Case 1, but without any cracking strain (no damage). All nonlinearity comes from plastic deformation, and upon unloading the stress always follows the initial stiffness.
    | Note that on the right-side there is no evolution of damage.
    | To achieve this, all damage variables are set to the minimum value of 10.
-   .. image:: examples/Pure-Plasticity.gif
+   .. |asd_conc1d_pic_4_a| image:: examples/Pure-Plasticity.gif
+   .. |asd_conc1d_pic_4_b| image:: examples/Pure-Plasticity-still.png
+   |asd_conc1d_pic_4_a| |asd_conc1d_pic_4_b|
    
    |
    | **Case 5: Pure-damage behavior tension.**
    | Similar to Case 3, but the plastic behavior has been removed only for the tensile response, keeping the compressive response the result of a mixed plastic-damage process.
    | To achieve this, all damage variables are set to the maximum value of 1 only for the tensile backbone curve.
-   .. image:: examples/Mixed-Plastic-Damage(compression)-Pure-Damage(tension).gif
+   .. |asd_conc1d_pic_5_a| image:: examples/Mixed-Plastic-Damage(compression)-Pure-Damage(tension).gif
+   .. |asd_conc1d_pic_5_b| image:: examples/Mixed-Plastic-Damage(compression)-Pure-Damage(tension)-still.png
+   |asd_conc1d_pic_5_a| |asd_conc1d_pic_5_b|
 
 Code Developed by: **Massimo Petracca** at ASDEA Software, Italy.
 

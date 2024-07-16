@@ -31,6 +31,7 @@ def run_sample(
 	seed = 2
 	random.seed(seed)
 	Npulse = 150 # Number of pulses
+	Nsubsteps = 50
 	noise = [norm.ppf(random.random()) for i in range(Npulse)]
 	mod_noise = [noise[i]*i/Npulse for i in range(Npulse)]
 	max_noise = max(abs(max(mod_noise)),abs(min(mod_noise)))
@@ -89,7 +90,7 @@ def run_sample(
 	ops.fix(1, 1)
 	
 	# a simple ramp
-	ops.timeSeries('Path',1,'-time',*tim_noise,'-values',*mod_noise,'-useLast')
+	ops.timeSeries('Path',1,'-time',*tim_noise+[2.0],'-values',*mod_noise+[mod_noise[-1]])
 	
 	# begin plot
 	SX = [0.0]
@@ -101,33 +102,49 @@ def run_sample(
 	EPLP = [0.0]
 	EPLN = [0.0]
 	TIM = [0.0]
+	HY_PX = [0.0]
+	HY_PY = [0.0]
+	
+	SMALL_SIZE = 8
+	MEDIUM_SIZE = 10
+	LARGE_SIZE = 12
+	plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
+	plt.rc('axes', titlesize=MEDIUM_SIZE)     # fontsize of the axes title
+	plt.rc('figure', titlesize=LARGE_SIZE)  # fontsize of the figure title
 	plt.ion()
 	
-	fig = plt.figure()
+	fig = plt.figure(figsize=(6, 5), dpi=100)
 	fig.suptitle(title)
-	spec = plt.GridSpec(nrows=2, ncols=2, width_ratios=[1.5,1], figure=fig)
-	ax = [fig.add_subplot(spec[:,0]), fig.add_subplot(spec[0,1]), fig.add_subplot(spec[1,1])]
+	spec = plt.GridSpec(nrows=3, ncols=2, width_ratios=[1.5,1], figure=fig)
+	ax = [fig.add_subplot(spec[0,:]), fig.add_subplot(spec[1:,0]), fig.add_subplot(spec[1,1]), fig.add_subplot(spec[2,1])]
 	
 	ax[0].grid(linestyle=':')
-	ax[0].set_title('Stress-strain response')
-	ax[0].set_xlabel('\N{GREEK SMALL LETTER EPSILON}\N{SUBSCRIPT ONE}\N{SUBSCRIPT ONE}')
-	ax[0].set_ylabel('\N{GREEK SMALL LETTER SIGMA}\N{SUBSCRIPT ONE}\N{SUBSCRIPT ONE}')
+	ax[0].set_title('Strain history')
+	ax[0].set_xlabel('Time')
+	ax[0].set_ylabel('\N{GREEK SMALL LETTER EPSILON}\N{SUBSCRIPT ONE}\N{SUBSCRIPT ONE}')
 	ax[1].grid(linestyle=':')
-	ax[1].set_title('Damage')
-	ax[1].set_xlabel('step')
-	ax[1].set_ylabel('Damage')
+	ax[1].set_title('Stress-strain response')
+	ax[1].set_xlabel('\N{GREEK SMALL LETTER EPSILON}\N{SUBSCRIPT ONE}\N{SUBSCRIPT ONE}')
+	ax[1].set_ylabel('\N{GREEK SMALL LETTER SIGMA}\N{SUBSCRIPT ONE}\N{SUBSCRIPT ONE}')
 	ax[2].grid(linestyle=':')
-	ax[2].set_title('Equivalent Plastic Strain')
-	ax[2].set_xlabel('step')
-	ax[2].set_ylabel('Eq. Plastic Strain')
-	the_line, = ax[0].plot(SX, SY, '-k', linewidth=1.0)
-	the_tip, = ax[0].plot(PX, PY, 'or', fillstyle='full', markersize=8)
-	the_line_dam_pos, = ax[1].plot(TIM, DAMP, '-b', linewidth=2.0, label='D+')
-	the_line_dam_neg, = ax[1].plot(TIM, DAMN, '-r', linewidth=2.0, label='D-')
-	the_line_epl_pos, = ax[2].plot(TIM, EPLP, '-b', linewidth=2.0, label='Epl+')
-	the_line_epl_neg, = ax[2].plot(TIM, EPLN, '-r', linewidth=2.0, label='Epl-')
-	ax[1].legend()
+	ax[2].set_title('Damage')
+	ax[2].set_xlabel('Time')
+	ax[2].set_ylabel('Damage')
+	ax[3].grid(linestyle=':')
+	ax[3].set_title('Equivalent Plastic Strain')
+	ax[3].set_xlabel('Time')
+	ax[3].set_ylabel('Eq. Plastic Strain')
+	the_line_hist_bg, = ax[0].plot(tim_noise, mod_noise, '--k', linewidth=1.0)
+	the_line_hist, = ax[0].plot(TIM, SX, 'k', linewidth=1.0)
+	the_tip_hist, = ax[0].plot(HY_PX, HY_PY, 'or', fillstyle='full', markersize=8)
+	the_line, = ax[1].plot(SX, SY, '-k', linewidth=1.0)
+	the_tip, = ax[1].plot(PX, PY, 'or', fillstyle='full', markersize=8)
+	the_line_dam_pos, = ax[2].plot(TIM, DAMP, '-b', linewidth=1.0, label='D+')
+	the_line_dam_neg, = ax[2].plot(TIM, DAMN, '-r', linewidth=1.0, label='D-')
+	the_line_epl_pos, = ax[3].plot(TIM, EPLP, '-b', linewidth=1.0, label='Epl+')
+	the_line_epl_neg, = ax[3].plot(TIM, EPLN, '-r', linewidth=1.0, label='Epl-')
 	ax[2].legend()
+	ax[3].legend()
 	fig.tight_layout()
 	
 	# load
@@ -140,7 +157,6 @@ def run_sample(
 	ops.system('UmfPack')
 	ops.test('NormDispIncr', 1.0e-8, 10, 0)
 	ops.algorithm('Newton')
-	Nsubsteps = 50
 	time_incr = 1.0/(Npulse*Nsubsteps)
 	ops.integrator('LoadControl', time_incr)
 	ops.analysis('Static')
@@ -149,14 +165,12 @@ def run_sample(
 	frames = []
 	
 	# process each step
-	counter = 0
 	for i in range(Npulse):
 		failed = False
 		for j in range(Nsubsteps):
 			ok = ops.analyze(1)
 			if ok == 0:
-				TIM.append(counter)
-				counter += 1
+				TIM.append(ops.getTime())
 				strain = ops.eleResponse(1, 'material', 1, 'strain')
 				stress = ops.eleResponse(1, 'material', 1, 'stress')
 				damage = ops.eleResponse(1, 'material', 1, 'damage')
@@ -171,6 +185,8 @@ def run_sample(
 				DAMN.append(neg_damage if neg_damage > 1.0e-8 else 0.0)
 				EPLP.append(pos_eqplst if pos_eqplst > 1.0e-8 else 0.0)
 				EPLN.append(neg_eqplst if neg_eqplst > 1.0e-8 else 0.0)
+				the_line_hist.set_xdata(TIM)
+				the_line_hist.set_ydata(SX)
 				the_line.set_xdata(SX)
 				the_line.set_ydata(SY)
 				the_line_dam_pos.set_xdata(TIM)
@@ -188,8 +204,16 @@ def run_sample(
 			break
 		PX = [SX[-1]]
 		PY = [SY[-1]]
-		the_tip.set_xdata(PX)
-		the_tip.set_ydata(PY)
+		HY_PX = [TIM[-1]]
+		HY_PY = [SX[-1]]
+		if i == Npulse-1:
+			the_tip.remove()
+			the_tip_hist.remove()
+		else:
+			the_tip.set_xdata(PX)
+			the_tip.set_ydata(PY)
+			the_tip_hist.set_xdata(HY_PX)
+			the_tip_hist.set_ydata(HY_PY)
 		for iax in ax:
 			iax.relim()
 			iax.autoscale_view()
@@ -208,6 +232,7 @@ def run_sample(
 	from PIL import Image
 	images = [Image.fromarray(frame) for frame in frames]
 	images[0].save('{}.gif'.format(title), save_all=True, append_images=images[1:], loop=0, duration=100)
+	images[-1].save('{}-still.png'.format(title))
 
 run_sample(title = 'Mixed-Plastic-Damage(rate-independent)',
 		eta = 0.0,
