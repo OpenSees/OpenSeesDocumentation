@@ -27,19 +27,19 @@ This command is used to construct a multi-point constraint between nodes where t
 
 .. admonition:: Example:
 
-   The following command will impose the displacenents at dof's **1, 3, and 5** at node **2** to be the same as those of node **33*.
+   The following command will impose the displacenents at dof's **1, 3 and 5** of node **2** to be the same as those of node **33**.
 
    1. **Tcl Code**
 
    .. code-block:: none
 
-      equalDOF 2 33 1 3 5;
+      equalDOF 2 33 1 3 5
 
    1. **Python Code**
 
    .. code-block:: python
 
-      equalDOF(2,33,1,3,5);
+      equalDOF(2,33,1,3,5)
 
 
 
