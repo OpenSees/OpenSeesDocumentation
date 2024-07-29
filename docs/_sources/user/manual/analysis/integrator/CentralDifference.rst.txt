@@ -15,9 +15,9 @@ THEORY:
 
 The Central difference approximations for velocity and acceleration:
 
-    :math:` v_n = \frac{d_{n+1} - d_{n-1}}{2 \Delta t}`
+    :math:`v_n = \frac{d_{n+1} - d_{n-1}}{2 \Delta t}`
 
-    :math:` a_n = \frac{d_{n+1} - 2 d_n + d_{n-1}}{\Delta t^2}`
+    :math:`a_n = \frac{d_{n+1} - 2 d_n + d_{n-1}}{\Delta t^2}`
 
 In the Central Difference method we determine the displacement solution at time :math:`t+\delta t` by considering the the eqilibrium equation for the finite element system in motion at time t:
 
@@ -25,4 +25,4 @@ In the Central Difference method we determine the displacement solution at time 
 
 which when using the above two expressions of becomes:
 
-    :math:` \left ( \frac{1}{\Delta t^2} M + \frac{1}{2 \Delta t} C \right ) U_{t+\Delta t} = R_t - \left (K - \frac{2}{\Delta t^2}M \right )U_t - \left (\frac{1}{\Delta t^2}M - \frac{1}{2 \Delta t} C \right) U_{t-\Delta t} `
+    :math:`\left ( \frac{1}{\Delta t^2} M + \frac{1}{2 \Delta t} C \right ) U_{t+\Delta t} = R_t - \left (K - \frac{2}{\Delta t^2}M \right )U_t - \left (\frac{1}{\Delta t^2}M - \frac{1}{2 \Delta t} C \right) U_{t-\Delta t} `
