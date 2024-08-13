@@ -15,8 +15,11 @@ This command is used to construct a uniaxial multilinear hysteretic material obj
 
 The following input format is compatible with Hysteretic material. Note that in this case you must have the same number of positive and negative segments:
 Tcl interpreter:
+
 .. function:: uniaxialMaterial HystereticSM $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> $pinchX $pinchY $damage1 $damage2 <$beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates lsD1? <lsD2?>...> <-forceLimitStates lsF1? <lsF2?>...> <-printInput> <-XYorder>
+
 Python interpreter:
+
 .. function:: uniaxialMaterial('HystereticSM',matTag,s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p> <,s5p,e5p> <,s6p,e6p> <,s7p,e7p>,s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>,pinchX,pinchY,damage1,damage2 <,beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
 
 .. list-table:: 
