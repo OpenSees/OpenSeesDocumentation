@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.6.19.1. Yield Functions &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.1.6.19.2. Plastic Flow Directions" href="PlasticFlowType.html" />
+    <link rel="prev" title="3.1.6.19. ASDPlasticMaterial" href="../ASDPlasticMaterial.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../ndMaterial.html">3.1.6. nDMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ElasticIsotropic.html">3.1.6.1. Elastic Isotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ElasticOrthotropic.html">3.1.6.2. Elastic Orthotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../J2Plasticity.html">3.1.6.3. J2 Plasticity Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../DruckerPrager.html">3.1.6.4. Drucker Prager Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ManzariDafalias.html">3.1.6.5. Manzari Dafalias Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BoundingCamClay.html">3.1.6.6. Bounding Cam Clay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PM4Sand.html">3.1.6.7. PM4Sand Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PM4Silt.html">3.1.6.8. PM4Silt Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PressureIndependentMultiYield.html">3.1.6.9. Pressure Independent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PressureDependentMultiYield.html">3.1.6.10. Pressure Dependent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PressureDependentMultiYield02.html">3.1.6.11. Pressure Dependent Multi Yield 02</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../J2CyclicBoundingSurface.html">3.1.6.12. J2CyclicBoundingSurface Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SAniSandMS.html">3.1.6.13. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Orthotropic.html">3.1.6.14. Orthotropic Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Series3D.html">3.1.6.15. Series3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Parallel3D.html">3.1.6.16. Parallel3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../InitStrain.html">3.1.6.17. InitStrain Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ASDConcrete3D.html">3.1.6.18. ASDConcrete3D Material</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../ASDPlasticMaterial.html">3.1.6.19. ASDPlasticMaterial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../OrthotropicRAConcrete.html">3.1.6.20. OrthotropicRAConcrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SmearedSteelDoubleLayer.html">3.1.6.21. SmearedSteelDoubleLayer Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../../ndMaterial.html"><span class="section-number">3.1.6. </span>nDMaterial Command</a> &raquo;</li>
+        
+          <li><a href="../ASDPlasticMaterial.html"><span class="section-number">3.1.6.19. </span>ASDPlasticMaterial</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.6.19.1. </span>Yield Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/user/manual/material/ndMaterials/ASDPlasticMaterial/YieldFunctions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="yield-functions">
+<span id="yieldfunctiontype"></span><h1><span class="section-number">3.1.6.19.1. </span>Yield Functions<a class="headerlink" href="#yield-functions" title="Permalink to this heading">¶</a></h1>
+<p>Specifies the shape of the yield surface, i.e. the locus of points in stress-space where the response of the material is linear. Points outside the yield surface are not allowed. Yield surfaces can have parameters and internal variables which define its shape and location.</p>
+<p>Yield Functions may define internal variables they need for their specification, as well as paramters. When specifying the <code class="docutils literal notranslate"><span class="pre">ASDPlasticMaterial</span></code> instance, once must provide the internal variables mentioned below, together with their hardening function.</p>
+<p>Yield functions are also responsible for providing their stress-derivative (<span class="math notranslate nohighlight">\(\mathbf{n} = \partial f / \partial \boldsymbol{\sigma}\)</span>) as well as computing the hardening term <span class="math notranslate nohighlight">\(H\)</span> in the plastic multiplier (see <a class="reference internal" href="../ASDPlasticMaterial.html#asdplastictheory"><span class="std std-ref">ASDPlasticMaterial Theory</span></a>).</p>
+<p>Available functions:</p>
+<div class="section" id="vonmises-yf">
+<span id="id1"></span><h2>VonMises_YF<a class="headerlink" href="#vonmises-yf" title="Permalink to this heading">¶</a></h2>
+<p>Defines a yield surface which corresponds to the <a class="reference external" href="https://en.wikipedia.org/wiki/Von_Mises_yield_criterion">Von Mises Yield Criterion</a>. Its definition is:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\state}{\sigma, \left\lbrace iv \right\rbrace, \left\lbrace param \right\rbrace }
+\newcommand{\matorvec}[2]{
+ \left[\begin{array}{#1}
+     #2
+ \end{array}\right]
+ }
+f(\vec{\sigma}) = \sqrt{ (\vec{s} - \vec{\alpha}) \cdot (\vec{s} - \vec{\alpha}) } - \sqrt{ \dfrac{2}{3}} k\\\vec{s} = \vec{\sigma} - p \vec{I}\end{aligned}\end{align} \]</div>
+<p>Where <span class="math notranslate nohighlight">\(p = -(\sigma_{11} + \sigma_{22} + \sigma_{33})/3\)</span> is the mean stress (positive in compression), and <span class="math notranslate nohighlight">\(\vec{I}\)</span> is the Kronecker delta in Voigt notation (<span class="math notranslate nohighlight">\(\vec{I} = \matorvec{cccccc}{1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0}^T\)</span>). Finally, <span class="math notranslate nohighlight">\(\vec{s}\)</span> is the deviatoric part of the stress vector in Voigt notation.</p>
+<div class="admonition-internal-variables-defined admonition">
+<p class="admonition-title">Internal variables defined</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>IV Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BackStress</span></code></p></td>
+<td><p>Rank-6 Tensor</p></td>
+<td><p><span class="math notranslate nohighlight">\(\vec{\alpha}\)</span></p></td>
+<td><p>Backstress, definining the location in stress space for the axis of the Von-Mises cylinder.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VonMisesRadius</span></code></p></td>
+<td><p>Scalar</p></td>
+<td><p><span class="math notranslate nohighlight">\(k\)</span></p></td>
+<td><p>Shear strength, definining the radius of the Von-Mises cylinder in stress space.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition-parameters-required admonition">
+<p class="admonition-title">Parameters required</p>
+</div>
+</div>
+<div class="section" id="druckerprager-yf">
+<span id="id2"></span><h2>DruckerPrager_YF<a class="headerlink" href="#druckerprager-yf" title="Permalink to this heading">¶</a></h2>
+<p>Defines a yield surface which corresponds to the <a class="reference external" href="https://en.wikipedia.org/wiki/Drucker%E2%80%93Prager_yield_criterion">Drucker-Prager Yield Criterion</a>. Its definition is:</p>
+<div class="math notranslate nohighlight">
+\[f(\vec{\sigma}) = \sqrt{ (\vec{s} - \vec{\alpha}) \cdot (\vec{s} - \vec{\alpha}) } - \sqrt{ \dfrac{2}{3}} k p\]</div>
+<p>Where all symbols are as before. In this case note that <span class="math notranslate nohighlight">\(k\)</span>, defines the slope of the opening of the Drucker-Prager cone with respect to  <span class="math notranslate nohighlight">\(p\)</span>, thus now the radius of the cone at a given confinement is <span class="math notranslate nohighlight">\(kp\)</span>.</p>
+<div class="admonition-internal-variables-defined admonition">
+<p class="admonition-title">Internal variables defined</p>
+<p>It uses the same variables as the Von-Mises yield function, but the <code class="docutils literal notranslate"><span class="pre">VonMisesRadius</span></code> is now unitless and should be defined with respect to a reference confinement.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>IV Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BackStress</span></code></p></td>
+<td><p>Rank-6 Tensor</p></td>
+<td><p><span class="math notranslate nohighlight">\(\vec{\alpha}\)</span></p></td>
+<td><p>Backstress, definining the location in stress space for the axis of the Drucker-Prager cone.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VonMisesRadius</span></code></p></td>
+<td><p>Scalar</p></td>
+<td><p><span class="math notranslate nohighlight">\(k\)</span></p></td>
+<td><p>Shear strength at reference confinement, definining the radius of the DruckerPrager cone in stress space as  <span class="math notranslate nohighlight">\(kp\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition-parameters-required admonition">
+<p class="admonition-title">Parameters required</p>
+</div>
+</div>
+<div class="section" id="roundedmohrcoulomb-yf">
+<span id="id3"></span><h2>RoundedMohrCoulomb_YF<a class="headerlink" href="#roundedmohrcoulomb-yf" title="Permalink to this heading">¶</a></h2>
+<p>Coming soon</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

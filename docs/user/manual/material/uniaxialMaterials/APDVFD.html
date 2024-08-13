@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>APDVFD Material &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>APDVFD Material</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/uniaxialMaterials/APDVFD.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="apdvfd-material">
+<span id="apdvfd"></span><h1>APDVFD Material<a class="headerlink" href="#apdvfd-material" title="Permalink to this heading">¶</a></h1>
+<p>This command is used to construct a uniaxialMaterial model that simulates the hysteretic responses (axial load-deformation) of an asynchronous parallel double-stage viscous fluid damper (APDVFD) with specific parameters. An adaptive iterative algorithm with a high-precision accuracy has been implemented and validated to solve numerically the constitutive equations. (Specific parameters are shown in Fig. 1.)</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">uniaxialMaterial</span> <span class="pre">APDVFD</span> <span class="pre">$matTag</span> <span class="pre">$K</span> <span class="pre">$G1</span> <span class="pre">$G2</span> <span class="pre">$Alpha</span> <span class="pre">$L</span> <span class="pre">$LC</span> <span class="pre">$DP</span> <span class="pre">$DG</span> <span class="pre">$N1</span> <span class="pre">$N2</span> <span class="pre">$DO1</span> <span class="pre">$DO2</span> <span class="pre">$DC</span> <span class="pre">$S</span> <span class="pre">$HP</span> <span class="pre">$HC</span> <span class="pre">&lt;$LGap&gt;</span> <span class="pre">&lt;$NM</span> <span class="pre">$RelTol</span> <span class="pre">$AbsTol</span> <span class="pre">$MaxHalf&gt;</span></span></dt>
+<dd></dd></dl>
+
+<div class="align-center figure">
+<img alt="../../../../_images/APDVFD1.png" src="../../../../_images/APDVFD1.png" />
+</div>
+<dl class="simple">
+<dt>Example:</dt><dd><p>In order to verify the reliability of the asynchronous parallel double-stage viscous fluid damper, two sets of test and simulation results are selected for verification. Material parameters are shown in the following table (Units can be arbitrarily converted, but must be unified):</p>
+</dd>
+</dl>
+<div class="figure align-default">
+<img alt="user/manual/material/uniaxialMaterials/figures/APDVFD/APDVFD2.png:align:center:figclass:align-centerTheinputparametersforthematerialshouldbeasfollows:**TclCode**" src="user/manual/material/uniaxialMaterials/figures/APDVFD/APDVFD2.png:align:center:figclass:align-centerTheinputparametersforthematerialshouldbeasfollows:**TclCode**" />
+</div>
+<p>Using these parameters, comparison between the experimental and simulated load-deformation curves of APDVFD1 for sinusoidal displacement increment of 80mm and a frequency f = 0.02Hz is shown in Fig. 2. The comparison between the experimental and simulated load-deformation curves of APDVFD2 for sinusoidal displacement increment of 120mm and a frequency f = 0.02Hz is shown in Fig. 3.</p>
+<div class="align-center figure">
+<img alt="../../../../_images/APDVFD3.png" src="../../../../_images/APDVFD3.png" />
+</div>
+<p>Code Developed by: Linlin Xie, Cantian Yang, Haoxiang Wang, Aiqun Li, Beijing University of Civil Engineering and Architecture.</p>
+<p>References:</p>
+<p>[1] Yang C, Wang H, Xie L, Li A, Wang X. “Experimental and theoretical investigations on an asynchronized parallel double-stage viscous fluid damper.” Structural Control and Health Monitoring,(under review).</p>
+<p>[2] Akcelyan, S., Lignos, D. G., Hikino, T. (2018). “Adaptive Numerical Method Algorithms for Nonlinear Viscous and Bilinear Oil Damper Models Subjected to Dynamic Loading.” Soil Dynamics and Earthquake Engineering, 113, 488-502.</p>
+<p>[3] Oohara, K., and Kasai, K. (2002), “Time-History Analysis Models for Nonlinear Viscous Dampers”, Proc. Structural Engineers World Congress (SEWC), Yokohama, JAPAN, CD-ROM, T2-2-b-3 (in Japanese).</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

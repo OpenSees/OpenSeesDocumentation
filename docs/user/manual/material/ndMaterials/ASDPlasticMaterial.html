@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.6.19. ASDPlasticMaterial &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.6.19.1. Yield Functions" href="ASDPlasticMaterial/YieldFunctions.html" />
+    <link rel="prev" title="3.1.6.18. ASDConcrete3D Material" href="ASDConcrete3D.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ndMaterial.html">3.1.6. nDMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ElasticIsotropic.html">3.1.6.1. Elastic Isotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticOrthotropic.html">3.1.6.2. Elastic Orthotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2Plasticity.html">3.1.6.3. J2 Plasticity Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DruckerPrager.html">3.1.6.4. Drucker Prager Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ManzariDafalias.html">3.1.6.5. Manzari Dafalias Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundingCamClay.html">3.1.6.6. Bounding Cam Clay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Sand.html">3.1.6.7. PM4Sand Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PM4Silt.html">3.1.6.8. PM4Silt Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureIndependentMultiYield.html">3.1.6.9. Pressure Independent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield.html">3.1.6.10. Pressure Dependent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PressureDependentMultiYield02.html">3.1.6.11. Pressure Dependent Multi Yield 02</a></li>
+<li class="toctree-l4"><a class="reference internal" href="J2CyclicBoundingSurface.html">3.1.6.12. J2CyclicBoundingSurface Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.1.6.13. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.1.6.14. Orthotropic Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Series3D.html">3.1.6.15. Series3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Parallel3D.html">3.1.6.16. Parallel3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="InitStrain.html">3.1.6.17. InitStrain Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDConcrete3D.html">3.1.6.18. ASDConcrete3D Material</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.6.19. ASDPlasticMaterial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OrthotropicRAConcrete.html">3.1.6.20. OrthotropicRAConcrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SmearedSteelDoubleLayer.html">3.1.6.21. SmearedSteelDoubleLayer Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../model/damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../ndMaterial.html"><span class="section-number">3.1.6. </span>nDMaterial Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.6.19. </span>ASDPlasticMaterial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/material/ndMaterials/ASDPlasticMaterial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="asdplasticmaterial">
+<span id="id1"></span><h1><span class="section-number">3.1.6.19. </span>ASDPlasticMaterial<a class="headerlink" href="#asdplasticmaterial" title="Permalink to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line">This command is used to construct an <code class="docutils literal notranslate"><span class="pre">ASDPlasticMaterial</span></code> material object. <code class="docutils literal notranslate"><span class="pre">ASDPlasticMaterial</span></code> implements a large family of constitutive models based on the classical theory of elastoplasticity. Users build new constitutive models by selecting the yield function, plastic-flow direction, elasticity law, and hardening models for the internal variables from several possible options for each component.</div>
+</div>
+<p>To create a new model, specify the Yield Function type (<code class="docutils literal notranslate"><span class="pre">$YieldFunctionType</span></code>), Plastic Flow type (<code class="docutils literal notranslate"><span class="pre">$PlasticFlowType</span></code>), and Elasticity type (<code class="docutils literal notranslate"><span class="pre">$ElasticityType</span></code>). All internal variables and model parameters are set to zero unless specified by the user, which might or not make sense depending on context, and this initialization is printed out to the screen.</p>
+<p>After setting the <code class="docutils literal notranslate"><span class="pre">$YieldFunctionType</span></code>, <code class="docutils literal notranslate"><span class="pre">$PlasticFlowType</span></code> and <code class="docutils literal notranslate"><span class="pre">$ElasticityType</span></code>, you can give initial values to internal variables within the <code class="docutils literal notranslate"><span class="pre">Begin_Internal_Variables</span></code> … <code class="docutils literal notranslate"><span class="pre">End_Internal_Variables</span></code> block. Then, the <code class="docutils literal notranslate"><span class="pre">Begin_Model_Parameters</span></code> … <code class="docutils literal notranslate"><span class="pre">End_Model_Parameters</span></code> block is used to provide model parameter values (these can be changed during the analysis with the <code class="docutils literal notranslate"><span class="pre">setParameter</span></code> command as expected). Finally, model integration options are set within the <code class="docutils literal notranslate"><span class="pre">Begin_Integration_Options</span></code> … <code class="docutils literal notranslate"><span class="pre">End_Integration_Options</span></code> code block. Specification blocks can occur in any order or ommitted.</p>
+<p>The complete command looks as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nDMaterial ASDPlasticMaterial $tag
+   $YieldFunctionType
+   $PlasticFlowType $
+   ElasticityType
+   $IV_TYPE
+   Begin_Internal_Variables
+      $InternalVariable1 $$double_value1 $$double_value2... $$double_valueN1
+      $InternalVariable2 $$double_value1 $$double_value2... $$double_valueN2
+      #... (depends on how many internal variables the particular selected model has)
+   End_Internal_Variables
+   Begin_Model_Parameters
+      $ModelParameters1 $$double_value1
+      $ModelParameters2 $$double_value2
+      #... (depends on how many model parameters the particular selected model has)
+   End_Model_Parameters
+   Begin_Integration_Options
+      f_relative_tol $double_value
+      stress_relative_tol $double_value
+      n_max_iterations $int_value
+      return_to_yield_surface (0 or 1)
+      method (string) : Forward_Euler | Runge_Kutta_45_Error_Control
+   End_Integration_Options
+</pre></div>
+</div>
+<p>Explanation</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$tag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Unique tag identifying this material.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$YieldFunctionType</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Mandatory. Yield function to be used -&gt; <a class="reference internal" href="ASDPlasticMaterial/YieldFunctions.html#yieldfunctiontype"><span class="std std-ref">Yield Functions</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>$PlasticFlowType</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Mandatory. Plastic flow direction to be used -&gt; <a class="reference internal" href="ASDPlasticMaterial/PlasticFlowType.html#plasticflowtype"><span class="std std-ref">Plastic Flow Directions</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>$ElasticityType</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Mandatory. Elastic model to be used -&gt; <a class="reference internal" href="ASDPlasticMaterial/ElasticityType.html#elasticitytype"><span class="std std-ref">Elasticity Types</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>$IV_TYPE</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Mandatory. Hardening model for internal variables. Admitted types depend on YF, PF, and EL chosen.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Begin_Internal_Variables</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. Marks the beginning of the code block to set the internal variables. If ommitted, all internal variables are initialized to zero. You can specify as many of the following variables as wanted. Ommitted variables are initialized to zero. Number and name of variables that can be set is model dependent (once YF, PF, and EL are specified)</p></td>
+</tr>
+<tr class="row-even"><td><p>$InternalVariable1</p></td>
+<td><p><a href="#id8"><span class="problematic" id="id9">|list of name/value pairs|</span></a></p></td>
+<td><p>Initial value of internal variable1. Dimension depends on internal variable type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$InternalVariable2</p></td>
+<td><p><a href="#id10"><span class="problematic" id="id11">|list of name/value pairs|</span></a></p></td>
+<td><p>Initial value of internal variable2.</p></td>
+</tr>
+<tr class="row-even"><td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>… (input as many as model supports)</p></td>
+</tr>
+<tr class="row-odd"><td><p>End_Internal_Variables</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Mandatory if block started. Marks the end of the code block to set the internal variables</p></td>
+</tr>
+<tr class="row-even"><td><p>Begin_Model_Parameters</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. Marks the beginning of the code block to set the model parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p>$ModelParameters</p></td>
+<td><p><a href="#id12"><span class="problematic" id="id13">|list of name/value pairs|</span></a></p></td>
+<td><p>Values for parameters of the models to be used. This depends on the particular choices of <code class="docutils literal notranslate"><span class="pre">$YieldFunctionType</span></code>, <code class="docutils literal notranslate"><span class="pre">$PlasticFlowType</span></code>, <code class="docutils literal notranslate"><span class="pre">$ElasticityType</span></code>, and <code class="docutils literal notranslate"><span class="pre">$IV_type</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>… (input as many as model supports)</p></td>
+</tr>
+<tr class="row-odd"><td><p>End_Model_Parameters</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Mandatory if block started. Marks the beginning of the code block to set the model parameters</p></td>
+</tr>
+<tr class="row-even"><td><p>Begin_Integration_Options</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Optional. Marks the beginning of the code block to set the integration options. You can set any ammount</p></td>
+</tr>
+<tr class="row-odd"><td><p>End_Integration_Options</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Mandatory if block started. Marks the beginning of the code block to set the model parameters</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">The <a class="reference internal" href="ASDPlasticMaterial/YieldFunctions.html#yieldfunctiontype"><span class="std std-ref">Yield Functions</span></a>, <a class="reference internal" href="ASDPlasticMaterial/PlasticFlowType.html#plasticflowtype"><span class="std std-ref">Plastic Flow Directions</span></a>, and <a class="reference internal" href="ASDPlasticMaterial/ElasticityType.html#elasticitytype"><span class="std std-ref">Elasticity Types</span></a> have different variables and parameters to be set.</div>
+</div>
+<div class="admonition-specification-of-internal-variables-iv-type admonition">
+<p class="admonition-title">Specification of internal variables (<code class="docutils literal notranslate"><span class="pre">$IV_TYPE</span></code>)</p>
+<p>All internal variables are specified in a single string with no spaces. Internal variables specifications are separated with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>. After the name of the internal variable, the name of the hardening function must be provided in parenthesis. The specification string must end in a colon. The syntax is, thus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">InternalVariable1</span><span class="p">(</span><span class="n">HardeningFunction1</span><span class="p">):</span><span class="n">InternalVariable2</span><span class="p">(</span><span class="n">HardeningFunction2</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Internal variables are required for the yield function and plastic flow direction (see speficic components for details), and all internal variables must be provided with their hardening function otherwise instantiation fails.</p>
+</div>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>Any internal variable or parameter that is not specified is set to zero by default.</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Arguments detailed description</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ASDPlasticMaterial/YieldFunctions.html">3.1.6.19.1. Yield Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/YieldFunctions.html#vonmises-yf">VonMises_YF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/YieldFunctions.html#druckerprager-yf">DruckerPrager_YF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/YieldFunctions.html#roundedmohrcoulomb-yf">RoundedMohrCoulomb_YF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ASDPlasticMaterial/PlasticFlowType.html">3.1.6.19.2. Plastic Flow Directions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/PlasticFlowType.html#id1">VonMises_PF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/PlasticFlowType.html#id2">DruckerPrager_PF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/PlasticFlowType.html#id3">ConstantDilatancy_PF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ASDPlasticMaterial/ElasticityType.html">3.1.6.19.3. Elasticity Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/ElasticityType.html#id1">LinearIsotropic3D_EL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/ElasticityType.html#id2">DuncanChang_EL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ASDPlasticMaterial/HardeningFunctions.html">3.1.6.19.4. Hardening Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/HardeningFunctions.html#hardening-functions-for-scalar-valued-internal-variables">Hardening Functions for Scalar-Valued Internal Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASDPlasticMaterial/HardeningFunctions.html#hardening-functions-for-tensor-valued-internal-variables">Hardening Functions for Tensor-Valued Internal Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="asdplasticmaterial-theory">
+<span id="asdplastictheory"></span><h2><span class="section-number">3.1.6.19.5. </span>ASDPlasticMaterial Theory<a class="headerlink" href="#asdplasticmaterial-theory" title="Permalink to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ASDPlasticMaterial</span></code> internally uses Voigt notation to represent tensors.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\newcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\state}{\sigma, \left\lbrace iv \right\rbrace, \left\lbrace param \right\rbrace }
+\newcommand{\matorvec}[2]{
+ \left[\begin{array}{#1}
+     #2
+ \end{array}\right]
+ }
+\vec{\epsilon} = \matorvec{c}{\epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \gamma_{12} \\ \gamma_{23} \\ \gamma_{13} }
+\vec{\sigma} = \matorvec{c}{\sigma_{11} \\ \sigma_{22} \\ \sigma_{22} \\ \tau_{12} \\ \tau_{23} \\ \tau_{13} }\end{split}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\gamma_{ij} = 2 \epsilon_{ij}\)</span>.</p>
+<p>The material recieves the total (trial) strain <span class="math notranslate nohighlight">\(\vec{\epsilon}^{\text{trial}}\)</span> from the finite element that contains it. From this, the trial strain increment is computed by subtracting the previously committed total strain:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \vec{\epsilon}^{\text{trial}} = \vec{\epsilon}^{\text{trial}} - \vec{\epsilon}^{\text{commit}}\]</div>
+<p>The elastic trial stress increment is computed using the elasticity law (depending on choice of <code class="docutils literal notranslate"><span class="pre">$ElasticityType</span></code>), which may depend on stress (<span class="math notranslate nohighlight">\(\sigma\)</span>) internal variables (represented as the list of internal variables of the model <span class="math notranslate nohighlight">\(\left\lbrace iv \right\rbrace\)</span>) and parameters (represented as the list of parameters of the model <span class="math notranslate nohighlight">\(\left\lbrace param \right\rbrace\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\Delta \vec{\sigma}^{\text{trial}} = \vec{E}^{\text{current}}(\state) \Delta \vec{\epsilon}^{\text{trial}}\]</div>
+<p><span class="math notranslate nohighlight">\(\vec{E}^{\text{current}}(\state )\)</span> is the 6x6 elastic tangent operator. The trial strain is computed as <span class="math notranslate nohighlight">\(\mathbf{\sigma}^{\text{trial}} = \mathbf{\sigma}^{\text{commit}} + \Delta \sigma^{\text{trial}}\)</span>. With this predictor, the yield-function (<span class="math notranslate nohighlight">\(f(\state )\)</span>) is evaluated to see whether the stress point falls inside or outside the yield surface (depending on choice of <code class="docutils literal notranslate"><span class="pre">$YieldFunctionType</span></code>). If it falls inside, then the step is elastic and the integration stops. Otherwise, we need to do some plasticity for which the explicit Forward-Euler version will be used to present all components.</p>
+<p>The exact intersection point with the yield function is computed iteratively with a robust Brent algorithm. The trial stress increment is advanced to the yield-surface intersection point and plastic integration continues. Starting from <span class="math notranslate nohighlight">\(\Delta \epsilon^{\text{trial}}\)</span> corresponding to a <span class="math notranslate nohighlight">\(\Delta \sigma^{\text{trial}}\)</span>  on the yield surface, the strain increment is separated into elastic and plastic components (the “trial” qualifier es removed and implied in what follows):</p>
+<div class="math notranslate nohighlight">
+\[\Delta \vec{\epsilon}   = \Delta \epsilon^{el} + \Delta \epsilon^{pl}\]</div>
+<p>The plastic increment comes from:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \vec{\epsilon}^{pl}   = \Delta \lambda \cdot \mathbf{m} (\state)\]</div>
+<p>Where the vector <span class="math notranslate nohighlight">\(\mathbf{m} (\state)\)</span> is the plastic flow direction defined with the <code class="docutils literal notranslate"><span class="pre">$PlasticFlowType</span></code> option and :math:<a href="#id2"><span class="problematic" id="id3">`</span></a>Delta lambda` is the plastic multiplier defined as:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \lambda\ = \dfrac{ \vec{n}^T E \Delta \vec{\epsilon} }{ \vec{n}^T E \Delta \vec{m} - H }\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\mathbf{n} (\state)\)</span> is the outward normal to the yield surface, and <span class="math notranslate nohighlight">\(H\)</span> is the hardening term due to internal variable evolution. For example, if the model has two internal variables <span class="math notranslate nohighlight">\(s\)</span> a scalar internal variable and  <span class="math notranslate nohighlight">\(\vec{T}\)</span> a tensor internal variable (e.g. <span class="math notranslate nohighlight">\(\left\lbrace iv \right\rbrace = \left\lbrace s,\, \vec{T} \right\rbrace\)</span>), the hardening term is computed with:</p>
+<div class="math notranslate nohighlight">
+\[H = \left.\dfrac{\partial f}{\partial s}\right\Vert_{(\state)} h_s(\state) + \left.\dfrac{\partial f}{\partial \vec{T}}\right\Vert_{(\state)} h_s(\state) \cdot \vec{h}_T(\state)\]</div>
+<p>Here the hardening functions of the scalar internal varialbe (a scalar) <span class="math notranslate nohighlight">\(h_s(\state)\)</span> and the tensor internal variable <span class="math notranslate nohighlight">\(\vec{h}_T(\state)\)</span> are introduced. These are specified using the <code class="docutils literal notranslate"><span class="pre">$IV_type</span></code> option.</p>
+<p>Finally, the trial stress increment considering plasticity is computed using:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \vec{\sigma}^{\text{trial}} = \vec{E}(\state) \cdot \Delta \vec{\epsilon}^{pl}\]</div>
+<p>And the new trial state of the material is computed:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\vec{\sigma}^{\text{trial}} = \vec{\sigma}^{\text{commit}} + \Delta \vec{\sigma}^{\text{trial}}\\s^{\text{trial}} = s^{\text{commit}} + \Delta \lambda  h_s(\state)\\\vec{T}^{\text{trial}} = \vec{T}^{\text{commit}} + \Delta \lambda  \vec{h}_T(\state)\end{aligned}\end{align} \]</div>
+<p>After this, an aditional algorithm can be called to return the stress point to the yield surface (recommended) as well as specific provisions in case integration is ocurring near an apex of the yield surface.</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">3.1.6.19.6. </span>Integration Options<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$f_relative_tol</p></td>
+<td><p><a href="#id14"><span class="problematic" id="id15">|double|</span></a></p></td>
+<td><p>Relative tolerance to evaluate the yield function crossing.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$stress_relative_tol</p></td>
+<td><p><a href="#id16"><span class="problematic" id="id17">|double|</span></a></p></td>
+<td><p>Tolerance for the convergece of the integration algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p>$n_max_iterations</p></td>
+<td><p><a href="#id18"><span class="problematic" id="id19">|int|</span></a></p></td>
+<td><p>Maximum number of iterations for constitutive integration.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$return_to_yield_surface</p></td>
+<td><p><a href="#id20"><span class="problematic" id="id21">|0 or 1|</span></a></p></td>
+<td><p>Whether to apply a return to yield surface algorithm after integration convergence.</p></td>
+</tr>
+<tr class="row-even"><td><p>$method</p></td>
+<td><p><em>string</em></p></td>
+<td><p>Constitutive integration method. Options: <code class="docutils literal notranslate"><span class="pre">Forward_Euler</span></code>, <code class="docutils literal notranslate"><span class="pre">Runge_Kutta_45_Error_Control</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The default integration method is <strong>Runge_Kutta_45_Error_Control</strong> that uses the classical RK45 ODE integration algorithm employing a 4-th order prediction of the stress increment together with a 5-order prediction to estimate the integration error. In this scheme the strain increment provided by the element to the Gauss point is sub-divided into sub-increments, a process which is automated such that the provided <strong>$stress_relative_tol</strong> is met. This method is provided as a robust standard method which is applicable across all possible combinations of components, although there are possibly better approaches for specific cases which might become available in the future.</p>
+<p>The different parameters are activated depending on the integration algorithm selected. The <em>Forward_Euler</em> algorithm only uses the <strong>$return_to_yield_surface</strong> parameter, while <strong>Runge_Kutta_45_Error_Control</strong> uses the rest.</p>
+<p>The <strong>$f_relative_tol</strong> parameter comes into play when the yield surface is being crossed, that is, when the previous (committed) stress is within the yield surface and the elastic prediction of the stress increment brings the stress state beyond the yield surface. In that case, an elastic increment occurs until the yield surface is touched which requires iterations with the Brent root finding algorithm. This is used by both currently available integration methods.</p>
+</div>
+<div class="section" id="other-features">
+<span id="id5"></span><h2><span class="section-number">3.1.6.19.7. </span>Other Features<a class="headerlink" href="#other-features" title="Permalink to this heading">¶</a></h2>
+<div class="admonition-general-parameters admonition">
+<p class="admonition-title">General parameters</p>
+<p>These parameters are defined for all models.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MassDensity</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p>Defines the material mass density <span class="math notranslate nohighlight">\(\rho\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">InitialP0</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p>Defines the initial mean pressure at which material constants will be evaluated at the first step.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition-responses-setresponse-and-getresponse-behavior admonition">
+<p class="admonition-title">Responses  (<cite>setResponse</cite> and <cite>getResponse</cite> behavior)</p>
+<ul class="simple">
+<li><p><em>Valid queries for recorders</em>. <cite>stresses</cite> for stress, <cite>strains</cite> for strains, and <cite>pstrains</cite> for plastic strains.</p></li>
+<li><p>You can also request any and all internal variables by their specific name as an output.</p></li>
+</ul>
+</div>
+<div class="admonition-setparameter-behavior admonition">
+<p class="admonition-title"><cite>setParameter</cite> behavior</p>
+<ul class="simple">
+<li><p>Not yet provided.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="implementation-details">
+<h2><span class="section-number">3.1.6.19.8. </span>Implementation details<a class="headerlink" href="#implementation-details" title="Permalink to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ASDPlasticMaterial</span></code> is implemented using C++ template metaprogramming, with a header-only design and using the “eigen” C++ library for high-performance array operations. This design provides modularity and the ability to mix and match components to create new models, while also providing high-performance because runtime polymorphism is avoided.</p>
+</div>
+<div class="section" id="example">
+<h2><span class="section-number">3.1.6.19.9. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h2>
+<p>The following example defines an instance of <code class="docutils literal notranslate"><span class="pre">ASDPlasticMaterial</span></code> with a Drucker-Prager yield function, a constant dilatancy plastic-flow direction, elastic-isotropic elasticity law and linear hardening for both internal variables.</p>
+<div class="admonition-tcl-code admonition">
+<p class="admonition-title">TCL code</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span>nDMaterial ASDPlasticMaterial 1 \
+    DruckerPrager_YF \
+    ConstantDilatancy_PF \
+    LinearIsotropic3D_EL \
+    BackStress(TensorLinearHardeningFunction):VonMisesRadius(ScalarLinearHardeningFunction): \
+    Begin_Internal_Variables \
+        VonMisesRadius 1. \
+        BackStress 0. 0. 0. 0. 0. 0. \
+    End_Internal_Variables \
+    Begin_Model_Parameters \
+        YoungsModulus 1. \
+        PoissonsRatio 0. \
+        TensorLinearHardeningParameter 0. \
+        ScalarLinearHardeningParameter 0. \
+        Dilatancy 0.02 \
+        MassDensity 2000. \
+    End_Model_Parameters
+</pre></div>
+</div>
+</div>
+<div class="admonition-python-code admonition">
+<p class="admonition-title">Python code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ops</span><span class="o">.</span><span class="n">nDMaterial</span><span class="p">(</span><span class="s2">&quot;ASDPlasticMaterial&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;DruckerPrager_YF&quot;</span><span class="p">,</span>
+<span class="s2">&quot;ConstantDilatancy_PF&quot;</span><span class="p">,</span>
+<span class="s2">&quot;LinearIsotropic3D_EL&quot;</span><span class="p">,</span>
+<span class="s2">&quot;BackStress(TensorLinearHardeningFunction):VonMisesRadius(ScalarLinearHardeningFunction):&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Begin_Internal_Variables&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;VonMisesRadius&quot;</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span>
+    <span class="s2">&quot;BackStress&quot;</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+<span class="s2">&quot;End_Internal_Variables&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Begin_Model_Parameters&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;YoungsModulus&quot;</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span>
+    <span class="s2">&quot;PoissonsRatio&quot;</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+    <span class="s2">&quot;TensorLinearHardeningParameter&quot;</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+    <span class="s2">&quot;ScalarLinearHardeningParameter&quot;</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+    <span class="s2">&quot;Dilatancy&quot;</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span>
+    <span class="s2">&quot;MassDensity&quot;</span><span class="p">,</span> <span class="mf">2000.</span><span class="p">,</span>
+<span class="s2">&quot;End_Model_Parameters&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>If you subject this material to strain-controlled cyclic loading you get the following response.</p>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../../../_images/example1_fig2.png"><img alt="stress-strain response of the material" src="../../../../_images/example1_fig2.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.6.4 </span><span class="caption-text">(Left) strain response with input strain history in blue and plastic strains in orange. (Right) stress response.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Plotted in principal-stress space you can see the material soften as it dilates.</p>
+<div class="figure align-default" id="id7">
+<a class="reference internal image-reference" href="../../../../_images/example1_fig1.png"><img alt="../../../../_images/example1_fig1.png" src="../../../../_images/example1_fig1.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.6.5 </span><span class="caption-text">Response of the material in principal-stress space with Drucker-Prager surface for reference.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>Code Developed by: <strong>José A. Abell</strong> (UANDES, Chile and ASDEA), <strong>Guido Camata</strong> and <strong>Massimo Petracca</strong>  (ASDEA Software, Italy).</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

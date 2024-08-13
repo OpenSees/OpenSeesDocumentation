@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.10.25. ElasticTubularJoint Element &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.10.26. Joint2D Element" href="Joint2D.html" />
+    <link rel="prev" title="3.1.10.24. BeamColumnJoint Element" href="BeamColumnJoint.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beamIntegration.html">3.1.9. Beam integration Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.10. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.10.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.10.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.10.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.10.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.10.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ModElasticBeam.html">3.1.10.6. Modified Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.10.7. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.10.8. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.10.9. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.10.10. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.10.11. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.10.12. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.10.13. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.10.14. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.10.15. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.10.16. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MEFI.html">3.1.10.17. MEFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellT3.html">3.1.10.18. ASDShellT3 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.10.19. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.10.20. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.10.21. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.10.22. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.10.23. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BeamColumnJoint.html">3.1.10.24. BeamColumnJoint Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.10.25. ElasticTubularJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Joint2D.html">3.1.10.26. Joint2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Inno3DPnPJoint.html">3.1.10.27. Inno3DPnPJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LehighJoint2D.html">3.1.10.28. LehighJoint2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.10.29. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.10.30. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.10.31. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.10.32. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.10.33. RockingBC Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIFluidBoundaryElement2D.html">3.1.10.34. FSIFluidBoundaryElement2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIFluidElement2D.html">3.1.10.35. FSIFluidElement2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIInterfaceElement2D.html">3.1.10.36. FSIInterfaceElement2D Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.11. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.12. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.13. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../element.html"><span class="section-number">3.1.10. </span>Element Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.10.25. </span>ElasticTubularJoint Element</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/model/elements/ElasticTubularJoint.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="elastictubularjoint-element">
+<h1><span class="section-number">3.1.10.25. </span>ElasticTubularJoint Element<a class="headerlink" href="#elastictubularjoint-element" title="Permalink to this heading">¶</a></h1>
+<p>This command is used to construct an ElasticTubularJoint element object, which models joint flexibility of tubular joints in two dimensional analysis of any structure having tubular joints.</p>
+<div class="section" id="command-lines">
+<h2><span class="section-number">3.1.10.25.1. </span>Command Lines<a class="headerlink" href="#command-lines" title="Permalink to this heading">¶</a></h2>
+<p>TCL:</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">ElasticTubularJoint</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">$Brace_Diameter</span> <span class="pre">$Brace_Angle</span> <span class="pre">$E</span> <span class="pre">$Chord_Diameter</span> <span class="pre">$Chord_Thickness</span> <span class="pre">$Chord_Angle</span></span></dt>
+<dd></dd></dl>
+
+<p>Python:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="element">
+<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">'ElasticTubularJoint'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eleTag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jNode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Brace_Diameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Brace_Angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Chord_Diameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Chord_Thickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Chord_Angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#element" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>where:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$eleTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Unique element object tag</p></td>
+</tr>
+<tr class="row-odd"><td><p>$iNode</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>First end node- it is always located on the chord axis</p></td>
+</tr>
+<tr class="row-even"><td><p>$jNode</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Second end node - it is always located on the chord wall</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Brace_Diameter</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Outer diameter of brace</p></td>
+</tr>
+<tr class="row-even"><td><p>$Brace_Angle</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Angle between brace and chord axis 0 &lt; Brace_Angle &lt; 90</p></td>
+</tr>
+<tr class="row-odd"><td><p>$E</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Young’s Modulus</p></td>
+</tr>
+<tr class="row-even"><td><p>$Chord_Diameter</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Outer diameter of chord</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Chord_Thickness</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Thickness of chord</p></td>
+</tr>
+<tr class="row-even"><td><p>$Chord_Angle</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Angle between chord axis and global x-axis 0 &lt; Chord_Angle &lt; 180</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="examples">
+<h2><span class="section-number">3.1.10.25.2. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<div class="admonition-command-lines admonition">
+<p class="admonition-title">Command Lines</p>
+<p>The following example constructs constructs a ElasticTubularJoint joint element with element tag <em>1</em>, that is connected to nodes <em>1</em> and <em>2</em>. The brace diameter is <em>0.25</em> m, intersection angle is <em>45</em> degrees, Young’s modulus is <em>210e9</em>, outer diameter and thickness of the chord are <em>0.50</em> m and <em>0.016</em> m respectively, and angle between chord axis and global horizontal axis is <em>45</em> degrees.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">element</span><span class="w"> </span>ElasticTubularJoint<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mf">0.25</span><span class="w"> </span><span class="mi">45</span><span class="w"> </span><span class="mi">210</span>E<span class="o">+</span><span class="mi">09</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.016</span><span class="w"> </span><span class="mi">45</span><span class="k">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTubularJoint&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mf">210E+09</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.016</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-references admonition">
+<p class="admonition-title">References</p>
+<p>More information available in the following reference:</p>
+<ol class="arabic simple">
+<li><p>Alanjari, P., Asgarian, B., &amp; Salari, N. (2015). Elastic tubular joint element for modelling of multi-brace, uni-planar tubular connections. Ships and Offshore Structures, 10(4), 404–415. <a class="reference external" href="https://doi.org/10.1080/17445302.2014.942077">https://doi.org/10.1080/17445302.2014.942077</a></p></li>
+</ol>
+</div>
+<p>Code developed by: M. Kia and P. Alanjari, Sharif University of Technology and K. N. Toosi University of Technology, Tehran, Iran.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>
