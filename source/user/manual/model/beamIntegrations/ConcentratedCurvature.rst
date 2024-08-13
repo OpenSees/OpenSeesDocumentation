@@ -41,4 +41,4 @@ Axial must be defined in terms of axial force vs axial strain, etc. All deformat
 
 Note 2: Use an elastic section which defines elastic moment-curvature, force-strain deformations
 
-Code Developed by, 2024: |Silvia Mazzoni (Silvia's Brainery) & Michael Scott (Oregon State University)|
+Code Developed (2023) by: |Silvia Mazzoni (Silvia's Brainery) & Michael Scott (Oregon State University)|
