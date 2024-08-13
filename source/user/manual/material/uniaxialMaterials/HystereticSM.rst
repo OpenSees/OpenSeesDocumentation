@@ -6,7 +6,7 @@ HystereticSM Material
 This command is used to construct a uniaxial multilinear hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. This material is an extension of the Hysteretic Material -- the envelope can be defined 2,3, 4,5,6 or 7 points, while the original one only had 2 or 3.
 *The positive and negative backbone of this material do not need to have the same number of segments. 
 *This material also has the option to degrade the envelope using the degEnv parameters. -- this option will be available soon
-*This material also has additional DCR-type recorder output.
+*This material also has additional DCR-type recorder output (this is still a work in progress).
 
 Tcl interpreter:
 
