@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.10.6. Modified Elastic Beam Column Element &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.10.7. Gradient Inelastic (GI) Beam-Column Element" href="gradientInelasticBeamColumn.html" />
+    <link rel="prev" title="3.1.10.5. Elastic Beam Column Element" href="elasticBeamColumn.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beamIntegration.html">3.1.9. Beam integration Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.10. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.10.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.10.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.10.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.10.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.10.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.10.6. Modified Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.10.7. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.10.8. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.10.9. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.10.10. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.10.11. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.10.12. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.10.13. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.10.14. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.10.15. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.10.16. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MEFI.html">3.1.10.17. MEFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellT3.html">3.1.10.18. ASDShellT3 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.10.19. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.10.20. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.10.21. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.10.22. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.10.23. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BeamColumnJoint.html">3.1.10.24. BeamColumnJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticTubularJoint.html">3.1.10.25. ElasticTubularJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Joint2D.html">3.1.10.26. Joint2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Inno3DPnPJoint.html">3.1.10.27. Inno3DPnPJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LehighJoint2D.html">3.1.10.28. LehighJoint2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.10.29. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.10.30. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.10.31. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.10.32. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.10.33. RockingBC Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIFluidBoundaryElement2D.html">3.1.10.34. FSIFluidBoundaryElement2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIFluidElement2D.html">3.1.10.35. FSIFluidElement2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIInterfaceElement2D.html">3.1.10.36. FSIInterfaceElement2D Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.11. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.12. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.13. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../element.html"><span class="section-number">3.1.10. </span>Element Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.10.6. </span>Modified Elastic Beam Column Element</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/model/elements/ModElasticBeam.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="modified-elastic-beam-column-element">
+<span id="modelasticbeam"></span><h1><span class="section-number">3.1.10.6. </span>Modified Elastic Beam Column Element<a class="headerlink" href="#modified-elastic-beam-column-element" title="Permalink to this heading">¶</a></h1>
+<p>This command is used to construct a ModElasticBeam2d element object.
+This element should be used for modeling of a structural element with an equivalent combination of one elastic element with stiffness-proportional damping, and two springs at its two ends with no stiffness proportional damping to represent a prismatic section.
+The modeling technique is based on a number of analytical studies discussed in Zareian and Medina (2010) and Zareian and Krawinkler (2009) and is utilized in order to solve problems related to numerical damping in dynamic analysis of frame structures with concentrated plasticity springs.</p>
+<p>The arguments depend on the dimension of the problem, <code class="docutils literal notranslate"><span class="pre">ndm</span></code>:</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ndm=2</span></code> (two-dimensional problem):</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">ModElasticBeam2d</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">$A</span> <span class="pre">$E</span> <span class="pre">$Iz,</span> <span class="pre">$K11,</span> <span class="pre">$K33,</span> <span class="pre">$K44,</span> <span class="pre">$transfTag</span> <span class="pre">&lt;-mass</span> <span class="pre">$massDens&gt;</span> <span class="pre">&lt;-cMass&gt;</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$eleTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Unique element object tag</p></td>
+</tr>
+<tr class="row-odd"><td><p>$iNode $jNode</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>End node tags</p></td>
+</tr>
+<tr class="row-even"><td><p>$A</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Cross-sectional area of element</p></td>
+</tr>
+<tr class="row-odd"><td><p>$E</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Young’s Modulus</p></td>
+</tr>
+<tr class="row-even"><td><p>$G</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Shear Modulus</p></td>
+</tr>
+<tr class="row-odd"><td><p>$J</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Torsional moment of inertia of cross section</p></td>
+</tr>
+<tr class="row-even"><td><p>$Iy</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Second moment of area about the local y-axis</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Iz</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Second moment of area about the local z-axis</p></td>
+</tr>
+<tr class="row-even"><td><p>$K11, K33, K44</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Stiffness modifiers—see notes below</p></td>
+</tr>
+<tr class="row-odd"><td><p>$secTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Identifier for previously-defined section object</p></td>
+</tr>
+<tr class="row-even"><td><p>$transfTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Identifier for previously-defined coordinate-transformation object</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;-mass $massDens&gt;</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Element mass per unit length (optional: default = 0.0)</p></td>
+</tr>
+<tr class="row-even"><td><p>-cMass</p></td>
+<td><p><em>string</em></p></td>
+<td><p>To form consistent mass matrix (optional)</p></td>
+</tr>
+</tbody>
+</table>
+<p>For <code class="docutils literal notranslate"><span class="pre">ndm=3</span></code> (three-dimensional problem):</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">ModElasticBeam2d</span> <span class="pre">$eleTag</span> <span class="pre">$iNode</span> <span class="pre">$jNode</span> <span class="pre">$A</span> <span class="pre">$E</span> <span class="pre">$Iz,</span> <span class="pre">$K11y,</span> <span class="pre">$K33y,</span> <span class="pre">$K44y,</span> <span class="pre">$K11z,</span> <span class="pre">$K33z,</span> <span class="pre">$K44z,</span> <span class="pre">$transfTag</span> <span class="pre">&lt;-mass</span> <span class="pre">$massDens&gt;</span> <span class="pre">&lt;-cMass&gt;</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$eleTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Unique element object tag</p></td>
+</tr>
+<tr class="row-odd"><td><p>$iNode $jNode</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>End node tags</p></td>
+</tr>
+<tr class="row-even"><td><p>$A</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Cross-sectional area of element</p></td>
+</tr>
+<tr class="row-odd"><td><p>$E</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Young’s Modulus</p></td>
+</tr>
+<tr class="row-even"><td><p>$G</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Shear Modulus</p></td>
+</tr>
+<tr class="row-odd"><td><p>$J</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Torsional moment of inertia of cross section</p></td>
+</tr>
+<tr class="row-even"><td><p>$Iy</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Second moment of area about the local y-axis</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Iz</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Second moment of area about the local z-axis</p></td>
+</tr>
+<tr class="row-even"><td><p>$K11y, K33y, K44y</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Stiffness modifiers for bending about the local y-axis—see notes below</p></td>
+</tr>
+<tr class="row-odd"><td><p>$K11z, K33z, K44z</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Stiffness modifiers for bending about the local z-axis—see notes below</p></td>
+</tr>
+<tr class="row-even"><td><p>$secTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Identifier for previously-defined section object</p></td>
+</tr>
+<tr class="row-odd"><td><p>$transfTag</p></td>
+<td><p><em>integer</em></p></td>
+<td><p>Identifier for previously-defined coordinate-transformation object</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;-mass $massDens&gt;</p></td>
+<td><p><em>float</em></p></td>
+<td><p>Element mass per unit length (optional: default = 0.0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>-cMass</p></td>
+<td><p><em>string</em></p></td>
+<td><p>To form consistent mass matrix (optional)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Element Formation:</strong></p>
+<p>For structural elements with time invariant moment gradient, a prismatic beam element is to be replaced with a prismatic beam element composed of semi-rigid rotational springs at the ends and an elastic beam element in the middle.
+The rotational stiffness at the ends of the original beam element is <span class="math notranslate nohighlight">\(K_e=6EI/L\)</span> (where <span class="math notranslate nohighlight">\(E\)</span> is the modulus of elasticity, <span class="math notranslate nohighlight">\(I\)</span> the moment of inertia, and <span class="math notranslate nohighlight">\(L\)</span> the length of the beam), and the ratio of the rotational spring stiffness, <span class="math notranslate nohighlight">\(K_s\)</span>, to the elastic beam stiffness, <span class="math notranslate nohighlight">\(K_e\)</span>, of the modified beam element is defined as <span class="math notranslate nohighlight">\(n=K_s/K_e\)</span>.</p>
+<p><strong>Elastic Element with 2-end Springs:</strong></p>
+<ul class="simple">
+<li><p>The elastic element in between the two springs should have an elastic moment of inertia equal to <span class="math notranslate nohighlight">\(I_{mod}=(n+1)/n \cdot I\)</span>.</p></li>
+<li><p>The “n” times stiff rotational springs should have an elastic stiffness of <span class="math notranslate nohighlight">\(Ks=6n \cdot EI_{mod}/L\)</span>.</p></li>
+<li><p>The elastic element should have an elastic stiffness coefficient <span class="math notranslate nohighlight">\(K_{44}=6 \cdot (1+n)/(2+3n)\)</span>.</p></li>
+<li><p>The elastic element should have an elastic stiffness coefficient <span class="math notranslate nohighlight">\(K_{11}=K_{33}=(1+2n)/(1+n) \cdot K_{44}\)</span>.</p></li>
+<li><p>The modified stiffness coefficient bmod for stiffness proportional damping of the elastic element is <span class="math notranslate nohighlight">\(b_{mod}=1+(1/2n) \cdot b\)</span>.</p></li>
+</ul>
+<p><strong>Elastic Element with 1-end Spring:</strong></p>
+<ul class="simple">
+<li><p>The elastic element in between the two springs should have an elastic moment of inertia equal to <span class="math notranslate nohighlight">\(I_mod=(n+1)/n \cdot I\)</span>.</p></li>
+<li><p>The “n” times stiff rotational springs should have an elastic stiffness of <span class="math notranslate nohighlight">\(K_s=6n \cdot EI_{mod}/L\)</span>.</p></li>
+<li><p>The elastic element should have an elastic stiffness coefficient <span class="math notranslate nohighlight">\(K_{44}=6n/(1+3n)\)</span>.</p></li>
+<li><p>The elastic element should have an elastic stiffness coefficient <span class="math notranslate nohighlight">\(K_{11}=(1+2 \cdot n)/(1+n) \cdot K_{44}\)</span>.</p></li>
+<li><p>The elastic element should have an elastic stiffness coefficient <span class="math notranslate nohighlight">\(K_{33} = 2K_{44}\)</span>.</p></li>
+<li><p>The modified stiffness coefficient bmod for stiffness proportional damping of the elastic element is <span class="math notranslate nohighlight">\(b_{mod}=1+(1/2n) \cdot b\)</span>.</p></li>
+</ul>
+<p><strong>References:</strong></p>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Zareian, F. and Medina, R. A. (2010). “A practical method for proper modeling of structural damping in inelastic plane structural systems,” Computers &amp; Structures, Vol. 88, 1-2, pp. 45-53.</p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">2</span></dt>
+<dd><p>Zareian, F. and Krawinkler, H. (2009). “Simplified performance-based earthquake engineering” Technical Report 169, The John A. Blume Earthquake Engineering Research Center, Department of Civil Engineering, Stanford University, Stanford, CA.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">3</span></dt>
+<dd><p><a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Elastic_Beam_Column_Element_with_Stiffness_Modifiers">OpenSees Wiki page for ModElasticBeam2d</a></p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

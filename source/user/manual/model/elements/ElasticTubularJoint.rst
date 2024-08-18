@@ -7,7 +7,7 @@ This command is used to construct an ElasticTubularJoint element object, which m
 
 
 Command Lines
-"""""""""""""""""""""""
+""""""""""""""
 
 TCL:
 

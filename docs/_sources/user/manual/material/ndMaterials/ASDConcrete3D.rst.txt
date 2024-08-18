@@ -21,6 +21,7 @@ ASDConcrete3D Material
    <-implex> <-implexControl $implexErrorTolerance $implexTimeReductionLimit> <-implexAlpha $alpha>
    <-crackPlanes $nct $ncc $smoothingAngle>
    <-eta $eta> <-tangent> <-autoRegularization $lch_ref> <-Kc $Kc>
+   <-cdf $cdf>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -52,6 +53,7 @@ ASDConcrete3D Material
 
       Effect of :math:`K_c` on the triaxial-compression part of the failure surface.
    "
+   -cdf $cdf, |string| + |float|, "Optional (default = 0). The Cross-Damage-Factor (cdf) control the dilatancy of the material. cdf should be >= 0. The larger cdf, the smaller the dilatancy. 0 is the optimal value for concrete."
 
 Theory
 """"""
@@ -141,8 +143,8 @@ Usage Notes
 References
 """"""""""
 
-.. [Petracca2022] | Petracca, M., Camata, G., Spacone, E., & Pelà, L. (2022). "Efficient Constitutive Model for Continuous Micro-Modeling of Masonry Structures" International Journal of Architectural Heritage, 1-13 (`Link to article <https://www.researchgate.net/profile/Luca-Pela/publication/363656245_Efficient_Constitutive_Model_for_Continuous_Micro-Modeling_of_Masonry_Structures/links/6332e7f1165ca22787785134/Efficient-Constitutive-Model-for-Continuous-Micro-Modeling-of-Masonry-Structures.pdf>`_)
+.. [Petracca2022] Petracca, M., Camata, G., Spacone, E., & Pelà, L. (2022). "Efficient Constitutive Model for Continuous Micro-Modeling of Masonry Structures" International Journal of Architectural Heritage, 1-13 (`Link to article <https://www.researchgate.net/profile/Luca-Pela/publication/363656245_Efficient_Constitutive_Model_for_Continuous_Micro-Modeling_of_Masonry_Structures/links/6332e7f1165ca22787785134/Efficient-Constitutive-Model-for-Continuous-Micro-Modeling-of-Masonry-Structures.pdf>`_)
 
-.. [Oliver2008] | Oliver, J., Huespe, A. E., & Cante, J. C. (2008). "An implicit/explicit integration scheme to increase computability of non-linear material and contact/friction problems" Computer Methods in Applied Mechanics and Engineering, 197(21-24), 1865-1889 (`Link to article <https://core.ac.uk/download/pdf/325948712.pdf>`_)
+.. [Oliver2008] Oliver, J., Huespe, A. E., & Cante, J. C. (2008). "An implicit/explicit integration scheme to increase computability of non-linear material and contact/friction problems" Computer Methods in Applied Mechanics and Engineering, 197(21-24), 1865-1889 (`Link to article <https://core.ac.uk/download/pdf/325948712.pdf>`_)
 
 Code Developed by: **Massimo Petracca** at ASDEA Software, Italy.

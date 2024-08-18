@@ -6,14 +6,14 @@ ASDShellQ4 Element
 This command is used to construct an ASDShellQ4 element object. The ASDShellQ4 element is a 4-node general purpose thick shell element with the following features:
 
 #. The membrane behavior is enhanced with the **AGQ6-I** [ChenEtAl2004]_ formulation, which makes the element almost insensitive to geometry distortion, as opposed to standard iso-parametric elements.
-#. The drilling DOF is treated with the **Hughes-Brezzi** [HughesEtAl1989]_ formulation, with special care to avoid membrane locking, using a 1 point quadrature plus stabilization.
+#. The drilling DOF is treated with the **Hughes-Brezzi** [HughesEtAl1989]_ formulation, with special care to avoid membrane locking, using a 1 point quadrature plus stabilization. This formulation constrains the drilling DOFs to the rigid body rotation via a penalty parameter as a function of the initial in-plane shear modulus. However, when using strain-softening materials, this (elastic) constraint may overstiffen the element as the in-plane shear modulus degrades. As a remedy in such a situation, the user can choose to make this constraint non-linear.
 #. The plate bending part is treated using the **MITC4** [DvorkinEtAl1984]_ [BatheEtAl1985]_ formulation, to avoid the well known transverse shear locking behavior of thick plate elements.
 #. It can be used to model both **flat** and **warped** geometries.
 #. Kinematics can be either **linear** or **corotational**. The corotational kinematics is based on the work of Felippa et al., i.e. the **EICR** [Felippa2000]_ [FelippaEtAl2005]_ (Element Independent Corotational formulation). Finite rotations are treated with Quaternions.
 #. It uses a full 2x2 Gauss quadrature, so it has a total of 4 integration points.
 
 
-.. function:: element ASDShellQ4 $eleTag $n1 $n2 $n3 $n4 $secTag <-corotational>
+.. function:: element ASDShellQ4 $eleTag $n1 $n2 $n3 $n4 $secTag <-corotational> <-noeas> <-drillingStab $drillingStab> <-drillingNL> <-damp $dampTag> <-local $x1 $x2 $x3>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -23,9 +23,14 @@ This command is used to construct an ASDShellQ4 element object. The ASDShellQ4 e
    $n1 $n2 $n3 $n4, 4 |integer|, the four nodes defining the element (-ndm 3 -ndf 6)
    $secTag, |integer|, unique integer tag associated with previously-defined SectionForceDeformation object
    -corotational, |string|, "optional flag, if provided, the element uses non-linear kinematics, suitable for large displacement/rotation problems"
+   -noeas, |string|, "optional flag, if provided, the membrane behavior will not be enhanced with the AGQ6-I enhanced assumed strain formulation."
+   -drillingStab $drillingStab, |string| + |float|, "optional flag, if provided, the user can specify the stabilization parameter $drillingStab to stabilize the 1-point quadrature drilling DOF formulation (default = 0.01)."
+   -drillingNL, |string|, "optional flag, if provided, the Hughes-Brezzi drilling DOF formulation considers the non-linear behavior of the section."
+   -damp $dampTag, |string| + |integer|, "optional, to activate elemental damping as per :ref:`elementalDamping <elementalDamping>`"
+   -local $x1 $x2 $x3, |string| + 3 |float|, "optional, if provided it will be used as the local-x axis of the element (otherwise the default local X will be the direction of the 1-2 side). Note: it will be automatically normalized and projected onto the element plane. It must not be zero or parallel to the shell's normal vector."
 
 
-.. figure:: ASDShellQ4_geometry.png
+.. figure:: figures/ASDShellQ4/ASDShellQ4_geometry.png
 	:align: center
 	:figclass: align-center
 
@@ -44,7 +49,14 @@ This command is used to construct an ASDShellQ4 element object. The ASDShellQ4 e
        *  **$secTag** is the 1-based index of the integration point (1 to 4).
        *  '**$secArg1 ... $secArgN**' are the arguments required by the SectionDeformationObject at the requested integration point.
 
-.. admonition:: Example 
+.. admonition:: Example 1 - Cantilever Bending Roll-up (corotational)
+
+   | A Cantilever beam is subjected to a total end-moment about the Y axis :math:`M_y = n 2 \pi EI/L`, where :math:`n` is the number of rotations (2 in this example).
+   | :download:`figures/ASDShellQ4/ASDShellQ4_Example_GNL_BendingRollUp.py`
+   .. image:: figures/ASDShellQ4/ASDShellQ4_Example_GNL_BendingRollUp.png
+      :width: 30%
+
+.. admonition:: Example 2
 
    1. **Tcl Code**
 
@@ -108,7 +120,7 @@ This command is used to construct an ASDShellQ4 element object. The ASDShellQ4 e
 
 Code Developed by: **Massimo Petracca** at ASDEA Software, Italy.
 
-.. [ChenEtAl2004] | Chen, Xiao-Ming, et al. "Membrane elements insensitive to distortion using the quadrilateral area coordinate method." Computers & Structures 82.1 (2004): 35-54. (`Link to article <http://www.paper.edu.cn/scholar/showpdf/MUT2ANwINTT0Ax5h>`_)
+.. [ChenEtAl2004] Chen, Xiao-Ming, et al. "Membrane elements insensitive to distortion using the quadrilateral area coordinate method." Computers & Structures 82.1 (2004): 35-54. (`Link to article <http://www.paper.edu.cn/scholar/showpdf/MUT2ANwINTT0Ax5h>`_)
 .. [HughesEtAl1989] Hughes, Thomas JR, and F. Brezzi. "On drilling degrees of freedom." Computer methods in applied mechanics and engineering 72.1 (1989): 105-121. (`Link to article <https://www.sciencedirect.com/science/article/pii/0045782589901242>`_)
 .. [DvorkinEtAl1984] Dvorkin, Eduardo N., and Klaus-Jurgen Bathe. "A continuum mechanics based four-node shell element for general non-linear analysis." Engineering computations (1984). (`Link to article <https://www.researchgate.net/profile/Eduardo_Dvorkin/publication/235313212_A_Continuum_mechanics_based_four-node_shell_element_for_general_nonlinear_analysis/links/00b7d52611d8813ffe000000.pdf>`_)
 .. [BatheEtAl1985] Bathe, Klaus-Jurgen, and Eduardo N. Dvorkin. "A four-node plate bending element based on Mindlin/Reissner plate theory and a mixed interpolation." International Journal for Numerical Methods in Engineering 21.2 (1985): 367-383. (`Link to article <http://www.simytec.com/docs/Short_communicaion_%20four_node_plate.pdf>`_)
