@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.10.36. FSIInterfaceElement2D Element &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1.11. Time Series Command" href="../timeSeries.html" />
+    <link rel="prev" title="3.1.10.35. FSIFluidElement2D Element" href="FSIFluidElement2D.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beamIntegration.html">3.1.9. Beam integration Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.10. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.10.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.10.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.10.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.10.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.10.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ModElasticBeam.html">3.1.10.6. Modified Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.10.7. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.10.8. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.10.9. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.10.10. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.10.11. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.10.12. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.10.13. E-SFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellQ4.html">3.1.10.14. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.10.15. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.10.16. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MEFI.html">3.1.10.17. MEFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellT3.html">3.1.10.18. ASDShellT3 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.10.19. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.10.20. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.10.21. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.10.22. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.10.23. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BeamColumnJoint.html">3.1.10.24. BeamColumnJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticTubularJoint.html">3.1.10.25. ElasticTubularJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Joint2D.html">3.1.10.26. Joint2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Inno3DPnPJoint.html">3.1.10.27. Inno3DPnPJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LehighJoint2D.html">3.1.10.28. LehighJoint2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.10.29. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.10.30. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.10.31. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.10.32. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.10.33. RockingBC Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIFluidBoundaryElement2D.html">3.1.10.34. FSIFluidBoundaryElement2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIFluidElement2D.html">3.1.10.35. FSIFluidElement2D Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.10.36. FSIInterfaceElement2D Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.11. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.12. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.13. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../element.html"><span class="section-number">3.1.10. </span>Element Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.10.36. </span>FSIInterfaceElement2D Element</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/user/manual/model/elements/FSIInterfaceElement2D.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fsiinterfaceelement2d-element">
+<span id="fsiinterfaceelement2d"></span><h1><span class="section-number">3.1.10.36. </span>FSIInterfaceElement2D Element<a class="headerlink" href="#fsiinterfaceelement2d-element" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="description">
+<h2><span class="section-number">3.1.10.36.1. </span>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<p>This command is used to construct an FSIInterfaceElement2D element object. The FSIInterfaceElement2D element is a 2-node linear acoustic-structure interface element object with the following features:</p>
+<ol class="arabic simple">
+<li><p>It is based on the Eulerian pressure formulation (<a class="reference internal" href="#zienkiewiczetal1978" id="id1"><span>[ZienkiewiczEtAl1978]</span></a> , <a class="reference internal" href="#zienkiewiczetal2000" id="id2"><span>[ZienkiewiczEtAl2000]</span></a> , <a class="reference internal" href="#lokkeetal2017" id="id3"><span>[LøkkeEtAl2017]</span></a> ) for (Class I) fluid-structure interaction problems.</p></li>
+<li><p>It couples the structure and fluid domains.</p></li>
+<li><p>It uses a 2 integration points Gauss quadrature.</p></li>
+<li><p>It has three DOFs per node: two displacements and one pressure DOF. The nodes on the fluid side of the interface between the acoustic/fluid and the solid domains share the same coordinates.</p></li>
+</ol>
+</div>
+<div class="section" id="input-parameters">
+<h2><span class="section-number">3.1.10.36.2. </span>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">FSIInterfaceElement2D</span> <span class="pre">$eleTag</span> <span class="pre">$n1</span> <span class="pre">$n2</span> <span class="pre">$rho</span> <span class="pre">&lt;-thickness</span> <span class="pre">$thickness&gt;</span></span></dt>
+<dd></dd></dl>
+
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$eleTag</p></td>
+<td><p>integer</p></td>
+<td><p>unique integer tag identifying element object</p></td>
+</tr>
+<tr class="row-odd"><td><p>$n1 $n2</p></td>
+<td><p>2 integers</p></td>
+<td><p>the two nodes defining the element (-ndm 2 -ndf 3)</p></td>
+</tr>
+<tr class="row-even"><td><p>$rho</p></td>
+<td><p>float</p></td>
+<td><p>the mass density of the fluid domain (acoustic medium)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Optional:</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>$thickness</p></td>
+<td><p>float</p></td>
+<td><p>the thickness in 2D problems (default 1.0).</p></td>
+</tr>
+</tbody>
+</table>
+<div class="align-center figure" id="id5">
+<a class="reference internal image-reference" href="../../../../_images/FSIInterfaceElement2D_geometry.png"><img alt="../../../../_images/FSIInterfaceElement2D_geometry.png" src="../../../../_images/FSIInterfaceElement2D_geometry.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.10.44 </span><span class="caption-text"><strong>Figure 1. Nodes and local coordinate system</strong></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="theory">
+<h2><span class="section-number">3.1.10.36.3. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">¶</a></h2>
+<p>For additional documentation regarding the derivation of the implemented finite elements (<a class="reference external" href="https://github.com/esimbort/OpenSeesDocumentation/blob/master/source/user/manual/model/elements/FSIFluidElement2D.rst">FSIFluidElement2D</a>, <a class="reference external" href="https://github.com/esimbort/OpenSeesDocumentation/blob/master/source/user/manual/model/elements/FSIFluidBoundaryElement2D.rst">FSIFluidBoundaryElement2D</a>, FSIInterfaceElement2D) based on the Eulerian pressure formulation, please refer to the attached PDF document (<a class="reference external" href="https://drive.google.com/drive/folders/1QnWEC6kJrFct5korO89bqL1lcn7zi4yG">Link to PDF</a>)</p>
+</div>
+<div class="section" id="example-on-how-to-define-a-single-interface-element">
+<h2><span class="section-number">3.1.10.36.4. </span>Example on how to define a single interface element<a class="headerlink" href="#example-on-how-to-define-a-single-interface-element" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># set up a 2D-3DOF model</span>
+<span class="nv">model</span><span class="w"> </span>Basic<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">3</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">11</span><span class="w">  </span><span class="mf">0.0</span><span class="w">  </span><span class="mf">0.0</span>
+<span class="nv">node</span><span class="w"> </span><span class="mi">22</span><span class="w">  </span><span class="mf">1.0</span><span class="w">  </span><span class="mf">1.0</span>
+
+<span class="c"># create the acoustic-structure interface element with input variable rhoW</span>
+<span class="k">set</span><span class="w"> </span>rhoW<span class="w"> </span><span class="mf">1.000000</span>e<span class="o">+</span><span class="mo">03</span><span class="k">;</span><span class="w">  </span><span class="c"># mass density of water</span>
+<span class="nv">element</span><span class="w"> </span>FSIInterfaceElement2D<span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="mi">11</span><span class="w"> </span><span class="mi">22</span><span class="w">   </span><span class="nv">$rhoW</span><span class="w"> </span><span class="o">-</span>thickness<span class="w"> </span><span class="mf">1.0</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up a 2D-3DOF model</span>
+<span class="n">model</span><span class="p">(</span><span class="s1">&#39;Basic&#39;</span><span class="p">,</span> <span class="s1">&#39;-ndm&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;-ndf&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">node</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">node</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1"># create the acoustic-structure interface element with input variable rhoW</span>
+<span class="n">rhoW</span> <span class="o">=</span> <span class="mf">1.000000e+03</span>  <span class="c1"># mass density of water</span>
+<span class="n">element</span><span class="p">(</span><span class="s1">&#39;FSIInterfaceElement2D&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="n">rhoW</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Code Developed, implemented and tested by:</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="mailto:m&#46;petracca&#37;&#52;&#48;asdea&#46;net">Massimo Petracca</a> (ASDEA Software),</div>
+<div class="line"><a class="reference external" href="mailto:egsimbortzeballos&#37;&#52;&#48;ucsd&#46;edu">Enrique Simbort</a> (UC San Diego),</div>
+<div class="line"><a class="reference external" href="mailto:jpconte&#37;&#52;&#48;ucsd&#46;edu">Joel Conte</a> (UC San Diego).</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">3.1.10.36.5. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<dl class="citation">
+<dt class="label" id="zienkiewiczetal1978"><span class="brackets"><a class="fn-backref" href="#id1">ZienkiewiczEtAl1978</a></span></dt>
+<dd><p>Zienkiewicz O.C., Bettess P. (1978) “Fluid-structure dynamic interaction and wave forces. An introduction to numerical treatment”, Inter. J. Numer. Meth. Eng.., 13(1): 1–16. (<a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/nme.1620130102">Link to article</a>)</p>
+</dd>
+<dt class="label" id="zienkiewiczetal2000"><span class="brackets"><a class="fn-backref" href="#id2">ZienkiewiczEtAl2000</a></span></dt>
+<dd><p>Zienkiewicz O.C., Taylor R.L. (2000) “The Finite Element Method”, Butterworth-Heinemann, Vol.1, 5th Ed., Ch.19.</p>
+</dd>
+<dt class="label" id="lokkeetal2017"><span class="brackets"><a class="fn-backref" href="#id3">LøkkeEtAl2017</a></span></dt>
+<dd><p>Løkke A., Chopra A.K. (2017) “Direct finite element method for nonlinear analysis of semi-unbounded dam–water–foundation rock systems”, Earthquake Engineering and Structural Dynamics 46(8): 1267–1285. (<a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2855">Link to article</a>)</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.6.19.4. Hardening Functions &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.1.6.20. OrthotropicRAConcrete Material" href="../OrthotropicRAConcrete.html" />
+    <link rel="prev" title="3.1.6.19.3. Elasticity Types" href="ElasticityType.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../ndMaterial.html">3.1.6. nDMaterial Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ElasticIsotropic.html">3.1.6.1. Elastic Isotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ElasticOrthotropic.html">3.1.6.2. Elastic Orthotropic Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../J2Plasticity.html">3.1.6.3. J2 Plasticity Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../DruckerPrager.html">3.1.6.4. Drucker Prager Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ManzariDafalias.html">3.1.6.5. Manzari Dafalias Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BoundingCamClay.html">3.1.6.6. Bounding Cam Clay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PM4Sand.html">3.1.6.7. PM4Sand Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PM4Silt.html">3.1.6.8. PM4Silt Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PressureIndependentMultiYield.html">3.1.6.9. Pressure Independent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PressureDependentMultiYield.html">3.1.6.10. Pressure Dependent Multi Yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PressureDependentMultiYield02.html">3.1.6.11. Pressure Dependent Multi Yield 02</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../J2CyclicBoundingSurface.html">3.1.6.12. J2CyclicBoundingSurface Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SAniSandMS.html">3.1.6.13. SANISAND-MS Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Orthotropic.html">3.1.6.14. Orthotropic Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Series3D.html">3.1.6.15. Series3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Parallel3D.html">3.1.6.16. Parallel3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../InitStrain.html">3.1.6.17. InitStrain Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ASDConcrete3D.html">3.1.6.18. ASDConcrete3D Material</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../ASDPlasticMaterial.html">3.1.6.19. ASDPlasticMaterial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../OrthotropicRAConcrete.html">3.1.6.20. OrthotropicRAConcrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SmearedSteelDoubleLayer.html">3.1.6.21. SmearedSteelDoubleLayer Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../section.html">3.1.7. section Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../../ndMaterial.html"><span class="section-number">3.1.6. </span>nDMaterial Command</a> &raquo;</li>
+        
+          <li><a href="../ASDPlasticMaterial.html"><span class="section-number">3.1.6.19. </span>ASDPlasticMaterial</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.6.19.4. </span>Hardening Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/user/manual/material/ndMaterials/ASDPlasticMaterial/HardeningFunctions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hardening-functions">
+<span id="hardeningfunctions"></span><h1><span class="section-number">3.1.6.19.4. </span>Hardening Functions<a class="headerlink" href="#hardening-functions" title="Permalink to this heading">¶</a></h1>
+<p>Internal variables evolve accoding with their own laws to provide plastic hardening to the constitutive model. These laws are specified as hardening functions that specify an ODE for the evolution of the internal variable. Two types of internal variable are considered: scalar-valued and tensor-valued internal variables. These evolve in the following manner:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\newcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\state}{\sigma, \left\lbrace iv \right\rbrace, \left\lbrace param \right\rbrace }\\s^{\text{trial}} = s^{\text{commit}} + \Delta \lambda  h_s(\state)\\\vec{T}^{\text{trial}} = \vec{T}^{\text{commit}} + \Delta \lambda  \vec{h}_T(\state)\end{aligned}\end{align} \]</div>
+<p>Where <span class="math notranslate nohighlight">\(s\)</span> is a scalar-valued internal variable and <span class="math notranslate nohighlight">\(\vec{T}\)</span> is tensor-valued. These functions are used to define the hardening term in the plastic multiplier (see <a class="reference internal" href="../ASDPlasticMaterial.html#asdplastictheory"><span class="std std-ref">ASDPlasticMaterial Theory</span></a>).</p>
+<p>Available functions:</p>
+<div class="section" id="hardening-functions-for-scalar-valued-internal-variables">
+<span id="scalarvaluedhf"></span><h2>Hardening Functions for Scalar-Valued Internal Variables<a class="headerlink" href="#hardening-functions-for-scalar-valued-internal-variables" title="Permalink to this heading">¶</a></h2>
+<p><strong>ScalarLinearHardeningFunction</strong></p>
+<p>Provides linear hardening for the scalar variable, as a function of the plastic flow direction :</p>
+<div class="math notranslate nohighlight">
+\[h_s(\state) = H \cdot \sqrt{  (2/3) \vec{m} \cdot \vec{m} }\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\vec{m}\)</span> is the plastic flow direction computed at the current state.</p>
+<div class="admonition-parameters-required admonition">
+<p class="admonition-title">Parameters required</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>IV Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ScalarLinearHardeningParameter</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p><span class="math notranslate nohighlight">\(H\)</span></p></td>
+<td><p>Linear hardening constant</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="hardening-functions-for-tensor-valued-internal-variables">
+<span id="tensorvaluedhf"></span><h2>Hardening Functions for Tensor-Valued Internal Variables<a class="headerlink" href="#hardening-functions-for-tensor-valued-internal-variables" title="Permalink to this heading">¶</a></h2>
+<p><strong>TensorLinearHardeningFunction</strong></p>
+<p>Provides linear hardening for the tensor variable, as a function of the deviatoric plastic flow direction :</p>
+<div class="math notranslate nohighlight">
+\[h_T(\state) = H \vec{m}_{dev}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\vec{m}_{dev}\)</span> is the deviatoric part of the plastic flow direction computed at the current state.</p>
+<div class="admonition-parameters-required admonition">
+<p class="admonition-title">Parameters required</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>IV Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TensorLinearHardeningFunction</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p><span class="math notranslate nohighlight">\(H\)</span></p></td>
+<td><p>Linear hardening constant</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>ArmstrongFrederickHardeningFunction</strong></p>
+<p>A type of hardening with saturation.</p>
+<div class="math notranslate nohighlight">
+\[h_T(\state) = (2 / 3) h_a \vec{m}_{dev} - c_r \sqrt{  (2/3) \vec{m}_{dev} \cdot \vec{m}_{dev} } \cdot  \vec{T}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\vec{m}_{dev}\)</span> is the deviatoric part of the plastic flow direction computed at the current state. Model paramters <span class="math notranslate nohighlight">\(h_a\)</span> and <span class="math notranslate nohighlight">\(c_r\)</span>  specify the maximum (saturation) value and the saturation rate. The saturation value for the internal variable will be such that:</p>
+<div class="math notranslate nohighlight">
+\[\Vert \vec{T} \Vert = \sqrt{\dfrac{2}{3}} \dfrac{h_a}{c_r}\]</div>
+<p>Setting <span class="math notranslate nohighlight">\(c_r = 0\)</span> results in linear hardening.</p>
+<div class="admonition-parameters-required admonition">
+<p class="admonition-title">Parameters required</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>IV Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AF_ha</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p><span class="math notranslate nohighlight">\(h_a\)</span></p></td>
+<td><p>Model constant for the linear part of the hardening model. Controls the rate of saturation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AF_cr</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p><span class="math notranslate nohighlight">\(c_r\)</span></p></td>
+<td><p>Model constant for saturation part of the hardening model. Controls the saturation value.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>
