@@ -1,11 +1,13 @@
 .. _ConcentratedPlasticity:
 
-ConcentratedPlasticity beamIntegration
+ConcentratedPlasticity
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This command creates a Concentrated-Plasticity beamIntegration object. This integration places one plastic-rotation integration point at each element end and three elastic-curvature integration points along the length.
 
 .. function:: beamIntegration ConcentratedPlasticity $integrationTag $secTagI $secTagJ $secTagE
+
+.. function:: beamIntegration('ConcentratedPlasticity',integrationTag,secTagI,secTagJ,secTagE)
 
 .. list-table:: 
    :widths: 10 10 40
@@ -32,4 +34,4 @@ Note 1: The plastic-deformations behavior at the element ends represents finite 
 
 Note 2: Use an elastic section which defines elastic moment-curvature, force-strain deformations
 
-Code Developed by: |Silvia Mazzoni (Silvia's Brainery) & Michael Scott (Oregon State University)|
+Code Developed (2023) by: |Silvia Mazzoni (Silvia's Brainery) & Michael Scott (Oregon State University)|
