@@ -1,12 +1,38 @@
 Python Install
 ==============
 
-There are a number of steps to getting an OpenSees python script up and running. These work whether you are running on Windows, Mac, or a Linux operating system.
+There are two different Python packages that can be used to use OpenSees from Python:
 
-Install Python
---------------
+1. `OpenSeesRT <https://pypi.org/project/opensees>`_ is a Python package developed at UC Berkeley which leverages a novel interpreter architecture to provide both a Tcl interpreter and natural Python interpreter simultaneously.
+2. `OpenSeesPy <https://pypi.org/project/openseespy>`_ is a Python package developed at Oregon State University which provides Python bindings that are designed to feel like Tcl.
 
-* Install  Python from `<https://python.org>`_
+Once `Python <https://python.org>`_ is installed, both packages can be installed using ``pip`` on Windows, Mac, or a Linux operating system.
+
+
+Install OpenSeesRT
+------------------
+
+* To install
+
+   ::
+
+      python -m pip install opensees
+
+
+* To upgrade
+
+   ::
+
+      python -m pip install --upgrade opensees
+
+
+   
+Import OpenSeesRT
+-----------------
+
+::
+
+   import opensees.openseesrt as ops
 
 
 Install OpenSeesPy
@@ -35,3 +61,4 @@ Import OpenSeesPy
 ::
 
    import openseespy.opensees as ops
+
