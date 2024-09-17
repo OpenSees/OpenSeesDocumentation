@@ -10,8 +10,8 @@ Once `Python <https://python.org>`_ is installed, both packages can be installed
 
 
 
-Install OpenSeesPy
-------------------
+OpenSeesPy
+----------
 
 * To install
 
@@ -28,18 +28,16 @@ Install OpenSeesPy
       python -m pip install --upgrade openseespy
 
       python -m pip install --user --upgrade openseespy
+ 
+* To import
 
-   
-Import OpenSeesPy
------------------
+  ::
 
-::
-
-   import openseespy.opensees as ops
+     import openseespy.opensees as ops
 
 
-Install OpenSeesRT
-------------------
+OpenSeesRT
+----------
 
 * To install
 
@@ -55,11 +53,9 @@ Install OpenSeesRT
       python -m pip install --upgrade opensees
 
 
-   
-Import OpenSeesRT
------------------
+* To import
 
-::
+  ::
 
-   import opensees.openseesrt as ops
+     import opensees.openseesrt as ops
 
