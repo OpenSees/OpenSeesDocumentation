@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.7.3. LayeredMembraneSection &mdash; OpenSees Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.8. Geometric Transformation Command" href="../model/geomTransf.html" />
+    <link rel="prev" title="3.1.7.2. ReinforcedConcreteLayeredMembraneSection" href="ReinforcedConcreteLayeredMembraneSection.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/OpenSeesLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Applications for Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../interpreters.html">1. OpenSees Interpreters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../userManual.html">3. Command Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../modelCommands.html">3.1. Model Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../model/model.html">3.1.1. model Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/node.html">3.1.2. node Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/spConstraints.html">3.1.3. SP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/mpConstraints.html">3.1.4. MP_Constraint Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../material/uniaxialMaterial.html">3.1.5. uniaxialMaterial Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../section.html">3.1.7. section Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ElasticSection.html">3.1.7.1. ElasticSection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReinforcedConcreteLayeredMembraneSection.html">3.1.7.2. ReinforcedConcreteLayeredMembraneSection</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.7.3. LayeredMembraneSection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../model/geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/element.html">3.1.9. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/timeSeries.html">3.1.10. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/pattern.html">3.1.11. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model/damping.html">3.1.12. Damping Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../analysisCommands.html">3.2. Analysis Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outputCommands.html">3.3. Output Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscCommands.html">3.4. Misc. Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../userExamples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messageBoard.html">5. Questions, Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/license.html">6. Copyright and License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework for Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/sourceCode.html">1. Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/build.html">2. Building Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/extend.html">4. Extending Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/contribute.html">5. Contributing Code &amp; Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/issues.html">6. Issues</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenSees Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../userManual.html"><span class="section-number">3. </span>Command Manual</a> &raquo;</li>
+        
+          <li><a href="../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
+        
+          <li><a href="../section.html"><span class="section-number">3.1.7. </span>section Command</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.7.3. </span>LayeredMembraneSection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/user/manual/section/LayeredMembraneSection.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="layeredmembranesection">
+<span id="id1"></span><h1><span class="section-number">3.1.7.3. </span>LayeredMembraneSection<a class="headerlink" href="#layeredmembranesection" title="Permalink to this heading">¶</a></h1>
+<p>This command is used to construct a LayeredMembraneSection object. It is the abstract representation for the stress-strain behavior for a layered membrane element (based on the work of Rojas et al., 2016). The LayeredMembraneSection is similar to the <strong>RCLMS</strong> class, except that this class  allows the use of nd materials available in OpenSees.</p>
+<div class="align-center figure" id="lms-fig">
+<a class="reference internal image-reference" href="../../../_images/LMS_figure.png"><img alt="../../../_images/LMS_figure.png" src="../../../_images/LMS_figure.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.7.4 </span><span class="caption-text">LayeredMembraneSection: (a) Layer discretization; (b) Strain field; (c) Resultant stress field.</span><a class="headerlink" href="#lms-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-command admonition">
+<p class="admonition-title">Command</p>
+<p>section LayeredMembraneSection $secTag $total_thickness $nLayers -mat{$Material_tags} -thick{$Thicknesses} &lt;-Eout $OutofPlaneModulus&gt;</p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$secTag</p></td>
+<td><p>integer</p></td>
+<td><p>unique section tag</p></td>
+</tr>
+<tr class="row-odd"><td><p>$total_thickness</p></td>
+<td><p>float</p></td>
+<td><p>total section thickness</p></td>
+</tr>
+<tr class="row-even"><td><p>$nLayers</p></td>
+<td><p>integer</p></td>
+<td><p>number of layers</p></td>
+</tr>
+<tr class="row-odd"><td><p>$Material_tags</p></td>
+<td><p>list int</p></td>
+<td><p>a list of <em>nLayers</em> nDMaterial tags</p></td>
+</tr>
+<tr class="row-even"><td><p>$Thicknesses</p></td>
+<td><p>list float</p></td>
+<td><p>a list of <em>nLayers</em> layers thicknesses</p></td>
+</tr>
+<tr class="row-odd"><td><p>$OutofPlaneModulus</p></td>
+<td><p>float</p></td>
+<td><p>Elasticity modulus of out of plane (optional: default = 0.0)</p></td>
+</tr>
+</tbody>
+</table>
+<p>The following recorders are available with the LayeredMembraneSection.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Recorder</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>panel_strain</p></td>
+<td><p>strains <span class="math notranslate nohighlight">\(\varepsilon_{xx}\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_{yy}\)</span>, <span class="math notranslate nohighlight">\(\gamma_{xy}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>panel_avg_stress</p></td>
+<td><p>resulting panel stresses <span class="math notranslate nohighlight">\(\sigma_{xx}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{yy}\)</span>, <span class="math notranslate nohighlight">\(\tau_{xy}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>panel_force</p></td>
+<td><p>membrane forces at panel level <span class="math notranslate nohighlight">\(N_{x}\)</span>, <span class="math notranslate nohighlight">\(N_{y}\)</span>, <span class="math notranslate nohighlight">\(N_{xy}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>layer $ilayer $Response</p></td>
+<td><p>returns material $Response for a ilayer-th layer. For available $Response(s) refer to material</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<div class="line-block">
+<div class="line">1. The <strong>LayeredMembraneSection</strong> can be used in a <code class="docutils literal notranslate"><span class="pre">MEFI</span></code> element.</div>
+<div class="line">2. The section can also be referred to as <strong>LMS</strong>.</div>
+</div>
+</div>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p>For the development of this example, the RW-A20-P10-S38 wall specimen was employed (Tran, 2012). Uniaxial concrete and steel materials are defined, along with FSAM nDMaterials used within LMS sections to represent sections of types <strong>a</strong> and <strong>b</strong>, as illustrated in Fig. 3.1.7.1(a) for the RCLMS example.</p>
+<ol class="arabic simple">
+<li><p><strong>Tcl Code</strong></p></li>
+</ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># ========================================================================================</span>
+<span class="c"># RW-A20-P10-S38 (Tran, 2012) - Definition of properties and creation of materials</span>
+<span class="c"># Basic units: N, mm</span>
+<span class="c"># ========================================================================================</span>
+<span class="c"># ----------------------------------------------------------------------------------------</span>
+<span class="c"># Create uniaxial steel materials</span>
+<span class="c"># ----------------------------------------------------------------------------------------</span>
+
+<span class="c"># steel X</span>
+<span class="k">set</span><span class="w"> </span>fyX<span class="w"> </span><span class="mf">469.93</span><span class="k">;</span><span class="w">                    </span><span class="c"># fy</span>
+<span class="k">set</span><span class="w"> </span>bx<span class="w"> </span><span class="mf">0.02</span><span class="k">;</span><span class="w">                       </span><span class="c"># strain hardening</span>
+
+<span class="c"># steel Y web</span>
+<span class="k">set</span><span class="w"> </span>fyYw<span class="w"> </span><span class="mf">409.71</span><span class="k">;</span><span class="w">                   </span><span class="c"># fy</span>
+<span class="k">set</span><span class="w"> </span>byw<span class="w"> </span><span class="mf">0.02</span><span class="k">;</span><span class="w">                      </span><span class="c"># strain hardening</span>
+
+<span class="c"># steel Y boundary</span>
+<span class="k">set</span><span class="w"> </span>fyYb<span class="w"> </span><span class="mf">429.78</span><span class="k">;</span><span class="w">                   </span><span class="c"># fy</span>
+<span class="k">set</span><span class="w"> </span>byb<span class="w"> </span><span class="mf">0.01</span><span class="k">;</span><span class="w">                      </span><span class="c"># strain hardening</span>
+
+<span class="c"># steel misc</span>
+<span class="k">set</span><span class="w"> </span>Es<span class="w"> </span><span class="mf">200000.0</span><span class="k">;</span><span class="w">                   </span><span class="c"># Young&#39;s modulus</span>
+<span class="k">set</span><span class="w"> </span>R0<span class="w"> </span><span class="mf">20.0</span><span class="k">;</span><span class="w">                       </span><span class="c"># initial value of curvature parameter</span>
+<span class="k">set</span><span class="w"> </span>A1<span class="w"> </span><span class="mf">0.925</span><span class="k">;</span><span class="w">                      </span><span class="c"># curvature degradation parameter</span>
+<span class="k">set</span><span class="w"> </span>A2<span class="w"> </span><span class="mf">0.15</span><span class="k">;</span><span class="w">                       </span><span class="c"># curvature degradation parameter</span>
+
+<span class="c"># build steel materials</span>
+<span class="nv">uniaxialMaterial</span><span class="w">  </span>Steel02<span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="nv">$fyX</span><span class="w">  </span><span class="nv">$Es</span><span class="w"> </span><span class="nv">$bx</span><span class="w">  </span><span class="nv">$R0</span><span class="w"> </span><span class="nv">$A1</span><span class="w"> </span><span class="nv">$A2</span><span class="k">;</span><span class="w"> </span><span class="c"># steel X</span>
+<span class="nv">uniaxialMaterial</span><span class="w">  </span>Steel02<span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="nv">$fyYw</span><span class="w"> </span><span class="nv">$Es</span><span class="w"> </span><span class="nv">$byw</span><span class="w"> </span><span class="nv">$R0</span><span class="w"> </span><span class="nv">$A1</span><span class="w"> </span><span class="nv">$A2</span><span class="k">;</span><span class="w"> </span><span class="c"># steel Y web</span>
+<span class="nv">uniaxialMaterial</span><span class="w">  </span>Steel02<span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="nv">$fyYb</span><span class="w"> </span><span class="nv">$Es</span><span class="w"> </span><span class="nv">$byb</span><span class="w"> </span><span class="nv">$R0</span><span class="w"> </span><span class="nv">$A1</span><span class="w"> </span><span class="nv">$A2</span><span class="k">;</span><span class="w"> </span><span class="c"># steel Y boundary</span>
+
+<span class="c"># ----------------------------------------------------------------------------------------</span>
+<span class="c"># Create uniaxial concrete materials</span>
+<span class="c"># ----------------------------------------------------------------------------------------</span>
+
+<span class="c"># unconfined</span>
+<span class="k">set</span><span class="w"> </span>fpc<span class="w"> </span><span class="o">-</span><span class="mf">47.09</span><span class="k">;</span><span class="w">                                      </span><span class="c"># peak compressive stress</span>
+<span class="k">set</span><span class="w"> </span>ec0<span class="w"> </span><span class="o">-</span><span class="mf">0.00232</span><span class="k">;</span><span class="w">                                    </span><span class="c"># strain at peak compressive stress</span>
+<span class="k">set</span><span class="w"> </span>ft<span class="w"> </span><span class="mf">2.13</span><span class="k">;</span><span class="w">                                         </span><span class="c"># peak tensile stress</span>
+<span class="k">set</span><span class="w"> </span>et<span class="w"> </span><span class="mf">0.00008</span><span class="k">;</span><span class="w">                                      </span><span class="c"># concrete strain at tension cracking</span>
+<span class="k">set</span><span class="w"> </span>Ec<span class="w"> </span><span class="mf">34766.59</span><span class="k">;</span><span class="w">                                     </span><span class="c"># Young&#39;s modulus</span>
+
+<span class="c"># confined</span>
+<span class="k">set</span><span class="w"> </span>fpcc<span class="w"> </span><span class="o">-</span><span class="mf">53.78</span><span class="k">;</span><span class="w">                                     </span><span class="c"># peak compressive stress</span>
+<span class="k">set</span><span class="w"> </span>ec0c<span class="w"> </span><span class="o">-</span><span class="mf">0.00397</span><span class="k">;</span><span class="w">                                   </span><span class="c"># strain at peak compressive stress</span>
+<span class="k">set</span><span class="w"> </span>Ecc<span class="w"> </span><span class="mf">36542.37</span><span class="k">;</span><span class="w">                                    </span><span class="c"># Young&#39;s modulus</span>
+
+<span class="c"># build concrete materials</span>
+<span class="nv">uniaxialMaterial</span><span class="w"> </span>ConcreteCM<span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="nv">$fpc</span><span class="w">  </span><span class="nv">$ec0</span><span class="w">  </span><span class="nv">$Ec</span><span class="w">  </span><span class="mf">7.16</span><span class="w"> </span><span class="mf">1.016</span><span class="w"> </span><span class="nv">$ft</span><span class="w"> </span><span class="nv">$et</span><span class="w"> </span><span class="mf">1.2</span><span class="w"> </span><span class="mi">10000</span><span class="k">;</span><span class="w">      </span><span class="c"># unconfined concrete</span>
+<span class="nv">uniaxialMaterial</span><span class="w"> </span>ConcreteCM<span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="nv">$fpcc</span><span class="w"> </span><span class="nv">$ec0c</span><span class="w"> </span><span class="nv">$Ecc</span><span class="w"> </span><span class="mf">8.44</span><span class="w"> </span><span class="mf">1.023</span><span class="w"> </span><span class="nv">$ft</span><span class="w"> </span><span class="nv">$et</span><span class="w"> </span><span class="mf">1.2</span><span class="w"> </span><span class="mi">10000</span><span class="k">;</span><span class="w">      </span><span class="c"># confined concrete</span>
+
+<span class="c"># define reinforcing ratios</span>
+<span class="k">set</span><span class="w"> </span>rouXw<span class="w"> </span><span class="mf">0.0027</span><span class="k">;</span><span class="w">   </span><span class="c"># X web</span>
+<span class="k">set</span><span class="w"> </span>rouXb<span class="w"> </span><span class="mf">0.0082</span><span class="k">;</span><span class="w">   </span><span class="c"># X boundary</span>
+<span class="k">set</span><span class="w"> </span>rouYw<span class="w"> </span><span class="mf">0.0027</span><span class="k">;</span><span class="w">   </span><span class="c"># Y web</span>
+<span class="k">set</span><span class="w"> </span>rouYb<span class="w"> </span><span class="mf">0.0323</span><span class="k">;</span><span class="w">   </span><span class="c"># Y boundary</span>
+
+<span class="c"># shear resisting mechanism parameters</span>
+
+<span class="k">set</span><span class="w"> </span>nu<span class="w"> </span><span class="mf">0.35</span><span class="k">;</span><span class="w">                </span><span class="c"># friction coefficient</span>
+<span class="k">set</span><span class="w"> </span>alfadow<span class="w"> </span><span class="mf">0.005</span><span class="k">;</span><span class="w">          </span><span class="c"># dowel action stiffness parameter</span>
+
+<span class="c"># ----------------------------------------------------------------------------------------</span>
+<span class="c"># Create FSAM nDMaterial</span>
+<span class="c"># ----------------------------------------------------------------------------------------</span>
+
+<span class="nv">nDMaterial</span><span class="w"> </span>FSAM<span class="w"> </span><span class="mi">6</span><span class="w">  </span><span class="mf">0.0</span><span class="w">  </span><span class="mi">1</span><span class="w">   </span><span class="mi">2</span><span class="w">   </span><span class="mi">4</span><span class="w">  </span><span class="nv">$rouXw</span><span class="w"> </span><span class="nv">$rouYw</span><span class="w">  </span><span class="nv">$nu</span><span class="w">  </span><span class="nv">$alfadow</span><span class="k">;</span><span class="w">   </span><span class="c"># Web (unconfined concrete)</span>
+<span class="nv">nDMaterial</span><span class="w"> </span>FSAM<span class="w"> </span><span class="mi">7</span><span class="w">  </span><span class="mf">0.0</span><span class="w">  </span><span class="mi">1</span><span class="w">   </span><span class="mi">3</span><span class="w">   </span><span class="mi">5</span><span class="w">  </span><span class="nv">$rouXb</span><span class="w"> </span><span class="nv">$rouYb</span><span class="w">  </span><span class="nv">$nu</span><span class="w">  </span><span class="nv">$alfadow</span><span class="k">;</span><span class="w">   </span><span class="c"># Boundary (confined concrete)</span>
+
+<span class="c"># ----------------------------------------------------------------------------------------</span>
+<span class="c"># Create LayeredMembraneSection section</span>
+<span class="c"># ----------------------------------------------------------------------------------------</span>
+
+<span class="k">set</span><span class="w"> </span>tw<span class="w"> </span><span class="mf">152.4</span><span class="k">;</span><span class="w">                 </span><span class="c"># Wall thickness</span>
+
+<span class="nv">section</span><span class="w"> </span>LMS<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">$tw</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>mat<span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">-</span>thick<span class="w"> </span><span class="nv">$tw</span><span class="k">;</span><span class="w">     </span><span class="c"># Section type b (wall web)</span>
+<span class="nv">section</span><span class="w"> </span>LMS<span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="nv">$tw</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>mat<span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">-</span>thick<span class="w"> </span><span class="nv">$tw</span><span class="k">;</span><span class="w">     </span><span class="c"># Section type a (wall boundary)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Python Code</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ========================================================================================</span>
+<span class="c1"># RW-A20-P10-S38 (Tran, 2012) - Definition of properties and creation of materials</span>
+<span class="c1"># Basic units: N, mm</span>
+<span class="c1"># ========================================================================================</span>
+
+<span class="c1"># ----------------------------------------------------------------------------------------</span>
+<span class="c1"># Create uniaxial steel materials</span>
+<span class="c1"># ----------------------------------------------------------------------------------------</span>
+<span class="c1"># steel x</span>
+<span class="n">fyX</span> <span class="o">=</span> <span class="mf">469.93</span>             <span class="c1"># fy</span>
+<span class="n">bx</span> <span class="o">=</span> <span class="mf">0.02</span>                <span class="c1"># strain hardening</span>
+
+<span class="c1"># steel Y web</span>
+<span class="n">fyYw</span> <span class="o">=</span> <span class="mf">409.71</span>            <span class="c1"># fy</span>
+<span class="n">byw</span> <span class="o">=</span> <span class="mf">0.02</span>               <span class="c1"># strain hardening</span>
+
+<span class="c1"># steel Y boundary</span>
+<span class="n">fyYb</span> <span class="o">=</span> <span class="mf">429.78</span>            <span class="c1"># fy</span>
+<span class="n">byb</span> <span class="o">=</span> <span class="mf">0.01</span>               <span class="c1"># strain hardening</span>
+
+<span class="c1"># steel misc</span>
+<span class="n">Es</span> <span class="o">=</span> <span class="mf">200000.0</span>            <span class="c1"># Young&#39;s modulus</span>
+<span class="n">R0</span> <span class="o">=</span> <span class="mf">20.0</span>                <span class="c1"># initial value of curvature parameter</span>
+<span class="n">A1</span> <span class="o">=</span> <span class="mf">0.925</span>               <span class="c1"># curvature degradation parameter</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="mf">0.15</span>                <span class="c1"># curvature degradation parameter</span>
+
+<span class="c1"># build steel materials</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;Steel02&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fyX</span><span class="p">,</span>  <span class="n">Es</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span>  <span class="n">R0</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">)</span>  <span class="c1"># steel X</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;Steel02&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">fyYw</span><span class="p">,</span> <span class="n">Es</span><span class="p">,</span> <span class="n">byw</span><span class="p">,</span> <span class="n">R0</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">)</span>  <span class="c1"># steel Y web</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;Steel02&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">fyYb</span><span class="p">,</span> <span class="n">Es</span><span class="p">,</span> <span class="n">byb</span><span class="p">,</span> <span class="n">R0</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">)</span>  <span class="c1"># steel Y boundary</span>
+
+<span class="c1"># ----------------------------------------------------------------------------------------</span>
+<span class="c1"># Create uniaxial concrete materials</span>
+<span class="c1"># ----------------------------------------------------------------------------------------</span>
+<span class="c1"># unconfined</span>
+<span class="n">fpc</span> <span class="o">=</span> <span class="o">-</span><span class="mf">47.09</span>             <span class="c1"># peak compressive stress</span>
+<span class="n">ec0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00232</span>           <span class="c1"># strain at peak compressive stress</span>
+<span class="n">ft</span> <span class="o">=</span> <span class="mf">2.13</span>                <span class="c1"># peak tensile stress</span>
+<span class="n">et</span> <span class="o">=</span> <span class="mf">0.00008</span>             <span class="c1"># strain at peak tensile stress</span>
+<span class="n">Ec</span> <span class="o">=</span> <span class="mf">34766.59</span>            <span class="c1"># Young&#39;s modulus</span>
+
+<span class="c1"># confined</span>
+<span class="n">fpcc</span> <span class="o">=</span> <span class="o">-</span><span class="mf">53.78</span>            <span class="c1"># peak compressive stress</span>
+<span class="n">ec0c</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00397</span>          <span class="c1"># strain at peak compressive stress</span>
+<span class="n">Ecc</span> <span class="o">=</span> <span class="mf">36542.37</span>           <span class="c1"># Young&#39;s modulus</span>
+
+<span class="c1"># build concrete materials</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;ConcreteCM&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">fpc</span><span class="p">,</span>  <span class="n">ec0</span><span class="p">,</span> <span class="n">Ec</span><span class="p">,</span> <span class="mf">7.16</span><span class="p">,</span> <span class="mf">1.016</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">et</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>      <span class="c1"># unconfined concrete</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;ConcreteCM&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fpcc</span><span class="p">,</span> <span class="n">ec0c</span><span class="p">,</span> <span class="n">Ecc</span><span class="p">,</span> <span class="mf">8.44</span><span class="p">,</span> <span class="mf">1.023</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">et</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>    <span class="c1"># confined concrete</span>
+
+<span class="c1"># define reinforcing ratios</span>
+<span class="n">rouXw</span> <span class="o">=</span> <span class="mf">0.0027</span>         <span class="c1"># X web</span>
+<span class="n">rouXb</span> <span class="o">=</span> <span class="mf">0.0082</span>         <span class="c1"># X boundary</span>
+<span class="n">rouYw</span> <span class="o">=</span> <span class="mf">0.0027</span>         <span class="c1"># Y web</span>
+<span class="n">rouYb</span> <span class="o">=</span> <span class="mf">0.0323</span>         <span class="c1"># Y boundary</span>
+
+<span class="c1"># shear resisting mechanism parameters</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="mf">0.35</span>                           <span class="c1"># friction coefficient</span>
+<span class="n">alfadow</span> <span class="o">=</span> <span class="mf">0.005</span>                     <span class="c1"># dowel action stiffness parameter</span>
+
+<span class="c1"># ----------------------------------------------------------------------------------------</span>
+<span class="c1"># Create FSAM nDMaterial</span>
+<span class="c1"># ----------------------------------------------------------------------------------------</span>
+
+<span class="n">ops</span><span class="o">.</span><span class="n">nDMaterial</span><span class="p">(</span><span class="s1">&#39;FSAM&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">rouXw</span><span class="p">,</span> <span class="n">rouYw</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">alfadow</span><span class="p">)</span>           <span class="c1"># Web (unconfined concrete)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">nDMaterial</span><span class="p">(</span><span class="s1">&#39;FSAM&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">rouXb</span><span class="p">,</span> <span class="n">rouYb</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">alfadow</span><span class="p">)</span>           <span class="c1"># Boundary (confined concrete)</span>
+
+<span class="c1"># ----------------------------------------------------------------------------------------</span>
+<span class="c1"># Create LayeredMembraneSection section</span>
+<span class="c1"># ----------------------------------------------------------------------------------------</span>
+
+<span class="n">tw</span> <span class="o">=</span> <span class="mf">152.4</span>    <span class="c1"># Wall thickness</span>
+
+<span class="n">ops</span><span class="o">.</span><span class="n">section</span><span class="p">(</span><span class="s1">&#39;LMS&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">tw</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;-mat&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;-thick&#39;</span><span class="p">,</span> <span class="n">tw</span><span class="p">)</span>    <span class="c1"># Section type b (wall web)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">section</span><span class="p">(</span><span class="s1">&#39;LMS&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">tw</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;-mat&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;-thick&#39;</span><span class="p">,</span> <span class="n">tw</span><span class="p">)</span>    <span class="c1"># Section type a (wall boundary)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>REFERENCES:</strong></p>
+<ol class="arabic simple">
+<li><p>Rojas, F., Anderson, J. C., Massone, L. M. (2016). A nonlinear quadrilateral layered membrane element with drilling degrees of freedom for the modeling of reinforced concrete walls. Engineering Structures, 124, 521-538. (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0141029616302954">link</a>).</p></li>
+<li><p>Tran, T. A. (2012). Experimental and Analytical Studies of Moderate Aspect Ratio Reinforced Concrete Structural Walls. Ph.D. Dissertation, Department of Civil and Environmental Engineering, University of California, Los Angeles. (<a class="reference external" href="https://escholarship.org/uc/item/1538q2p8">link</a>).</p></li>
+</ol>
+<p><strong>Code Developed by:</strong> F. Rojas (University of Chile), M.J. Núñez (University of Chile).</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

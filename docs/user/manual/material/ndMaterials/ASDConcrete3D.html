@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.6.16. ASDConcrete3D Material &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.6.18. ASDConcrete3D Material &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -47,8 +47,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.7. section Command" href="../../section.html" />
-    <link rel="prev" title="3.1.6.15. Series3D Material Wrapper" href="Series3D.html" /> 
+    <link rel="next" title="3.1.6.19. ASDPlasticMaterial" href="ASDPlasticMaterial.html" />
+    <link rel="prev" title="3.1.6.17. InitStrain Material Wrapper" href="InitStrain.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -123,7 +123,12 @@
 <li class="toctree-l4"><a class="reference internal" href="SAniSandMS.html">3.1.6.13. SANISAND-MS Material</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Orthotropic.html">3.1.6.14. Orthotropic Material Wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Series3D.html">3.1.6.15. Series3D Material Wrapper</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.6.16. ASDConcrete3D Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Parallel3D.html">3.1.6.16. Parallel3D Material Wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="InitStrain.html">3.1.6.17. InitStrain Material Wrapper</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.6.18. ASDConcrete3D Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDPlasticMaterial.html">3.1.6.19. ASDPlasticMaterial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OrthotropicRAConcrete.html">3.1.6.20. OrthotropicRAConcrete Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SmearedSteelDoubleLayer.html">3.1.6.21. SmearedSteelDoubleLayer Material</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
@@ -205,7 +210,7 @@
         
           <li><a href="../ndMaterial.html"><span class="section-number">3.1.6. </span>nDMaterial Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.6.16. </span>ASDConcrete3D Material</li>
+      <li><span class="section-number">3.1.6.18. </span>ASDConcrete3D Material</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -225,7 +230,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="asdconcrete3d-material">
-<span id="asdconcrete3d"></span><h1><span class="section-number">3.1.6.16. </span>ASDConcrete3D Material<a class="headerlink" href="#asdconcrete3d-material" title="Permalink to this heading">¶</a></h1>
+<span id="asdconcrete3d"></span><h1><span class="section-number">3.1.6.18. </span>ASDConcrete3D Material<a class="headerlink" href="#asdconcrete3d-material" title="Permalink to this heading">¶</a></h1>
 <a class="reference internal image-reference" href="../../../../_images/ASDConcrete3D.gif"><img alt="../../../../_images/ASDConcrete3D.gif" class="align-center" src="../../../../_images/ASDConcrete3D.gif" style="width: 20%;" /></a>
 <div class="line-block">
 <div class="line">This command is used to construct an ASDConcrete3D material object, a plastic-damage model for concrete and masonry like materials.</div>
@@ -247,6 +252,8 @@
 <span class="sig-name descname"><span class="pre">&lt;-crackPlanes</span> <span class="pre">$nct</span> <span class="pre">$ncc</span> <span class="pre">$smoothingAngle&gt;</span></span></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">&lt;-eta</span> <span class="pre">$eta&gt;</span> <span class="pre">&lt;-tangent&gt;</span> <span class="pre">&lt;-autoRegularization</span> <span class="pre">$lch_ref&gt;</span> <span class="pre">&lt;-Kc</span> <span class="pre">$Kc&gt;</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">&lt;-cdf</span> <span class="pre">$cdf&gt;</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -345,10 +352,14 @@
 </div>
 </td>
 </tr>
+<tr class="row-odd"><td><p>-cdf $cdf</p></td>
+<td><p><em>string</em> + <em>float</em></p></td>
+<td><p>Optional (default = 0). The Cross-Damage-Factor (cdf) control the dilatancy of the material. cdf should be &gt;= 0. The larger cdf, the smaller the dilatancy. 0 is the optimal value for concrete.</p></td>
+</tr>
 </tbody>
 </table>
 <div class="section" id="theory">
-<h2><span class="section-number">3.1.6.16.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.1.6.18.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">¶</a></h2>
 <div class="line-block">
 <div class="line">In the following description, all variables without subscripts refer to the current time-step, while those with the <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(n-1\)</span> subscripts refer to the same variables at the two previous (known) time steps.</div>
 <div class="line">The trial effective stress tensor is computed from the previous effective stress <span class="math notranslate nohighlight">\(\bar{\sigma}_{n}\)</span> and the trial elastic stress increment <span class="math notranslate nohighlight">\(C_{0}:\left (\varepsilon - \varepsilon_{n}\right )\)</span>:</div>
@@ -393,7 +404,7 @@
 </div>
 </div>
 <div class="section" id="usage-notes">
-<h2><span class="section-number">3.1.6.16.2. </span>Usage Notes<a class="headerlink" href="#usage-notes" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.1.6.18.2. </span>Usage Notes<a class="headerlink" href="#usage-notes" title="Permalink to this heading">¶</a></h2>
 <div class="admonition-responses admonition">
 <p class="admonition-title">Responses</p>
 <ul class="simple">
@@ -425,17 +436,13 @@
 </div>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">3.1.6.16.3. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.1.6.18.3. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <dl class="citation">
 <dt class="label" id="petracca2022"><span class="brackets">Petracca2022</span></dt>
-<dd><div class="line-block">
-<div class="line">Petracca, M., Camata, G., Spacone, E., &amp; Pelà, L. (2022). “Efficient Constitutive Model for Continuous Micro-Modeling of Masonry Structures” International Journal of Architectural Heritage, 1-13 (<a class="reference external" href="https://www.researchgate.net/profile/Luca-Pela/publication/363656245_Efficient_Constitutive_Model_for_Continuous_Micro-Modeling_of_Masonry_Structures/links/6332e7f1165ca22787785134/Efficient-Constitutive-Model-for-Continuous-Micro-Modeling-of-Masonry-Structures.pdf">Link to article</a>)</div>
-</div>
+<dd><p>Petracca, M., Camata, G., Spacone, E., &amp; Pelà, L. (2022). “Efficient Constitutive Model for Continuous Micro-Modeling of Masonry Structures” International Journal of Architectural Heritage, 1-13 (<a class="reference external" href="https://www.researchgate.net/profile/Luca-Pela/publication/363656245_Efficient_Constitutive_Model_for_Continuous_Micro-Modeling_of_Masonry_Structures/links/6332e7f1165ca22787785134/Efficient-Constitutive-Model-for-Continuous-Micro-Modeling-of-Masonry-Structures.pdf">Link to article</a>)</p>
 </dd>
 <dt class="label" id="oliver2008"><span class="brackets">Oliver2008</span></dt>
-<dd><div class="line-block">
-<div class="line">Oliver, J., Huespe, A. E., &amp; Cante, J. C. (2008). “An implicit/explicit integration scheme to increase computability of non-linear material and contact/friction problems” Computer Methods in Applied Mechanics and Engineering, 197(21-24), 1865-1889 (<a class="reference external" href="https://core.ac.uk/download/pdf/325948712.pdf">Link to article</a>)</div>
-</div>
+<dd><p>Oliver, J., Huespe, A. E., &amp; Cante, J. C. (2008). “An implicit/explicit integration scheme to increase computability of non-linear material and contact/friction problems” Computer Methods in Applied Mechanics and Engineering, 197(21-24), 1865-1889 (<a class="reference external" href="https://core.ac.uk/download/pdf/325948712.pdf">Link to article</a>)</p>
 </dd>
 </dl>
 <p>Code Developed by: <strong>Massimo Petracca</strong> at ASDEA Software, Italy.</p>
