@@ -38,5 +38,7 @@ The following contain information about secType? and the args required for each 
    section/PlateFiberSection
    section/BidirectionalSection
    section/Isolator2springSection
-
+   section/ReinforcedConcreteLayeredMembraneSection
+   section/LayeredMembraneSection
+   section/ASDCoupledHinge3D
 

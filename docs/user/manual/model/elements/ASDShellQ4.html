@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.9.13. ASDShellQ4 Element &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.10.14. ASDShellQ4 Element &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -39,14 +39,16 @@
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.9.14. Quadrilateral Element" href="Quad.html" />
-    <link rel="prev" title="3.1.9.12. E-SFI Element" href="E_SFI.html" /> 
+    <link rel="next" title="3.1.10.15. Quadrilateral Element" href="Quad.html" />
+    <link rel="prev" title="3.1.10.13. E-SFI Element" href="E_SFI.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,37 +110,49 @@
 <li class="toctree-l3"><a class="reference internal" href="../../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../section.html">3.1.7. section Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.9. Element Command</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.9.1. ZeroLength Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.9.2. ZeroLength Section Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.9.3. ZeroLengthND Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.9.4. ZeroLengthContactASDimplex Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.9.5. Elastic Beam Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.9.6. Gradient Inelastic (GI) Beam-Column Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.9.7. MVLEM_3D Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.9.8. SFI-MVLEM-3D Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.9.9. E-SFI-MVLEM-3D Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.9.10. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.9.11. Mixed Beam Element (Asymmetric Sections)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.9.12. E-SFI Element</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.9.13. ASDShellQ4 Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.9.14. Quadrilateral Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.9.15. SSPquad Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.9.16. stdBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.9.17. bbarBrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.9.18. SSPbrick Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.9.19. FourNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.9.20. TenNodeTetrahedron Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.9.21. TripleFrictionPendulumX Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.9.22. PML Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.9.23. ASDEmbeddedNode Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.9.24. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.9.25. RockingBC Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beamIntegration.html">3.1.9. Beam integration Command</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../element.html">3.1.10. Element Command</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zeroLength.html">3.1.10.1. ZeroLength Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthSection.html">3.1.10.2. ZeroLength Section Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthND.html">3.1.10.3. ZeroLengthND Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zeroLengthContactASDimplex.html">3.1.10.4. ZeroLengthContactASDimplex Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="elasticBeamColumn.html">3.1.10.5. Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ModElasticBeam.html">3.1.10.6. Modified Elastic Beam Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradientInelasticBeamColumn.html">3.1.10.7. Gradient Inelastic (GI) Beam-Column Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MVLEM_3D.html">3.1.10.8. MVLEM_3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SFI_MVLEM_3D.html">3.1.10.9. SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI_MVLEM_3D.html">3.1.10.10. E-SFI-MVLEM-3D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispBeamColumnAsym.html">3.1.10.11. Displacement-Based Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mixedBeamColumnAsym.html">3.1.10.12. Mixed Beam Element (Asymmetric Sections)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="E_SFI.html">3.1.10.13. E-SFI Element</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.10.14. ASDShellQ4 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quad.html">3.1.10.15. Quadrilateral Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPquad.html">3.1.10.16. SSPquad Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MEFI.html">3.1.10.17. MEFI Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDShellT3.html">3.1.10.18. ASDShellT3 Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stdBrick.html">3.1.10.19. stdBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bbarBrick.html">3.1.10.20. bbarBrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SSPbrick.html">3.1.10.21. SSPbrick Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FourNodeTetrahedron.html">3.1.10.22. FourNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenNodeTetrahedron.html">3.1.10.23. TenNodeTetrahedron Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BeamColumnJoint.html">3.1.10.24. BeamColumnJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElasticTubularJoint.html">3.1.10.25. ElasticTubularJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Joint2D.html">3.1.10.26. Joint2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Inno3DPnPJoint.html">3.1.10.27. Inno3DPnPJoint Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LehighJoint2D.html">3.1.10.28. LehighJoint2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TripleFrictionPendulumX.html">3.1.10.29. TripleFrictionPendulumX Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PML.html">3.1.10.30. PML Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDEmbeddedNodeElement.html">3.1.10.31. ASDEmbeddedNode Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ASDAbsorbingBoundary.html">3.1.10.32. ASDAbsorbingBoundary Element (2D and 3D)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RockingBC.html">3.1.10.33. RockingBC Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIFluidBoundaryElement2D.html">3.1.10.34. FSIFluidBoundaryElement2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIFluidElement2D.html">3.1.10.35. FSIFluidElement2D Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FSIInterfaceElement2D.html">3.1.10.36. FSIInterfaceElement2D Element</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.10. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.11. Pattern Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.12. Damping Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../timeSeries.html">3.1.11. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pattern.html">3.1.12. Pattern Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../damping.html">3.1.13. Damping Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysisCommands.html">3.2. Analysis Commands</a></li>
@@ -210,9 +224,9 @@
         
           <li><a href="../../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-          <li><a href="../element.html"><span class="section-number">3.1.9. </span>Element Command</a> &raquo;</li>
+          <li><a href="../element.html"><span class="section-number">3.1.10. </span>Element Command</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.9.13. </span>ASDShellQ4 Element</li>
+      <li><span class="section-number">3.1.10.14. </span>ASDShellQ4 Element</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,19 +246,19 @@
            <div itemprop="articleBody">
             
   <div class="section" id="asdshellq4-element">
-<span id="asdshellq4"></span><h1><span class="section-number">3.1.9.13. </span>ASDShellQ4 Element<a class="headerlink" href="#asdshellq4-element" title="Permalink to this heading">¶</a></h1>
+<span id="asdshellq4"></span><h1><span class="section-number">3.1.10.14. </span>ASDShellQ4 Element<a class="headerlink" href="#asdshellq4-element" title="Permalink to this heading">¶</a></h1>
 <p>This command is used to construct an ASDShellQ4 element object. The ASDShellQ4 element is a 4-node general purpose thick shell element with the following features:</p>
 <ol class="arabic simple">
 <li><p>The membrane behavior is enhanced with the <strong>AGQ6-I</strong> <a class="reference internal" href="#chenetal2004" id="id1"><span>[ChenEtAl2004]</span></a> formulation, which makes the element almost insensitive to geometry distortion, as opposed to standard iso-parametric elements.</p></li>
-<li><p>The drilling DOF is treated with the <strong>Hughes-Brezzi</strong> <a class="reference internal" href="#hughesetal1989" id="id2"><span>[HughesEtAl1989]</span></a> formulation, with special care to avoid membrane locking, using a 1 point quadrature plus stabilization.</p></li>
+<li><p>The drilling DOF is treated with the <strong>Hughes-Brezzi</strong> <a class="reference internal" href="ASDShellT3.html#hughesetal1989" id="id2"><span>[HughesEtAl1989]</span></a> formulation, with special care to avoid membrane locking, using a 1 point quadrature plus stabilization. This formulation constrains the drilling DOFs to the rigid body rotation via a penalty parameter as a function of the initial in-plane shear modulus. However, when using strain-softening materials, this (elastic) constraint may overstiffen the element as the in-plane shear modulus degrades. As a remedy in such a situation, the user can choose to make this constraint non-linear.</p></li>
 <li><p>The plate bending part is treated using the <strong>MITC4</strong> <a class="reference internal" href="#dvorkinetal1984" id="id3"><span>[DvorkinEtAl1984]</span></a> <a class="reference internal" href="#batheetal1985" id="id4"><span>[BatheEtAl1985]</span></a> formulation, to avoid the well known transverse shear locking behavior of thick plate elements.</p></li>
 <li><p>It can be used to model both <strong>flat</strong> and <strong>warped</strong> geometries.</p></li>
-<li><p>Kinematics can be either <strong>linear</strong> or <strong>corotational</strong>. The corotational kinematics is based on the work of Felippa et al., i.e. the <strong>EICR</strong> <a class="reference internal" href="#felippa2000" id="id5"><span>[Felippa2000]</span></a> <a class="reference internal" href="#felippaetal2005" id="id6"><span>[FelippaEtAl2005]</span></a> (Element Independent Corotational formulation). Finite rotations are treated with Quaternions.</p></li>
+<li><p>Kinematics can be either <strong>linear</strong> or <strong>corotational</strong>. The corotational kinematics is based on the work of Felippa et al., i.e. the <strong>EICR</strong> <a class="reference internal" href="ASDShellT3.html#felippa2000" id="id5"><span>[Felippa2000]</span></a> <a class="reference internal" href="ASDShellT3.html#felippaetal2005" id="id6"><span>[FelippaEtAl2005]</span></a> (Element Independent Corotational formulation). Finite rotations are treated with Quaternions.</p></li>
 <li><p>It uses a full 2x2 Gauss quadrature, so it has a total of 4 integration points.</p></li>
 </ol>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">element</span> <span class="pre">ASDShellQ4</span> <span class="pre">$eleTag</span> <span class="pre">$n1</span> <span class="pre">$n2</span> <span class="pre">$n3</span> <span class="pre">$n4</span> <span class="pre">$secTag</span> <span class="pre">&lt;-corotational&gt;</span></span></dt>
+<span class="sig-name descname"><span class="pre">element</span> <span class="pre">ASDShellQ4</span> <span class="pre">$eleTag</span> <span class="pre">$n1</span> <span class="pre">$n2</span> <span class="pre">$n3</span> <span class="pre">$n4</span> <span class="pre">$secTag</span> <span class="pre">&lt;-corotational&gt;</span> <span class="pre">&lt;-noeas&gt;</span> <span class="pre">&lt;-drillingStab</span> <span class="pre">$drillingStab&gt;</span> <span class="pre">&lt;-drillingNL&gt;</span> <span class="pre">&lt;-damp</span> <span class="pre">$dampTag&gt;</span> <span class="pre">&lt;-local</span> <span class="pre">$x1</span> <span class="pre">$x2</span> <span class="pre">$x3&gt;</span></span></dt>
 <dd></dd></dl>
 
 <table class="colwidths-given docutils align-default">
@@ -276,11 +290,31 @@
 <td><p><em>string</em></p></td>
 <td><p>optional flag, if provided, the element uses non-linear kinematics, suitable for large displacement/rotation problems</p></td>
 </tr>
+<tr class="row-even"><td><p>-noeas</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag, if provided, the membrane behavior will not be enhanced with the AGQ6-I enhanced assumed strain formulation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-drillingStab $drillingStab</p></td>
+<td><p><em>string</em> + <em>float</em></p></td>
+<td><p>optional flag, if provided, the user can specify the stabilization parameter $drillingStab to stabilize the 1-point quadrature drilling DOF formulation (default = 0.01).</p></td>
+</tr>
+<tr class="row-even"><td><p>-drillingNL</p></td>
+<td><p><em>string</em></p></td>
+<td><p>optional flag, if provided, the Hughes-Brezzi drilling DOF formulation considers the non-linear behavior of the section.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-damp $dampTag</p></td>
+<td><p><em>string</em> + <em>integer</em></p></td>
+<td><p>optional, to activate elemental damping as per <a class="reference internal" href="../damping/elementalDamping.html#elementaldamping"><span class="std std-ref">elementalDamping</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>-local $x1 $x2 $x3</p></td>
+<td><p><em>string</em> + 3 <em>float</em></p></td>
+<td><p>optional, if provided it will be used as the local-x axis of the element (otherwise the default local X will be the direction of the 1-2 side). Note: it will be automatically normalized and projected onto the element plane. It must not be zero or parallel to the shell’s normal vector.</p></td>
+</tr>
 </tbody>
 </table>
 <div class="align-center figure" id="id12">
 <img alt="../../../../_images/ASDShellQ4_geometry.png" src="../../../../_images/ASDShellQ4_geometry.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.9.15 </span><span class="caption-text">Nodes, Gauss points, local coordinate system, warped and flat geometry</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.10.15 </span><span class="caption-text">Nodes, Gauss points, local coordinate system, warped and flat geometry</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -306,8 +340,16 @@
 </li>
 </ul>
 </div>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
+<div class="admonition-example-1-cantilever-bending-roll-up-corotational admonition">
+<p class="admonition-title">Example 1 - Cantilever Bending Roll-up (corotational)</p>
+<div class="line-block">
+<div class="line">A Cantilever beam is subjected to a total end-moment about the Y axis <span class="math notranslate nohighlight">\(M_y = n 2 \pi EI/L\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of rotations (2 in this example).</div>
+<div class="line"><a class="reference download internal" download="" href="../../../../_downloads/cbe04bb38db2df63620826f3b66d227a/ASDShellQ4_Example_GNL_BendingRollUp.py"><code class="xref download docutils literal notranslate"><span class="pre">figures/ASDShellQ4/ASDShellQ4_Example_GNL_BendingRollUp.py</span></code></a></div>
+</div>
+<a class="reference internal image-reference" href="../../../../_images/ASDShellQ4_Example_GNL_BendingRollUp.png"><img alt="../../../../_images/ASDShellQ4_Example_GNL_BendingRollUp.png" src="../../../../_images/ASDShellQ4_Example_GNL_BendingRollUp.png" style="width: 30%;" /></a>
+</div>
+<div class="admonition-example-2 admonition">
+<p class="admonition-title">Example 2</p>
 <ol class="arabic simple">
 <li><p><strong>Tcl Code</strong></p></li>
 </ol>
@@ -372,9 +414,7 @@
 <p>Code Developed by: <strong>Massimo Petracca</strong> at ASDEA Software, Italy.</p>
 <dl class="citation">
 <dt class="label" id="chenetal2004"><span class="brackets"><a class="fn-backref" href="#id1">ChenEtAl2004</a></span></dt>
-<dd><div class="line-block">
-<div class="line">Chen, Xiao-Ming, et al. “Membrane elements insensitive to distortion using the quadrilateral area coordinate method.” Computers &amp; Structures 82.1 (2004): 35-54. (<a class="reference external" href="http://www.paper.edu.cn/scholar/showpdf/MUT2ANwINTT0Ax5h">Link to article</a>)</div>
-</div>
+<dd><p>Chen, Xiao-Ming, et al. “Membrane elements insensitive to distortion using the quadrilateral area coordinate method.” Computers &amp; Structures 82.1 (2004): 35-54. (<a class="reference external" href="http://www.paper.edu.cn/scholar/showpdf/MUT2ANwINTT0Ax5h">Link to article</a>)</p>
 </dd>
 <dt class="label" id="hughesetal1989"><span class="brackets"><a class="fn-backref" href="#id2">HughesEtAl1989</a></span></dt>
 <dd><p>Hughes, Thomas JR, and F. Brezzi. “On drilling degrees of freedom.” Computer methods in applied mechanics and engineering 72.1 (1989): 105-121. (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0045782589901242">Link to article</a>)</p>
