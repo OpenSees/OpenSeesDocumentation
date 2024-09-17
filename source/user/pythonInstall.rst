@@ -3,8 +3,8 @@ Python Install
 
 There are two different Python packages that can be used to use OpenSees from Python:
 
-1. `OpenSeesPy <https://pypi.org/project/openseespy>`_ is a Python package developed at Oregon State University which provides Python bindings that are designed to feel like Tcl.
-2. `OpenSeesRT <https://pypi.org/project/opensees>`_ is a Python package developed at UC Berkeley which leverages a novel interpreter architecture to provide both a Tcl interpreter and natural Python interpreter simultaneously.
+1. `openseespy <https://pypi.org/project/openseespy>`_ is a Python package developed at Oregon State University which provides Python bindings that are designed to feel like Tcl.
+2. `opensees <https://pypi.org/project/opensees>`_ is a Python package developed at UC Berkeley which leverages the new OpenSeesRT interpreter architecture to provide both a Tcl interpreter and natural Python interpreter simultaneously.
 
 Once `Python <https://python.org>`_ is installed, both packages can be installed using ``pip`` on Windows, Mac, or a Linux operating system.
 
