@@ -16,23 +16,24 @@ For a three-dimensional problem:
 .. function:: element elasticBeamColumn $eleTag $iNode $jNode $A $E $G $J $Iy $Iz $transfTag <-releasez $relcode> <-releasey $relcode> <-mass $massDens> <-cMass>
 
 .. function:: element elasticBeamColumn $eleTag $iNode $jNode $secTag $transfTag <-releasez $relcode> <-releasey $relcode> <-mass $massDens> <-cMass>
-.. csv-table:: 
+
+.. csv-table::
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
 
-   $eleTag, |integer|,	unique element object tag
-   $iNode $jNode, |integer|,  end nodes
-   $A, |float|,     cross-sectional area of element
-   $E, |float|,      Young's Modulus
-   $G, |float|,     Shear Modulus
-   $J, |float|,     torsional moment of inertia of cross section
-   $Iz, |float|,    second moment of area about the local z-axis
-   $Iy, |float|,    second moment of area about the local y-axis
-   $secTag, |integer|, identifer for previously-defined section object
-   $transfTag, |integer|,    identifier for previously-defined coordinate-transformation object
-   $relcode, |integer|, code for moment releases (0=no release, 1=release at end I, 2=release at end J, 3=release at both ends (optional, default = 0)
-   $massDens, |float|, element mass per unit length (optional: default = 0.0)
-   -cMass, |string|, to form consistent mass matrix (optional)
+   "$eleTag",       "|integer|", "Unique element object tag"
+   "$iNode $jNode", "|integer|", "End node tags"
+   "$A",            "|float|",   "Cross-sectional area of element"
+   "$E",            "|float|",   "Young's Modulus"
+   "$G",            "|float|",   "Shear Modulus"
+   "$J",            "|float|",   "Torsional moment of inertia of cross section"
+   "$Iz",           "|float|",   "Second moment of area about the local z-axis"
+   "$Iy",           "|float|",   "Second moment of area about the local y-axis"
+   "$secTag",       "|integer|", "Identifier for previously-defined section object"
+   "$transfTag",    "|integer|", "Identifier for previously-defined coordinate-transformation object"
+   "$relcode",      "|integer|", "Code for moment releases (0=no release, 1=release at end I, 2=release at end J, 3=release at both ends (optional, default = 0)"
+   "$massDens",     "|float|",   "Element mass per unit length (optional: default = 0.0)"
+   "-cMass",        "|string|",  "To form consistent mass matrix (optional)"
 
 .. note::
 
