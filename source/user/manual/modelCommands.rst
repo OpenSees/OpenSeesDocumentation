@@ -16,6 +16,7 @@ In OpenSees there are commands to add each of these types of objects to a domain
    :maxdepth: 1
 
    model/model
+   model/model_class
    model/node
    model/spConstraints
    model/mpConstraints
