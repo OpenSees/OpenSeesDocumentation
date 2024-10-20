@@ -64,18 +64,18 @@ This command is used to construct a uniaxial Giuffre-Menegotto-Pinto steel mater
 
 .. admonition:: Example 
 
-   The following is used to construct a Steel02 mataerial with a tag of **1**, a yield strength of $60.0** and an initial tangent stiffness of **30000,0**.
+   The following is used to construct a Steel02 mataerial with a tag of **1**, a yield strength of **60.0** and an initial tangent stiffness of **30000,0**.
 
    1. **Tcl Code**
 
    .. code-block:: tcl
 
-      uniaxialMaterial Steel02 60.0 30000.0 0.1 20.0 .925 .15
+      uniaxialMaterial Steel02 1 60.0 30000.0 0.1 20.0 .925 .15
 
    2. **Python Code**
 
    .. code-block:: python
 
-      uniaxialMaterial('Steel02',60.0,30000.0, 0.1, 20.0, .925, .15)
+      uniaxialMaterial('Steel02',1,60.0,30000.0, 0.1, 20.0, .925, .15)
 
 Code Developed by: |mhs|
