@@ -29,3 +29,4 @@ The following contain information about numbererType? and the args required for 
     constraint/PenaltyMethod
     constraint/TransformationMethod
     constraint/lagrangeMultipliers
+    constraint/Auto
