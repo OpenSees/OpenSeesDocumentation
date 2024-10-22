@@ -25,6 +25,6 @@ The **ElasticFrame** section implements a general linear elastic frame section.
 
    .. tab:: Python (RT)
 
-      .. function:: section("ElasticFrame", tag, iNode, jNode, transfTag, integrTag)
+      .. function:: section("ElasticFrame", tag, **kwds)
 
 
