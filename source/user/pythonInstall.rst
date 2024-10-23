@@ -46,19 +46,19 @@ OpenSeesRT
 
    ::
 
-      python -m pip install sees
+      python -m pip install opensees
 
 
 * To upgrade
 
    ::
 
-      python -m pip install --upgrade sees
+      python -m pip install --upgrade opensees
 
 
 * To import
 
   ::
 
-     import sees.openseespy as ops
+     import opensees.openseespy as ops
 
