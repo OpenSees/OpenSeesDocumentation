@@ -39,6 +39,6 @@ jobs:
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
+      if: github.ref == 'refs/heads/master'
       uses: actions/deploy-pages@v4
-      if: github.ref == 'refs/heads/main'
 
