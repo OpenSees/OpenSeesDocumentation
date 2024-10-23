@@ -10,7 +10,7 @@
 .. list-table:: 
    :widths: 10 10 40
 
-   * - ``-file``
+   * - ``$fileName``
      - *string*
      - file name to write tangent to.
    * - ``$m``
