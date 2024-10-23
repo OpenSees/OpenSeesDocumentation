@@ -28,6 +28,7 @@ The following contain information about secType? and the args required for each 
    :maxdepth: 1
 
    section/ElasticSection
+   section/ElasticFrame
    section/NDFiberSection
    section/WideFlangeSection
    section/RCSection

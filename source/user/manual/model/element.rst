@@ -39,7 +39,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/zeroLengthImpact3D 
    elements/zeroLengthContactASDimplex
 
-2. Trusss Elements
+2. Truss Elements
 
 .. toctree::
    :maxdepth: 1
@@ -54,6 +54,7 @@ The following subsections contain information about **$eleType** and the number 
    :maxdepth: 1
 
    elements/elasticBeamColumn
+   elements/ExactFrame
    elements/ModElasticBeam
    elements/ElasticBeamColumnElementWithStiffnessModifiers
    elements/ElasticTimoshenkoBeamColumnElement
