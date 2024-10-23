@@ -1,7 +1,8 @@
 .. _ArcLengthControl:
 
 Arc-Length Control
---------------------------------
+------------------
+
 .. function:: integrator ArcLength $s $alpha < -det > < -exp $exp > < -iterScale $iterScale >
 
 .. list-table:: 
@@ -33,15 +34,18 @@ result in our constraint equation being satisfied.
 
 
 
+Examples
+========
 
 .. code-block:: python
 
-   import opensees.openseespy as ops
+   import sees.openseespy as ops
    model = ops.Model(ndm=2, ndf=3)
 
    ...
 
    model.integrator("ArcLength", 1, det=True, exp=0.5)
+
 
 .. code-block:: tcl
 
