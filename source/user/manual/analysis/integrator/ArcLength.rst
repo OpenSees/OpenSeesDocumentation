@@ -12,10 +12,10 @@ Arc-Length Control
    * - Argument
      - Type
      - Description
-   * - $s
+   * - ``$s``
      - |float|
      - the arcLength
-   * - $alpha
+   * - ``$alpha``
      - |float|
      - a scaling factor on the reference loads. 
    * - ``-det``
