@@ -7,7 +7,6 @@ Arc-Length Control
 
 .. list-table:: 
    :widths: 10 10 40
-   :header-rows: 1
 
    * - Argument
      - Type
