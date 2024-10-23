@@ -15,13 +15,13 @@
      - file name to write tangent to.
    * - ``$m``
      - |float|
-     - factor with which to scale the inertial part of the tangent.
+     - factor with which to scale the inertial part of the tangent (OpenSeesRT only).
    * - ``$c``
      - |float|
-     - factor with which to scale the damped part of the tangent.
+     - factor with which to scale the damped part of the tangent (OpenSeesRT only).
    * - ``$k``
      - |float|
-     - factor with which to scale the static part of the tangent.
+     - factor with which to scale the static part of the tangent (OpenSeesRT only).
 
 Print the contents of the matrix that the integrator
 creates to the screen or a file if the ``-file`` option is used. 
