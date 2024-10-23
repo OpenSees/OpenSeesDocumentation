@@ -1,6 +1,8 @@
 name: Sphinx build
 
 on: push
+  pull_request:
+    branches: [master]
 
 jobs:
   build:
@@ -10,6 +12,8 @@ jobs:
 
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "."
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
@@ -35,4 +39,3 @@ jobs:
       id: deployment
       uses: actions/deploy-pages@v4
       if: github.ref == 'refs/heads/main'
-
