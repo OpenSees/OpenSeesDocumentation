@@ -7,15 +7,14 @@ Arc-Length Control
 
 .. list-table:: 
    :widths: 10 10 40
-   :header-rows: 1
 
    * - Argument
      - Type
      - Description
-   * - $s
+   * - ``$s``
      - |float|
      - the arcLength
-   * - $alpha
+   * - ``$alpha``
      - |float|
      - a scaling factor on the reference loads. 
    * - ``-det``
