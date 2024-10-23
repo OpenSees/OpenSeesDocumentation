@@ -37,3 +37,23 @@ matrices.
    In OpenSeesPy and older Tcl versions this command only works with the FullGeneral linear system,
    and the ``GimmeMCK`` integrator must be used to specify ``m`` ``c`` and ``k`` factors.
 
+Examples
+========
+
+The following examples will return a matrix :math:`\mathbf{A}` that is given by a linear combination of 
+the mass :math:`\mathbf{M}` and stiffness :math:`\mathbf{K}`:
+
+.. math::
+
+   \mathbf{A} = \frac{1}{2}\mathbf{M} + \frac{1}{10}\mathbf{K}
+
+
+.. code-block:: tcl
+
+    printA -m 0.5 -k 0.1
+
+.. code-block:: python
+
+    A = model.getTangent(m=0.5, k=0.1)
+
+
