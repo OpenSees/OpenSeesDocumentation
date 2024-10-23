@@ -1,7 +1,8 @@
 .. _ArcLengthControl:
 
 Arc-Length Control
---------------------------------
+------------------
+
 .. function:: integrator ArcLength $s $alpha < -det > < -exp $exp > < -iterScale $iterScale >
 
 .. list-table:: 
@@ -33,6 +34,8 @@ result in our constraint equation being satisfied.
 
 
 
+Examples
+========
 
 .. code-block:: python
 
