@@ -48,9 +48,13 @@ the mass :math:`\mathbf{M}` and stiffness :math:`\mathbf{K}`:
    \mathbf{A} = \frac{1}{2}\mathbf{M} + \frac{1}{10}\mathbf{K}
 
 
+In Tcl:
+
 .. code-block:: tcl
 
     printA -m 0.5 -k 0.1
+
+and in Python with OpenSeesRT:
 
 .. code-block:: python
 
