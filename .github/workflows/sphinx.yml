@@ -17,6 +17,9 @@ jobs:
       with:
         docs-folder: "."
 
+    - name: Add NoJekyll
+      run: touch build/html/.nojekyll
+
 #   - name: Upload artifacts
 #     uses: actions/upload-artifact@v4
 #     with:
@@ -28,6 +31,7 @@ jobs:
       uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
       with:
         path: build/html/
+
 
 #   - name: Deploy
 #     uses: peaceiris/actions-gh-pages@v3
