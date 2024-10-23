@@ -30,4 +30,10 @@ static integrator, the resulting matrix is the stiffness matrix. If a
 transient integrator, it will be some combination of mass and stiffness
 matrices.
 
+.. note::
+
+   The full version of this command as documented above is supported from Python and Tcl
+   through OpenSeesRT.
+   In OpenSeesPy and older Tcl versions this command only works with the FullGeneral linear system,
+   and the ``GimmeMCK`` integrator must be used to specify ``m`` ``c`` and ``k`` factors.
 
