@@ -7,4 +7,5 @@ Output Commands
    :maxdepth: 1
 
    output/recorder
+   output/printA
 
