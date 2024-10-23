@@ -21,7 +21,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: html-docs
-        path: _build/html/
+        path: build/html/
 
 #   - name: Deploy
 #     uses: peaceiris/actions-gh-pages@v3
@@ -41,3 +41,4 @@ jobs:
       id: deployment
       uses: actions/deploy-pages@v4
       if: github.ref == 'refs/heads/main'
+
