@@ -34,7 +34,7 @@ exposed as methods.
    
    This experimental package exposes an identical interface to ``openseespy``, but must
    be imported as ``opensees.openseespy`` as opposed to ``openseespy.opensees``. 
-   For more information, visit `GitHub <https://github.com/STAIRLab/opensees>`_.
+   For more information, visit `GitHub <https://github.com/STAIRLab/OpenSeesRT>`_.
 
 
 The ``Model`` class prevents inadvertent corruption of global state that may be caused when using
@@ -45,21 +45,23 @@ Python to invoke either Tcl or Python commands to create Nodes, Masses, Material
 These additional commands are described in the subsequent sections.
 
 
-.. admonition:: Example:
+Example
+=======
 
-   The following examples demonstrate the creation of a ``Basic`` model builder that will 
-   create nodes with an ``ndm`` of ``2`` and with ``3`` degrees-of-freedom at each node.
+The following examples demonstrate the creation of a ``Basic`` model builder that will 
+create nodes with an ``ndm`` of ``2`` and with ``3`` degrees-of-freedom at each node.
 
 
-   .. code-block:: python
+.. code-block:: python
 
-      import opensees.openseespy as ops
-      model = ops.Model(ndm=2, ndf=3)
+   import opensees.openseespy as ops
+   model = ops.Model(ndm=2, ndf=3)
 
-      model.node(1, 2.0, 3.0)
-      ...
+   model.node(1, 2.0, 3.0)
+   ...
 
-   Note that ``opensees`` must come before ``openseespy`` in the ``import`` statement.
+Note that ``opensees`` must come before ``openseespy`` in the ``import`` statement.
 
+For more examples, visit the STAIRlab example [gallery](https://stairlab.github.io/opensees-gallery).
 
 Code Developed by: *cmp*
