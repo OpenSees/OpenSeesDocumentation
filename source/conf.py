@@ -10,6 +10,7 @@
 #
 import os
 import sys
+import sphinx_rtd_theme
 sys.path.append(os.path.abspath('./sphinx_ext/'))
 
 
@@ -58,14 +59,15 @@ rst_prolog = """
 .. |silvia| replace:: `Silvia Mazzoni`_
 .. _`Silvia Mazzoni`: https://www.silviasbrainery.com/
 .. |csasj| replace:: **csasj**
-"""	
+"""
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
     'toctree_filter',
-    'sphinx_tabs.tabs'
+    'sphinx_tabs.tabs',
+    'sphinx_rtd_theme'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
