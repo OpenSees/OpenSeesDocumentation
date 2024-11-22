@@ -17,18 +17,10 @@ jobs:
       with:
         docs-folder: "."
 
-#   - name: Add NoJekyll
-#     run: touch build/html/.nojekyll
-
-#   - name: Upload artifacts
-#     uses: actions/upload-artifact@v4
-#     with:
-#       name: html-docs
-#       path: build/html/
     
     - name: Upload static files as artifact
       id: deployment
-      uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+      uses: actions/upload-pages-artifact@v3
       with:
         path: build/html/
 
@@ -42,6 +34,8 @@ jobs:
 #
   # Deployment job
   deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -51,7 +45,6 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    needs: build
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
