@@ -1,30 +1,35 @@
 zeroLengthInterface2DUpdate
 ===========================
 
-**zeroLengthInterface2DUpdate** fixes bugs in **zeroLengthInterface2D** and adds a new feature that allows the user to change the friction coefficient during the analysis. 
- 
-(**zeroLengthInterface2D** was written by Roozbeh Geraili Mikola (roozbehg@berkeley.edu) and Prof. Nicholas Sitar (nsitar@ce.berkeley.edu) on July 02 2010.)
+**zeroLengthInterface2DUpdate** is an updated version of **zeroLengthInterface2D**. 
 
-Bugs fixed in zeroLengthInterface2D
--------------------------------------
-1. Incorrect friction behavior when the interface is under cyclic sliding motion.
-2. Incorrect normal pressure behavior due to the repetitive search algorithm. The original zeroLengthInterface2D overestimates normal pressure at the interface.
+**zeroLengthInterface2DUpdate** has the following improvements:
+
+1. Fixed the incorrect friction behavior in **zeroLengthInterface2D** when the interface is under cyclic sliding motion.
+2. Fixed the incorrect normal pressure behavior in **zeroLengthInterface2D** due to the repetitive search algorithm.
+3. Allows the user to change the friction coefficient during the analysis.
+ 
+\* **zeroLengthInterface2D** was written by Roozbeh Geraili Mikola (roozbehg@berkeley.edu) and Prof. Nicholas Sitar (nsitar@ce.berkeley.edu) on July 02 2010.
 
 User Instruction
 ----------------
 
 1. **Element Command Syntax**
 
-   The tcl input command for the zeroLengthInterface2DUpdate element is the same as for zeroLengthInterface2D::
+   The tcl input command for the **zeroLengthInterface2DUpdate** element is given below:
+
+   .. code-block:: tcl
 
       element zeroLengthInterface2DUpdate eleTag? -sNdNum sNdNum? -pNdNum pNdNum? –dof sdof? mdof? -Nodes Nodes? Kn? Kt? phi?
 
 2. **Tcl Input Example**
 
-   .. image:: https://github.com/user-attachments/assets/7833184d-cea4-40ee-9198-c795f353c3d1
+   .. image:: https://github.com/user-attachments/assets/ec851ee3-1093-4894-bbaf-b72d0e6b1184
       :alt: Tcl input example
 
-   **element zeroLengthInterface2DUpdate 1 -sNdNum 6 -mNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 $Kn $Kt $phi**
+   .. code-block:: tcl
+
+      element zeroLengthInterface2DUpdate 1 -sNdNum 6 -mNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 $Kn $Kt $phi
 
    *(The above defines a zeroLengthInterface2DUpdate element between a quad element (in blue) and beam elements (in red).)*
 
