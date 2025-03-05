@@ -27,11 +27,12 @@ User Instruction
    .. image:: https://github.com/user-attachments/assets/ec851ee3-1093-4894-bbaf-b72d0e6b1184
       :alt: Tcl input example
 
+   To define a zeroLengthInterface2DUpdate element between a quad element (in blue) and beam elements (in red).
+
    .. code-block:: tcl
 
       element zeroLengthInterface2DUpdate 1 -sNdNum 6 -mNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 $Kn $Kt $phi
 
-   *(The above defines a zeroLengthInterface2DUpdate element between a quad element (in blue) and beam elements (in red).)*
 
 3. **Changing the Friction Coefficient**
 
