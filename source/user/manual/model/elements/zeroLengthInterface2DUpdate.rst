@@ -109,7 +109,7 @@ Full TCL Example Code
     element dispBeamColumn 5 8 9 5 1 1
     element dispBeamColumn 6 9 10 5 1 1
 
-    element zeroLengthInterface2D 7 -sNdNum 6 -mNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 [expr $Kn] [expr $Kt] [expr $phi]
+    element zeroLengthInterface2DUpdate 7 -sNdNum 6 -mNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 [expr $Kn] [expr $Kt] [expr $phi]
     fix 5 1 1 0
     fix 10 0 1 0   
 
