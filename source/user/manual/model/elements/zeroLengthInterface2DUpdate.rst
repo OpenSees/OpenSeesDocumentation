@@ -20,7 +20,23 @@ User Instruction
 
    .. code-block:: tcl
 
-      element zeroLengthInterface2DUpdate eleTag? -sNdNum sNdNum? -pNdNum pNdNum? –dof sdof? mdof? -Nodes Nodes? Kn? Kt? phi?
+      element zeroLengthInterface2DUpdate eleTag? -sNdNum sNdNum? -pNdNum pNdNum? –dof sdof? pdof? -Nodes Nodes? Kn? Kt? phi?
+
+   $eleTag:	unique element object tag
+ 
+   $sNdNum:	Number of nodes on secondary surface
+ 
+   $pNdNum:	Number of nodes on primary surface
+ 
+   $sdof $pdof:	Nodal degree of freedom for secondary and primary surface
+ 
+   $Nodes:	Secondary and primary node tags respectively
+ 
+   $Kn:	Penalty in normal direction
+ 
+   $Kt:	Penalty in tangential direction
+ 
+   $phi:	Friction angle in degrees
 
 2. **Tcl Input Example**
 
@@ -31,7 +47,7 @@ User Instruction
 
    .. code-block:: tcl
 
-      element zeroLengthInterface2DUpdate 1 -sNdNum 6 -mNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 $Kn $Kt $phi
+      element zeroLengthInterface2DUpdate 1 -sNdNum 6 -pNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 $Kn $Kt $phi
 
 
 3. **Changing the Friction Coefficient**
@@ -43,14 +59,7 @@ User Instruction
       set Kn 1e6
       set Kt 1e6
       set phi_ini 0.0
-      element zeroLengthInterface2DUpdate 1 -sNdNum 6 -mNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 $Kn $Kt $phi_ini
-
-   *(This creates a zeroLengthInterface2DUpdate element with zero friction, and both normal and tangential stiffness equal to 1e6.)*
-
-   Then, update the friction coefficient as follows:
-
-   .. code-block:: tcl
-
+      element zeroLengthInterface2DUpdate 1 -sNdNum 6 -pNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 $Kn $Kt $phi_ini
       parameter 1 element 1 phi
       updateParameter 1 [expr 16.7]
 
@@ -109,7 +118,7 @@ Full TCL Example Code
     element dispBeamColumn 5 8 9 5 1 1
     element dispBeamColumn 6 9 10 5 1 1
 
-    element zeroLengthInterface2DUpdate 7 -sNdNum 6 -mNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 [expr $Kn] [expr $Kt] [expr $phi]
+    element zeroLengthInterface2DUpdate 7 -sNdNum 6 -pNdNum 2 -dof 3 2 -Nodes 10 9 8 7 6 5 4 1 [expr $Kn] [expr $Kt] [expr $phi]
     fix 5 1 1 0
     fix 10 0 1 0   
 
