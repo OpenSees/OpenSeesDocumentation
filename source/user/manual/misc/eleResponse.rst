@@ -3,7 +3,7 @@
 eleResponse Command
 *******************
 
-This command is used to obtain state information from the element. The quantities that can be obtained from the element are the same as that whcih can be obtained using the :ref:`elementRecorder`.
+This command is used to obtain state information from the element. The quantities that can be obtained from the element are the same as that which can be obtained using the :ref:`elementRecorder`.
 
 .. function:: eleResponse $eleTag $arg1 $arg2 ....
 

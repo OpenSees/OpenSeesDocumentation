@@ -25,4 +25,8 @@ Modal Damping Command
 
 Further reading about Modal Damping can be seen in [ChopraMcKenna2015]_
 
+.. warning::
+
+   Modal damping implementation is as in Perform3D. The tangent matrix is not modified for damping terms as this would result in a full matrix. Instead just the right hand side of the equation, i.e. the resisting force vector is modified. As a consequence, iteration is required at each step to obtain a converged solution, i.e. no Linear solution algorithm or explicit time stepping algorithms will work correctly with modal damping!
+
 

@@ -1,10 +1,11 @@
 .. _GeneralizedAlphaMethod:
 
 Generalized Alpha Method
---------------------------------
+------------------------
+
 .. function:: integrator GeneralizedAlpha $alphaM $alphaF <$gamma $beta> 
 
-This command is used to construct a Generalized :math:`\alpha` integration object. This is an implicit method that like the HHT method allows for high frequency energy dissipation and second order accuracy, i.e. :math:`\Delta t^2`. Depending on choices of input parameters, the method can be unconditionally stable. 
+This command is used to define a Generalized :math:`\alpha` integration scheme. This is an implicit method that like the HHT method allows for high frequency energy dissipation and second order accuracy, i.e. :math:`\Delta t^2`. Depending on choices of input parameters, the method can be unconditionally stable. 
 
 .. admonition:: Example 
 
@@ -12,13 +13,13 @@ This command is used to construct a Generalized :math:`\alpha` integration objec
 
    .. code-block:: tcl
 
-      integrator Explicitdifference 
+      integrator GeneralizedAlpha 1.0 1.0
 
    2. **Python Code**
 
    .. code-block:: python
 
-       integrator('ExplicitDifference')
+       model.integrator('GeneralizedAlpha', 1.0, 1.0)
 
 .. note:: 
     * :math:` \alpha_F` and :math:`\alpha_M` are defined differently that in the paper, we use :math:`\alpha_F = (1-\alpha_f)` and :math:`\alpha_M=(1-\gamma_m)` where :math:`\alpha_f` and :math:`\alpha_m` are those used in the paper.
@@ -93,3 +94,4 @@ and
 
 
 The linear equations are used to solve for :math:`U_{t+\alpha F \Delta t}, \dot U_{t + \alpha F \Delta t} \ddot U_{t+ \alpha M \Delta t}`. Once convergence has been achieved the displacements, velocities and accelerations at time :math:`t + \Delta t` can be computed. 
+
