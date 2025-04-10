@@ -52,7 +52,7 @@ xara
 
 * To import
 
-  .. code-block: Python
+  .. code-block:: Python
 
      import xara
 
