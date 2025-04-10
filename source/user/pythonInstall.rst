@@ -42,6 +42,7 @@ OpenSeesPy
 xara
 ----
 
+
 * To install
 
   ::
@@ -55,3 +56,5 @@ xara
 
      import xara
 
+
+For details on how to run OpenSeesPy and OpenSees Tcl scripts with *xara*, visit the package `documentation <https://xara.so>`__.
