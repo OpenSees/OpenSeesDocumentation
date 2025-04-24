@@ -149,29 +149,25 @@ Recorder Options:
      - all relevant data at current step (mom1p, rot1p, mom2p, rot2p, mom3p, rot3p, mom4p, rot4p, mom5p, rot5p, mom6p, rot6p, mom7p, rot7p, mom1n, rot1n, mom2n, rot2n, mom3n, rot3n, mom4n, rot4n, mom5n, rot5n, mom6n, rot6n, mom7n, rot7n, pinchX, pinchY, damfc1, damfc2, beta, CrotMax, CrotMin, CrotPu, CrotNu, CenergyD, CloadIndicator, Cstress, Cstrain, Ttangent)
 
 
-:
-
 -------------------------
 
 .. admonition:: Example Input 
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy
   .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99,
-        '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12,
-        '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04,
-        '-pinch', 1, 1,
-        '-damage', 0.1, 0.01,
-        '-beta', 0,
-        '-defoLimitStates', 0.01, -0.01, 0.02, -0.02,
-        '-forceLimitStates', 2772.0, -2772.0, 3104.6, -3104.6,
-        '-printInput'
-      )
+    ops.uniaxialMaterial('HystereticSM', 99,
+      '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12,
+      '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04,
+      '-pinch', 1, 1,
+      '-damage', 0.1, 0.01,
+      '-beta', 0,
+      '-defoLimitStates', 0.01, -0.01, 0.02, -0.02,
+      '-forceLimitStates', 2772.0, -2772.0, 3104.6, -3104.6,
+      '-printInput'
+    )
 
-  - **Tcl Interpreter**
-
+  - Tcl Interpreter
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM 99 \
@@ -193,11 +189,11 @@ Recorder Options:
 
 -------------------------
 
-.. admonition:: Damage1 
+.. admonition:: Backbone Curve for material (symmetric behavior)  
 
   .. figure:: figures/HystereticSM/HystereticSM_backbone_Symm.jpg
+      :width: 50%
       :align: center
-      :width: 50%   # <- Resize to 50% of text width
   
 
 -------------------------
@@ -205,9 +201,8 @@ Recorder Options:
 .. admonition:: Backbone Curve for material (non-symmetric behavior) 
 
   .. figure:: figures/HystereticSM/HystereticSM_backbone_nonSymm.jpg
+      :width: 50%
       :align: center
-      :width: 50%   # <- Resize to 50% of text width
-
 
 
 -------------------------
@@ -216,8 +211,7 @@ Recorder Options:
 
   1. **pinch=[1, 1]**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99,
@@ -226,8 +220,7 @@ Recorder Options:
           '-pinch', 1, 1
       )
 
-  - **Tcl Interpreter**
-
+  - Tcl Interpreter
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM 99 \
@@ -238,8 +231,7 @@ Recorder Options:
 
   2. **pinch=[0.2, 0.8]**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -248,8 +240,7 @@ Recorder Options:
         '-pinch', 0.2, 0.8
         )
 
-  - **Tcl Interpreter**
-
+  - Tcl Interpreter
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -259,8 +250,7 @@ Recorder Options:
 
   3. **pinch=[0.8, 0.2]**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -269,8 +259,7 @@ Recorder Options:
       '-pinch', 0.8, 0.2
       )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -281,12 +270,15 @@ Recorder Options:
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_pinch_symmCycles.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPull.jpg
       :width: 50%
       :align: center
@@ -299,8 +291,7 @@ Recorder Options:
 
   1. **damage1=0**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -309,8 +300,7 @@ Recorder Options:
         '-damage', 0, 0
       )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -320,8 +310,7 @@ Recorder Options:
 
   2. **damage1=0.01**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -330,8 +319,7 @@ Recorder Options:
         '-damage', 0.01, 0
       )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -341,8 +329,7 @@ Recorder Options:
 
   3. **damage1=0.1**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -351,8 +338,7 @@ Recorder Options:
         '-damage', 0.1, 0
       )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -363,12 +349,15 @@ Recorder Options:
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainDip.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_damage1_symmCycles.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPull.jpg
       :width: 50%
       :align: center
@@ -380,8 +369,7 @@ Recorder Options:
 
   1. **damage2=0**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -390,8 +378,7 @@ Recorder Options:
       '-damage', 0, 0
     )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
     uniaxialMaterial HystereticSM  99  \
@@ -401,8 +388,7 @@ Recorder Options:
 
   2. **damage2=0.01**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -411,8 +397,7 @@ Recorder Options:
       '-damage', 0, 0.01
     )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
     uniaxialMaterial HystereticSM  99  \
@@ -422,8 +407,7 @@ Recorder Options:
 
   3. **damage2=0.1**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -432,8 +416,7 @@ Recorder Options:
       '-damage', 0, 0.1
     )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
     uniaxialMaterial HystereticSM  99  \
@@ -444,12 +427,15 @@ Recorder Options:
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainDip.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_damage2_symmCycles.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPull.jpg
       :width: 50%
       :align: center
@@ -461,8 +447,7 @@ Recorder Options:
 
   1. **beta=0**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -471,8 +456,7 @@ Recorder Options:
         '-beta', 0
       )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -482,8 +466,7 @@ Recorder Options:
 
   2. **beta=0.5**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -492,8 +475,7 @@ Recorder Options:
         '-beta', 0.5
       )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -503,8 +485,7 @@ Recorder Options:
 
   3. **beta=1**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -513,8 +494,7 @@ Recorder Options:
         '-beta', 1
       )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -525,12 +505,15 @@ Recorder Options:
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainDip.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_beta_symmCycles.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPull.jpg
       :width: 50%
       :align: center
@@ -543,8 +526,7 @@ Recorder Options:
 
   1. **degEnv=0**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -554,8 +536,7 @@ Recorder Options:
       '-degEnv', 0, 0
     )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
     uniaxialMaterial HystereticSM  99  \
@@ -567,8 +548,7 @@ Recorder Options:
 
   2. **degEnv=1**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -578,8 +558,7 @@ Recorder Options:
       '-degEnv', 1, -1
     )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -591,8 +570,7 @@ Recorder Options:
 
   3. **degEnv=5**
 
-  - **OpenSeesPy**
-  
+  - OpenSeesPy  
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -602,8 +580,7 @@ Recorder Options:
       '-degEnv', 5, -5
     )
 
-  - **Tcl Interpreter**
-  
+  - Tcl Interpreter  
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -615,17 +592,20 @@ Recorder Options:
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainDip.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_symmCycles.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+-------------------------
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPull.jpg
       :width: 50%
       :align: center
 
 
 
-| Modified Code Developed (2022) by: |silvia| (Silvia's Brainery)
+| HystereticSM Code Developed (2022) by: |silvia| (Silvia's Brainery)
 | Original Hysteretic-Material Code Developed by: |mhs| & Filip Filippou (UC Berkeley)
