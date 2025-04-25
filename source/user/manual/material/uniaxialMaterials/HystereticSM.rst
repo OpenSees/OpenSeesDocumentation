@@ -11,19 +11,23 @@ This command is used to construct a uniaxial multilinear hysteretic material obj
 
 Input Command:
 -----------------
-- **OpenSeesPy**:
-  .. function:: uniaxialMaterial('HystereticSM',matTag,'-posEnv',s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p><,s5p,e5p><,s6p,e6p><,s7p,e7p> <,'-negEnv',s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>> <,'-pinch',pinchX,pinchY> <,'-damage',damage1,damage2> <,'-beta',beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
+  - **OpenSeesPy**:
 
-- **Tcl interpreter**:
-  .. function:: uniaxialMaterial HystereticSM $matTag -posEnv $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> <-negEnv $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n>> <-pinch $pinchX $pinchY> <-damage $damage1 $damage2> <-beta $beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates $lsD1 <$lsD2>...> <-forceLimitStates $lsF1 <$lsF2>...> <-printInput> <-XYorder>
+    .. function:: uniaxialMaterial('HystereticSM',matTag,'-posEnv',s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p><,s5p,e5p><,s6p,e6p><,s7p,e7p> <,'-negEnv',s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>> <,'-pinch',pinchX,pinchY> <,'-damage',damage1,damage2> <,'-beta',beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
+
+  - **Tcl interpreter**:
+
+    .. function:: uniaxialMaterial HystereticSM $matTag -posEnv $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> <-negEnv $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n>> <-pinch $pinchX $pinchY> <-damage $damage1 $damage2> <-beta $beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates $lsD1 <$lsD2>...> <-forceLimitStates $lsF1 <$lsF2>...> <-printInput> <-XYorder>
 
 You can use the following input format as it is compatible with Hysteretic material. Note that in this case you must have the same number of positive and negative segments. I have made this format (make sure you test it) to make the transition from Hysteretic to HystereticSM easy:
 
-- **OpenSeesPy**:
-  .. function:: uniaxialMaterial('HystereticSM',matTag,s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p> <,s5p,e5p> <,s6p,e6p> <,s7p,e7p>,s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>,pinchX,pinchY,damage1,damage2 <,beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
+  - **OpenSeesPy**:
 
-- **Tcl interpreter**:
-  .. function:: uniaxialMaterial HystereticSM $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> $pinchX $pinchY $damage1 $damage2 <$beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates lsD1? <lsD2?>...> <-forceLimitStates lsF1? <lsF2?>...> <-printInput> <-XYorder>
+    .. function:: uniaxialMaterial('HystereticSM',matTag,s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p> <,s5p,e5p> <,s6p,e6p> <,s7p,e7p>,s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>,pinchX,pinchY,damage1,damage2 <,beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
+
+  - **Tcl interpreter**:
+
+    .. function:: uniaxialMaterial HystereticSM $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> $pinchX $pinchY $damage1 $damage2 <$beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates lsD1? <lsD2?>...> <-forceLimitStates lsF1? <lsF2?>...> <-printInput> <-XYorder>
 
 Input Arguments:
 -----------------
@@ -151,7 +155,8 @@ Recorder Options:
 
 
 
--------------------------
+Backbone Curve for material:
+-----------------
 
 .. container:: Backbone Curve for material
 
@@ -175,7 +180,7 @@ Examples:
 
 .. admonition:: Jupyter Notebook 
 
-  Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `HERE! <https://github.com/OpenSees/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb>`_
+  Open or download Jupyter the notebook with example of HystereticSM material, used generate the figures `CLICK HERE! <https://github.com/OpenSees/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb>`_
 
 -------------------------
 
@@ -216,67 +221,67 @@ Examples:
 
   1. **pinch=[1, 1]**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99,
-          '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.10, 0, 0.12,
-          '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04,
-          '-pinch', 1, 1
-      )
+          ops.uniaxialMaterial('HystereticSM', 99,
+              '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.10, 0, 0.12,
+              '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04,
+              '-pinch', 1, 1
+          )
 
-  - Tcl Interpreter
+    - Tcl Interpreter
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM 99 \
-          -posEnv 2772.0 0.01 3104.6 0.02 1663.2 0.04 1663.2 0.06 277.2 0.08 200.0 0.10 0 0.12 \
-          -negEnv -2772.0 -0.01 -3104.6 -0.02 -1663.2 -0.04 \
-          -pinch 1 1
+          uniaxialMaterial HystereticSM 99 \
+              -posEnv 2772.0 0.01 3104.6 0.02 1663.2 0.04 1663.2 0.06 277.2 0.08 200.0 0.10 0 0.12 \
+              -negEnv -2772.0 -0.01 -3104.6 -0.02 -1663.2 -0.04 \
+              -pinch 1 1
 
 
   2. **pinch=[0.2, 0.8]**
 
   - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99, 
-        '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-        '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-        '-pinch', 0.2, 0.8
-        )
+          ops.uniaxialMaterial('HystereticSM', 99, 
+            '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+            '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+            '-pinch', 0.2, 0.8
+            )
 
-  - Tcl Interpreter
+    - Tcl Interpreter
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-          -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-          -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-          -pinch  0.2  0.8
+          uniaxialMaterial HystereticSM  99  \
+              -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+              -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+              -pinch  0.2  0.8
 
   3. **pinch=[0.8, 0.2]**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99, 
-      '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-      '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-      '-pinch', 0.8, 0.2
-      )
+          ops.uniaxialMaterial('HystereticSM', 99, 
+          '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+          '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+          '-pinch', 0.8, 0.2
+          )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-          -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-          -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-          -pinch  0.8  0.2
+          uniaxialMaterial HystereticSM  99  \
+              -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+              -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+              -pinch  0.8  0.2
 
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg
       :width: 50%
@@ -310,64 +315,64 @@ Examples:
 
   - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99, 
-        '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-        '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-        '-damage', 0, 0
-      )
+          ops.uniaxialMaterial('HystereticSM', 99, 
+            '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+            '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+            '-damage', 0, 0
+          )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -damage  0  0
+          uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -damage  0  0
 
   2. **damage1=0.01**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99, 
-        '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-        '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-        '-damage', 0.01, 0
-      )
+          ops.uniaxialMaterial('HystereticSM', 99, 
+            '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+            '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+            '-damage', 0.01, 0
+          )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -damage  0.01  0
+          uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -damage  0.01  0
 
   3. **damage1=0.1**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99, 
-        '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-        '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-        '-damage', 0.1, 0
-      )
+          ops.uniaxialMaterial('HystereticSM', 99, 
+            '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+            '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+            '-damage', 0.1, 0
+          )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-          -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-          -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-          -damage  0.1  0
+          uniaxialMaterial HystereticSM  99  \
+              -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+              -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+              -damage  0.1  0
 
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainDip.jpg
       :width: 50%
@@ -398,66 +403,66 @@ Examples:
 
   1. **damage2=0**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-    ops.uniaxialMaterial('HystereticSM', 99, 
-      '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-      '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-      '-damage', 0, 0
-    )
+        ops.uniaxialMaterial('HystereticSM', 99, 
+          '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+          '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+          '-damage', 0, 0
+        )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-    uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -damage  0  0
+        uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -damage  0  0
 
   2. **damage2=0.01**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-    ops.uniaxialMaterial('HystereticSM', 99, 
-      '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-      '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-      '-damage', 0, 0.01
-    )
+        ops.uniaxialMaterial('HystereticSM', 99, 
+          '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+          '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+          '-damage', 0, 0.01
+        )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-    uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -damage  0  0.01
+        uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -damage  0  0.01
 
   3. **damage2=0.1**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-    ops.uniaxialMaterial('HystereticSM', 99, 
-      '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-      '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-      '-damage', 0, 0.1
-    )
+        ops.uniaxialMaterial('HystereticSM', 99, 
+          '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+          '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+          '-damage', 0, 0.1
+        )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-    uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -damage  0  0.1
+        uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -damage  0  0.1
 
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainDip.jpg
       :width: 50%
@@ -488,66 +493,66 @@ Examples:
 
   1. **beta=0**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99, 
-        '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-        '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-        '-beta', 0
-      )
+          ops.uniaxialMaterial('HystereticSM', 99, 
+            '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+            '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+            '-beta', 0
+          )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -beta  0
+          uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -beta  0
 
   2. **beta=0.5**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99, 
-        '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-        '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-        '-beta', 0.5
-      )
+          ops.uniaxialMaterial('HystereticSM', 99, 
+            '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+            '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+            '-beta', 0.5
+          )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -beta  0.5
+          uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -beta  0.5
 
   3. **beta=1**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-      ops.uniaxialMaterial('HystereticSM', 99, 
-        '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-        '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-        '-beta', 1
-      )
+          ops.uniaxialMaterial('HystereticSM', 99, 
+            '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+            '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+            '-beta', 1
+          )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -beta  1
+          uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -beta  1
 
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainDip.jpg
       :width: 50%
@@ -579,79 +584,79 @@ Examples:
 
   1. **degEnv=0**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-    ops.uniaxialMaterial('HystereticSM', 99, 
-      '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-      '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-      '-damage', 0.005, 0.002, 
-      '-degEnv', 0, 0
-    )
+        ops.uniaxialMaterial('HystereticSM', 99, 
+          '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+          '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+          '-damage', 0.005, 0.002, 
+          '-degEnv', 0, 0
+        )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-    uniaxialMaterial HystereticSM  99  \
-      -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-      -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-      -damage  0.005  0.002  \
-      -degEnv  0  0
+        uniaxialMaterial HystereticSM  99  \
+          -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+          -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+          -damage  0.005  0.002  \
+          -degEnv  0  0
 
 
   2. **degEnv=1**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-    ops.uniaxialMaterial('HystereticSM', 99, 
-      '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-      '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-      '-damage', 0.005, 0.002, 
-      '-degEnv', 1, -1
-    )
+        ops.uniaxialMaterial('HystereticSM', 99, 
+          '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+          '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+          '-damage', 0.005, 0.002, 
+          '-degEnv', 1, -1
+        )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -damage  0.005  0.002  \
-        -degEnv  1  -1
+          uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -damage  0.005  0.002  \
+            -degEnv  1  -1
 
 
   3. **degEnv=5**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
-  .. code-block:: python
+      .. code-block:: python
 
-    ops.uniaxialMaterial('HystereticSM', 99, 
-      '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
-      '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
-      '-damage', 0.005, 0.002, 
-      '-degEnv', 5, -5
-    )
+        ops.uniaxialMaterial('HystereticSM', 99, 
+          '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12, 
+          '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04, 
+          '-damage', 0.005, 0.002, 
+          '-degEnv', 5, -5
+        )
 
-  - Tcl Interpreter  
+    - Tcl Interpreter  
 
-  .. code-block:: tcl
+      .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM  99  \
-        -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
-        -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
-        -damage  0.005  0.002  \
-        -degEnv  5  -5
+          uniaxialMaterial HystereticSM  99  \
+            -posEnv  2772.0  0.01  3104.6  0.02  1663.2  0.04  1663.2  0.06  277.2  0.08  200.0  0.1  0  0.12  \
+            -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
+            -damage  0.005  0.002  \
+            -degEnv  5  -5
 
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainDip.jpg
       :width: 50%
       :align: center
-      
+
 -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_symmCycles.jpg
