@@ -182,6 +182,7 @@ Examples:
 .. admonition:: Example Input 
 
   - OpenSeesPy
+
     .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99,
@@ -196,6 +197,7 @@ Examples:
       )
 
   - Tcl Interpreter
+
     .. code-block:: tcl
 
         uniaxialMaterial HystereticSM 99 \
@@ -215,6 +217,7 @@ Examples:
   1. **pinch=[1, 1]**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99,
@@ -224,6 +227,7 @@ Examples:
       )
 
   - Tcl Interpreter
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM 99 \
@@ -235,6 +239,7 @@ Examples:
   2. **pinch=[0.2, 0.8]**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -244,6 +249,7 @@ Examples:
         )
 
   - Tcl Interpreter
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -254,6 +260,7 @@ Examples:
   3. **pinch=[0.8, 0.2]**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -263,6 +270,7 @@ Examples:
       )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -273,15 +281,21 @@ Examples:
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_pinch_symmCycles.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPull.jpg
       :width: 50%
       :align: center
@@ -295,6 +309,7 @@ Examples:
   1. **damage1=0**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -304,6 +319,7 @@ Examples:
       )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -314,6 +330,7 @@ Examples:
   2. **damage1=0.01**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -323,6 +340,7 @@ Examples:
       )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -333,6 +351,7 @@ Examples:
   3. **damage1=0.1**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -342,6 +361,7 @@ Examples:
       )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -352,15 +372,21 @@ Examples:
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainDip.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_damage1_symmCycles.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPull.jpg
       :width: 50%
       :align: center
@@ -373,6 +399,7 @@ Examples:
   1. **damage2=0**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -382,6 +409,7 @@ Examples:
     )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
     uniaxialMaterial HystereticSM  99  \
@@ -392,6 +420,7 @@ Examples:
   2. **damage2=0.01**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -401,6 +430,7 @@ Examples:
     )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
     uniaxialMaterial HystereticSM  99  \
@@ -411,6 +441,7 @@ Examples:
   3. **damage2=0.1**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -420,6 +451,7 @@ Examples:
     )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
     uniaxialMaterial HystereticSM  99  \
@@ -430,15 +462,21 @@ Examples:
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainDip.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_damage2_symmCycles.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPull.jpg
       :width: 50%
       :align: center
@@ -451,6 +489,7 @@ Examples:
   1. **beta=0**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -460,6 +499,7 @@ Examples:
       )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -470,6 +510,7 @@ Examples:
   2. **beta=0.5**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -479,6 +520,7 @@ Examples:
       )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -489,6 +531,7 @@ Examples:
   3. **beta=1**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
       ops.uniaxialMaterial('HystereticSM', 99, 
@@ -498,6 +541,7 @@ Examples:
       )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -508,15 +552,21 @@ Examples:
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainDip.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_beta_symmCycles.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPull.jpg
       :width: 50%
       :align: center
@@ -530,6 +580,7 @@ Examples:
   1. **degEnv=0**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -540,6 +591,7 @@ Examples:
     )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
     uniaxialMaterial HystereticSM  99  \
@@ -552,6 +604,7 @@ Examples:
   2. **degEnv=1**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -562,6 +615,7 @@ Examples:
     )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -574,6 +628,7 @@ Examples:
   3. **degEnv=5**
 
   - OpenSeesPy  
+
   .. code-block:: python
 
     ops.uniaxialMaterial('HystereticSM', 99, 
@@ -584,6 +639,7 @@ Examples:
     )
 
   - Tcl Interpreter  
+
   .. code-block:: tcl
 
       uniaxialMaterial HystereticSM  99  \
@@ -595,15 +651,21 @@ Examples:
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainDip.jpg
       :width: 50%
       :align: center
+      
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_symmCycles.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPush.jpg
       :width: 50%
       :align: center
+
 -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPull.jpg
       :width: 50%
       :align: center
