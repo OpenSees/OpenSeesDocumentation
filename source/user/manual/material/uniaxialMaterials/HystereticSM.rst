@@ -211,7 +211,7 @@ Backbone Curve for material:
       
 
 .. admonition:: Backbone curve for **Unsymmetric** material behavior.
-  
+
   .. figure:: figures/HystereticSM/HystereticSM_backbone_nonSymm.jpg
       :width: 35%
       :align: center
@@ -265,6 +265,9 @@ You have endless options with this material. Here are a few demos:
           -printInput
 
 -------------------------
+
+Input-Parameters Study:
+-----------------
 
 .. admonition:: Pinching 
 
