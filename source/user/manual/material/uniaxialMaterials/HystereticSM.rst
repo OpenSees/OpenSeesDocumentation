@@ -8,7 +8,6 @@ This command is used to construct a uniaxial multilinear hysteretic material obj
 - The positive and negative backbone of this material do not need to have the same number of segments. 
 - This material also has the option to degrade the envelope using the degEnv parameters -- these parameters must be used in combination with the damage parameters
 - This material also has additional DCR-type recorder output (this is still a work in progress).
-- This material was developed by Silvia Mazzoni, 2022
 
 Input Command:
 -----------------
@@ -153,7 +152,9 @@ Recorder Options:
 
 
 -------------------------
+
 .. container:: Backbone Curve for material
+
   .. figure:: figures/HystereticSM/HystereticSM_backbone_Symm.jpg
       :width: 35%
       :align: left
@@ -171,6 +172,7 @@ Examples:
 -----------------
 
 -------------------------
+
 .. admonition:: Jupyter Notebook 
 
   Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `HERE! <https://github.com/OpenSees/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb>`_
