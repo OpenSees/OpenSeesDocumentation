@@ -32,6 +32,7 @@ Input Command:
   .. admonition:: Tcl interpreter:
 
     .. code-block:: tcl
+
        uniaxialMaterial HystereticSM $matTag \
           -posEnv $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> \
           <-negEnv $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n>> \
@@ -46,9 +47,11 @@ Input Command:
 
 You can use the following input format as it is compatible with Hysteretic material. Note that in this case you must have the same number of positive and negative segments. I have made this format (make sure you test it) to make the transition from Hysteretic to HystereticSM easy:
 
-  - **OpenSeesPy**:
+  .. admonition:: OpenSeesPy
 
-    .. function:: uniaxialMaterial('HystereticSM',matTag,s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p> <,s5p,e5p> <,s6p,e6p> <,s7p,e7p>,
+    .. code-block:: python
+      
+       uniaxialMaterial('HystereticSM',matTag,s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p> <,s5p,e5p> <,s6p,e6p> <,s7p,e7p>,
           s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>,
           pinchX,pinchY,damage1,damage2 <,beta> 
           <,'-degEnv',degEnvP <,degEnvN>> 
@@ -57,9 +60,11 @@ You can use the following input format as it is compatible with Hysteretic mater
           <,'-printInput'> 
           <,'-XYorder'>)
 
-  - **Tcl interpreter**:
+  .. admonition:: Tcl interpreter:
 
-    .. function:: uniaxialMaterial HystereticSM $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> \
+    .. code-block:: tcl
+
+       uniaxialMaterial HystereticSM $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> \
           $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> \
           $pinchX $pinchY $damage1 $damage2 <$beta> \
           <-degEnv degEnvP <degEnvN>> \
@@ -197,19 +202,20 @@ Recorder Options:
 Backbone Curve for material:
 -----------------
 
-.. admonition:: Backbone Curve for material
+.. admonition:: Backbone curve for **Symmetric** material behavior.
 
   .. figure:: figures/HystereticSM/HystereticSM_backbone_Symm.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
-      Backbone curve for **Symmetric** material behavior.
+      
 
+.. admonition:: Backbone curve for **Unsymmetric** material behavior.
   .. figure:: figures/HystereticSM/HystereticSM_backbone_nonSymm.jpg
-      :width: 50%
-      :align: right
+      :width: 35%
+      :align: center
 
-      Backbone curve for **Unsymmetric** material behavior.
+      
 
 -------------------------
 
@@ -328,6 +334,9 @@ You have endless options with this material. Here are a few demos:
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg
       :width: 35%
       :align: left
+  
+  -------------------------
+  
   .. figure:: figures/HystereticSM/HystereticSM_pinch_symmCycles.jpg
       :width: 35%
       :align: right
@@ -337,6 +346,9 @@ You have endless options with this material. Here are a few demos:
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPush.jpg
       :width: 35%
       :align: left
+  
+  -------------------------
+
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPull.jpg
       :width: 35%
       :align: right
@@ -411,25 +423,25 @@ You have endless options with this material. Here are a few demos:
               -damage  0.1  0
 
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainDip.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage1_symmCycles.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPull.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
 
@@ -501,25 +513,25 @@ You have endless options with this material. Here are a few demos:
             -damage  0  0.1
 
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainDip.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage2_symmCycles.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPush.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPull.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
 
@@ -591,25 +603,25 @@ You have endless options with this material. Here are a few demos:
             -beta  1
 
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainDip.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_beta_symmCycles.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPush.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPull.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
 
@@ -690,25 +702,25 @@ You have endless options with this material. Here are a few demos:
             -degEnv  5  -5
 
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainDip.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_symmCycles.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPush.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPull.jpg
-      :width: 50%
+      :width: 35%
       :align: center
 
 
