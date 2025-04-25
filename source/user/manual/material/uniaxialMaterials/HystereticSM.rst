@@ -29,7 +29,7 @@ Input Command:
           <,'-XYorder'>
         )
 
-  .. admonition:: Tcl interpreter:
+  .. admonition:: Tcl interpreter
 
     .. code-block:: tcl
 
@@ -60,7 +60,7 @@ You can use the following input format as it is compatible with Hysteretic mater
           <,'-printInput'> 
           <,'-XYorder'>)
 
-  .. admonition:: Tcl interpreter:
+  .. admonition:: Tcl interpreter
 
     .. code-block:: tcl
 
@@ -211,6 +211,7 @@ Backbone Curve for material:
       
 
 .. admonition:: Backbone curve for **Unsymmetric** material behavior.
+  
   .. figure:: figures/HystereticSM/HystereticSM_backbone_nonSymm.jpg
       :width: 35%
       :align: center
@@ -333,7 +334,7 @@ You have endless options with this material. Here are a few demos:
 
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg
       :width: 35%
-      :align: left
+      :align: center
   
   -------------------------
   
@@ -345,13 +346,13 @@ You have endless options with this material. Here are a few demos:
 
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPush.jpg
       :width: 35%
-      :align: left
+      :align: center
   
   -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPull.jpg
       :width: 35%
-      :align: right
+      :align: center
 
 
 
