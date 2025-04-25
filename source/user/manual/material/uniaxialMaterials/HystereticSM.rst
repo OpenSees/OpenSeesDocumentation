@@ -14,6 +14,7 @@ Input Command:
   - **OpenSeesPy**:
 
     .. code-block:: python
+      
        uniaxialMaterial('HystereticSM',matTag,
           '-posEnv',s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p><,s5p,e5p><,s6p,e6p><,s7p,e7p> 
           <,'-negEnv',s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>> 
@@ -199,14 +200,10 @@ Backbone Curve for material:
   .. figure:: figures/HystereticSM/HystereticSM_backbone_Symm.jpg
       :width: 35%
       :align: left
-
-      Backbone curve for **Symmetric** material behavior.
-
   .. figure:: figures/HystereticSM/HystereticSM_backbone_nonSymm.jpg
       :width: 35%
       :align: right
 
-      Backbone curve for **Unsymmetric** material behavior.
 
 -------------------------
 
