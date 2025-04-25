@@ -13,7 +13,8 @@ Input Command:
 -----------------
   - **OpenSeesPy**:
 
-    .. function:: uniaxialMaterial('HystereticSM',matTag,
+    .. code-block:: python
+       uniaxialMaterial('HystereticSM',matTag,
           '-posEnv',s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p><,s5p,e5p><,s6p,e6p><,s7p,e7p> 
           <,'-negEnv',s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>> 
           <,'-pinch',pinchX,pinchY> 
@@ -188,12 +189,12 @@ Recorder Options:
      - All relevant Data
      - all relevant data at current step (mom1p, rot1p, mom2p, rot2p, mom3p, rot3p, mom4p, rot4p, mom5p, rot5p, mom6p, rot6p, mom7p, rot7p, mom1n, rot1n, mom2n, rot2n, mom3n, rot3n, mom4n, rot4n, mom5n, rot5n, mom6n, rot6n, mom7n, rot7n, pinchX, pinchY, damfc1, damfc2, beta, CrotMax, CrotMin, CrotPu, CrotNu, CenergyD, CloadIndicator, Cstress, Cstrain, Ttangent)
 
-
+-------------------------
 
 Backbone Curve for material:
 -----------------
 
-.. container:: Backbone Curve for material
+.. admonition:: Backbone Curve for material
 
   .. figure:: figures/HystereticSM/HystereticSM_backbone_Symm.jpg
       :width: 35%
@@ -207,7 +208,7 @@ Backbone Curve for material:
 
       Backbone curve for **Unsymmetric** material behavior.
 
-
+-------------------------
 
 Examples:
 -----------------
