@@ -13,21 +13,56 @@ Input Command:
 -----------------
   - **OpenSeesPy**:
 
-    .. function:: uniaxialMaterial('HystereticSM',matTag,'-posEnv',s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p><,s5p,e5p><,s6p,e6p><,s7p,e7p> <,'-negEnv',s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>> <,'-pinch',pinchX,pinchY> <,'-damage',damage1,damage2> <,'-beta',beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
+    .. function:: uniaxialMaterial('HystereticSM',matTag,
+          '-posEnv',s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p><,s5p,e5p><,s6p,e6p><,s7p,e7p> 
+          <,'-negEnv',s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>> 
+          <,'-pinch',pinchX,pinchY> 
+          <,'-damage',damage1,damage2> 
+          <,'-beta',beta> 
+          <,'-degEnv',degEnvP <,degEnvN>> 
+          <,'-defoLimitStates',lsD1 <$lsD2>...> 
+          <,'-forceLimitStates',lsF1 <,$lsF2>...> 
+          <,'-printInput'> 
+          <,'-XYorder'>
+        )
 
   - **Tcl interpreter**:
 
-    .. function:: uniaxialMaterial HystereticSM $matTag -posEnv $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> <-negEnv $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n>> <-pinch $pinchX $pinchY> <-damage $damage1 $damage2> <-beta $beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates $lsD1 <$lsD2>...> <-forceLimitStates $lsF1 <$lsF2>...> <-printInput> <-XYorder>
+    .. function:: uniaxialMaterial HystereticSM $matTag \
+          -posEnv $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> \
+          <-negEnv $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n>> \
+          <-pinch $pinchX $pinchY> \
+          <-damage $damage1 $damage2> \
+          <-beta $beta> \
+          <-degEnv degEnvP <degEnvN>> \
+          <-defoLimitStates $lsD1 <$lsD2>...> \
+          <-forceLimitStates $lsF1 <$lsF2>...> \
+          <-printInput> \
+          <-XYorder>
 
 You can use the following input format as it is compatible with Hysteretic material. Note that in this case you must have the same number of positive and negative segments. I have made this format (make sure you test it) to make the transition from Hysteretic to HystereticSM easy:
 
   - **OpenSeesPy**:
 
-    .. function:: uniaxialMaterial('HystereticSM',matTag,s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p> <,s5p,e5p> <,s6p,e6p> <,s7p,e7p>,s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>,pinchX,pinchY,damage1,damage2 <,beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
+    .. function:: uniaxialMaterial('HystereticSM',matTag,s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p> <,s5p,e5p> <,s6p,e6p> <,s7p,e7p>,
+          s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>,
+          pinchX,pinchY,damage1,damage2 <,beta> 
+          <,'-degEnv',degEnvP <,degEnvN>> 
+          <,'-defoLimitStates',lsD1 <$lsD2>...> 
+          <,'-forceLimitStates',lsF1 <,$lsF2>...> 
+          <,'-printInput'> 
+          <,'-XYorder'>)
 
   - **Tcl interpreter**:
 
-    .. function:: uniaxialMaterial HystereticSM $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> $pinchX $pinchY $damage1 $damage2 <$beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates lsD1? <lsD2?>...> <-forceLimitStates lsF1? <lsF2?>...> <-printInput> <-XYorder>
+    .. function:: uniaxialMaterial HystereticSM $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> \
+          $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> \
+          $pinchX $pinchY $damage1 $damage2 <$beta> \
+          <-degEnv degEnvP <degEnvN>> \
+          <-defoLimitStates lsD1? <lsD2?>...> \
+          <-forceLimitStates lsF1? <lsF2?>...> \
+          <-printInput> \
+          <-XYorder>
 
 Input Arguments:
 -----------------
@@ -173,8 +208,11 @@ Backbone Curve for material:
       Backbone curve for **Unsymmetric** material behavior.
 
 
+
 Examples:
 -----------------
+
+You have endless options with this material. Here are a few demos:
 
 -------------------------
 
@@ -243,7 +281,7 @@ Examples:
 
   2. **pinch=[0.2, 0.8]**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
       .. code-block:: python
 
@@ -284,26 +322,20 @@ Examples:
               -pinch  0.8  0.2
 
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg
-      :width: 50%
-      :align: center
-
--------------------------
-
+      :width: 35%
+      :align: left
   .. figure:: figures/HystereticSM/HystereticSM_pinch_symmCycles.jpg
-      :width: 50%
-      :align: center
+      :width: 35%
+      :align: right
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPush.jpg
-      :width: 50%
-      :align: center
-
--------------------------
-
+      :width: 35%
+      :align: left
   .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPull.jpg
-      :width: 50%
-      :align: center
+      :width: 35%
+      :align: right
 
 
 
@@ -313,7 +345,7 @@ Examples:
 
   1. **damage1=0**
 
-  - OpenSeesPy  
+    - OpenSeesPy  
 
       .. code-block:: python
 
@@ -378,19 +410,19 @@ Examples:
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage1_symmCycles.jpg
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPull.jpg
       :width: 50%
@@ -468,19 +500,19 @@ Examples:
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage2_symmCycles.jpg
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPush.jpg
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPull.jpg
       :width: 50%
@@ -558,19 +590,19 @@ Examples:
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_beta_symmCycles.jpg
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPush.jpg
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPull.jpg
       :width: 50%
@@ -657,19 +689,19 @@ Examples:
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_symmCycles.jpg
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPush.jpg
       :width: 50%
       :align: center
 
--------------------------
+  -------------------------
 
   .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPull.jpg
       :width: 50%
