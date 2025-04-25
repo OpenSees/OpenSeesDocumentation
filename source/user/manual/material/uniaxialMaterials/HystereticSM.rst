@@ -3,29 +3,31 @@
 HystereticSM Material
 ^^^^^^^^^^^^^^^^^^^^^
 
-This command is used to construct a uniaxial multilinear hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. <br>
-*This material is an extension of the Hysteretic Material -- the envelope can be defined 2,3, 4,5,6 or 7 points, while the original one only had 2 or 3.<br>
-*The positive and negative backbone of this material do not need to have the same number of segments. <br>
-*This material also has the option to degrade the envelope using the degEnv parameters -- these parameters must be used in combination with the damage parameters<br>
-*This material also has additional DCR-type recorder output (this is still a work in progress).<br>
+This command is used to construct a uniaxial multilinear hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. 
+- This material is an extension of the Hysteretic Material -- the envelope can be defined 2,3, 4,5,6 or 7 points, while the original one only had 2 or 3.
+- The positive and negative backbone of this material do not need to have the same number of segments. 
+- This material also has the option to degrade the envelope using the degEnv parameters -- these parameters must be used in combination with the damage parameters
+- This material also has additional DCR-type recorder output (this is still a work in progress).
+- This material was developed by Silvia Mazzoni, 2022
 
-OpenSeesPy:
+Input Command:
+-----------------
+- **OpenSeesPy**:
+  .. function:: uniaxialMaterial('HystereticSM',matTag,'-posEnv',s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p><,s5p,e5p><,s6p,e6p><,s7p,e7p> <,'-negEnv',s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>> <,'-pinch',pinchX,pinchY> <,'-damage',damage1,damage2> <,'-beta',beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
 
-.. function:: uniaxialMaterial('HystereticSM',matTag,'-posEnv',s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p><,s5p,e5p><,s6p,e6p><,s7p,e7p> <,'-negEnv',s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>> <,'-pinch',pinchX,pinchY> <,'-damage',damage1,damage2> <,'-beta',beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
+- **Tcl interpreter**:
+  .. function:: uniaxialMaterial HystereticSM $matTag -posEnv $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> <-negEnv $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n>> <-pinch $pinchX $pinchY> <-damage $damage1 $damage2> <-beta $beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates $lsD1 <$lsD2>...> <-forceLimitStates $lsF1 <$lsF2>...> <-printInput> <-XYorder>
 
-Tcl interpreter:
+You can use the following input format as it is compatible with Hysteretic material. Note that in this case you must have the same number of positive and negative segments. I have made this format (make sure you test it) to make the transition from Hysteretic to HystereticSM easy:
 
-.. function:: uniaxialMaterial HystereticSM $matTag -posEnv $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> <-negEnv $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n>> <-pinch $pinchX $pinchY> <-damage $damage1 $damage2> <-beta $beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates $lsD1 <$lsD2>...> <-forceLimitStates $lsF1 <$lsF2>...> <-printInput> <-XYorder>
+- **OpenSeesPy**:
+  .. function:: uniaxialMaterial('HystereticSM',matTag,s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p> <,s5p,e5p> <,s6p,e6p> <,s7p,e7p>,s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>,pinchX,pinchY,damage1,damage2 <,beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
 
-The following input format is compatible with Hysteretic material. Note that in this case you must have the same number of positive and negative segments:
+- **Tcl interpreter**:
+  .. function:: uniaxialMaterial HystereticSM $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> $pinchX $pinchY $damage1 $damage2 <$beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates lsD1? <lsD2?>...> <-forceLimitStates lsF1? <lsF2?>...> <-printInput> <-XYorder>
 
-OpenSeesPy:
-
-.. function:: uniaxialMaterial('HystereticSM',matTag,s1p,e1p,s2p,e2p <,s3p,e3p> <,s4p,e4p> <,s5p,e5p> <,s6p,e6p> <,s7p,e7p>,s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>,pinchX,pinchY,damage1,damage2 <,beta> <,'-degEnv',degEnvP <,degEnvN>> <,'-defoLimitStates',lsD1 <$lsD2>...> <,'-forceLimitStates',lsF1 <,$lsF2>...> <,'-printInput'> <,'-XYorder'>)
-
-Tcl interpreter:
-
-.. function:: uniaxialMaterial HystereticSM $matTag $s1p $e1p $s2p $e2p <$s3p $e3p> <$s4p $e4p> <$s5p $e5p> <$s6p $e6p> <$s7p $e7p> $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> $pinchX $pinchY $damage1 $damage2 <$beta> <-degEnv degEnvP <degEnvN>> <-defoLimitStates lsD1? <lsD2?>...> <-forceLimitStates lsF1? <lsF2?>...> <-printInput> <-XYorder>
+Input Arguments:
+-----------------
 
 .. list-table:: 
    :widths: 10 10 40
@@ -149,61 +151,60 @@ Recorder Options:
      - all relevant data at current step (mom1p, rot1p, mom2p, rot2p, mom3p, rot3p, mom4p, rot4p, mom5p, rot5p, mom6p, rot6p, mom7p, rot7p, mom1n, rot1n, mom2n, rot2n, mom3n, rot3n, mom4n, rot4n, mom5n, rot5n, mom6n, rot6n, mom7n, rot7n, pinchX, pinchY, damfc1, damfc2, beta, CrotMax, CrotMin, CrotPu, CrotNu, CenergyD, CloadIndicator, Cstress, Cstrain, Ttangent)
 
 
+
+-------------------------
+.. container:: Backbone Curve for material
+  .. figure:: figures/HystereticSM/HystereticSM_backbone_Symm.jpg
+      :width: 35%
+      :align: left
+
+      Backbone curve for **Symmetric** material behavior.
+
+  .. figure:: figures/HystereticSM/HystereticSM_backbone_nonSymm.jpg
+      :width: 35%
+      :align: right
+
+      Backbone curve for **Unsymmetric** material behavior.
+
+
+Examples:
+-----------------
+
+-------------------------
+.. admonition:: Jupyter Notebook 
+
+  Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `HERE! <https://github.com/OpenSees/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb>`_
+
 -------------------------
 
 .. admonition:: Example Input 
 
   - OpenSeesPy
-  .. code-block:: python
+    .. code-block:: python
 
-    ops.uniaxialMaterial('HystereticSM', 99,
-      '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12,
-      '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04,
-      '-pinch', 1, 1,
-      '-damage', 0.1, 0.01,
-      '-beta', 0,
-      '-defoLimitStates', 0.01, -0.01, 0.02, -0.02,
-      '-forceLimitStates', 2772.0, -2772.0, 3104.6, -3104.6,
-      '-printInput'
-    )
+      ops.uniaxialMaterial('HystereticSM', 99,
+        '-posEnv', 2772.0, 0.01, 3104.6, 0.02, 1663.2, 0.04, 1663.2, 0.06, 277.2, 0.08, 200.0, 0.1, 0, 0.12,
+        '-negEnv', -2772.0, -0.01, -3104.6, -0.02, -1663.2, -0.04,
+        '-pinch', 1, 1,
+        '-damage', 0.1, 0.01,
+        '-beta', 0,
+        '-defoLimitStates', 0.01, -0.01, 0.02, -0.02,
+        '-forceLimitStates', 2772.0, -2772.0, 3104.6, -3104.6,
+        '-printInput'
+      )
 
   - Tcl Interpreter
-  .. code-block:: tcl
+    .. code-block:: tcl
 
-      uniaxialMaterial HystereticSM 99 \
-        -posEnv 2772.0 0.01 3104.6 0.02 1663.2 0.04 1663.2 0.06 277.2 0.08 200.0 0.1 0 0.12 \
-        -negEnv -2772.0 -0.01 -3104.6 -0.02 -1663.2 -0.04 \
-        -pinch 1 1 \
-        -damage 0.1 0.01 \
-        -beta 0 \
-        -defoLimitStates 0.01 -0.01 0.02 -0.02 \
-        -forceLimitStates 2772.0 -2772.0 3104.6 -3104.6 \
-        -printInput
-
-
-
--------------------------
-.. admonition:: Jupyter Notebook 
-  Open or download Jupyter notebook with example of HystereticSM material, used generate the figures `HERE! <https://github.com/OpenSees/OpenSeesDocumentation/blob/master/source/user/manual/material/uniaxialMaterials/examples/HystereticSM_materialDemo.ipynb>`_
-
-
--------------------------
-
-.. admonition:: Backbone Curve for material (symmetric behavior)  
-
-  .. figure:: figures/HystereticSM/HystereticSM_backbone_Symm.jpg
-      :width: 50%
-      :align: center
-  
-
--------------------------
-
-.. admonition:: Backbone Curve for material (non-symmetric behavior) 
-
-  .. figure:: figures/HystereticSM/HystereticSM_backbone_nonSymm.jpg
-      :width: 50%
-      :align: center
-
+        uniaxialMaterial HystereticSM 99 \
+          -posEnv 2772.0 0.01 3104.6 0.02 1663.2 0.04 1663.2 0.06 277.2 0.08 200.0 0.1 0 0.12 \
+          -negEnv -2772.0 -0.01 -3104.6 -0.02 -1663.2 -0.04 \
+          -pinch 1 1 \
+          -damage 0.1 0.01 \
+          -beta 0 \
+          -defoLimitStates 0.01 -0.01 0.02 -0.02 \
+          -forceLimitStates 2772.0 -2772.0 3104.6 -3104.6 \
+          -printInput
 
 -------------------------
 
