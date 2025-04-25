@@ -319,21 +319,14 @@ You have endless options with this material. Here are a few demos:
               -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
               -pinch  0.8  0.2
 
-  .. figure:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg
-      :width: 35%
-      :align: left
-  .. figure:: figures/HystereticSM/HystereticSM_pinch_symmCycles.jpg
-      :width: 35%
-      :align: right
 
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPush.jpg
-      :width: 35%
-      :align: left
-  .. figure:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPull.jpg
-      :width: 35%
-      :align: right
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg | .. image:: figures/HystereticSM/HystereticSM_pinch_symmCycles.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPush.jpg | .. image:: figures/HystereticSM/HystereticSM_pinch_strainOneSidedPull.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
 
 
 
@@ -404,27 +397,14 @@ You have endless options with this material. Here are a few demos:
               -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
               -damage  0.1  0
 
-  .. figure:: figures/HystereticSM/HystereticSM_damage1_strainDip.jpg
-      :width: 50%
-      :align: center
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg | .. image:: figures/HystereticSM/HystereticSM_damage1_symmCycles.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg | .. image:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPull.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
 
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_damage1_symmCycles.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPull.jpg
-      :width: 50%
-      :align: center
 
 
 -------------------------
@@ -494,28 +474,13 @@ You have endless options with this material. Here are a few demos:
             -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
             -damage  0  0.1
 
-  .. figure:: figures/HystereticSM/HystereticSM_damage2_strainDip.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_damage2_symmCycles.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPush.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPull.jpg
-      :width: 50%
-      :align: center
-
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_pinch_strainDip.jpg | .. image:: figures/HystereticSM/HystereticSM_damage2_symmCycles.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPush.jpg | .. image:: figures/HystereticSM/HystereticSM_damage2_strainOneSidedPull.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
 
 -------------------------
 
@@ -584,28 +549,13 @@ You have endless options with this material. Here are a few demos:
             -negEnv  -2772.0  -0.01  -3104.6  -0.02  -1663.2  -0.04  \
             -beta  1
 
-  .. figure:: figures/HystereticSM/HystereticSM_beta_strainDip.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_beta_symmCycles.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPush.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPull.jpg
-      :width: 50%
-      :align: center
-
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_beta_strainDip.jpg | .. image:: figures/HystereticSM/HystereticSM_beta_symmCycles.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_damage1_strainOneSidedPush.jpg | .. image:: figures/HystereticSM/HystereticSM_beta_strainOneSidedPull.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
 
 
 -------------------------
@@ -683,27 +633,14 @@ You have endless options with this material. Here are a few demos:
             -damage  0.005  0.002  \
             -degEnv  5  -5
 
-  .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainDip.jpg
-      :width: 50%
-      :align: center
 
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_degEnv_symmCycles.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPush.jpg
-      :width: 50%
-      :align: center
-
-  -------------------------
-
-  .. figure:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPull.jpg
-      :width: 50%
-      :align: center
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_beta_strainDip.jpg | .. image:: figures/HystereticSM/HystereticSM_beta_symmCycles.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
+  | .. image:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPush.jpg | .. image:: figures/HystereticSM/HystereticSM_degEnv_strainOneSidedPull.jpg |
+  |    :width: 100%                                  |    :width: 100%                                  |
+  +--------------------------------------------------+--------------------------------------------------+
 
 
 
