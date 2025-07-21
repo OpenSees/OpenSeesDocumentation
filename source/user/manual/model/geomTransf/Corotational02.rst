@@ -1,4 +1,4 @@
-.. _CorotTR:
+.. _CorotTR02:
 
 Corotational02
 ^^^^^^^^^^^^^^
@@ -7,22 +7,6 @@ The corotational coordinate transformation allows small-strain frame elements to
 *Corotational02* superceeds the original :ref:`Corotational <CorotTR>` transformation, which is now deprecated.
 
 .. tabs::
-
-   .. tab:: Python
-
-      .. py:method:: Model.geomTransf("Corotational02", tag, vecxz, [offi, offj])
-         :no-index:
-
-         Define a corotational geometric transformation for frame elements.
-
-         :param integer tag: integer tag identifying transformation
-         :type tag: |integer|
-         :param vecxz: X, Y, and Z components of vecxz, the vector used to define the local x-z plane of the local-coordinate system, **required in 3D**. The local y-axis is defined by taking the cross product of the vecxz vector and the x-axis.
-         :type vecxz: tuple of floats
-         :param offi: joint offset values -- offsets specified with respect to the global coordinate system for element-end node i (optional, the number of arguments depends on the dimensions of the current model).
-         :type offi: tuple of floats
-         :param offj: joint offset values -- offsets specified with respect to the global coordinate system for element-end node j (optional, the number of arguments depends on the dimensions of the current model).
-         :type offj: tuple of floats
 
    .. tab:: Tcl
    
@@ -40,6 +24,22 @@ The corotational coordinate transformation allows small-strain frame elements to
          These items need to be specified for the three-dimensional problem."
          $dXi $dYi $dZi, |float|, "joint offset values -- offsets specified with respect to the global coordinate system for element-end node i (optional, the number of arguments depends on the dimensions of the current model)."
          $dXj $dYj $dZj, |float|, "joint offset values -- offsets specified with respect to the global coordinate system for element-end node j (optional, the number of arguments depends on the dimensions of the current model)."
+
+   .. tab:: xara
+
+      .. py:method:: Model.geomTransf("Corotational02", tag, vecxz, [offi, offj])
+
+         Define a corotational geometric transformation for frame elements.
+
+         :param integer tag: integer tag identifying transformation
+         :type tag: |integer|
+         :param vecxz: X, Y, and Z components of vecxz, the vector used to define the local x-z plane of the local-coordinate system, **required in 3D**. The local y-axis is defined by taking the cross product of the vecxz vector and the x-axis.
+         :type vecxz: tuple of floats
+         :param offi: joint offset values -- offsets specified with respect to the global coordinate system for element-end node i (optional, the number of arguments depends on the dimensions of the current model).
+         :type offi: tuple of floats
+         :param offj: joint offset values -- offsets specified with respect to the global coordinate system for element-end node j (optional, the number of arguments depends on the dimensions of the current model).
+         :type offj: tuple of floats
+
 
 
 .. note::
