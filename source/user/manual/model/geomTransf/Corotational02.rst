@@ -74,9 +74,9 @@ is oriented so as to resist bending *outside* the plane of the portal, but the s
          node 3 $width 0 $height
          node 4      0 0 $height
 
-         geomTransf "Corotational" 1  1 0 0; # Column
-         geomTransf "Corotational" 2  0 0 1; # Girder
-         geomTransf "Corotational" 3  0-1 0; # Column
+         geomTransf Corotational02 1  1 0 0; # Column
+         geomTransf Corotational02 2  0 0 1; # Girder
+         geomTransf Corotational02 3  0-1 0; # Column
 
    .. tab:: Python
 
@@ -90,9 +90,9 @@ is oriented so as to resist bending *outside* the plane of the portal, but the s
          model.node(3, (width, 0, height))
          model.node(4, (    0, 0, height))
 
-         model.geomTransf("Corotational", 1, (1, 0, 0)) # Column
-         model.geomTransf("Corotational", 2, (0, 0, 1)) # Girder
-         model.geomTransf("Corotational", 3, (0,-1, 0)) # Column
+         model.geomTransf("Corotational02", 1, (1, 0, 0)) # Column
+         model.geomTransf("Corotational02", 2, (0, 0, 1)) # Girder
+         model.geomTransf("Corotational02", 3, (0,-1, 0)) # Column
 
 
 
