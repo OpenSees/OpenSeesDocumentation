@@ -57,21 +57,42 @@ is oriented so as to resist bending *outside* the plane of the portal, but the s
 
 .. figure:: figures/vecxz.png
    :align: center
-   :width: 50%
+   :width: 40%
 
    A portal frame with :math:`X_3` vertical (rendered with `veux <https://veux.io>`__).
 
 
-.. code-block:: Python
+.. tabs::
 
-   model.node(1, (    0, 0,      0))
-   model.node(2, (width, 0,      0))
-   model.node(3, (width, 0, height))
-   model.node(4, (    0, 0, height))
+   .. tab:: Tcl
 
-   model.geomTransf("Corotational", 1, (1, 0, 0)) # Column
-   model.geomTransf("Corotational", 2, (0, 0, 1)) # Girder
-   model.geomTransf("Corotational", 3, (0,-1, 0)) # Column
+      .. code-block:: Tcl
+        
+
+         node 1      0 0      0
+         node 2 $width 0      0
+         node 3 $width 0 $height
+         node 4      0 0 $height
+
+         geomTransf "Corotational" 1  1 0 0; # Column
+         geomTransf "Corotational" 2  0 0 1; # Girder
+         geomTransf "Corotational" 3  0-1 0; # Column
+
+   .. tab:: Python
+
+      .. code-block:: Python
+
+         import xara
+         model = xara.Model(ndm=2, ndf=3)
+
+         model.node(1, (    0, 0,      0))
+         model.node(2, (width, 0,      0))
+         model.node(3, (width, 0, height))
+         model.node(4, (    0, 0, height))
+
+         model.geomTransf("Corotational", 1, (1, 0, 0)) # Column
+         model.geomTransf("Corotational", 2, (0, 0, 1)) # Girder
+         model.geomTransf("Corotational", 3, (0,-1, 0)) # Column
 
 
 
@@ -105,9 +126,6 @@ in a transformed configuration space represented by director fields
    \bar{\boldsymbol{\Lambda}} &= \bar{\mathbf{D}}_k\otimes\mathbf{D}_k \\
    \end{aligned}
 
-.. note::
-
-   It is more appropriate to think of the corotational transformation as a *family* of transformations.
 
 
 References
