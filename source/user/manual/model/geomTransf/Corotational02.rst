@@ -59,7 +59,7 @@ is oriented so as to resist bending *outside* the plane of the portal, but the s
    :align: center
    :width: 50%
 
-   A portal frame with :math:`X_3` vertical.
+   A portal frame with :math:`X_3` vertical (rendered with `veux <https://veux.io>`__).
 
 
 .. code-block:: Python
