@@ -74,9 +74,9 @@ is oriented so as to resist bending *outside* the plane of the portal, but the s
          node 3 $width 0 $height
          node 4      0 0 $height
 
-         geomTransf Corotational02 1  1 0 0; # Column
-         geomTransf Corotational02 2  0 0 1; # Girder
-         geomTransf Corotational02 3  0-1 0; # Column
+         geomTransf Corotational02 1  1  0 0; # Column
+         geomTransf Corotational02 2  0  0 1; # Girder
+         geomTransf Corotational02 3  0 -1 0; # Column
 
    .. tab:: Python
 
