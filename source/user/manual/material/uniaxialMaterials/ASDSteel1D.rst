@@ -8,7 +8,6 @@ ASDSteel1D Material
 ^^^^^^^^^^^^^^^^^^^
 
 .. image:: figures/ASDSteel1D/ASDSteel1D_Ex_numerical_vs_experimental.gif
-   :width: 60%
    :align: center
 
 | The ASDSteel1D command is used to create a uniaxial material object that models the nonlinear response of reinforcing steel bars under monotonic and cyclic loading. 
@@ -100,7 +99,6 @@ Buckling
 | This bidirectional process ensures that the influence of microstructural effects is consistently reflected at the structural scale.
 
 .. image:: figures/ASDSteel1D/disegnohomog.png
-   :width: 60%
    :align: center
 
 Bond-Slip
@@ -152,21 +150,18 @@ Usage Notes
    A Python example to simulate tensile fracture: :download:`ASDSteel1D_Ex_Damage.py <examples/ASDSteel1D/ASDSteel1D_Ex_Damage.py>`
    
    .. image:: figures/ASDSteel1D/ASDSteel1D_Ex_Damage_Output.gif
-      :width: 100%
       
 .. admonition:: Example 2 - Buckling
 
    A Python example to simulate buckling: :download:`ASDSteel1D_Ex_Buckling.py <examples/ASDSteel1D/ASDSteel1D_Ex_Buckling.py>`
    
    .. image:: figures/ASDSteel1D/ASDSteel1D_Ex_Buckling_Output.gif
-      :width: 100%
       
 .. admonition:: Example 3 - Bond-Slip
 
    A Python example to simulate rebars bond-slip: :download:`ASDSteel1D_Ex_Bond_Slip.py <examples/ASDSteel1D/ASDSteel1D_Ex_Bond_Slip.py>`
    
    .. image:: figures/ASDSteel1D/ASDSteel1D_Ex_Bond_Slip_Output.gif
-      :width: 100%
 
 
 
