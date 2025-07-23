@@ -163,7 +163,7 @@ Usage Notes
    
    .. image:: figures/ASDSteel1D/ASDSteel1D_Ex_Bond_Slip_Output.gif
 
-
+Code Developed by: **Alessia Casalucci** at ASDEA Software, Italy.
 
 References
 """"""""""
