@@ -55,7 +55,7 @@ In order to cover a wide range of cases, the strong axis of the first column, el
 is oriented so as to resist bending *outside* the plane of the portal, but the strong axis of the second column, element `3`, will resist bending *inside* the portal plane.
 
 
-.. figure:: figures/vecxz.png
+.. figure:: figures/vecxz-veux.png
    :align: center
    :width: 40%
 
