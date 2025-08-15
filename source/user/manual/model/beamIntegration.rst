@@ -1,9 +1,9 @@
 .. _beamIntegration:
 
-Beam integration Command
+Beam Integration Command
 ************************
 
-This command is used to construct an integration object for certain beam elements. A wide range of numerical integration options are available in OpenSees to represent either distributed plasticity or concentrated plasticity.
+This command is used to construct an integration object for certain beam elements. A wide range of numerical integration options are available in OpenSees to represent either distributed plasticity or concentrated plasticity within a single element such as the :ref:`forceBeamColumn` element.
 
 .. function:: beamIntegration $integtaionType $tag $arg1 ...
 

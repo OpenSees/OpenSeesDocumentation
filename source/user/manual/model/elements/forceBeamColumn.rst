@@ -1,15 +1,15 @@
 .. _forceBeamColumn:
 
 
-Force-Based Beam Column
-^^^^^^^^^^^^^^^^^^^^^^^
+Force-Based Beam Column Element
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct a forceBeamColumn element object, which is based on the iterative force-based formulation. A variety of numerical integration options are available for the element state determination and encompass both distributed plasticity and pla\
 stic hinge integration, see :ref:`beamIntegration` options. The element if formulated in a basic system, given by its end rotations and axial deformation. The geometric transformation between this basic system and the 2d or 3d system comprisomg nodal displacements and rotations, is provided by the geometric transformation, see :ref:`geomTransf` options.  
 
 .. note::
 
-   Force based elements use known equilibrium along the element length to determine section forces. As a consequence, in a finite element setting the element must iterate given nodal displacements at each trial step to determine the section deformations at the integration points to cause such. For a discussion of differences between **force** based beam column element  and the **displacement** based element see `this post on portwooddigital <https://portwooddigital.com/2020/02/23/a-tale-of-two-element-formulations/>`_
+   Force based elements use known equilibrium along the element length to determine section forces. As a consequence, in a finite element setting the element must iterate given nodal displacements at each trial step to determine the section deformations at the integration points to cause such. For a discussion of differences between this **force** based beam column element and the **displacement** based element see `this post on portwooddigital <https://portwooddigital.com/2020/02/23/a-tale-of-two-element-formulations/>`_
 
 .. tabs::
 

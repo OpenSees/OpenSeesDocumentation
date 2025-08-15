@@ -1,15 +1,15 @@
 .. _dispBeamColumn:
 
 
-Displacement-Based Beam Column
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Displacement-Based Beam Column Element
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct a displacementBeamColumn element object. A variety of numerical integration options are available for the element state determination and encompass both distributed plasticity and pla\
 stic hinge integration, see :ref:`beamIntegration` options. The element if formulated in a basic system, given by its end rotations and axial deformation. The geometric transformation between this basic system and the 2d or 3d system comprisomg nodal displacements and rotations, is provided by the geometric transformation, see :ref:`geomTransf` options.  
 
 .. note::
 
-   The displacement based beam column element uses shape functions to determine the displacement field along the element length. This is typical formulation used for elements in the finite element method. As a consequence, section forces satisfy weak-equilibrium with element end forces. For a discussion on the consequences of weak equilibrium and of the differences between **displacement** based beam column element and the **force** based element see `this post on portwooddigital <https://portwooddigital.com/2020/02/23/a-tale-of-two-element-formulations/>`_
+   The displacement based beam column element uses shape functions to determine the displacement field along the element length. This is typical formulation used for elements in the finite element method. As a consequence, section forces satisfy weak-equilibrium with element end forces. For a discussion on the consequences of weak equilibrium and of the differences between this **displacement** based beam column element and the **force** based element see `this post on portwooddigital <https://portwooddigital.com/2020/02/23/a-tale-of-two-element-formulations/>`_
 
 .. tabs::
 

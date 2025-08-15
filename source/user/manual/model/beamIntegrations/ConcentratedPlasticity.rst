@@ -5,9 +5,15 @@ ConcentratedPlasticity
 
 This command creates a Concentrated-Plasticity beamIntegration object. This integration places one plastic-rotation integration point at each element end and three elastic-curvature integration points along the length.
 
-.. function:: beamIntegration ConcentratedPlasticity $integrationTag $secTagI $secTagJ $secTagE
+.. tabs::
 
-.. function:: beamIntegration('ConcentratedPlasticity',integrationTag,secTagI,secTagJ,secTagE)
+  .. tab:: Tcl
+
+     .. function:: beam Integration ConcentratedPlasticity $integrationTag $secTagI $secTagJ $secTagE
+
+  .. tab:: OpenSeesPy
+	   
+     .. function:: beam Integration('ConcentratedPlasticity',integrationTag,secTagI,secTagJ,secTagE)
 
 .. list-table:: 
    :widths: 10 10 40
