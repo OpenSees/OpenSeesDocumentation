@@ -3,7 +3,7 @@
 Beam integration Command
 ************************
 
-This command is used to construct an element and add it to the Domain. 
+This command is used to construct an integration object for certain beam elements. A wide range of numerical integration options are available in OpenSees to represent either distributed plasticity or concentrated plasticity.
 
 .. function:: beamIntegration $integtaionType $tag $arg1 ...
 
@@ -18,8 +18,6 @@ This command is used to construct an element and add it to the Domain.
 Following are beamIntegration types available in the OpenSees:
 
 1. Integration Methods for Distributed Plasticity. Distributed plasticity methods permit yielding at any integration point along the element length.
-
-1. Zero-Length Elements
 
 .. toctree::
    :maxdepth: 4

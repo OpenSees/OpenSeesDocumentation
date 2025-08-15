@@ -23,7 +23,7 @@ In OpenSees there are commands to add each of these types of objects to a domain
    material/ndMaterial
    section
    model/geomTransf
-   model/beamIntegrations   
+   model/beamIntegration
    model/element
    model/timeSeries
    model/pattern
