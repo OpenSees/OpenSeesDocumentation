@@ -9,11 +9,11 @@ This command creates a Concentrated-Plasticity beamIntegration object. This inte
 
   .. tab:: Tcl
 
-     .. function:: beam Integration ConcentratedPlasticity $integrationTag $secTagI $secTagJ $secTagE
+     .. function:: beamIntegration ConcentratedPlasticity $integrationTag $secTagI $secTagJ $secTagE
 
   .. tab:: OpenSeesPy
 	   
-     .. function:: beam Integration('ConcentratedPlasticity',integrationTag,secTagI,secTagJ,secTagE)
+     .. function:: beamIntegration('ConcentratedPlasticity',integrationTag,secTagI,secTagJ,secTagE)
 
 .. list-table:: 
    :widths: 10 10 40
