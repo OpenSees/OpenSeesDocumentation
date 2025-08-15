@@ -1,21 +1,21 @@
-.. _forceBeamColumn:
+.. _dispBeamColumn:
 
 
-Force-Based Beam Column
-^^^^^^^^^^^^^^^^^^^^^^^
+Displacement-Based Beam Column
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This command is used to construct a forceBeamColumn element object, which is based on the iterative force-based formulation. A variety of numerical integration options are available for the element state determination and encompass both distributed plasticity and pla\
+This command is used to construct a displacementBeamColumn element object. A variety of numerical integration options are available for the element state determination and encompass both distributed plasticity and pla\
 stic hinge integration, see :ref:`beamIntegration` options. The element if formulated in a basic system, given by its end rotations and axial deformation. The geometric transformation between this basic system and the 2d or 3d system comprisomg nodal displacements and rotations, is provided by the geometric transformation, see :ref:`geomTransf` options.  
 
 .. note::
 
-   Force based elements use known equilibrium along the element length to determine section forces. As a consequence, in a finite element setting the element must iterate given nodal displacements at each trial step to determine the section deformations at the integration points to cause such. For a discussion of differences between **force** based beam column element  and the **displacement** based element see `this post on portwooddigital <https://portwooddigital.com/2020/02/23/a-tale-of-two-element-formulations/>`_
+   The displacement based beam column element uses shape functions to determine the displacement field along the element length. This is typical formulation used for elements in the finite element method. As a consequence, section forces satisfy weak-equilibrium with element end forces. For a discussion on the consequences of weak equilibrium and of the differences between **displacement** based beam column element and the **force** based element see `this post on portwooddigital <https://portwooddigital.com/2020/02/23/a-tale-of-two-element-formulations/>`_
 
 .. tabs::
 
   .. tab:: Tcl
 
-     .. function:: element forceBeamCoumn $eleTag $iNode $jNode $transfTag $integrationTag <-iter $maxIter $tol>  <-mass $mass> 
+     .. function:: element dispBeamCoumn $eleTag $iNode $jNode $transfTag $integrationTag <-mass $mass> 
 
      .. csv-table::
 	:header: "Argument", "Type", "Description"
@@ -32,15 +32,14 @@ stic hinge integration, see :ref:`beamIntegration` options. The element if formu
 		    
   .. tab:: OpenSeesPy
 
-     .. function:: element('forceBeamColumn',eleTag,*eleNodes,transfTag,integrationTag,'-iter',maxIter=10,tol=1e-12,'-mass',mass=0.0)
+     .. function:: element('dispBeamColumn',eleTag,*eleNodes,transfTag,integrationTag,'-cMass','-mass',mass=0.0)	   
 
      ========================   =============================================================
      ``eleTag`` |int|           tag of the element
      ``eleNodes`` |listi|       a list of two element nodes
      ``transfTag`` |int|        tag of transformation
      ``integrationTag`` |int|   tag of :func:`beamIntegration`
-     ``maxIter`` |int|          maximum number of iterations to undertake to satisfy element compatibility (optional)
-     ``tol`` |float|            tolerance for satisfaction of element compatibility (optional)
+     ``'-cMass'``               to form consistent mass matrix (optional, default = lumped mass matrix)     
      ``mass`` |float|           element mass density (per unit length), from which a lumped-mass matrix is formed (optional)
      ========================   =============================================================
 

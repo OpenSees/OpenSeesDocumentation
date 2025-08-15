@@ -54,12 +54,12 @@ The following subsections contain information about **$eleType** and the number 
    :maxdepth: 1
 
    elements/elasticBeamColumn
+   elements/dispBeamColumn
+   elements/forceBeamColumn   
    elements/ModElasticBeam
    elements/ElasticBeamColumnElementWithStiffnessModifiers
    elements/ElasticTimoshenkoBeamColumnElement
    elements/BeamWithHingesElement
-   elements/dispBeamColumn
-   elements/forceBeamColumn
    elements/gradientInelasticBeamColumn   
    elements/FlexureShearInteractionDisplacementBasedBeamColumnElement
    elements/MVLEM
