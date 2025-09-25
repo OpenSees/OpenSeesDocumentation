@@ -28,7 +28,12 @@ This command is used to perform the eigenvalue analysis.
 
 .. warning::
 
-   The default eigen solver utilizes **ARPACK**, which is an itreative eigen solver. Like other iterative eigenvalue algorithms, has ARPACK has issues accurately computing the eigenvectors of matrices with repeated (degenerate) eigenvalues or when a number of eigenvalues that are clustered together very closely. (The issue is related to finding orthonormal basis for eigenspace). It such instances it may fail to find all eigenvalues requested or it may return correct eigenvalues, but produce **erroneos eigenvectors**. Incorrect eigenvectors, if using **modal** damping, is problematic.  Tweaking your model slightly, you will never have elements with exact same youngs modulus or nodes with same mass unless solving some academic exercise, will overcome this problem. For example the following script (courtesy of mhscott): 
+   The default eigen solver utilizes **ARPACK**, an iterative eigenvalue solver. Like other iterative methods, ARPACK can struggle to accurately compute eigenvectors when matrices contain repeated (degenerate) eigenvalues or clusters of closely spaced eigenvalues. The issue arises from difficulties in establishing an orthonormal basis for the eigenspace.
+
+   In such cases, ARPACK may fail to find all of the requested eigenvalues, or it may return correct eigenvalues but incorrect eigenvectors. When modal damping is used, inaccurate eigenvectors may cause issues with the damping forces calculated. If you are unsure if this is an issue with your model, switch the **solver** used, as the eigenvectors will vary greatly with the chosen solver for such cases.
+
+   Fortunately, small adjustments to the **model** typically prevent this issue. In practical models, material properties (e.g., Young’s modulus) or nodal masses are rarely identical — exact degeneracy is unusual outside of academic test cases. By introducing slight variations, ARPACK is more likely to resolve the eigenstructure correctly. 
+
 
    .. code::
 
