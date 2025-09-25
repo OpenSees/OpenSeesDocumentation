@@ -86,7 +86,22 @@ This command is used to perform the eigenvalue analysis.
       3    0.52573111211146139610    0.00000004574590273254
       4    0.85065080819431726500    0.00000007401842544441
    
+
+   The **-fullGenLapack** option will of course provide eigenvalues to original problem:
+
+   .. code::   
+      set eigV [eigen $nModes]
+
+   will produce:
    
+   .. code::
+      
+      Eigenvalues:   232.99926684570411339337   232.99926686256412722287  
+      1    0.00000000000000000000   -0.52573111211913370333
+      2    0.00000000000000000000   -0.85065080835203987775
+      3    0.52573111209361389484    0.00000000000000000000
+      4    0.85065080832527950605   -0.00000000000000000000
+      
 Theory
 ^^^^^^
 |  A *generalized eigenvalue problem* for two symmetric matrices :math:`K` and :math:`M` of size :math:`n \times n` is given by:
