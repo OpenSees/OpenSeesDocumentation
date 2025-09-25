@@ -28,7 +28,7 @@ This command is used to perform the eigenvalue analysis.
 
 .. warning::
 
-   The default eigen solver utilizes **ARPACK**, which is an itreative eigen solver. Like other iterative eigenvalue algorithms, has ARPACK has issues accurately computing the eigenvectors of matrices with repeated (degenerate) eigenvalues or when a number of eigenvalues that are clustered together very closely. It such instances it may fail to find all eigenvalues requested or return correct eigenvalues, but produce **erroneos eigenvectors**. Incorrect eigenvectors, if using **modal** damping, is problematic.  Tweaking your model slightly, you will never have elements with exact same youngs modulus or nodes with same mass unless solving some academic exercise, will overcome this problem. For example the following script (courtesy of mhscott): 
+   The default eigen solver utilizes **ARPACK**, which is an itreative eigen solver. Like other iterative eigenvalue algorithms, has ARPACK has issues accurately computing the eigenvectors of matrices with repeated (degenerate) eigenvalues or when a number of eigenvalues that are clustered together very closely. (The issue is related to finding orthonormal basis for eigenspace). It such instances it may fail to find all eigenvalues requested or it may return correct eigenvalues, but produce **erroneos eigenvectors**. Incorrect eigenvectors, if using **modal** damping, is problematic.  Tweaking your model slightly, you will never have elements with exact same youngs modulus or nodes with same mass unless solving some academic exercise, will overcome this problem. For example the following script (courtesy of mhscott): 
 
    .. code::
 
@@ -87,7 +87,7 @@ This command is used to perform the eigenvalue analysis.
       4    0.85065080819431726500    0.00000007401842544441
    
 
-   The **-fullGenLapack** option will of course provide eigenvalues to original problem:
+   For this in an academic setting dealing with small problems, the **-fullGenLapack** option will provide correct eigenvalues and eigenvectors to the original problem:
 
    .. code::   
       set eigV [eigen $nModes]
