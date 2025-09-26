@@ -28,11 +28,13 @@ This command is used to perform the eigenvalue analysis.
 
 .. warning::
 
-   The default eigen solver utilizes **ARPACK**, an iterative eigenvalue solver. Like other iterative methods, ARPACK can struggle to accurately compute eigenvectors when matrices contain repeated (degenerate) eigenvalues or clusters of closely spaced eigenvalues. The issue arises from difficulties in establishing an orthonormal basis for the eigenspace.
+   The default eigen solver utilizes **ARPACK**, an iterative eigenvalue solver. Like other iterative methods, ARPACK can struggle to accurately compute eigenvectors when the model contains repeated (degenerate) eigenvalues or clusters of very closely spaced eigenvalues. The issue arises from difficulties in forming an orthonormal basis for the eigenspace numerically.
 
-   In such cases, ARPACK may fail to find all of the requested eigenvalues, or it may return correct eigenvalues but incorrect eigenvectors. When modal damping is used, inaccurate eigenvectors may cause issues with the damping forces calculated. If you are unsure if this is an issue with your model, switch the **solver** used, as the eigenvectors will vary greatly with the chosen solver for such cases.
+   In such cases, ARPACK may fail to find all of the requested eigenvalues, or it may return correct eigenvalues but incorrect eigenvectors. When **modal** damping is used, inaccurate eigenvectors may cause issues with the damping forces calculated. If you are unsure if this is an issue with your model, switch the **solver** used and check the reslts again -- this check works as the eigenvectors will vary greatly with the chosen solver when this issue exists.
 
-   Fortunately, small adjustments to the **model** typically prevent this issue. In practical models, material properties (e.g., Young’s modulus) or nodal masses are rarely identical — exact degeneracy is unusual outside of academic test cases. By introducing slight variations, ARPACK is more likely to resolve the eigenstructure correctly. 
+   Fortunately, small adjustments to the **model** can prevent this numerical issue. In actuality, as material properties (e.g., Young’s modulus) or nodal masses are rarely identical and by introducing slight variations in your model, ARPACK is more likely to form the basis correctly.
+
+   As an illustration of the problem, consider the following script (provided by mhscott):
 
 
    .. code::
