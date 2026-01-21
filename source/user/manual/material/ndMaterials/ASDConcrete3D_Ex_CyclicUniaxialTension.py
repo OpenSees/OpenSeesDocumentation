@@ -15,7 +15,7 @@ ft = fc/10.0
 ec = 2.0*fc/E
 Gt = 0.073*fc**0.18
 Gc = 2.0*Gt*(fc/ft)**2
-Te, Ts, Td, Ce, Cs, Cd, lch_ref = make_concrete(E, ft, ec, fc, Gt, Gc)
+Te, Ts, Td, Ce, Cs, Cd, lch_ref = make_concrete(E, ft, fc, ec, Gt, Gc)
 ops.nDMaterial('ASDConcrete3D', 1,
 	E, v, # elasticity
 	'-Te', *Te, '-Ts', *Ts, '-Td', *Td, # tensile law

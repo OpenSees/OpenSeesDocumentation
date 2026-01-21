@@ -1,0 +1,53 @@
+name: Sphinx build
+
+on: 
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build HTML
+      uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "."
+
+    
+    - name: Upload static files as artifact
+      id: deployment
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: build/html/
+
+
+#   - name: Deploy
+#     uses: peaceiris/actions-gh-pages@v3
+#     if: github.ref == 'refs/heads/main'
+#     with:
+#       github_token: ${{ secrets.GITHUB_TOKEN }}
+#       publish_dir: _build/html
+#
+  # Deployment job
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # Set permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      if: github.ref == 'refs/heads/master'
+      uses: actions/deploy-pages@v4
+

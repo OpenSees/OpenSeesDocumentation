@@ -54,12 +54,12 @@ The following subsections contain information about **$eleType** and the number 
    :maxdepth: 1
 
    elements/elasticBeamColumn
+   elements/dispBeamColumn
+   elements/forceBeamColumn   
    elements/ModElasticBeam
    elements/ElasticBeamColumnElementWithStiffnessModifiers
    elements/ElasticTimoshenkoBeamColumnElement
    elements/BeamWithHingesElement
-   elements/DisplacementBasedBeamColumnElement
-   elements/ForceBasedBeamColumnElement
    elements/gradientInelasticBeamColumn   
    elements/FlexureShearInteractionDisplacementBasedBeamColumnElement
    elements/MVLEM
@@ -96,6 +96,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/Tri31
    elements/ShellDKGT
    elements/ShellNLDKGT
+   elements/ASDShellT3
 
 6. Bricks
 
@@ -124,6 +125,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/ElasticTubularJoint
    elements/Joint2D
    elements/Inno3DPnPJoint
+   elements/LehighJoint2D
 
 9. Link Elements
 
@@ -211,4 +213,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/ASDEmbeddedNodeElement
    elements/ASDAbsorbingBoundary
    elements/RockingBC
+   elements/FSIFluidBoundaryElement2D
+   elements/FSIFluidElement2D
+   elements/FSIInterfaceElement2D
 

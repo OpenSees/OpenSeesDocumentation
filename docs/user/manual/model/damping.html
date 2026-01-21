@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1.12. Damping Commands &mdash; OpenSees Documentation  documentation</title>
+  <title>3.1.13. Damping Commands &mdash; OpenSees Documentation  documentation</title>
   
 
   
@@ -45,8 +45,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.1.12.1. Rayleigh Damping Command" href="damping/rayleigh.html" />
-    <link rel="prev" title="3.1.11.5. H5DRM Pattern" href="pattern/H5DRM.html" /> 
+    <link rel="next" title="3.1.13.1. Rayleigh Damping Command" href="damping/rayleigh.html" />
+    <link rel="prev" title="3.1.12.5. H5DRM Pattern" href="pattern/H5DRM.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,14 +108,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../material/ndMaterial.html">3.1.6. nDMaterial Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../section.html">3.1.7. section Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geomTransf.html">3.1.8. Geometric Transformation Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="element.html">3.1.9. Element Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="timeSeries.html">3.1.10. Time Series Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pattern.html">3.1.11. Pattern Command</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.12. Damping Commands</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="damping/rayleigh.html">3.1.12.1. Rayleigh Damping Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="damping/modalDamping.html">3.1.12.2. Modal Damping Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="damping/elementalDamping.html">3.1.12.3. Elemental Damping Command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#references">3.1.12.4. References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="beamIntegration.html">3.1.9. Beam integration Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="element.html">3.1.10. Element Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timeSeries.html">3.1.11. Time Series Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pattern.html">3.1.12. Pattern Command</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.13. Damping Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="damping/rayleigh.html">3.1.13.1. Rayleigh Damping Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="damping/modalDamping.html">3.1.13.2. Modal Damping Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="damping/elementalDamping.html">3.1.13.3. Elemental Damping Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">3.1.13.4. References</a></li>
 </ul>
 </li>
 </ul>
@@ -189,7 +190,7 @@
         
           <li><a href="../modelCommands.html"><span class="section-number">3.1. </span>Model Commands</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.12. </span>Damping Commands</li>
+      <li><span class="section-number">3.1.13. </span>Damping Commands</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -209,17 +210,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="damping-commands">
-<span id="damping"></span><h1><span class="section-number">3.1.12. </span>Damping Commands<a class="headerlink" href="#damping-commands" title="Permalink to this heading">¶</a></h1>
+<span id="damping"></span><h1><span class="section-number">3.1.13. </span>Damping Commands<a class="headerlink" href="#damping-commands" title="Permalink to this heading">¶</a></h1>
 <p>OpenSees provides the user several method to construct damping in their model. List of the available method are:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="damping/rayleigh.html">3.1.12.1. Rayleigh Damping Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="damping/modalDamping.html">3.1.12.2. Modal Damping Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="damping/elementalDamping.html">3.1.12.3. Elemental Damping Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="damping/rayleigh.html">3.1.13.1. Rayleigh Damping Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="damping/modalDamping.html">3.1.13.2. Modal Damping Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="damping/elementalDamping.html">3.1.13.3. Elemental Damping Command</a></li>
 </ul>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">3.1.12.4. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.1.13.4. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <dl class="citation">
 <dt class="label" id="chopramckenna2015"><span class="brackets">ChopraMcKenna2015</span></dt>
 <dd><p>Chopra, A. K., &amp; McKenna, F. (2016). Modeling viscous damping in nonlinear response history analysis of buildings for earthquake excitation. Earthquake Engineering &amp; Structural Dynamics, 45(2), 193-211. <a class="reference external" href="https://onlinelibrary.wiley.com/doi/full/10.1002/eqe.2622">https://onlinelibrary.wiley.com/doi/full/10.1002/eqe.2622</a></p>

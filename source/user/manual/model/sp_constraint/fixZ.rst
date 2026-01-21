@@ -1,4 +1,4 @@
-fixY Command
+fixZ Command
 ************
 
 This command is used to construct multiple homogeneous single-point boundary constraints for all nodes whose z-coordinate lies within a specified distance from a specified coordinate.

@@ -27,6 +27,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Steel01
       uniaxialMaterials/Steel02
       uniaxialMaterials/Steel4
+      uniaxialMaterials/ASDSteel1D
       uniaxialMaterials/ReinforcingSteel
       uniaxialMaterials/DoddRestrepo
       uniaxialMaterials/RambergOsgoodSteel
@@ -44,7 +45,9 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Concrete01
       uniaxialMaterials/Concrete02
       uniaxialMaterials/Concrete04
+      uniaxialMaterials/ASDConcrete1D
       uniaxialMaterials/GMG_CyclicReinforcedConcrete
+      uniaxialMaterials/Creep
 	  
 ..    uniaxialMaterials/Concrete06
       uniaxialMaterials/Concrete07
@@ -139,6 +142,8 @@ The following subsections contain information about **$matType**
    uniaxialMaterials/PyLiq1
    uniaxialMaterials/TzLiq1
    uniaxialMaterials/QzLiq1
+   uniaxialMaterials/TzSandCPT
+   uniaxialMaterials/QbSandCPT
 
 .. uniaxialMaterials/KikuchiAikenHDR
    uniaxialMaterials/KikuchiAikenLRB
