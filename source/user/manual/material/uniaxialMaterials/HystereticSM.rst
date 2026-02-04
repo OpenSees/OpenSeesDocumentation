@@ -8,6 +8,8 @@ This command is used to construct a uniaxial multilinear hysteretic material obj
 - The positive and negative backbone of this material do not need to have the same number of segments. 
 - This material also has the option to degrade the envelope using the degEnv parameters -- these parameters must be used in combination with the damage parameters
 - This material also has additional DCR-type recorder output (this is still a work in progress).
+- Feb 2026 Update 1: I added a new input rotY to be used when the deformation represents platic-only deformation. The user-defined values of rotY is added to eps1 to compute the current ductility level (=current strain/(eps1+rotY)). You can define different values in positive and negative. This new argument affects the damage-parameter calcs as well as the unloading stiffness.
+- Feb 2026 Update 2: The second slope no longer needs to be positive, only the first stiffness does... in both directions.
 
 Input Command:
 -----------------
@@ -23,6 +25,7 @@ Input Command:
           <,'-damage',damage1,damage2> 
           <,'-beta',beta> 
           <,'-degEnv',degEnvP <,degEnvN>> 
+          <,'-rotY',rotYp <,rotYn>> 
           <,'-defoLimitStates',lsD1 <$lsD2>...> 
           <,'-forceLimitStates',lsF1 <,$lsF2>...> 
           <,'-printInput'> 
@@ -40,6 +43,7 @@ Input Command:
           <-damage $damage1 $damage2> \
           <-beta $beta> \
           <-degEnv degEnvP <degEnvN>> \
+          <-rotY rotYp <rotYn>> \
           <-defoLimitStates $lsD1 <$lsD2>...> \
           <-forceLimitStates $lsF1 <$lsF2>...> \
           <-printInput> \
@@ -55,6 +59,7 @@ You can use the following input format as it is compatible with Hysteretic mater
           s1n,e1n,s2n,e2n <,s3n,e3n> <,s4n,e4n> <,s5n,e5n> <,s6n,e6n> <,s7n,e7n>,
           pinchX,pinchY,damage1,damage2 <,beta> 
           <,'-degEnv',degEnvP <,degEnvN>> 
+          <,'-rotY',rotYp <,rotYn>> 
           <,'-defoLimitStates',lsD1 <$lsD2>...> 
           <,'-forceLimitStates',lsF1 <,$lsF2>...> 
           <,'-printInput'> 
@@ -68,6 +73,7 @@ You can use the following input format as it is compatible with Hysteretic mater
           $s1n $e1n $s2n $e2n <$s3n $e3n> <$s4n $e4n> <$s5n $e5n> <$s6n $e6n> <$s7n $e7n> \
           $pinchX $pinchY $damage1 $damage2 <$beta> \
           <-degEnv degEnvP <degEnvN>> \
+          <-rotY rotYp <rotYn>> \
           <-defoLimitStates lsD1? <lsD2?>...> \
           <-forceLimitStates lsF1? <lsF2?>...> \
           <-printInput> \
@@ -131,6 +137,12 @@ Input Arguments:
    * - $degEnvN
      - |float|
      - envelope-degredation factor. This factor works with the damage parameters to degrade the NEGATIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=degEnvP, if defined, =0. otherwise)
+   * - $rotYp
+     - |float|
+     - This value is added to e1p anytime the algorithm needs to compute ductility or energy in POSITIVE direction. 
+   * - $rotYn
+     - |float|
+     - This value is added to e1p anytime the algorithm needs to compute ductility or energy in NEGATIVE direction. 
    * - ($lsD1,$lsD2..)
      - |float|
      - list of user-defined strain/deformation limits for computing deformation DCRs (optional) 
@@ -731,3 +743,4 @@ Input-Parameters Study:
 
 | HystereticSM Code Developed (2022) by: |silvia| (Silvia's Brainery)
 | Original Hysteretic-Material Code Developed by: |mhs| & Filip Filippou (UC Berkeley)
+
