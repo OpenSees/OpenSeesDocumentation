@@ -134,10 +134,10 @@ Input Arguments:
      - power used to determine the degraded unloading stiffness based on ductility, mu-beta (optional, default=0.0)
    * - $degEnvP
      - |float|
-     - envelope-degredation factor. This factor works with the damage parameters to degrade the POSITIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=0.0)
+     - envelope-degredation factor. This factor works with the damage parameters to degrade the POSITIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 2+ (optional, default=0.0)
    * - $degEnvN
      - |float|
-     - envelope-degredation factor. This factor works with the damage parameters to degrade the NEGATIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 3+ (optional, default=degEnvP, if defined, =0. otherwise)
+     - envelope-degredation factor. This factor works with the damage parameters to degrade the NEGATIVE envelope. A positive value degrades both strength and strain values, a negative values degrades only strength. The factor is applied to points 2+ (optional, default=degEnvP, if defined, =0. otherwise)
    * - $rotYp
      - |float|
      - This value is added to e1p anytime the algorithm needs to compute ductility or energy in POSITIVE direction. 
@@ -744,5 +744,6 @@ Input-Parameters Study:
 
 | HystereticSM Code Developed (2022) by: |Silvia Mazzoni| (Silvia's Brainery)
 | Original Hysteretic-Material Code Developed by: |mhs| & Filip Filippou (UC Berkeley)
+
 
 
