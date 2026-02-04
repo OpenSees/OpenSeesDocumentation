@@ -4,10 +4,11 @@ HystereticSM Material
 ^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct a uniaxial multilinear hysteretic material object with pinching of force and deformation, damage due to ductility and energy, and degraded unloading stiffness based on ductility. 
-- This material is an extension of the Hysteretic Material -- the envelope can be defined 2,3, 4,5,6 or 7 points, while the original one only had 2 or 3.
+- This material is an extension of the Hysteretic Material -- the envelope can be defined 2,3,4,5,6 or 7 points, while the original one only had 2 or 3.
 - The positive and negative backbone of this material do not need to have the same number of segments. 
 - This material also has the option to degrade the envelope using the degEnv parameters -- these parameters must be used in combination with the damage parameters
 - This material also has additional DCR-type recorder output (this is still a work in progress).
+- Written by Silvia Mazzoni, 2022
 - Feb 2026 Update 1: I added a new input rotY to be used when the deformation represents platic-only deformation. The user-defined values of rotY is added to eps1 to compute the current ductility level (=current strain/(eps1+rotY)). You can define different values in positive and negative. This new argument affects the damage-parameter calcs as well as the unloading stiffness.
 - Feb 2026 Update 2: The second slope no longer needs to be positive, only the first stiffness does... in both directions.
 
@@ -741,6 +742,7 @@ Input-Parameters Study:
 
 
 
-| HystereticSM Code Developed (2022) by: |silvia| (Silvia's Brainery)
+| HystereticSM Code Developed (2022) by: |Silvia Mazzoni| (Silvia's Brainery)
 | Original Hysteretic-Material Code Developed by: |mhs| & Filip Filippou (UC Berkeley)
+
 
