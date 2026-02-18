@@ -10,5 +10,6 @@ Multi point constraints (MP_Constraints) are constraints that allow the user to 
    mp_constraint/equalDOF
    mp_constraint/rigidDiaphragm
    mp_constraint/rigidLink
+   mp_constraint/equationConstraint
 
 
