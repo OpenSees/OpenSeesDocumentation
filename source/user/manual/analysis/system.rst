@@ -22,4 +22,5 @@ The following contain information about systemType? and the args required for ea
    system/SparseSYM
    system/Mumps
    system/Cusp
+   system/Diagonal
    system/PythonSparse

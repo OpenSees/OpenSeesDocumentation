@@ -44,6 +44,8 @@ Transient Integrators:
    integrator/GeneralizedAlpha
    integrator/TRBDF2
    integrator/ExplicitDifference
+   integrator/ExplicitBathe
+   integrator/ExplicitDifferenceStatic
 
 
 Utility Integrators:
