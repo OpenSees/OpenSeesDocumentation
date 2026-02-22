@@ -89,14 +89,19 @@ The following subsections contain information about **$matType**
 
 .. toctree::
       :maxdepth: 1
-      
-..    uniaxialMaterials/Fatigue
+
+      uniaxialMaterials/Fatigue
       uniaxialMaterials/Parallel
       uniaxialMaterials/Series
+      uniaxialMaterials/TensionOnly
+      uniaxialMaterials/SimpleFracture
       uniaxialMaterials/InitialStrain
       uniaxialMaterials/InitialStress
       uniaxialMaterials/MinMax
       uniaxialMaterials/PathIndependent
+      uniaxialMaterials/Damper
+      uniaxialMaterials/Penalty
+      uniaxialMaterials/Multiplier
 
 #. Other Uniaxial Materials
 
