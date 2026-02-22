@@ -28,6 +28,8 @@ What comes *before* ``fiber`` depends on the element:
 
 - **Beam-column elements** (displacement-based, force-based, mixed) – Use ``section`` *secNum* then ``fiber``, where *secNum* is the integration point number (1 to *N*\ :sub:`p` from node *I* to node *J*). Alternatively, use ``sectionX`` *x* then ``fiber`` to select the section closest to coordinate *x* along the element (see :ref:`elementRecorderSectionX`).
 
+1. **Tcl Code**
+
 .. code-block:: tcl
 
    # zeroLengthSection: fiber closest to (y,z), stress-strain
@@ -35,6 +37,8 @@ What comes *before* ``fiber`` depends on the element:
 
    # Beam-column: section 1, fiber at (y,z) with material tag 2 (e.g. steel)
    recorder Element -ele 1 -file steelFiber.out section 1 fiber -h/2 0 2 stressStrain
+
+2. **Python Code**
 
 .. code-block:: python
 
@@ -53,10 +57,14 @@ For beam-column elements you can record section response (e.g. ``force``, ``defo
 
 You can avoid relying on section numbers by using **sectionX**: give a location *x* in the range [0, *L*] along the element (0 at node *I*, *L* at node *J*). The recorder will use the section **closest** to that *x* coordinate. The remaining arguments after ``sectionX`` *x* are the same as for the usual ``section`` *secNum* recorder (e.g. ``deformation``, ``force``, or ``fiber`` ...).
 
+1. **Tcl Code**
+
 .. code-block:: tcl
 
    # Section closest to x = 25 along the element
    recorder Element -ele 1 -file sec25.out sectionX 25 deformation
+
+2. **Python Code**
 
 .. code-block:: python
 
@@ -64,7 +72,7 @@ You can avoid relying on section numbers by using **sectionX**: give a location 
 
 .. note::
 
-   ``sectionX`` accepts a **single** *x* value per recorder. To record at multiple locations, define multiple recorders or use multiple *x* values in separate recorder commands.
+   ``sectionX`` accepts a **single** *x* value per recorder. To record at multiple locations, define multiple recorders.
 
 .. seealso::
 

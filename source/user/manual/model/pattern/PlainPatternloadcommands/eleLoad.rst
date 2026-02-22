@@ -69,7 +69,7 @@ For trapezoidal loads in 3D, use *Wy* *Wz* *Wx* *aOverL* *bOverL* *Wyb* *Wzb* *W
 
    Uniform distributed load; trapezoidal load on segment from 0.2*L* to 0.8*L* (2D).
 
-   **Tcl:**
+   1. **Tcl Code**
 
    .. code-block:: tcl
 
@@ -87,7 +87,7 @@ For trapezoidal loads in 3D, use *Wy* *Wz* *Wx* *aOverL* *bOverL* *Wyb* *Wzb* *W
           eleLoad -ele 4 -type -beamUniform $wya $wxa $aOverL $bOverL $wyb $wxb
       }
 
-   **Python:**
+   2. **Python Code**
 
    .. code-block:: python
 

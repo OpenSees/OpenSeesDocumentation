@@ -34,6 +34,8 @@ To record fatigue damage, use the element recorder with the ``damage`` response.
 
 **Truss elements:** Use ``material`` **without** a tag after it. Adding a material tag after ``material`` will not work.
 
+1. **Tcl Code**
+
 .. code-block:: tcl
 
    # Fiber section: record damage of 1st fiber (index 0) — "material" and "fiber" equivalent
@@ -45,6 +47,8 @@ To record fatigue damage, use the element recorder with the ``damage`` response.
 
    # Truss: use "material" with no tag
    recorder Element -file Damage4.out -time -ele 1 material damage
+
+2. **Python Code**
 
 .. code-block:: python
 
