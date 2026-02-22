@@ -44,6 +44,7 @@ The following subsections contain information about **$matType**
 
       uniaxialMaterials/Concrete01
       uniaxialMaterials/Concrete02
+      uniaxialMaterials/Concrete02IS
       uniaxialMaterials/Concrete04
       uniaxialMaterials/ASDConcrete1D
       uniaxialMaterials/GMG_CyclicReinforcedConcrete
@@ -60,8 +61,8 @@ The following subsections contain information about **$matType**
 
 .. toctree::
       :maxdepth: 1
-		 
-..    uniaxialMaterials/Elastic
+
+      uniaxialMaterials/Elastic
       uniaxialMaterials/ElasticPP
       uniaxialMaterials/ElasticPP_Gap
       uniaxialMaterials/ElasticNoTension
@@ -89,14 +90,19 @@ The following subsections contain information about **$matType**
 
 .. toctree::
       :maxdepth: 1
-      
-..    uniaxialMaterials/Fatigue
+
+      uniaxialMaterials/Fatigue
       uniaxialMaterials/Parallel
       uniaxialMaterials/Series
+      uniaxialMaterials/TensionOnly
+      uniaxialMaterials/SimpleFracture
       uniaxialMaterials/InitialStrain
       uniaxialMaterials/InitialStress
       uniaxialMaterials/MinMax
       uniaxialMaterials/PathIndependent
+      uniaxialMaterials/Damper
+      uniaxialMaterials/Penalty
+      uniaxialMaterials/Multiplier
 
 #. Other Uniaxial Materials
 
