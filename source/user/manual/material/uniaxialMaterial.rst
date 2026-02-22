@@ -61,8 +61,8 @@ The following subsections contain information about **$matType**
 
 .. toctree::
       :maxdepth: 1
-		 
-..    uniaxialMaterials/Elastic
+
+      uniaxialMaterials/Elastic
       uniaxialMaterials/ElasticPP
       uniaxialMaterials/ElasticPP_Gap
       uniaxialMaterials/ElasticNoTension
