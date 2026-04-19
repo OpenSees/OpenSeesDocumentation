@@ -3,11 +3,14 @@
 Yield Functions
 ^^^^^^^^^^^^^^^
 
-Specifies the shape of the yield surface, i.e. the locus of points in stress-space where the response of the material is linear. Points outside the yield surface are not allowed. Yield surfaces can have parameters and internal variables which define its shape and location. 
+Specifies the shape of the yield surface, i.e. locus of points in stress-space where the response of the material is linear. Points outside of yield surface are not allowed. Yield surfaces can have parameters and internal variables which define its shape and location. 
 
-Yield Functions may define internal variables they need for their specification, as well as paramters. When specifying the ``ASDPlasticMaterial`` instance, once must provide the internal variables mentioned below, together with their hardening function. 
+Yield Functions may define internal variables they need for their specification, as well as paramters. When specifying ``ASDPlasticMaterial`` or ``ASDPlasticMaterial3D`` instance, one must provide internal variables mentioned below, together with their hardening function. 
 
-Yield functions are also responsible for providing their stress-derivative (:math:`\mathbf{n} = \partial f / \partial \boldsymbol{\sigma}`) as well as computing the hardening term :math:`H` in the plastic multiplier (see :ref:`ASDPlasticTheory`). 
+Yield functions are also responsible for providing their stress-derivative (:math:`\mathbf{n} = \partial f / \partial \boldsymbol{\sigma}`) as well as computing hardening term :math:`H` in the plastic multiplier (see :ref:`ASDPlasticTheory`). 
+
+.. note::
+   When using :ref:`ASDPlasticMaterial3D`, yield function internal variables can be accessed directly using enhanced response queries. This provides detailed insight into material state evolution during analysis.
 
 Available functions:
 
@@ -44,10 +47,21 @@ Where :math:`p = -(\sigma_{11} + \sigma_{22} + \sigma_{33})/3` is the mean stres
 
 .. admonition:: Parameters required
 
-   .. csv-table:: 
-      :header: "IV Name", "Type", "Symbol", "Description"
-      :widths: 10, 10, 10, 70
+   None required for the yield function itself. Parameters are defined by the internal variable hardening functions and elasticity model.
 
+.. admonition:: Usage in ASDPlasticMaterial3D
+
+   When using VonMises_YF with :ref:`ASDPlasticMaterial3D`, you can access the internal variables using enhanced response queries:
+   
+   * ``VonMisesRadius`` - Current radius of the yield surface
+   * ``BackStress`` - Current backstress tensor (6 components in Voigt notation)
+   
+   These can be recorded using:
+   
+   .. code-block:: tcl
+   
+       recorder Node -file vonmises_radius.out -time -node 1 -dof 1 VonMisesRadius
+       recorder Node -file backstress.out -time -node 1 -dof 1 BackStress
 
 
 .. _DruckerPrager_YF:
@@ -77,13 +91,23 @@ Where all symbols are as before. In this case note that :math:`k`, defines the s
 .. admonition:: Parameters required
 
    .. csv-table:: 
-      :header: "IV Name", "Type", "Symbol", "Description"
+      :header: "Parameter Name", "Type", "Symbol", "Description"
       :widths: 10, 10, 10, 70
 
-.. _RoundedMohrCoulomb_YF:
+      ``Dilatancy``, Scalar, :math:`D`, "Dilatancy parameter from plastic flow model (if used)"
 
-RoundedMohrCoulomb_YF
-"""""""""""""""""""""
+.. admonition:: Usage in ASDPlasticMaterial3D
 
-Coming soon
+   DruckerPrager_YF with :ref:`ASDPlasticMaterial3D` provides access to:
+   
+   * ``VonMisesRadius`` - Current strength parameter
+   * ``BackStress`` - Current backstress tensor
+   
+   Enhanced stress measures are particularly useful:
+   
+   .. code-block:: tcl
+   
+       recorder Node -file p_stress.out -time -node 1 -dof 1 PStress
+       recorder Node -file j2_stress.out -time -node 1 -dof 1 J2Stress
+
 

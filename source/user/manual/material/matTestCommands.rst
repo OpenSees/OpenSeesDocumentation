@@ -82,4 +82,59 @@ The command getResponse returns material or section specific information.
    :widths: 10, 10, 40
 
    $args,  |list|, list of the arguments for the material/section response
+    
+NDTest Commands for Direct Material Testing
+===========================================
+
+For more advanced and direct testing of nDMaterial objects, OpenSees provides the :ref:`NDTest Command <NDTest>` which offers additional functionality beyond the basic material testing environment. 
+
+The NDTest command provides comprehensive testing capabilities including:
+
+- Direct strain control with ``NDTest SetStrain``
+- State management with ``NDTest CommitState``
+- Parameter updates during runtime
+- Enhanced response queries
+- Real-time material state inspection
+
+Key differences between the basic material testing environment and NDTest:
+
+- **Basic Testing**: Uses ``testNDMaterial`` with ``setStrain``/``getStress`` commands
+- **NDTest**: Uses ``NDTest`` with more extensive command set and real-time parameter updates
+
+For complete documentation of NDTest commands, see :ref:`NDTest`.
+
+Example comparing both approaches:
+
+TCL:
+
+.. code-block:: tcl
+
+   # Basic testing approach
+   testNDMaterial 1
+   setStrain 0.001 0.0 0.0 0.0 0.0 0.0
+   set stress [getStress]
    
+   # NDTest approach  
+   NDTest SetStrain 1 0.001 0.0 0.0 0.0 0.0 0.0
+   set stress [NDTest GetStress 1]
+   NDTest CommitState 1
+   # Additional capabilities:
+   set tangent [NDTest GetTangentStiffness 1]
+   NDTest UpdateDoubleParameter 1 1 2.1e-5
+
+Python:
+
+.. code-block:: python
+
+   # Basic testing approach
+   op.testNDMaterial(1)
+   op.setStrain(0.001, 0.0, 0.0, 0.0, 0.0, 0.0)
+   stress = op.getStress()
+   
+   # NDTest approach  
+   op.NDTest("SetStrain", 1, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0)
+   stress = op.NDTest("GetStress", 1)
+   op.NDTest("CommitState", 1)
+   # Additional capabilities:
+   tangent = op.NDTest("GetTangentStiffness", 1)
+   op.NDTest("UpdateDoubleParameter", 1, 1, 2.1e-5)
