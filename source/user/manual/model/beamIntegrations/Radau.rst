@@ -11,32 +11,35 @@ To create a Gauss-Radau beamIntegration object. Gauss-Radau integration is not c
    numerical analysis. The force-deformation response at each integration point is defined
    by the section. The order of accuracy for Gauss-Radau integration is 2N-2.
 
-.. function:: beamIntegration 'Radau' tag secTag N
+Two input forms: prismatic (one section) or non-prismatic (N section tags).
+
+.. function:: beamIntegration Radau tag secTag N
+
+.. function:: beamIntegration Radau tag N secTag1 secTag2 ... secTagN
 
 .. csv-table::
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
 
-   "$tag",       "|integer|",    "Unique object tag"
-   "$sectTag",   "|integer|",    "A previous-defined section"
-   "$N",         "|integer|",    "Number of Integration Points along the elementa"
-   
+   tag,       |integer|,  unique beam integration tag
+   secTag,    |integer|,  (prismatic) one previously-defined section
+   N,         |integer|,  number of integration points
+   secTag1 ..., |integer|,  (non-prismatic) N section tags, one per point
 
-.. admonition:: Example:
-
-   The following examples demonstrate the command in Tcl and Python script to add a Radau beam integration with tag 2 and 6 integration points that uses the previously defined section whose tag is 1.
+.. admonition:: Example
 
    1. **Tcl Code**
 
    .. code-block:: tcl
 
-      beamIntegration 'Radau' 2 1 6
-
+      beamIntegration Radau 2 1 6
+      beamIntegration Radau 3 4 1 2 2 1
 
    2. **Python Code**
 
    .. code-block:: python
 
-      beamIntegration('Radau',2,1,6)
+      ops.beamIntegration('Radau', 2, 1, 6)
+      ops.beamIntegration('Radau', 3, 4, 1, 2, 2, 1)
 
 
