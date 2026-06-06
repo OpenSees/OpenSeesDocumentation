@@ -18,7 +18,7 @@ This command is used to construct a uniaxial material, which provides a uniaxial
 
 The following subsections contain information about **$matType** 
 
-#. Steel & Reinforcing-Steel Materials
+1. Steel & Reinforcing-Steel Materials
 
    .. toctree::
       :maxdepth: 1
@@ -36,7 +36,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/DuctileFracture
 
 
-#. Concrete Materials
+2. Concrete Materials
 
    .. toctree::
       :maxdepth: 1
@@ -56,7 +56,7 @@ The following subsections contain information about **$matType**
 ..    uniaxialMaterials/FRPConfinedConcrete
 ..    uniaxialMaterials/ConcreteCM
 
-#. Some Standard Uniaxial Materials
+3. Some Standard Uniaxial Materials
 
    .. toctree::
       :maxdepth: 1
@@ -70,7 +70,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Hardening
       uniaxialMaterials/MultiLinear
 
-#. Generic Multilinear Hysteretic Materials
+4. Generic Multilinear Hysteretic Materials
 
    .. toctree::
       :maxdepth: 1
@@ -84,7 +84,7 @@ The following subsections contain information about **$matType**
 
 ..    uniaxialMaterials/Pinching4
 
-#. Wrapper Uniaxial Materials
+5. Wrapper Uniaxial Materials
 
    .. toctree::
       :maxdepth: 1
@@ -102,7 +102,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Penalty
       uniaxialMaterials/Multiplier
 
-#. Other Uniaxial Materials
+6. Other Uniaxial Materials
 
    .. toctree::
       :maxdepth: 1
@@ -133,7 +133,7 @@ The following subsections contain information about **$matType**
 ..    uniaxialMaterials/BoucWen
 ..    uniaxialMaterials/BWBN
 
-#. PyTzQz uniaxial materials for p-y, t-z and q-z elements
+7. PyTzQz uniaxial materials for p-y, t-z and q-z elements
 
    .. toctree::
       :maxdepth: 1
