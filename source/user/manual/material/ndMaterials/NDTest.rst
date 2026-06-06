@@ -36,12 +36,12 @@ Sets trial strain components on a specified nDMaterial.
    :widths: 10, 10, 40
 
    $matTag, |integer|, Unique tag identifying the nDMaterial object
-   $eps11, |double|, Normal strain in direction 1 (ε₁₁)
-   $eps22, |double|, Normal strain in direction 2 (ε₂₂)
-   $eps33, |double|, Normal strain in direction 3 (ε₃₃)
-   $gamma12, |double|, Engineering shear strain γ₁₂
-   $gamma23, |double|, Engineering shear strain γ₂₃
-   $gamma31, |double|, Engineering shear strain γ₃₁
+   $eps11, |float|, Normal strain in direction 1 (ε₁₁)
+   $eps22, |float|, Normal strain in direction 2 (ε₂₂)
+   $eps33, |float|, Normal strain in direction 3 (ε₃₃)
+   $gamma12, |float|, Engineering shear strain γ₁₂
+   $gamma23, |float|, Engineering shear strain γ₂₃
+   $gamma31, |float|, Engineering shear strain γ₃₁
 
 **Example:**
 
@@ -318,7 +318,7 @@ Updates a double-precision parameter in the material during runtime.
 
    $matTag, |integer|, Unique tag identifying the nDMaterial object
    $paramID, |integer|, Integer parameter identifier (material-specific)
-   $newValue, |double|, New double value for the parameter
+   $newValue, |float|, New double value for the parameter
 
 **Example:**
 

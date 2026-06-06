@@ -1,4 +1,9 @@
-** Single 2D plane-strain quadrilateral element, subjected to sinusoidal base shaking**
+.. _PressureIndependentMultiYieldExample1:
+
+Pressure Independent Multi Yield Example 1
+------------------------------------------
+
+Single 2D plane-strain quadrilateral element, subjected to sinusoidal base shaking.
 
 1. **Tcl Code**
 

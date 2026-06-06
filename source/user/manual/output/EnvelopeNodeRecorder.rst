@@ -45,9 +45,10 @@ The EnvelopeNode recorder type records the maxima and minima response of a numbe
       rayleighForces!
 
    4. | The function returns a value:   
-      | SUCCESS: **>0** an integer tag that can be used as a handle on the recorder for the remove a recorder in the :ref:`remove`.
+      | SUCCESS: **>0** an integer tag that can be used as a handle to remove a recorder with the :ref:`remove` command.
       | FAILURE: **-1** recorder command failed (read the log)
-   To remove a recorder using the :ref:`remove` you need to save this tag in a variable for use later in the script.
+
+   To remove a recorder using the :ref:`remove` command, save this tag in a variable for use later in the script.
 
    5. $deltaT, time interval for recording. will record when next step is $deltaT greater than last recorder step. Not really useful for Envelope recorder, a legacy from NodeRecorder!
 
@@ -70,6 +71,9 @@ The EnvelopeNode recorder type records the maxima and minima response of a numbe
 
      recorder EnvelopeNode -file nodesA.out -timeSeries 1 2 -time -node 1 2 3 4 -dof 1 2 accel;
 
-   .. code:: python
+   .. code-block:: python
+
+      recorder('EnvelopeNode', '-file', 'nodesD.out', '-time', '-node', 1, 2, 3, 4, '-dof', 1, 2, 'disp')
+      recorder('EnvelopeNode', '-file', 'nodesA.out', '-timeSeries', 1, 2, '-time', '-node', 1, 2, 3, 4, '-dof', 1, 2, 'accel')
 
 Code developed by: |fmk|
