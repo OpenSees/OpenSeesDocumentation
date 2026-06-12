@@ -15,7 +15,7 @@ stic hinge integration, see :ref:`beamIntegration` options. The element if formu
 
   .. tab:: Tcl
 
-     .. function:: element dispBeamCoumn $eleTag $iNode $jNode $transfTag $integrationTag <-mass $mass> 
+     .. function:: element dispBeamColumn $eleTag $iNode $jNode $transfTag $integrationTag <-mass $mass> 
 
      .. csv-table::
 	:header: "Argument", "Type", "Description"

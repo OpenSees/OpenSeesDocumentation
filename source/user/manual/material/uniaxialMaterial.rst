@@ -4,7 +4,6 @@ uniaxialMaterial Command
 ************************
 
 This command is used to construct a uniaxial material, which provides a uniaxial stress-strain (or force-deformation) relationships.
-. 
 
 .. function:: uniaxialMaterial $matType $matTag $matArgs
 
@@ -19,7 +18,7 @@ This command is used to construct a uniaxial material, which provides a uniaxial
 
 The following subsections contain information about **$matType** 
 
-#. Steel & Reinforcing-Steel Materials
+1. Steel & Reinforcing-Steel Materials
 
    .. toctree::
       :maxdepth: 1
@@ -37,7 +36,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/DuctileFracture
 
 
-#. Concrete Materials
+2. Concrete Materials
 
    .. toctree::
       :maxdepth: 1
@@ -49,17 +48,17 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/ASDConcrete1D
       uniaxialMaterials/GMG_CyclicReinforcedConcrete
       uniaxialMaterials/Creep
-	  
+
 ..    uniaxialMaterials/Concrete06
-      uniaxialMaterials/Concrete07
-      uniaxialMaterials/ConfinedConcrete01
-      uniaxialMaterials/ConcreteD
-      uniaxialMaterials/FRPConfinedConcrete
-      uniaxialMaterials/ConcreteCM
+..    uniaxialMaterials/Concrete07
+..    uniaxialMaterials/ConfinedConcrete01
+..    uniaxialMaterials/ConcreteD
+..    uniaxialMaterials/FRPConfinedConcrete
+..    uniaxialMaterials/ConcreteCM
 
-#. Some Standard Uniaxial Materials
+3. Some Standard Uniaxial Materials
 
-.. toctree::
+   .. toctree::
       :maxdepth: 1
 
       uniaxialMaterials/Elastic
@@ -70,25 +69,24 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/ElasticMultiLinear
       uniaxialMaterials/Hardening
       uniaxialMaterials/MultiLinear
-      
-#. Generic Multilinear Hysteretic Materials
+
+4. Generic Multilinear Hysteretic Materials
 
    .. toctree::
       :maxdepth: 1
-      
+
       uniaxialMaterials/Hysteretic
       uniaxialMaterials/HystereticSM
       uniaxialMaterials/IMKBilin
       uniaxialMaterials/IMKPeakOriented
       uniaxialMaterials/IMKPinching
       uniaxialMaterials/SLModel
-	  
+
 ..    uniaxialMaterials/Pinching4
 
-      
-#. Wrapper Uniaxial Materials
+5. Wrapper Uniaxial Materials
 
-.. toctree::
+   .. toctree::
       :maxdepth: 1
 
       uniaxialMaterials/Fatigue
@@ -104,7 +102,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Penalty
       uniaxialMaterials/Multiplier
 
-#. Other Uniaxial Materials
+6. Other Uniaxial Materials
 
    .. toctree::
       :maxdepth: 1
@@ -121,43 +119,41 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Ratchet
 
 ..    uniaxialMaterials/CastFuse
-      uniaxialMaterials/ViscousDamper
-      uniaxialMaterials/BilinearOilDamper
-      uniaxialMaterials/SAWS
-      uniaxialMaterials/BARSLIP
-      uniaxialMaterials/Bond_SP01 - - Strain Penetration Model for Fully Anchored Steel Reinforcing Bars
-      uniaxialMaterials/Impact
-      uniaxialMaterials/Hyperbolic Gap
-      uniaxialMaterials/LimitState
-      uniaxialMaterials/Engineered Cementitious Composites
-      uniaxialMaterials/SelfCentering
-      uniaxialMaterials/Viscous
-      uniaxialMaterials/BoucWen
-      uniaxialMaterials/BWBN (Pinching Hysteretic Bouc-Wen)
+..    uniaxialMaterials/ViscousDamper
+..    uniaxialMaterials/BilinearOilDamper
+..    uniaxialMaterials/SAWS
+..    uniaxialMaterials/BARSLIP
+..    uniaxialMaterials/Bond_SP01
+..    uniaxialMaterials/Impact
+..    uniaxialMaterials/HyperbolicGap
+..    uniaxialMaterials/LimitState
+..    uniaxialMaterials/EngineeredCementitiousComposites
+..    uniaxialMaterials/SelfCentering
+..    uniaxialMaterials/Viscous
+..    uniaxialMaterials/BoucWen
+..    uniaxialMaterials/BWBN
 
+7. PyTzQz uniaxial materials for p-y, t-z and q-z elements
 
+   .. toctree::
+      :maxdepth: 1
 
-#. PyTzQz uniaxial materials for p-y, t-z and q-z elements 
+      uniaxialMaterials/PySimple1
+      uniaxialMaterials/TzSimple1
+      uniaxialMaterials/QzSimple1
+      uniaxialMaterials/PyLiq1
+      uniaxialMaterials/TzLiq1
+      uniaxialMaterials/QzLiq1
+      uniaxialMaterials/TzSandCPT
+      uniaxialMaterials/QbSandCPT
 
-.. toctree::
-   :maxdepth: 1
-
-   uniaxialMaterials/PySimple1
-   uniaxialMaterials/TzSimple1
-   uniaxialMaterials/QzSimple1
-   uniaxialMaterials/PyLiq1
-   uniaxialMaterials/TzLiq1
-   uniaxialMaterials/QzLiq1
-   uniaxialMaterials/TzSandCPT
-   uniaxialMaterials/QbSandCPT
-
-.. uniaxialMaterials/KikuchiAikenHDR
-   uniaxialMaterials/KikuchiAikenLRB
-   uniaxialMaterials/AxialSp
-   uniaxialMaterials/AxialSpHD
-   uniaxialMaterials/PinchingLimitState
-   uniaxialMaterials/CFSWSWP
-   uniaxialMaterials/CFSSSWP
-   uniaxialMaterials/PySimple1Gen
-   uniaxialMaterials/TzSimple1Gen
+..    uniaxialMaterials/KikuchiAikenHDR
+..    uniaxialMaterials/KikuchiAikenLRB
+..    uniaxialMaterials/AxialSp
+..    uniaxialMaterials/AxialSpHD
+..    uniaxialMaterials/PinchingLimitState
+..    uniaxialMaterials/CFSWSWP
+..    uniaxialMaterials/CFSSSWP
+..    uniaxialMaterials/PySimple1Gen
+..    uniaxialMaterials/TzSimple1Gen
 

@@ -1,7 +1,7 @@
 .. _ASDPlasticMaterial3D:
 
 ASDPlasticMaterial3D
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 | This command is used to construct an ``ASDPlasticMaterial3D`` material object. ``ASDPlasticMaterial3D`` implements a large family of constitutive models based on the classical theory of elastoplasticity using advanced template metaprogramming. Users build new constitutive models by selecting the yield function, plastic-flow direction, elasticity law, and hardening models for the internal variables from several possible options for each component. 
 
@@ -50,12 +50,12 @@ Explanation
    $ElasticityType, |string|, "Mandatory. Elastic model to be used -> :ref:`ElasticityType`"
    $IV_TYPE, |string|, "Mandatory. Hardening model for internal variables. Admitted types depend on YF, PF, and EL chosen.  "
    Begin_Internal_Variables, |string|, "Optional. Marks the beginning of the code block to set the internal variables. If ommitted, all internal variables are initialized to zero. You can specify as many of the following variables as wanted. Ommitted variables are initialized to zero. Number and name of variables that can be set is model dependent (once YF, PF, and EL are specified)"
-   $InternalVariable1, |list of name/value pairs|, "Initial value of internal variable1. Dimension depends on internal variable type.  "
-   $InternalVariable2, |list of name/value pairs|, "Initial value of internal variable2.  "
+   $InternalVariable1, |list|, "Initial value of internal variable1. Dimension depends on internal variable type.  "
+   $InternalVariable2, |list|, "Initial value of internal variable2.  "
    "--", "--", "... (input as many as model supports)"
    End_Internal_Variables, |string|, "Mandatory if block started. Marks the end of the code block to set the internal variables"
    Begin_Model_Parameters, |string|, "Optional. Marks the beginning of the code block to set the model parameters"
-   $ModelParameters, |list of name/value pairs|, "Values for parameters of the models to be used. This depends on the particular choices of ``$YieldFunctionType``, ``$PlasticFlowType``, ``$ElasticityType``, and ``$IV_type``. "
+   $ModelParameters, |list|, "Values for parameters of the models to be used. This depends on the particular choices of ``$YieldFunctionType``, ``$PlasticFlowType``, ``$ElasticityType``, and ``$IV_type``. "
    "--", "--", "... (input as many as model supports)"
    End_Model_Parameters, |string|, "Mandatory if block started. Marks the beginning of the code block to set the model parameters"
    Begin_Integration_Options, |string|, "Optional. Marks the beginning of the code block to set the integration options. You can set any ammount "
@@ -82,17 +82,18 @@ Explanation
    :caption: Arguments detailed description
    :maxdepth: 2
 
-   ../ASDPlasticMaterial/YieldFunctions
-   ../ASDPlasticMaterial/PlasticFlowType
-   ../ASDPlasticMaterial/ElasticityType
-   ../ASDPlasticMaterial/HardeningFunctions
+   ASDPlasticMaterial/YieldFunctions
+   ASDPlasticMaterial/PlasticFlowType
+   ASDPlasticMaterial/ElasticityType
+   ASDPlasticMaterial/HardeningFunctions
 
 .. _ASDPlasticMaterial3DTheory:
+.. _ASDPlasticTheory:
 
 ASDPlasticMaterial3D Theory
 """""""""""""""""""""""""""""
 
-The theoretical foundation is identical to :ref:`ASDPlasticTheory`. However, ``ASDPlasticMaterial3D`` provides additional implementation features:
+The theoretical foundation follows classical elastoplasticity theory (see :ref:`ASDPlasticTheory`). ``ASDPlasticMaterial3D`` provides additional implementation features:
 
 * **Template Metaprogramming**: Uses C++ template metaprogramming for compile-time optimization
 * **Multiple Integration Methods**: Offers several integration algorithms beyond the basic methods
@@ -107,8 +108,9 @@ The material recieves the total (trial) strain :math:`\vec{\epsilon}^{\text{tria
 The integration method selected determines how the stress increment is computed and how the plastic corrections are applied.
 
 .. _`ASDPlasticMaterial3DIntegrationMethods`:
+
 Advanced Integration Methods
-""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
 
 ``ASDPlasticMaterial3D`` supports multiple integration algorithms beyond the basic Forward Euler and Runge-Kutta methods:
 
@@ -127,9 +129,11 @@ Advanced Integration Methods
 
    The integration method is selected in the ``Begin_Integration_Options`` block using the ``method`` parameter. If not specified, ``Runge_Kutta_45_Error_Control`` is used by default.
 
+
 .. _`ASDPlasticMaterial3DTangentOperators`:
+
 Tangent Operator Types
-"""""""""""""""""""""
+"""""""""""""""""""""""
 
 ``ASDPlasticMaterial3D`` provides several options for computing the consistent tangent operator:
 
@@ -147,7 +151,9 @@ Tangent Operator Types
 
    The tangent operator type is selected in the ``Begin_Integration_Options`` block using the ``tangent_operator`` parameter. If not specified, an appropriate default is selected based on the integration method.
 
+
 .. _`ASDPlasticMaterial3DIntegrationOptions`:
+
 Integration Options
 """""""""""""""""""
 
@@ -155,10 +161,10 @@ Integration Options
    :header: "Parameter", "Type", "Description"
    :widths: 10, 10, 40
 
-   $f_relative_tol, |double|, "Relative tolerance to evaluate the yield function crossing."
-   $stress_relative_tol, |double|, "Tolerance for the convergece of the integration algorithm."
-   $n_max_iterations, |int|, "Maximum number of iterations for constitutive integration."
-   $return_to_yield_surface, |0 or 1|, "Whether to apply a return to yield surface algorithm after integration convergence."
+   $f_relative_tol, |float|, "Relative tolerance to evaluate the yield function crossing."
+   $stress_relative_tol, |float|, "Tolerance for the convergece of the integration algorithm."
+   $n_max_iterations, |integer|, "Maximum number of iterations for constitutive integration."
+   $return_to_yield_surface, |integer|, "Whether to apply a return to yield surface algorithm after integration convergence (0 or 1)."
    $method, |string|, "Constitutive integration method. See :ref:`ASDPlasticMaterial3DIntegrationMethods` for options"
    $tangent_operator, |string|, "Tangent operator computation method. See :ref:`ASDPlasticMaterial3DTangentOperators` for options"
 
@@ -229,7 +235,7 @@ The following example defines an instance of ``ASDPlasticMaterial3D`` with a Dru
 
 .. admonition:: TCL code  
 
-    .. code-block:: tcl
+    .. code-block:: none
 
         nDMaterial ASDPlasticMaterial3D 1 \
             DruckerPrager_YF \
@@ -315,7 +321,7 @@ To access the enhanced response capabilities of ``ASDPlasticMaterial3D``, you ca
         recorder Node -file radius.out -time -node 1 -dof 1 VonMisesRadius
 
 Example: Parameter Updates During Analysis
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""
 
 ``ASDPlasticMaterial3D`` supports parameter updates during analysis:
 

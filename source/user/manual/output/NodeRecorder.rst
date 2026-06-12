@@ -45,9 +45,10 @@ The Node recorder type records the response of a number of nodes at every conver
       rayleighForces!
 
    4. | The function returns a value:   
-      | SUCCESS: **>0** an integer tag that can be used as a handle on the recorder for the remove a recorder in the :ref:`remove`.
+      | SUCCESS: **>0** an integer tag that can be used as a handle to remove a recorder with the :ref:`remove` command.
       | FAILURE: **-1** recorder command failed (read the log)
-   To remove a recorder using the :ref:`remove` you need to save this tag in a variable for use later in the script.
+
+   To remove a recorder using the :ref:`remove` command, save this tag in a variable for use later in the script.
 
    5. $deltaT specifies a time interval for recording. will record when next step is $deltaT greater than last recorder step. It is useful if user script subdivides time step and user is not interested in the responses at each time step due to memory or file size constraints.
 
@@ -70,6 +71,9 @@ The Node recorder type records the response of a number of nodes at every conver
 
      recorder Node -file nodesA.out -timeSeries 1 2 -time -node 1 2 3 4 -dof 1 2 accel;
 
-   .. code:: python
+   .. code-block:: python
+
+      recorder('Node', '-file', 'nodesD.out', '-time', '-node', 1, 2, 3, 4, '-dof', 1, 2, 'disp')
+      recorder('Node', '-file', 'nodesA.out', '-timeSeries', 1, 2, '-time', '-node', 1, 2, 3, 4, '-dof', 1, 2, 'accel')
 
 Code developed by: |fmk|

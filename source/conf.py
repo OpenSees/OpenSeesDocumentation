@@ -49,6 +49,9 @@ rst_prolog = """
 .. |mhs| replace:: `Michael H. Scott`_
 .. _Michael H. Scott: https://cce.oregonstate.edu/scott
 .. |fmk| replace:: **fmk**
+.. |jaabell| replace:: **José A. Abell**
+.. |mhscott| replace:: `Michael H. Scott`_
+.. |zhuminjie| replace:: **Zhu Minjie**
 .. |pedro| replace:: `Pedro Arduino`_
 .. _Pedro Arduino: https://www.ce.washington.edu/facultyfinder/pedro-arduino
 .. |peter| replace:: `Peter Mackenzie-Helnwein`_

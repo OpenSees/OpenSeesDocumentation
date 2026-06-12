@@ -43,7 +43,7 @@ The following contain information about matType? and the args required for each 
    ndMaterials/Parallel3D
    ndMaterials/InitStrain
    ndMaterials/ASDConcrete3D
-   ndMaterials/ASDPlasticMaterial
+   ndMaterials/ASDPlasticMaterial3D
    ndMaterials/OrthotropicRAConcrete
    ndMaterials/SmearedSteelDoubleLayer
    ndMaterials/NDTest

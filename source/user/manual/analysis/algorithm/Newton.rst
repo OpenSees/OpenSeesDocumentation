@@ -4,7 +4,7 @@ Newton Algorithm
 ----------------
 This command is used to construct a NewtonRaphson algorithm object which is uses the Newton-Raphson algorithm to solve the nonlinear residual equation. The Newton-Raphson method is the most widely used and most robust method for solving nonlinear algebraic equations. The command is of the following form:
 
-.. function:: algorithm Newton <-initial> <-initialThenCurrent>
+.. function:: algorithm Newton <-initial> <-initialThenCurrent> <-factorOnce>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -12,7 +12,11 @@ This command is used to construct a NewtonRaphson algorithm object which is uses
 
    -initial, |string|,  optional flag to indicate to use initial stiffness
    -initialThenCurrent, |string|, optional flag to indicate to use initial stiffness on first step and then current on subsequent steps
+   -factorOnce, |string|, optional flag to assemble and factor the tangent on the first Newton iteration of the first analysis step, keep it fixed in later iterations and later steps, and update it only after a domain change (for example, nodes or elements added or removed).
 
+.. note::
+
+   Newton-Raphson normally reforms the tangent every Newton iteration. ``-factorOnce`` keeps the tangent from the first iteration fixed thereafter. The fixed matrix is the current tangent by default, or the initial tangent with ``-initial``. Specifying ``-initial`` also enables ``-factorOnce`` automatically. ``-factorOnce`` is not used with ``-initialThenCurrent``, which reforms the tangent every iteration.
 
 The Newton method used in finite element analysis is identical to that taught in basic calculus courses. It is just extended for the n unknown degrees-of-freedom. The method as taught in basic calculus, is a root-finding algorithm that uses the first few terms of the Taylor series of a function :math:`f(x)\,\!` in the vicinity of a suspected root :math:`x_n\,\!` to find the root :math:`x_{n+1}\,\!`. Newton's method is sometimes also known as Newton's iteration, although in this work the latter term is reserved to the application of Newton's method for computing square roots.
 
