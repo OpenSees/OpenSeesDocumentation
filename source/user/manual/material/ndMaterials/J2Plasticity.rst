@@ -39,13 +39,15 @@ Yield Function
 
 .. math::
 
-   \phi(\sigma,q) = || dev(\sigma) || - \sqrt(\tfrac{2}{3}*q(xi)
+   \phi(\sigma, q) = \|\mathrm{dev}(\sigma)\| - \sqrt{\tfrac{2}{3}}\, q(\xi)
 
 Saturation Isotropic Hardening with linear term
 
 .. math::
    
-   q(xi) = \sigma_0 + (\sigma_\inf - \sigma_0)*exp(-delta*\xi) + H*\xi
+   q(\xi) = \sigma_{\inf} + (\sigma_0 - \sigma_{\inf})\exp(-\delta\xi) + H\xi
+
+At :math:`\xi = 0`, :math:`q = \sigma_0` (initial yield stress). As :math:`\xi \to \infty` with :math:`H = 0`, :math:`q \to \sigma_{\inf}` (saturation yield stress).
 
 Flow Rules
 

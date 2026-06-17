@@ -1,7 +1,7 @@
 .. _zeroLengthContactASDimplex:
 
 ZeroLengthContactASDimplex Element
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This command is used to construct zeroLengthContactASDimplex element object. The zeroLengthContactASDimplex element is a 2-node zeroLength contact element with the following features:
 

@@ -1,4 +1,4 @@
-.. LehighJoint2D:
+.. _LehighJoint2D:
 
 LehighJoint2D Element
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -11,7 +11,7 @@ Command Lines
 
 TCL:
 
-.. function:: element LehighJoint $eleTag $iNode $jNnode $kNode $lNode $matTag1 $matTag2 $matTag3 $matTag4 $matTag5 $matTag6 $matTag7 $matTag8 $matTag9
+.. function:: element LehighJoint2D $eleTag $iNode $jNnode $kNode $lNode $matTag1 $matTag2 $matTag3 $matTag4 $matTag5 $matTag6 $matTag7 $matTag8 $matTag9
 
 Python:
 
@@ -65,7 +65,7 @@ Examples
 
    .. code-block:: tcl
 
-      element LehighJoint 4 2 3 4 5 1001 1002 1003 1004 1005 1006 1007 1008 1009;
+      element LehighJoint2D 4 2 3 4 5 1001 1002 1003 1004 1005 1006 1007 1008 1009;
 
    2. **Python**
 

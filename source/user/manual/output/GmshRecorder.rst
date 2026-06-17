@@ -35,7 +35,7 @@ The GMSH recorder type is a *whole model* recorder, that is it is meant to recor
    Note the response type ``partition`` is unique to this recorder type and it contains information on the partition each element was assigned (useful in parallel processing to check model partitioning).
 
    3. | The function returns a value:   
-      | SUCCESS: **>0** an integer tag that can be used as a handle on the recorder for the remove a recorder in the :ref:`remove`.
+      | SUCCESS: **>0** an integer tag that can be used as a handle to remove a recorder with the :ref:`remove` command.
       | FAILURE: **-1** recorder command failed (read the log)
    
 

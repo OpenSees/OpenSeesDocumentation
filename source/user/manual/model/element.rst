@@ -46,6 +46,7 @@ The following subsections contain information about **$eleType** and the number 
 
    elements/Truss
    elements/CorotationalTruss
+   elements/InertiaTruss
 
 
 3. Beam Column Elements
@@ -54,13 +55,13 @@ The following subsections contain information about **$eleType** and the number 
    :maxdepth: 1
 
    elements/elasticBeamColumn
+   elements/dispBeamColumn
+   elements/forceBeamColumn   
    elements/ModElasticBeam
    elements/ElasticBeamColumnElementWithStiffnessModifiers
    elements/ElasticTimoshenkoBeamColumnElement
    elements/BeamWithHingesElement
-   elements/DisplacementBasedBeamColumnElement
-   elements/ForceBasedBeamColumnElement
-   elements/gradientInelasticBeamColumn   
+   elements/gradientInelasticBeamColumn
    elements/FlexureShearInteractionDisplacementBasedBeamColumnElement
    elements/MVLEM
    elements/MVLEM_3D
@@ -84,6 +85,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/ShellNLDKGQ
    elements/ShellNL
    elements/BbarPlaneStrainQuadrilateral
+   elements/bbarQuad
    elements/EnhancedStrainQuadrilateral
    elements/MEFI
 
@@ -151,13 +153,13 @@ The following subsections contain information about **$eleType** and the number 
    elements/ElastomericX
    elements/LeadRubberX
    elements/HDR
-   elements/RJ-Watson EQS Bearing
+   elements/RJWatsonEQSBearing
    elements/FPBearingPTV
    elements/TripleFrictionPendulumX
 
 
 
-11.    U-P Elements (saturated soil)
+11. U-P Elements (saturated soil)
 
 .. toctree::
    :maxdepth: 1
@@ -168,27 +170,24 @@ The following subsections contain information about **$eleType** and the number 
    elements/bbarBrickUP
    elements/NineFourNodeQuadUP
    elements/TwentyEightNodeBrickUP
-   elements/TwentyNodeBrickUP
-   elements/BrickLargeDisplacementUP
-   elements/SSPquadUP 
+   elements/SSPquadUP
    elements/SSPbrickUP
 
 12. Contact
 
 .. toctree::
-   :maxdepth: 1   
+   :maxdepth: 1
 
    elements/SimpleContact2D
    elements/SimpleContact3D
    elements/BeamContact2D
    elements/BeamContact3D
    elements/BeamEndContact3D
-   elements/zeroLengthImpact3D
-   
+
 13. Cable
 
 .. toctree::
-   :maxdepth: 1   
+   :maxdepth: 1
 
    elements/CatenaryCableElement
 

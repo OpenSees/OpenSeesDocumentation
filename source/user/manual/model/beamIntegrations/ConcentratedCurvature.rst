@@ -1,7 +1,7 @@
 .. _ConcentratedCurvature:
 
 ConcentratedCurvature
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 This command creates a Concentrated-Plasticity beamIntegration object. This integration places one integration point at each element end, representing the plastic hinge and three elastic-curvature integration points along the elastic segment.
 

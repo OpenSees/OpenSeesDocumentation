@@ -1,4 +1,4 @@
-.. _TripleFrictionPendulumX::
+.. _TripleFrictionPendulumX:
 
 TripleFrictionPendulumX Element
 ^^^^^^^^^^^^^^^^
