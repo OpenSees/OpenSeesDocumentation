@@ -42,7 +42,8 @@ The OpenSees applications are built using `CMake <https://cmake.org/>`_, an exte
    * eigen
    * hdf5
    * tcl (for Windows)
-   * zlib (for Windows)
+   * zlib
+   * libaec (for Mac)
    * Intel MPI Libray (for Windows)
    * open-mpi (for Mac, Linux)
    * scalapack (for Mac, Linux)
@@ -231,6 +232,8 @@ For MacOS the user must have the following applications installed on their compu
    * eigen
    * gfortran
    * hdf5
+   * zlib
+   * libaec
    * open-mpi
    * scalapack.
 * mumps
@@ -274,6 +277,8 @@ Install other dependencies via Homebrew
       brew install eigen
       brew install gfortran
       brew install hdf5
+      brew install zlib
+      brew install libaec
       brew install open-mpi
       brew install scalapack
 
@@ -310,7 +315,7 @@ With everything installed the build process is somehwat simple! Again from a ter
 
    mkdir build
    cd build
-   cmake .. -DMUMPS_DIR=$PWD/../../mumps/build
+   cmake .. -DMUMPS_DIR=$PWD/../../mumps/build -DCMAKE_PREFIX_PATH=/usr/local/Cellar/libaec/1.1.3/cmake
    cmake --build . --target OpenSees -j8
    cmake --build . --target OpenSeesPy -j8
    mv ./OpenSeesPy.dylib ./opensees.so
