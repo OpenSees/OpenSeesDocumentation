@@ -44,7 +44,7 @@ The type of recorder created and the additional arguments required depends on th
 
    The function returns a value:
    
-   **>0** an integer tag that can be used as a handle on the recorder for the remove a recorder in the :ref:`remove`.
+   **>0** an integer tag that can be used as a handle to remove a recorder with the :ref:`remove` command.
 
    **-1** recorder command failed if integer -1 returned.
 

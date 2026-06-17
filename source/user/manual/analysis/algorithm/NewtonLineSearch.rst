@@ -4,7 +4,7 @@ Newton Line Search Algorithm
 ----------------
 This command is used to construct a NewtonLineSearch algorithm object which introduces line search to the Newton-Raphson algorithm to solve the nonlinear residual equation. Line search increases the effectiveness of the Newton method when convergence is slow due to roughness of the residual. The command is of the following form: 
 
-.. function:: algorithm NewtonLineSearch <-type $typeSearch> <-tol $tol> <-maxIter $maxIter> <-minEta $minEta> <-maxEta $maxEta> 
+.. function:: algorithm NewtonLineSearch <-type $typeSearch> <-tol $tol> <-maxIter $maxIter> <-minEta $minEta> <-maxEta $maxEta> <-factorOnce>
 
 .. csv-table:: 
    :header: "Argument", "Type", "Description"
@@ -16,6 +16,11 @@ This command is used to construct a NewtonLineSearch algorithm object which intr
    $maxIter, |integer|, maximum number of iteration to try. The default is 10.
    $minEta, |float|, a minimum :math:`\eta` value. Optional; The default is 0.1
    $maxEta, |float|, a maximum :math:`\eta` value. Optional; The default is 10.0
+   -factorOnce, |string|, optional flag to assemble and factor the current tangent on the first Newton iteration of the first analysis step, keep it fixed in later iterations and later steps, and update it only after a domain change (for example, nodes or elements added or removed).
+
+.. note::
+
+   Newton line search normally reforms the current tangent every Newton iteration. ``-factorOnce`` keeps the tangent from the first iteration fixed thereafter.
 
 Theory
 ^^^^^^^^^^^^^^

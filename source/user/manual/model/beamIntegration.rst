@@ -1,9 +1,9 @@
 .. _beamIntegration:
 
-Beam integration Command
+Beam Integration Command
 ************************
 
-This command is used to construct an element and add it to the Domain. 
+This command is used to construct an integration object for certain beam elements. A wide range of numerical integration options are available in OpenSees to represent either distributed plasticity or concentrated plasticity within a single element such as the :ref:`forceBeamColumn` element.
 
 .. function:: beamIntegration $integtaionType $tag $arg1 ...
 
@@ -15,11 +15,11 @@ This command is used to construct an element and add it to the Domain.
    $tag,  |integer|, unique beam integration tag.
    $args, |list|,  a list of arguments with number dependent on integration type
 
+Several distributed plasticity integration types (Lobatto, Legendre, Radau, NewtonCotes, Trapezoidal, CompositeSimpson, and others) support **non-prismatic** members: instead of one section tag and *N*, you may pass *N* section tags so that each integration point uses a different section. This allows varying cross-section or reinforcement along the element. See the individual integration pages.
+
 Following are beamIntegration types available in the OpenSees:
 
 1. Integration Methods for Distributed Plasticity. Distributed plasticity methods permit yielding at any integration point along the element length.
-
-1. Zero-Length Elements
 
 .. toctree::
    :maxdepth: 4

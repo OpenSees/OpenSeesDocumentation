@@ -20,7 +20,7 @@ The type of section created and the additional arguments required depends on the
 
 .. note::
 
-   The valid queries to any section when creating an ElementRecorder are 'force', and 'deformation'. Some sections have additional queries to which they will respond. These are documented in the NOTES section for those sections.
+   The valid queries to any section when creating an ElementRecorder are 'force', and 'deformation'. Some sections have additional queries to which they will respond. These are documented in the NOTES section for those sections. For recording fiber response (e.g. stressStrain) and for using section location ``sectionX``, see :ref:`elementRecorder`.
 
 The following contain information about secType? and the args required for each of the available section types:
 

@@ -1,10 +1,10 @@
-.. _SFI_MVLEM_3D::
+.. _SFI_MVLEM_3D:
 
 SFI-MVLEM-3D Element
 ^^^^^^^^^^^^^^^^^^^^
 
-| Developed and implemented by: 
-| `Kristijan Kolozvari <mailto:kkolozvari@fullerton.edu>`_ (CSU Fullerton)
+| Developed and implemented by:
+| Kristijan Kolozvari (CSU Fullerton, kkolozvari@fullerton.edu)
 | Kamiar Kalbasi (CSU Fullerton)
 | Kutay Orakcal (Bogazici University)
 | John Wallace (UCLA)
@@ -12,9 +12,9 @@ SFI-MVLEM-3D Element
 Description
 ###########
 
-The SFI-MVLEM-3D model (Figure 1a) is a three-dimensional four-node element with 24 DOFs that incorporates axial-flexural-shear interaction and can be used for nonlinear analysis of non-rectangular reinforced concrete walls subjected to multidirectional loading. The SFI-MVLEM-3D model is an extension of the two-dimensional, two-node Shear-Flexure-Interaction Multiple-Vertical-Line-Element-Model (`SFI-MVLEM <https://opensees.berkeley.edu/wiki/index.php/SFI_MVLEM_-_Cyclic_Shear-Flexure_Interaction_Model_for_RC_Walls>`_). The baseline SFI-MVLEM, which is essentially a line element for rectangular walls subjected to in-plane loading, is extended in this study to a three-dimensional model formulation by applying geometric transformation of the element degrees of freedom that converted it into a four-node element formulation (Figure 1b), as well as by incorporating linear elastic out-of-plane behavior based on the Kirchhoff plate theory (Figure 1c). The in-plane and the out-of-plane element behaviors are uncoupled in the present model.
+The SFI-MVLEM-3D model (Figure 1a) is a three-dimensional four-node element with 24 DOFs that incorporates axial-flexural-shear interaction and can be used for nonlinear analysis of non-rectangular reinforced concrete walls subjected to multidirectional loading. The SFI-MVLEM-3D model is an extension of the two-dimensional, two-node Shear-Flexure-Interaction Multiple-Vertical-Line-Element-Model (`SFI-MVLEM <https://opensees.berkeley.edu/wiki/index.php/SFI_MVLEM_-_Cyclic_Shear-Flexure_Interaction_Model_for_RC_Walls>`__). The baseline SFI-MVLEM, which is essentially a line element for rectangular walls subjected to in-plane loading, is extended in this study to a three-dimensional model formulation by applying geometric transformation of the element degrees of freedom that converted it into a four-node element formulation (Figure 1b), as well as by incorporating linear elastic out-of-plane behavior based on the Kirchhoff plate theory (Figure 1c). The in-plane and the out-of-plane element behaviors are uncoupled in the present model.
 
-For additional information please visit `SFI-MVLEM-3D GitHub Page <https://github.com/kkolozvari/SFI-MVLEM-3D>`_.
+For additional information please visit the `SFI-MVLEM-3D GitHub repository <https://github.com/kkolozvari/SFI-MVLEM-3D>`__.
 
 This element shall be used in Domain defined with **-ndm 3 -ndf 6**.
 
