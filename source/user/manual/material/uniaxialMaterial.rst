@@ -47,7 +47,11 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/Concrete04
       uniaxialMaterials/ASDConcrete1D
       uniaxialMaterials/GMG_CyclicReinforcedConcrete
-      uniaxialMaterials/Creep
+      uniaxialMaterials/CreepShrinkageACI209
+      uniaxialMaterials/TDConcrete
+      uniaxialMaterials/TDConcreteEXP
+      uniaxialMaterials/TDConcreteMC10
+      uniaxialMaterials/TDConcreteMC10NL
 
 ..    uniaxialMaterials/Concrete06
 ..    uniaxialMaterials/Concrete07
