@@ -46,6 +46,7 @@ The following contain information about matType? and the args required for each 
    ndMaterials/ASDPlasticMaterial3D
    ndMaterials/OrthotropicRAConcrete
    ndMaterials/SmearedSteelDoubleLayer
+   ndMaterials/UMAT
    ndMaterials/NDTest
 
 Concrete Damage Model
