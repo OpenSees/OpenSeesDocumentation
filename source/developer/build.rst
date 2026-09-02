@@ -22,12 +22,12 @@ The OpenSees applications are built using `CMake <https://cmake.org/>`_, an exte
 * Python 3.11
 
    * It's necessary to OpenSeesPy and also required to install conan with PyPI.
+
 * Package Manager
 
-   * Conan 1.x (for Windows, Linux)
+   * Conan (for Windows, Linux)
 
       * A package build manager for C/C++ applications.
-      * Conan 2.0 and beyond have been already released but currently we don't catch up with that. Thus, you should install Conan **1.64.1**, which is the last version of Conan 1.x
 
    * Homebrew (for Mac)
 
@@ -131,14 +131,14 @@ Python 3.11
 
    Install from `<https://www.python.org/downloads/windows/>`_. Python **3.12** or newer is not supported by OpenSeesPy currently. Python 3.10 or older version may work. Of course you can install from other channels, i.e. Anaconda, Microsoft Stores.
 
-conan 1.x
-=========
+Conan
+=====
 
    Conan is used to install Eigen, HDF5, Tcl and Zlib. Type the following to install:
 
    .. code::
 
-      pip install conan<2.0
+      pip install conan
 
 MUMPS
 =====
@@ -169,12 +169,13 @@ With everything installed the build process is somewhat simple! From a terminal 
    mkdir build
    cd build
    call "C:\Program Files (x86)\Intel\oneAPI\setVars.bat" intel64 mod
-   conan install .. --build missing --settings compiler.runtime="MT"
-   cmake .. -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64 -DMUMPS_DIR="..\..\mumps\build"
+   conan profile detect
+   conan install .. --output-folder=conan --build=missing --settings compiler.runtime="static"
+   cmake .. -DBLA_STATIC=ON -DMKL_LINK=static -DMKL_INTERFACE_FULL=intel_lp64 -DMUMPS_DIR="..\..\mumps\build" -DCMAKE_TOOLCHAIN_FILE=conan/conan_toolchain.cmake
    cmake --build . --config Release --target OpenSees -j8
    cmake --build . --config Release --target OpenSeesPy -j8
-   move ./bin/OpenSeesPy.dll ./bin/opensees.pyd
-   copy C:\Program Files (x86)\Intel\oneAPI\compiler\2024.1\bin\libiomp5md.dll ./bin/
+   move ./Release/OpenSeesPy.dll ./Release/opensees.pyd
+   copy C:\Program Files (x86)\Intel\oneAPI\compiler\2024.1\bin\libiomp5md.dll ./Release/
 
 When completed the executables (OpenSees, OpenSeesMP, and OpenSeesMP) and the python module (opensees.pyd) are located in the build/bin directory.
 
@@ -197,7 +198,7 @@ When completed the executables (OpenSees, OpenSeesMP, and OpenSeesMP) and the py
 
          You may of course want to give the existing file a new name with the **copy** command before you overwrite it just in case! You can check the version of **opensees** installed by issuing ``opensees.version()`` at the python command prompt above.
 
-      #. If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your **PYTHONPATH** env variables. Search for **env settings** in search bar lower left. Add a line to the PYTHONPATH variable with your location of the **bin** folder. If you do this, you also need to copy the python39.dll (or the python310.dll is that is what was used INTO the bin folder). This is because of a security feature with python versions above 3.8 and the dll search path they now use.
+      #. If you have not installed openseespy or you want to load the .pyd you built instead of the installed one you can add the path to opensees.pyd to your **PYTHONPATH** env variables. Search for **env settings** in search bar lower left. Add a line to the PYTHONPATH variable with your location of the **Release** folder. If you do this, you also need to copy the python39.dll (or the python310.dll is that is what was used INTO the bin folder). This is because of a security feature with python versions above 3.8 and the dll search path they now use.
 
    #. ``libiomp5md.dll`` should be located in a same folder as ``opensees.pyd`` or you'll get ``ImportError: DLL load failed while importing opensees: The specified module could not be found.`` when importing opensees on Python.
 
@@ -361,14 +362,14 @@ Needed Applications and Libraries
       sudo apt install -y libmkl-blacs-openmpi-lp64
       sudo apt install -y libscalapack-openmpi-dev
 
-Conan 1.x
-=========
+Conan
+=====
 
    Conan is used to install Eigen, HDF5, Tcl and Zlib. Type the following to install:
 
    .. code::
 
-      pip install conan<2.0
+      pip install conan
 
 Building the OpenSees Applications and Python module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -379,11 +380,12 @@ With everything installed the build process is somewhat simple! Again from a ter
 
       mkdir build
       cd build
-      $HOME/.local/bin/conan install .. --build missing
-      cmake ..
+      $HOME/.local/bin/conan profile detect
+      $HOME/.local/bin/conan install .. --output-folder=conan --build missing
+      cmake .. -DCMAKE_TOOLCHAIN_FILE=conan/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
       cmake --build . --target OpenSees -j8
       cmake --build . --target OpenSeesPy -j8
-      mv ./lib/OpenSeesPy.so ./opensees.so
+      mv ./OpenSeesPy.so ./opensees.so
 
 .. note::
 
