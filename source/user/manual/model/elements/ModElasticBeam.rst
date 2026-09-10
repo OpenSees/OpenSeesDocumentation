@@ -11,7 +11,7 @@ The arguments depend on the dimension of the problem, ``ndm``:
 
 For ``ndm=2`` (two-dimensional problem):
 
-.. function:: element ModElasticBeam2d $eleTag $iNode $jNode $A $E $Iz, $K11, $K33, $K44, $transfTag <-mass $massDens> <-cMass>
+.. function:: element ModElasticBeam2d $eleTag $iNode $jNode $A $E $Iz, $K11, $K33, $K44, $transfTag <-alpha $alpha> <-d $depth> <-mass $massDens> <-cMass>
 
 .. csv-table::
    :header: "Argument", "Type", "Description"
@@ -28,6 +28,8 @@ For ``ndm=2`` (two-dimensional problem):
    "$K11, K33, K44",        "|float|",   "Stiffness modifiers---see notes below"
    "$secTag",               "|integer|", "Identifier for previously-defined section object"
    "$transfTag",            "|integer|", "Identifier for previously-defined coordinate-transformation object"
+   "<-alpha $alpha>",       "|float|",   "Coefficient of thermal expansion, used by the ``-beamTemp`` element load (optional: default = 0.0)"
+   "<-d $depth>",           "|float|",   "Section depth over which ``-beamTemp`` resolves a temperature gradient (optional: default = 0.0)"
    "<-mass $massDens>",     "|float|",   "Element mass per unit length (optional: default = 0.0)"
    "-cMass",                "|string|",  "To form consistent mass matrix (optional)"
 
