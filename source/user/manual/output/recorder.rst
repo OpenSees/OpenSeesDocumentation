@@ -39,6 +39,7 @@ The type of recorder created and the additional arguments required depends on th
    PVDRecorder
    MPCORecorder
    GmshRecorder
+   VTKHDFRecorder
 
 .. note::
 
