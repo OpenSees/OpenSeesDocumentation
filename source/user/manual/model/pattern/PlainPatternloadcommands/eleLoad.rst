@@ -27,6 +27,13 @@ The beam column elements all accept eleLoad commands of the following form.
 
    eleLoad -range $eleTag1 $eleTag2 -type -beamPoint $Py $xL <$Px>
 
+**Temperature change (2D)** – Linear through the depth, from *Ttop* on the local +y face to *Tbot* on the local -y face, and linear along the length from the node I values to the node J values. Two values apply the same pair at both nodes, and one value the same temperature everywhere. The mid-depth temperature lengthens the element and the gradient bends it. Supported by 2D ``elasticBeamColumn`` and ``ModElasticBeam2d``, which take the coefficient of thermal expansion and the section depth from their ``-alpha`` and ``-depth`` options (``-d`` for ``ModElasticBeam2d``); without a depth only the axial part acts:
+
+.. code::
+
+   eleLoad -ele $eleTag1 <$eleTag2 ....> -type -beamTemp $Ttop1 $Tbot1 <$Ttop2 $Tbot2>
+   eleLoad -ele $eleTag1 <$eleTag2 ....> -type -beamTemp $T
+
 When NDM=3, the beam column elements accept:
 
 .. code::
@@ -46,11 +53,14 @@ For trapezoidal loads in 3D, use *Wy* *Wz* *Wx* *aOverL* *bOverL* *Wyb* *Wzb* *W
    $eleTags, |intList|,  tags of previously defined elements
    $Wy $Wx, |float|,    (uniform) distributed load in local y and x (force/length)
    $Wya $Wxa, |float|,  (trapezoidal) load intensity at start (a) in local y and x
-   $aOverL $bOverL, |float|,  (trapezoidal) start and end of segment, fraction of length (0–1)
+   $aOverL $bOverL, |float|,  "(trapezoidal) start and end of segment, fraction of length (0–1)"
    $Wyb $Wxb, |float|,  (trapezoidal) load intensity at end (b) in local y and x
    $Wz, |float|,        (3D) distributed load in local z
-   $Py $Pz $Px, |float|,  (point) ref load in local y, z, x
+   $Py $Pz $Px, |float|,  "(point) ref load in local y, z, x"
    $xL, |float|,        location of point load as fraction of element length from node I
+   $Ttop1 $Tbot1, |float|,  (temperature) change on the top (local +y) and bottom faces at node I
+   $Ttop2 $Tbot2, |float|,  (temperature) change on the top and bottom faces at node J; default is the node I values
+   $T, |float|,         (temperature) uniform change over the whole element
 
 .. note::
 
