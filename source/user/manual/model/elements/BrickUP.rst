@@ -5,7 +5,7 @@ BrickUP Element
 
 This command constructs an eight-node hexahedral brick element for coupled solid-fluid (u-p) analysis of saturated porous media. Each node has three solid displacement DOFs and one pore-pressure DOF. Use with ``-ndm 3 -ndf 4``.
 
-.. function:: element brickUP $eleTag $N1 $N2 $N3 $N4 $N5 $N6 $N7 $N8 $matTag $bulk $fmass $permX $permY $permZ <$bX $bY $bZ>
+.. function:: element brickUP $eleTag $N1 $N2 $N3 $N4 $N5 $N6 $N7 $N8 $matTag $bulk $fmass $permX $permY $permZ <$bX $bY $bZ> <-lumped>
 
 .. csv-table::
    :header: "Argument", "Type", "Description"
@@ -18,6 +18,7 @@ This command constructs an eight-node hexahedral brick element for coupled solid
    $fmass, |float|, fluid mass density
    $permX $permY $permZ, |float|, permeability in x; y; and z directions
    $bX $bY $bZ, |float|, optional body-force components (default 0.0)
+   -lumped, |string|, optional flag to lump the solid mass and fluid compressibility matrices by row sums
 
 .. note::
 
