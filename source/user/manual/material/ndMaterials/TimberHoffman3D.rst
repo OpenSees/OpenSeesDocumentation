@@ -12,8 +12,8 @@ analysis of timber",*
 **Tcl Version:**
 
 nDMaterial TimberHoffman3D $matTag $E1 $E2 $E3 $nu12 $nu13 $nu23 $G12
-$G13 $G23 $fc1 $fc2 $fc3 $ft1 $ft2 $ft3 $f12 $f13 $f23 $h $Gf1t $Gf2t
-$Gf3t $eta
+$G13 $G23 $fc1 $fc2 $fc3 $ft1 $ft2 $ft3 $f12 $f13 $f23 $h $sigmaE0
+$Acomp $Bcomp $Gf1t $Gf2t $Gf3t $eta $Lc <$dt>
 
 **Python Version:**
 
