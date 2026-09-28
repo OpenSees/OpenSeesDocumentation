@@ -47,8 +47,10 @@ This command is used to construct the Steel02M uniaxial steel material, a modifi
 
 
 .. admonition:: Example
+
+   Download the Steel02M examples: :download:`Steel02M_Example.rar <Steel02M_Example.rar>`. The archive contains the input files; recorder output files are generated when the model is executed.
  
-   The following example constructs a ``Steel02M`` material using all material parameters. For additional examples and implementation details, see `Steel02M GitHub repository <https://github.com/Kolay-IITK/Steel02M>`_.
+   The following example defines a ``Steel02M`` material using all material parameters. For additional examples and implementation details, see `Steel02M GitHub repository <https://github.com/Kolay-IITK/Steel02M>`_.
 
    .. code-block:: tcl
 
