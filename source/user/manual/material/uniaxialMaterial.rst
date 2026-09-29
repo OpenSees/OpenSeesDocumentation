@@ -25,6 +25,7 @@ The following subsections contain information about **$matType**
 
       uniaxialMaterials/Steel01
       uniaxialMaterials/Steel02
+      uniaxialMaterials/Steel02M
       uniaxialMaterials/Steel4
       uniaxialMaterials/ASDSteel1D
       uniaxialMaterials/ReinforcingSteel
