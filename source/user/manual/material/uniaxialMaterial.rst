@@ -121,6 +121,7 @@ The following subsections contain information about **$matType**
       uniaxialMaterials/JankowskiImpact
       uniaxialMaterials/ViscoelasticGap
       uniaxialMaterials/Ratchet
+      uniaxialMaterials/FrictionSpringDamper
 
 ..    uniaxialMaterials/CastFuse
 ..    uniaxialMaterials/ViscousDamper
