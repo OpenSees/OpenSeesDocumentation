@@ -1,25 +1,21 @@
-**Non-linear Timber orthotropic material:**
+TimberHoffman3D Material
+========================
 
-**Reference**\ *: H. Eslami, L.B. Jayasinghe, D. Waldmann (2021),*
+This command is used to construct a nonlinear three-dimensional orthotropic timber material object based on the Hoffman failure criterion, isotropic hardening, and damage formulation.
 
-*"Nonlinear three-dimensional anisotropic material model for failure
-analysis of timber",*
+Tcl Version
+-----------
 
-*Engineering Failure Analysis 130, 105764.*
+.. code-block:: tcl
 
-**Commands:**
+   nDMaterial TimberHoffman3D $matTag $E1 $E2 $E3 $nu12 $nu13 $nu23 $G12 $G13 $G23 $fc1 $fc2 $fc3 $ft1 $ft2 $ft3 $f12 $f13 $f23 $h $Gf1t $Gf2t $Gf3t $eta
 
-**Tcl Version:**
+Python Version
+--------------
 
-nDMaterial TimberHoffman3D $matTag $E1 $E2 $E3 $nu12 $nu13 $nu23 $G12
-$G13 $G23 $fc1 $fc2 $fc3 $ft1 $ft2 $ft3 $f12 $f13 $f23 $h $sigmaE0
-$Acomp $Bcomp $Gf1t $Gf2t $Gf3t $eta $Lc <$dt>
+.. code-block:: python
 
-**Python Version:**
-
-ops.nDMaterial('TimberHoffman3D', matTag, E1, E2, E3, nu12, nu13, nu23,
-G12, G13, G23, fc1, fc2, fc3, ft1, ft2, ft3, f12, f13, f23, h, Gf1t,
-Gf2t, Gf3t, eta)
+ops.nDMaterial('TimberHoffman3D', matTag, E1, E2, E3, nu12, nu13, nu23, G12, G13, G23, fc1, fc2, fc3, ft1, ft2, ft3, f12, f13, f23, h, Gf1t, Gf2t, Gf3t, eta)
 
 +----------------------+-------------+------------------------------------+
 | **Argument**         | **Units /   | **Description**                    |
@@ -214,7 +210,96 @@ parameter is chosen to be equal to 0.0001.
 | **Gf2t=Gf3t**   | 0.5            | **η**           | 0.0001         |
 +-----------------+----------------+-----------------+----------------+
 
+**Without the Q evolution:**
+
 |image17|
+
+**With the Q evolution:**
+
+**Effect of damage and hardening on cyclic response.** The
+perpendicular-to-grain cyclic response exhibited progressively narrower
+hysteresis loops following the onset of damage. This behavior reflects
+the combined effects of stiffness degradation and isotropic hardening in
+the constitutive formulation. As damage accumulated, the effective
+stiffness decreased substantially, resulting in reduced nominal stress
+during subsequent loading cycles. Concurrently, evolution of the Hoffman
+yield surface through the hardening variable Q(k) allowed a larger
+portion of the unloading and reloading path to remain within the
+expanded yield surface, thereby limiting additional plastic deformation
+and associated hysteretic dissipation. Consequently, the combination of
+damage-induced stiffness degradation and reduced repeated plastic
+yielding produced thinner cyclic loops compared with the response
+obtained using the initial, non-evolving Q0. In the perpendicular
+specimen, this effect was particularly pronounced after localized damage
+approached unity, while the volume-averaged damage remained
+approximately 0.5, indicating a strongly nonuniform damage state.
+
+|image18|
+
+|image19|
+
+**Multi-Axial Tests:**
+
+**Combined compression–shear response.** The constitutive response under
+combined longitudinal compression and 1-2 shear was examined using a
+prescribed non-monotonic strain path involving shear reversal. During
+the initial loading stage, the equivalent plastic strain (k) increased
+together with the isotropic hardening variables Qi(k), while
+longitudinal damage (d1) progressively developed. During subsequent
+shear reversal, the normalized Hoffman yield function became negative,
+and both k and Qi(k) remained approximately constant, indicating elastic
+unloading/reloading within the expanded yield surface. Continued reverse
+loading brought the effective stress state back to the yield surface,
+producing a second increase in equivalent plastic strain and hardening.
+The accumulated directional damage remained irreversible throughout the
+reversal, with substantial damage developing only in the longitudinal
+direction. Overall, the response demonstrates the interaction of Hoffman
+plasticity, isotropic hardening, directional damage, and loading-path
+dependence under combined normal and shear deformation. The results are
+interpreted as constitutive material-point diagnostics rather than
+specimen-level or experimental validation.
+
+|image20|
+
+**Transverse compression–shear response.** The constitutive response
+under combined transverse compression and 2-3 shear was examined using a
+non-monotonic loading path involving shear reversal. During the initial
+loading stage, the equivalent plastic strain (k) increased together with
+the isotropic hardening variables Qi(k), indicating activation of the
+Hoffman plasticity model and expansion of the yield surface. During
+subsequent shear reversal, the normalized Hoffman yield function became
+negative, while k and Qi(k) remained approximately constant, indicating
+elastic unloading/reloading within the expanded yield surface. Continued
+reverse loading brought the effective stress state back to the yield
+surface, resulting in a second increase in equivalent plastic strain and
+isotropic hardening. In contrast to the longitudinal compression and 1-2
+shear case, no appreciable directional damage developed during this
+loading history, demonstrating that plastic yielding and damage
+initiation remain distinct mechanisms within the constitutive
+formulation. Overall, the response demonstrates the interaction of
+anisotropic Hoffman plasticity, isotropic hardening, and loading-path
+reversal under combined transverse compression and shear. The results
+are interpreted as constitutive material-point diagnostics rather than
+specimen-level or experimental validation.\ |image21| **Biaxial
+compression response.** The constitutive response under biaxial
+compression was examined by simultaneously prescribing compressive
+strains in the longitudinal and transverse material directions, followed
+by unloading. During the loading stage, plastic yielding resulted in an
+increase in the equivalent plastic strain (k) together with the
+isotropic hardening variables Qi(k), indicating progressive expansion of
+the Hoffman yield surface. Directional damage developed predominantly in
+the longitudinal direction, with d1 increasing substantially while d2
+and d3 remained negligible over most of the loading history. During
+unloading, the normalized Hoffman yield function became negative and
+moved into the interior of the evolved yield surface, while k and Qi(k)
+remained approximately constant, indicating that no significant
+additional plastic evolution occurred. The resulting nonlinear and
+path-dependent stress response reflects the combined effects of
+multiaxial Hoffman plasticity, isotropic hardening, and directional
+damage. The results are interpreted as constitutive material-point
+diagnostics rather than specimen-level or experimental validation.
+
+|image22|
 
 .. |image1| image:: media/image1.png
    :width: 0.83341in
@@ -267,3 +352,18 @@ parameter is chosen to be equal to 0.0001.
 .. |image17| image:: media/image17.png
    :width: 9.12222in
    :height: 4.77778in
+.. |image18| image:: media/image18.png
+   :width: 5.45238in
+   :height: 6.23121in
+.. |image19| image:: media/image19.png
+   :width: 5.56257in
+   :height: 6.35714in
+.. |image20| image:: media/image20.png
+   :width: 8.24306in
+   :height: 4.71032in
+.. |image21| image:: media/image21.png
+   :width: 8.45766in
+   :height: 4.83333in
+.. |image22| image:: media/image22.png
+   :width: 8.17949in
+   :height: 4.67437in
