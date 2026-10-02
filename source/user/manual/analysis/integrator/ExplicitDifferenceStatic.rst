@@ -67,7 +67,7 @@ load minus the assembled resisting force; only :math:`M` is used as the
 linear-system tangent).
 
 **Local non-viscous (Cundall/FLAC) damping.** Rather than a viscous term
-proportional to velocity, Cundall's local damping scheme [Cundall1987]_
+proportional to velocity, Cundall's local damping scheme [Cundall1987]_ [FLAC]_
 (also described in the FLAC/FLAC3D theory manuals, Itasca Consulting Group)
 removes energy by adding to the assembled unbalance a force proportional to
 the *magnitude of the unbalance itself* and opposing the velocity:
@@ -143,8 +143,8 @@ damping should not contaminate the computed response.
 
       integrator ExplicitDifferenceStatic -alpha 0.8
       integrator ExplicitDifferenceStatic -alpha 0.3 -simple
+      # default: -alpha 0.59, combined form
       integrator ExplicitDifferenceStatic
-      ;# default: -alpha 0.59, combined form
 
    2. **Python Code**
 
