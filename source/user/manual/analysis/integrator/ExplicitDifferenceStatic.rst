@@ -209,6 +209,9 @@ damping should not contaminate the computed response.
 Usage notes and limitations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* The damping assumes a lumped (diagonal) mass, as this scheme requires. If a consistent
+  mass is used with a full (non-diagonal) system, the damping is applied equation by
+  equation to :math:`M^{-1}F` and energy dissipation is no longer guaranteed.
 * Requires a ``Linear`` solution algorithm and (as for any explicit scheme) a
   nonsingular, preferably diagonal, mass matrix for every active DOF
   (rotational DOFs with zero mass will make the system singular).
