@@ -9,7 +9,7 @@ non-viscous damping** to the assembled nodal unbalance, making it usable as a
 dynamic-relaxation / pseudo-static solver as well as a plain explicit
 dynamics integrator.
 
-.. function:: integrator ExplicitDifferenceStatic <-alpha $alpha> <-simple>
+.. function:: integrator ExplicitDifferenceStatic <-alpha $alpha> <-simple> <-vEps $vEps>
 
 .. csv-table::
    :header: "Argument", "Type", "Description", "Default"
@@ -17,6 +17,7 @@ dynamics integrator.
 
    "-alpha $alpha", "|float|", "Local non-viscous damping coefficient, :math:`0 \le \alpha < 1`", "0.59"
    "-simple", "flag", "Use the simple damping law :math:`F_d=-\alpha|F|\,\mathrm{sign}(v)` instead of the default combined law", "combined (off)"
+   "-vEps $vEps", "|float|", "Velocity-sign dead-band :math:`\varepsilon_v \ge 0`, absolute, in model velocity units: while :math:`|v|\le\varepsilon_v` the previously held sign of :math:`v` is reused instead of recomputed", "1e-4"
 
 Available in both the Tcl and Python interpreters.
 
@@ -25,29 +26,42 @@ Available in both the Tcl and Python interpreters.
      :math:`v_{n+1/2}`, displacements and accelerations at full time steps.
    * Only the mass matrix is ever assembled as the tangent (``formEleTangent``/
      ``formNodTangent`` only add :math:`M`); no stiffness tangent is formed, so
-     a ``Linear`` algorithm is required and only one ``update()`` call per
+     a ``Linear`` algorithm is required and only one acceleration solve per
      step is allowed.
    * Stability (undamped): :math:`\Delta t \le 2/\omega_{max}`; with Rayleigh
      damping ratio :math:`\xi`: :math:`\Delta t \le 2/(\omega_{max}(\sqrt{1+\xi^2}-\xi))`.
    * The local damping is applied **in addition to** any Rayleigh damping set
      via the four-argument C++ constructor (:math:`\alpha_M,\beta_K,\beta_{K_i},\beta_{K_c}`),
      which is not exposed through the Tcl/Python parser options above.
-   * Passing ``-alpha 0.0`` disables the damping loop
-     (``alphaLNVD <= 0.0`` short-circuits in ``formUnbalance``), with no
+   * The damping is applied directly to the solved nodal acceleration at
+     each step. Because this scheme requires a lumped (diagonal) mass
+     matrix, :math:`Ma=F` holds equation-by-equation, so damping the
+     acceleration this way is equivalent to damping the unbalanced force
+     :math:`F=P-R(u)` as :math:`F_d=-\alpha|F|\,\mathrm{sign}(v)` (or the
+     combined law below) -- see Theory. This works correctly with the
+     parallel diagonal systems of equations (``MPIDiagonal``) because the
+     acceleration used is the fully assembled one; commands that merely
+     re-form and print the unbalanced force (e.g. ``printB``) without
+     advancing the state do not perturb the stored damping history and have
+     no effect on subsequent results.
+   * Passing ``-alpha 0.0`` disables the damping step entirely, with no
      overhead difference from the plain ``ExplicitDifference`` integrator.
      Note that omitting ``-alpha`` entirely does *not* give :math:`\alpha=0`;
      it falls back to the default 0.59.
-   * **Before the fix that added the options above**, the local damping force
-     was computed from ``DOF_Group::getUnbalance()``, which only holds the
-     *applied* nodal loads, not the assembled unbalance :math:`P-R(u)`. As a
-     result the damping term scaled with the applied load only and vanished
-     identically in free vibration (no applied load), making the integrator's
-     behavior indistinguishable from plain ``ExplicitDifference`` in that
-     case. The fix applies the damping to the fully assembled unbalance in
-     ``formUnbalance``, as documented below.
-   * See also ``integrator ExplicitBathe $p <0|1> <-lnvd $alpha>`` (on a
-     separate branch), which adds the same "simple" local non-viscous damping
-     law to Bathe's composite explicit scheme (no "combined" option).
+   * An out-of-range ``-alpha`` (outside :math:`[0,1)`), a negative
+     ``-vEps``, or an unrecognized option is **not** fatal: a ``WARNING`` is
+     printed and the offending option is ignored, keeping its default value;
+     the integrator is still constructed.
+   * The per-equation damping history (held velocity sign and previous
+     acceleration) is reset to zero whenever the domain changes (new
+     elements/nodes, pattern changes, numbering changes, ...).
+   * **History:** earlier versions of this integrator computed the damping
+     force from the applied nodal loads only, so it vanished identically in
+     free vibration (no applied load); this has since been corrected to use
+     the actual solved acceleration/unbalance as described above.
+   * See also ``integrator ExplicitBathe $p <$flag> <-lnvd $alpha>``, which
+     adds the same "simple" local non-viscous damping law to Bathe's
+     composite explicit scheme (no "combined" option).
 
 Theory
 ^^^^^^
@@ -67,30 +81,45 @@ load minus the assembled resisting force; only :math:`M` is used as the
 linear-system tangent).
 
 **Local non-viscous (Cundall/FLAC) damping.** Rather than a viscous term
-proportional to velocity, Cundall's local damping scheme [Cundall1987]_ [FLAC]_
-(also described in the FLAC/FLAC3D theory manuals, Itasca Consulting Group)
-removes energy by adding to the assembled unbalance a force proportional to
-the *magnitude of the unbalance itself* and opposing the velocity:
+proportional to velocity, Cundall's local damping scheme [Cundall1987]_
+removes energy by making the solved acceleration at each step depend on its
+own magnitude and sign and on the sign of the (leap-frog) velocity :math:`v`
+at :math:`t+\Delta t/2`:
 
 .. math::
 
-   F_d = -\alpha\, |F| \,\mathrm{sign}(v) \qquad \text{("simple", } \texttt{-simple}\text{)}
+   a_d = a - \alpha\, |a| \,\mathrm{sign}(v) \qquad \text{("simple", } \texttt{-simple}\text{)}
 
-or, combining the sign of the unbalance's time rate of change with the sign
-of velocity ("combined", the default):
+or, combining the sign of the step-to-step change in acceleration with the
+sign of velocity ("combined", the default, following the Itasca FLAC/FLAC3D
+manual's *local* and *combined* damping formulation [FLAC]_):
 
 .. math::
 
-   F_d = \tfrac{1}{2}\alpha\, |F| \,\big(\mathrm{sign}(\dot F) - \mathrm{sign}(v)\big)
+   a_d = a + \tfrac{1}{2}\alpha\, |a| \,\big(\mathrm{sign}(\Delta a) - \mathrm{sign}(v)\big)
 
-:math:`\mathrm{sign}(v)` is replaced by a held sign :math:`s_v` with a small
-deadband (:math:`|v|<10^{-4}` keeps the previous sign) to avoid chatter as the
-velocity passes through zero. :math:`\dot F` is approximated by the backward
-difference :math:`(F_t - F_{t-\Delta t})/\Delta t` (only the sign is used, so
-the :math:`\Delta t` cancels). This damping acts equation-by-equation on the
-fully assembled unbalance :math:`F=P-R(u)` and is added in ``formUnbalance``
-after the base ``TransientIntegrator::formUnbalance`` call; it is unrelated
-to (and does not replace) any Rayleigh damping.
+where :math:`\Delta a = a - a_{\text{prev}}` is the change from the previous
+step's (already damped) acceleration. :math:`\mathrm{sign}(v)` is replaced by
+a held sign :math:`s_v` with a dead-band set by ``-vEps`` (default
+:math:`10^{-4}`): while :math:`|v|\le\varepsilon_v` the previously held sign
+is reused, to avoid chatter as the velocity passes through zero.
+
+Because this scheme requires a lumped (diagonal) mass matrix, :math:`Ma=F`
+holds equation-by-equation, with :math:`F=P-R(u)` the assembled unbalance
+(applied load minus resisting force). Substituting :math:`a=F/m` term by
+term shows that damping the acceleration as above is exactly equivalent, for
+each equation, to damping the unbalanced force itself:
+
+.. math::
+
+   F_d = -\alpha\, |F| \,\mathrm{sign}(v) \qquad \text{(simple)}
+
+   F_d = \tfrac{1}{2}\alpha\, |F| \,\big(\mathrm{sign}(\Delta F) - \mathrm{sign}(v)\big) \qquad \text{(combined)}
+
+This damping is unrelated to (and does not replace) any Rayleigh damping,
+and -- since it operates on the already fully assembled acceleration -- is
+applied consistently whether the system of equations is sequential or one
+of the parallel diagonal systems (``MPIDiagonal``).
 
 **Equivalent viscous damping ratio (small** :math:`\alpha` **).** For an
 undamped SDOF oscillator (:math:`F=-kU`) with no applied load, free vibration
@@ -143,7 +172,8 @@ damping should not contaminate the computed response.
 
       integrator ExplicitDifferenceStatic -alpha 0.8
       integrator ExplicitDifferenceStatic -alpha 0.3 -simple
-      # default: -alpha 0.59, combined form
+      integrator ExplicitDifferenceStatic -alpha 0.59 -vEps 1.0e-6
+      # default: -alpha 0.59, combined form, vEps 1e-4
       integrator ExplicitDifferenceStatic
 
    2. **Python Code**
@@ -182,11 +212,13 @@ Usage notes and limitations
 * Requires a ``Linear`` solution algorithm and (as for any explicit scheme) a
   nonsingular, preferably diagonal, mass matrix for every active DOF
   (rotational DOFs with zero mass will make the system singular).
-* ``-alpha`` is rejected (integrator construction fails, returns ``0``) for
-  values outside :math:`[0,1)`.
-* The ``-alpha``/``-simple`` options only control the *local* non-viscous
-  damping; separate Rayleigh damping is still available through the
-  four-argument C++ constructor (not exposed by the Tcl/Python parsers).
+* An out-of-range ``-alpha`` (outside :math:`[0,1)`) or ``-vEps`` (negative),
+  or an unrecognized option, is reported with a ``WARNING`` and ignored
+  (the previous/default value is kept) -- construction never fails because
+  of a bad option.
+* The ``-alpha``/``-simple``/``-vEps`` options only control the *local*
+  non-viscous damping; separate Rayleigh damping is still available through
+  the four-argument C++ constructor (not exposed by the Tcl/Python parsers).
 * The "combined" form equals the "simple" form whenever the unbalance is a
   single-valued elastic function of displacement in free vibration (no
   applied load); the two forms only diverge once the sign of :math:`\dot F`
@@ -194,13 +226,12 @@ Usage notes and limitations
   material response, or while a time-varying load is applied (see
   ``example_pseudostatic.tcl``, where a *constant* load is used precisely so
   that any residual oscillation gets damped consistently).
-* Prior to the fix described in the note above, this damping had **no
-  effect** in free-vibration / unloaded-structure analyses, since it only
-  ever saw the (zero or constant) applied-load vector, not the element
-  resisting forces; any model relying on the old behavior for genuinely
-  unloaded dynamic relaxation was not actually being damped.
+* The damping history is reset whenever the domain changes, so re-forming
+  the domain mid-analysis (adding elements/nodes, changing numberer, etc.)
+  restarts the held velocity sign and previous-acceleration memory from
+  zero for every equation.
 
 .. [Cundall1987] Cundall, P.A. (1987). "Distinct Element Models of Rock and Soil Structure." In *Analytical and Computational Methods in Engineering Rock Mechanics*, 129-163.
-.. [FLAC] Itasca Consulting Group, Inc. *FLAC/FLAC3D Theory and Background -- Dynamic Analysis: Damping*, section on local (Cundall) damping.
+.. [FLAC] Itasca Consulting Group, Inc. *FLAC/FLAC3D Theory and Background -- Dynamic Analysis: Damping*, sections on local and combined (local/combined) damping.
 
 Code Developed by: |jaabell|
