@@ -26,7 +26,7 @@ This command constructs a constant-strain triangular element using three nodes a
 
    2. Consistent nodal loads are computed from pressure and body forces.
 
-   3. Valid :ref:`elementRecorder` queries include ``forces``, ``stresses``, and ``material $matNum ...``.
+   3. Valid :ref:`elementRecorder` queries include ``forces``, ``stresses``, ``strains``, and ``material $matNum ...``.
 
 .. admonition:: Example
 
