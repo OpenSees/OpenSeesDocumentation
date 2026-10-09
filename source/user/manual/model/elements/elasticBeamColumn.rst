@@ -7,9 +7,9 @@ This command is used to construct an elasticBeamColumn element object. The argum
 
 For a two-dimensional problem:
 
-.. function:: element elasticBeamColumn $eleTag $iNode $jNode $A $E $Iz $transfTag <-release $relcode> <-mass $massDens> <-cMass>
+.. function:: element elasticBeamColumn $eleTag $iNode $jNode $A $E $Iz $transfTag <-release $relcode> <-alpha $alpha> <-depth $depth> <-mass $massDens> <-cMass>
 
-.. function:: element elasticBeamColumn $eleTag $iNode $jNode $secTag $transfTag <-release $relcode> <-mass $massDens> <-cMass>
+.. function:: element elasticBeamColumn $eleTag $iNode $jNode $secTag $transfTag <-release $relcode> <-alpha $alpha> <-depth $depth> <-mass $massDens> <-cMass>
 
 For a three-dimensional problem:
 
@@ -32,6 +32,8 @@ For a three-dimensional problem:
    "$secTag",       "|integer|", "Identifier for previously-defined section object"
    "$transfTag",    "|integer|", "Identifier for previously-defined coordinate-transformation object"
    "$relcode",      "|integer|", "Code for moment releases (0=no release, 1=release at end I, 2=release at end J, 3=release at both ends (optional, default = 0)"
+   "$alpha",        "|float|",   "Coefficient of thermal expansion, used by the ``-beamTemp`` element load (2D, optional: default = 0.0)"
+   "$depth",        "|float|",   "Section depth over which ``-beamTemp`` resolves a temperature gradient (2D, optional: default = 0.0)"
    "$massDens",     "|float|",   "Element mass per unit length (optional: default = 0.0)"
    "-cMass",        "|string|",  "To form consistent mass matrix (optional)"
 
