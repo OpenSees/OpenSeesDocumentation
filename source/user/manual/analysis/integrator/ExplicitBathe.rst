@@ -77,7 +77,7 @@ so this integrator cannot be used from OpenSeesPy.
    * See also :ref:`ExplicitDifferenceStatic`, which applies the same kind
      of Cundall/FLAC local damping to a plain central-difference (leap-frog)
      integrator, but *by default* combines the velocity-sign and
-     force-rate forms of the law and adds a small velocity dead-band to
+     force-rate forms of the law and adds a small velocity dead-band (``-vEps``) to
      avoid sign chatter near zero velocity. ``-lnvd`` here always uses only
      the simple :math:`F_d=-\alpha|F|\,\mathrm{sign}(v)` law (with
      :math:`\mathrm{sign}(0)=0`) and has no dead-band, so it should not be
