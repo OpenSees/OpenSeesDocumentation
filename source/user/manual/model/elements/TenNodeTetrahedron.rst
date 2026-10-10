@@ -77,7 +77,7 @@ Each of the 4 Gauss points holds its own independent copy of the assigned ``nDMa
 
 .. note::
 
-   Earlier versions of this element integrated the stiffness, mass and consistent body-force vectors over a volume **6 times smaller** than the true element volume (an erroneous extra division by 6 of the Jacobian determinant, on top of the `1/24` quadrature weights that already account for it), the ``stresses``/``strains`` element responses wrote 24 values (4 Gauss points x 6 components) into a statically-sized length-6 buffer, corrupting the heap on any call to ``eleResponse ... stresses`` or an equivalent recorder, and ``-doInitDisp`` could not be used without body forces. All three are fixed in OpenSees PR "TenNodeTetrahedron fixes" (`#XXXX <https://github.com/OpenSees/OpenSees>`_); the example below reproduces and checks the fix.
+   Earlier versions of this element integrated the stiffness, mass and consistent body-force vectors over a volume **6 times smaller** than the true element volume (an erroneous extra division by 6 of the Jacobian determinant, on top of the `1/24` quadrature weights that already account for it), the ``stresses``/``strains`` element responses wrote 24 values (4 Gauss points x 6 components) into a statically-sized length-6 buffer, corrupting the heap on any call to ``eleResponse ... stresses`` or an equivalent recorder, and ``-doInitDisp`` could not be used without body forces. All three are fixed in OpenSees PR "TenNodeTetrahedron fixes" (`#1833 <https://github.com/OpenSees/OpenSees/pull/1833>`_); the example below reproduces and checks the fix.
 
    This element can only be defined after a :ref:`model` with **-ndm 3 -ndf 3**
 
