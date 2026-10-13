@@ -1,8 +1,8 @@
-# TenNodeTetrahedron: gmsh vs Abaqus (-numbering abaqus) node order.
+# TenNodeTetrahedron (gmsh order) vs TenNodeTetrahedronStd (standard order).
 # Node tags: 1-4 corners, 5:1-2 6:2-3 7:3-1 8:1-4, 9 on edge 3-4, 10 on edge 2-4.
-# gmsh connectivity: 1..10.  Abaqus C3D10 connectivity: 1 2 3 4 5 6 7 8 10 9.
+# TenNodeTetrahedron connectivity: 1..10.  TenNodeTetrahedronStd connectivity: 1 2 3 4 5 6 7 8 10 9.
 # Midside nodes are moved off the edges (curved element) so a wrong 9/10 assignment shows.
-proc build {conn opts b3} {
+proc build {conn ele b3} {
     wipe; model BasicBuilder -ndm 3 -ndf 3
     set X {{0 0 0} {2 0 0} {0 3 0} {0 0 1.5}}
     set mids {{1 2} {2 3} {3 1} {1 4} {3 4} {2 4}}
@@ -16,11 +16,12 @@ proc build {conn opts b3} {
         eval node $n $c; incr n
     }
     nDMaterial ElasticIsotropic 1 1000.0 0.25
-    eval element TenNodeTetrahedron 1 $conn 1 0.0 0.0 $b3 $opts
+    eval element $ele 1 $conn 1 0.0 0.0 $b3
 }
-# Same quadratic displacement field and body force imposed on each element; results are compared between orderings.
-proc run {conn opts} {
-    build $conn $opts -2.0
+# quadratic displacement field imposed at all nodes (exactly representable by a curved Tet10 only in the
+# sense of the isoparametric map; used here as a common input, results are compared between orderings)
+proc run {conn ele} {
+    build $conn $ele -2.0
     timeSeries Linear 1; pattern Plain 1 1 {
         for {set i 1} {$i <= 10} {incr i} {
             lassign [nodeCoord $i] x y z
@@ -36,15 +37,15 @@ proc swap910 {f} { return [concat [lrange $f 0 23] [lrange $f 27 29] [lrange $f 
 proc maxdiff {a b} { set m 0.0; foreach x $a y $b { set d [expr abs($x-$y)]; if {$d > $m} {set m $d} }; return $m }
 proc maxabs {a} { set m 0.0; foreach x $a { if {abs($x) > $m} {set m [expr abs($x)]} }; return $m }
 
-lassign [run {1 2 3 4 5 6 7 8 9 10} ""] fg sg
-lassign [run {1 2 3 4 5 6 7 8 10 9} "-numbering abaqus"] fa sa
-lassign [run {1 2 3 4 5 6 7 8 10 9} ""] fw sw
+lassign [run {1 2 3 4 5 6 7 8 9 10} TenNodeTetrahedron] fg sg
+lassign [run {1 2 3 4 5 6 7 8 10 9} TenNodeTetrahedronStd] fa sa
+lassign [run {1 2 3 4 5 6 7 8 10 9} TenNodeTetrahedron] fw sw
 puts [format "max |force|          = %.4e" [maxabs $fg]]
-puts [format "ABAQUS forces vs gmsh (9<->10 swapped): max diff = %.3e" [maxdiff $fa [swap910 $fg]]]
-puts [format "ABAQUS stresses vs gmsh:                max diff = %.3e" [maxdiff $sa $sg]]
-puts [format "control: Abaqus conn WITHOUT flag:      max diff = %.3e (must be large)" [maxdiff $fw [swap910 $fg]]]
+puts [format "Std forces vs gmsh (9<->10 swapped): max diff = %.3e" [maxdiff $fa [swap910 $fg]]]
+puts [format "Std stresses vs gmsh:                max diff = %.3e" [maxdiff $sa $sg]]
+puts [format "control: Std conn in TenNodeTetrahedron: max diff = %.3e (must be large)" [maxdiff $fw [swap910 $fg]]]
 
-# patch test + body force in Abaqus order with straight edges (same check as smoke/tet10_patch.tcl)
+# patch test + body force with TenNodeTetrahedronStd with straight edges (same check as smoke/tet10_patch.tcl)
 wipe; model BasicBuilder -ndm 3 -ndf 3
 set X {{0 0 0} {2 0 0} {0 3 0} {0 0 1.5}}
 set n 1; foreach p $X { eval node $n $p; incr n }
@@ -53,7 +54,7 @@ foreach e {{1 2} {2 3} {3 1} {1 4} {2 4} {3 4}} {
     node $n [expr ([lindex $a 0]+[lindex $b 0])/2.] [expr ([lindex $a 1]+[lindex $b 1])/2.] [expr ([lindex $a 2]+[lindex $b 2])/2.]; incr n
 }
 nDMaterial ElasticIsotropic 1 1000.0 0.25
-element TenNodeTetrahedron 1 1 2 3 4 5 6 7 8 9 10 1 0.0 0.0 -2.0 -numbering abaqus
+element TenNodeTetrahedronStd 1 1 2 3 4 5 6 7 8 9 10 1 0.0 0.0 -2.0
 timeSeries Linear 1; pattern Plain 1 1 {
     for {set i 1} {$i <= 10} {incr i} { sp $i 1 [expr 1e-3*[lindex [nodeCoord $i] 0]]; sp $i 2 0.0; sp $i 3 0.0 }
 }
@@ -62,7 +63,7 @@ algorithm Linear; integrator LoadControl 1.0; analysis Static
 analyze 1
 reactions
 set Rz 0.0; for {set i 1} {$i <= 10} {incr i} { set Rz [expr $Rz + [nodeReaction $i 3]] }
-puts [format "ABAQUS BODYFORCE sum Rz = %.10f expected 3.0" $Rz]
+puts [format "Std BODYFORCE sum Rz = %.10f expected 3.0" $Rz]
 set s [eleResponse 1 stresses]; set m 0.0
 for {set g 0} {$g < 4} {incr g} { foreach k {0 1 2 3 4 5} e {1.2 0.4 0.4 0 0 0} { set d [expr abs([lindex $s [expr 6*$g+$k]]-$e)]; if {$d>$m} {set m $d} } }
-puts [format "ABAQUS PATCH max abs error = %.3e" $m]
+puts [format "Std PATCH max abs error = %.3e" $m]
