@@ -8,17 +8,18 @@ This command is used to construct a ten-node tetrahedron element object, which u
 
 .. admonition:: Command
 
-   **element TenNodeTetrahedron $eleTag $node1 $node2 $node3 $node4 $node5 $node6 $node7 $node8 $node9 $node10 $matTag <$b1 $b2 $b3> <-doInitDisp $value>**
+   **element TenNodeTetrahedron $eleTag $node1 $node2 $node3 $node4 $node5 $node6 $node7 $node8 $node9 $node10 $matTag <$b1 $b2 $b3> <-doInitDisp $value> <-numbering $order>**
 
 .. csv-table::
    :header: "Argument", "Type", "Description"
    :widths: 10, 10, 40
 
    $eleTag, |integer|,	unique element object tag
-   $node1 .. $node10, 10 |integer|, nodes of tet (ordered as shown in fig below)
+   $node1 .. $node10, 10 |integer|, "nodes of tet: corners 1-4, then mid-edge nodes 5-10 in the order selected with ``-numbering`` (see :ref:`TenNodeTetrahedronNumbering` below)"
    $matTag, |integer|, tag of nDMaterial
    $b1 $b2 $b3, |listFloat|, optional: body forces in global x y z directions (default: 0.0 0.0 0.0)
    -doInitDisp $value, |integer|, "optional flag; if $value is non-zero, the nodal displacements present when the element is added to the domain are stored and subtracted from all later trial displacements before strains are computed (default: 0, i.e. disabled, so ordinary total displacements are used)"
+   -numbering $order, |string|, "optional: ``gmsh`` (default) or ``abaqus``, the convention used for mid-edge nodes 9 and 10 (see below)"
 
 This element is based on second-order interpolation of nodal quantities, so the strain and stress field inside the element vary linearly over the element. Four Gauss points inside the element are used for integration.
 
@@ -30,7 +31,36 @@ This element is based on second-order interpolation of nodal quantities, so the 
 	:align: center
 	:figclass: align-center
 
-	TenNodeTetrahedron Element Node Numbering
+	TenNodeTetrahedron Element Node Numbering (as drawn: ``-numbering abaqus``; with the default ``gmsh`` numbering nodes 9 and 10 are swapped)
+
+.. _TenNodeTetrahedronNumbering:
+
+Node numbering
+""""""""""""""
+
+Corner nodes 1-4 and mid-edge nodes 5-8 are the same in both conventions. Only nodes 9 and 10 differ:
+
+.. csv-table::
+   :header: "Node", "``gmsh`` (default)", "``abaqus`` (Abaqus C3D10, VTK quadratic tetra)"
+   :widths: 10, 20, 30
+
+   5, edge 1-2, edge 1-2
+   6, edge 2-3, edge 2-3
+   7, edge 3-1, edge 3-1
+   8, edge 1-4, edge 1-4
+   9, edge 3-4, edge 2-4
+   10, edge 2-4, edge 3-4
+
+The default matches gmsh's second-order tetrahedron, so meshes exported from gmsh can be used as they are.
+For meshes in Abaqus (``C3D10``) order, add ``-numbering abaqus``. The element keeps the nodes in the order
+given, so the ``forces`` response, the stiffness and mass matrices and the element connectivity seen by
+recorders all follow the chosen convention. Giving Abaqus-ordered connectivity without the flag puts nodes 9 and 10
+on the wrong edges and produces wrong results without any error message.
+
+.. note::
+
+   The figure above has always shown the Abaqus position of nodes 9 and 10, while the element has always used
+   the gmsh one by default. Models written from the figure need ``-numbering abaqus`` (or nodes 9 and 10 swapped).
 
 Theory
 """"""
@@ -104,6 +134,22 @@ Running it with the OpenSees interpreter gives, on the fixed element:
      gp=4  sigma_xx before=1.200000 after=2.400000 (expected 2.400000)  other-points-unchanged=yes
    OVERALL: PASS
 
+:download:`example_tet10_numbering.tcl <figures/TenNodeTetrahedron/example_tet10_numbering.tcl>` checks the two
+numberings against each other. It uses a curved element (mid-edge nodes moved off the edges) under an imposed
+quadratic displacement field and a body force. It is defined once in gmsh order and once in Abaqus order
+(nodes 9 and 10 swapped, ``-numbering abaqus``). The nodal forces must agree after swapping nodes 9 and 10, and the
+Gauss-point stresses must be identical. As a control, the Abaqus connectivity without the flag must disagree. It
+then repeats the body-force and uniform-strain patch tests in Abaqus order:
+
+.. code-block:: text
+
+   max |force|          = 1.4612e+00
+   ABAQUS forces vs gmsh (9<->10 swapped): max diff = 2.220e-16
+   ABAQUS stresses vs gmsh:                max diff = 1.110e-16
+   control: Abaqus conn WITHOUT flag:      max diff = 4.009e+00 (must be large)
+   ABAQUS BODYFORCE sum Rz = 3.0000000000 expected 3.0
+   ABAQUS PATCH max abs error = 3.802e-11
+
 On the unfixed (vanilla upstream) element the same model instead gives a body-force reaction sum of ``0.5`` (should be ``3.0``) and a work-of-reactions under the imposed :math:`\epsilon_{xx}=10^{-3}` of ``3.0e-4`` (should be ``1.8e-3``), both exactly a factor of 6 too small, confirming the volume-scaling bug above.
 
 .. admonition:: Example
@@ -121,6 +167,16 @@ On the unfixed (vanilla upstream) element the same model instead gives a body-fo
    .. code-block:: python
 
       element('TenNodeTetrahedron',1, 1,2,3,4,5,6,7,8,9,10, 1, b1, b2, b3)
+
+   3. **Abaqus (C3D10) node order**
+
+   .. code-block:: tcl
+
+      element TenNodeTetrahedron 1 1 2 3 4 5 6 7 8 9 10 1 -numbering abaqus
+
+   .. code-block:: python
+
+      element('TenNodeTetrahedron', 1, 1,2,3,4,5,6,7,8,9,10, 1, '-numbering', 'abaqus')
 
 This command is registered in both the Tcl and the (Python-backing) generic OpenSees interpreter.
 
