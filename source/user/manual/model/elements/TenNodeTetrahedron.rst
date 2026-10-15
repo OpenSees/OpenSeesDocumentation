@@ -111,7 +111,7 @@ Each of the 4 Gauss points holds its own independent copy of the assigned ``nDMa
 
 .. note::
 
-   Earlier versions of this element integrated the stiffness, mass and consistent body-force vectors over a volume **6 times smaller** than the true element volume (an erroneous extra division by 6 of the Jacobian determinant, on top of the `1/24` quadrature weights that already account for it), the ``stresses``/``strains`` element responses wrote 24 values (4 Gauss points x 6 components) into a statically-sized length-6 buffer, corrupting the heap on any call to ``eleResponse ... stresses`` or an equivalent recorder, ``-doInitDisp`` could not be used without body forces, the element could not be used in OpenSeesSP/OpenSeesMP (it was missing from the object broker and sent only 4 of its 10 nodes), analyses using the initial stiffness printed every shape-function value to the screen, and ground-motion inertia loads (``UniformExcitation``) were formed for 4 nodes only, giving wrong base reactions. All of these are fixed in OpenSees PR "TenNodeTetrahedron fixes" (`#1833 <https://github.com/OpenSees/OpenSees/pull/1833>`_); the example below reproduces and checks the fix.
+   Earlier versions of this element integrated the stiffness, mass and consistent body-force vectors over a volume **6 times smaller** than the true element volume (an erroneous extra division by 6 of the Jacobian determinant, on top of the `1/24` quadrature weights that already account for it), the ``stresses``/``strains`` element responses wrote 24 values (4 Gauss points x 6 components) into a statically-sized length-6 buffer, corrupting the heap on any call to ``eleResponse ... stresses`` or an equivalent recorder, ``-doInitDisp`` could not be used without body forces, the element could not be used in OpenSeesSP/OpenSeesMP (it was missing from the object broker and sent only 4 of its 10 nodes), analyses using the initial stiffness printed every shape-function value to the screen, ground-motion inertia loads (``UniformExcitation``) were formed for 4 nodes only, giving wrong base reactions, and elements with curved edges (mid-edge nodes off the edge midpoints, as in second-order meshes of curved boundaries) computed wrong strains because the shape-function derivatives used the corner coordinates instead of the full Jacobian. Smaller fixes in the same PR: an element with left-handed corner ordering (negative Jacobian) is now reported instead of silently giving negative stiffness and mass; ``eleResponse ... material`` without a Gauss-point number no longer crashes; the ``setDispInit`` parameter now works; a deactivated element no longer contributes initial stiffness; and ``print -JSON`` lists all 10 nodes. All of these are fixed in OpenSees PR "TenNodeTetrahedron fixes" (`#1833 <https://github.com/OpenSees/OpenSees/pull/1833>`_); the example below reproduces and checks the fix.
 
    This element can only be defined after a :ref:`model` with **-ndm 3 -ndf 3**
 
@@ -138,6 +138,22 @@ Running it with the OpenSees interpreter gives, on the fixed element:
      gp=4  sigma_xx before=1.200000 after=2.400000 (expected 2.400000)  other-points-unchanged=yes
    OVERALL: PASS
 
+:download:`example_tet10_curved_patch.tcl <figures/TenNodeTetrahedron/example_tet10_curved_patch.tcl>` repeats the
+uniform-strain patch test on one element with straight edges and with its mid-edge nodes moved off the edges (by about
+0.1 and 0.3), for both commands. An isoparametric element reproduces a linear displacement field exactly even when
+curved, so every case must give the exact stress:
+
+.. code-block:: text
+
+   TenNodeTetrahedron     bump=0.0  patch max stress error = 3.802e-11   |sum nodal forces| = 2.220e-16
+   TenNodeTetrahedron     bump=1.0  patch max stress error = 3.601e-11   |sum nodal forces| = 4.441e-16
+   TenNodeTetrahedron     bump=3.0  patch max stress error = 3.498e-11   |sum nodal forces| = 2.220e-16
+   TenNodeTetrahedronStd  bump=0.0  patch max stress error = 3.802e-11   |sum nodal forces| = 2.346e-16
+   TenNodeTetrahedronStd  bump=1.0  patch max stress error = 3.508e-11   |sum nodal forces| = 2.220e-16
+   TenNodeTetrahedronStd  bump=3.0  patch max stress error = 3.618e-11   |sum nodal forces| = 2.220e-16
+
+Before the fix, the curved cases gave stress errors of 0.14-0.50 against an exact value of 1.2.
+
 :download:`example_tet10_numbering.tcl <figures/TenNodeTetrahedron/example_tet10_numbering.tcl>` checks the two
 commands against each other. It uses a curved element (mid-edge nodes moved off the edges) under an imposed
 quadratic displacement field and a body force. The element is defined once with ``TenNodeTetrahedron`` and once with
@@ -148,10 +164,10 @@ and 10, and the Gauss-point stresses must be identical. As a control, the standa
 
 .. code-block:: text
 
-   max |force|          = 1.4612e+00
+   max |force|          = 1.4035e+00
    Std forces vs gmsh (9<->10 swapped): max diff = 2.220e-16
-   Std stresses vs gmsh:                max diff = 1.110e-16
-   control: Std conn in TenNodeTetrahedron: max diff = 4.009e+00 (must be large)
+   Std stresses vs gmsh:                max diff = 3.331e-16
+   control: Std conn in TenNodeTetrahedron: max diff = 6.967e+00 (must be large)
    Std BODYFORCE sum Rz = 3.0000000000 expected 3.0
    Std PATCH max abs error = 3.802e-11
 
