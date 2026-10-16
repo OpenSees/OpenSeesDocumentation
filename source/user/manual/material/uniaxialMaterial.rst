@@ -94,6 +94,7 @@ The following subsections contain information about **$matType**
       :maxdepth: 1
 
       uniaxialMaterials/Fatigue
+      uniaxialMaterials/FatigueMember
       uniaxialMaterials/Parallel
       uniaxialMaterials/Series
       uniaxialMaterials/TensionOnly
