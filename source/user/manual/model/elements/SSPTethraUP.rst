@@ -309,9 +309,14 @@ Following the OpenSees :math:`u-p` convention :cite:`mcgann2011`:
 References
 """"""""""
 
-.. [1] Biot, M. A. (1941). "General theory of three-dimensional consolidation." *Journal of Applied Physics*, 12(2), 155-164.
-.. [2] Zienkiewicz, O. C., & Shiomi, T. (1984). "Dynamic behavior of saturated porous media; the generalized Biot formulation and its numerical solution." *International Journal for Numerical and Analytical Methods in Geomechanics*, 8(1), 71-96.
-.. [3] McGann, C. R. (2011). "Stabilized Single-Point Finite Elements for Dynamic Analysis of Fluid Saturated Porous Media." *PhD Thesis, University of Washington*.
-.. [4] Zienkiewicz, O. C., Chan, A. H., Pastor, M., Schrefler, B. A., & Shiomi, T. (1999). *Computational Geomechanics*. John Wiley & Sons.
-.. [5] White, J. A., & Borja, R. I. (2008). "Stabilized low-order finite elements for coupled solid-deformation/fluid-diffusion and their application to fault zone transients." *Computer Methods in Applied Mechanics and Engineering*, 197(52), 4353-4366.
-.. [6] Zienkiewicz, O. C., Taylor, R. L., & Zhu, J. Z. (2000). *The Finite Element Method: Its Basis and Fundamentals* (5th ed.). Butterworth-Heinemann.
+.. [1] Biot, M. A. (1941). "General theory of three-dimensional consolidation." *Journal of Applied Physics*, 12(2), 155-164. https://doi.org/10.1063/1.1712886
+
+.. [2] Zienkiewicz, O. C., & Shiomi, T. (1984). "Dynamic behaviour of saturated porous media; the generalized Biot formulation and its numerical solution." *International Journal for Numerical and Analytical Methods in Geomechanics*, 8(1), 71-96. https://doi.org/10.1002/nag.1610080106
+
+.. [3] McGann, C. R. (2011). "Stabilized Single-Point Finite Elements for Dynamic Analysis of Fluid Saturated Porous Media." PhD thesis, University of Washington. [Bibliographic record and full text to be verified.]
+
+.. [4] Zienkiewicz, O. C., Chan, A. H. C., Pastor, M., Schrefler, B. A., & Shiomi, T. (1999). *Computational Geomechanics (with Special Reference to Earthquake Engineering).* John Wiley & Sons. ISBN 0-471-98285-7.
+
+.. [5] White, J. A., & Borja, R. I. (2008). "Stabilized low-order finite elements for coupled solid-deformation/fluid-diffusion and their application to fault zone transients." *Computer Methods in Applied Mechanics and Engineering*, 197(49-50), 4353-4366. https://doi.org/10.1016/j.cma.2008.05.015
+
+.. [6] Zienkiewicz, O. C., & Taylor, R. L. (2000). *The Finite Element Method: Its Basis and Fundamentals* (5th ed.). Butterworth-Heinemann.
