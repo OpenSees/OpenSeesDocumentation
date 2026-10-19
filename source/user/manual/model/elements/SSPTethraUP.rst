@@ -96,10 +96,12 @@ Following the OpenSees :math:`u-p` convention :cite:`mcgann2011`:
 
     .. code-block:: tcl
 
-    # ========================================
-	# Test: SSPbrickUP vs SSPTethraUP 
-	# Gianluca Cavallo - gi.cav.2586@gmail.com
-	# ========================================
+		
+		
+		# ========================================
+		# Test: SSPbrickUP vs SSPTethraUP 
+		# Gianluca Cavallo - gi.cav.2586@gmail.com
+		# ========================================
 
 		wipe
 
