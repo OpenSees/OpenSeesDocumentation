@@ -172,6 +172,7 @@ The following subsections contain information about **$eleType** and the number 
    elements/TwentyEightNodeBrickUP
    elements/SSPquadUP
    elements/SSPbrickUP
+   elements/SSPTethraUP
 
 12. Contact
 
