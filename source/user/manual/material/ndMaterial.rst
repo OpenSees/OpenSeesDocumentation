@@ -27,6 +27,7 @@ The following contain information about matType? and the args required for each 
 
    ndMaterials/ElasticIsotropic
    ndMaterials/ElasticOrthotropic
+   ndMaterials/TimberHoffman3D
    ndMaterials/J2Plasticity
    ndMaterials/DruckerPrager
    ndMaterials/ManzariDafalias
