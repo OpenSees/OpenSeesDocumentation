@@ -172,6 +172,9 @@ The following subsections contain information about **$eleType** and the number 
    elements/TwentyEightNodeBrickUP
    elements/SSPquadUP
    elements/SSPbrickUP
+   elements/Tri31UP
+   elements/SSPtetUP
+   elements/TenNodeTetrahedronUP
 
 12. Contact
 
